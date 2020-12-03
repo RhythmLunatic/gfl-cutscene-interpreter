@@ -8,15 +8,16 @@
 <style type="text/css">
 body
 {
-	background-color: black;
+	/*background-color: black;
+	color: white*/
 	text-align:center;
-	color: white
 }
-button
+
+/*button
 {
 	background-color: black;
 	color:white;
-}
+}*/
 
 table, th, td {
    border: 1px solid #222222;
@@ -25,8 +26,49 @@ table, th, td {
 th {
 	background-color: purple;
 }
-select {
-	color: white;
+
+#head, #foot {
+	height: 6%;
+	min-height: 25px;
+	width: 100%;
+	background-color: #151515;
+	overflow: hidden;
+}
+
+#head a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+
+#head a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#head a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: DodgerBlue;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 5px;
+  /*padding: 20px;
+  font-size: 30px;*/
 }
 
 tr:nth-child(odd) {
@@ -63,8 +105,8 @@ tr:nth-child(even) {
 }
 </style>
 <script type="text/javascript"></script>
-<script src="phaser.min.js"></script>
-<!--<script src="//cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script> -->
+<!--<script src="phaser.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
 <script>
 	/*
 	This program is free software: you can redistribute it and/or modify
@@ -99,6 +141,7 @@ tr:nth-child(even) {
 		<Speaker> - Set the speaker name
 		|| - Separator. Things after this separator will be run later, maybe? Usually transition commands, shake effects, etc are after these
 		<黑点X> - Black dot screen transition. X=1 for in, 2 for out.
+		<黑屏X> - Black screen fade in and out
 		<通讯框> - "Communication box". Display character portrait inside a communication box.
 		<震屏> - Screen shake effect
 		: - End of opcodes, text goes here (Other than +)
@@ -119,14 +162,32 @@ tr:nth-child(even) {
 		PORTRAIT : 5,
 		NOPORTRAIT : 6,
 		MSGBOXTRANSITION : 7,
+		SETMASKEDPORTRAIT : 8
 	}
+	//For JSON structured
+	const opcode2string = [
+		'none',
+		'bgm',
+		'bg',
+		'speaker',
+		'msg',
+		'portrait',
+		'noPortrait',
+		'msgboxTransition',
+		'setMaskedPortrait'
+	]
+	
 	const tag2opcode = {
 		"Speaker":opcode.SPEAKER,
 		"BIN":opcode.BG,
-		"BGM":opcode.BGM
+		"BGM":opcode.BGM,
+		"通讯框":opcode.SETMASKEDPORTRAIT,
 	}
 	
 	const backgrounds = {
+		2: "机场",
+		4: "主界面背景",
+		6: "冰湖",
 		8: "作战室avg",
 		9: "black",
 		10: "PlaybackBG1",
@@ -466,6 +527,89 @@ tr:nth-child(even) {
 		
 	}
 	
+	function convertTextToOpcodes(out)
+	{
+		console.log(out);
+		var lines = out.split(/\r?\n/);
+		//The GFL text system is stupid as fuck and I just spent a whole week writing my own VN system
+		//So obviously I'm going to convert it to my own. fuck you
+		console.log(lines)
+		//Fuck your opcodes
+		let structuredLines = [];
+		for(i=0;i<lines.length;i++)
+		{
+			if (!lines[i])
+				continue;
+			//print(lines[i]);
+			let [cmds,text] = lines[i].replace("：",':').split(':')
+			console.assert(cmds,lines[i])
+			console.assert(text,lines[i])
+			
+			//Yeah I know tags are supposed to be in order, No I don't really care sorry
+			const tags = ["Speaker","BGM","BIN"]
+			tags.forEach(tag => {
+				//console.log(tag);
+				let tagRes = getFromTag(cmds,tag);
+				//console.log(tagRes)
+				if (tagRes != null)
+				{
+					structuredLines.push([tag2opcode[tag],tagRes])
+					removeTag(cmds,tag)
+				}
+			})
+			//const tags = [
+			if (cmds.includes("<通讯框>"))
+			{
+				structuredLines.push([opcode.SETMASKEDPORTRAIT])
+				cmds.replace("<通讯框>","");
+			}
+			
+			
+			//So portraits are set in any order... But how the fuck are you supposed to tell when a name is if there's <> tags
+			//I'm just going to search portraits after removing <> tags, it probably won't matter
+			let numPortraits = 0;
+			//Limit it to 5 because I don't want a dumb infinite loop that crashes the browser
+			for(j=0;j<5;j++)
+			{
+				//console.log(cmds)
+				let charTagEnd = cmds.indexOf(")");
+				if (charTagEnd != -1)
+				{
+					let charTagStart = Math.max(cmds.lastIndexOf(";",charTagEnd),0)
+					let [charID,charSpr] = cmds.slice(charTagStart,charTagEnd).split("(")
+					//console.log(charID)
+					//console.log(charSpr)
+					//Ignore empty sprite IDs, they do nothing.
+					if (charSpr != "")
+					{
+						numPortraits++;
+						structuredLines.push([opcode.PORTRAIT,charID,charSpr])
+					}
+					//I think speaker name gets cleared if it's ()? Not sure
+					//Portrait gets cleared
+					else
+					{
+						structuredLines.push([opcode.NOPORTRAIT])
+					}
+					cmds = sliceAndRemove(cmds,charTagStart,charTagEnd+1);
+				}
+				else
+				{
+					//console.log("Done... Let's exit");
+					break;
+				}
+			}
+			
+			//Now do text
+			text.split("+").forEach(msg => {
+				structuredLines.push([opcode.MSG,msg])
+			})
+			//open/close msgbox
+			structuredLines.push([opcode.MSGBOXTRANSITION])
+		}
+		return structuredLines;
+	}
+	
 	function run(fileName)
 	{
 		console.log("fetching "+fileName);
@@ -473,81 +617,16 @@ tr:nth-child(even) {
 		fetch("avgtxt/"+fileName)
 		.then(response => response.text())
 		.then((out) => {
-			console.log(out);
-			var lines = out.split(/\r?\n/);
-			//The GFL text system is stupid as fuck and I just spent a whole week writing my own VN system
-			//So obviously I'm going to convert it to my own. fuck you
-			console.log(lines)
-			//Fuck your opcodes
-			structuredLines = [];
-			for(i=0;i<lines.length;i++)
-			{
-				if (!lines[i])
-					continue;
-				let [cmds,text] = lines[i].split(':')
-				console.assert(cmds,lines[i])
-				console.assert(text,lines[i])
-				
-				//Yeah I know tags are supposed to be in order, No I don't really care sorry
-				const tags = ["Speaker","BGM","BIN"]
-				tags.forEach(tag => {
-					//console.log(tag);
-					let tagRes = getFromTag(cmds,tag);
-					//console.log(tagRes)
-					if (tagRes != null)
-					{
-						structuredLines.push([tag2opcode[tag],tagRes])
-						removeTag(cmds,tag)
-					}
-				})
-				
-				//So portraits are set in any order... But how the fuck are you supposed to tell when a name is if there's <> tags
-				//I'm just going to search portraits after removing <> tags, it probably won't matter
-				let numPortraits = 0;
-				//Limit it to 5 because I don't want a dumb infinite loop that crashes the browser
-				for(j=0;j<5;j++)
-				{
-					//console.log(cmds)
-					let charTagEnd = cmds.indexOf(")");
-					if (charTagEnd != -1)
-					{
-						let charTagStart = Math.max(cmds.lastIndexOf(";",charTagEnd),0)
-						let [charID,charSpr] = cmds.slice(charTagStart,charTagEnd).split("(")
-						//console.log(charID)
-						//console.log(charSpr)
-						//Ignore empty sprite IDs, they do nothing.
-						if (charSpr != "")
-						{
-							numPortraits++;
-							structuredLines.push([opcode.PORTRAIT,charID,charSpr])
-						}
-						//I think speaker name gets cleared if it's ()? Not sure
-						//Portrait gets cleared
-						else
-						{
-							structuredLines.push([opcode.NOPORTRAIT])
-						}
-						cmds = sliceAndRemove(cmds,charTagStart,charTagEnd+1);
-					}
-					else
-					{
-						//console.log("Done... Let's exit");
-						break;
-					}
-				}
-				
-				//Now do text
-				text.split("+").forEach(msg => {
-					structuredLines.push([opcode.MSG,msg])
-				})
-				//open/close msgbox
-				structuredLines.push([opcode.MSGBOXTRANSITION])
-			}
+			structuredLines = convertTextToOpcodes(out);
 			
 			//console.log(structuredLines)
 			let s = "";
 			structuredLines.forEach(line => {
-				s+=line.toString()+"\r\n";
+				s+=opcode2string[line[0]]+','
+				for(i=1;i<line.length;i++)
+					s+=line[i]
+				s+='\r\n'
+				//s+=line.toString()+"\r\n";
 			})
 			document.getElementById("DebugTextArea").value = s;
 			
@@ -555,7 +634,7 @@ tr:nth-child(even) {
 			let lastSpeakerName = "";
 			
 			//It has underscores because it's going to be cloned
-			let _div_ = document.createElement('div');
+			/*let _div_ = document.createElement('div');
 			_div_.className="container";
 			
 			let _img_ = document.createElement("img");
@@ -574,7 +653,7 @@ tr:nth-child(even) {
 			
 			//let textboxDiv = document.getElementById("Textboxes");
 			let newTextboxDiv = document.createElement('div');
-			newTextboxDiv.id="Textboxes";
+			newTextboxDiv.id="Textboxes";*/
 			
 			let NewSimpleTextDiv = document.createElement('div');
 			NewSimpleTextDiv.id="verySimpleText";
@@ -586,11 +665,11 @@ tr:nth-child(even) {
 				}
 				else if (structuredLines[i][0] == opcode.MSG)
 				{
-					let newTextbox = _div_.cloneNode(true);
+					/*let newTextbox = _div_.cloneNode(true);
 					//console.log(newTextbox);
 					newTextbox.getElementsByClassName("absText")[0].innerText = structuredLines[i][1]
 					newTextbox.getElementsByClassName("charName")[0].innerText = lastSpeakerName;
-					newTextboxDiv.appendChild(newTextbox);
+					newTextboxDiv.appendChild(newTextbox);*/
 					
 					let p = document.createElement('p');
 					if (lastSpeakerName == "")
@@ -607,8 +686,8 @@ tr:nth-child(even) {
 				}*/
 			}
 			//Now replace the old div...
-			let textboxDiv = document.getElementById("Textboxes");
-			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);
+			/*let textboxDiv = document.getElementById("Textboxes");
+			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
 			
 			let simpleTextDiv = document.getElementById("verySimpleText")
 			simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
@@ -641,8 +720,8 @@ tr:nth-child(even) {
 	function onChapterSelected(value)
 	{
 		console.log(value);
-		let [chapter,episode] = value.split('-');
-		run(listOfChapters[chapter]['episodes'][episode]['begin'])
+		let [type,chapter,episode] = value.split('-');
+		run(listOfChapters[type][chapter]['episodes'][episode]['begin'])
 		document.getElementById("startButton").disabled = false
 	}
 	
@@ -655,7 +734,12 @@ tr:nth-child(even) {
 		}
 	}
 	
-	listOfChapters=[]
+	listOfChapters={
+		'main':[],
+		'event':[],
+		'side':[], //also skin
+		'crossover':[]
+	}
 	function generateTables() {
 		
 		//Special for chapter 0
@@ -665,7 +749,7 @@ tr:nth-child(even) {
 			{
 				chapterZero.push(appendFromij(0,j,"Normal",''))
 			}
-			listOfChapters.push({name:"Chapter 0",episodes:chapterZero});
+			listOfChapters['main'].push({name:"Chapter 0",episodes:chapterZero});
 		}
 		//Normal chapters
 		for(i=1;i<13;i++)
@@ -683,7 +767,7 @@ tr:nth-child(even) {
 			{
 				curChapter.push(appendFromij(i,j,"Midnight",'N'))
 			}
-			listOfChapters.push({name:'Chapter '+i,episodes:curChapter});
+			listOfChapters['main'].push({name:'Chapter '+i,episodes:curChapter});
 			
 			//What am I supposed to do?
 			/*if (i==5)
@@ -697,21 +781,79 @@ tr:nth-child(even) {
 			}*/
 		}
 		
+		//Events
+		let prologue = []
+		for(i=0;i<12;i++)
+		{
+			prologue.push({name:"Start"+i,begin:'startavg/Start'+i+".txt"});
+		}
+		listOfChapters['event'].push({name:"Prologue",episodes:prologue});
+		/*
+		0|Chapter|EP.|00
+		1|Chapter|EP.|01
+		2|Chapter|EP.|02
+		3|Chapter|EP.|03
+		4|Chapter|EP.|04
+		5|Chapter|EP.|05
+		-1|Operation Cube|EP.|5.5
+		6|Chapter|EP.|06
+		7|Chapter|EP.|07
+		-2,-3,-4,-5|Arctic Warfare|EP.|7.5
+		-7|Operation Cube+|EP.|7.75
+		8|Chapter|EP.|08
+		-10,-11,-12,-13|Deep Dive|EP.|8.5
+		9|Chapter|EP.|09
+		10|Chapter|EP.|10
+		-16,-17,-18|Singularity|EP.|10.5
+		-24,-25,-26,-28|Continuum Turbulence|EP.|10.75
+		11|Chapter|EP.|11
+		*/
+		
+		let tDollEpisodes = []
+		let knownFiles = ["1.txt", "11.txt", "1501.txt", "1502.txt", "1503.txt",
+		"1504.txt", "1505.txt", "1506.txt", "1507.txt", "1801.txt", "1802.txt",
+		"1803.txt", "1804.txt", "1805.txt", "1806.txt", "1807.txt", "1808.txt",
+		"1901.txt", "1902.txt", "1904.txt", "1905.txt", "1906.txt", "2.txt",
+		"2101.txt", "2102.txt", "2103.txt", "2104.txt", "2105.txt", "2106.txt",
+		"2107.txt", "2108.txt", "2109.txt", "2301.txt", "2302.txt", "2303.txt",
+		"2304.txt", "2305.txt", "2401.txt", "2403.txt", "2404.txt", "2405.txt",
+		"2406.txt", "2407.txt", "2408.txt", "2409.txt", "2410.txt", "2601.txt",
+		"2602.txt", "2603.txt", "2604.txt", "2605.txt", "2606.txt", "2801.txt",
+		"2802.txt", "2803.txt", "2804.txt", "2805.txt", "2807.txt", "3.txt",
+		"3001.txt", "3002.txt", "3003.txt", "3004.txt", "3005.txt", "3006.txt", 
+		"3007.txt", "301.txt", "302.txt", "303.txt", "304.txt", "305.txt", 
+		"306.txt", "307.txt", "308.txt", "309.txt", "310.txt", "3102.txt", 
+		"3103.txt", "3105.txt", "3106.txt", "3107.txt", "3301.txt", "3302.txt", 
+		"3303.txt", "3304.txt", "3305.txt", "3306.txt", "3307.txt", "3308.txt", 
+		"3309.txt", "3501.txt", "3502.txt", "3503.txt", "3504.txt", "3505.txt", 
+		"1903.txt", "2402.txt", "2806.txt", "3101.txt", "3506.txt", "4203.txt", 
+		"3507.txt", "3801.txt", "3802.txt", "3803.txt", "3805.txt", "3806.txt", 
+		"3807.txt", "3808.txt", "3809.txt", "4.txt", "4001.txt", "4002.txt", 
+		"4003.txt", "4004.txt", "4005.txt", "4006.txt", "4007.txt", "4201.txt",
+		 "4202.txt", "4204.txt", "4205.txt", "4206.txt", "4207.txt", "4209.txt", 
+		 "4210.txt", "4301.txt", "4302.txt", "4303.txt", "4304.txt", "4305.txt",
+		  "4306.txt", "4308.txt", "4309.txt", "4310.txt", "5.txt", "6.txt", "7.txt",
+		   "8.txt", "801.txt", "802.txt", "803.txt", "804.txt", "805.txt", "806.txt", 
+		   "807.txt", "808.txt", "9.txt"]
+		for (i=0;i<knownFiles.length;i++)
+			tDollEpisodes.push({name:knownFiles[i],begin:'skin/'+knownFiles[i]});
+		listOfChapters['side'].push({name:"Skin Stories",episodes:tDollEpisodes});
+		
+		
 		var _table_ = document.createElement('table'),
-			//_tbody_ = document.creat
 			_tr_ = document.createElement('tr'),
 			_th_ = document.createElement('th'),
 			_td_ = document.createElement('td'),
 			_select_ = document.createElement('select'),
 			_option_ = document.createElement('option');
 		
-		var table = document.getElementById("table");
-		let thead = document.createElement("thead");
-		thead.innerHTML = "<tr><th colspan='"+listOfChapters.length+"'>Pick a chapter</th></tr>"
-		table.appendChild(thead);
+		//var table = document.getElementById("table");
+		//let thead = document.createElement("thead");
+		//thead.innerHTML = "<tr><th colspan='"+listOfChapters.length+"'>Pick a chapter</th></tr>"
+		//table.appendChild(thead);
 		
 		//Behold, the most god awful code ever written
-		let tbody = document.createElement('tbody');
+		//let tbody = document.createElement('tbody');
 		
 		/*let trChapterNames = _tr_.cloneNode(false);
 		for(i=0;i<listOfChapters.length;i++)
@@ -722,47 +864,86 @@ tr:nth-child(even) {
 		}
 		tbody.appendChild(trChapterNames);*/
 		
-		let trChapterDropdowns = _tr_.cloneNode(false);
-		for(i=0;i<listOfChapters.length;i++)
+		for (const key in listOfChapters)
 		{
-			let td = _td_.cloneNode(false);
-			let select = _select_.cloneNode(false);
-			select.setAttribute('id',"selectChapter"+i)
-			select.setAttribute('onchange','onChapterSelected(value);');
-			
-			//Generate chapter name first..
-			let optChName = _option_.cloneNode(false);
-			optChName.setAttribute("selected","");
-			optChName.setAttribute("disabled","");
-			optChName.innerText=listOfChapters[i]['name'];
-			select.appendChild(optChName);
-			
-			//Now let's do the episodes
-			let curChapter = listOfChapters[i]['episodes'];
-			for(j=0;j<curChapter.length;j++)
+			let episodeContainer = document.getElementById(key+'Episodes')
+			let trChapterDropdowns = _tr_.cloneNode(false);
+			for(i=0;i<listOfChapters[key].length;i++)
 			{
-				let option = _option_.cloneNode(false);
-				option.value=i+'-'+j;
-				option.innerText=curChapter[j]['name'];
-				select.appendChild(option);
+				//let td = _td_.cloneNode(false);
+				let flexBoxDiv = document.createElement('div');
+				let select = _select_.cloneNode(false);
+				select.setAttribute('id',"selectChapter"+i)
+				select.setAttribute('onchange','onChapterSelected(value);');
+				
+				//Generate chapter name first..
+				let optChName = _option_.cloneNode(false);
+				optChName.setAttribute("selected","");
+				optChName.setAttribute("disabled","");
+				optChName.innerText=listOfChapters[key][i]['name'];
+				select.appendChild(optChName);
+				
+				//Now let's do the episodes
+				let curChapter = listOfChapters[key][i]['episodes'];
+				for(j=0;j<curChapter.length;j++)
+				{
+					let option = _option_.cloneNode(false);
+					option.value=key+'-'+i+'-'+j;
+					option.innerText=curChapter[j]['name'];
+					select.appendChild(option);
+				}
+				flexBoxDiv.appendChild(select);
+				
+				episodeContainer.appendChild(flexBoxDiv);
+				//td.appendChild(select);
+				//trChapterDropdowns.appendChild(td);
 			}
-			td.appendChild(select);
-			trChapterDropdowns.appendChild(td);
 		}
-		tbody.appendChild(trChapterDropdowns);
+
+		//tbody.appendChild(trChapterDropdowns);
 		
 		//table.appendChild(thead);
-		table.appendChild(tbody);
+		//table.appendChild(tbody);
 		
 		console.log(listOfChapters);
 		return listOfChapters;
 	}
+	
+	function showSelectedEpisodes(id)
+	{
+		let episodesDivs = document.getElementById("Episodes").children;
+		for (var i = 0; i < episodesDivs.length;i++){
+			if (episodesDivs[i].id == id)
+				episodesDivs[i].style="";
+			else
+				episodesDivs[i].style="display: none;"
+		}
+		//console.log(episodesDiv.children);
+	}
+	
+	window.onload=function()
+	{
+		generateTables();
+		showSelectedEpisodes('mainEpisodes');
+	}
 </script>
-<body onload="generateTables()">
+<body>
 	<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
-	<div id="scrollableTable" class="scroll">
-		<table id="table">
-		</table>
+	<div id='chapterSelect'>
+		<div id='head'>
+			<a href="#" onclick="showSelectedEpisodes('mainEpisodes');return false;">Main Story Chapters</a>
+			<a href="#" onclick="showSelectedEpisodes('eventEpisodes');return false;">Story Events</a>
+			<a href="#" onclick="showSelectedEpisodes('sideEpisodes');return false;">Crossover Events</a>
+			<a href="#" onclick="showSelectedEpisodes('crossoverEpisodes');return false;">Side Stories</a>
+			<a href="#" onclick="return false;">T-Doll Dialogue (coming eventually)</a>
+		</div>
+		<div id="Episodes">
+			<div class="flex-container" id="mainEpisodes"></div>
+			<div class="flex-container" id="eventEpisodes"></div>
+			<div class="flex-container" id="sideEpisodes"></div>
+			<div class="flex-container" id="crossoverEpisodes"></div>
+		</div>
+		
 	</div>
 	<!--<h2><a href="#Textboxes">Mobile devices are stupid and the canvas absorbs touch, so click here to jump to the part without the canvas</a></h2>-->
 	<!---->
@@ -772,15 +953,16 @@ tr:nth-child(even) {
 		<div id="phaser"></div>
 		<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
 		<div id='myDIV' style="display: none;">
-			<textarea rows='6' cols='50' id="DebugTextArea"></textarea>
+			<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
+			<button disabled>Re-run scene with these opcodes (Unimplemented)</button>
 		</div>
 		<!--<canvas id="myCanvas" width="1280" height="720"></canvas>--><br><br>
         <!--<h1 id="title">This is a header!</h1>-->
 		<!--<img src="textbox.png"></img>-->
-		<h2><a href="#verySimpleText">Click HERE to jump to the text without any textboxes which is probably what you want anyways</a></h2>
+		<!--<h2><a href="#verySimpleText">Click HERE to jump to the text without any textboxes which is probably what you want anyways</a></h2>
 		<h2>Static Textboxes</h2>
-		<div id="Textboxes"></div>
-		<h2>Very simple text</h2>
+		<div id="Textboxes"></div>-->
+		<h2>Text Only (+Text Modifiers)</h2>
 		<div id="verySimpleText"></div>
 		<a href="#theTop">Back to top</a>
 		

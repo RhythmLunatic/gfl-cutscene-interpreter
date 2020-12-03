@@ -63,8 +63,8 @@ tr:nth-child(even) {
 }
 </style>
 <script type="text/javascript"></script>
-<!--<script src="phaser.js"></script>-->
-<script src="//cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script> 
+<script src="phaser.min.js"></script>
+<!--<script src="//cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script> -->
 <script>
 	/*
 	This program is free software: you can redistribute it and/or modify
@@ -133,8 +133,22 @@ tr:nth-child(even) {
 		15: "室内战斗",
 	}
 	
-	//It's a separate directory because... I don't know. Just live with it.
-	const portraitWebserver = "http://gfl.amaryllisworks.pw:998/pic/"
+	const portraits = {
+		"NPC-Kalin":[
+			"special/版娘",
+			"special/版娘-1",
+			"special/版娘-2",
+			"special/版娘-3",
+			"special/版娘-4",
+			"special/版娘-5",
+			"special/版娘-6",
+			"special/版娘-7",
+			"special/版娘-8"
+		]
+	}
+	
+	//I moved everything to gfl subdomain so it's fine now
+	//const portraitWebserver = "http://gfl.amaryllisworks.pw/pic/"
 	
 	//Don't care if it's all over the place. Fix it yourself. If this was SM I'd be using broadcasts anyways
 	var nameActor;
@@ -146,6 +160,30 @@ tr:nth-child(even) {
 		runtime.load.once('complete',function() { bgActor.setTexture(num);bgActor.displayWidth = 1280;bgActor.displayHeight= 1280; },runtime)
 		runtime.load.image(num,'avgtexture/'+backgrounds[num]+'.png');
 		runtime.load.start();
+	}
+	
+	//A pool of portraits since there's gonna be more than one
+	var portraitCollection = []
+	function loadPortrait(runtime,name,type)
+	{
+		if (portraits[name] != undefined && portraits[name][type] != undefined)
+		{
+			let keyedPortrait=name+'-'+type;
+			let fileName = portraits[name][type]+'.png'
+			console.log("Loading "+fileName);
+			if (portraitCollection.length == 0)
+			{
+				runtime.load.once('complete',function() { portraitCollection.push( runtime.add.image(game.config.width/2,game.config.height-100,keyedPortrait) ) } );
+			
+			}
+			//Need logic for multi portraits!
+			else
+			{
+				runtime.load.once('complete',function() { portraitCollection[0].setTexture(keyedPortrait) } );
+			}
+			runtime.load.image(keyedPortrait,'pic/'+fileName);
+			runtime.load.start();
+		}
 	}
 	
 	//var interval;
@@ -217,25 +255,27 @@ tr:nth-child(even) {
 			while (noMsgYet)
 			{
 				console.assert(this.msgTable[this.curIndex],"There is no opcode located at "+this.curIndex+". How did you even get this far?")
-				let MsgOpcode = this.msgTable[this.curIndex][0]
+				let curMsg = this.msgTable[this.curIndex]
+				let MsgOpcode = curMsg[0]
 				//console.log(opcode)
 				//console.log(this.curIndex);
 				//console.log(MsgOpcode == opcode.MSG);
 				switch(MsgOpcode) {
 					case opcode.MSG:
 						this.cur_len= 0
-						this.text = this.msgTable[this.curIndex][1]
+						this.text = curMsg[1]
 						//this.text_actor:queuecommand("Check")
 						noMsgYet = false;
 						break;
 					case opcode.SPEAKER:
-						nameActor.setText(this.msgTable[this.curIndex][1]);
+						nameActor.setText(curMsg[1]);
 						break;
 					case opcode.BG:
-						loadBG(this.phaserRuntime,this.msgTable[this.curIndex][1]);
+						loadBG(this.phaserRuntime,curMsg[1]);
 						break;
 					case opcode.PORTRAIT:
-						console.log(this.msgTable[this.curIndex][1])
+						console.log(curMsg[1])
+						loadPortrait(this.phaserRuntime,curMsg[1],curMsg[2])
 						break;
 					//lua junk from my message system. Just ignore it.
 					/*case opcode.FMSG:
@@ -360,6 +400,9 @@ tr:nth-child(even) {
 		bgActor.displayHeight= 1024*/
 		bgActor = this.add.image(game.config.width/2,game.config.height/2);
 		bgActor.texture = Phaser.Cache.DEFAULT;
+		bgActor.setDepth(0);
+		
+		//Depth 2 is reserved for character portraits!
 		
 		imageActor = this.make.image({
 			x:game.config.width /2,
@@ -369,14 +412,17 @@ tr:nth-child(even) {
 			add:true
 		})
 		imageActor.scaleY = 1
+		imageActor.setDepth(3);
 		
 		//var blocks = this.add.group({ key: 'block', repeat: 139, setScale: { x: 0, y: 0 } });
 		
 		nameActor = this.add.text(240,500,'', { fontFamily: 'Noto Sans KR', fontSize: 30, color: '#ffffff' });
+		nameActor.setDepth(4);
 		
 		vntext = new VNText4(this,'',800,13,structuredLines);
 		vntext.textActor.x = 240;
 		vntext.textActor.y = game.config.height-160
+		vntext.textActor.setDepth(4);
 		vntext.advance();
 		
 		this.input.on('pointerdown',function(){
@@ -713,8 +759,8 @@ tr:nth-child(even) {
 	}
 </script>
 <body onload="generateTables()">
-	<h1>GFL Cutscene Intrepeter (very alpha)</h1>
-	<div id="scrollableTable">
+	<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
+	<div id="scrollableTable" class="scroll">
 		<table id="table">
 		</table>
 	</div>
@@ -736,9 +782,10 @@ tr:nth-child(even) {
 		<div id="Textboxes"></div>
 		<h2>Very simple text</h2>
 		<div id="verySimpleText"></div>
-		<a href="#phaser">Back to top</a>
+		<a href="#theTop">Back to top</a>
 		
-		<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github</a></p>
+		<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
+		<p>Can someone please fix the horrible UI? I'm a programmer, not a designer. Please fork the source code and make a pull request.</p>
 		<br>
 		<!--<a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot. T-Doll info, quotes, costumes, and more!</a>-->
 </body>

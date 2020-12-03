@@ -480,7 +480,8 @@ tr:nth-child(even) {
 		nameActor = this.add.text(240,500,'', { fontFamily: 'Noto Sans KR', fontSize: 30, color: '#ffffff' });
 		nameActor.setDepth(4);
 		
-		vntext = new VNText4(this,'',800,13,structuredLines);
+		//TODO
+		vntext = new VNText4(this,'',800,13,currentEpisodeAsOpcodes[0]);
 		vntext.textActor.x = 240;
 		vntext.textActor.y = game.config.height-160
 		vntext.textActor.setDepth(4);
@@ -529,11 +530,11 @@ tr:nth-child(even) {
 	
 	function convertTextToOpcodes(out)
 	{
-		console.log(out);
+		//console.log(out);
 		var lines = out.split(/\r?\n/);
 		//The GFL text system is stupid as fuck and I just spent a whole week writing my own VN system
 		//So obviously I'm going to convert it to my own. fuck you
-		console.log(lines)
+		//console.log(lines)
 		//Fuck your opcodes
 		let structuredLines = [];
 		for(i=0;i<lines.length;i++)
@@ -543,7 +544,7 @@ tr:nth-child(even) {
 			//print(lines[i]);
 			let [cmds,text] = lines[i].replace("：",':').split(':')
 			console.assert(cmds,lines[i])
-			console.assert(text,lines[i])
+			//console.assert(text,lines[i])
 			
 			//Yeah I know tags are supposed to be in order, No I don't really care sorry
 			const tags = ["Speaker","BGM","BIN"]
@@ -600,101 +601,150 @@ tr:nth-child(even) {
 				}
 			}
 			
-			//Now do text
-			text.split("+").forEach(msg => {
-				structuredLines.push([opcode.MSG,msg])
-			})
+			//Now do text... But first check if there is any text (some lines are only commands)
+			if (text)
+			{
+				text.split("+").forEach(msg => {
+					structuredLines.push([opcode.MSG,msg])
+				})
+			}
 			//open/close msgbox
 			structuredLines.push([opcode.MSGBOXTRANSITION])
 		}
 		return structuredLines;
 	}
 	
-	function run(fileName)
+	var curEpKey;
+	var currentEpisodeAsOpcodes;
+	
+	//WHY DOES IT HAVE TO BE A SEPARATE FUNCTION
+	/*async function fetchTextFile(fileName)
 	{
 		console.log("fetching "+fileName);
-		//let url = '1-1-1.txt';
-		fetch("avgtxt/"+fileName)
-		.then(response => response.text())
-		.then((out) => {
-			structuredLines = convertTextToOpcodes(out);
+		const response = await fetch("avgtxt/"+fileName);
+		console.log("got "+fileName);
+		return await response.text();
+		//const out = await response.text();
+		//return out;
+	}*/
+	
+	async function run(episode,curEpKey_)
+	{
+		currentEpisodeAsOpcodes = [];
+		curEpKey = curEpKey_;
+		
+		document.getElementById('chapterName').innerText = episode['name'];
+		
+		//Instead of just one part, put all of them in the verySimpleText div.
+		let NewSimpleTextDiv = document.createElement('div');
+		NewSimpleTextDiv.id="verySimpleText";
+		
+		//let partNum = 0;
+		for(var p = 0; p < episode.parts.length;p++)
+		{
+			let fileName = episode.parts[p];
 			
-			//console.log(structuredLines)
-			let s = "";
-			structuredLines.forEach(line => {
-				s+=opcode2string[line[0]]+','
-				for(i=1;i<line.length;i++)
-					s+=line[i]
-				s+='\r\n'
-				//s+=line.toString()+"\r\n";
-			})
-			document.getElementById("DebugTextArea").value = s;
+			//We have to await so it doesn't load the parts in the wrong order. Which is an actual thing that has happened.
+			console.log("fetching "+fileName);
+			const response = await fetch("avgtxt/"+fileName);
+			const out = await response.text();
+			console.log("got "+fileName);
 			
+			//console.log(fetchTextFile("avgtxt/"+fileName));
 			
-			let lastSpeakerName = "";
-			
-			//It has underscores because it's going to be cloned
-			/*let _div_ = document.createElement('div');
-			_div_.className="container";
-			
-			let _img_ = document.createElement("img");
-			_img_.src="textbox.png";
-			_img_.style.width="100%";
-			_div_.appendChild(_img_);
-			
-			let charName = document.createElement("div");
-			charName.className="charName";
-			_div_.appendChild(charName);
-			
-			let text = document.createElement("div");
-			text.className="absText";
-			text.id="text";
-			_div_.appendChild(text);
-			
-			//let textboxDiv = document.getElementById("Textboxes");
-			let newTextboxDiv = document.createElement('div');
-			newTextboxDiv.id="Textboxes";*/
-			
-			let NewSimpleTextDiv = document.createElement('div');
-			NewSimpleTextDiv.id="verySimpleText";
-			for(i=0;i<structuredLines.length;i++)
-			{
-				if (structuredLines[i][0] == opcode.SPEAKER)
+			//fetch("avgtxt/"+fileName)
+			//.then(response => response.text())
+			//.then((out) => {
+			//fetchTextFile(fileName).then(out => {
+				//console.log('got '+fileName);
+				let structuredLines = convertTextToOpcodes(out);
+				
+				//console.log(structuredLines)
+				let s = "";
+				structuredLines.forEach(line => {
+					s+=opcode2string[line[0]]+','
+					for(var i=1;i<line.length;i++)
+						s+=line[i]
+					s+='\r\n'
+					//s+=line.toString()+"\r\n";
+				})
+				document.getElementById("DebugTextArea").value = s;
+				
+				
+				let lastSpeakerName = "";
+				
+				//It has underscores because it's going to be cloned
+				/*let _div_ = document.createElement('div');
+				_div_.className="container";
+				
+				let _img_ = document.createElement("img");
+				_img_.src="textbox.png";
+				_img_.style.width="100%";
+				_div_.appendChild(_img_);
+				
+				let charName = document.createElement("div");
+				charName.className="charName";
+				_div_.appendChild(charName);
+				
+				let text = document.createElement("div");
+				text.className="absText";
+				text.id="text";
+				_div_.appendChild(text);
+				
+				//let textboxDiv = document.getElementById("Textboxes");
+				let newTextboxDiv = document.createElement('div');
+				newTextboxDiv.id="Textboxes";*/
+				
+				let thisPartDiv = document.createElement('div');
+				let h3 = document.createElement('h3');
+				//console.log(partNum);
+				h3.innerText="Part "+(p+1);
+				//partNum++;
+				thisPartDiv.appendChild(h3);
+				
+				for(var i=0;i<structuredLines.length;i++)
 				{
-					lastSpeakerName=structuredLines[i][1];
+					if (structuredLines[i][0] == opcode.SPEAKER)
+					{
+						lastSpeakerName=structuredLines[i][1];
+					}
+					else if (structuredLines[i][0] == opcode.MSG)
+					{
+						/*let newTextbox = _div_.cloneNode(true);
+						//console.log(newTextbox);
+						newTextbox.getElementsByClassName("absText")[0].innerText = structuredLines[i][1]
+						newTextbox.getElementsByClassName("charName")[0].innerText = lastSpeakerName;
+						newTextboxDiv.appendChild(newTextbox);*/
+						
+						let p = document.createElement('p');
+						if (lastSpeakerName == "")
+							p.innerText = structuredLines[i][1];
+						else
+							p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
+						thisPartDiv.appendChild(p);
+					}
+					/*else if (structuredLines[i][0] == opcode.MSGBOXTRANSITION)
+					{
+						let p = document.createElement('p');
+						p.innerText = "(newTextbox)";
+						simpleTextDiv.appendChild(p);
+					}*/
 				}
-				else if (structuredLines[i][0] == opcode.MSG)
-				{
-					/*let newTextbox = _div_.cloneNode(true);
-					//console.log(newTextbox);
-					newTextbox.getElementsByClassName("absText")[0].innerText = structuredLines[i][1]
-					newTextbox.getElementsByClassName("charName")[0].innerText = lastSpeakerName;
-					newTextboxDiv.appendChild(newTextbox);*/
-					
-					let p = document.createElement('p');
-					if (lastSpeakerName == "")
-						p.innerText = structuredLines[i][1];
-					else
-						p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
-					NewSimpleTextDiv.appendChild(p);
-				}
-				/*else if (structuredLines[i][0] == opcode.MSGBOXTRANSITION)
-				{
-					let p = document.createElement('p');
-					p.innerText = "(newTextbox)";
-					simpleTextDiv.appendChild(p);
-				}*/
-			}
-			//Now replace the old div...
-			/*let textboxDiv = document.getElementById("Textboxes");
-			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
-			
-			let simpleTextDiv = document.getElementById("verySimpleText")
-			simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
-			//Init phaser
-			//jk I don't want it automatic anymore
-		})
+				NewSimpleTextDiv.appendChild(thisPartDiv);
+				//Now replace the old div...
+				/*let textboxDiv = document.getElementById("Textboxes");
+				textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
+				
+				//Init phaser
+				//jk I don't want it automatic anymore
+				currentEpisodeAsOpcodes.push(structuredLines);
+			//})
+		//})
+		}
+		let simpleTextDiv = document.getElementById("verySimpleText")
+		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
 	}
+	
 	function initPhaser()
 	{
 		game = new Phaser.Game(config);
@@ -717,23 +767,59 @@ tr:nth-child(even) {
 		}
 	}
 	
+	
+	function getRoutableKeyString(type,chapter,episode)
+	{
+		return type+'-'+chapter+'-'+episode
+	}
+	function getKeysFromRoutableString(s)
+	{
+		return s.split('-');
+	}
+	
 	function onChapterSelected(value)
 	{
 		console.log(value);
-		let [type,chapter,episode] = value.split('-');
-		run(listOfChapters[type][chapter]['episodes'][episode]['begin'])
+		let [type,chapter,episode] = getKeysFromRoutableString(value)
+		run(listOfChapters[type][chapter]['episodes'][episode],value)
 		document.getElementById("startButton").disabled = false
+	}
+	function goToNextEpisode()
+	{
+		let value = curEpKey;
+		console.log(value);
+		let [type,chapter,episode] = getKeysFromRoutableString(value)
+		episode++;
+		if (listOfChapters[type][chapter]['episodes'][episode])
+		{
+			run(listOfChapters[type][chapter]['episodes'][episode],getRoutableKeyString(type,chapter,episode))
+			return true;
+		}
+		else
+		{
+			chapter++;
+			episode = 0;
+		}
+		
+		if (listOfChapters[type][chapter]['episodes'][episode])
+		{
+			run(listOfChapters[type][chapter]['episodes'][episode],getRoutableKeyString(type,chapter,episode))
+			return true;
+		}
+		
+		return false;
 	}
 	
 	function appendFromij(i,j,name,letter)
 	{
 		return {
 			name:  name+' '+i+'-'+j,
-			begin: i+'-'+j+'-1'+letter+'.txt',
-			end:   i+'-'+j+'-2'+letter+'.txt',
+			parts: [i+'-'+j+'-1'+letter+'.txt',
+					i+'-'+j+'-2'+letter+'.txt'],
 		}
 	}
 	
+	//name field is structured like type-chapter-episode
 	listOfChapters={
 		'main':[],
 		'event':[],
@@ -785,7 +871,7 @@ tr:nth-child(even) {
 		let prologue = []
 		for(i=0;i<12;i++)
 		{
-			prologue.push({name:"Start"+i,begin:'startavg/Start'+i+".txt"});
+			prologue.push({name:"Start"+i,parts:['startavg/Start'+i+".txt"]});
 		}
 		listOfChapters['event'].push({name:"Prologue",episodes:prologue});
 		/*
@@ -836,7 +922,7 @@ tr:nth-child(even) {
 		   "8.txt", "801.txt", "802.txt", "803.txt", "804.txt", "805.txt", "806.txt", 
 		   "807.txt", "808.txt", "9.txt"]
 		for (i=0;i<knownFiles.length;i++)
-			tDollEpisodes.push({name:knownFiles[i],begin:'skin/'+knownFiles[i]});
+			tDollEpisodes.push({name:knownFiles[i],parts:['skin/'+knownFiles[i]]});
 		listOfChapters['side'].push({name:"Skin Stories",episodes:tDollEpisodes});
 		
 		
@@ -888,7 +974,7 @@ tr:nth-child(even) {
 				for(j=0;j<curChapter.length;j++)
 				{
 					let option = _option_.cloneNode(false);
-					option.value=key+'-'+i+'-'+j;
+					option.value=getRoutableKeyString(key,i,j)
 					option.innerText=curChapter[j]['name'];
 					select.appendChild(option);
 				}
@@ -929,12 +1015,13 @@ tr:nth-child(even) {
 </script>
 <body>
 	<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
+	<!--<h2>...And a way to read the game dialogue.</h2>-->
 	<div id='chapterSelect'>
 		<div id='head'>
 			<a href="#" onclick="showSelectedEpisodes('mainEpisodes');return false;">Main Story Chapters</a>
 			<a href="#" onclick="showSelectedEpisodes('eventEpisodes');return false;">Story Events</a>
-			<a href="#" onclick="showSelectedEpisodes('sideEpisodes');return false;">Crossover Events</a>
-			<a href="#" onclick="showSelectedEpisodes('crossoverEpisodes');return false;">Side Stories</a>
+			<a href="#" onclick="showSelectedEpisodes('sideEpisodes');return false;">Side Stories</a>
+			<a href="#" onclick="showSelectedEpisodes('crossoverEpisodes');return false;">Crossover Stories</a>
 			<a href="#" onclick="return false;">T-Doll Dialogue (coming eventually)</a>
 		</div>
 		<div id="Episodes">
@@ -948,27 +1035,29 @@ tr:nth-child(even) {
 	<!--<h2><a href="#Textboxes">Mobile devices are stupid and the canvas absorbs touch, so click here to jump to the part without the canvas</a></h2>-->
 	<!---->
 
-        <button id="startButton" onclick="initPhaser()" disabled>Start interactive interpreter (It's like playing the game!)</button>
-		<p id="curIndexDebug"></p>
-		<div id="phaser"></div>
-		<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
-		<div id='myDIV' style="display: none;">
-			<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
-			<button disabled>Re-run scene with these opcodes (Unimplemented)</button>
-		</div>
-		<!--<canvas id="myCanvas" width="1280" height="720"></canvas>--><br><br>
-        <!--<h1 id="title">This is a header!</h1>-->
-		<!--<img src="textbox.png"></img>-->
-		<!--<h2><a href="#verySimpleText">Click HERE to jump to the text without any textboxes which is probably what you want anyways</a></h2>
-		<h2>Static Textboxes</h2>
-		<div id="Textboxes"></div>-->
-		<h2>Text Only (+Text Modifiers)</h2>
-		<div id="verySimpleText"></div>
-		<a href="#theTop">Back to top</a>
-		
-		<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
-		<p>Can someone please fix the horrible UI? I'm a programmer, not a designer. Please fork the source code and make a pull request.</p>
-		<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b></p>
-		<br>
-		<!--<a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot. T-Doll info, quotes, costumes, and more!</a>-->
+	<h2 id="chapterName">Chapter Name Here</h2>
+    <button id="startButton" onclick="initPhaser()" disabled>Start interactive interpreter (It's like playing the game!)</button>
+	<p id="curIndexDebug"></p>
+	<div id="phaser"></div>
+	<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
+	<div id='myDIV' style="display: none;">
+		<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
+		<button disabled>Re-run scene with these opcodes (Unimplemented)</button>
+	</div>
+	<!--<canvas id="myCanvas" width="1280" height="720"></canvas>--><br><br>
+    <!--<h1 id="title">This is a header!</h1>-->
+	<!--<img src="textbox.png"></img>-->
+	<!--<h2><a href="#verySimpleText">Click HERE to jump to the text without any textboxes which is probably what you want anyways</a></h2>
+	<h2>Static Textboxes</h2>
+	<div id="Textboxes"></div>-->
+	<hr>
+	<h2>Text Only (+Text Modifiers)</h2>
+	<div id="verySimpleText"></div>
+	<a href="#theTop">Back to top</a> <a href="#theTop" onclick="goToNextEpisode();">Go to the next cutscene</a>
+	<hr>
+	<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
+	<p>Can someone please fix the horrible UI? I'm a programmer, not a designer. Please fork the source code and make a pull request.</p>
+	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b></p>
+	<br>
+	<!--<a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot. T-Doll info, quotes, costumes, and more!</a>-->
 </body>

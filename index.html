@@ -14,7 +14,7 @@
 	
 	<!--Resources -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
+	 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">  
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--<link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -127,16 +127,17 @@ tr:nth-child(even) {
 	text-align: left;
 	width: 700px;
 	margin: 0 auto;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
-.container {
+/*.container {
   position: relative;
   text-align: center;
   color: white;
 }
 
 .charName {
-      font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   position: absolute;
   top: 5px;
   left: 16px;
@@ -149,6 +150,21 @@ tr:nth-child(even) {
   top: 45px;
   left: 16px;
   font-size: 2.2vw;
+}*/
+
+
+/*.speakerName{
+	font-weight: bold;
+}*/
+
+.storyText {
+	margin-top: 0.5ex;
+	margin-bottom: 0.5ex;
+}
+
+.storyText.speakerName {
+	margin-top: 0;
+	font-weight: bold;
 }
 
 /*
@@ -159,6 +175,7 @@ I have no idea how it works
 	position:relative;
 	overflow:hidden; /*Keep portraits within div */
 	width:700px;
+	padding-top:1rem;
 }
 .storydoll{
 	width:500px; /*Why is width 500px? */
@@ -526,10 +543,6 @@ I have no idea how it works
 			//input.touch only works on mobile devices. So it will break on desktop. reeeee
 			//game.input.touch.capture = false;
 			
-			//var img = this.make.image({ x:game.config.width/2, y:game.config.height/2, key:'test',add:true })
-			//img.displayWidth = game.config.width
-			//img.displayHeight= game.config.height
-			
 			//GFL, in all of it's genius, uses 1024x1024 images. With black borders.
 			/*bgActor = this.make.image({ x:game.config.width/2, y:game.config.height/2, add:true });
 			bgActor.displayWidth = 1024
@@ -537,6 +550,11 @@ I have no idea how it works
 			bgActor = this.add.image(game.config.width/2,game.config.height/2);
 			bgActor.texture = Phaser.Cache.DEFAULT;
 			bgActor.setDepth(0);
+			
+			/*var img = this.make.image({ x:game.config.width/2, y:game.config.height/2, key:'test',add:true })
+			img.displayWidth = game.config.width
+			img.displayHeight= game.config.height
+			img.setDepth(1);*/
 			
 			//Depth 2 is reserved for character portraits!
 			
@@ -559,7 +577,7 @@ I have no idea how it works
 			document.getElementById("DebugTextArea").value = structuredLinesToString(currentEpisodeAsOpcodes[curEpisodePart]);
 			
 			vntext = new VNText4(this,'',800,13,currentEpisodeAsOpcodes[curEpisodePart]);
-			vntext.textActor.x = 240;
+			vntext.textActor.x = 242;
 			vntext.textActor.y = game.config.height-160
 			vntext.textActor.setDepth(4);
 			vntext.advance();
@@ -704,6 +722,7 @@ I have no idea how it works
 					else
 					{
 						structuredLines.push([OPCODES.NOPORTRAIT])
+						structuredLines.push([OPCODES.SPEAKER,""])
 						//numPortraits=0;
 					}
 					cmds = sliceAndRemove(cmds,charTagStart,charTagEnd+1);
@@ -837,7 +856,7 @@ I have no idea how it works
 				
 				let lastSpeakerName = "";
 				let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
-				let didBGOrPortraitChange = false;
+				let didBGOrPortraitOrNameChange = false;
 				let shownPortraits = []
 				
 				let fancyDisplayType = true;
@@ -850,6 +869,7 @@ I have no idea how it works
 					{
 						case OPCODES.SPEAKER:
 							lastSpeakerName=structuredLines[i][1];
+							didBGOrPortraitOrNameChange = true
 							break;
 						case OPCODES.PORTRAIT:
 							console.log(portraitStructToString(structuredLines[i]))
@@ -863,7 +883,7 @@ I have no idea how it works
 								{
 									console.log("Pushed new portrait with idx "+idx);
 									shownPortraits.push('pic/'+PORTRAITS[name][type]+'.png');
-									didBGOrPortraitChange = true;
+									didBGOrPortraitOrNameChange = true;
 								}
 								else
 								{
@@ -874,14 +894,14 @@ I have no idea how it works
 									{
 										console.log("Portrait replaced "+shownPortraits[idx] +" -> "+newPortrait)
 										shownPortraits[idx]=newPortrait;
-										didBGOrPortraitChange = true;
+										didBGOrPortraitOrNameChange = true;
 									}
 								}
 							}
 							break;
 						case OPCODES.NOPORTRAIT:
 							shownPortraits = [];
-							didBGOrPortraitChange = true;
+							didBGOrPortraitOrNameChange = true;
 							break;
 						case OPCODES.BG:
 							let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
@@ -893,7 +913,7 @@ I have no idea how it works
 							{
 								console.log(lastBGUsed + " -> "+newBG)
 								lastBGUsed = newBG
-								didBGOrPortraitChange = true;
+								didBGOrPortraitOrNameChange = true;
 							}
 							break;
 						case OPCODES.MSG:
@@ -901,7 +921,7 @@ I have no idea how it works
 							if (true)
 							{
 								//console.log("aaa");
-								if (didBGOrPortraitChange)
+								if (didBGOrPortraitOrNameChange)
 								{
 									let storyBox = document.createElement('div');
 									storyBox.classList.add('storyImg');
@@ -920,13 +940,22 @@ I have no idea how it works
 										storyBox.appendChild(portraitImg);
 									}
 									thisPartDiv.appendChild(storyBox);
-									didBGOrPortraitChange = false;
+									
+									if (lastSpeakerName != "")
+									{
+										let p = document.createElement('p');
+										p.innerHTML = lastSpeakerName;
+										//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
+										p.classList.add("storyText");
+										p.classList.add("speakerName");
+										thisPartDiv.appendChild(p);
+									}
+									
+									didBGOrPortraitOrNameChange = false;
 								}
 								let p = document.createElement('p');
-								if (lastSpeakerName == "")
-									p.innerText = structuredLines[i][1];
-								else
-									p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
+								p.classList.add('storyText')
+								p.innerText = structuredLines[i][1];
 								thisPartDiv.appendChild(p);
 							}
 							else
@@ -983,7 +1012,7 @@ I have no idea how it works
 	{
 		game = new Phaser.Game(config);
 		let button = document.getElementById("startButton")
-		button.disabled = true
+		button.classList.add("disabled");
 		button.innerText = "started!"
 		
 	}
@@ -1016,7 +1045,8 @@ I have no idea how it works
 		console.log(value);
 		let [type,chapter,episode] = getKeysFromRoutableString(value)
 		run(listOfChapters[type][chapter]['episodes'][episode],value)
-		document.getElementById("startButton").disabled = false
+		if (game == undefined)
+			document.getElementById("startButton").classList.remove('disabled');
 	}
 	function goToNextEpisode()
 	{
@@ -1340,7 +1370,7 @@ I have no idea how it works
 	<!---->
 
 	<h2 id="chapterName">Chapter Name Here</h2>
-    <button id="startButton" onclick="initPhaser()" disabled>Start interactive interpreter (It's like playing the game!)</button>
+    <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn disabled">Start interactive interpreter (It's like playing the game!)</a>
 	<p id="curIndexDebug"></p>
 	<div id="phaser"></div>
 	<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
@@ -1372,7 +1402,7 @@ I have no idea how it works
     </label>
   </div>
 	<div id="verySimpleText"></div>
-	<a href="#theTop">Back to top</a> <a href="#theTop" onclick="goToNextEpisode();">Go to the next cutscene</a>
+	<a class="waves-effect waves-light btn" href="#theTop"><i class="material-icons left">vertical_align_top</i>Back to top</a> <a class="waves-effect waves-light btn" href="#theTop" onclick="goToNextEpisode();"><i class="material-icons left">chevron_right</i>Go to the next cutscene</a>
 	<hr>
 	<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
 	<p>Can someone please fix the horrible UI? I'm a programmer, not a designer. Please fork the source code and make a pull request.</p>

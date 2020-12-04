@@ -1,9 +1,23 @@
 <!doctype html>
 <head>
-	 <meta charset="utf-8"/>
-    <title>GFL cutscene interpreter</title>
-     <link rel="preconnect" href="https://fonts.gstatic.com">
-     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
+	<meta charset="utf-8"/>
+	<title>GFL cutscene interpreter</title>
+	
+	<!--For discord description -->
+	<meta property="og:title" content="Girls' Frontline Cutscene Interpreter" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://gfl.amaryllisworks.pw" />
+	<!--<meta property="og:image" content="http://my.site.com/images/thumb.png" />-->
+	<meta property="og:description" content="Play back cutscenes in the browser" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!--Resources -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--<link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <style type="text/css">
 body
@@ -27,7 +41,7 @@ th {
 	background-color: purple;
 }
 
-#head, #foot {
+/*#head, #foot {
 	height: 6%;
 	min-height: 25px;
 	width: 100%;
@@ -53,6 +67,37 @@ th {
 #head a.active {
   background-color: #4CAF50;
   color: white;
+}*/
+
+.tabs {
+    display:-webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.tabs .tab a {
+  color: rgba(38, 166, 154, 0.7);
+  /*Custom Text Color*/
+}
+
+.tabs .tab a:hover {
+  color:#26a69a;
+  /*Custom Color On Hover*/
+}
+.tabs .tab a.active {
+	color:#2196f3;
+}
+
+.tabs .tab a:focus.active {
+  color:#26a69a;
+  /*Custom Text Color While Active*/
+  background-color: rgba(38, 166, 154, 0.2);
+  /*Custom Background Color While Active*/
+}
+
+.tabs .indicator {
+  background-color:#26a69a;
+  /*Custom Color Of Indicator*/
 }
 
 
@@ -80,6 +125,8 @@ tr:nth-child(even) {
 
 #verySimpleText{
 	text-align: left;
+	width: 700px;
+	margin: 0 auto;
 }
 
 .container {
@@ -103,8 +150,34 @@ tr:nth-child(even) {
   left: 16px;
   font-size: 2.2vw;
 }
+
+/*
+Blatantly stolen from gfl.zzzzz.kr 
+I have no idea how it works
+*/
+.storyImg{
+	position:relative;
+	overflow:hidden; /*Keep portraits within div */
+	width:700px;
+}
+.storydoll{
+	width:500px; /*Why is width 500px? */
+	position: absolute;
+	bottom: -30%;
+}
+.storydoll.one{
+	left:15%; /*???*/
+}
+.storydoll.saying{
+	filter: brightness(100%);
+	z-index: 100;
+}
+
 </style>
 <script type="text/javascript"></script>
+<!-- tfw no bandwidth -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--<script type="text/javascript" src="materialize.js"></script>-->
 <!--<script src="phaser.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
 <script>
@@ -134,7 +207,7 @@ tr:nth-child(even) {
 
 	/* opcode dictionary
 		Seriously who designed this, can't you use normal fucking opcodes?
-		XXX() - Set portrait. XXX is character sprite. Can have multiple of these. Actually does not need to be the first opcode.
+		XXX() - Set portrait. XXX is character sprite. Can have multiple of these. Actually does not need to be the first OPCODES
 		; - Unknown purpose. Could be used for switching highlights? Seems to separate two portrait opcodes.
 		<BGM> - Set BGM
 		<BIN> - Set background
@@ -154,7 +227,7 @@ tr:nth-child(even) {
 		console.log(param);
 	}
 	
-	const opcode = {
+	const OPCODES = {
 		BGM : 1,
 		BG : 2,
 		SPEAKER : 3,
@@ -164,7 +237,9 @@ tr:nth-child(even) {
 		MSGBOXTRANSITION : 7,
 		SETMASKEDPORTRAIT : 8
 	}
-	//For JSON structured
+	
+	//For JSON structured or making your own
+	//Pro tip: use opcode2string.indexOf(s) to get the opcode number
 	const opcode2string = [
 		'none',
 		'bgm',
@@ -178,10 +253,10 @@ tr:nth-child(even) {
 	]
 	
 	const tag2opcode = {
-		"Speaker":opcode.SPEAKER,
-		"BIN":opcode.BG,
-		"BGM":opcode.BGM,
-		"通讯框":opcode.SETMASKEDPORTRAIT,
+		"Speaker":OPCODES.SPEAKER,
+		"BIN":OPCODES.BG,
+		"BGM":OPCODES.BGM,
+		"通讯框":OPCODES.SETMASKEDPORTRAIT,
 	}
 	
 	const backgrounds = {
@@ -194,7 +269,7 @@ tr:nth-child(even) {
 		15: "室内战斗",
 	}
 	
-	const portraits = {
+	const PORTRAITS = {
 		"NPC-Kalin":[
 			"special/版娘",
 			"special/版娘-1",
@@ -208,8 +283,17 @@ tr:nth-child(even) {
 		]
 	}
 	
+	//For CSS
+	var int2str = ['zero','one',  'two',   'three','four',  'five', 'six',  'seven',  'eight', 'nine']
+	var int2strPos = ['N','first','second','third','fourth','fifth','sixth','seventh','eighth','ninth']
+	
 	//I moved everything to gfl subdomain so it's fine now
 	//const portraitWebserver = "http://gfl.amaryllisworks.pw/pic/"
+	
+	function portraitStructToString(p)
+	{
+		return "idx: "+p[1]+" | name: "+p[2]+" | type: "+p[3]
+	}
 	
 	//Don't care if it's all over the place. Fix it yourself. If this was SM I'd be using broadcasts anyways
 	var nameActor;
@@ -218,29 +302,28 @@ tr:nth-child(even) {
 	function loadBG(runtime, num)
 	{
 		console.log("Loading "+num+" | "+backgrounds[num])
-		runtime.load.once('complete',function() { bgActor.setTexture(num);bgActor.displayWidth = 1280;bgActor.displayHeight= 1280; },runtime)
+		runtime.load.once('complete',function() { bgActor.setTexture(num);bgActor.displayWidth = 1280;bgActor.displayHeight= 720; },runtime)
 		runtime.load.image(num,'avgtexture/'+backgrounds[num]+'.png');
 		runtime.load.start();
 	}
 	
 	//A pool of portraits since there's gonna be more than one
 	var portraitCollection = []
-	function loadPortrait(runtime,name,type)
+	function loadPortrait(runtime,idx,name,type)
 	{
-		if (portraits[name] != undefined && portraits[name][type] != undefined)
+		if (PORTRAITS[name] != undefined && PORTRAITS[name][type] != undefined)
 		{
 			let keyedPortrait=name+'-'+type;
-			let fileName = portraits[name][type]+'.png'
+			let fileName = PORTRAITS[name][type]+'.png'
 			console.log("Loading "+fileName);
-			if (portraitCollection.length == 0)
+			if (idx > portraitCollection.length-1)
 			{
 				runtime.load.once('complete',function() { portraitCollection.push( runtime.add.image(game.config.width/2,game.config.height-100,keyedPortrait) ) } );
 			
 			}
-			//Need logic for multi portraits!
 			else
 			{
-				runtime.load.once('complete',function() { portraitCollection[0].setTexture(keyedPortrait) } );
+				runtime.load.once('complete',function() { portraitCollection[idx].setTexture(keyedPortrait) } );
 			}
 			runtime.load.image(keyedPortrait,'pic/'+fileName);
 			runtime.load.start();
@@ -320,26 +403,26 @@ tr:nth-child(even) {
 				let MsgOpcode = curMsg[0]
 				//console.log(opcode)
 				//console.log(this.curIndex);
-				//console.log(MsgOpcode == opcode.MSG);
+				//console.log(MsgOpcode == OPCODES.MSG);
 				switch(MsgOpcode) {
-					case opcode.MSG:
+					case OPCODES.MSG:
 						this.cur_len= 0
 						this.text = curMsg[1]
 						//this.text_actor:queuecommand("Check")
 						noMsgYet = false;
 						break;
-					case opcode.SPEAKER:
+					case OPCODES.SPEAKER:
 						nameActor.setText(curMsg[1]);
 						break;
-					case opcode.BG:
+					case OPCODES.BG:
 						loadBG(this.phaserRuntime,curMsg[1]);
 						break;
-					case opcode.PORTRAIT:
-						console.log(curMsg[1])
-						loadPortrait(this.phaserRuntime,curMsg[1],curMsg[2])
+					case OPCODES.PORTRAIT:
+						console.log(portraitStructToString(curMsg))
+						loadPortrait(this.phaserRuntime,curMsg[1],curMsg[2],curMsg[3])
 						break;
 					//lua junk from my message system. Just ignore it.
-					/*case opcode.FMSG:
+					/*case OPCODESFMSG:
 						this.cur_len= 0
 						this.text = this.msgTable[this.curIndex][2]()
 						//this.text_actor:queuecommand("Check")
@@ -384,7 +467,7 @@ tr:nth-child(even) {
 		}
 		no_more_text()
 		{
-			return this.msgTable.length == this.curIndex;
+			return this.curIndex >= this.msgTable.length-1;
 		}
 		skip()
 		{
@@ -423,15 +506,131 @@ tr:nth-child(even) {
 	}
 	
 	
-	var config = {
+	
+	let curEpisodePart = 0
+	class GirlsFrontlineScene extends Phaser.Scene {
+		constructor()
+		{
+			//I don't know what this does but the tutorial had it
+			super('GirlsFrontlineScene');
+		}
+		
+		 preload()
+		{
+			//this.load.image('test','test.png');
+			this.load.image('textbox','textbox.png');
+		}
+		
+		create()
+		{
+			//input.touch only works on mobile devices. So it will break on desktop. reeeee
+			//game.input.touch.capture = false;
+			
+			//var img = this.make.image({ x:game.config.width/2, y:game.config.height/2, key:'test',add:true })
+			//img.displayWidth = game.config.width
+			//img.displayHeight= game.config.height
+			
+			//GFL, in all of it's genius, uses 1024x1024 images. With black borders.
+			/*bgActor = this.make.image({ x:game.config.width/2, y:game.config.height/2, add:true });
+			bgActor.displayWidth = 1024
+			bgActor.displayHeight= 1024*/
+			bgActor = this.add.image(game.config.width/2,game.config.height/2);
+			bgActor.texture = Phaser.Cache.DEFAULT;
+			bgActor.setDepth(0);
+			
+			//Depth 2 is reserved for character portraits!
+			
+			imageActor = this.make.image({
+				x:game.config.width /2,
+				y:game.config.height-125,
+				//scale:1,
+				key:'textbox',
+				add:true
+			})
+			imageActor.scaleY = 1
+			imageActor.setDepth(3);
+			
+			//var blocks = this.add.group({ key: 'block', repeat: 139, setScale: { x: 0, y: 0 } });
+			
+			nameActor = this.add.text(240,500,'', { fontFamily: 'Noto Sans KR', fontSize: 30, color: '#ffffff' });
+			nameActor.setDepth(4);
+			
+			//TODO
+			document.getElementById("DebugTextArea").value = structuredLinesToString(currentEpisodeAsOpcodes[curEpisodePart]);
+			
+			vntext = new VNText4(this,'',800,13,currentEpisodeAsOpcodes[curEpisodePart]);
+			vntext.textActor.x = 240;
+			vntext.textActor.y = game.config.height-160
+			vntext.textActor.setDepth(4);
+			vntext.advance();
+			
+			this.input.on('pointerdown',function(){
+				if (vntext.no_more_text())
+				{
+					console.log("Already hit the end!!!!");
+					//'this' isn't passed in... No idea what I'm gonna do
+					//If you spam click it will crash because you're removing and trying to add multiple scenes at the same time
+					//this.input.onInputDown.removeAll();
+					if (curEpisodePart < currentEpisodeAsOpcodes.length)
+					{
+						curEpisodePart++;
+						game.scene.remove('GirlsFrontlineScene');
+						game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
+					}
+					else
+					{
+						//Oh no
+						goToNextEpisode()
+					}
+					
+				}
+				else
+				{
+					if (vntext.is_finished())
+					{
+						vntext.advance();
+					}
+					else
+					{
+						vntext.skip();
+					}
+				}
+			},vntext)
+			//Hey look it's just like StepMania
+			/*this.make.text({
+				x: 100,
+				y: 100,
+				text: 'Phaser III',
+				style: {
+					fontSize: '48px',
+					fontFamily: 'Arial',
+					color: '#ffffff',
+					metrics: {
+						ascent: 45,
+						descent: 10,
+						fontSize: 55
+					}
+				}
+			})*/
+		}
+		
+		//I'm not even using this lmao
+		 update()
+		{
+			
+		}
+	}
+	
+	let config = {
 		type: Phaser.WEBGL,
 		width: 1280,
 		height: 720,
 		parent: 'phaser',
-		scene: {
+		/*scene: {
 			preload: preload,
 			create: create,
-		}
+		}*/
+		scene: [GirlsFrontlineScene]
 	};
 	
 	//phaser
@@ -440,95 +639,9 @@ tr:nth-child(even) {
 	var imageActor;
 	var vntext;
 	
-	function preload()
-	{
-		//this.load.image('test','test.png');
-		this.load.image('textbox','textbox.png');
-	}
+
 	
-	function create()
-	{
-		//input.touch only works on mobile devices. So it will break on desktop. reeeee
-		//game.input.touch.capture = false;
-		
-		//var img = this.make.image({ x:game.config.width/2, y:game.config.height/2, key:'test',add:true })
-		//img.displayWidth = game.config.width
-		//img.displayHeight= game.config.height
-		
-		//GFL, in all of it's genius, uses 1024x1024 images. With black borders.
-		/*bgActor = this.make.image({ x:game.config.width/2, y:game.config.height/2, add:true });
-		bgActor.displayWidth = 1024
-		bgActor.displayHeight= 1024*/
-		bgActor = this.add.image(game.config.width/2,game.config.height/2);
-		bgActor.texture = Phaser.Cache.DEFAULT;
-		bgActor.setDepth(0);
-		
-		//Depth 2 is reserved for character portraits!
-		
-		imageActor = this.make.image({
-			x:game.config.width /2,
-			y:game.config.height-125,
-			//scale:1,
-			key:'textbox',
-			add:true
-		})
-		imageActor.scaleY = 1
-		imageActor.setDepth(3);
-		
-		//var blocks = this.add.group({ key: 'block', repeat: 139, setScale: { x: 0, y: 0 } });
-		
-		nameActor = this.add.text(240,500,'', { fontFamily: 'Noto Sans KR', fontSize: 30, color: '#ffffff' });
-		nameActor.setDepth(4);
-		
-		//TODO
-		vntext = new VNText4(this,'',800,13,currentEpisodeAsOpcodes[0]);
-		vntext.textActor.x = 240;
-		vntext.textActor.y = game.config.height-160
-		vntext.textActor.setDepth(4);
-		vntext.advance();
-		
-		this.input.on('pointerdown',function(){
-			if (vntext.no_more_text())
-			{
-				console.log("Already hit the end!!!!");
-			}
-			else
-			{
-				if (vntext.is_finished())
-				{
-					vntext.advance();
-				}
-				else
-				{
-					vntext.skip();
-				}
-			}
-		},vntext)
-		//Hey look it's just like StepMania
-		/*this.make.text({
-			x: 100,
-			y: 100,
-			text: 'Phaser III',
-			style: {
-				fontSize: '48px',
-				fontFamily: 'Arial',
-				color: '#ffffff',
-				metrics: {
-				    ascent: 45,
-				    descent: 10,
-				    fontSize: 55
-				}
-			}
-		})*/
-	}
-	
-	//I'm not even using this lmao
-	function update()
-	{
-		
-	}
-	
-	function convertTextToOpcodes(out)
+	function convertGFLTextToOpcodes(out)
 	{
 		//console.log(out);
 		var lines = out.split(/\r?\n/);
@@ -561,7 +674,7 @@ tr:nth-child(even) {
 			//const tags = [
 			if (cmds.includes("<通讯框>"))
 			{
-				structuredLines.push([opcode.SETMASKEDPORTRAIT])
+				structuredLines.push([OPCODES.SETMASKEDPORTRAIT])
 				cmds.replace("<通讯框>","");
 			}
 			
@@ -583,14 +696,15 @@ tr:nth-child(even) {
 					//Ignore empty sprite IDs, they do nothing.
 					if (charSpr != "")
 					{
+						structuredLines.push([OPCODES.PORTRAIT,numPortraits,charID,charSpr])
 						numPortraits++;
-						structuredLines.push([opcode.PORTRAIT,charID,charSpr])
 					}
 					//I think speaker name gets cleared if it's ()? Not sure
 					//Portrait gets cleared
 					else
 					{
-						structuredLines.push([opcode.NOPORTRAIT])
+						structuredLines.push([OPCODES.NOPORTRAIT])
+						//numPortraits=0;
 					}
 					cmds = sliceAndRemove(cmds,charTagStart,charTagEnd+1);
 				}
@@ -605,11 +719,11 @@ tr:nth-child(even) {
 			if (text)
 			{
 				text.split("+").forEach(msg => {
-					structuredLines.push([opcode.MSG,msg])
+					structuredLines.push([OPCODES.MSG,msg])
 				})
 			}
 			//open/close msgbox
-			structuredLines.push([opcode.MSGBOXTRANSITION])
+			structuredLines.push([OPCODES.MSGBOXTRANSITION])
 		}
 		return structuredLines;
 	}
@@ -628,9 +742,36 @@ tr:nth-child(even) {
 		//return out;
 	}*/
 	
+	function structuredLinesToString(structuredLines)
+	{
+		let s = "";
+		structuredLines.forEach(line => {
+			s+=opcode2string[line[0]]+';'
+			/*for(var i=1;i<line.length;i++)
+				s+=line[i]*/
+			s+=line.slice(1).join([separator = ';'])
+			s+='\r\n'
+			//s+=line.toString()+"\r\n";
+		})
+		return s;
+	}
+	function stringToStructuredLines(s)
+	{
+		var lines = s.split(/\r?\n/);
+		let structuredLines = [];
+		for(i=0;i<lines.length;i++)
+		{
+			let newMsg = lines[i].split(';')
+			newMsg[0] = opcode2string.indexOf(newMsg[0])
+			structuredLines.push(newMsg)
+		}
+		return structuredLines;
+	}
+	
 	async function run(episode,curEpKey_)
 	{
 		currentEpisodeAsOpcodes = [];
+		curEpisodePart = 0;
 		curEpKey = curEpKey_;
 		
 		document.getElementById('chapterName').innerText = episode['name'];
@@ -657,21 +798,13 @@ tr:nth-child(even) {
 			//.then((out) => {
 			//fetchTextFile(fileName).then(out => {
 				//console.log('got '+fileName);
-				let structuredLines = convertTextToOpcodes(out);
+				let structuredLines = convertGFLTextToOpcodes(out);
 				
 				//console.log(structuredLines)
-				let s = "";
-				structuredLines.forEach(line => {
-					s+=opcode2string[line[0]]+','
-					for(var i=1;i<line.length;i++)
-						s+=line[i]
-					s+='\r\n'
-					//s+=line.toString()+"\r\n";
-				})
-				document.getElementById("DebugTextArea").value = s;
+
+				//document.getElementById("DebugTextArea").value = structuredLinesToString(s)
 				
 				
-				let lastSpeakerName = "";
 				
 				//It has underscores because it's going to be cloned
 				/*let _div_ = document.createElement('div');
@@ -702,47 +835,148 @@ tr:nth-child(even) {
 				//partNum++;
 				thisPartDiv.appendChild(h3);
 				
+				let lastSpeakerName = "";
+				let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
+				let didBGOrPortraitChange = false;
+				let shownPortraits = []
+				
+				let fancyDisplayType = true;
+				
 				for(var i=0;i<structuredLines.length;i++)
 				{
-					if (structuredLines[i][0] == opcode.SPEAKER)
+					let opcode = structuredLines[i][0]
+					console.log(structuredLines[i]);
+					switch (opcode)
 					{
-						lastSpeakerName=structuredLines[i][1];
+						case OPCODES.SPEAKER:
+							lastSpeakerName=structuredLines[i][1];
+							break;
+						case OPCODES.PORTRAIT:
+							console.log(portraitStructToString(structuredLines[i]))
+							let idx = structuredLines[i][1]
+							let name = structuredLines[i][2]
+							let type = structuredLines[i][3]
+							if (PORTRAITS[name] && PORTRAITS[name][type])
+							{
+								//console.log(shownPortraits.length);
+								if (structuredLines[i][1] > shownPortraits.length-1)
+								{
+									console.log("Pushed new portrait with idx "+idx);
+									shownPortraits.push('pic/'+PORTRAITS[name][type]+'.png');
+									didBGOrPortraitChange = true;
+								}
+								else
+								{
+									let newPortrait = 'pic/'+PORTRAITS[name][type]+'.png';
+									if (newPortrait == shownPortraits[idx])
+										console.log("New portrait set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
+									else
+									{
+										console.log("Portrait replaced "+shownPortraits[idx] +" -> "+newPortrait)
+										shownPortraits[idx]=newPortrait;
+										didBGOrPortraitChange = true;
+									}
+								}
+							}
+							break;
+						case OPCODES.NOPORTRAIT:
+							shownPortraits = [];
+							didBGOrPortraitChange = true;
+							break;
+						case OPCODES.BG:
+							let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
+							if (newBG == lastBGUsed)
+							{
+								console.log("New BG set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
+							}
+							else
+							{
+								console.log(lastBGUsed + " -> "+newBG)
+								lastBGUsed = newBG
+								didBGOrPortraitChange = true;
+							}
+							break;
+						case OPCODES.MSG:
+							//Spawn new BG with speaker and portrait here.
+							if (true)
+							{
+								//console.log("aaa");
+								if (didBGOrPortraitChange)
+								{
+									let storyBox = document.createElement('div');
+									storyBox.classList.add('storyImg');
+									let bgImage = document.createElement('img');
+									bgImage.style = "width:100%;position:relative;z-index:";
+									bgImage.src = lastBGUsed;
+									storyBox.appendChild(bgImage);
+									for(var j=0;j<shownPortraits.length;j++)
+									{
+										console.assert(shownPortraits[j]);
+										let portraitImg = document.createElement('img');
+										portraitImg.src = shownPortraits[j];
+										portraitImg.classList.add("storydoll");
+										portraitImg.classList.add(int2strPos[j+1]);
+										portraitImg.classList.add(int2str[shownPortraits.length]);
+										storyBox.appendChild(portraitImg);
+									}
+									thisPartDiv.appendChild(storyBox);
+									didBGOrPortraitChange = false;
+								}
+								let p = document.createElement('p');
+								if (lastSpeakerName == "")
+									p.innerText = structuredLines[i][1];
+								else
+									p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
+								thisPartDiv.appendChild(p);
+							}
+							else
+							{
+								let p = document.createElement('p');
+								if (lastSpeakerName == "")
+									p.innerText = structuredLines[i][1];
+								else
+									p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
+								thisPartDiv.appendChild(p);
+							}
+							break;
+						default:
+							//console.log("unknown OPCODES..");
 					}
-					else if (structuredLines[i][0] == opcode.MSG)
-					{
-						/*let newTextbox = _div_.cloneNode(true);
-						//console.log(newTextbox);
-						newTextbox.getElementsByClassName("absText")[0].innerText = structuredLines[i][1]
-						newTextbox.getElementsByClassName("charName")[0].innerText = lastSpeakerName;
-						newTextboxDiv.appendChild(newTextbox);*/
-						
-						let p = document.createElement('p');
-						if (lastSpeakerName == "")
-							p.innerText = structuredLines[i][1];
-						else
-							p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
-						thisPartDiv.appendChild(p);
-					}
-					/*else if (structuredLines[i][0] == opcode.MSGBOXTRANSITION)
-					{
-						let p = document.createElement('p');
-						p.innerText = "(newTextbox)";
-						simpleTextDiv.appendChild(p);
-					}*/
 				}
 				NewSimpleTextDiv.appendChild(thisPartDiv);
 				//Now replace the old div...
 				/*let textboxDiv = document.getElementById("Textboxes");
 				textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
 				
-				//Init phaser
-				//jk I don't want it automatic anymore
 				currentEpisodeAsOpcodes.push(structuredLines);
+				
+				//If phaser is already init, go ahead and set the new scene
+				//...By destroying the old one and recreating it.
+				if (game != undefined)
+				{
+					game.scene.remove('GirlsFrontlineScene');
+					game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
+				}
+				
 			//})
 		//})
 		}
 		let simpleTextDiv = document.getElementById("verySimpleText")
 		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
+	}
+	
+	function reRunWithNewOpcodes()
+	{
+		let lines = document.getElementById("DebugTextArea").value;
+		//console.log(lines);
+		let newStructuredLines = stringToStructuredLines(lines);
+		console.log(newStructuredLines)
+		currentEpisodeAsOpcodes[curEpisodePart] = newStructuredLines;
+		if (game != undefined)
+		{
+			game.scene.remove('GirlsFrontlineScene');
+			game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
+		}
 	}
 	
 	function initPhaser()
@@ -926,12 +1160,12 @@ tr:nth-child(even) {
 		listOfChapters['side'].push({name:"Skin Stories",episodes:tDollEpisodes});
 		
 		
-		var _table_ = document.createElement('table'),
+		/*var _table_ = document.createElement('table'),
 			_tr_ = document.createElement('tr'),
 			_th_ = document.createElement('th'),
 			_td_ = document.createElement('td'),
 			_select_ = document.createElement('select'),
-			_option_ = document.createElement('option');
+			_option_ = document.createElement('option');*/
 		
 		//var table = document.getElementById("table");
 		//let thead = document.createElement("thead");
@@ -950,35 +1184,62 @@ tr:nth-child(even) {
 		}
 		tbody.appendChild(trChapterNames);*/
 		
+		var _dropDownTrigger_ = document.createElement('a');
+		_dropDownTrigger_.href = "#";
+		_dropDownTrigger_.classList.add('dropdown-trigger');
+		_dropDownTrigger_.classList.add('btn');
+		
+		var _dropDown_ = document.createElement('ul');
+		_dropDown_.classList.add('dropdown-content');
+		
+		var _li_ = document.createElement('li'),
+			_a_ = document.createElement('a');
+		
+		//No idea what this is supposed to do.
+		_a_.href="#!";
+		
 		for (const key in listOfChapters)
 		{
 			let episodeContainer = document.getElementById(key+'Episodes')
-			let trChapterDropdowns = _tr_.cloneNode(false);
+			//let trChapterDropdowns = _tr_.cloneNode(false);
+			//let trChapterDropdowns = 
 			for(i=0;i<listOfChapters[key].length;i++)
 			{
 				//let td = _td_.cloneNode(false);
 				let flexBoxDiv = document.createElement('div');
-				let select = _select_.cloneNode(false);
+				/*let select = _select_.cloneNode(false);
 				select.setAttribute('id',"selectChapter"+i)
-				select.setAttribute('onchange','onChapterSelected(value);');
+				select.setAttribute('onchange','onChapterSelected(value);');*/
+				let dropDownTrigger = _dropDownTrigger_.cloneNode(true)
+				dropDownTrigger.setAttribute('data-target','dropdown-'+key+'-'+i)
+				dropDownTrigger.innerText=listOfChapters[key][i]['name']
+				
+				let dropdown = _dropDown_.cloneNode(true);
+				dropdown.id = 'dropdown-'+key+'-'+i;
 				
 				//Generate chapter name first..
-				let optChName = _option_.cloneNode(false);
+				/*let optChName = _option_.cloneNode(false);
 				optChName.setAttribute("selected","");
 				optChName.setAttribute("disabled","");
 				optChName.innerText=listOfChapters[key][i]['name'];
-				select.appendChild(optChName);
+				select.appendChild(optChName);*/
 				
 				//Now let's do the episodes
 				let curChapter = listOfChapters[key][i]['episodes'];
 				for(j=0;j<curChapter.length;j++)
 				{
-					let option = _option_.cloneNode(false);
+					
+					let ep = _li_.cloneNode(true);
+					ep.innerHTML = "<a href='#!' onclick=\"onChapterSelected('"+getRoutableKeyString(key,i,j)+"')\">"+curChapter[j]['name']+"</a>"
+					dropdown.appendChild(ep);
+					/*let option = _option_.cloneNode(false);
 					option.value=getRoutableKeyString(key,i,j)
 					option.innerText=curChapter[j]['name'];
-					select.appendChild(option);
+					select.appendChild(option);*/
 				}
-				flexBoxDiv.appendChild(select);
+				//flexBoxDiv.appendChild(select);
+				flexBoxDiv.appendChild(dropDownTrigger);
+				flexBoxDiv.appendChild(dropdown);
 				
 				episodeContainer.appendChild(flexBoxDiv);
 				//td.appendChild(select);
@@ -995,7 +1256,8 @@ tr:nth-child(even) {
 		return listOfChapters;
 	}
 	
-	function showSelectedEpisodes(id)
+	//materialize.js makes it irrelevant
+	/*function showSelectedEpisodes(id)
 	{
 		let episodesDivs = document.getElementById("Episodes").children;
 		for (var i = 0; i < episodesDivs.length;i++){
@@ -1005,33 +1267,75 @@ tr:nth-child(even) {
 				episodesDivs[i].style="display: none;"
 		}
 		//console.log(episodesDiv.children);
-	}
+	}*/
 	
 	window.onload=function()
 	{
 		generateTables();
-		showSelectedEpisodes('mainEpisodes');
+		
+		document.querySelectorAll('.tabs').forEach(el => {
+			var instance = M.Tabs.init(el, null);
+			//instance.updateTabIndicator();
+		});
+		
+		document.querySelectorAll('.dropdown-trigger').forEach(elems => {
+			var instances = M.Dropdown.init(elems, {constrainWidth:false});
+		});
+		//showSelectedEpisodes('mainEpisodes');
 	}
 </script>
 <body>
 	<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
 	<!--<h2>...And a way to read the game dialogue.</h2>-->
 	<div id='chapterSelect'>
-		<div id='head'>
-			<a href="#" onclick="showSelectedEpisodes('mainEpisodes');return false;">Main Story Chapters</a>
-			<a href="#" onclick="showSelectedEpisodes('eventEpisodes');return false;">Story Events</a>
-			<a href="#" onclick="showSelectedEpisodes('sideEpisodes');return false;">Side Stories</a>
-			<a href="#" onclick="showSelectedEpisodes('crossoverEpisodes');return false;">Crossover Stories</a>
-			<a href="#" onclick="return false;">T-Doll Dialogue (coming eventually)</a>
-		</div>
-		<div id="Episodes">
-			<div class="flex-container" id="mainEpisodes"></div>
-			<div class="flex-container" id="eventEpisodes"></div>
-			<div class="flex-container" id="sideEpisodes"></div>
-			<div class="flex-container" id="crossoverEpisodes"></div>
+		<div class='row'>
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#mainEpisodesWrapper">Main Story Chapters</a></li>
+					<li class="tab col s3"><a href="#eventEpisodesWrapper">Story Events</a></li>
+					<li class="tab col s3"><a href="#sideEpisodesWrapper">Side Stories</a></li>
+					<li class="tab col s3"><a href="#crossoverEpisodesWrapper">Crossover Stories</a></li>
+					<li class="tab col s3"><a href="#" onclick="return false;">T-Doll Dialogue (coming eventually)</a></li>
+					<li class="tab col s3"><a href="#customCutsceneWrapper">Write your own cutscene</a></li>
+				</ul>
+			</div>
+			<!--<a href=#modal1" class="modal-trigger" >Settings</a>-->
+
+			<!--Because materialize.js is stupid -->
+			<div class="col s12" id="mainEpisodesWrapper">
+				<div class="flex-container col s12" id="mainEpisodes"></div>
+			</div>
+			
+			<div class="col s12" id="eventEpisodesWrapper">
+				<div class="flex-container col s12" id="eventEpisodes"></div>
+			</div>
+			<div class="col s12" id="sideEpisodesWrapper">
+				<div class="flex-container col s12" id="sideEpisodes"></div>
+			</div>
+			<div class="col s12" id="crossoverEpisodesWrapper">
+				<div class="flex-container col s12" id="crossoverEpisodes"></div>
+			</div>
+			<div class="col s12" id="customCutsceneWrapper">
+				<div id="customCutscene">
+					<p>WORK IN PROGRESS</p>
+					<p>Opcode structure isn't finalized, check back later...</p>
+				</div>
+			</div>
+				
 		</div>
 		
 	</div>
+	
+	  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 	<!--<h2><a href="#Textboxes">Mobile devices are stupid and the canvas absorbs touch, so click here to jump to the part without the canvas</a></h2>-->
 	<!---->
 
@@ -1042,7 +1346,7 @@ tr:nth-child(even) {
 	<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
 	<div id='myDIV' style="display: none;">
 		<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
-		<button disabled>Re-run scene with these opcodes (Unimplemented)</button>
+		<button onclick="reRunWithNewOpcodes()">Re-run scene with these opcodes</button>
 	</div>
 	<!--<canvas id="myCanvas" width="1280" height="720"></canvas>--><br><br>
     <!--<h1 id="title">This is a header!</h1>-->
@@ -1051,7 +1355,22 @@ tr:nth-child(even) {
 	<h2>Static Textboxes</h2>
 	<div id="Textboxes"></div>-->
 	<hr>
-	<h2>Text Only (+Text Modifiers)</h2>
+	<!--<h2></h2>-->
+	<!--<form>
+	Display Style
+	<input type="radio" id="fancy" name="displayStyle" value="male">
+	<label for="fancy">Fancy</label>
+	<input type="radio" id="simple" name="displayStyle" value="female">
+	<label for="simple">Simple</label>
+	</form>-->
+	  <div class="switch">
+    <label>
+      Text Only
+      <input type="checkbox">
+      <span class="lever"></span>
+      Fancy
+    </label>
+  </div>
 	<div id="verySimpleText"></div>
 	<a href="#theTop">Back to top</a> <a href="#theTop" onclick="goToNextEpisode();">Go to the next cutscene</a>
 	<hr>

@@ -75,30 +75,7 @@ th {
     display: flex
 }
 
-.tabs .tab a {
-  color: rgba(38, 166, 154, 0.7);
-  /*Custom Text Color*/
-}
 
-.tabs .tab a:hover {
-  color:#26a69a;
-  /*Custom Color On Hover*/
-}
-.tabs .tab a.active {
-	color:#2196f3;
-}
-
-.tabs .tab a:focus.active {
-  color:#26a69a;
-  /*Custom Text Color While Active*/
-  background-color: rgba(38, 166, 154, 0.2);
-  /*Custom Background Color While Active*/
-}
-
-.tabs .indicator {
-  background-color:#26a69a;
-  /*Custom Color Of Indicator*/
-}
 
 
 .flex-container {
@@ -190,6 +167,16 @@ I have no idea how it works
 	z-index: 100;
 }
 
+#SearchResults {
+	cursor: pointer;
+	display: block;
+	text-align: left;
+}
+/*lol */
+.collection-item.waves-effect {
+	display: inherit;
+}
+
 </style>
 <script type="text/javascript"></script>
 <!-- tfw no bandwidth -->
@@ -197,6 +184,7 @@ I have no idea how it works
 <!--<script type="text/javascript" src="materialize.js"></script>-->
 <!--<script src="phaser.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
 <script>
 	/*
 	This program is free software: you can redistribute it and/or modify
@@ -243,6 +231,62 @@ I have no idea how it works
 	{
 		console.log(param);
 	}
+	
+	
+	//FOR T-DOLL DISPLAY
+	gfcolors = [
+		"#000000", //NPCs & SF - Black?
+		"0",        //Nothing has 1 stars.
+		"#adadad", //2 stars   - Grey
+		"#6bdfce", //3 stars   - Turquoise
+		"#d6e35a", //4 stars   - Green
+		"#ffb600", //5 stars   - Orange
+		"#ff6a00", //6 stars   - Orange
+		"#dfb6ff"  //EXTRAstar - Purple
+	]
+	
+	function num2stars(div, numStars)
+	{
+		var _star_ = document.createElement("i");
+		_star_.className = "material-icons";
+		
+		if (numStars < 1)
+		{
+		
+		}
+		else if (numStars == 7)
+		{
+			var star = _star_.cloneNode(false);
+			star.innerHTML = "stars"
+			star.style.color = gfcolors[7];
+			div.appendChild(star);
+		}
+		else if (numStars > 5)
+		{
+			for (var j=0;j<numStars;j++)
+			{
+				var star = _star_.cloneNode(false);
+				star.innerHTML = "star";
+				star.style.color = gfcolors[numStars];
+				div.appendChild(star);
+			}
+		}
+		else
+		{
+			for (var j=0;j<5;j++)
+			{
+				var star = _star_.cloneNode(false);
+				if (j < numStars)
+					star.innerHTML = "star";
+				else
+					star.innerHTML = "star_border";
+				star.style.color = gfcolors[numStars];
+				div.appendChild(star);
+			}
+		}
+	}
+	
+	//interpreter related
 	
 	const OPCODES = {
 		BGM : 1,
@@ -787,11 +831,22 @@ I have no idea how it works
 		return structuredLines;
 	}
 	
-	async function run(episode,curEpKey_)
+	//You're probably wondering why the fuck there's two of these functions when a routableKeyString is always passed in
+	//That's because I want to support running from an episode object without the keyString (for user stuff)
+	function runFromRoutableKeyString(value)
+	{
+		if (value == undefined)
+			value = curEpKey;
+		let [type,chapter,episode] = getKeysFromRoutableString(value)
+		run(listOfChapters[type][chapter]['episodes'][episode],value)
+	}
+	
+	async function run(episode, routableKeyString)
 	{
 		currentEpisodeAsOpcodes = [];
 		curEpisodePart = 0;
-		curEpKey = curEpKey_;
+		curEpKey = routableKeyString;
+		
 		
 		document.getElementById('chapterName').innerText = episode['name'];
 		
@@ -859,7 +914,7 @@ I have no idea how it works
 				let didBGOrPortraitOrNameChange = false;
 				let shownPortraits = []
 				
-				let fancyDisplayType = true;
+				let fancyDisplayType = document.getElementById('fancyOrNot').checked;
 				
 				for(var i=0;i<structuredLines.length;i++)
 				{
@@ -918,7 +973,7 @@ I have no idea how it works
 							break;
 						case OPCODES.MSG:
 							//Spawn new BG with speaker and portrait here.
-							if (true)
+							if (fancyDisplayType)
 							{
 								//console.log("aaa");
 								if (didBGOrPortraitOrNameChange)
@@ -1012,8 +1067,10 @@ I have no idea how it works
 	{
 		game = new Phaser.Game(config);
 		let button = document.getElementById("startButton")
-		button.classList.add("disabled");
-		button.innerText = "started!"
+		button.style.display = "none";
+		document.getElementById("interactiveInterpreterSection").style.display="";
+		//button.classList.add("disabled");
+		//button.innerText = "started!"
 		
 	}
 	/*function reset()
@@ -1044,7 +1101,7 @@ I have no idea how it works
 	{
 		console.log(value);
 		let [type,chapter,episode] = getKeysFromRoutableString(value)
-		run(listOfChapters[type][chapter]['episodes'][episode],value)
+		runFromRoutableKeyString(value)
 		if (game == undefined)
 			document.getElementById("startButton").classList.remove('disabled');
 	}
@@ -1056,7 +1113,7 @@ I have no idea how it works
 		episode++;
 		if (listOfChapters[type][chapter]['episodes'][episode])
 		{
-			run(listOfChapters[type][chapter]['episodes'][episode],getRoutableKeyString(type,chapter,episode))
+			runFromRoutableKeyString(getRoutableKeyString(type,chapter,episode))
 			return true;
 		}
 		else
@@ -1067,7 +1124,7 @@ I have no idea how it works
 		
 		if (listOfChapters[type][chapter]['episodes'][episode])
 		{
-			run(listOfChapters[type][chapter]['episodes'][episode],getRoutableKeyString(type,chapter,episode))
+			runFromRoutableKeyString(getRoutableKeyString(type,chapter,episode))
 			return true;
 		}
 		
@@ -1299,6 +1356,195 @@ I have no idea how it works
 		//console.log(episodesDiv.children);
 	}*/
 	
+	//T-Doll search shit
+	let frontlinedex = null;
+	let CharacterVoice = null;
+	
+	let dialogueKeysToEnglish = {
+		'dialogue1':"Adjutant 1",
+		'dialogue2':"Adjutant 2",
+		'dialogue3':"Adjutant 3",
+		'soulcontract':"Marriage Line",
+		'introduce':"Introduction (In the index, but usually identical to obtain)",
+		'gain':'When Obtained',
+		'allhallows':"During halloween",
+		'soulcontract':"Adjutant 4 (After Marriage)"
+	}
+	
+	function TDollInfo(dollName)
+	{
+		console.log(dollName);
+		console.assert(CharacterVoice)
+		console.log(CharacterVoice);
+		//Destroy everything in here
+		let tDollDialogue = document.getElementById('tDollDialogue')
+		tDollDialogue.innerHTML = "";
+		/*let ul = document.createElement("ul");
+		ul.className = 'collapsible'*/
+		let _div_ = document.createElement('div');
+		_div_.classList.add("card");
+		let _cardContent = document.createElement('div');
+		_cardContent.classList.add("card-content");
+		let dialogue = CharacterVoice[dollName];
+		if (dialogue)
+		{
+			Object.keys(dialogue).forEach(key => {
+				let card = _div_.cloneNode(true);
+				let cardContent = _cardContent.cloneNode(true);
+				let cardTitle = document.createElement('span');
+				cardTitle.classList.add('card-title');
+				if (dialogueKeysToEnglish[key])
+					cardTitle.innerText = dialogueKeysToEnglish[key];
+				else
+					cardTitle.innerText = key;
+				let p = document.createElement('p');
+				p.innerText=dialogue[key]
+				cardContent.appendChild(cardTitle);
+				cardContent.appendChild(p);
+				card.appendChild(cardContent);
+				tDollDialogue.appendChild(card);
+			});
+		}
+		//document.getElementById('tDollDialogue').appendChild(_div_);
+	}
+	
+	function listResults(results)
+	{
+		//console.log(results);
+			/*<li class="collection-item avatar">
+		  <img src="images/yuna.jpg" alt="" class="circle">
+		  <span class="title">Title</span>
+		  <p>First Line <br>
+		     Second Line
+		  </p>
+		  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		</li>*/
+		//Destroy everything inside the div.
+		document.getElementById("SearchResultsDiv").innerHTML = "";
+		var ul = document.createElement("ul");
+		ul.className= "collection";
+		ul.id = "SearchResults";
+		for (var i=0, n=results.length; i<n; ++i)
+		{
+			//let result = frontlinedex[results]
+			var li = document.createElement("li");
+			li.className = "collection-item avatar waves-effect"; //waves-effect waves-light
+			li.style.display = '';
+			
+			var icon = document.createElement("i");
+			icon.className = "material-icons circle red";
+			li.appendChild(icon);
+			
+			var span = document.createElement("span");
+			span.className = "title";
+			span.innerText = results[i].name;
+			li.appendChild(span);
+			
+			var p = document.createElement("p");
+			p.innerHTML = results[i].type + " <br> No." + (results[i].num>0 ? results[i].num : "?");
+			li.appendChild(p);
+			
+			//You're probably gonna say this is terrible and blah blah but T-Doll names are unique anyways
+			/*for (var j =0; j < frontlinedex.length;j++)
+			{
+				
+			}*/
+			if (results[i].internalName)
+				li.setAttribute("onclick","TDollInfo(\""+results[i].internalName+"\")")
+			
+			
+			//Handle stars
+			var secondaryContent = document.createElement("div");
+			secondaryContent.className = "secondary-content";
+			num2stars(secondaryContent,results[i].rating)
+			li.appendChild(secondaryContent);
+			
+			ul.appendChild(li);
+		}
+		
+		document.getElementById("SearchResultsDiv").appendChild(ul);
+	}
+	
+	var delayTimer;
+	function searchDolls(query)
+	{
+		clearTimeout(delayTimer);
+		delayTimer = setTimeout(function() {
+			
+			if (query == "" || query == undefined)
+			{
+				listResults(frontlinedex);
+			}
+			else
+			{
+				
+				query = query.toLowerCase();
+				/*for (var i=0, n=frontlinedex.length; i<n; ++i)
+				{
+					if ('alias' in frontlinedex[i] && query == frontlinedex[i]['alias'].toLowerCase())
+					{
+						console.log("Found alias for "+frontlinedex[i]['name']);
+						//console.log(frontlinedex[i]);
+						listResults([frontlinedex[i]]);
+						return true;
+					}
+				}*/
+				console.log("Searching for "+query);
+				
+				var results = fuse.search(query);
+				console.log("Got "+results.length + " results");
+				//I don't care if it's slow
+				listResults(Array.from(results, r => r['item']));
+			}
+		}, 300);
+	}
+	
+	function FetchTDollInfo()
+	{
+		if (frontlinedex != null && CharacterVoice != null)
+			return;
+		fetch("girlsfrontline-min.json")
+		.then(response => response.json())
+		.then(json => {
+			console.log("girlsfrontline-min loaded!");
+			console.log(json);
+			
+			frontlinedex = json;
+			
+			/*fetch("gf_flavortext.json").then(response => response.json()).then(json2 => {
+				console.log("Bonus information loaded.");
+				console.log("Injecting aliases and quotes...");
+				bonusdex = json2;
+				frontlinedex.forEach(doll => {
+					if (doll['name'] in bonusdex)
+					{
+						if ('alias' in bonusdex[doll['name']])
+							doll['alias'] = bonusdex[doll['name']]['alias']
+					}
+				})
+				console.log("Done.");
+			});*/
+			
+			fuse = new Fuse(frontlinedex, {
+				keys: ['name']
+			})
+			//fuse = new Fuse(Object.keys(frontlinedex));
+			
+
+			
+			listResults(frontlinedex);
+		});
+		
+		fetch('NewCharacterVoice.json')
+		.then(response => response.json())
+		.then(json => {
+			console.log("NewCharacterVoice.json loaded!");
+			CharacterVoice = json;
+		});
+	}
+	
+	
+	//Keep this at the bottom
 	window.onload=function()
 	{
 		generateTables();
@@ -1311,24 +1557,37 @@ I have no idea how it works
 		document.querySelectorAll('.dropdown-trigger').forEach(elems => {
 			var instances = M.Dropdown.init(elems, {constrainWidth:false});
 		});
+		
+
 		//showSelectedEpisodes('mainEpisodes');
 	}
+	
 </script>
 <body>
-	<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
+	<!--<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
 	<!--<h2>...And a way to read the game dialogue.</h2>-->
-	<div id='chapterSelect'>
-		<div class='row'>
-			<div class="col s12">
-				<ul class="tabs">
+  <nav class='nav-extended'>
+    <div class="nav-wrapper" id='theTop'>
+      <a href="#" class="brand-logo center" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">GFL Cutscene Intrepeter (very alpha)</a>
+      <!--<ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+      </ul>-->
+    </div>
+			<div class="col s12 nav-content">
+				<ul class="tabs tabs-transparent">
 					<li class="tab col s3"><a href="#mainEpisodesWrapper">Main Story Chapters</a></li>
 					<li class="tab col s3"><a href="#eventEpisodesWrapper">Story Events</a></li>
 					<li class="tab col s3"><a href="#sideEpisodesWrapper">Side Stories</a></li>
 					<li class="tab col s3"><a href="#crossoverEpisodesWrapper">Crossover Stories</a></li>
-					<li class="tab col s3"><a href="#" onclick="return false;">T-Doll Dialogue (coming eventually)</a></li>
+					<li class="tab col s3"><a href="#TDollStuff" onclick="FetchTDollInfo()">T-Doll Dialogue (WIP)</a></li>
 					<li class="tab col s3"><a href="#customCutsceneWrapper">Write your own cutscene</a></li>
 				</ul>
 			</div>
+  </nav>
+	<div id='chapterSelect' class='navbar-fixed'>
+		<div class='row'>
 			<!--<a href=#modal1" class="modal-trigger" >Settings</a>-->
 
 			<!--Because materialize.js is stupid -->
@@ -1344,6 +1603,27 @@ I have no idea how it works
 			</div>
 			<div class="col s12" id="crossoverEpisodesWrapper">
 				<div class="flex-container col s12" id="crossoverEpisodes"></div>
+			</div>
+			<div class="col s12" id="TDollStuff">
+				<form action="?">
+				<div class="input-field">
+					<input id="search" type="search" oninput="searchDolls(document.getElementById('search').value)" onkeydown="if (event.key == 'Enter') blur(); return;" onsubmit="blur()" required>
+					<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+					<i class="material-icons" onclick="clearSearch()">close</i>
+				</div>
+				</form>
+				
+				<div id="tDollDialogue">
+				
+				</div>
+				<div id="SearchResultsDiv"  class="" >
+					<p>If you are seeing this it's still loading, please wait 1 second for the JSON to load</a>
+					
+					<div class="progress">
+					  <div class="indeterminate"></div>
+					</div>
+        
+				</div>
 			</div>
 			<div class="col s12" id="customCutsceneWrapper">
 				<div id="customCutscene">
@@ -1371,12 +1651,15 @@ I have no idea how it works
 
 	<h2 id="chapterName">Chapter Name Here</h2>
     <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn disabled">Start interactive interpreter (It's like playing the game!)</a>
-	<p id="curIndexDebug"></p>
-	<div id="phaser"></div>
-	<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
-	<div id='myDIV' style="display: none;">
-		<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
-		<button onclick="reRunWithNewOpcodes()">Re-run scene with these opcodes</button>
+	<div id="interactiveInterpreterSection" style="display:none;">
+		<a id='stopButton' class="waves-effect waves-light btn"> Stop the interpreter (You'll have to refresh the site to start it up again, sorry)</a>
+		<p id="curIndexDebug"></p>
+		<div id="phaser"></div>
+		<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
+		<div id='myDIV' style="display: none;">
+			<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
+			<button onclick="reRunWithNewOpcodes()">Re-run scene with these opcodes</button>
+		</div>
 	</div>
 	<!--<canvas id="myCanvas" width="1280" height="720"></canvas>--><br><br>
     <!--<h1 id="title">This is a header!</h1>-->
@@ -1396,7 +1679,7 @@ I have no idea how it works
 	  <div class="switch">
     <label>
       Text Only
-      <input type="checkbox">
+      <input type="checkbox" onclick="runFromRoutableKeyString()" id="fancyOrNot">
       <span class="lever"></span>
       Fancy
     </label>

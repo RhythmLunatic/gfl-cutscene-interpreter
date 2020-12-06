@@ -158,14 +158,27 @@ I have no idea how it works
 	width:500px; /*Why is width 500px? */
 	position: absolute;
 	bottom: -30%;
+	z-index: 5;
 }
 .storydoll.one{
 	left:15%; /*???*/
 }
-.storydoll.saying{
+.storydoll.first.two{
+	right:25%
+}
+.storydoll.second.two{
+	left:35%
+}
+
+.storydoll.dim{
+	filter: brightness(50%);
+	z-index:4;
+}
+
+/*.storydoll.saying{
 	filter: brightness(100%);
 	z-index: 100;
-}
+}*/
 
 #SearchResults {
 	cursor: pointer;
@@ -230,6 +243,10 @@ I have no idea how it works
 	window.print = function(param)
 	{
 		console.log(param);
+	}
+	function consoleWarn(param)
+	{
+		console.log("%c "+param,'background: black; color: yellow')
 	}
 	
 	
@@ -296,7 +313,7 @@ I have no idea how it works
 		PORTRAIT : 5,
 		NOPORTRAIT : 6,
 		MSGBOXTRANSITION : 7,
-		SETMASKEDPORTRAIT : 8
+		//SETMASKEDPORTRAIT : 8
 	}
 	
 	//For JSON structured or making your own
@@ -310,39 +327,37 @@ I have no idea how it works
 		'portrait',
 		'noPortrait',
 		'msgboxTransition',
-		'setMaskedPortrait'
+		//'setMaskedPortrait'
 	]
 	
 	const tag2opcode = {
 		"Speaker":OPCODES.SPEAKER,
 		"BIN":OPCODES.BG,
 		"BGM":OPCODES.BGM,
-		"通讯框":OPCODES.SETMASKEDPORTRAIT,
+		//"通讯框":OPCODES.SETMASKEDPORTRAIT,
 	}
 	
 	const backgrounds = {
+		1: "树林",
 		2: "机场",
+		3: "街道",
 		4: "主界面背景",
 		6: "冰湖",
+		7: "雪地",
 		8: "作战室avg",
 		9: "black",
 		10: "PlaybackBG1",
 		15: "室内战斗",
+		17: "ANTIRAIN",
+		18: "单挑",
+		19: "SFs",
+		22: "工厂背景avg",
+		89: "BG-WarehouseON",
+		99: "BG-WildBattle"
 	}
 	
-	const PORTRAITS = {
-		"NPC-Kalin":[
-			"special/版娘",
-			"special/版娘-1",
-			"special/版娘-2",
-			"special/版娘-3",
-			"special/版娘-4",
-			"special/版娘-5",
-			"special/版娘-6",
-			"special/版娘-7",
-			"special/版娘-8"
-		]
-	}
+	//To be loaded later.
+	let PORTRAITS = undefined;
 	
 	//For CSS
 	var int2str = ['zero','one',  'two',   'three','four',  'five', 'six',  'seven',  'eight', 'nine']
@@ -353,7 +368,7 @@ I have no idea how it works
 	
 	function portraitStructToString(p)
 	{
-		return "idx: "+p[1]+" | name: "+p[2]+" | type: "+p[3]
+		return "idx: "+p[1]+" | name: "+p[2]+" | type: "+p[3]+" | dim: "+p[4]+" | isMasked: "+p[5]
 	}
 	
 	//Don't care if it's all over the place. Fix it yourself. If this was SM I'd be using broadcasts anyways
@@ -375,12 +390,11 @@ I have no idea how it works
 		if (PORTRAITS[name] != undefined && PORTRAITS[name][type] != undefined)
 		{
 			let keyedPortrait=name+'-'+type;
-			let fileName = PORTRAITS[name][type]+'.png'
+			let fileName = PORTRAITS[name][type]
 			console.log("Loading "+fileName);
 			if (idx > portraitCollection.length-1)
 			{
 				runtime.load.once('complete',function() { portraitCollection.push( runtime.add.image(game.config.width/2,game.config.height-100,keyedPortrait) ) } );
-			
 			}
 			else
 			{
@@ -388,6 +402,10 @@ I have no idea how it works
 			}
 			runtime.load.image(keyedPortrait,'pic/'+fileName);
 			runtime.load.start();
+		}
+		else
+		{
+			console.log("Portrait "+name+" missing from database.")
 		}
 	}
 	
@@ -712,6 +730,11 @@ I have no idea how it works
 		//console.log(lines)
 		//Fuck your opcodes
 		let structuredLines = [];
+		
+		
+		//It's really stupid but flipDim has to know the state of the previous dimmed portraits because normally the GFL engine only supports two portraits and I wanted more
+		let prevLineHadAtLeastTwoPortraits = false;
+		let flipDim = false;
 		for(i=0;i<lines.length;i++)
 		{
 			if (!lines[i])
@@ -734,16 +757,22 @@ I have no idea how it works
 				}
 			})
 			//const tags = [
+			var nextPortraitIsMasked = false;
 			if (cmds.includes("<通讯框>"))
 			{
-				structuredLines.push([OPCODES.SETMASKEDPORTRAIT])
-				cmds.replace("<通讯框>","");
+				nextPortraitIsMasked = true;
+				//structuredLines.push([OPCODES.SETMASKEDPORTRAIT])
+				cmds=cmds.replace("<通讯框>","");
 			}
 			
 			
 			//So portraits are set in any order... But how the fuck are you supposed to tell when a name is if there's <> tags
 			//I'm just going to search portraits after removing <> tags, it probably won't matter
 			let numPortraits = 0;
+			let thisLineHadAtLeastTwoPortraits = (cmds.indexOf(";") != -1)
+			if (thisLineHadAtLeastTwoPortraits && prevLineHadAtLeastTwoPortraits)
+				flipDim = !flipDim;
+			//console.log(thisLineHadAtLeastTwoPortraits);
 			//Limit it to 5 because I don't want a dumb infinite loop that crashes the browser
 			for(j=0;j<5;j++)
 			{
@@ -751,14 +780,21 @@ I have no idea how it works
 				let charTagEnd = cmds.indexOf(")");
 				if (charTagEnd != -1)
 				{
-					let charTagStart = Math.max(cmds.lastIndexOf(";",charTagEnd),0)
+					//It's +1 to get rid of the ;
+					let charTagStart = Math.max(cmds.lastIndexOf(";",charTagEnd)+1,0)
 					let [charID,charSpr] = cmds.slice(charTagStart,charTagEnd).split("(")
 					//console.log(charID)
 					//console.log(charSpr)
 					//Ignore empty sprite IDs, they do nothing.
 					if (charSpr != "")
 					{
-						structuredLines.push([OPCODES.PORTRAIT,numPortraits,charID,charSpr])
+						let shouldDim = false;
+						if (thisLineHadAtLeastTwoPortraits)
+						{
+							shouldDim = flipDim ? j==0 : j != 0;
+						}
+						structuredLines.push([OPCODES.PORTRAIT,numPortraits,charID,charSpr,shouldDim,nextPortraitIsMasked])
+						nextPortraitIsMasked = false;
 						numPortraits++;
 					}
 					//I think speaker name gets cleared if it's ()? Not sure
@@ -766,7 +802,7 @@ I have no idea how it works
 					else
 					{
 						structuredLines.push([OPCODES.NOPORTRAIT])
-						structuredLines.push([OPCODES.SPEAKER,""])
+						//structuredLines.push([OPCODES.SPEAKER,""])
 						//numPortraits=0;
 					}
 					cmds = sliceAndRemove(cmds,charTagStart,charTagEnd+1);
@@ -777,6 +813,8 @@ I have no idea how it works
 					break;
 				}
 			}
+			prevLineHadAtLeastTwoPortraits = thisLineHadAtLeastTwoPortraits;
+			/**/
 			
 			//Now do text... But first check if there is any text (some lines are only commands)
 			if (text)
@@ -871,178 +909,202 @@ I have no idea how it works
 			//.then(response => response.text())
 			//.then((out) => {
 			//fetchTextFile(fileName).then(out => {
-				//console.log('got '+fileName);
-				let structuredLines = convertGFLTextToOpcodes(out);
-				
-				//console.log(structuredLines)
+			//console.log('got '+fileName);
+			let structuredLines = convertGFLTextToOpcodes(out);
+			
+			//console.log(structuredLines)
 
-				//document.getElementById("DebugTextArea").value = structuredLinesToString(s)
-				
-				
-				
-				//It has underscores because it's going to be cloned
-				/*let _div_ = document.createElement('div');
-				_div_.className="container";
-				
-				let _img_ = document.createElement("img");
-				_img_.src="textbox.png";
-				_img_.style.width="100%";
-				_div_.appendChild(_img_);
-				
-				let charName = document.createElement("div");
-				charName.className="charName";
-				_div_.appendChild(charName);
-				
-				let text = document.createElement("div");
-				text.className="absText";
-				text.id="text";
-				_div_.appendChild(text);
-				
-				//let textboxDiv = document.getElementById("Textboxes");
-				let newTextboxDiv = document.createElement('div');
-				newTextboxDiv.id="Textboxes";*/
-				
-				let thisPartDiv = document.createElement('div');
-				let h3 = document.createElement('h3');
-				//console.log(partNum);
-				h3.innerText="Part "+(p+1);
-				//partNum++;
-				thisPartDiv.appendChild(h3);
-				
-				let lastSpeakerName = "";
-				let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
-				let didBGOrPortraitOrNameChange = false;
-				let shownPortraits = []
-				
-				let fancyDisplayType = document.getElementById('fancyOrNot').checked;
-				
-				for(var i=0;i<structuredLines.length;i++)
+			//document.getElementById("DebugTextArea").value = structuredLinesToString(s)
+			
+			
+			
+			//It has underscores because it's going to be cloned
+			/*let _div_ = document.createElement('div');
+			_div_.className="container";
+			
+			let _img_ = document.createElement("img");
+			_img_.src="textbox.png";
+			_img_.style.width="100%";
+			_div_.appendChild(_img_);
+			
+			let charName = document.createElement("div");
+			charName.className="charName";
+			_div_.appendChild(charName);
+			
+			let text = document.createElement("div");
+			text.className="absText";
+			text.id="text";
+			_div_.appendChild(text);
+			
+			//let textboxDiv = document.getElementById("Textboxes");
+			let newTextboxDiv = document.createElement('div');
+			newTextboxDiv.id="Textboxes";*/
+			
+			let thisPartDiv = document.createElement('div');
+			let h3 = document.createElement('h3');
+			//console.log(partNum);
+			h3.innerText="Part "+(p+1);
+			//partNum++;
+			thisPartDiv.appendChild(h3);
+			
+			let button = document.createElement('a');
+			//fuck your javascript
+			button.setAttribute("class","waves-effect waves-light btn");
+			button.setAttribute("onclick","showOpcodes('div_"+fileName+"')")
+			button.innerText="Show opcodes for this section (For debugging)"
+			thisPartDiv.appendChild(button);
+			thisPartDiv.appendChild(document.createElement('br'));
+			
+			let opcodesDiv = document.createElement('div');
+			opcodesDiv.id= "div_"+fileName
+			opcodesDiv.style="display: none;"
+			opcodesDiv.innerHTML = "<textarea rows='6' cols='50' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
+			thisPartDiv.appendChild(opcodesDiv)
+			
+			let lastSpeakerName = "";
+			let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
+			let didBGOrPortraitOrNameChange = false;
+			let shownPortraits = []
+			
+			let fancyDisplayType = document.getElementById('fancyOrNot').checked;
+			
+			for(var i=0;i<structuredLines.length;i++)
+			{
+				let opcode = structuredLines[i][0]
+				//console.log(structuredLines[i]);
+				switch (opcode)
 				{
-					let opcode = structuredLines[i][0]
-					console.log(structuredLines[i]);
-					switch (opcode)
-					{
-						case OPCODES.SPEAKER:
-							lastSpeakerName=structuredLines[i][1];
-							didBGOrPortraitOrNameChange = true
-							break;
-						case OPCODES.PORTRAIT:
-							console.log(portraitStructToString(structuredLines[i]))
-							let idx = structuredLines[i][1]
-							let name = structuredLines[i][2]
-							let type = structuredLines[i][3]
-							if (PORTRAITS[name] && PORTRAITS[name][type])
+					case OPCODES.SPEAKER:
+						lastSpeakerName=structuredLines[i][1];
+						didBGOrPortraitOrNameChange = true
+						break;
+					case OPCODES.PORTRAIT:
+						console.log(portraitStructToString(structuredLines[i]))
+						let idx = structuredLines[i][1]
+						let name = structuredLines[i][2]
+						let type = structuredLines[i][3]
+						if (PORTRAITS[name] && PORTRAITS[name][type])
+						{
+							//console.log(shownPortraits.length);
+							if (structuredLines[i][1] > shownPortraits.length-1)
 							{
-								//console.log(shownPortraits.length);
-								if (structuredLines[i][1] > shownPortraits.length-1)
-								{
-									console.log("Pushed new portrait with idx "+idx);
-									shownPortraits.push('pic/'+PORTRAITS[name][type]+'.png');
-									didBGOrPortraitOrNameChange = true;
-								}
-								else
-								{
-									let newPortrait = 'pic/'+PORTRAITS[name][type]+'.png';
-									if (newPortrait == shownPortraits[idx])
-										console.log("New portrait set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
-									else
-									{
-										console.log("Portrait replaced "+shownPortraits[idx] +" -> "+newPortrait)
-										shownPortraits[idx]=newPortrait;
-										didBGOrPortraitOrNameChange = true;
-									}
-								}
-							}
-							break;
-						case OPCODES.NOPORTRAIT:
-							shownPortraits = [];
-							didBGOrPortraitOrNameChange = true;
-							break;
-						case OPCODES.BG:
-							let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
-							if (newBG == lastBGUsed)
-							{
-								console.log("New BG set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
-							}
-							else
-							{
-								console.log(lastBGUsed + " -> "+newBG)
-								lastBGUsed = newBG
+								console.log("Pushed new portrait with idx "+idx);
+								shownPortraits.push(structuredLines[i]);
 								didBGOrPortraitOrNameChange = true;
 							}
-							break;
-						case OPCODES.MSG:
-							//Spawn new BG with speaker and portrait here.
-							if (fancyDisplayType)
-							{
-								//console.log("aaa");
-								if (didBGOrPortraitOrNameChange)
-								{
-									let storyBox = document.createElement('div');
-									storyBox.classList.add('storyImg');
-									let bgImage = document.createElement('img');
-									bgImage.style = "width:100%;position:relative;z-index:";
-									bgImage.src = lastBGUsed;
-									storyBox.appendChild(bgImage);
-									for(var j=0;j<shownPortraits.length;j++)
-									{
-										console.assert(shownPortraits[j]);
-										let portraitImg = document.createElement('img');
-										portraitImg.src = shownPortraits[j];
-										portraitImg.classList.add("storydoll");
-										portraitImg.classList.add(int2strPos[j+1]);
-										portraitImg.classList.add(int2str[shownPortraits.length]);
-										storyBox.appendChild(portraitImg);
-									}
-									thisPartDiv.appendChild(storyBox);
-									
-									if (lastSpeakerName != "")
-									{
-										let p = document.createElement('p');
-										p.innerHTML = lastSpeakerName;
-										//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
-										p.classList.add("storyText");
-										p.classList.add("speakerName");
-										thisPartDiv.appendChild(p);
-									}
-									
-									didBGOrPortraitOrNameChange = false;
-								}
-								let p = document.createElement('p');
-								p.classList.add('storyText')
-								p.innerText = structuredLines[i][1];
-								thisPartDiv.appendChild(p);
-							}
 							else
 							{
-								let p = document.createElement('p');
-								if (lastSpeakerName == "")
-									p.innerText = structuredLines[i][1];
+								let newPortrait = structuredLines[i]
+								let oldPortrait = shownPortraits[idx]
+								if (newPortrait[1] == oldPortrait[1] && newPortrait[2] == oldPortrait[2] && newPortrait[3] == oldPortrait[3] && newPortrait[4] == oldPortrait[4])
+									console.log("New portrait set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
 								else
-									p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
-								thisPartDiv.appendChild(p);
+								{
+									console.log("Portrait replaced "+portraitStructToString(oldPortrait) +" -> "+portraitStructToString(newPortrait))
+									shownPortraits[idx]=newPortrait;
+									didBGOrPortraitOrNameChange = true;
+								}
 							}
-							break;
-						default:
-							//console.log("unknown OPCODES..");
-					}
+							//console.log("NumPortraits: "+shownPortraits.length);
+						}
+						else
+						{
+							consoleWarn("Portrait missing from database, ignoring.")
+						}
+						break;
+					case OPCODES.NOPORTRAIT:
+						shownPortraits = [];
+						didBGOrPortraitOrNameChange = true;
+						break;
+					case OPCODES.BG:
+						let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
+						if (newBG == lastBGUsed)
+						{
+							console.log("New BG set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
+						}
+						else
+						{
+							console.log(lastBGUsed + " -> "+newBG)
+							lastBGUsed = newBG
+							didBGOrPortraitOrNameChange = true;
+						}
+						break;
+					case OPCODES.MSG:
+						//Spawn new BG with speaker and portrait here.
+						if (fancyDisplayType)
+						{
+							//console.log("aaa");
+							if (didBGOrPortraitOrNameChange)
+							{
+								let storyBox = document.createElement('div');
+								storyBox.classList.add('storyImg');
+								let bgImage = document.createElement('img');
+								bgImage.style = "width:100%;position:relative;z-index:";
+								bgImage.src = lastBGUsed;
+								storyBox.appendChild(bgImage);
+								for(var j=0;j<shownPortraits.length;j++)
+								{
+									console.assert(shownPortraits[j]);
+									let portraitImg = document.createElement('img');
+									portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
+									console.log(portraitImg.src);
+									portraitImg.classList.add("storydoll");
+									if (shownPortraits[j][4])
+										portraitImg.classList.add('dim')
+									portraitImg.classList.add(int2strPos[j+1]);
+									portraitImg.classList.add(int2str[shownPortraits.length]);
+									
+									storyBox.appendChild(portraitImg);
+								}
+								thisPartDiv.appendChild(storyBox);
+								
+								if (lastSpeakerName != "")
+								{
+									let p = document.createElement('p');
+									p.innerHTML = lastSpeakerName;
+									//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
+									p.classList.add("storyText");
+									p.classList.add("speakerName");
+									thisPartDiv.appendChild(p);
+								}
+								
+								didBGOrPortraitOrNameChange = false;
+							}
+							let p = document.createElement('p');
+							p.classList.add('storyText')
+							p.innerText = structuredLines[i][1];
+							thisPartDiv.appendChild(p);
+						}
+						else
+						{
+							let p = document.createElement('p');
+							if (lastSpeakerName == "")
+								p.innerText = structuredLines[i][1];
+							else
+								p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
+							thisPartDiv.appendChild(p);
+						}
+						break;
+					default:
+						//console.log("unknown OPCODES..");
 				}
-				NewSimpleTextDiv.appendChild(thisPartDiv);
-				//Now replace the old div...
-				/*let textboxDiv = document.getElementById("Textboxes");
-				textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
-				
-				currentEpisodeAsOpcodes.push(structuredLines);
-				
-				//If phaser is already init, go ahead and set the new scene
-				//...By destroying the old one and recreating it.
-				if (game != undefined)
-				{
-					game.scene.remove('GirlsFrontlineScene');
-					game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
-				}
-				
-			//})
+			}
+			NewSimpleTextDiv.appendChild(thisPartDiv);
+			//Now replace the old div...
+			/*let textboxDiv = document.getElementById("Textboxes");
+			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
+			
+			currentEpisodeAsOpcodes.push(structuredLines);
+			
+			//If phaser is already init, go ahead and set the new scene
+			//...By destroying the old one and recreating it.
+			if (game != undefined)
+			{
+				game.scene.remove('GirlsFrontlineScene');
+				game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
+			}
+			
+		//})
 		//})
 		}
 		let simpleTextDiv = document.getElementById("verySimpleText")
@@ -1078,8 +1140,8 @@ I have no idea how it works
 		game.restart()
 	}*/
 	
-	function showOpcodes() {
-		let x = document.getElementById("myDIV");
+	function showOpcodes(divId) {
+		let x = document.getElementById(divId);
 		if (x.style.display === "none") {
 			x.style.display = "block";
 		} else {
@@ -1140,6 +1202,123 @@ I have no idea how it works
 		}
 	}
 	
+	//I finally used a class, aren't you happy? 
+	class FilterableList {
+		constructor(data,keyToSearch,idToBind) {
+			console.assert(data,"FilterableList: Data undefined!")
+			this.data = data;
+			this.fuse = new Fuse(data, {
+				keys: [keyToSearch]
+			})
+			this.elementId = idToBind
+			
+			let el = document.getElementById(idToBind);
+			el.innerHTML = "" //You shouldn't have anything in here in the first place
+			
+			
+			let div = document.createElement('div');
+			div.id = idToBind+'SearchDiv';
+				let form = document.createElement('form');
+				form.action = "?";
+					let inputField = document.createElement('div');
+					inputField.classList.add('input-field');
+					inputField.style="text-align: left;";
+						let i = document.createElement('i');
+						i.classList.add("material-icons");
+						i.classList.add('prefix');
+						i.innerText="search";
+						
+						
+						let input = document.createElement('input');
+						input
+						//input.onchange = function(ev) { console.log(ev); this.search(this) }
+						input.setAttribute('onkeydown',"if (event.key == 'Enter') blur(); return;");
+						input.addEventListener('change',this.search.bind(this) );
+						input.id=idToBind+'search'
+						input.type='search';
+						input.onsubmit="blur()"
+						input.required=true
+						
+					inputField.appendChild(i);
+					inputField.appendChild(input);
+					
+				form.appendChild(inputField);
+			div.appendChild(form);
+			
+			
+			//Don't bother, none of it works anyways
+			/*let inputFromDOM = document.getElementById(idToBind+'search');
+			input.addEventListener('onkeyup',function() { console.log("aa") } );
+			input.addEventListener('onkeydown',function() {if (event.key == 'Enter') blur(); return;})*/
+			/*<form action="?">
+				<div class="input-field" style="text-align: left;">
+					<i class="material-icons prefix">search</i>
+					<!--<label class="label-icon" for="search">
+					</label>-->
+					<input id="search" type="search" oninput="searchDolls(document.getElementById('search').value)" onkeydown="if (event.key == 'Enter') blur(); return;" onsubmit="blur()" required>
+					
+					<i class="material-icons" onclick="clearSearch()">close</i>
+				</div>
+			</form>*/
+			
+			el.appendChild(div);
+			
+			this.collection = document.createElement('div');
+			this.collection.classList.add('collection');
+			//this._li_=document.createElement('li');
+			this._li_=document.createElement('a');
+			this._li_.href="#theTop";
+			this._li_.classList.add('collection-item');
+			/*this._li_.classList.add('waves-effect');
+			this._li_.classList.add('waves-light');
+			this._li_.style="cursor:pointer;";*/
+			
+			el.appendChild(this.collection);
+			
+			this.generateResults(this.data);
+		}
+		
+		//It's just like lua Kappa
+		search()
+		{
+			console.assert(this)
+			let query = document.getElementById(this.elementId+'search').value
+			console.log(query);
+			clearTimeout(this.delayTimer);
+			this.delayTimer = setTimeout(function() {
+				
+				if (query == "" || query == undefined)
+				{
+					this.generateResults(this.data);
+				}
+				else
+				{
+					
+					/*query = query.toLowerCase();
+					console.log("Searching for "+query);*/
+					
+					var results = this.fuse.search(query);
+					console.log("Got "+results.length + " results");
+					//I don't care if it's slow
+					this.generateResults(Array.from(results, r => r['item']));
+				}
+			}.bind(this), 300);
+		}
+		
+		generateResults(results)
+		{
+			console.log(results);
+			this.collection.innerHTML="";
+			for (var i = 0; i < results.length; i++)
+			{
+				let li = this._li_.cloneNode(true);
+				li.innerText=results[i]['name'];
+				this.collection.appendChild(li);
+			}
+		}
+		
+	}
+	
 	//name field is structured like type-chapter-episode
 	listOfChapters={
 		'main':[],
@@ -1195,56 +1374,1913 @@ I have no idea how it works
 			prologue.push({name:"Start"+i,parts:['startavg/Start'+i+".txt"]});
 		}
 		listOfChapters['event'].push({name:"Prologue",episodes:prologue});
-		/*
-		0|Chapter|EP.|00
-		1|Chapter|EP.|01
-		2|Chapter|EP.|02
-		3|Chapter|EP.|03
-		4|Chapter|EP.|04
-		5|Chapter|EP.|05
-		-1|Operation Cube|EP.|5.5
-		6|Chapter|EP.|06
-		7|Chapter|EP.|07
-		-2,-3,-4,-5|Arctic Warfare|EP.|7.5
-		-7|Operation Cube+|EP.|7.75
-		8|Chapter|EP.|08
-		-10,-11,-12,-13|Deep Dive|EP.|8.5
-		9|Chapter|EP.|09
-		10|Chapter|EP.|10
-		-16,-17,-18|Singularity|EP.|10.5
-		-24,-25,-26,-28|Continuum Turbulence|EP.|10.75
-		11|Chapter|EP.|11
-		*/
 		
-		let tDollEpisodes = []
-		let knownFiles = ["1.txt", "11.txt", "1501.txt", "1502.txt", "1503.txt",
-		"1504.txt", "1505.txt", "1506.txt", "1507.txt", "1801.txt", "1802.txt",
-		"1803.txt", "1804.txt", "1805.txt", "1806.txt", "1807.txt", "1808.txt",
-		"1901.txt", "1902.txt", "1904.txt", "1905.txt", "1906.txt", "2.txt",
-		"2101.txt", "2102.txt", "2103.txt", "2104.txt", "2105.txt", "2106.txt",
-		"2107.txt", "2108.txt", "2109.txt", "2301.txt", "2302.txt", "2303.txt",
-		"2304.txt", "2305.txt", "2401.txt", "2403.txt", "2404.txt", "2405.txt",
-		"2406.txt", "2407.txt", "2408.txt", "2409.txt", "2410.txt", "2601.txt",
-		"2602.txt", "2603.txt", "2604.txt", "2605.txt", "2606.txt", "2801.txt",
-		"2802.txt", "2803.txt", "2804.txt", "2805.txt", "2807.txt", "3.txt",
-		"3001.txt", "3002.txt", "3003.txt", "3004.txt", "3005.txt", "3006.txt", 
-		"3007.txt", "301.txt", "302.txt", "303.txt", "304.txt", "305.txt", 
-		"306.txt", "307.txt", "308.txt", "309.txt", "310.txt", "3102.txt", 
-		"3103.txt", "3105.txt", "3106.txt", "3107.txt", "3301.txt", "3302.txt", 
-		"3303.txt", "3304.txt", "3305.txt", "3306.txt", "3307.txt", "3308.txt", 
-		"3309.txt", "3501.txt", "3502.txt", "3503.txt", "3504.txt", "3505.txt", 
-		"1903.txt", "2402.txt", "2806.txt", "3101.txt", "3506.txt", "4203.txt", 
-		"3507.txt", "3801.txt", "3802.txt", "3803.txt", "3805.txt", "3806.txt", 
-		"3807.txt", "3808.txt", "3809.txt", "4.txt", "4001.txt", "4002.txt", 
-		"4003.txt", "4004.txt", "4005.txt", "4006.txt", "4007.txt", "4201.txt",
-		 "4202.txt", "4204.txt", "4205.txt", "4206.txt", "4207.txt", "4209.txt", 
-		 "4210.txt", "4301.txt", "4302.txt", "4303.txt", "4304.txt", "4305.txt",
-		  "4306.txt", "4308.txt", "4309.txt", "4310.txt", "5.txt", "6.txt", "7.txt",
-		   "8.txt", "801.txt", "802.txt", "803.txt", "804.txt", "805.txt", "806.txt", 
-		   "807.txt", "808.txt", "9.txt"]
-		for (i=0;i<knownFiles.length;i++)
-			tDollEpisodes.push({name:knownFiles[i],parts:['skin/'+knownFiles[i]]});
-		listOfChapters['side'].push({name:"Skin Stories",episodes:tDollEpisodes});
+		//Yep. Here we are.
+		listOfChapters['event'].push({
+			"name": "CH. 5.5: Operation Cube",
+			"episodes": [
+				{
+					"name": "-1-1",
+					"parts": [
+						"-1-1-1.txt",
+						"-1-1-2.txt"
+					]
+				},
+				{
+					"name": "-1-2",
+					"parts": [
+						"-1-2-1.txt",
+						"-1-2-2End.txt",
+						"-1-2-2First.txt"
+					]
+				},
+				{
+					"name": "-1-3",
+					"parts": [
+						"-1-3-1.txt",
+						"-1-3-2End.txt",
+						"-1-3-2First.txt"
+					]
+				},
+				{
+					"name": "-1-4",
+					"parts": [
+						"-1-4-1.txt",
+						"-1-4-2End.txt",
+						"-1-4-2First.txt"
+					]
+				}
+			]
+		})
+		listOfChapters['event'].push({
+			"name": "CH. 7.5: Arctic Warfare",
+			"episodes": [
+				{
+					"name": "-2-1",
+					"parts": [
+						"-2-1-4-Point2179.txt",
+						"-2-1-1.txt",
+						"-2-1-2First.txt",
+						"-2-1-4-Point2007.txt",
+						"-2-1-4-Point2207.txt"
+					]
+				},
+				{
+					"name": "-2-2",
+					"parts": [
+						"-2-2-1.txt",
+						"-2-2-2First.txt",
+						"-2-2-4-Point2204.txt"
+					]
+				},
+				{
+					"name": "-2-3",
+					"parts": [
+						"-2-3-1.txt",
+						"-2-3-2First.txt",
+						"-2-3-4-Point2058.txt",
+						"-2-3-4-Point2215.txt"
+					]
+				},
+				{
+					"name": "-2-4",
+					"parts": [
+						"-2-4-1.txt",
+						"-2-4-2End.txt",
+						"-2-4-2First.txt"
+					]
+				},
+				{
+					"name": "-3-1",
+					"parts": [
+						"-3-1-1.txt",
+						"-3-1-2First.txt"
+					]
+				},
+				{
+					"name": "-3-2",
+					"parts": [
+						"-3-2-1.txt",
+						"-3-2-2First.txt"
+					]
+				},
+				{
+					"name": "-3-3",
+					"parts": [
+						"-3-3-1.txt",
+						"-3-3-2First.txt"
+					]
+				},
+				{
+					"name": "-3-4",
+					"parts": [
+						"-3-4-1.txt",
+						"-3-4-2End.txt",
+						"-3-4-2First.txt",
+						"-3-4-4-Point2499.txt"
+					]
+				},
+				{
+					"name": "-4-1",
+					"parts": [
+						"-4-1-1.txt",
+						"-4-1-2First.txt"
+					]
+				},
+				{
+					"name": "-4-2",
+					"parts": [
+						"-4-2-1.txt",
+						"-4-2-2First.txt"
+					]
+				},
+				{
+					"name": "-4-3",
+					"parts": [
+						"-4-3-2First.txt",
+						"-4-3-1.txt"
+					]
+				},
+				{
+					"name": "-4-4",
+					"parts": [
+						"-4-4-1.txt",
+						"-4-4-2End.txt",
+						"-4-4-2First.txt"
+					]
+				},
+				{
+					"name": "-5-1",
+					"parts": [
+						"-5-1-1.txt",
+						"-5-1-3Round10.txt"
+					]
+				}
+			]
+		})
+		listOfChapters['event'].push({
+			"name": "CH. 7.75: Operation Cube+",
+			"episodes": [
+				{
+					"name": "-7-1",
+					"parts": [
+						"-7-1-1.txt",
+						"-7-1-2End.txt",
+						"-7-1-2First.txt",
+						"-7-1-3Round2.txt",
+						"-7-1-4-Point3498.txt",
+						"-7-1-3Round1.txt"
+					]
+				},
+				{
+					"name": "-7-2",
+					"parts": [
+						"-7-2-1.txt",
+						"-7-2-2End.txt",
+						"-7-2-2First.txt",
+						"-7-2-3Round1.txt",
+						"-7-2-3Round2.txt",
+						"-7-2-4-Point3342.txt"
+					]
+				},
+				{
+					"name": "-7-3",
+					"parts": [
+						"-7-3-1.txt",
+						"-7-3-2End.txt",
+						"-7-3-2First.txt",
+						"-7-3-3Round1.txt",
+						"-7-3-3Round2.txt",
+						"-7-3-4-Point3533.txt"
+					]
+				},
+				{
+					"name": "-7-4",
+					"parts": [
+						"-7-4-1.txt",
+						"-7-4-2End.txt",
+						"-7-4-2First.txt",
+						"-7-4-3Round1.txt",
+						"-7-4-3Round2.txt",
+						"-7-4-4-Point3612.txt"
+					]
+				}
+			]
+		})
+		listOfChapters['event'].push({
+			"name": "CH. 8.5: Deep Dive",
+			"episodes": [
+				{
+					"name": "-10-1",
+					"parts": [
+						"-10-1-1.txt",
+						"-10-1-2First.txt"
+					]
+				},
+				{
+					"name": "-10-2",
+					"parts": [
+						"-10-2-1.txt",
+						"-10-2-2First.txt"
+					]
+				},
+				{
+					"name": "-10-3",
+					"parts": [
+						"-10-3-1.txt",
+						"-10-3-2First.txt",
+						"-10-3-4-Point4229.txt"
+					]
+				},
+				{
+					"name": "-10-4",
+					"parts": [
+						"-10-4-1.txt",
+						"-10-4-2End.txt",
+						"-10-4-2First.txt"
+					]
+				},
+				{
+					"name": "-11-1",
+					"parts": [
+						"-11-1-1.txt",
+						"-11-1-2First.txt",
+						"-11-1-4-Point4270.txt"
+					]
+				},
+				{
+					"name": "-11-2",
+					"parts": [
+						"-11-2-1.txt",
+						"-11-2-2First.txt",
+						"-11-2-4-Point4292.txt"
+					]
+				},
+				{
+					"name": "-11-3",
+					"parts": [
+						"-11-3-1.txt",
+						"-11-3-2First.txt",
+						"-11-3-4-Point4411.txt"
+					]
+				},
+				{
+					"name": "-11-4",
+					"parts": [
+						"-11-4-1.txt",
+						"-11-4-2End.txt",
+						"-11-4-2First.txt",
+						"-11-4-4-Point4431.txt"
+					]
+				},
+				{
+					"name": "-12-1",
+					"parts": [
+						"-12-1-1.txt",
+						"-12-1-2First.txt",
+						"-12-1-4-Point4528.txt",
+						"-12-1-4-Point4538.txt",
+						"-12-1-4-Point4540.txt"
+					]
+				},
+				{
+					"name": "-12-2",
+					"parts": [
+						"-12-2-2First.txt",
+						"-12-2-4-Point4560.txt",
+						"-12-2-4-Point4562.txt",
+						"-12-2-4-Point4601.txt",
+						"-12-2-1.txt"
+					]
+				},
+				{
+					"name": "-12-3",
+					"parts": [
+						"-12-3-1.txt",
+						"-12-3-2First.txt",
+						"-12-3-4-Point4605.txt",
+						"-12-3-4-Point4615.txt",
+						"-12-3-4-Point4641.txt"
+					]
+				},
+				{
+					"name": "-12-4",
+					"parts": [
+						"-12-4-1.txt",
+						"-12-4-2End.txt",
+						"-12-4-2First.txt",
+						"-12-4-4-Point4518.txt",
+						"-12-4-4-Point4671.txt",
+						"-12-4-4-Point4723.txt",
+						"-12-4-4-Point4724.txt"
+					]
+				},
+				{
+					"name": "-13-1",
+					"parts": [
+						"-13-1-1.txt"
+					]
+				}
+			]
+		})
+		listOfChapters['event'].push({
+			"name": "CH. 10.5: Singularity",
+			"episodes": [
+				{
+					"name": "-16-1",
+					"parts": [
+						"-16-10-1.txt",
+						"-16-11-2First.txt",
+						"-16-12-2First.txt",
+						"-16-13-2First.txt",
+						"-16-14-2First.txt",
+						"-16-15-2First.txt",
+						"-16-16-1.txt"
+					]
+				},
+				{
+					"name": "-16-2",
+					"parts": [
+						"-16-2-1.txt"
+					]
+				},
+				{
+					"name": "-16-3",
+					"parts": [
+						"-16-3-1.txt"
+					]
+				},
+				{
+					"name": "-16-4",
+					"parts": [
+						"-16-4-1.txt",
+						"-16-4-2First.txt",
+						"-16-4-4-Point5546.txt"
+					]
+				},
+				{
+					"name": "-16-5",
+					"parts": [
+						"-16-5-2First.txt"
+					]
+				},
+				{
+					"name": "-16-6",
+					"parts": [
+						"-16-6-2First.txt"
+					]
+				},
+				{
+					"name": "-16-7",
+					"parts": [
+						"-16-7-2First.txt"
+					]
+				},
+				{
+					"name": "-16-8",
+					"parts": [
+						"-16-8-2First.txt",
+						"-16-8-4-Point5627.txt"
+					]
+				},
+				{
+					"name": "-16-9",
+					"parts": [
+						"-16-9-2First.txt"
+					]
+				},
+				{
+					"name": "-16-10",
+					"parts": [
+						"-16-10-1.txt"
+					]
+				},
+				{
+					"name": "-16-11",
+					"parts": [
+						"-16-11-2First.txt"
+					]
+				},
+				{
+					"name": "-16-12",
+					"parts": [
+						"-16-12-2First.txt"
+					]
+				},
+				{
+					"name": "-16-13",
+					"parts": [
+						"-16-13-2First.txt"
+					]
+				},
+				{
+					"name": "-16-14",
+					"parts": [
+						"-16-14-2First.txt"
+					]
+				},
+				{
+					"name": "-16-15",
+					"parts": [
+						"-16-15-2First.txt"
+					]
+				},
+				{
+					"name": "-16-16",
+					"parts": [
+						"-16-16-1.txt"
+					]
+				},
+				{
+					"name": "-17-1",
+					"parts": [
+						"-17-10-1.txt",
+						"-17-1-1.txt",
+						"-17-1-2First.txt",
+						"-17-11-1.txt",
+						"-17-11-2First.txt",
+						"-17-12-2First.txt",
+						"-17-13-1.txt",
+						"-17-13-2First.txt",
+						"-17-14-1.txt",
+						"-17-14-2First.txt",
+						"-17-15-1.txt",
+						"-17-15-2First.txt",
+						"-17-16-1.txt",
+						"-17-16-2First.txt",
+						"-17-17-1.txt",
+						"-17-17-2First.txt",
+						"-17-18-1.txt"
+					]
+				},
+				{
+					"name": "-17-2",
+					"parts": [
+						"-17-2-1.txt",
+						"-17-2-2First.txt"
+					]
+				},
+				{
+					"name": "-17-3",
+					"parts": [
+						"-17-3-1.txt",
+						"-17-3-2First.txt"
+					]
+				},
+				{
+					"name": "-17-4",
+					"parts": [
+						"-17-4-2First.txt",
+						"-17-4-1.txt"
+					]
+				},
+				{
+					"name": "-17-5",
+					"parts": [
+						"-17-5-2First.txt"
+					]
+				},
+				{
+					"name": "-17-6",
+					"parts": [
+						"-17-6-2First.txt"
+					]
+				},
+				{
+					"name": "-17-7",
+					"parts": [
+						"-17-7-2First.txt"
+					]
+				},
+				{
+					"name": "-17-8",
+					"parts": [
+						"-17-8-2First.txt"
+					]
+				},
+				{
+					"name": "-17-9",
+					"parts": [
+						"-17-9-2First.txt"
+					]
+				},
+				{
+					"name": "-17-10",
+					"parts": [
+						"-17-10-1.txt"
+					]
+				},
+				{
+					"name": "-17-11",
+					"parts": [
+						"-17-11-1.txt",
+						"-17-11-2First.txt"
+					]
+				},
+				{
+					"name": "-17-12",
+					"parts": [
+						"-17-12-2First.txt"
+					]
+				},
+				{
+					"name": "-17-13",
+					"parts": [
+						"-17-13-1.txt",
+						"-17-13-2First.txt"
+					]
+				},
+				{
+					"name": "-17-14",
+					"parts": [
+						"-17-14-1.txt",
+						"-17-14-2First.txt"
+					]
+				},
+				{
+					"name": "-17-15",
+					"parts": [
+						"-17-15-1.txt",
+						"-17-15-2First.txt"
+					]
+				},
+				{
+					"name": "-17-16",
+					"parts": [
+						"-17-16-1.txt",
+						"-17-16-2First.txt"
+					]
+				},
+				{
+					"name": "-17-17",
+					"parts": [
+						"-17-17-1.txt",
+						"-17-17-2First.txt"
+					]
+				},
+				{
+					"name": "-17-18",
+					"parts": [
+						"-17-18-1.txt"
+					]
+				},
+				{
+					"name": "-18-1",
+					"parts": [
+						"-18-1-1.txt",
+						"-18-1-2First.txt"
+					]
+				},
+				{
+					"name": "-18-2",
+					"parts": [
+						"-18-2-1.txt",
+						"-18-2-2First.txt",
+						"-18-2-4-Point6188.txt"
+					]
+				},
+				{
+					"name": "-18-3",
+					"parts": [
+						"-18-3-1.txt",
+						"-18-3-2First.txt"
+					]
+				},
+				{
+					"name": "-18-4",
+					"parts": [
+						"-18-4-1.txt",
+						"-18-4-2First.txt"
+					]
+				},
+				{
+					"name": "-18-5",
+					"parts": [
+						"-18-5-1.txt",
+						"-18-5-2First.txt",
+						"-18-5-4-Point6303.txt"
+					]
+				},
+				{
+					"name": "-18-6",
+					"parts": [
+						"-18-6-1.txt",
+						"-18-6-2First.txt"
+					]
+				},
+				{
+					"name": "-18-7",
+					"parts": [
+						"-18-7-1.txt"
+					]
+				},
+				{
+					"name": "-18-8",
+					"parts": [
+						"-18-8-1.txt"
+					]
+				}
+			]
+		})
+		listOfChapters['event'].push({
+			"name": "Ch. 10.75: Continuum Turbulence",
+			"episodes": [
+				{
+					"name": "Waste",
+					"parts": [
+						"-24-2-1.txt",
+						"-24-2-2.txt"
+					]
+				},
+				{
+					"name": "-24-1",
+					"parts": [
+						"-24-13-2First.txt",
+						"-24-1-1.txt",
+						"-24-1-2First.txt",
+						"-24-10-1.txt",
+						"-24-10-2.txt",
+						"-24-10-2First.txt",
+						"-24-11-1.txt",
+						"-24-11-2.txt",
+						"-24-11-2First.txt",
+						"-24-12-1.txt",
+						"-24-12-2.txt",
+						"-24-12-2First.txt",
+						"-24-13-1.txt",
+						"-24-13-2.txt",
+						"-24-14-1.txt",
+						"-24-14-2.txt",
+						"-24-14-2First.txt",
+						"-24-15-1.txt",
+						"-24-15-2.txt",
+						"-24-15-2First.txt"
+					]
+				},
+				{
+					"name": "-24-3",
+					"parts": [
+						"-24-3-2.txt",
+						"-24-3-2First.txt"
+					]
+				},
+				{
+					"name": "-24-4",
+					"parts": [
+						"-24-4-1.txt",
+						"-24-4-2.txt",
+						"-24-4-2First.txt"
+					]
+				},
+				{
+					"name": "-24-5",
+					"parts": [
+						"-24-5-1.txt",
+						"-24-5-2First.txt"
+					]
+				},
+				{
+					"name": "-24-6",
+					"parts": [
+						"-24-6-1.txt",
+						"-24-6-2.txt"
+					]
+				},
+				{
+					"name": "-24-7",
+					"parts": [
+						"-24-7-1.txt",
+						"-24-7-2.txt",
+						"-24-7-2First.txt"
+					]
+				},
+				{
+					"name": "-24-8",
+					"parts": [
+						"-24-8-1.txt",
+						"-24-8-2.txt",
+						"-24-8-2First.txt"
+					]
+				},
+				{
+					"name": "-24-9",
+					"parts": [
+						"-24-9-2.txt",
+						"-24-9-2First.txt"
+					]
+				},
+				{
+					"name": "-24-10",
+					"parts": [
+						"-24-10-1.txt",
+						"-24-10-2.txt",
+						"-24-10-2First.txt"
+					]
+				},
+				{
+					"name": "-24-11",
+					"parts": [
+						"-24-11-1.txt",
+						"-24-11-2.txt",
+						"-24-11-2First.txt"
+					]
+				},
+				{
+					"name": "-24-12",
+					"parts": [
+						"-24-12-1.txt",
+						"-24-12-2.txt",
+						"-24-12-2First.txt"
+					]
+				},
+				{
+					"name": "-24-13",
+					"parts": [
+						"-24-13-2First.txt",
+						"-24-13-1.txt",
+						"-24-13-2.txt"
+					]
+				},
+				{
+					"name": "-24-14",
+					"parts": [
+						"-24-14-1.txt",
+						"-24-14-2.txt",
+						"-24-14-2First.txt"
+					]
+				},
+				{
+					"name": "-24-15",
+					"parts": [
+						"-24-15-1.txt",
+						"-24-15-2.txt",
+						"-24-15-2First.txt"
+					]
+				},
+				{
+					"name": "-25-1",
+					"parts": [
+						"-25-1-1.txt",
+						"-25-1-2First.txt",
+						"-25-10-1.txt",
+						"-25-10-2First.txt",
+						"-25-11-1.txt",
+						"-25-12-2First.txt",
+						"-25-13-2First.txt",
+						"-25-14-2First.txt",
+						"-25-15-2First.txt",
+						"-25-16-2First.txt"
+					]
+				},
+				{
+					"name": "-25-2",
+					"parts": [
+						"-25-2-1.txt"
+					]
+				},
+				{
+					"name": "-25-3",
+					"parts": [
+						"-25-3-2First.txt",
+						"-25-3-1.txt"
+					]
+				},
+				{
+					"name": "-25-4",
+					"parts": [
+						"-25-4-1.txt"
+					]
+				},
+				{
+					"name": "-25-5",
+					"parts": [
+						"-25-5-1.txt"
+					]
+				},
+				{
+					"name": "-25-6",
+					"parts": [
+						"-25-6-1.txt"
+					]
+				},
+				{
+					"name": "-25-7",
+					"parts": [
+						"-25-7-1.txt"
+					]
+				},
+				{
+					"name": "-25-8",
+					"parts": [
+						"-25-8-1.txt",
+						"-25-8-2First.txt"
+					]
+				},
+				{
+					"name": "-25-9",
+					"parts": [
+						"-25-9-1.txt",
+						"-25-9-2First.txt"
+					]
+				},
+				{
+					"name": "-25-10",
+					"parts": [
+						"-25-10-1.txt",
+						"-25-10-2First.txt"
+					]
+				},
+				{
+					"name": "-25-11",
+					"parts": [
+						"-25-11-1.txt"
+					]
+				},
+				{
+					"name": "-25-12",
+					"parts": [
+						"-25-12-2First.txt"
+					]
+				},
+				{
+					"name": "-25-13",
+					"parts": [
+						"-25-13-2First.txt"
+					]
+				},
+				{
+					"name": "-25-14",
+					"parts": [
+						"-25-14-2First.txt"
+					]
+				},
+				{
+					"name": "-25-15",
+					"parts": [
+						"-25-15-2First.txt"
+					]
+				},
+				{
+					"name": "-25-16",
+					"parts": [
+						"-25-16-2First.txt"
+					]
+				},
+				{
+					"name": "-26-1",
+					"parts": [
+						"-26-15-2First.txt",
+						"-26-1-1.txt",
+						"-26-1-2First.txt",
+						"-26-10-2First.txt",
+						"-26-11-1.txt",
+						"-26-11-2First.txt",
+						"-26-12-1.txt",
+						"-26-13-1.txt",
+						"-26-13-2First.txt",
+						"-26-14-1.txt",
+						"-26-14-2End.txt",
+						"-26-14-2First.txt",
+						"-26-18-2First.txt"
+					]
+				},
+				{
+					"name": "-26-2",
+					"parts": [
+						"-26-2-1.txt"
+					]
+				},
+				{
+					"name": "-26-3",
+					"parts": [
+						"-26-3-1.txt"
+					]
+				},
+				{
+					"name": "-26-4",
+					"parts": [
+						"-26-4-1.txt"
+					]
+				},
+				{
+					"name": "-26-5",
+					"parts": [
+						"-26-5-1.txt",
+						"-26-5-2First.txt"
+					]
+				},
+				{
+					"name": "-26-6",
+					"parts": [
+						"-26-6-1.txt",
+						"-26-6-2First.txt"
+					]
+				},
+				{
+					"name": "-26-7",
+					"parts": [
+						"-26-7-1.txt"
+					]
+				},
+				{
+					"name": "-26-8",
+					"parts": [
+						"-26-8-2First.txt"
+					]
+				},
+				{
+					"name": "-26-9",
+					"parts": [
+						"-26-9-1.txt"
+					]
+				},
+				{
+					"name": "-26-10",
+					"parts": [
+						"-26-10-2First.txt"
+					]
+				},
+				{
+					"name": "-26-11",
+					"parts": [
+						"-26-11-1.txt",
+						"-26-11-2First.txt"
+					]
+				},
+				{
+					"name": "-26-12",
+					"parts": [
+						"-26-12-1.txt"
+					]
+				},
+				{
+					"name": "-26-13",
+					"parts": [
+						"-26-13-1.txt",
+						"-26-13-2First.txt"
+					]
+				},
+				{
+					"name": "-26-14",
+					"parts": [
+						"-26-14-1.txt",
+						"-26-14-2End.txt",
+						"-26-14-2First.txt"
+					]
+				},
+				{
+					"name": "-26-15",
+					"parts": [
+						"-26-15-2First.txt"
+					]
+				},
+				{
+					"name": "-28-1",
+					"parts": [
+						"-28-1-1.txt"
+					]
+				}
+			]
+		})
+		
+		listOfChapters['side'].push({name:"Skin Stories",episodes:[
+	{
+		"name": "Makarov - Pumpkin Mishka",
+		"parts": [
+			"skin/1.txt"
+		]
+	},
+	{
+		"name": "Type 64 - Witch from Afar",
+		"parts": [
+			"skin/11.txt"
+		]
+	},
+	{
+		"name": "Thompson - Demon Hunter",
+		"parts": [
+			"skin/1501.txt"
+		]
+	},
+	{
+		"name": "Contender - Opera Ghost",
+		"parts": [
+			"skin/1502.txt"
+		]
+	},
+	{
+		"name": "PKP - L.A.D.Y",
+		"parts": [
+			"skin/1503.txt"
+		]
+	},
+	{
+		"name": "MG5 - Call of the Hunter",
+		"parts": [
+			"skin/1504.txt"
+		]
+	},
+	{
+		"name": "AEK-999 - Babe Driver",
+		"parts": [
+			"skin/1505.txt"
+		]
+	},
+	{
+		"name": "PzB 39 - Raging Rider",
+		"parts": [
+			"skin/1506.txt"
+		]
+	},
+	{
+		"name": "G36 - \"Sommelier\"",
+		"parts": [
+			"skin/1507.txt"
+		]
+	},
+	{
+		"name": "DSR-50 - Red Peony",
+		"parts": [
+			"skin/1801.txt"
+		]
+	},
+	{
+		"name": "S.A.T.8 - Wintersweet",
+		"parts": [
+			"skin/1802.txt"
+		]
+	},
+	{
+		"name": "ART556 - White Cabbage",
+		"parts": [
+			"skin/1803.txt"
+		]
+	},
+	{
+		"name": "JS05 - Fairy Lily",
+		"parts": [
+			"skin/1804.txt"
+		]
+	},
+	{
+		"name": "Mk23 - Honey Flower",
+		"parts": [
+			"skin/1805.txt"
+		]
+	},
+	{
+		"name": "M590 - Angel's Trumpet",
+		"parts": [
+			"skin/1806.txt"
+		]
+	},
+	{
+		"name": "Type 81 Carbine - White Camellia",
+		"parts": [
+			"skin/1807.txt"
+		]
+	},
+	{
+		"name": "LWMMG - Golden Starthistle",
+		"parts": [
+			"skin/1808.txt"
+		]
+	},
+	{
+		"name": "Vector - Ardent Devotion",
+		"parts": [
+			"skin/1901.txt"
+		]
+	},
+	{
+		"name": "Five-seveN - Smile of Acceptance",
+		"parts": [
+			"skin/1902.txt"
+		]
+	},
+	{
+		"name": "G36 - Pure White Cornflower",
+		"parts": [
+			"skin/1904.txt"
+		]
+	},
+	{
+		"name": "Type 56-1 - As One, Forever Entwined",
+		"parts": [
+			"skin/1905.txt"
+		]
+	},
+	{
+		"name": "SV-98 - Pierce Your Heart!",
+		"parts": [
+			"skin/1906.txt"
+		]
+	},
+	{
+		"name": "AK-47 - Kitty Paws",
+		"parts": [
+			"skin/2.txt"
+		]
+	},
+	{
+		"name": "PP-90 - Kitty Paws",
+		"parts": [
+			"skin/2.txt"
+		]
+	},
+	{
+		"name": "Vector - Kitty Paws",
+		"parts": [
+			"skin/2.txt"
+		]
+	},
+	{
+		"name": "DSR-50 - Highest Bid",
+		"parts": [
+			"skin/2101.txt"
+		]
+	},
+	{
+		"name": "Grizzly MkV - Starry Night Ball",
+		"parts": [
+			"skin/2102.txt"
+		]
+	},
+	{
+		"name": "Welrod MkII - Nightfall Crisis",
+		"parts": [
+			"skin/2103.txt"
+		]
+	},
+	{
+		"name": "Zas M21 - White Queen",
+		"parts": [
+			"skin/2104.txt"
+		]
+	},
+	{
+		"name": "Colt Revolver - Queen of Miracles",
+		"parts": [
+			"skin/2105.txt"
+		]
+	},
+	{
+		"name": "UMP9 - The World's Melody",
+		"parts": [
+			"skin/2106.txt"
+		]
+	},
+	{
+		"name": "UMP45 - Flower of Diamond",
+		"parts": [
+			"skin/2107.txt"
+		]
+	},
+	{
+		"name": "IDW - Cat in the Box",
+		"parts": [
+			"skin/2108.txt"
+		]
+	},
+	{
+		"name": "EVO 3 - White Night Star",
+		"parts": [
+			"skin/2109.txt"
+		]
+	},
+	{
+		"name": "NTW-20 - The Aristocrat Experience",
+		"parts": [
+			"skin/2301.txt"
+		]
+	},
+	{
+		"name": "Contender - Flowerful Maid",
+		"parts": [
+			"skin/2302.txt"
+		]
+	},
+	{
+		"name": "M950A - Home Ec Training",
+		"parts": [
+			"skin/2303.txt"
+		]
+	},
+	{
+		"name": "G28 - Wiesnbier",
+		"parts": [
+			"skin/2304.txt"
+		]
+	},
+	{
+		"name": "Gepard M1 - Contracted Today",
+		"parts": [
+			"skin/2305.txt"
+		]
+	},
+	{
+		"name": "G41 - Beach Punk 2064",
+		"parts": [
+			"skin/2401.txt"
+		]
+	},
+	{
+		"name": "AA-12 - The Sun Never Rises",
+		"parts": [
+			"skin/2403.txt"
+		]
+	},
+	{
+		"name": "AN-94 - The Diving Bell and the Doll",
+		"parts": [
+			"skin/2404.txt"
+		]
+	},
+	{
+		"name": "MP7 - Lollipop Ammo",
+		"parts": [
+			"skin/2405.txt"
+		]
+	},
+	{
+		"name": "FAL - FAL's Summer",
+		"parts": [
+			"skin/2406.txt"
+		]
+	},
+	{
+		"name": "G36 - 50 Days with Gr G36",
+		"parts": [
+			"skin/2407.txt"
+		]
+	},
+	{
+		"name": "SPAS-12 - Midsummer Fruit",
+		"parts": [
+			"skin/2408.txt"
+		]
+	},
+	{
+		"name": "Ameli - Ameli's Receive",
+		"parts": [
+			"skin/2409.txt"
+		]
+	},
+	{
+		"name": "P38 - Apprentice Witch",
+		"parts": [
+			"skin/2410.txt"
+		]
+	},
+	{
+		"name": "S.A.T.8 - Pumpkin Skewers",
+		"parts": [
+			"skin/2601.txt"
+		]
+	},
+	{
+		"name": "TAC-50 - Elf Helsing",
+		"parts": [
+			"skin/2602.txt"
+		]
+	},
+	{
+		"name": "MDR - Ghost Trap",
+		"parts": [
+			"skin/2603.txt"
+		]
+	},
+	{
+		"name": "FAMAS - Guns N' Side Boxes",
+		"parts": [
+			"skin/2604.txt"
+		]
+	},
+	{
+		"name": "Bren - Jack the Trine",
+		"parts": [
+			"skin/2605.txt"
+		]
+	},
+	{
+		"name": "F1 - Dark Sorceress Academy",
+		"parts": [
+			"skin/2606.txt"
+		]
+	},
+	{
+		"name": "Px4 Storm - Queen of X'mas Morning",
+		"parts": [
+			"skin/2801.txt"
+		]
+	},
+	{
+		"name": "P90 - Scarlet Turbo",
+		"parts": [
+			"skin/2802.txt"
+		]
+	},
+	{
+		"name": "ART556 - Little Chimney Sweeper",
+		"parts": [
+			"skin/2803.txt"
+		]
+	},
+	{
+		"name": "FP-6 - Satellite of Love",
+		"parts": [
+			"skin/2804.txt"
+		]
+	},
+	{
+		"name": "Five-seveN - Blue Christmas",
+		"parts": [
+			"skin/2805.txt"
+		]
+	},
+	{
+		"name": "TMP - Red-Eared Cat",
+		"parts": [
+			"skin/2807.txt"
+		]
+	},
+	{
+		"name": "MP5 - Nocturnal Familiar",
+		"parts": [
+			"skin/3.txt"
+		]
+	},
+	{
+		"name": "OTs-14 - Crassula Volkensii",
+		"parts": [
+			"skin/3001.txt"
+		]
+	},
+	{
+		"name": "AK-74U - Lily of the Valley",
+		"parts": [
+			"skin/3002.txt"
+		]
+	},
+	{
+		"name": "Type 88 - Noble Orchid",
+		"parts": [
+			"skin/3003.txt"
+		]
+	},
+	{
+		"name": "IWS 2000 - Edelweiss",
+		"parts": [
+			"skin/3004.txt"
+		]
+	},
+	{
+		"name": "CZ75 - Monks Cress",
+		"parts": [
+			"skin/3005.txt"
+		]
+	},
+	{
+		"name": "MP5 - Vietnamese Balm",
+		"parts": [
+			"skin/3006.txt"
+		]
+	},
+	{
+		"name": "CZ52 - Tweedia",
+		"parts": [
+			"skin/3007.txt"
+		]
+	},
+	{
+		"name": "Colt Revolver - Wish Upon A Star",
+		"parts": [
+			"skin/301.txt"
+		]
+	},
+	{
+		"name": "Springfield - O Holy Night",
+		"parts": [
+			"skin/302.txt"
+		]
+	},
+	{
+		"name": "M14 - Xmas Parade",
+		"parts": [
+			"skin/303.txt"
+		]
+	},
+	{
+		"name": "M21 - Xmas At Home",
+		"parts": [
+			"skin/304.txt"
+		]
+	},
+	{
+		"name": "SVD - Winter Fairy",
+		"parts": [
+			"skin/305.txt"
+		]
+	},
+	{
+		"name": "WA2000 - Date in the Snow",
+		"parts": [
+			"skin/306.txt"
+		]
+	},
+	{
+		"name": "NTW-20 - Xmas Reindeer",
+		"parts": [
+			"skin/307.txt"
+		]
+	},
+	{
+		"name": "FAL - Winter Supply",
+		"parts": [
+			"skin/308.txt"
+		]
+	},
+	{
+		"name": "MG5 - Crimson Guardian",
+		"parts": [
+			"skin/309.txt"
+		]
+	},
+	{
+		"name": "Suomi - Korvatunturi Pixie",
+		"parts": [
+			"skin/310.txt"
+		]
+	},
+	{
+		"name": "PKP - Silver Star",
+		"parts": [
+			"skin/3102.txt"
+		]
+	},
+	{
+		"name": "G36C - You Who Steps Up",
+		"parts": [
+			"skin/3103.txt"
+		]
+	},
+	{
+		"name": "Mk23 - Conveyed Feelings",
+		"parts": [
+			"skin/3105.txt"
+		]
+	},
+	{
+		"name": "T-5000 - Oath of Transformation",
+		"parts": [
+			"skin/3106.txt"
+		]
+	},
+	{
+		"name": "Gepard M1 - Exciting Future",
+		"parts": [
+			"skin/3107.txt"
+		]
+	},
+	{
+		"name": "K2 - Before Dawn",
+		"parts": [
+			"skin/3301.txt"
+		]
+	},
+	{
+		"name": "AK-12 - Untranslated1",
+		"parts": [
+			"skin/3302.txt"
+		]
+	},
+	{
+		"name": "AN-94 - Untranslated1",
+		"parts": [
+			"skin/3303.txt"
+		]
+	},
+	{
+		"name": "M99 - Untranslated1",
+		"parts": [
+			"skin/3304.txt"
+		]
+	},
+	{
+		"name": "MDR - Untranslated1",
+		"parts": [
+			"skin/3305.txt"
+		]
+	},
+	{
+		"name": "Type 79 - Untranslated1",
+		"parts": [
+			"skin/3306.txt"
+		]
+	},
+	{
+		"name": "G28 - Untranslated1",
+		"parts": [
+			"skin/3307.txt"
+		]
+	},
+	{
+		"name": "K5 - Untranslated1",
+		"parts": [
+			"skin/3308.txt"
+		]
+	},
+	{
+		"name": "Thunder - Untranslated1",
+		"parts": [
+			"skin/3309.txt"
+		]
+	},
+	{
+		"name": "R93 - Untranslated1",
+		"parts": [
+			"skin/3501.txt"
+		]
+	},
+	{
+		"name": "Lewis - Untranslated2",
+		"parts": [
+			"skin/3502.txt"
+		]
+	},
+	{
+		"name": "C-MS - Untranslated1",
+		"parts": [
+			"skin/3503.txt"
+		]
+	},
+	{
+		"name": "Type 88 - Untranslated1",
+		"parts": [
+			"skin/3504.txt"
+		]
+	},
+	{
+		"name": "Type 4 - Untranslated2",
+		"parts": [
+			"skin/3505.txt"
+		]
+	},
+	{
+		"name": "MP5 - A Small Step",
+		"parts": [
+			"skin/1903.txt"
+		]
+	},
+	{
+		"name": "AK-12 - Age of Slushies",
+		"parts": [
+			"skin/2402.txt"
+		]
+	},
+	{
+		"name": "G36 - Every Child's X'mas Dream",
+		"parts": [
+			"skin/2806.txt"
+		]
+	},
+	{
+		"name": "Suomi - Blissful Mission",
+		"parts": [
+			"skin/3101.txt"
+		]
+	},
+	{
+		"name": "Serdyukov - Untranslated1",
+		"parts": [
+			"skin/3506.txt"
+		]
+	},
+	{
+		"name": "PKP - Untranslated1",
+		"parts": [
+			"skin/4203.txt"
+		]
+	},
+	{
+		"name": "Z-62 - Untranslated1",
+		"parts": [
+			"skin/3507.txt"
+		]
+	},
+	{
+		"name": "QBU-88 - Untranslated1",
+		"parts": [
+			"skin/3801.txt"
+		]
+	},
+	{
+		"name": "G36C - Untranslated1",
+		"parts": [
+			"skin/3802.txt"
+		]
+	},
+	{
+		"name": "M870 - Untranslated1",
+		"parts": [
+			"skin/3803.txt"
+		]
+	},
+	{
+		"name": "KSVK - Untranslated1",
+		"parts": [
+			"skin/3805.txt"
+		]
+	},
+	{
+		"name": "MG3 - Untranslated2",
+		"parts": [
+			"skin/3806.txt"
+		]
+	},
+	{
+		"name": "Type 97 Shotgun - Untranslated1",
+		"parts": [
+			"skin/3807.txt"
+		]
+	},
+	{
+		"name": "PSG-1 - Untranslated1",
+		"parts": [
+			"skin/3808.txt"
+		]
+	},
+	{
+		"name": "Model L - Untranslated1",
+		"parts": [
+			"skin/3809.txt"
+		]
+	},
+	{
+		"name": "M870 - Candy Express",
+		"parts": [
+			"skin/4.txt"
+		]
+	},
+	{
+		"name": "MP7 - Candy Express",
+		"parts": [
+			"skin/4.txt"
+		]
+	},
+	{
+		"name": "m45 - Candy Express",
+		"parts": [
+			"skin/4.txt"
+		]
+	},
+	{
+		"name": "Lewis - Untranslated1",
+		"parts": [
+			"skin/4001.txt"
+		]
+	},
+	{
+		"name": "HK21 - Untranslated1",
+		"parts": [
+			"skin/4002.txt"
+		]
+	},
+	{
+		"name": "CAWS - Untranslated1",
+		"parts": [
+			"skin/4003.txt"
+		]
+	},
+	{
+		"name": "Type 100 - Untranslated2",
+		"parts": [
+			"skin/4004.txt"
+		]
+	},
+	{
+		"name": "Honey Badger - Untranslated1",
+		"parts": [
+			"skin/4005.txt"
+		]
+	},
+	{
+		"name": "Gepard M1 - Untranslated1",
+		"parts": [
+			"skin/4006.txt"
+		]
+	},
+	{
+		"name": "LWMMG - Untranslated1",
+		"parts": [
+			"skin/4007.txt"
+		]
+	},
+	{
+		"name": "DP-12 - Untranslated1",
+		"parts": [
+			"skin/4201.txt"
+		]
+	},
+	{
+		"name": "PA-15 - Untranslated2",
+		"parts": [
+			"skin/4202.txt"
+		]
+	},
+	{
+		"name": "JS 9 - Untranslated2",
+		"parts": [
+			"skin/4204.txt"
+		]
+	},
+	{
+		"name": "MG36 - Untranslated1",
+		"parts": [
+			"skin/4205.txt"
+		]
+	},
+	{
+		"name": "T91 - Untranslated1",
+		"parts": [
+			"skin/4206.txt"
+		]
+	},
+	{
+		"name": "SPP-1 - Untranslated1",
+		"parts": [
+			"skin/4207.txt"
+		]
+	},
+	{
+		"name": "EM-2 - Untranslated1",
+		"parts": [
+			"skin/4209.txt"
+		]
+	},
+	{
+		"name": "MG34 - Untranslated1",
+		"parts": [
+			"skin/4210.txt"
+		]
+	},
+	{
+		"name": "Kar98k - Untranslated1",
+		"parts": [
+			"skin/4301.txt"
+		]
+	},
+	{
+		"name": "M950A - Untranslated1",
+		"parts": [
+			"skin/4302.txt"
+		]
+	},
+	{
+		"name": "Grizzly MkV - Untranslated1",
+		"parts": [
+			"skin/4303.txt"
+		]
+	},
+	{
+		"name": "Zas M21 - Untranslated1",
+		"parts": [
+			"skin/4304.txt"
+		]
+	},
+	{
+		"name": "M1014 - Untranslated1",
+		"parts": [
+			"skin/4305.txt"
+		]
+	},
+	{
+		"name": "Stechkin - Untranslated1",
+		"parts": [
+			"skin/4306.txt"
+		]
+	},
+	{
+		"name": "FNC - Untranslated1",
+		"parts": [
+			"skin/4308.txt"
+		]
+	},
+	{
+		"name": "RMB-93 - Untranslated1",
+		"parts": [
+			"skin/4309.txt"
+		]
+	},
+	{
+		"name": "Makarov - Untranslated1",
+		"parts": [
+			"skin/4310.txt"
+		]
+	},
+	{
+		"name": "Springfield - Classic Witch",
+		"parts": [
+			"skin/5.txt"
+		]
+	},
+	{
+		"name": "ART556 - Haunted Castle",
+		"parts": [
+			"skin/6.txt"
+		]
+	},
+	{
+		"name": "HK416 - Haunted Castle",
+		"parts": [
+			"skin/6.txt"
+		]
+	},
+	{
+		"name": "P7 - Haunted Castle",
+		"parts": [
+			"skin/6.txt"
+		]
+	},
+	{
+		"name": "WA2000 - Haunted Castle",
+		"parts": [
+			"skin/6.txt"
+		]
+	},
+	{
+		"name": "HK416 - Carmilla",
+		"parts": [
+			"skin/7.txt"
+		]
+	},
+	{
+		"name": "M1919A4 - Carmilla",
+		"parts": [
+			"skin/7.txt"
+		]
+	},
+	{
+		"name": "Mk23 - Impish Sweetheart",
+		"parts": [
+			"skin/8.txt"
+		]
+	},
+	{
+		"name": "Skorpion - Crimson Starlet",
+		"parts": [
+			"skin/801.txt"
+		]
+	},
+	{
+		"name": "Springfield - Queen in Radiance",
+		"parts": [
+			"skin/802.txt"
+		]
+	},
+	{
+		"name": "Mosin-Nagant - Moonlit Ocean",
+		"parts": [
+			"skin/803.txt"
+		]
+	},
+	{
+		"name": "WA2000 - Ballroom Interlude",
+		"parts": [
+			"skin/804.txt"
+		]
+	},
+	{
+		"name": "HK416 - Starry Cocoon",
+		"parts": [
+			"skin/805.txt"
+		]
+	},
+	{
+		"name": "M1918 - Tender Nocturne",
+		"parts": [
+			"skin/806.txt"
+		]
+	},
+	{
+		"name": "SR-3MP - Bunny Macchiato",
+		"parts": [
+			"skin/807.txt"
+		]
+	},
+	{
+		"name": "M950A - Concert Diva!",
+		"parts": [
+			"skin/808.txt"
+		]
+	},
+	{
+		"name": "G11 - Neet Zombie",
+		"parts": [
+			"skin/9.txt"
+		]
+	}
+]});
 		
 		
 		/*var _table_ = document.createElement('table'),
@@ -1333,6 +3369,8 @@ I have no idea how it works
 				//trChapterDropdowns.appendChild(td);
 			}
 		}
+		
+		//test = new FilterableList(listOfChapters['side'][0]['episodes'],'name',"sideEpisodesWrapper")
 
 		//tbody.appendChild(trChapterDropdowns);
 		
@@ -1367,15 +3405,17 @@ I have no idea how it works
 		'soulcontract':"Marriage Line",
 		'introduce':"Introduction (In the index, but usually identical to obtain)",
 		'gain':'When Obtained',
-		'allhallows':"During halloween",
-		'soulcontract':"Adjutant 4 (After Marriage)"
+		'allhallows':"During Halloween",
+		'christmas':"During Christmas",
+		'valentine':"During Valentine's",
+		'dialoguewedding':"Adjutant 4 (After Marriage)"
 	}
 	
 	function TDollInfo(dollName)
 	{
-		console.log(dollName);
+		/*console.log(dollName);
 		console.assert(CharacterVoice)
-		console.log(CharacterVoice);
+		console.log(CharacterVoice);*/
 		//Destroy everything in here
 		let tDollDialogue = document.getElementById('tDollDialogue')
 		tDollDialogue.innerHTML = "";
@@ -1398,14 +3438,33 @@ I have no idea how it works
 				else
 					cardTitle.innerText = key;
 				let p = document.createElement('p');
-				p.innerText=dialogue[key]
+				//console.log(typeof dialogue[key]);
+				p.innerHTML= dialogue[key].join([separator = '<br>'])
 				cardContent.appendChild(cardTitle);
 				cardContent.appendChild(p);
 				card.appendChild(cardContent);
 				tDollDialogue.appendChild(card);
 			});
+			
+			
+			document.getElementById("tDollDialogueActivity").style.display = "inherit";
+			document.getElementById('tDollDialogueName').firstChild.textContent=dollName;
+			document.getElementById("tDollSearchActivity").style.display="none";
+			
+			//jump to top of page
+			window.location.href="#tDollDialogueActivity"
+		}
+		else
+		{
+			//console.log("aa");
+			M.toast({html: "T-Doll "+dollName+" not present in json..."})
 		}
 		//document.getElementById('tDollDialogue').appendChild(_div_);
+	}
+	function returnTotDollSearch()
+	{
+		document.getElementById("tDollDialogueActivity").style.display = "none";
+		document.getElementById("tDollSearchActivity").style.display="inherit";
 	}
 	
 	function listResults(results)
@@ -1558,6 +3617,18 @@ I have no idea how it works
 			var instances = M.Dropdown.init(elems, {constrainWidth:false});
 		});
 		
+		 
+		document.querySelectorAll('.collapsible').forEach(elems => {
+			var instances = M.Collapsible.init(elems, null);
+		});
+		
+		fetch('portraitInformation.json')
+			.then(response => response.json())
+			.then(json => {
+				console.log("portraitinformation.json loaded!");
+				PORTRAITS = json;
+			});
+		
 
 		//showSelectedEpisodes('mainEpisodes');
 	}
@@ -1567,8 +3638,8 @@ I have no idea how it works
 	<!--<h1 id="theTop">GFL Cutscene Intrepeter (very alpha)</h1>
 	<!--<h2>...And a way to read the game dialogue.</h2>-->
   <nav class='nav-extended'>
-    <div class="nav-wrapper" id='theTop'>
-      <a href="#" class="brand-logo center" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">GFL Cutscene Intrepeter (very alpha)</a>
+    <div class="nav-wrapper" id='theTop' style="overflow:hidden;">
+      <a href="#" class="brand-logo center truncate" style="text-overflow: ellipsis; white-space: nowrap;">GFL Cutscene Intrepeter (very alpha)</a>
       <!--<ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html">Sass</a></li>
         <li><a href="badges.html">Components</a></li>
@@ -1582,7 +3653,7 @@ I have no idea how it works
 					<li class="tab col s3"><a href="#sideEpisodesWrapper">Side Stories</a></li>
 					<li class="tab col s3"><a href="#crossoverEpisodesWrapper">Crossover Stories</a></li>
 					<li class="tab col s3"><a href="#TDollStuff" onclick="FetchTDollInfo()">T-Doll Dialogue (WIP)</a></li>
-					<li class="tab col s3"><a href="#customCutsceneWrapper">Write your own cutscene</a></li>
+					<li class="tab col s3"><a href="#customCutsceneWrapper">Write your own cutscene (WIP)</a></li>
 				</ul>
 			</div>
   </nav>
@@ -1605,30 +3676,65 @@ I have no idea how it works
 				<div class="flex-container col s12" id="crossoverEpisodes"></div>
 			</div>
 			<div class="col s12" id="TDollStuff">
-				<form action="?">
-				<div class="input-field">
-					<input id="search" type="search" oninput="searchDolls(document.getElementById('search').value)" onkeydown="if (event.key == 'Enter') blur(); return;" onsubmit="blur()" required>
-					<label class="label-icon" for="search"><i class="material-icons">search</i></label>
-					<i class="material-icons" onclick="clearSearch()">close</i>
-				</div>
-				</form>
-				
-				<div id="tDollDialogue">
-				
-				</div>
-				<div id="SearchResultsDiv"  class="" >
-					<p>If you are seeing this it's still loading, please wait 1 second for the JSON to load</a>
+				<div id="tDollDialogueActivity" style='display:none;'>
+					<nav style="position:initial;">
+						<div class="nav-wrapper blue" style="text-align: left;">
+						  <a href="#!" onclick="returnTotDollSearch()" class="brand-logo" id='tDollDialogueName'>Insert T-Doll Name Here<i class="material-icons">arrow_back</i></a>
+						</div>
+					</nav>
+					<div id="tDollDialogue">
 					
-					<div class="progress">
-					  <div class="indeterminate"></div>
 					</div>
-        
+				</div>
+				<div id="tDollSearchActivity">
+					<form action="?">
+					<div class="input-field" style="text-align: left;">
+						<i class="material-icons prefix">search</i>
+						<!--<label class="label-icon" for="search">
+						</label>-->
+						<input id="search" type="search" oninput="searchDolls(document.getElementById('search').value)" onkeydown="if (event.key == 'Enter') blur(); return;" onsubmit="blur()" required>
+						
+						<i class="material-icons" onclick="clearSearch()">close</i>
+					</div>
+					</form>
+					
+					<div id="SearchResultsDiv"  class="" >
+						<p>If you are seeing this it's still loading, please wait 1 second for the JSON to load</a>
+						
+						<div class="progress">
+						  <div class="indeterminate"></div>
+						</div>
+		    
+					</div>
 				</div>
 			</div>
 			<div class="col s12" id="customCutsceneWrapper">
 				<div id="customCutscene">
 					<p>WORK IN PROGRESS</p>
-					<p>Opcode structure isn't finalized, check back later...</p>
+					<p>Opcode structure isn't finalized, check back later... No, the buttons don't do anything.</p>
+					<a class="waves-effect waves-light btn"><i class="material-icons right">folder_open</i>Load .txt</a>
+					<a class="waves-effect waves-light btn"><i class="material-icons right">folder_open</i>Load .iop.json</a>
+			        <!--<div class="input-field col s12">
+						<textarea id="textarea1" class="materialize-textarea"></textarea>
+						<label for="textarea1">Textarea</label>
+					</div>-->
+					<textarea id="textarea1" class="materialize-textarea"></textarea>
+				    <div class="card blue-grey darken-1" style="text-align:left">
+        				<div class="card-content white-text">
+						<span class="card-title">About .txt vs .iop.json</span>
+						<p>.txt is the cutscene scripting language GFL uses. The interpreter will always support importing .txt and playing it back.</p>
+						<p>.iop.json (<b>I</b>ntermediate <b>Op</b>codes, definitely not a coincidence) is the scripting language designed for the interpreter. It has some advantages compared to the GFL engine:</p>
+						<p>- Display more than two characters at a time. Dim multiple charcters.</p>
+						<p>- The commands are in english.</p>
+						<p>- (Coming soon) branch paths, allowing you to use the interpreter like a VN engine of sorts and write interactive stories</p>
+						</div>
+					</div>
+					<!--<ul class="collapsible">
+						<li>
+						  <div class="collapsible-header">About .txt vs .iop.json</div>
+						  <div class="collapsible-body"></div>
+						</li>
+					</ul>-->
 				</div>
 			</div>
 				
@@ -1655,7 +3761,7 @@ I have no idea how it works
 		<a id='stopButton' class="waves-effect waves-light btn"> Stop the interpreter (You'll have to refresh the site to start it up again, sorry)</a>
 		<p id="curIndexDebug"></p>
 		<div id="phaser"></div>
-		<br><br><button onclick='showOpcodes()'>Show converted opcodes (For debugging)</button><br>
+		<br><br><button onclick="showOpcodes('myDIV')">Show converted opcodes (For debugging)</button><br>
 		<div id='myDIV' style="display: none;">
 			<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
 			<button onclick="reRunWithNewOpcodes()">Re-run scene with these opcodes</button>

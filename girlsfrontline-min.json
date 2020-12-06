@@ -1,1 +1,3185 @@
-[{"name":"43M","type":"SMG","num":291,"rating":3},{"name":"6P62","type":"AR","num":138,"rating":3,"internalName":"6P62","img":"pic_6P62.png","costumes":[{"name":"Default","pic":"pic_6P62.png"},{"name":"Default (Damaged)","pic":"pic_6P62_D.png"},{"name":"Battle Sailor","pic":"pic_6P62_704.png"},{"name":"Battle Sailor (Damaged)","pic":"pic_6P62_704_D.png"}]},{"name":"9A-91","type":"AR","num":118,"rating":4,"internalName":"9A91","img":"pic_9A91.png","costumes":[{"name":"Default","pic":"pic_9A91.png"},{"name":"Default (Damaged)","pic":"pic_9A91_D.png"},{"name":"Bullets Cafe","pic":"pic_9A91_1302.png"},{"name":"Bullets Cafe (Damaged)","pic":"pic_9A91_1302_D.png"},{"name":"Untranslated1","pic":"pic_9A91_4104.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_9A91_4104_D.png"}]},{"name":"A-91","type":"AR","num":227,"rating":4,"internalName":"A91","img":"pic_A91.png","costumes":[{"name":"Default","pic":"pic_A91.png"},{"name":"Default (Damaged)","pic":"pic_A91_D.png"},{"name":"Untranslated1","pic":"pic_A91_4403.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_A91_4403_D.png"}]},{"name":"AA-12","type":"SG","num":163,"rating":5,"internalName":"AA12","img":"pic_AA12.png","costumes":[{"name":"Default","pic":"pic_AA12.png"},{"name":"Default (Damaged)","pic":"pic_AA12_D.png"},{"name":"The Sun Never Rises","pic":"pic_AA12_2403.png"},{"name":"The Sun Never Rises (Damaged)","pic":"pic_AA12_2403_D.png"},{"name":"Untranslated1","pic":"pic_AA12_4401.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_AA12_4401_D.png"}]},{"name":"AAT-52","type":"MG","num":111,"rating":2,"internalName":"AAT52","img":"pic_AAT52.png","costumes":[{"name":"Default","pic":"pic_AAT52.png"},{"name":"Default (Damaged)","pic":"pic_AAT52_D.png"}]},{"name":"ACR","type":"AR","num":274,"rating":5,"internalName":"ACR","img":"pic_ACR.png","costumes":[{"name":"Default","pic":"pic_ACR.png"},{"name":"Default (Damaged)","pic":"pic_ACR_D.png"}]},{"name":"ADS","type":"AR","num":214,"rating":5,"internalName":"ADS","img":"pic_ADS.png","costumes":[{"name":"Default","pic":"pic_ADS.png"},{"name":"Default (Damaged)","pic":"pic_ADS_D.png"},{"name":"Untranslated1","pic":"pic_ADS_3601.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_ADS_3601_D.png"}]},{"name":"AEK-999","type":"MG","num":149,"rating":4,"internalName":"AEK999","img":"pic_AEK999.png","costumes":[{"name":"Default","pic":"pic_AEK999.png"},{"name":"Default (Damaged)","pic":"pic_AEK999_D.png"},{"name":"Babe Driver","pic":"pic_AEK999_1505.png"},{"name":"Babe Driver (Damaged)","pic":"pic_AEK999_1505_D.png"}]},{"name":"AK-12","type":"AR","num":206,"rating":5,"internalName":"AK12","img":"pic_AK12.png","costumes":[{"name":"Default","pic":"pic_AK12.png"},{"name":"Default (Damaged)","pic":"pic_AK12_D.png"},{"name":"Age of Slushies","pic":"pic_AK12_2402.png"},{"name":"Age of Slushies (Damaged)","pic":"pic_AK12_2402_D.png"},{"name":"Untranslated1","pic":"pic_AK12_3302.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_AK12_3302_D.png"}]},{"name":"AK-15","type":"AR","num":293,"rating":5,"internalName":"AK15","img":"pic_AK15.png","costumes":[{"name":"Default","pic":"pic_AK15.png"},{"name":"Default (Damaged)","pic":"pic_AK15_D.png"}]},{"name":"AK-47","type":"AR","num":58,"rating":3,"internalName":"AK47","img":"pic_AK47.png","costumes":[{"name":"Default","pic":"pic_AK47.png"},{"name":"Default (Damaged)","pic":"pic_AK47_D.png"},{"name":"Lord of War","pic":"pic_AK47_501.png"},{"name":"Lord of War (Damaged)","pic":"pic_AK47_501_D.png"}]},{"name":"AK-74U","type":"SMG","num":59,"rating":5,"internalName":"AK74U","img":"pic_AK74U.png","costumes":[{"name":"Default","pic":"pic_AK74U.png"},{"name":"Default (Damaged)","pic":"pic_AK74U_D.png"},{"name":"Lily of the Valley","pic":"pic_AK74U_3002.png"},{"name":"Lily of the Valley (Damaged)","pic":"pic_AK74U_3002_D.png"}]},{"name":"AK-Alfa","type":"AR","num":306,"rating":5,"internalName":"AKAlfa","img":"pic_AKAlfa.png","costumes":[{"name":"Default","pic":"pic_AKAlfa.png"},{"name":"Default (Damaged)","pic":"pic_AKAlfa_D.png"}]},{"name":"AN-94","type":"AR","num":205,"rating":5,"internalName":"AN94","img":"pic_AN94.png","costumes":[{"name":"Default","pic":"pic_AN94.png"},{"name":"Default (Damaged)","pic":"pic_AN94_D.png"},{"name":"Untranslated1","pic":"pic_AN94_3303.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_AN94_3303_D.png"},{"name":"The Diving Bell and the Doll","pic":"pic_AN94_2404.png"},{"name":"The Diving Bell and the Doll (Damaged)","pic":"pic_AN94_2404_D.png"}]},{"name":"AR70","type":"AR","num":134,"rating":3,"internalName":"AR70","img":"pic_AR70.png","costumes":[{"name":"Default","pic":"pic_AR70.png"},{"name":"Default (Damaged)","pic":"pic_AR70_D.png"}]},{"name":"ART556","type":"AR","num":175,"rating":5,"internalName":"ART556","img":"pic_ART556.png","costumes":[{"name":"Default","pic":"pic_ART556.png"},{"name":"Default (Damaged)","pic":"pic_ART556_D.png"},{"name":"White Cabbage","pic":"pic_ART556_1803.png"},{"name":"White Cabbage (Damaged)","pic":"pic_ART556_1803_D.png"},{"name":"Little Chimney Sweeper","pic":"pic_ART556_2803.png"},{"name":"Little Chimney Sweeper (Damaged)","pic":"pic_ART556_2803_D.png"}]},{"name":"ARX-160","type":"AR","num":120,"rating":3,"internalName":"ARX160","img":"pic_ARX160.png","costumes":[{"name":"Default","pic":"pic_ARX160.png"},{"name":"Default (Damaged)","pic":"pic_ARX160_D.png"}]},{"name":"AS Val","type":"AR","num":60,"rating":4,"internalName":"ASVAL","img":"pic_ASVAL.png","costumes":[{"name":"Default","pic":"pic_ASVAL.png"},{"name":"Default (Damaged)","pic":"pic_ASVAL_D.png"},{"name":"MOD 3","pic":"pic_ASVALMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_ASVALMod_D.png"},{"name":"Fireworks of Dreams","pic":"pic_ASVAL_2907.png"},{"name":"Fireworks of Dreams (Damaged)","pic":"pic_ASVAL_2907_D.png"}]},{"name":"AS Val MOD 1","type":"AR","num":60,"rating":5,"internalName":"ASVAL","img":"pic_ASVAL.png"},{"name":"AS Val MOD 2","type":"AR","num":60,"rating":5,"internalName":"ASVAL","img":"pic_ASVAL.png"},{"name":"AS Val MOD 3","type":"AR","num":60,"rating":5,"internalName":"ASVALMod","img":"pic_ASVALMod.png","costumes":[{"name":"Default","pic":"pic_ASVALMod.png"},{"name":"Default (Damaged)","pic":"pic_ASVALMod_D.png"}]},{"name":"ASh-12.7","type":"AR","num":170,"rating":3,"internalName":"Ash127","img":"pic_Ash127.png","costumes":[{"name":"Default","pic":"pic_Ash127.png"},{"name":"Default (Damaged)","pic":"pic_Ash127_D.png"}]},{"name":"AUG","type":"AR","num":73,"rating":5,"internalName":"AUG","img":"pic_AUG.png","costumes":[{"name":"Default","pic":"pic_AUG.png"},{"name":"Default (Damaged)","pic":"pic_AUG_D.png"}]},{"name":"AUG Para","type":"SMG","num":315,"rating":5},{"name":"Ak 5","type":"AR","num":187,"rating":4,"internalName":"Ak5","img":"pic_Ak5.png","costumes":[{"name":"Default","pic":"pic_Ak5.png"},{"name":"Default (Damaged)","pic":"pic_Ak5_D.png"}]},{"name":"Ameli","type":"MG","num":185,"rating":4,"internalName":"Ameli","img":"pic_Ameli.png","costumes":[{"name":"Default","pic":"pic_Ameli.png"},{"name":"Default (Damaged)","pic":"pic_Ameli_D.png"},{"name":"Little Gift Tree","pic":"pic_Ameli_1605.png"},{"name":"Little Gift Tree (Damaged)","pic":"pic_Ameli_1605_D.png"},{"name":"Ameli's Receive","pic":"pic_Ameli_2409.png"},{"name":"Ameli's Receive (Damaged)","pic":"pic_Ameli_2409_D.png"}]},{"name":"Astra Revolver","type":"HG","num":14,"rating":3,"internalName":"357","img":"pic_357.png","costumes":[{"name":"Default","pic":"pic_357.png"},{"name":"Default (Damaged)","pic":"pic_357_D.png"}]},{"name":"BM59","type":"RF","num":52,"rating":2,"internalName":"BM59","img":"pic_BM59.png","costumes":[{"name":"Default","pic":"pic_BM59.png"},{"name":"Default (Damaged)","pic":"pic_BM59_D.png"}]},{"name":"Ballista","type":"RF","num":204,"rating":5,"internalName":"Ballista","img":"pic_Ballista.png","costumes":[{"name":"Default","pic":"pic_Ballista.png"},{"name":"Default (Damaged)","pic":"pic_Ballista_D.png"}]},{"name":"Beretta Model 38","type":"SMG","num":31,"rating":2,"internalName":"MAB38","img":"pic_MAB38.png","costumes":[{"name":"Default","pic":"pic_MAB38.png"},{"name":"Default (Damaged)","pic":"pic_MAB38_D.png"},{"name":"MOD 3","pic":"pic_MAB38Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_MAB38Mod_D.png"}]},{"name":"Beretta Model 38 MOD 1","type":"SMG","num":31,"rating":4,"internalName":"MAB38","img":"pic_MAB38.png"},{"name":"Beretta Model 38 MOD 2","type":"SMG","num":31,"rating":4,"internalName":"MAB38","img":"pic_MAB38.png"},{"name":"Beretta Model 38 MOD 3","type":"SMG","num":31,"rating":4,"internalName":"MAB38Mod","img":"pic_MAB38Mod.png","costumes":[{"name":"Default","pic":"pic_MAB38Mod.png"},{"name":"Default (Damaged)","pic":"pic_MAB38Mod_D.png"}]},{"name":"Bren","type":"MG","num":89,"rating":3,"internalName":"BrenMK","img":"pic_BrenMK.png","costumes":[{"name":"Default","pic":"pic_BrenMK.png"},{"name":"Default (Damaged)","pic":"pic_BrenMK_D.png"},{"name":"MOD 3","pic":"pic_BrenMKMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_BrenMKMod_D.png"},{"name":"Jack the Trine","pic":"pic_BrenMK_2605.png"},{"name":"Jack the Trine (Damaged)","pic":"pic_BrenMK_2605_D.png"}]},{"name":"Bren MOD 1","type":"MG","num":89,"rating":4,"internalName":"BrenMK","img":"pic_BrenMK.png"},{"name":"Bren MOD 2","type":"MG","num":89,"rating":4,"internalName":"BrenMK","img":"pic_BrenMK.png"},{"name":"Bren MOD 3","type":"MG","num":89,"rating":4,"internalName":"BrenMKMod","img":"pic_BrenMKMod.png","costumes":[{"name":"Default","pic":"pic_BrenMKMod.png"},{"name":"Default (Damaged)","pic":"pic_BrenMKMod_D.png"}]},{"name":"Bren Ten","type":"HG","num":139,"rating":2,"internalName":"BrenTen","img":"pic_BrenTen.png","costumes":[{"name":"Default","pic":"pic_BrenTen.png"},{"name":"Default (Damaged)","pic":"pic_BrenTen_D.png"}]},{"name":"C-93","type":"HG","num":285,"rating":5,"internalName":"C93","img":"pic_C93.png","costumes":[{"name":"Default","pic":"pic_C93.png"},{"name":"Default (Damaged)","pic":"pic_C93_D.png"}]},{"name":"C-MS","type":"SMG","num":213,"rating":5,"internalName":"CBJMS","img":"pic_CBJMS.png","costumes":[{"name":"Default","pic":"pic_CBJMS.png"},{"name":"Default (Damaged)","pic":"pic_CBJMS_D.png"},{"name":"Untranslated1","pic":"pic_CBJMS_3503.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_CBJMS_3503_D.png"},{"name":"The Wonderful Adventures of Geese","pic":"pic_CBJMS_2205.png"},{"name":"The Wonderful Adventures of Geese (Damaged)","pic":"pic_CBJMS_2205_D.png"}]},{"name":"C14","type":"RF","num":-1,"rating":3},{"name":"C96","type":"HG","num":12,"rating":3,"internalName":"C96","img":"pic_C96.png","costumes":[{"name":"Default","pic":"pic_C96.png"},{"name":"Default (Damaged)","pic":"pic_C96_D.png"},{"name":"MOD 3","pic":"pic_C96Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_C96Mod_D.png"}]},{"name":"C96 MOD 1","type":"HG","num":12,"rating":4,"internalName":"C96","img":"pic_C96.png"},{"name":"C96 MOD 2","type":"HG","num":12,"rating":4,"internalName":"C96","img":"pic_C96.png"},{"name":"C96 MOD 3","type":"HG","num":12,"rating":4,"internalName":"C96Mod","img":"pic_C96Mod.png","costumes":[{"name":"Default","pic":"pic_C96Mod.png"},{"name":"Default (Damaged)","pic":"pic_C96Mod_D.png"}]},{"name":"CAR","type":"MG","num":300,"rating":3,"internalName":"CAR","img":"pic_CAR.png","costumes":[{"name":"Default","pic":"pic_CAR.png"},{"name":"Default (Damaged)","pic":"pic_CAR_D.png"}]},{"name":"CAWS","type":"SG","num":281,"rating":5,"internalName":"HKCAWS","img":"pic_HKCAWS.png","costumes":[{"name":"Default","pic":"pic_HKCAWS.png"},{"name":"Default (Damaged)","pic":"pic_HKCAWS_D.png"},{"name":"Untranslated1","pic":"pic_HKCAWS_4003.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_HKCAWS_4003_D.png"}]},{"name":"CF05","type":"SMG","num":295,"rating":4},{"name":"CR-21","type":"AR","num":288,"rating":4,"internalName":"CR21","img":"pic_CR21.png","costumes":[{"name":"Default","pic":"pic_CR21.png"},{"name":"Default (Damaged)","pic":"pic_CR21_D.png"}]},{"name":"CZ-805","type":"AR","num":108,"rating":3,"internalName":"CZ805","img":"pic_CZ805.png","costumes":[{"name":"Default","pic":"pic_CZ805.png"},{"name":"Default (Damaged)","pic":"pic_CZ805_D.png"}]},{"name":"CZ2000","type":"AR","num":207,"rating":4,"internalName":"CZ2000","img":"pic_CZ2000.png","costumes":[{"name":"Default","pic":"pic_CZ2000.png"},{"name":"Default (Damaged)","pic":"pic_CZ2000_D.png"}]},{"name":"CZ52","type":"HG","num":210,"rating":3,"internalName":"CZ52","img":"pic_CZ52.png","costumes":[{"name":"Default","pic":"pic_CZ52.png"},{"name":"Default (Damaged)","pic":"pic_CZ52_D.png"},{"name":"Tweedia","pic":"pic_CZ52_3007.png"},{"name":"Tweedia (Damaged)","pic":"pic_CZ52_3007_D.png"}]},{"name":"CZ75","type":"HG","num":166,"rating":5,"internalName":"CZ75","img":"pic_CZ75.png","costumes":[{"name":"Default","pic":"pic_CZ75.png"},{"name":"Default (Damaged)","pic":"pic_CZ75_D.png"},{"name":"Winter Forager","pic":"pic_CZ75_1604.png"},{"name":"Winter Forager (Damaged)","pic":"pic_CZ75_1604_D.png"},{"name":"Monks Cress","pic":"pic_CZ75_3005.png"},{"name":"Monks Cress (Damaged)","pic":"pic_CZ75_3005_D.png"}]},{"name":"Carcano M1891","type":"RF","num":197,"rating":5,"internalName":"Carcano1891","img":"pic_Carcano1891.png","costumes":[{"name":"Default","pic":"pic_Carcano1891.png"},{"name":"Default (Damaged)","pic":"pic_Carcano1891_D.png"},{"name":"Bells of Beginning","pic":"pic_Carcano1891_2905.png"},{"name":"Bells of Beginning (Damaged)","pic":"pic_Carcano1891_2905_D.png"},{"name":"Little Brave Cano","pic":"pic_Carcano1891_2201.png"},{"name":"Little Brave Cano (Damaged)","pic":"pic_Carcano1891_2201_D.png"}]},{"name":"Carcano M91∕38","type":"RF","num":198,"rating":5,"internalName":"Carcano1938","img":"pic_Carcano1938.png","costumes":[{"name":"Default","pic":"pic_Carcano1938.png"},{"name":"Default (Damaged)","pic":"pic_Carcano1938_D.png"},{"name":"Miss Pinocchio","pic":"pic_Carcano1938_2202.png"},{"name":"Miss Pinocchio (Damaged)","pic":"pic_Carcano1938_2202_D.png"},{"name":"Insegui l'aquilone","pic":"pic_Carcano1938_2904.png"},{"name":"Insegui l'aquilone (Damaged)","pic":"pic_Carcano1938_2904_D.png"}]},{"name":"Chauchat","type":"MG","num":264,"rating":4,"internalName":"ChauchatM1915","img":"pic_ChauchatM1915.png","costumes":[{"name":"Default","pic":"pic_ChauchatM1915.png"},{"name":"Default (Damaged)","pic":"pic_ChauchatM1915_D.png"}]},{"name":"Colt Revolver","type":"HG","num":1,"rating":4,"internalName":"M1873","img":"pic_M1873.png","costumes":[{"name":"Default","pic":"pic_M1873.png"},{"name":"Default (Damaged)","pic":"pic_M1873_D.png"},{"name":"MOD 3","pic":"pic_M1873Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M1873Mod_D.png"},{"name":"Queen of Miracles","pic":"pic_M1873_2105.png"},{"name":"Queen of Miracles (Damaged)","pic":"pic_M1873_2105_D.png"},{"name":"Wish Upon A Star","pic":"pic_M1873_301.png"},{"name":"Wish Upon A Star (Damaged)","pic":"pic_M1873_301_D.png"}]},{"name":"Colt Revolver MOD 1","type":"HG","num":1,"rating":5,"internalName":"M1873","img":"pic_M1873.png"},{"name":"Colt Revolver MOD 2","type":"HG","num":1,"rating":5,"internalName":"M1873","img":"pic_M1873.png"},{"name":"Colt Revolver MOD 3","type":"HG","num":1,"rating":5,"internalName":"M1873Mod","img":"pic_M1873Mod.png","costumes":[{"name":"Default","pic":"pic_M1873Mod.png"},{"name":"Default (Damaged)","pic":"pic_M1873Mod_D.png"}]},{"name":"Contender","type":"HG","num":183,"rating":5,"internalName":"Contender","img":"pic_Contender.png","costumes":[{"name":"Default","pic":"pic_Contender.png"},{"name":"Default (Damaged)","pic":"pic_Contender_D.png"},{"name":"Dragon's Son","pic":"pic_Contender_3201.png"},{"name":"Dragon's Son (Damaged)","pic":"pic_Contender_3201_D.png"},{"name":"Opera Ghost","pic":"pic_Contender_1502.png"},{"name":"Opera Ghost (Damaged)","pic":"pic_Contender_1502_D.png"},{"name":"Flowerful Maid","pic":"pic_Contender_2302.png"},{"name":"Flowerful Maid (Damaged)","pic":"pic_Contender_2302_D.png"}]},{"name":"Cx4 Storm","type":"SMG","num":225,"rating":4,"internalName":"Cx4Storm","img":"pic_Cx4Storm.png","costumes":[{"name":"Default","pic":"pic_Cx4Storm.png"},{"name":"Default (Damaged)","pic":"pic_Cx4Storm_D.png"}]},{"name":"DP-12","type":"SG","num":282,"rating":5,"internalName":"DP12","img":"pic_DP12.png","costumes":[{"name":"Default","pic":"pic_DP12.png"},{"name":"Default (Damaged)","pic":"pic_DP12_D.png"},{"name":"Untranslated1","pic":"pic_DP12_4201.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_DP12_4201_D.png"}]},{"name":"DP28","type":"MG","num":82,"rating":2,"internalName":"DP28","img":"pic_DP28.png","costumes":[{"name":"Default","pic":"pic_DP28.png"},{"name":"Default (Damaged)","pic":"pic_DP28_D.png"}]},{"name":"DSR-50","type":"RF","num":179,"rating":5,"internalName":"DSR50","img":"pic_DSR50.png","costumes":[{"name":"Default","pic":"pic_DSR50.png"},{"name":"Default (Damaged)","pic":"pic_DSR50_D.png"},{"name":"Highest Bid","pic":"pic_DSR50_2101.png"},{"name":"Highest Bid (Damaged)","pic":"pic_DSR50_2101_D.png"},{"name":"Red Peony","pic":"pic_DSR50_1801.png"},{"name":"Red Peony (Damaged)","pic":"pic_DSR50_1801_D.png"}]},{"name":"Defender","type":"SG","num":302,"rating":4},{"name":"Desert Eagle","type":"HG","num":272,"rating":5,"internalName":"DesertEagle","img":"pic_DesertEagle.png","costumes":[{"name":"Default","pic":"pic_DesertEagle.png"},{"name":"Default (Damaged)","pic":"pic_DesertEagle_D.png"}]},{"name":"EM-2","type":"AR","num":262,"rating":4,"internalName":"EM2","img":"pic_EM2.png","costumes":[{"name":"Default","pic":"pic_EM2.png"},{"name":"Default (Damaged)","pic":"pic_EM2_D.png"},{"name":"Untranslated1","pic":"pic_EM2_4209.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_EM2_4209_D.png"}]},{"name":"EVO 3","type":"SMG","num":131,"rating":3,"internalName":"EVO3","img":"pic_EVO3.png","costumes":[{"name":"Default","pic":"pic_EVO3.png"},{"name":"Default (Damaged)","pic":"pic_EVO3_D.png"},{"name":"White Night Star","pic":"pic_EVO3_2109.png"},{"name":"White Night Star (Damaged)","pic":"pic_EVO3_2109_D.png"}]},{"name":"F1","type":"SMG","num":178,"rating":3,"internalName":"F1","img":"pic_F1.png","costumes":[{"name":"Default","pic":"pic_F1.png"},{"name":"Default (Damaged)","pic":"pic_F1_D.png"},{"name":"Dark Sorceress Academy","pic":"pic_F1_2606.png"},{"name":"Dark Sorceress Academy (Damaged)","pic":"pic_F1_2606_D.png"}]},{"name":"F2000","type":"AR","num":107,"rating":2,"internalName":"F2000","img":"pic_F2000.png","costumes":[{"name":"Default","pic":"pic_F2000.png"},{"name":"Default (Damaged)","pic":"pic_F2000_D.png"}]},{"name":"FAL","type":"AR","num":106,"rating":5,"internalName":"FNFAL","img":"pic_FNFAL.png","costumes":[{"name":"Default","pic":"pic_FNFAL.png"},{"name":"Default (Damaged)","pic":"pic_FNFAL_D.png"},{"name":"Winter Supply","pic":"pic_FNFAL_308.png"},{"name":"Winter Supply (Damaged)","pic":"pic_FNFAL_308_D.png"},{"name":"The Big Day","pic":"pic_FNFAL_607.png"},{"name":"The Big Day (Damaged)","pic":"pic_FNFAL_607_D.png"},{"name":"FAL's Summer","pic":"pic_FNFAL_2406.png"},{"name":"FAL's Summer (Damaged)","pic":"pic_FNFAL_2406_D.png"}]},{"name":"FAMAS","type":"AR","num":69,"rating":4,"internalName":"FAMAS","img":"pic_FAMAS.png","costumes":[{"name":"Default","pic":"pic_FAMAS.png"},{"name":"Default (Damaged)","pic":"pic_FAMAS_D.png"},{"name":"Guns N' Side Boxes","pic":"pic_FAMAS_2604.png"},{"name":"Guns N' Side Boxes (Damaged)","pic":"pic_FAMAS_2604_D.png"}]},{"name":"FG42","type":"MG","num":110,"rating":2,"internalName":"FG42","img":"pic_FG42.png","costumes":[{"name":"Default","pic":"pic_FG42.png"},{"name":"Default (Damaged)","pic":"pic_FG42_D.png"}]},{"name":"FMG-9","type":"SMG","num":19,"rating":3,"internalName":"FMG9","img":"pic_FMG9.png","costumes":[{"name":"Default","pic":"pic_FMG9.png"},{"name":"Default (Damaged)","pic":"pic_FMG9_D.png"}]},{"name":"FN-49","type":"RF","num":51,"rating":2,"internalName":"FN49","img":"pic_FN49.png","costumes":[{"name":"Default","pic":"pic_FN49.png"},{"name":"Default (Damaged)","pic":"pic_FN49_D.png"},{"name":"MOD 3","pic":"pic_FN49Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_FN49Mod_D.png"}]},{"name":"FN-49 MOD 1","type":"RF","num":51,"rating":4,"internalName":"FN49","img":"pic_FN49.png"},{"name":"FN-49 MOD 2","type":"RF","num":51,"rating":4,"internalName":"FN49","img":"pic_FN49.png"},{"name":"FN-49 MOD 3","type":"RF","num":51,"rating":4,"internalName":"FN49Mod","img":"pic_FN49Mod.png","costumes":[{"name":"Default","pic":"pic_FN49Mod.png"},{"name":"Default (Damaged)","pic":"pic_FN49Mod_D.png"}]},{"name":"FNC","type":"AR","num":70,"rating":3,"internalName":"FNFNC","img":"pic_FNFNC.png","costumes":[{"name":"Default","pic":"pic_FNFNC.png"},{"name":"Default (Damaged)","pic":"pic_FNFNC_D.png"},{"name":"Candy Thief","pic":"pic_FNFNC_1406.png"},{"name":"Candy Thief (Damaged)","pic":"pic_FNFNC_1406_D.png"},{"name":"Untranslated1","pic":"pic_FNFNC_4308.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_FNFNC_4308_D.png"}]},{"name":"FNP-9","type":"HG","num":90,"rating":2,"internalName":"FNP9","img":"pic_FNP9.png","costumes":[{"name":"Default","pic":"pic_FNP9.png"},{"name":"Default (Damaged)","pic":"pic_FNP9_D.png"}]},{"name":"FP-6","type":"SG","num":164,"rating":5,"internalName":"FP6","img":"pic_FP6.png","costumes":[{"name":"Default","pic":"pic_FP6.png"},{"name":"Default (Damaged)","pic":"pic_FP6_D.png"},{"name":"Satellite of Love","pic":"pic_FP6_2804.png"},{"name":"Satellite of Love (Damaged)","pic":"pic_FP6_2804_D.png"}]},{"name":"Falcon","type":"RF","num":256,"rating":3,"internalName":"Falcon","img":"pic_Falcon.png","costumes":[{"name":"Default","pic":"pic_Falcon.png"},{"name":"Default (Damaged)","pic":"pic_Falcon_D.png"},{"name":"Untranslated1","pic":"pic_Falcon_4107.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Falcon_4107_D.png"}]},{"name":"Five-seveN","type":"HG","num":142,"rating":5,"internalName":"FN57","img":"pic_FN57.png","costumes":[{"name":"Default","pic":"pic_FN57.png"},{"name":"Default (Damaged)","pic":"pic_FN57_D.png"},{"name":"Adventures of Little Finn","pic":"pic_FN57_2203.png"},{"name":"Adventures of Little Finn (Damaged)","pic":"pic_FN57_2203_D.png"},{"name":"Cruise Queen","pic":"pic_FN57_1109.png"},{"name":"Cruise Queen (Damaged)","pic":"pic_FN57_1109_D.png"},{"name":"Blue Christmas","pic":"pic_FN57_2805.png"},{"name":"Blue Christmas (Damaged)","pic":"pic_FN57_2805_D.png"},{"name":"Smile of Acceptance","pic":"pic_FN57_1902.png"},{"name":"Smile of Acceptance (Damaged)","pic":"pic_FN57_1902_D.png"}]},{"name":"G11","type":"AR","num":122,"rating":5,"internalName":"G11","img":"pic_G11.png","costumes":[{"name":"Default","pic":"pic_G11.png"},{"name":"Default (Damaged)","pic":"pic_G11_D.png"},{"name":"Dragon Jr.","pic":"pic_G11_2502.png"},{"name":"Dragon Jr. (Damaged)","pic":"pic_G11_2502_D.png"},{"name":"Schönstes Geschenk","pic":"pic_G11_1602.png"},{"name":"Schönstes Geschenk (Damaged)","pic":"pic_G11_1602_D.png"},{"name":"Untranslated1","pic":"pic_G11_4102.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_G11_4102_D.png"},{"name":"Rugged","pic":"pic_G11_rugged.png"},{"name":"Neet Zombie","pic":"pic_G11_9.png"},{"name":"Neet Zombie (Damaged)","pic":"pic_G11_9_D.png"},{"name":"Maid","pic":"pic_G11_maid.png"},{"name":"Untranslated2","pic":"pic_G11_538.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_G11_538_D.png"}]},{"name":"G28","type":"RF","num":146,"rating":4,"internalName":"G28","img":"pic_G28.png","costumes":[{"name":"Default","pic":"pic_G28.png"},{"name":"Default (Damaged)","pic":"pic_G28_D.png"},{"name":"Wiesnbier","pic":"pic_G28_2304.png"},{"name":"Wiesnbier (Damaged)","pic":"pic_G28_2304_D.png"},{"name":"Untranslated1","pic":"pic_G28_3307.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_G28_3307_D.png"},{"name":"Tropical Storm","pic":"pic_G28_1104.png"},{"name":"Tropical Storm (Damaged)","pic":"pic_G28_1104_D.png"}]},{"name":"G3","type":"AR","num":63,"rating":2,"internalName":"G3","img":"pic_G3.png","costumes":[{"name":"Default","pic":"pic_G3.png"},{"name":"Default (Damaged)","pic":"pic_G3_D.png"},{"name":"MOD 3","pic":"pic_G3Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_G3Mod_D.png"},{"name":"Battlefield Baker","pic":"pic_G3_1303.png"},{"name":"Battlefield Baker (Damaged)","pic":"pic_G3_1303_D.png"}]},{"name":"G3 MOD 1","type":"AR","num":63,"rating":4,"internalName":"G3","img":"pic_G3.png"},{"name":"G3 MOD 2","type":"AR","num":63,"rating":4,"internalName":"G3","img":"pic_G3.png"},{"name":"G3 MOD 3","type":"AR","num":63,"rating":4,"internalName":"G3Mod","img":"pic_G3Mod.png","costumes":[{"name":"Default","pic":"pic_G3Mod.png"},{"name":"Default (Damaged)","pic":"pic_G3Mod_D.png"}]},{"name":"G36","type":"AR","num":64,"rating":4,"internalName":"G36","img":"pic_G36.png","costumes":[{"name":"Default","pic":"pic_G36.png"},{"name":"Default (Damaged)","pic":"pic_G36_D.png"},{"name":"MOD 3","pic":"pic_G36Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_G36Mod_D.png"},{"name":"\"Sommelier\"","pic":"pic_G36_1507.png"},{"name":"\"Sommelier\" (Damaged)","pic":"pic_G36_1507_D.png"},{"name":"Pure White Cornflower","pic":"pic_G36_1904.png"},{"name":"Pure White Cornflower (Damaged)","pic":"pic_G36_1904_D.png"},{"name":"Every Child's X'mas Dream","pic":"pic_G36_2806.png"},{"name":"Every Child's X'mas Dream (Damaged)","pic":"pic_G36_2806_D.png"},{"name":"Untranslated1","pic":"pic_G36_3603.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_G36_3603_D.png"},{"name":"50 Days with Gr G36","pic":"pic_G36_2407.png"},{"name":"50 Days with Gr G36 (Damaged)","pic":"pic_G36_2407_D.png"},{"name":"Mini Maid","pic":"pic_G36_905.png"},{"name":"Mini Maid (Damaged)","pic":"pic_G36_905_D.png"},{"name":"coffee","pic":"pic_G36_coffee.png"}]},{"name":"G36 MOD 1","type":"AR","num":64,"rating":5,"internalName":"G36","img":"pic_G36.png"},{"name":"G36 MOD 2","type":"AR","num":64,"rating":5,"internalName":"G36","img":"pic_G36.png"},{"name":"G36 MOD 3","type":"AR","num":64,"rating":5,"internalName":"G36Mod","img":"pic_G36Mod.png","costumes":[{"name":"Default","pic":"pic_G36Mod.png"},{"name":"Default (Damaged)","pic":"pic_G36Mod_D.png"}]},{"name":"G36C","type":"SMG","num":104,"rating":5,"internalName":"G36C","img":"pic_G36C.png","costumes":[{"name":"Default","pic":"pic_G36C.png"},{"name":"Default (Damaged)","pic":"pic_G36C_D.png"},{"name":"Untranslated1","pic":"pic_G36C_3802.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_G36C_3802_D.png"},{"name":"Ode to Summer","pic":"pic_G36C_1202.png"},{"name":"Ode to Summer (Damaged)","pic":"pic_G36C_1202_D.png"},{"name":"You Who Steps Up","pic":"pic_G36C_3103.png"},{"name":"You Who Steps Up (Damaged)","pic":"pic_G36C_3103_D.png"}]},{"name":"G41","type":"AR","num":62,"rating":5,"internalName":"G41","img":"pic_G41.png","costumes":[{"name":"Default","pic":"pic_G41.png"},{"name":"Default (Damaged)","pic":"pic_G41_D.png"},{"name":"Beach Punk 2064","pic":"pic_G41_2401.png"},{"name":"Beach Punk 2064 (Damaged)","pic":"pic_G41_2401_D.png"}]},{"name":"G43","type":"RF","num":47,"rating":2,"internalName":"G43","img":"pic_G43.png","costumes":[{"name":"Default","pic":"pic_G43.png"},{"name":"Default (Damaged)","pic":"pic_G43_D.png"}]},{"name":"GSh-18","type":"HG","num":221,"rating":3,"internalName":"GSH18","img":"pic_GSH18.png","costumes":[{"name":"Default","pic":"pic_GSH18.png"},{"name":"Default (Damaged)","pic":"pic_GSH18_D.png"},{"name":"MOD 3","pic":"pic_GSH18Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_GSH18Mod_D.png"},{"name":"Mobile Operating Table","pic":"pic_GSH18_523.png"},{"name":"Mobile Operating Table (Damaged)","pic":"pic_GSH18_523_D.png"},{"name":"Kitty Paws","pic":"pic_GSH18_2.png"},{"name":"Kitty Paws (Damaged)","pic":"pic_GSH18_2_D.png"},{"name":"Pumpkin Mishka","pic":"pic_GSH18_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_GSH18_1_D.png"}]},{"name":"Galil","type":"AR","num":71,"rating":2,"internalName":"AR","img":"pic_AR.png","costumes":[{"name":"Default","pic":"pic_AR.png"},{"name":"Default (Damaged)","pic":"pic_AR_D.png"}]},{"name":"General Liu","type":"RF","num":316,"rating":5},{"name":"Gepard M1","type":"RF","num":201,"rating":3,"internalName":"GepardM1","img":"pic_GepardM1.png","costumes":[{"name":"Default","pic":"pic_GepardM1.png"},{"name":"Default (Damaged)","pic":"pic_GepardM1_D.png"},{"name":"Contracted Today","pic":"pic_GepardM1_2305.png"},{"name":"Contracted Today (Damaged)","pic":"pic_GepardM1_2305_D.png"},{"name":"Exciting Future","pic":"pic_GepardM1_3107.png"},{"name":"Exciting Future (Damaged)","pic":"pic_GepardM1_3107_D.png"},{"name":"Untranslated1","pic":"pic_GepardM1_4006.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_GepardM1_4006_D.png"}]},{"name":"Glock 17","type":"HG","num":15,"rating":3,"internalName":"Glock17","img":"pic_Glock17.png","costumes":[{"name":"Default","pic":"pic_Glock17.png"},{"name":"Default (Damaged)","pic":"pic_Glock17_D.png"}]},{"name":"Grizzly MkV","type":"HG","num":96,"rating":5,"internalName":"Grizzly","img":"pic_Grizzly.png","costumes":[{"name":"Default","pic":"pic_Grizzly.png"},{"name":"Default (Damaged)","pic":"pic_Grizzly_D.png"},{"name":"Weekend Cop","pic":"pic_Grizzly_105.png"},{"name":"Weekend Cop (Damaged)","pic":"pic_Grizzly_105_D.png"},{"name":"Teddy, Transform!","pic":"pic_Grizzly_903.png"},{"name":"Teddy, Transform! (Damaged)","pic":"pic_Grizzly_903_D.png"},{"name":"Untranslated1","pic":"pic_Grizzly_4303.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Grizzly_4303_D.png"},{"name":"Starry Night Ball","pic":"pic_Grizzly_2102.png"},{"name":"Starry Night Ball (Damaged)","pic":"pic_Grizzly_2102_D.png"}]},{"name":"HK21","type":"MG","num":208,"rating":5,"internalName":"HK21","img":"pic_HK21.png","costumes":[{"name":"Default","pic":"pic_HK21.png"},{"name":"Default (Damaged)","pic":"pic_HK21_D.png"},{"name":"Untranslated1","pic":"pic_HK21_4002.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_HK21_4002_D.png"},{"name":"Chain Breaker","pic":"pic_HK21_2701.png"},{"name":"Chain Breaker (Damaged)","pic":"pic_HK21_2701_D.png"}]},{"name":"HK23","type":"MG","num":195,"rating":3,"internalName":"HK23","img":"pic_HK23.png","costumes":[{"name":"Default","pic":"pic_HK23.png"},{"name":"Default (Damaged)","pic":"pic_HK23_D.png"}]},{"name":"HK33","type":"AR","num":265,"rating":3,"internalName":"HK33","img":"pic_HK33.png","costumes":[{"name":"Default","pic":"pic_HK33.png"},{"name":"Default (Damaged)","pic":"pic_HK33_D.png"}]},{"name":"HK416","type":"AR","num":65,"rating":5,"internalName":"HK416","img":"pic_HK416.png","costumes":[{"name":"Default","pic":"pic_HK416.png"},{"name":"Default (Damaged)","pic":"pic_HK416_D.png"},{"name":"MOD 3","pic":"pic_HK416Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_HK416Mod_D.png"},{"name":"Untranslated1","pic":"pic_HK416_3401.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_HK416_3401_D.png"},{"name":"Starry Cocoon","pic":"pic_HK416_805.png"},{"name":"Starry Cocoon (Damaged)","pic":"pic_HK416_805_D.png"},{"name":"Untranslated2","pic":"pic_HK416_537.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_HK416_537_D.png"}]},{"name":"HK416 MOD 1","type":"AR","num":65,"rating":6,"internalName":"HK416","img":"pic_HK416.png"},{"name":"HK416 MOD 2","type":"AR","num":65,"rating":6,"internalName":"HK416","img":"pic_HK416.png"},{"name":"HK416 MOD 3","type":"AR","num":65,"rating":6,"internalName":"HK416Mod","img":"pic_HK416Mod.png","costumes":[{"name":"Default","pic":"pic_HK416Mod.png"},{"name":"Default (Damaged)","pic":"pic_HK416Mod_D.png"}]},{"name":"HK45","type":"HG","num":167,"rating":3,"internalName":"HK45","img":"pic_HK45.png","costumes":[{"name":"Default","pic":"pic_HK45.png"},{"name":"Default (Damaged)","pic":"pic_HK45_D.png"},{"name":"Miracle☆Start","pic":"pic_HK45_2705.png"},{"name":"Miracle☆Start (Damaged)","pic":"pic_HK45_2705_D.png"}]},{"name":"HP-35","type":"HG","num":303,"rating":5},{"name":"HS2000","type":"HG","num":250,"rating":5,"internalName":"HS2000","img":"pic_HS2000.png","costumes":[{"name":"Default","pic":"pic_HS2000.png"},{"name":"Default (Damaged)","pic":"pic_HS2000_D.png"}]},{"name":"HSM10","type":"SG","num":299,"rating":3,"internalName":"HSM10","img":"pic_HSM10.png","costumes":[{"name":"Default","pic":"pic_HSM10.png"},{"name":"Default (Damaged)","pic":"pic_HSM10_D.png"}]},{"name":"Hanyang Type 88","type":"RF","num":95,"rating":3,"internalName":"88type","img":"pic_88type.png","costumes":[{"name":"Default","pic":"pic_88type.png"},{"name":"Default (Damaged)","pic":"pic_88type_D.png"},{"name":"MOD 3","pic":"pic_88typeMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_88typeMod_D.png"},{"name":"East Lake Lotus","pic":"pic_88type_1809.png"},{"name":"East Lake Lotus (Damaged)","pic":"pic_88type_1809_D.png"}]},{"name":"Hanyang Type 88 MOD 1","type":"RF","num":95,"rating":4,"internalName":"88type","img":"pic_88type.png"},{"name":"Hanyang Type 88 MOD 2","type":"RF","num":95,"rating":4,"internalName":"88type","img":"pic_88type.png"},{"name":"Hanyang Type 88 MOD 3","type":"RF","num":95,"rating":4,"internalName":"88typeMod","img":"pic_88typeMod.png","costumes":[{"name":"Default","pic":"pic_88typeMod.png"},{"name":"Default (Damaged)","pic":"pic_88typeMod_D.png"}]},{"name":"Honey Badger","type":"SMG","num":203,"rating":4,"internalName":"PDW","img":"pic_PDW.png","costumes":[{"name":"Default","pic":"pic_PDW.png"},{"name":"Default (Damaged)","pic":"pic_PDW_D.png"},{"name":"Untranslated1","pic":"pic_PDW_4005.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PDW_4005_D.png"}]},{"name":"Howa Type 64","type":"AR","num":243,"rating":5,"internalName":"Type64-AR","img":"pic_Type64-AR.png","costumes":[{"name":"Default","pic":"pic_Type64-AR.png"},{"name":"Default (Damaged)","pic":"pic_Type64-AR_D.png"},{"name":"New Year Wish","pic":"pic_Type64-AR_2901.png"},{"name":"New Year Wish (Damaged)","pic":"pic_Type64-AR_2901_D.png"}]},{"name":"Howa Type 89","type":"AR","num":290,"rating":5,"internalName":"HowaType89","img":"pic_HowaType89.png","costumes":[{"name":"Default","pic":"pic_HowaType89.png"},{"name":"Default (Damaged)","pic":"pic_HowaType89_D.png"}]},{"name":"IDW","type":"SMG","num":93,"rating":2,"internalName":"IDW","img":"pic_IDW.png","costumes":[{"name":"Default","pic":"pic_IDW.png"},{"name":"Default (Damaged)","pic":"pic_IDW_D.png"},{"name":"MOD 3","pic":"pic_IDWMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_IDWMod_D.png"},{"name":"Cat in the Box","pic":"pic_IDW_2108.png"},{"name":"Cat in the Box (Damaged)","pic":"pic_IDW_2108_D.png"},{"name":"Cloak and Cat Ears","pic":"pic_IDW_3205.png"},{"name":"Cloak and Cat Ears (Damaged)","pic":"pic_IDW_3205_D.png"}]},{"name":"IDW MOD 1","type":"SMG","num":93,"rating":4,"internalName":"IDW","img":"pic_IDW.png"},{"name":"IDW MOD 2","type":"SMG","num":93,"rating":4,"internalName":"IDW","img":"pic_IDW.png"},{"name":"IDW MOD 3","type":"SMG","num":93,"rating":4,"internalName":"IDWMod","img":"pic_IDWMod.png","costumes":[{"name":"Default","pic":"pic_IDWMod.png"},{"name":"Default (Damaged)","pic":"pic_IDWMod_D.png"}]},{"name":"INSAS","type":"AR","num":279,"rating":3,"internalName":"INSAS","img":"pic_INSAS.png","costumes":[{"name":"Default","pic":"pic_INSAS.png"},{"name":"Default (Damaged)","pic":"pic_INSAS_D.png"}]},{"name":"IWS 2000","type":"RF","num":148,"rating":5,"internalName":"IWS2000","img":"pic_IWS2000.png","costumes":[{"name":"Default","pic":"pic_IWS2000.png"},{"name":"Default (Damaged)","pic":"pic_IWS2000_D.png"},{"name":"Edelweiss","pic":"pic_IWS2000_3004.png"},{"name":"Edelweiss (Damaged)","pic":"pic_IWS2000_3004_D.png"},{"name":"The Seventh Sealer","pic":"pic_IWS2000_1403.png"},{"name":"The Seventh Sealer (Damaged)","pic":"pic_IWS2000_1403_D.png"}]},{"name":"JS 9","type":"SMG","num":234,"rating":5,"internalName":"JS9mm","img":"pic_JS9mm.png","costumes":[{"name":"Default","pic":"pic_JS9mm.png"},{"name":"Default (Damaged)","pic":"pic_JS9mm_D.png"},{"name":"Untranslated1","pic":"pic_JS9mm_4204.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_JS9mm_4204_D.png"}]},{"name":"JS05","type":"RF","num":192,"rating":5,"internalName":"JS-127","img":"pic_JS-127.png","costumes":[{"name":"Default","pic":"pic_JS-127.png"},{"name":"Default (Damaged)","pic":"pic_JS-127_D.png"},{"name":"Swansong","pic":"pic_JS-127_2702.png"},{"name":"Swansong (Damaged)","pic":"pic_JS-127_2702_D.png"},{"name":"Fairy Lily","pic":"pic_JS-127_1804.png"},{"name":"Fairy Lily (Damaged)","pic":"pic_JS-127_1804_D.png"}]},{"name":"Jericho","type":"HG","num":248,"rating":4,"internalName":"Jericho","img":"pic_Jericho.png","costumes":[{"name":"Default","pic":"pic_Jericho.png"},{"name":"Default (Damaged)","pic":"pic_Jericho_D.png"}]},{"name":"K11","type":"AR","num":236,"rating":5,"internalName":"K11","img":"pic_K11.png","costumes":[{"name":"Default","pic":"pic_K11.png"},{"name":"Default (Damaged)","pic":"pic_K11_D.png"},{"name":"Untranslated1","pic":"pic_K11_3402.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_K11_3402_D.png"}]},{"name":"K2","type":"AR","num":194,"rating":5,"internalName":"K2","img":"pic_K2.png","costumes":[{"name":"Default","pic":"pic_K2.png"},{"name":"Default (Damaged)","pic":"pic_K2_D.png"},{"name":"Far East Princess","pic":"pic_K2_2001.png"},{"name":"Far East Princess (Damaged)","pic":"pic_K2_2001_D.png"},{"name":"Before Dawn","pic":"pic_K2_3301.png"},{"name":"Before Dawn (Damaged)","pic":"pic_K2_3301_D.png"}]},{"name":"K3","type":"MG","num":271,"rating":3,"internalName":"K3","img":"pic_K3.png","costumes":[{"name":"Default","pic":"pic_K3.png"},{"name":"Default (Damaged)","pic":"pic_K3_D.png"}]},{"name":"K31","type":"RF","num":247,"rating":4,"internalName":"K31","img":"pic_K31.png","costumes":[{"name":"Default","pic":"pic_K31.png"},{"name":"Default (Damaged)","pic":"pic_K31_D.png"}]},{"name":"K5","type":"HG","num":212,"rating":4,"internalName":"K5","img":"pic_K5.png","costumes":[{"name":"Default","pic":"pic_K5.png"},{"name":"Default (Damaged)","pic":"pic_K5_D.png"},{"name":"Dome Moonlight","pic":"pic_K5_2002.png"},{"name":"Dome Moonlight (Damaged)","pic":"pic_K5_2002_D.png"},{"name":"Untranslated1","pic":"pic_K5_3308.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_K5_3308_D.png"}]},{"name":"KAC-PDW","type":"SMG","num":286,"rating":4},{"name":"KLIN","type":"SMG","num":177,"rating":4,"internalName":"KLIN","img":"pic_KLIN.png","costumes":[{"name":"Default","pic":"pic_KLIN.png"},{"name":"Default (Damaged)","pic":"pic_KLIN_D.png"},{"name":"Waning Winter","pic":"pic_KLIN_2003.png"},{"name":"Waning Winter (Damaged)","pic":"pic_KLIN_2003_D.png"},{"name":"The Three Crows","pic":"pic_KLIN_1204.png"},{"name":"The Three Crows (Damaged)","pic":"pic_KLIN_1204_D.png"}]},{"name":"KS-23","type":"SG","num":158,"rating":3,"internalName":"KS23","img":"pic_KS23.png","costumes":[{"name":"Default","pic":"pic_KS23.png"},{"name":"Default (Damaged)","pic":"pic_KS23_D.png"}]},{"name":"KSG","type":"SG","num":157,"rating":5,"internalName":"KSG","img":"pic_KSG.png","costumes":[{"name":"Default","pic":"pic_KSG.png"},{"name":"Default (Damaged)","pic":"pic_KSG_D.png"}]},{"name":"KSVK","type":"RF","num":252,"rating":4,"internalName":"KSVK","img":"pic_KSVK.png","costumes":[{"name":"Default","pic":"pic_KSVK.png"},{"name":"Default (Damaged)","pic":"pic_KSVK_D.png"},{"name":"MOD 3","pic":"pic_KSVKMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_KSVKMod_D.png"},{"name":"Kitty Paws","pic":"pic_KSVK_2.png"},{"name":"Kitty Paws (Damaged)","pic":"pic_KSVK_2_D.png"},{"name":"Untranslated1","pic":"pic_KSVK_3805.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_KSVK_3805_D.png"},{"name":"Untranslated2","pic":"pic_KSVK_4509.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_KSVK_4509_D.png"},{"name":"Untranslated3","pic":"pic_KSVK_3405.png"},{"name":"Untranslated3 (Damaged)","pic":"pic_KSVK_3405_D.png"},{"name":"Pumpkin Mishka","pic":"pic_KSVK_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_KSVK_1_D.png"}]},{"name":"Kar98k","type":"RF","num":46,"rating":5,"internalName":"98K","img":"pic_98K.png","costumes":[{"name":"Default","pic":"pic_98K.png"},{"name":"Default (Damaged)","pic":"pic_98K_D.png"},{"name":"Untranslated1","pic":"pic_98K_4301.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_98K_4301_D.png"}]},{"name":"Kord","type":"MG","num":276,"rating":5,"internalName":"Kord","img":"pic_Kord.png","costumes":[{"name":"Default","pic":"pic_Kord.png"},{"name":"Default (Damaged)","pic":"pic_Kord_D.png"}]},{"name":"L85A1","type":"AR","num":68,"rating":2,"internalName":"L85A1","img":"pic_L85A1.png","costumes":[{"name":"Default","pic":"pic_L85A1.png"},{"name":"Default (Damaged)","pic":"pic_L85A1_D.png"}]},{"name":"LWMMG","type":"MG","num":81,"rating":2,"internalName":"LWMMG","img":"pic_LWMMG.png","costumes":[{"name":"Default","pic":"pic_LWMMG.png"},{"name":"Default (Damaged)","pic":"pic_LWMMG_D.png"},{"name":"MOD 3","pic":"pic_LWMMGMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_LWMMGMod_D.png"},{"name":"Untranslated1","pic":"pic_LWMMG_4007.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_LWMMG_4007_D.png"},{"name":"Golden Starthistle","pic":"pic_LWMMG_1808.png"},{"name":"Golden Starthistle (Damaged)","pic":"pic_LWMMG_1808_D.png"}]},{"name":"LWMMG MOD 1","type":"MG","num":81,"rating":4,"internalName":"LWMMG","img":"pic_LWMMG.png"},{"name":"LWMMG MOD 2","type":"MG","num":81,"rating":4,"internalName":"LWMMG","img":"pic_LWMMG.png"},{"name":"LWMMG MOD 3","type":"MG","num":81,"rating":4,"internalName":"LWMMGMod","img":"pic_LWMMGMod.png","costumes":[{"name":"Default","pic":"pic_LWMMGMod.png"},{"name":"Default (Damaged)","pic":"pic_LWMMGMod_D.png"}]},{"name":"Lee-Enfield","type":"RF","num":50,"rating":5,"internalName":"MLEMK1","img":"pic_MLEMK1.png","costumes":[{"name":"Default","pic":"pic_MLEMK1.png"},{"name":"Default (Damaged)","pic":"pic_MLEMK1_D.png"},{"name":"Huntress' Frock ","pic":"pic_MLEMK1_10.png"},{"name":"Huntress' Frock  (Damaged)","pic":"pic_MLEMK1_10_D.png"},{"name":"Lifelong Protector","pic":"pic_MLEMK1_604.png"},{"name":"Lifelong Protector (Damaged)","pic":"pic_MLEMK1_604_D.png"},{"name":"Onion Shooter","pic":"pic_MLEMK1_901.png"},{"name":"Onion Shooter (Damaged)","pic":"pic_MLEMK1_901_D.png"}]},{"name":"Lewis","type":"MG","num":253,"rating":5,"internalName":"Lewis","img":"pic_Lewis.png","costumes":[{"name":"Default","pic":"pic_Lewis.png"},{"name":"Default (Damaged)","pic":"pic_Lewis_D.png"},{"name":"Untranslated1","pic":"pic_Lewis_4001.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Lewis_4001_D.png"},{"name":"Untranslated2","pic":"pic_Lewis_3502.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_Lewis_3502_D.png"}]},{"name":"Liberator","type":"SG","num":283,"rating":4,"internalName":"Liberator","img":"pic_Liberator.png","costumes":[{"name":"Default","pic":"pic_Liberator.png"},{"name":"Default (Damaged)","pic":"pic_Liberator_D.png"}]},{"name":"Lusa","type":"SMG","num":311,"rating":5},{"name":"M1 Garand","type":"RF","num":34,"rating":3,"internalName":"M1","img":"pic_M1.png","costumes":[{"name":"Default","pic":"pic_M1.png"},{"name":"Default (Damaged)","pic":"pic_M1_D.png"},{"name":"Beach Princess","pic":"pic_M1_1106.png"},{"name":"Beach Princess (Damaged)","pic":"pic_M1_1106_D.png"}]},{"name":"M1014","type":"SG","num":165,"rating":4,"internalName":"M1014","img":"pic_M1014.png","costumes":[{"name":"Default","pic":"pic_M1014.png"},{"name":"Default (Damaged)","pic":"pic_M1014_D.png"},{"name":"Snow, Moon and Flowers","pic":"pic_M1014_2906.png"},{"name":"Snow, Moon and Flowers (Damaged)","pic":"pic_M1014_2906_D.png"},{"name":"Untranslated1","pic":"pic_M1014_4305.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M1014_4305_D.png"}]},{"name":"M12","type":"SMG","num":191,"rating":3,"internalName":"M12","img":"pic_M12.png","costumes":[{"name":"Default","pic":"pic_M12.png"},{"name":"Default (Damaged)","pic":"pic_M12_D.png"}]},{"name":"M14","type":"RF","num":37,"rating":3,"internalName":"M14","img":"pic_M14.png","costumes":[{"name":"Default","pic":"pic_M14.png"},{"name":"Default (Damaged)","pic":"pic_M14_D.png"},{"name":"MOD 3","pic":"pic_M14Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M14Mod_D.png"},{"name":"Xmas Parade","pic":"pic_M14_303.png"},{"name":"Xmas Parade (Damaged)","pic":"pic_M14_303_D.png"}]},{"name":"M14 MOD 1","type":"RF","num":37,"rating":4,"internalName":"M14","img":"pic_M14.png"},{"name":"M14 MOD 2","type":"RF","num":37,"rating":4,"internalName":"M14","img":"pic_M14.png"},{"name":"M14 MOD 3","type":"RF","num":37,"rating":4,"internalName":"M14Mod","img":"pic_M14Mod.png","costumes":[{"name":"Default","pic":"pic_M14Mod.png"},{"name":"Default (Damaged)","pic":"pic_M14Mod_D.png"}]},{"name":"M16A1","type":"AR","num":54,"rating":4,"internalName":"M16A1","img":"pic_M16A1.png","costumes":[{"name":"Default","pic":"pic_M16A1.png"},{"name":"Default (Damaged)","pic":"pic_M16A1_D.png"},{"name":"Classic Witch","pic":"pic_M16A1_5.png"},{"name":"Classic Witch (Damaged)","pic":"pic_M16A1_5_D.png"},{"name":"Candy Express","pic":"pic_M16A1_4.png"},{"name":"Candy Express (Damaged)","pic":"pic_M16A1_4_D.png"},{"name":"Boss","pic":"pic_M16A1_Boss.png"},{"name":"Pumpkin Mishka","pic":"pic_M16A1_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_M16A1_1_D.png"},{"name":"Nocturnal Familiar","pic":"pic_M16A1_3.png"},{"name":"Nocturnal Familiar (Damaged)","pic":"pic_M16A1_3_D.png"},{"name":"Untranslated1","pic":"pic_M16A1_4506.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M16A1_4506_D.png"},{"name":"Untranslated2","pic":"pic_M16A1_533.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_M16A1_533_D.png"},{"name":"Kitty Paws","pic":"pic_M16A1_2.png"},{"name":"Kitty Paws (Damaged)","pic":"pic_M16A1_2_D.png"}]},{"name":"M1887","type":"SG","num":151,"rating":5,"internalName":"M1887","img":"pic_M1887.png","costumes":[{"name":"Default","pic":"pic_M1887.png"},{"name":"Default (Damaged)","pic":"pic_M1887_D.png"},{"name":"Witcher General","pic":"pic_M1887_2503.png"},{"name":"Witcher General (Damaged)","pic":"pic_M1887_2503_D.png"}]},{"name":"M1895 CB","type":"MG","num":275,"rating":4,"internalName":"M1895MG","img":"pic_M1895MG.png","costumes":[{"name":"Default","pic":"pic_M1895MG.png"},{"name":"Default (Damaged)","pic":"pic_M1895MG_D.png"},{"name":"Untranslated1","pic":"pic_M1895MG_4208.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M1895MG_4208_D.png"}]},{"name":"M1897","type":"SG","num":152,"rating":3,"internalName":"M1897","img":"pic_M1897.png","costumes":[{"name":"Default","pic":"pic_M1897.png"},{"name":"Default (Damaged)","pic":"pic_M1897_D.png"},{"name":"Electric Witch","pic":"pic_M1897_2505.png"},{"name":"Electric Witch (Damaged)","pic":"pic_M1897_2505_D.png"}]},{"name":"M1911","type":"HG","num":2,"rating":2,"internalName":"M1911","img":"pic_M1911.png","costumes":[{"name":"Default","pic":"pic_M1911.png"},{"name":"Default (Damaged)","pic":"pic_M1911_D.png"},{"name":"MOD 3","pic":"pic_M1911Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M1911Mod_D.png"},{"name":"Untranslated1","pic":"pic_M1911_4514.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M1911_4514_D.png"}]},{"name":"M1911 MOD 1","type":"HG","num":2,"rating":4,"internalName":"M1911","img":"pic_M1911.png"},{"name":"M1911 MOD 2","type":"HG","num":2,"rating":4,"internalName":"M1911","img":"pic_M1911.png"},{"name":"M1911 MOD 3","type":"HG","num":2,"rating":4,"internalName":"M1911Mod","img":"pic_M1911Mod.png","costumes":[{"name":"Default","pic":"pic_M1911Mod.png"},{"name":"Default (Damaged)","pic":"pic_M1911Mod_D.png"}]},{"name":"M1918","type":"MG","num":75,"rating":4,"internalName":"M1918","img":"pic_M1918.png","costumes":[{"name":"Default","pic":"pic_M1918.png"},{"name":"Default (Damaged)","pic":"pic_M1918_D.png"},{"name":"MOD 3","pic":"pic_M1918Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M1918Mod_D.png"},{"name":"Bunny Girl","pic":"pic_M1918_102.png"},{"name":"Bunny Girl (Damaged)","pic":"pic_M1918_102_D.png"},{"name":"Tender Nocturne","pic":"pic_M1918_806.png"},{"name":"Tender Nocturne (Damaged)","pic":"pic_M1918_806_D.png"},{"name":"War Is Over","pic":"pic_M1918_1606.png"},{"name":"War Is Over (Damaged)","pic":"pic_M1918_1606_D.png"}]},{"name":"M1918 MOD 1","type":"MG","num":75,"rating":5,"internalName":"M1918","img":"pic_M1918.png"},{"name":"M1918 MOD 2","type":"MG","num":75,"rating":5,"internalName":"M1918","img":"pic_M1918.png"},{"name":"M1918 MOD 3","type":"MG","num":75,"rating":5,"internalName":"M1918Mod","img":"pic_M1918Mod.png","costumes":[{"name":"Default","pic":"pic_M1918Mod.png"},{"name":"Default (Damaged)","pic":"pic_M1918Mod_D.png"}]},{"name":"M1919A4","type":"MG","num":80,"rating":3,"internalName":"M1919A4","img":"pic_M1919A4.png","costumes":[{"name":"Default","pic":"pic_M1919A4.png"},{"name":"Default (Damaged)","pic":"pic_M1919A4_D.png"},{"name":"Party Sweetheart","pic":"pic_M1919A4_106.png"},{"name":"Party Sweetheart (Damaged)","pic":"pic_M1919A4_106_D.png"},{"name":"Carmilla","pic":"pic_M1919A4_7.png"},{"name":"Carmilla (Damaged)","pic":"pic_M1919A4_7_D.png"}]},{"name":"M1A1","type":"RF","num":35,"rating":3,"internalName":"M1A1","img":"pic_M1A1.png","costumes":[{"name":"Default","pic":"pic_M1A1.png"},{"name":"Default (Damaged)","pic":"pic_M1A1_D.png"},{"name":"Untranslated1","pic":"pic_M1A1_4106.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M1A1_4106_D.png"}]},{"name":"M200","type":"RF","num":257,"rating":5,"internalName":"M200","img":"pic_M200.png","costumes":[{"name":"Default","pic":"pic_M200.png"},{"name":"Default (Damaged)","pic":"pic_M200_D.png"},{"name":"Untranslated1","pic":"pic_M200_4502.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M200_4502_D.png"}]},{"name":"M21","type":"RF","num":38,"rating":3,"internalName":"M21","img":"pic_M21.png","costumes":[{"name":"Default","pic":"pic_M21.png"},{"name":"Default (Damaged)","pic":"pic_M21_D.png"},{"name":"Xmas At Home","pic":"pic_M21_304.png"},{"name":"Xmas At Home (Damaged)","pic":"pic_M21_304_D.png"}]},{"name":"M249 SAW","type":"MG","num":79,"rating":3,"internalName":"M249SAW","img":"pic_M249SAW.png","costumes":[{"name":"Default","pic":"pic_M249SAW.png"},{"name":"Default (Damaged)","pic":"pic_M249SAW_D.png"},{"name":"Untranslated1","pic":"pic_M249SAW_3604.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M249SAW_3604_D.png"},{"name":"Arctic Fox","pic":"pic_M249SAW_1301.png"},{"name":"Arctic Fox (Damaged)","pic":"pic_M249SAW_1301_D.png"}]},{"name":"M2HB","type":"MG","num":77,"rating":3,"internalName":"M2HB","img":"pic_M2HB.png","costumes":[{"name":"Default","pic":"pic_M2HB.png"},{"name":"Default (Damaged)","pic":"pic_M2HB_D.png"},{"name":"Untranslated1","pic":"pic_M2HB_3904.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M2HB_3904_D.png"}]},{"name":"M3","type":"SMG","num":17,"rating":2,"internalName":"M3","img":"pic_M3.png","costumes":[{"name":"Default","pic":"pic_M3.png"},{"name":"Default (Damaged)","pic":"pic_M3_D.png"}]},{"name":"M37","type":"SG","num":153,"rating":4,"internalName":"Ithaca37","img":"pic_Ithaca37.png","costumes":[{"name":"Default","pic":"pic_Ithaca37.png"},{"name":"Default (Damaged)","pic":"pic_Ithaca37_D.png"},{"name":"Summer Parader","pic":"pic_Ithaca37_1105.png"},{"name":"Summer Parader (Damaged)","pic":"pic_Ithaca37_1105_D.png"}]},{"name":"M4 SOPMOD II","type":"AR","num":56,"rating":4,"internalName":"M4_SOPMOD_II","img":"pic_M4_SOPMOD_II.png","costumes":[{"name":"Default","pic":"pic_M4_SOPMOD_II.png"},{"name":"Default (Damaged)","pic":"pic_M4_SOPMOD_II_D.png"},{"name":"MOD 3","pic":"pic_M4_SOPMOD_IIMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M4_SOPMOD_IIMod_D.png"}]},{"name":"M4 SOPMOD II MOD 1","type":"AR","num":56,"rating":5,"internalName":"M4_SOPMOD_II","img":"pic_M4_SOPMOD_II.png"},{"name":"M4 SOPMOD II MOD 2","type":"AR","num":56,"rating":5,"internalName":"M4_SOPMOD_II","img":"pic_M4_SOPMOD_II.png"},{"name":"M4 SOPMOD II MOD 3","type":"AR","num":56,"rating":5,"internalName":"M4_SOPMOD_IIMod","img":"pic_M4_SOPMOD_IIMod.png","costumes":[{"name":"Default","pic":"pic_M4_SOPMOD_IIMod.png"},{"name":"Default (Damaged)","pic":"pic_M4_SOPMOD_IIMod_D.png"}]},{"name":"M4A1","type":"AR","num":55,"rating":4,"internalName":"M4A1","img":"pic_M4A1.png","costumes":[{"name":"Default","pic":"pic_M4A1.png"},{"name":"Default (Damaged)","pic":"pic_M4A1_D.png"},{"name":"MOD 3","pic":"pic_M4A1Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M4A1Mod_D.png"},{"name":"Untranslated1","pic":"pic_M4A1_530.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M4A1_530_D.png"},{"name":"Untranslated2","pic":"pic_M4A1_4505.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_M4A1_4505_D.png"}]},{"name":"M4A1 MOD 1","type":"AR","num":55,"rating":5,"internalName":"M4A1","img":"pic_M4A1.png"},{"name":"M4A1 MOD 2","type":"AR","num":55,"rating":5,"internalName":"M4A1","img":"pic_M4A1.png"},{"name":"M4A1 MOD 3","type":"AR","num":55,"rating":5,"internalName":"M4A1Mod","img":"pic_M4A1Mod.png","costumes":[{"name":"Default","pic":"pic_M4A1Mod.png"},{"name":"Default (Damaged)","pic":"pic_M4A1Mod_D.png"}]},{"name":"M500","type":"SG","num":154,"rating":3,"internalName":"M500","img":"pic_M500.png","costumes":[{"name":"Default","pic":"pic_M500.png"},{"name":"Default (Damaged)","pic":"pic_M500_D.png"},{"name":"MOD 3","pic":"pic_M500Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M500Mod_D.png"},{"name":"Untranslated1","pic":"pic_M500_3707.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M500_3707_D.png"}]},{"name":"M590","type":"SG","num":155,"rating":4,"internalName":"M590","img":"pic_M590.png","costumes":[{"name":"Default","pic":"pic_M590.png"},{"name":"Default (Damaged)","pic":"pic_M590_D.png"},{"name":"Untranslated1","pic":"pic_M590_3706.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M590_3706_D.png"},{"name":"Angel's Trumpet","pic":"pic_M590_1806.png"},{"name":"Angel's Trumpet (Damaged)","pic":"pic_M590_1806_D.png"}]},{"name":"M60","type":"MG","num":78,"rating":4,"internalName":"M60","img":"pic_M60.png","costumes":[{"name":"Default","pic":"pic_M60.png"},{"name":"Default (Damaged)","pic":"pic_M60_D.png"}]},{"name":"M82","type":"AR","num":297,"rating":4,"internalName":"M82","img":"pic_M82.png","costumes":[{"name":"Default","pic":"pic_M82.png"},{"name":"Default (Damaged)","pic":"pic_M82_D.png"}]},{"name":"M82A1","type":"RF","num":231,"rating":5,"internalName":"M82A1","img":"pic_M82A1.png","costumes":[{"name":"Default","pic":"pic_M82A1.png"},{"name":"Default (Damaged)","pic":"pic_M82A1_D.png"}]},{"name":"M870","type":"SG","num":229,"rating":5,"internalName":"M870P","img":"pic_M870P.png","costumes":[{"name":"Default","pic":"pic_M870P.png"},{"name":"Default (Damaged)","pic":"pic_M870P_D.png"},{"name":"Untranslated1","pic":"pic_M870P_3803.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M870P_3803_D.png"}]},{"name":"M9","type":"HG","num":3,"rating":3,"internalName":"M9","img":"pic_M9.png","costumes":[{"name":"Default","pic":"pic_M9.png"},{"name":"Default (Damaged)","pic":"pic_M9_D.png"}]},{"name":"M950A","type":"HG","num":97,"rating":5,"internalName":"M950A","img":"pic_M950A.png","costumes":[{"name":"Default","pic":"pic_M950A.png"},{"name":"Default (Damaged)","pic":"pic_M950A_D.png"},{"name":"MOD 3","pic":"pic_M950AMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M950AMod_D.png"},{"name":"Home Ec Training","pic":"pic_M950A_2303.png"},{"name":"Home Ec Training (Damaged)","pic":"pic_M950A_2303_D.png"},{"name":"Concert Diva!","pic":"pic_M950A_808.png"},{"name":"Concert Diva! (Damaged)","pic":"pic_M950A_808_D.png"},{"name":"Kitty Paws","pic":"pic_M950A_2.png"},{"name":"Kitty Paws (Damaged)","pic":"pic_M950A_2_D.png"},{"name":"Untranslated1","pic":"pic_M950A_4302.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M950A_4302_D.png"},{"name":"Pumpkin Mishka","pic":"pic_M950A_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_M950A_1_D.png"},{"name":"Nocturnal Familiar","pic":"pic_M950A_3.png"},{"name":"Nocturnal Familiar (Damaged)","pic":"pic_M950A_3_D.png"},{"name":"Ace on Duty","pic":"pic_M950A_702.png"},{"name":"Ace on Duty (Damaged)","pic":"pic_M950A_702_D.png"}]},{"name":"M99","type":"RF","num":128,"rating":5,"internalName":"M99","img":"pic_M99.png","costumes":[{"name":"Default","pic":"pic_M99.png"},{"name":"Default (Damaged)","pic":"pic_M99_D.png"},{"name":"Untranslated1","pic":"pic_M99_3304.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_M99_3304_D.png"},{"name":"Rabbit Squad","pic":"pic_M99_1701.png"},{"name":"Rabbit Squad (Damaged)","pic":"pic_M99_1701_D.png"},{"name":"Cyclamen","pic":"pic_M99_404.png"},{"name":"Cyclamen (Damaged)","pic":"pic_M99_404_D.png"}]},{"name":"MAC-10","type":"SMG","num":18,"rating":3,"internalName":"MAC10","img":"pic_MAC10.png","costumes":[{"name":"Default","pic":"pic_MAC10.png"},{"name":"Default (Damaged)","pic":"pic_MAC10_D.png"}]},{"name":"MAS-38","type":"SMG","num":301,"rating":3,"internalName":"MAS38","img":"pic_MAS38.png","costumes":[{"name":"Default","pic":"pic_MAS38.png"},{"name":"Default (Damaged)","pic":"pic_MAS38_D.png"}]},{"name":"MAT-49","type":"SMG","num":280,"rating":4,"internalName":"MAT49","img":"pic_MAT49.png","costumes":[{"name":"Default","pic":"pic_MAT49.png"},{"name":"Default (Damaged)","pic":"pic_MAT49_D.png"}]},{"name":"MDR","type":"AR","num":215,"rating":5,"internalName":"MDR","img":"pic_MDR.png","costumes":[{"name":"Default","pic":"pic_MDR.png"},{"name":"Default (Damaged)","pic":"pic_MDR_D.png"},{"name":"Untranslated1","pic":"pic_MDR_3305.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_MDR_3305_D.png"},{"name":"Ghost Trap","pic":"pic_MDR_2603.png"},{"name":"Ghost Trap (Damaged)","pic":"pic_MDR_2603_D.png"}]},{"name":"MG3","type":"MG","num":88,"rating":4,"internalName":"MG3","img":"pic_MG3.png","costumes":[{"name":"Default","pic":"pic_MG3.png"},{"name":"Default (Damaged)","pic":"pic_MG3_D.png"},{"name":"Urban Holiday","pic":"pic_MG3_1304.png"},{"name":"Urban Holiday (Damaged)","pic":"pic_MG3_1304_D.png"},{"name":"Untranslated1","pic":"pic_MG3_4105.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_MG3_4105_D.png"},{"name":"Untranslated2","pic":"pic_MG3_3806.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_MG3_3806_D.png"}]},{"name":"MG34","type":"MG","num":87,"rating":2,"internalName":"MG34","img":"pic_MG34.png","costumes":[{"name":"Default","pic":"pic_MG34.png"},{"name":"Default (Damaged)","pic":"pic_MG34_D.png"},{"name":"Untranslated1","pic":"pic_MG34_4210.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_MG34_4210_D.png"}]},{"name":"MG36","type":"MG","num":263,"rating":5,"internalName":"MG36","img":"pic_MG36.png","costumes":[{"name":"Default","pic":"pic_MG36.png"},{"name":"Default (Damaged)","pic":"pic_MG36_D.png"},{"name":"Untranslated1","pic":"pic_MG36_4205.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_MG36_4205_D.png"}]},{"name":"MG4","type":"MG","num":125,"rating":5,"internalName":"MG4","img":"Pic_MG4.png","costumes":[{"name":"Default","pic":"Pic_MG4.png"},{"name":"Default (Damaged)","pic":"Pic_MG4_D.png"},{"name":"Survival Club","pic":"pic_MG4_703.png"},{"name":"Survival Club (Damaged)","pic":"pic_MG4_703_D.png"}]},{"name":"MG42","type":"MG","num":86,"rating":3,"internalName":"MG42","img":"pic_MG42.png","costumes":[{"name":"Default","pic":"pic_MG42.png"},{"name":"Default (Damaged)","pic":"pic_MG42_D.png"}]},{"name":"MG5","type":"MG","num":109,"rating":5,"internalName":"MG5","img":"pic_MG5.png","costumes":[{"name":"Default","pic":"pic_MG5.png"},{"name":"Default (Damaged)","pic":"pic_MG5_D.png"},{"name":"Plague Knight","pic":"pic_MG5_2501.png"},{"name":"Plague Knight (Damaged)","pic":"pic_MG5_2501_D.png"},{"name":"Crimson Guardian","pic":"pic_MG5_309.png"},{"name":"Crimson Guardian (Damaged)","pic":"pic_MG5_309_D.png"},{"name":"Call of the Hunter","pic":"pic_MG5_1504.png"},{"name":"Call of the Hunter (Damaged)","pic":"pic_MG5_1504_D.png"}]},{"name":"MP-443","type":"HG","num":220,"rating":3,"internalName":"MP443","img":"pic_MP443.png","costumes":[{"name":"Default","pic":"pic_MP443.png"},{"name":"Default (Damaged)","pic":"pic_MP443_D.png"}]},{"name":"MP-446","type":"HG","num":91,"rating":2,"internalName":"MP446","img":"pic_MP446.png","costumes":[{"name":"Default","pic":"pic_MP446.png"},{"name":"Default (Damaged)","pic":"pic_MP446_D.png"},{"name":"MOD 3","pic":"pic_MP446Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_MP446Mod_D.png"},{"name":"Sunflower","pic":"pic_MP446_402.png"},{"name":"Sunflower (Damaged)","pic":"pic_MP446_402_D.png"},{"name":"Boisterous Rogue","pic":"pic_MP446_103.png"},{"name":"Boisterous Rogue (Damaged)","pic":"pic_MP446_103_D.png"}]},{"name":"MP-446 MOD 1","type":"HG","num":91,"rating":4,"internalName":"MP446","img":"pic_MP446.png"},{"name":"MP-446 MOD 2","type":"HG","num":91,"rating":4,"internalName":"MP446","img":"pic_MP446.png"},{"name":"MP-446 MOD 3","type":"HG","num":91,"rating":4,"internalName":"MP446Mod","img":"pic_MP446Mod.png","costumes":[{"name":"Default","pic":"pic_MP446Mod.png"},{"name":"Default (Damaged)","pic":"pic_MP446Mod_D.png"}]},{"name":"MP-448","type":"HG","num":232,"rating":3,"internalName":"MP448","img":"pic_MP448.png","costumes":[{"name":"Default","pic":"pic_MP448.png"},{"name":"Default (Damaged)","pic":"pic_MP448_D.png"}]},{"name":"MP40","type":"SMG","num":25,"rating":2,"internalName":"MP40","img":"pic_MP40.png","costumes":[{"name":"Default","pic":"pic_MP40.png"},{"name":"Default (Damaged)","pic":"pic_MP40_D.png"},{"name":"Thumbelina","pic":"pic_MP40_902.png"},{"name":"Thumbelina (Damaged)","pic":"pic_MP40_902_D.png"}]},{"name":"MP41","type":"SMG","num":267,"rating":3,"internalName":"MP41","img":"pic_MP41.png","costumes":[{"name":"Default","pic":"pic_MP41.png"},{"name":"Default (Damaged)","pic":"pic_MP41_D.png"}]},{"name":"MP5","type":"SMG","num":26,"rating":4,"internalName":"MP5","img":"pic_MP5.png","costumes":[{"name":"Default","pic":"pic_MP5.png"},{"name":"Default (Damaged)","pic":"pic_MP5_D.png"},{"name":"MOD 3","pic":"pic_MP5Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_MP5Mod_D.png"},{"name":"Sleepless Begonias","pic":"pic_MP5_1205.png"},{"name":"Sleepless Begonias (Damaged)","pic":"pic_MP5_1205_D.png"},{"name":"Vietnamese Balm","pic":"pic_MP5_3006.png"},{"name":"Vietnamese Balm (Damaged)","pic":"pic_MP5_3006_D.png"},{"name":"A Small Step","pic":"pic_MP5_1903.png"},{"name":"A Small Step (Damaged)","pic":"pic_MP5_1903_D.png"},{"name":"Nocturnal Familiar","pic":"pic_MP5_3.png"},{"name":"Nocturnal Familiar (Damaged)","pic":"pic_MP5_3_D.png"}]},{"name":"MP5 MOD 1","type":"SMG","num":26,"rating":5,"internalName":"MP5","img":"pic_MP5.png"},{"name":"MP5 MOD 2","type":"SMG","num":26,"rating":5,"internalName":"MP5","img":"pic_MP5.png"},{"name":"MP5 MOD 3","type":"SMG","num":26,"rating":5,"internalName":"MP5Mod","img":"pic_MP5Mod.png","costumes":[{"name":"Default","pic":"pic_MP5Mod.png"},{"name":"Default (Damaged)","pic":"pic_MP5Mod_D.png"}]},{"name":"MP7","type":"SMG","num":28,"rating":5,"internalName":"MP7","img":"pic_MP7.png","costumes":[{"name":"Default","pic":"pic_MP7.png"},{"name":"Default (Damaged)","pic":"pic_MP7_D.png"},{"name":"Lollipop Ammo","pic":"pic_MP7_2405.png"},{"name":"Lollipop Ammo (Damaged)","pic":"pic_MP7_2405_D.png"}]},{"name":"MT-9","type":"SMG","num":144,"rating":3,"internalName":"MT9","img":"pic_MT9.png","costumes":[{"name":"Default","pic":"pic_MT9.png"},{"name":"Default (Damaged)","pic":"pic_MT9_D.png"}]},{"name":"Magal","type":"AR","num":258,"rating":3,"internalName":"Magal","img":"pic_Magal.png","costumes":[{"name":"Default","pic":"pic_Magal.png"},{"name":"Default (Damaged)","pic":"pic_Magal_D.png"}]},{"name":"Makarov","type":"HG","num":8,"rating":3,"internalName":"PM","img":"pic_PM.png","costumes":[{"name":"Default","pic":"pic_PM.png"},{"name":"Default (Damaged)","pic":"pic_PM_D.png"},{"name":"Pumpkin Mishka","pic":"pic_PM_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_PM_1_D.png"},{"name":"Untranslated1","pic":"pic_PM_4310.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PM_4310_D.png"}]},{"name":"Micro Uzi","type":"SMG","num":32,"rating":3,"internalName":"MicroUZI","img":"pic_MicroUZI.png","costumes":[{"name":"Default","pic":"pic_MicroUZI.png"},{"name":"Default (Damaged)","pic":"pic_MicroUZI_D.png"},{"name":"MOD 3","pic":"pic_MicroUZIMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_MicroUZIMod_D.png"},{"name":"Dorky Sleepyhead","pic":"pic_MicroUZI_101.png"},{"name":"Dorky Sleepyhead (Damaged)","pic":"pic_MicroUZI_101_D.png"}]},{"name":"Micro Uzi MOD 1","type":"SMG","num":32,"rating":4,"internalName":"MicroUZI","img":"pic_MicroUZI.png"},{"name":"Micro Uzi MOD 2","type":"SMG","num":32,"rating":4,"internalName":"MicroUZI","img":"pic_MicroUZI.png"},{"name":"Micro Uzi MOD 3","type":"SMG","num":32,"rating":4,"internalName":"MicroUZIMod","img":"pic_MicroUZIMod.png","costumes":[{"name":"Default","pic":"pic_MicroUZIMod.png"},{"name":"Default (Damaged)","pic":"pic_MicroUZIMod_D.png"}]},{"name":"Mk 12","type":"RF","num":226,"rating":4,"internalName":"Mk12","img":"pic_Mk12.png","costumes":[{"name":"Default","pic":"pic_Mk12.png"},{"name":"Default (Damaged)","pic":"pic_Mk12_D.png"}]},{"name":"Mk23","type":"HG","num":99,"rating":4,"internalName":"Mk23","img":"pic_Mk23.png","costumes":[{"name":"Default","pic":"pic_Mk23.png"},{"name":"Default (Damaged)","pic":"pic_Mk23_D.png"},{"name":"Untranslated1","pic":"pic_Mk23_3705.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Mk23_3705_D.png"},{"name":"Honey Flower","pic":"pic_Mk23_1805.png"},{"name":"Honey Flower (Damaged)","pic":"pic_Mk23_1805_D.png"},{"name":"Conveyed Feelings","pic":"pic_Mk23_3105.png"},{"name":"Conveyed Feelings (Damaged)","pic":"pic_Mk23_3105_D.png"},{"name":"Impish Sweetheart","pic":"pic_Mk23_8.png"},{"name":"Impish Sweetheart (Damaged)","pic":"pic_Mk23_8_D.png"}]},{"name":"Mk46","type":"MG","num":240,"rating":4,"internalName":"Mk46","img":"pic_Mk46.png","costumes":[{"name":"Default","pic":"pic_Mk46.png"},{"name":"Default (Damaged)","pic":"pic_Mk46_D.png"}]},{"name":"Mk48","type":"MG","num":121,"rating":4,"internalName":"MK48","img":"pic_MK48.png","costumes":[{"name":"Default","pic":"pic_MK48.png"},{"name":"Default (Damaged)","pic":"pic_MK48_D.png"}]},{"name":"Model L","type":"AR","num":223,"rating":3,"internalName":"CETME556","img":"pic_CETME556.png","costumes":[{"name":"Default","pic":"pic_CETME556.png"},{"name":"Default (Damaged)","pic":"pic_CETME556_D.png"},{"name":"Untranslated1","pic":"pic_CETME556_3809.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_CETME556_3809_D.png"}]},{"name":"Mondragon","type":"RF","num":317,"rating":4},{"name":"Mosin-Nagant","type":"RF","num":39,"rating":4,"internalName":"M1891","img":"pic_M1891.png","costumes":[{"name":"Default","pic":"pic_M1891.png"},{"name":"Default (Damaged)","pic":"pic_M1891_D.png"},{"name":"MOD 3","pic":"pic_M1891Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M1891Mod_D.png"},{"name":"Moonlit Ocean","pic":"pic_M1891_803.png"},{"name":"Moonlit Ocean (Damaged)","pic":"pic_M1891_803_D.png"}]},{"name":"Mosin-Nagant MOD 1","type":"RF","num":39,"rating":5,"internalName":"M1891","img":"pic_M1891.png"},{"name":"Mosin-Nagant MOD 2","type":"RF","num":39,"rating":5,"internalName":"M1891","img":"pic_M1891.png"},{"name":"Mosin-Nagant MOD 3","type":"RF","num":39,"rating":5,"internalName":"M1891Mod","img":"pic_M1891Mod.png","costumes":[{"name":"Default","pic":"pic_M1891Mod.png"},{"name":"Default (Damaged)","pic":"pic_M1891Mod_D.png"}]},{"name":"NS2000","type":"SG","num":190,"rating":3,"internalName":"NS2000","img":"pic_NS2000.png","costumes":[{"name":"Default","pic":"pic_NS2000.png"},{"name":"Default (Damaged)","pic":"pic_NS2000_D.png"},{"name":"Untranslated1","pic":"pic_NS2000_4406.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_NS2000_4406_D.png"}]},{"name":"NTW-20","type":"RF","num":53,"rating":5,"internalName":"NTW20","img":"pic_NTW20.png","costumes":[{"name":"Default","pic":"pic_NTW20.png"},{"name":"Default (Damaged)","pic":"pic_NTW20_D.png"},{"name":"MOD 3","pic":"pic_NTW20Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_NTW20Mod_D.png"},{"name":"The Aristocrat Experience","pic":"pic_NTW20_2301.png"},{"name":"The Aristocrat Experience (Damaged)","pic":"pic_NTW20_2301_D.png"},{"name":"Op. Blazing Sun","pic":"pic_NTW20_1101.png"},{"name":"Op. Blazing Sun (Damaged)","pic":"pic_NTW20_1101_D.png"},{"name":"Xmas Reindeer","pic":"pic_NTW20_307.png"},{"name":"Xmas Reindeer (Damaged)","pic":"pic_NTW20_307_D.png"}]},{"name":"NTW-20 MOD 1","type":"RF","num":53,"rating":6,"internalName":"NTW20","img":"pic_NTW20.png"},{"name":"NTW-20 MOD 2","type":"RF","num":53,"rating":6,"internalName":"NTW20","img":"pic_NTW20.png"},{"name":"NTW-20 MOD 3","type":"RF","num":53,"rating":6,"internalName":"NTW20Mod","img":"pic_NTW20Mod.png","costumes":[{"name":"Default","pic":"pic_NTW20Mod.png"},{"name":"Default (Damaged)","pic":"pic_NTW20Mod_D.png"}]},{"name":"NZ75","type":"HG","num":126,"rating":5,"internalName":"NZ75","img":"pic_NZ75.png","costumes":[{"name":"Default","pic":"pic_NZ75.png"},{"name":"Default (Damaged)","pic":"pic_NZ75_D.png"},{"name":"ThanX! & Go2Hell!","pic":"pic_NZ75_1702.png"},{"name":"ThanX! & Go2Hell! (Damaged)","pic":"pic_NZ75_1702_D.png"},{"name":"Chrysanthemum","pic":"pic_NZ75_403.png"},{"name":"Chrysanthemum (Damaged)","pic":"pic_NZ75_403_D.png"}]},{"name":"Nagant Revolver","type":"HG","num":5,"rating":2,"internalName":"M1895","img":"pic_M1895.png","costumes":[{"name":"Default","pic":"pic_M1895.png"},{"name":"Default (Damaged)","pic":"pic_M1895_D.png"},{"name":"MOD 3","pic":"pic_M1895Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_M1895Mod_D.png"},{"name":"Astral Bond","pic":"pic_M1895_2706.png"},{"name":"Astral Bond (Damaged)","pic":"pic_M1895_2706_D.png"}]},{"name":"Nagant Revolver MOD 1","type":"HG","num":5,"rating":4,"internalName":"M1895","img":"pic_M1895.png"},{"name":"Nagant Revolver MOD 2","type":"HG","num":5,"rating":4,"internalName":"M1895","img":"pic_M1895.png"},{"name":"Nagant Revolver MOD 3","type":"HG","num":5,"rating":4,"internalName":"M1895Mod","img":"pic_M1895Mod.png","costumes":[{"name":"Default","pic":"pic_M1895Mod.png"},{"name":"Default (Damaged)","pic":"pic_M1895Mod_D.png"}]},{"name":"Negev","type":"MG","num":112,"rating":5,"internalName":"NEGEV","img":"pic_NEGEV.png","costumes":[{"name":"Default","pic":"pic_NEGEV.png"},{"name":"Default (Damaged)","pic":"pic_NEGEV_D.png"},{"name":"Obsidian Princess","pic":"pic_NEGEV_3202.png"},{"name":"Obsidian Princess (Damaged)","pic":"pic_NEGEV_3202_D.png"},{"name":"Little Drifter","pic":"pic_NEGEV_904.png"},{"name":"Little Drifter (Damaged)","pic":"pic_NEGEV_904_D.png"}]},{"name":"OBR","type":"RF","num":230,"rating":3,"internalName":"OBR","img":"pic_OBR.png","costumes":[{"name":"Default","pic":"pic_OBR.png"},{"name":"Default (Damaged)","pic":"pic_OBR_D.png"}]},{"name":"OTs-12","type":"AR","num":105,"rating":3,"internalName":"OTs12","img":"pic_OTs12.png","costumes":[{"name":"Default","pic":"pic_OTs12.png"},{"name":"Default (Damaged)","pic":"pic_OTs12_D.png"},{"name":"Untranslated1","pic":"pic_OTs12_3605.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_OTs12_3605_D.png"}]},{"name":"OTs-14","type":"AR","num":119,"rating":5,"internalName":"OTs14","img":"pic_OTs14.png","costumes":[{"name":"Default","pic":"pic_OTs14.png"},{"name":"Default (Damaged)","pic":"pic_OTs14_D.png"},{"name":"Untranslated1","pic":"pic_OTs14_4501.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_OTs14_4501_D.png"},{"name":"Flurry of Petals","pic":"pic_OTs14_1203.png"},{"name":"Flurry of Petals (Damaged)","pic":"pic_OTs14_1203_D.png"},{"name":"Crassula Volkensii","pic":"pic_OTs14_3001.png"},{"name":"Crassula Volkensii (Damaged)","pic":"pic_OTs14_3001_D.png"}]},{"name":"OTs-39","type":"SMG","num":209,"rating":3,"internalName":"OTs39","img":"pic_OTs39.png","costumes":[{"name":"Default","pic":"pic_OTs39.png"},{"name":"Default (Damaged)","pic":"pic_OTs39_D.png"}]},{"name":"OTs-44","type":"RF","num":145,"rating":3,"internalName":"OC44","img":"pic_OC44.png","costumes":[{"name":"Default","pic":"pic_OC44.png"},{"name":"Default (Damaged)","pic":"pic_OC44_D.png"},{"name":"Forest Reindeer","pic":"pic_OC44_1608.png"},{"name":"Forest Reindeer (Damaged)","pic":"pic_OC44_1608_D.png"},{"name":"Untranslated1","pic":"pic_OC44_3406.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_OC44_3406_D.png"}]},{"name":"P08","type":"HG","num":11,"rating":3,"internalName":"P08","img":"pic_P08.png","costumes":[{"name":"Default","pic":"pic_P08.png"},{"name":"Default (Damaged)","pic":"pic_P08_D.png"}]},{"name":"P22","type":"HG","num":242,"rating":5,"internalName":"P22","img":"pic_P22.png","costumes":[{"name":"Default","pic":"pic_P22.png"},{"name":"Default (Damaged)","pic":"pic_P22_D.png"},{"name":"Untranslated1","pic":"pic_P22_3902.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_P22_3902_D.png"}]},{"name":"P226","type":"HG","num":186,"rating":3,"internalName":"P226","img":"pic_P226.png","costumes":[{"name":"Default","pic":"pic_P226.png"},{"name":"Default (Damaged)","pic":"pic_P226_D.png"}]},{"name":"P30","type":"HG","num":269,"rating":4,"internalName":"P30","img":"pic_P30.png","costumes":[{"name":"Default","pic":"pic_P30.png"},{"name":"Default (Damaged)","pic":"pic_P30_D.png"},{"name":"Untranslated1","pic":"pic_P30_4404.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_P30_4404_D.png"}]},{"name":"P38","type":"HG","num":9,"rating":2,"internalName":"P38","img":"pic_P38.png","costumes":[{"name":"Default","pic":"pic_P38.png"},{"name":"Default (Damaged)","pic":"pic_P38_D.png"},{"name":"Apprentice Witch","pic":"pic_P38_2410.png"},{"name":"Apprentice Witch (Damaged)","pic":"pic_P38_2410_D.png"}]},{"name":"P7","type":"HG","num":100,"rating":4,"internalName":"P7","img":"pic_P7.png","costumes":[{"name":"Default","pic":"pic_P7.png"},{"name":"Default (Damaged)","pic":"pic_P7_D.png"},{"name":"Pinky Swear","pic":"pic_P7_606.png"},{"name":"Pinky Swear (Damaged)","pic":"pic_P7_606_D.png"},{"name":"Sister Gunslinger","pic":"pic_P7_1404.png"},{"name":"Sister Gunslinger (Damaged)","pic":"pic_P7_1404_D.png"}]},{"name":"P90","type":"SMG","num":245,"rating":5,"internalName":"P90","img":"pic_P90.png","costumes":[{"name":"Default","pic":"pic_P90.png"},{"name":"Default (Damaged)","pic":"pic_P90_D.png"},{"name":"Scarlet Turbo","pic":"pic_P90_2802.png"},{"name":"Scarlet Turbo (Damaged)","pic":"pic_P90_2802_D.png"}]},{"name":"P99","type":"HG","num":123,"rating":3,"internalName":"P99","img":"pic_P99.png","costumes":[{"name":"Default","pic":"pic_P99.png"},{"name":"Default (Damaged)","pic":"pic_P99_D.png"}]},{"name":"PA-15","type":"HG","num":260,"rating":5,"internalName":"PA15","img":"pic_PA15.png","costumes":[{"name":"Default","pic":"pic_PA15.png"},{"name":"Default (Damaged)","pic":"pic_PA15_D.png"},{"name":"Untranslated1","pic":"pic_PA15_3701.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PA15_3701_D.png"},{"name":"Untranslated2","pic":"pic_PA15_4202.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_PA15_4202_D.png"},{"name":"Untranslated3","pic":"pic_PA15_4402.png"},{"name":"Untranslated3 (Damaged)","pic":"pic_PA15_4402_D.png"}]},{"name":"PK","type":"MG","num":85,"rating":4,"internalName":"PK","img":"pic_PK.png","costumes":[{"name":"Default","pic":"pic_PK.png"},{"name":"Default (Damaged)","pic":"pic_PK_D.png"},{"name":"By Your Side","pic":"pic_PK_605.png"},{"name":"By Your Side (Damaged)","pic":"pic_PK_605_D.png"}]},{"name":"PKP","type":"MG","num":173,"rating":5,"internalName":"PKP","img":"pic_PKP.png","costumes":[{"name":"Default","pic":"pic_PKP.png"},{"name":"Default (Damaged)","pic":"pic_PKP_D.png"},{"name":"Flower and Water","pic":"pic_PKP_1201.png"},{"name":"Flower and Water (Damaged)","pic":"pic_PKP_1201_D.png"},{"name":"Untranslated1","pic":"pic_PKP_4203.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PKP_4203_D.png"},{"name":"L.A.D.Y","pic":"pic_PKP_1503.png"},{"name":"L.A.D.Y (Damaged)","pic":"pic_PKP_1503_D.png"},{"name":"Silver Star","pic":"pic_PKP_3102.png"},{"name":"Silver Star (Damaged)","pic":"pic_PKP_3102_D.png"}]},{"name":"PM-06","type":"SMG","num":224,"rating":5,"internalName":"PM06","img":"pic_PM06.png","costumes":[{"name":"Default","pic":"pic_PM06.png"},{"name":"Default (Damaged)","pic":"pic_PM06_D.png"},{"name":"I'm Soarin', Flyin'","pic":"pic_PM06_2703.png"},{"name":"I'm Soarin', Flyin' (Damaged)","pic":"pic_PM06_2703_D.png"}]},{"name":"PM-9","type":"SMG","num":259,"rating":5,"internalName":"PM9","img":"pic_PM9.png","costumes":[{"name":"Default","pic":"pic_PM9.png"},{"name":"Default (Damaged)","pic":"pic_PM9_D.png"}]},{"name":"PM1910","type":"MG","num":319,"rating":4},{"name":"PP-19","type":"SMG","num":136,"rating":4,"internalName":"PP19","img":"pic_PP19.png","costumes":[{"name":"Default","pic":"pic_PP19.png"},{"name":"Default (Damaged)","pic":"pic_PP19_D.png"},{"name":"Frog Princess","pic":"pic_PP19_2204.png"},{"name":"Frog Princess (Damaged)","pic":"pic_PP19_2204_D.png"}]},{"name":"PP-19-01","type":"SMG","num":137,"rating":4,"internalName":"PP1901","img":"pic_PP1901.png","costumes":[{"name":"Default","pic":"pic_PP1901.png"},{"name":"Default (Damaged)","pic":"pic_PP1901_D.png"},{"name":"Untranslated1","pic":"pic_PP1901_4405.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PP1901_4405_D.png"}]},{"name":"PP-2000","type":"SMG","num":24,"rating":2,"internalName":"PP2000","img":"pic_PP2000.png","costumes":[{"name":"Default","pic":"pic_PP2000.png"},{"name":"Default (Damaged)","pic":"pic_PP2000_D.png"}]},{"name":"PP-90","type":"SMG","num":23,"rating":4,"internalName":"PP90","img":"pic_PP90.png","costumes":[{"name":"Default","pic":"pic_PP90.png"},{"name":"Default (Damaged)","pic":"pic_PP90_D.png"}]},{"name":"PPK","type":"HG","num":10,"rating":2,"internalName":"PPK","img":"pic_PPK.png","costumes":[{"name":"Default","pic":"pic_PPK.png"},{"name":"Default (Damaged)","pic":"pic_PPK_D.png"},{"name":"Untranslated1","pic":"pic_PPK_3905.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PPK_3905_D.png"}]},{"name":"PPS-43","type":"SMG","num":22,"rating":3,"internalName":"PPS43","img":"pic_PPS43.png","costumes":[{"name":"Default","pic":"pic_PPS43.png"},{"name":"Default (Damaged)","pic":"pic_PPS43_D.png"}]},{"name":"PPSh-41","type":"SMG","num":21,"rating":2,"internalName":"PPsh41","img":"pic_PPsh41.png","costumes":[{"name":"Default","pic":"pic_PPsh41.png"},{"name":"Default (Damaged)","pic":"pic_PPsh41_D.png"},{"name":"Moment of Vows","pic":"pic_PPsh41_602.png"},{"name":"Moment of Vows (Damaged)","pic":"pic_PPsh41_602_D.png"}]},{"name":"PSG-1","type":"RF","num":117,"rating":4,"internalName":"PSG1","img":"pic_PSG1.png","costumes":[{"name":"Default","pic":"pic_PSG1.png"},{"name":"Default (Damaged)","pic":"pic_PSG1_D.png"},{"name":"Untranslated1","pic":"pic_PSG1_3808.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_PSG1_3808_D.png"}]},{"name":"PSM","type":"HG","num":140,"rating":3,"internalName":"PSM","img":"pic_PSM.png","costumes":[{"name":"Default","pic":"pic_PSM.png"},{"name":"Default (Damaged)","pic":"pic_PSM_D.png"}]},{"name":"PTRD","type":"RF","num":42,"rating":4,"internalName":"PTRD","img":"pic_PTRD.png","costumes":[{"name":"Default","pic":"pic_PTRD.png"},{"name":"Default (Damaged)","pic":"pic_PTRD_D.png"},{"name":"Romantic Mission","pic":"pic_PTRD_408.png"},{"name":"Romantic Mission (Damaged)","pic":"pic_PTRD_408_D.png"}]},{"name":"Px4 Storm","type":"HG","num":233,"rating":5,"internalName":"Px4Storm","img":"pic_Px4Storm.png","costumes":[{"name":"Default","pic":"pic_Px4Storm.png"},{"name":"Default (Damaged)","pic":"pic_Px4Storm_D.png"},{"name":"Queen of X'mas Morning","pic":"pic_Px4Storm_2801.png"},{"name":"Queen of X'mas Morning (Damaged)","pic":"pic_Px4Storm_2801_D.png"}]},{"name":"Python","type":"HG","num":4,"rating":5,"internalName":"Python","img":"pic_Python.png","costumes":[{"name":"Default","pic":"pic_Python.png"},{"name":"Default (Damaged)","pic":"pic_Python_D.png"}]},{"name":"PzB 39","type":"RF","num":180,"rating":4,"internalName":"PzB39","img":"pic_PzB39.png","costumes":[{"name":"Default","pic":"pic_PzB39.png"},{"name":"Default (Damaged)","pic":"pic_PzB39_D.png"},{"name":"Raging Rider","pic":"pic_PzB39_1506.png"},{"name":"Raging Rider (Damaged)","pic":"pic_PzB39_1506_D.png"}]},{"name":"QBU-88","type":"RF","num":261,"rating":5,"internalName":"QBU88","img":"pic_QBU88.png","costumes":[{"name":"Default","pic":"pic_QBU88.png"},{"name":"Default (Damaged)","pic":"pic_QBU88_D.png"},{"name":"Untranslated1","pic":"pic_QBU88_3801.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_QBU88_3801_D.png"},{"name":"Untranslated2","pic":"pic_QBU88_4503.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_QBU88_4503_D.png"},{"name":"Halloween (Untranslated)","pic":"pic_QBU88_hallo.png"}]},{"name":"R5","type":"AR","num":289,"rating":5},{"name":"R93","type":"RF","num":266,"rating":5,"internalName":"R93","img":"pic_R93.png","costumes":[{"name":"Default","pic":"pic_R93.png"},{"name":"Default (Damaged)","pic":"pic_R93_D.png"},{"name":"Untranslated1","pic":"pic_R93_3501.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_R93_3501_D.png"}]},{"name":"RFB","type":"AR","num":172,"rating":5,"internalName":"RFB","img":"pic_RFB.png","costumes":[{"name":"Default","pic":"pic_RFB.png"},{"name":"Default (Damaged)","pic":"pic_RFB_D.png"},{"name":"New Year's MVP","pic":"pic_RFB_2902.png"},{"name":"New Year's MVP (Damaged)","pic":"pic_RFB_2902_D.png"},{"name":"How RFP Stole Xmas","pic":"pic_RFB_1601.png"},{"name":"How RFP Stole Xmas (Damaged)","pic":"pic_RFB_1601_D.png"}]},{"name":"RMB-93","type":"SG","num":159,"rating":3,"internalName":"RMB93","img":"pic_RMB93.png","costumes":[{"name":"Default","pic":"pic_RMB93.png"},{"name":"Default (Damaged)","pic":"pic_RMB93_D.png"},{"name":"Untranslated1","pic":"pic_RMB93_4309.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_RMB93_4309_D.png"},{"name":"Cross the Milky Way","pic":"pic_RMB93_1705.png"},{"name":"Cross the Milky Way (Damaged)","pic":"pic_RMB93_1705_D.png"}]},{"name":"RO635","type":"SMG","num":143,"rating":5,"internalName":"RO635","img":"pic_RO635.png","costumes":[{"name":"Default","pic":"pic_RO635.png"},{"name":"Default (Damaged)","pic":"pic_RO635_D.png"},{"name":"Without Gun","pic":"pic_RO635_NoArmor0.png"},{"name":"Untranslated1","pic":"pic_RO635_534.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_RO635_534_D.png"},{"name":"Untranslated2","pic":"pic_RO635_4504.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_RO635_4504_D.png"}]},{"name":"RPD","type":"MG","num":84,"rating":3,"internalName":"RPD","img":"pic_RPD.png","costumes":[{"name":"Default","pic":"pic_RPD.png"},{"name":"Default (Damaged)","pic":"pic_RPD_D.png"}]},{"name":"RPK-16","type":"MG","num":292,"rating":5,"internalName":"RPK16","img":"pic_RPK16.png","costumes":[{"name":"Default","pic":"pic_RPK16.png"},{"name":"Default (Damaged)","pic":"pic_RPK16_D.png"}]},{"name":"RT-20","type":"RF","num":241,"rating":3,"internalName":"RT20","img":"pic_RT20.png","costumes":[{"name":"Default","pic":"pic_RT20.png"},{"name":"Default (Damaged)","pic":"pic_RT20_D.png"}]},{"name":"Rex Zero 1","type":"HG","num":310,"rating":4},{"name":"Ribeyrolles","type":"AR","num":171,"rating":4,"internalName":"Ribeyrolles","img":"pic_Ribeyrolles.png","costumes":[{"name":"Default","pic":"pic_Ribeyrolles.png"},{"name":"Default (Damaged)","pic":"pic_Ribeyrolles_D.png"}]},{"name":"S.A.T.8","type":"SG","num":188,"rating":5,"internalName":"SAT8","img":"pic_SAT8.png","costumes":[{"name":"Default","pic":"pic_SAT8.png"},{"name":"Default (Damaged)","pic":"pic_SAT8_D.png"},{"name":"Wintersweet","pic":"pic_SAT8_1802.png"},{"name":"Wintersweet (Damaged)","pic":"pic_SAT8_1802_D.png"},{"name":"Untranslated1","pic":"pic_SAT8_3602.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_SAT8_3602_D.png"},{"name":"Pumpkin Skewers","pic":"pic_SAT8_2601.png"},{"name":"Pumpkin Skewers (Damaged)","pic":"pic_SAT8_2601_D.png"}]},{"name":"SAF","type":"SMG","num":304,"rating":4,"internalName":"SAF","img":"pic_SAF.png","costumes":[{"name":"Default","pic":"pic_SAF.png"},{"name":"Default (Damaged)","pic":"pic_SAF_D.png"}]},{"name":"SAR-21","type":"AR","num":237,"rating":4,"internalName":"SAR21","img":"pic_SAR21.png","costumes":[{"name":"Default","pic":"pic_SAR21.png"},{"name":"Default (Damaged)","pic":"pic_SAR21_D.png"}]},{"name":"SCW","type":"SMG","num":169,"rating":3,"internalName":"ColtSCW","img":"pic_ColtSCW.png","costumes":[{"name":"Default","pic":"pic_ColtSCW.png"},{"name":"Default (Damaged)","pic":"pic_ColtSCW_D.png"}]},{"name":"SIG-510","type":"AR","num":74,"rating":2,"internalName":"SIG510","img":"pic_SIG510.png","costumes":[{"name":"Default","pic":"pic_SIG510.png"},{"name":"Default (Damaged)","pic":"pic_SIG510_D.png"}]},{"name":"SIG-556","type":"AR","num":287,"rating":5,"internalName":"SIG556","img":"pic_SIG556.png","costumes":[{"name":"Default","pic":"pic_SIG556.png"},{"name":"Default (Damaged)","pic":"pic_SIG556_D.png"}]},{"name":"SL8","type":"RF","num":296,"rating":5,"internalName":"SL8","img":"pic_SL8.png","costumes":[{"name":"Default","pic":"pic_SL8.png"},{"name":"Default (Damaged)","pic":"pic_SL8_D.png"},{"name":"Pumpkin Mishka","pic":"pic_SL8_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_SL8_1_D.png"}]},{"name":"SM-1","type":"RF","num":217,"rating":3,"internalName":"HEZISM1","img":"pic_HEZISM1.png","costumes":[{"name":"Default","pic":"pic_HEZISM1.png"},{"name":"Default (Damaged)","pic":"pic_HEZISM1_D.png"}]},{"name":"SPAS-12","type":"SG","num":162,"rating":4,"internalName":"SPAS12","img":"pic_SPAS12.png","costumes":[{"name":"Default","pic":"pic_SPAS12.png"},{"name":"Default (Damaged)","pic":"pic_SPAS12_D.png"},{"name":"Marching Band","pic":"pic_SPAS12_522.png"},{"name":"Marching Band (Damaged)","pic":"pic_SPAS12_522_D.png"},{"name":"Midsummer Fruit","pic":"pic_SPAS12_2408.png"},{"name":"Midsummer Fruit (Damaged)","pic":"pic_SPAS12_2408_D.png"},{"name":"Goblin Huntress","pic":"pic_SPAS12_3203.png"},{"name":"Goblin Huntress (Damaged)","pic":"pic_SPAS12_3203_D.png"}]},{"name":"SPP-1","type":"HG","num":98,"rating":4,"internalName":"SPP1","img":"pic_SPP1.png","costumes":[{"name":"Default","pic":"pic_SPP1.png"},{"name":"Default (Damaged)","pic":"pic_SPP1_D.png"},{"name":"Snowflakes in Arms","pic":"pic_SPP1_1703.png"},{"name":"Snowflakes in Arms (Damaged)","pic":"pic_SPP1_1703_D.png"},{"name":"Untranslated1","pic":"pic_SPP1_4207.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_SPP1_4207_D.png"}]},{"name":"SPR A3G","type":"RF","num":235,"rating":4,"internalName":"FNSPR","img":"pic_FNSPR.png","costumes":[{"name":"Default","pic":"pic_FNSPR.png"},{"name":"Default (Damaged)","pic":"pic_FNSPR_D.png"}]},{"name":"SR-3MP","type":"SMG","num":135,"rating":5,"internalName":"SR3MP","img":"pic_SR3MP.png","costumes":[{"name":"Default","pic":"pic_SR3MP.png"},{"name":"Default (Damaged)","pic":"pic_SR3MP_D.png"},{"name":"Bunny Macchiato","pic":"pic_SR3MP_807.png"},{"name":"Bunny Macchiato (Damaged)","pic":"pic_SR3MP_807_D.png"},{"name":"Untranslated1","pic":"pic_SR3MP_4101.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_SR3MP_4101_D.png"},{"name":"Untranslated2","pic":"pic_SR3MP_3704.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_SR3MP_3704_D.png"}]},{"name":"SRS","type":"RF","num":211,"rating":5,"internalName":"DTASRS","img":"pic_DTASRS.png","costumes":[{"name":"Default","pic":"pic_DTASRS.png"},{"name":"Default (Damaged)","pic":"pic_DTASRS_D.png"}]},{"name":"SSG 3000","type":"RF","num":273,"rating":4,"internalName":"SSG3000","img":"pic_SSG3000.png","costumes":[{"name":"Default","pic":"pic_SSG3000.png"},{"name":"Default (Damaged)","pic":"pic_SSG3000_D.png"}]},{"name":"SSG 69","type":"RF","num":147,"rating":3,"internalName":"SSG69","img":"pic_SSG69.png","costumes":[{"name":"Default","pic":"pic_SSG69.png"},{"name":"Default (Damaged)","pic":"pic_SSG69_D.png"}]},{"name":"ST AR-15","type":"AR","num":57,"rating":4,"internalName":"AR15","img":"pic_AR15.png","costumes":[{"name":"Default","pic":"pic_AR15.png"},{"name":"Default (Damaged)","pic":"pic_AR15_D.png"},{"name":"MOD 3","pic":"pic_AR15Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_AR15Mod_D.png"},{"name":"Untranslated1","pic":"pic_AR15_532.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_AR15_532_D.png"},{"name":"Literary Girl","pic":"pic_AR15_701.png"},{"name":"Literary Girl (Damaged)","pic":"pic_AR15_701_D.png"},{"name":"Untranslated2","pic":"pic_AR15_4508.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_AR15_4508_D.png"}]},{"name":"ST AR-15 MOD 1","type":"AR","num":57,"rating":5,"internalName":"AR15","img":"pic_AR15.png"},{"name":"ST AR-15 MOD 2","type":"AR","num":57,"rating":5,"internalName":"AR15","img":"pic_AR15.png"},{"name":"ST AR-15 MOD 3","type":"AR","num":57,"rating":5,"internalName":"AR15Mod","img":"pic_AR15Mod.png","costumes":[{"name":"Default","pic":"pic_AR15Mod.png"},{"name":"Default (Damaged)","pic":"pic_AR15Mod_D.png"}]},{"name":"SV-98","type":"RF","num":44,"rating":3,"internalName":"SV98","img":"pic_SV98.png","costumes":[{"name":"Default","pic":"pic_SV98.png"},{"name":"Default (Damaged)","pic":"pic_SV98_D.png"},{"name":"MOD 3","pic":"pic_SV98Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_SV98Mod_D.png"},{"name":"At Your Service","pic":"pic_SV98_502.png"},{"name":"At Your Service (Damaged)","pic":"pic_SV98_502_D.png"},{"name":"Pierce Your Heart!","pic":"pic_SV98_1906.png"},{"name":"Pierce Your Heart! (Damaged)","pic":"pic_SV98_1906_D.png"}]},{"name":"SV-98 MOD 1","type":"RF","num":44,"rating":4,"internalName":"SV98","img":"pic_SV98.png"},{"name":"SV-98 MOD 2","type":"RF","num":44,"rating":4,"internalName":"SV98","img":"pic_SV98.png"},{"name":"SV-98 MOD 3","type":"RF","num":44,"rating":4,"internalName":"SV98Mod","img":"pic_SV98Mod.png","costumes":[{"name":"Default","pic":"pic_SV98Mod.png"},{"name":"Default (Damaged)","pic":"pic_SV98Mod_D.png"}]},{"name":"SVD","type":"RF","num":43,"rating":4,"internalName":"SVD","img":"pic_SVD.png","costumes":[{"name":"Default","pic":"pic_SVD.png"},{"name":"Default (Damaged)","pic":"pic_SVD_D.png"},{"name":"Winter Fairy","pic":"pic_SVD_305.png"},{"name":"Winter Fairy (Damaged)","pic":"pic_SVD_305_D.png"}]},{"name":"SVT-38","type":"RF","num":40,"rating":2,"internalName":"SVT38","img":"pic_SVT38.png","costumes":[{"name":"Default","pic":"pic_SVT38.png"},{"name":"Default (Damaged)","pic":"pic_SVT38_D.png"}]},{"name":"Saiga-12","type":"SG","num":160,"rating":5,"internalName":"Saiga12","img":"pic_Saiga12.png","costumes":[{"name":"Default","pic":"pic_Saiga12.png"},{"name":"Default (Damaged)","pic":"pic_Saiga12_D.png"},{"name":"Untranslated1","pic":"pic_Saiga12_3901.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Saiga12_3901_D.png"},{"name":"Untranslated2","pic":"pic_Saiga12_4510.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_Saiga12_4510_D.png"}]},{"name":"Serdyukov","type":"HG","num":113,"rating":3,"internalName":"SPS","img":"pic_SPS.png","costumes":[{"name":"Default","pic":"pic_SPS.png"},{"name":"Default (Damaged)","pic":"pic_SPS_D.png"},{"name":"Untranslated1","pic":"pic_SPS_3506.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_SPS_3506_D.png"}]},{"name":"Shipka","type":"SMG","num":150,"rating":4,"internalName":"Shipka","img":"pic_Shipka.png","costumes":[{"name":"Default","pic":"pic_Shipka.png"},{"name":"Default (Damaged)","pic":"pic_Shipka_D.png"}]},{"name":"Simonov","type":"RF","num":41,"rating":2,"internalName":"SKS","img":"pic_SKS.png","costumes":[{"name":"Default","pic":"pic_SKS.png"},{"name":"Default (Damaged)","pic":"pic_SKS_D.png"}]},{"name":"Six12","type":"SG","num":278,"rating":3,"internalName":"Six12","img":"pic_Six12.png","costumes":[{"name":"Default","pic":"pic_Six12.png"},{"name":"Default (Damaged)","pic":"pic_Six12_D.png"}]},{"name":"Skorpion","type":"SMG","num":27,"rating":3,"internalName":"VZ61","img":"pic_VZ61.png","costumes":[{"name":"Default","pic":"pic_VZ61.png"},{"name":"Default (Damaged)","pic":"pic_VZ61_D.png"},{"name":"Crimson Starlet","pic":"pic_VZ61_801.png"},{"name":"Crimson Starlet (Damaged)","pic":"pic_VZ61_801_D.png"}]},{"name":"Spectre M4","type":"SMG","num":92,"rating":2,"internalName":"SpectreM4","img":"pic_SpectreM4.png","costumes":[{"name":"Default","pic":"pic_SpectreM4.png"},{"name":"Default (Damaged)","pic":"pic_SpectreM4_D.png"}]},{"name":"Spitfire","type":"HG","num":168,"rating":4,"internalName":"Spitfire","img":"pic_Spitfire.png","costumes":[{"name":"Default","pic":"pic_Spitfire.png"},{"name":"Default (Damaged)","pic":"pic_Spitfire_D.png"},{"name":"The Last Alice","pic":"pic_Spitfire_1405.png"},{"name":"The Last Alice (Damaged)","pic":"pic_Spitfire_1405_D.png"}]},{"name":"Springfield","type":"RF","num":36,"rating":4,"internalName":"M1903","img":"pic_M1903.png","costumes":[{"name":"Default","pic":"pic_M1903.png"},{"name":"Default (Damaged)","pic":"pic_M1903_D.png"},{"name":"Stirring Mermaid","pic":"pic_M1903_1107.png"},{"name":"Stirring Mermaid (Damaged)","pic":"pic_M1903_1107_D.png"},{"name":"O Holy Night","pic":"pic_M1903_302.png"},{"name":"O Holy Night (Damaged)","pic":"pic_M1903_302_D.png"},{"name":"Queen in Radiance","pic":"pic_M1903_802.png"},{"name":"Queen in Radiance (Damaged)","pic":"pic_M1903_802_D.png"},{"name":"Classic Witch","pic":"pic_M1903_5.png"},{"name":"Classic Witch (Damaged)","pic":"pic_M1903_5_D.png"}]},{"name":"StG-940","type":"AR","num":314,"rating":3},{"name":"StG44","type":"AR","num":61,"rating":3,"internalName":"STG44","img":"pic_STG44.png","costumes":[{"name":"Default","pic":"pic_STG44.png"},{"name":"Default (Damaged)","pic":"pic_STG44_D.png"},{"name":"MOD 3","pic":"pic_STG44Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_STG44Mod_D.png"}]},{"name":"StG44 MOD 1","type":"AR","num":61,"rating":4,"internalName":"STG44","img":"pic_STG44.png"},{"name":"StG44 MOD 2","type":"AR","num":61,"rating":4,"internalName":"STG44","img":"pic_STG44.png"},{"name":"StG44 MOD 3","type":"AR","num":61,"rating":4,"internalName":"STG44Mod","img":"pic_STG44Mod.png","costumes":[{"name":"Default","pic":"pic_STG44Mod.png"},{"name":"Default (Damaged)","pic":"pic_STG44Mod_D.png"}]},{"name":"Stechkin","type":"HG","num":7,"rating":4,"internalName":"APS","img":"pic_APS.png","costumes":[{"name":"Default","pic":"pic_APS.png"},{"name":"Default (Damaged)","pic":"pic_APS_D.png"},{"name":"MOD 3","pic":"pic_APSMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_APSMod_D.png"},{"name":"Untranslated1","pic":"pic_APS_4306.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_APS_4306_D.png"}]},{"name":"Sten MkII","type":"SMG","num":29,"rating":3,"internalName":"StenMK2","img":"pic_StenMK2.png","costumes":[{"name":"Default","pic":"pic_StenMK2.png"},{"name":"Default (Damaged)","pic":"pic_StenMK2_D.png"},{"name":"MOD 3","pic":"pic_StenMK2Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_StenMK2Mod_D.png"},{"name":"Reciprocated Love","pic":"pic_StenMK2_603.png"},{"name":"Reciprocated Love (Damaged)","pic":"pic_StenMK2_603_D.png"}]},{"name":"Sten MkII MOD 1","type":"SMG","num":29,"rating":4,"internalName":"StenMK2","img":"pic_StenMK2.png"},{"name":"Sten MkII MOD 2","type":"SMG","num":29,"rating":4,"internalName":"StenMK2","img":"pic_StenMK2.png"},{"name":"Sten MkII MOD 3","type":"SMG","num":29,"rating":4,"internalName":"StenMK2Mod","img":"pic_StenMK2Mod.png","costumes":[{"name":"Default","pic":"pic_StenMK2Mod.png"},{"name":"Default (Damaged)","pic":"pic_StenMK2Mod_D.png"}]},{"name":"Steyr ACR","type":"AR","num":313,"rating":5},{"name":"Steyr Scout","type":"RF","num":255,"rating":3,"internalName":"scout","img":"pic_scout.png","costumes":[{"name":"Default","pic":"pic_scout.png"},{"name":"Default (Damaged)","pic":"pic_scout_D.png"}]},{"name":"Suomi","type":"SMG","num":115,"rating":5,"internalName":"KP31","img":"pic_KP31.png","costumes":[{"name":"Default","pic":"pic_KP31.png"},{"name":"Default (Damaged)","pic":"pic_KP31_D.png"},{"name":"Blissful Mission","pic":"pic_KP31_3101.png"},{"name":"Blissful Mission (Damaged)","pic":"pic_KP31_3101_D.png"},{"name":"Korvatunturi Pixie","pic":"pic_KP31_310.png"},{"name":"Korvatunturi Pixie (Damaged)","pic":"pic_KP31_310_D.png"},{"name":"Midsummer Pixie","pic":"pic_KP31_1103.png"},{"name":"Midsummer Pixie (Damaged)","pic":"pic_KP31_1103_D.png"}]},{"name":"Super SASS","type":"RF","num":124,"rating":3,"internalName":"SuperSASS","img":"pic_SuperSASS.png","costumes":[{"name":"Default","pic":"pic_SuperSASS.png"},{"name":"Default (Damaged)","pic":"pic_SuperSASS_D.png"},{"name":"Wolf Walker","pic":"pic_SuperSASS_1407.png"},{"name":"Wolf Walker (Damaged)","pic":"pic_SuperSASS_1407_D.png"}]},{"name":"Super-Shorty","type":"SG","num":156,"rating":4,"internalName":"SuperShorty","img":"pic_SuperShorty.png","costumes":[{"name":"Default","pic":"pic_SuperShorty.png"},{"name":"Default (Damaged)","pic":"pic_SuperShorty_D.png"},{"name":"Crossing in Labyrinth","pic":"pic_SuperShorty_1704.png"},{"name":"Crossing in Labyrinth (Damaged)","pic":"pic_SuperShorty_1704_D.png"}]},{"name":"T-5000","type":"RF","num":184,"rating":4,"internalName":"T5000","img":"pic_T5000.png","costumes":[{"name":"Default","pic":"pic_T5000.png"},{"name":"Default (Damaged)","pic":"pic_T5000_D.png"},{"name":"Oath of Transformation","pic":"pic_T5000_3106.png"},{"name":"Oath of Transformation (Damaged)","pic":"pic_T5000_3106_D.png"}]},{"name":"T-CMS","type":"RF","num":268,"rating":3,"internalName":"TCMS","img":"pic_TCMS.png","costumes":[{"name":"Default","pic":"pic_TCMS.png"},{"name":"Default (Damaged)","pic":"pic_TCMS_D.png"}]},{"name":"T65","type":"AR","num":193,"rating":3,"internalName":"T65","img":"pic_T65.png","costumes":[{"name":"Default","pic":"pic_T65.png"},{"name":"Default (Damaged)","pic":"pic_T65_D.png"}]},{"name":"T77","type":"SMG","num":218,"rating":3,"internalName":"T77","img":"pic_T77.png","costumes":[{"name":"Default","pic":"pic_T77.png"},{"name":"Default (Damaged)","pic":"pic_T77_D.png"}]},{"name":"T91","type":"AR","num":181,"rating":5,"internalName":"T91","img":"pic_T91.png","costumes":[{"name":"Default","pic":"pic_T91.png"},{"name":"Default (Damaged)","pic":"pic_T91_D.png"},{"name":"Untranslated1","pic":"pic_T91_4206.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_T91_4206_D.png"}]},{"name":"TAC-50","type":"RF","num":222,"rating":5,"internalName":"TAC50","img":"pic_TAC50.png","costumes":[{"name":"Default","pic":"pic_TAC50.png"},{"name":"Default (Damaged)","pic":"pic_TAC50_D.png"},{"name":"Elf Helsing","pic":"pic_TAC50_2602.png"},{"name":"Elf Helsing (Damaged)","pic":"pic_TAC50_2602_D.png"}]},{"name":"TAR-21","type":"AR","num":72,"rating":4,"internalName":"TAR21","img":"pic_TAR21.png","costumes":[{"name":"Default","pic":"pic_TAR21.png"},{"name":"Default (Damaged)","pic":"pic_TAR21_D.png"},{"name":"Night at the Bar","pic":"pic_TAR21_1305.png"},{"name":"Night at the Bar (Damaged)","pic":"pic_TAR21_1305_D.png"}]},{"name":"TEC-9","type":"HG","num":244,"rating":3,"internalName":"TEC9","img":"pic_TEC9.png","costumes":[{"name":"Default","pic":"pic_TEC9.png"},{"name":"Default (Damaged)","pic":"pic_TEC9_D.png"}]},{"name":"TMP","type":"SMG","num":176,"rating":3,"internalName":"TMP","img":"pic_TMP.png","costumes":[{"name":"Default","pic":"pic_TMP.png"},{"name":"Default (Damaged)","pic":"pic_TMP_D.png"},{"name":"Red-Eared Cat","pic":"pic_TMP_2807.png"},{"name":"Red-Eared Cat (Damaged)","pic":"pic_TMP_2807_D.png"},{"name":"Untranslated1","pic":"pic_TMP_3708.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_TMP_3708_D.png"}]},{"name":"Tabuk","type":"RF","num":305,"rating":4,"internalName":"Tabuk","img":"pic_Tabuk.png","costumes":[{"name":"Default","pic":"pic_Tabuk.png"},{"name":"Default (Damaged)","pic":"pic_Tabuk_D.png"}]},{"name":"Thompson","type":"SMG","num":16,"rating":5,"internalName":"M1928A1","img":"pic_M1928A1.png","costumes":[{"name":"Default","pic":"pic_M1928A1.png"},{"name":"Default (Damaged)","pic":"pic_M1928A1_D.png"},{"name":"Demon Hunter","pic":"pic_M1928A1_1501.png"},{"name":"Demon Hunter (Damaged)","pic":"pic_M1928A1_1501_D.png"}]},{"name":"Thunder","type":"HG","num":202,"rating":4,"internalName":"Thunder50","img":"pic_Thunder50.png","costumes":[{"name":"Default","pic":"pic_Thunder50.png"},{"name":"Default (Damaged)","pic":"pic_Thunder50_D.png"},{"name":"Lenore's Raven","pic":"pic_Thunder50_2206.png"},{"name":"Lenore's Raven (Damaged)","pic":"pic_Thunder50_2206_D.png"},{"name":"Untranslated1","pic":"pic_Thunder50_3309.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Thunder50_3309_D.png"}]},{"name":"Tokarev","type":"HG","num":6,"rating":3,"internalName":"TT33","img":"pic_TT33.png","costumes":[{"name":"Default","pic":"pic_TT33.png"},{"name":"Default (Damaged)","pic":"pic_TT33_D.png"},{"name":"Griffin's Dancer","pic":"pic_TT33_3204.png"},{"name":"Griffin's Dancer (Damaged)","pic":"pic_TT33_3204_D.png"},{"name":"A Couple's Journey","pic":"pic_TT33_601.png"},{"name":"A Couple's Journey (Damaged)","pic":"pic_TT33_601_D.png"}]},{"name":"Type 03","type":"AR","num":239,"rating":3,"internalName":"Type03","img":"pic_Type03.png","costumes":[{"name":"Default","pic":"pic_Type03.png"},{"name":"Default (Damaged)","pic":"pic_Type03_D.png"}]},{"name":"Type 100","type":"SMG","num":228,"rating":5,"internalName":"Type100","img":"pic_Type100.png","costumes":[{"name":"Default","pic":"pic_Type100.png"},{"name":"Default (Damaged)","pic":"pic_Type100_D.png"},{"name":"Gunslinger Miko","pic":"pic_Type100_2903.png"},{"name":"Gunslinger Miko (Damaged)","pic":"pic_Type100_2903_D.png"},{"name":"Untranslated1","pic":"pic_Type100_4004.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Type100_4004_D.png"}]},{"name":"Type 4","type":"RF","num":270,"rating":4,"internalName":"4type","img":"pic_4type.png","costumes":[{"name":"Default","pic":"pic_4type.png"},{"name":"Default (Damaged)","pic":"pic_4type_D.png"},{"name":"Untranslated1","pic":"pic_4type_4103.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_4type_4103_D.png"},{"name":"Untranslated2","pic":"pic_4type_3505.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_4type_3505_D.png"}]},{"name":"Type 56","type":"RF","num":49,"rating":3,"internalName":"56typeR","img":"pic_56typeR.png","costumes":[{"name":"Default","pic":"pic_56typeR.png"},{"name":"Default (Damaged)","pic":"pic_56typeR_D.png"}]},{"name":"Type 56-1","type":"AR","num":66,"rating":4,"internalName":"56-1type","img":"pic_56-1type.png","costumes":[{"name":"Default","pic":"pic_56-1type.png"},{"name":"Default (Damaged)","pic":"pic_56-1type_D.png"},{"name":"Scarlet Sage","pic":"pic_56-1type_401.png"},{"name":"Scarlet Sage (Damaged)","pic":"pic_56-1type_401_D.png"},{"name":"As One, Forever Entwined","pic":"pic_56-1type_1905.png"},{"name":"As One, Forever Entwined (Damaged)","pic":"pic_56-1type_1905_D.png"}]},{"name":"Type 59","type":"HG","num":132,"rating":3,"internalName":"59type","img":"pic_59type.png","costumes":[{"name":"Default","pic":"pic_59type.png"},{"name":"Default (Damaged)","pic":"pic_59type_D.png"},{"name":"Fairy Primrose","pic":"pic_59type_407.png"},{"name":"Fairy Primrose (Damaged)","pic":"pic_59type_407_D.png"}]},{"name":"Type 62","type":"MG","num":249,"rating":3,"internalName":"Type62","img":"pic_Type62.png","costumes":[{"name":"Default","pic":"pic_Type62.png"},{"name":"Default (Damaged)","pic":"pic_Type62_D.png"},{"name":"New Year Fair","pic":"pic_Type62_2908.png"},{"name":"New Year Fair (Damaged)","pic":"pic_Type62_2908_D.png"}]},{"name":"Type 63","type":"AR","num":133,"rating":2,"internalName":"63type","img":"pic_63type.png","costumes":[{"name":"Default","pic":"pic_63type.png"},{"name":"Default (Damaged)","pic":"pic_63type_D.png"},{"name":"Yellow Phoenix","pic":"pic_63type_2004.png"},{"name":"Yellow Phoenix (Damaged)","pic":"pic_63type_2004_D.png"}]},{"name":"Type 64","type":"SMG","num":94,"rating":2,"internalName":"64type","img":"pic_64type.png","costumes":[{"name":"Default","pic":"pic_64type.png"},{"name":"Default (Damaged)","pic":"pic_64type_D.png"},{"name":"MOD 3","pic":"pic_64typeMod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_64typeMod_D.png"},{"name":"Water Gown","pic":"pic_64type_104.png"},{"name":"Water Gown (Damaged)","pic":"pic_64type_104_D.png"},{"name":"Witch from Afar","pic":"pic_64type_11.png"},{"name":"Witch from Afar (Damaged)","pic":"pic_64type_11_D.png"}]},{"name":"Type 64 MOD 1","type":"SMG","num":94,"rating":4,"internalName":"64type","img":"pic_64type.png"},{"name":"Type 64 MOD 2","type":"SMG","num":94,"rating":4,"internalName":"64type","img":"pic_64type.png"},{"name":"Type 64 MOD 3","type":"SMG","num":94,"rating":4,"internalName":"64typeMod","img":"pic_64typeMod.png","costumes":[{"name":"Default","pic":"pic_64typeMod.png"},{"name":"Default (Damaged)","pic":"pic_64typeMod_D.png"}]},{"name":"Type 79","type":"SMG","num":127,"rating":5,"internalName":"79type","img":"pic_79type.png","costumes":[{"name":"Default","pic":"pic_79type.png"},{"name":"Default (Damaged)","pic":"pic_79type_D.png"},{"name":"Nine-Tail Fox","pic":"pic_79type_1402.png"},{"name":"Nine-Tail Fox (Damaged)","pic":"pic_79type_1402_D.png"},{"name":"Untranslated1","pic":"pic_79type_3306.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_79type_3306_D.png"}]},{"name":"Type 80","type":"MG","num":199,"rating":4,"internalName":"80type","img":"pic_80type.png","costumes":[{"name":"Default","pic":"pic_80type.png"},{"name":"Default (Damaged)","pic":"pic_80type_D.png"},{"name":"Steel Butterfly","pic":"pic_80type_2504.png"},{"name":"Steel Butterfly (Damaged)","pic":"pic_80type_2504_D.png"}]},{"name":"Type 81 Carbine","type":"RF","num":174,"rating":3,"internalName":"81typeR","img":"pic_81typeR.png","costumes":[{"name":"Default","pic":"pic_81typeR.png"},{"name":"Default (Damaged)","pic":"pic_81typeR_D.png"},{"name":"White Camellia","pic":"pic_81typeR_1807.png"},{"name":"White Camellia (Damaged)","pic":"pic_81typeR_1807_D.png"}]},{"name":"Type 88","type":"MG","num":238,"rating":5,"internalName":"Type88","img":"pic_Type88.png","costumes":[{"name":"Default","pic":"pic_Type88.png"},{"name":"Default (Damaged)","pic":"pic_Type88_D.png"},{"name":"Noble Orchid","pic":"pic_Type88_3003.png"},{"name":"Noble Orchid (Damaged)","pic":"pic_Type88_3003_D.png"},{"name":"Untranslated1","pic":"pic_Type88_3504.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Type88_3504_D.png"}]},{"name":"Type 92","type":"HG","num":13,"rating":3,"internalName":"92type","img":"pic_92type.png","costumes":[{"name":"Default","pic":"pic_92type.png"},{"name":"Default (Damaged)","pic":"pic_92type_D.png"}]},{"name":"Type 95","type":"AR","num":129,"rating":5,"internalName":"95type","img":"pic_95type.png","costumes":[{"name":"Default","pic":"pic_95type.png"},{"name":"Default (Damaged)","pic":"pic_95type_D.png"},{"name":"Narcissus","pic":"pic_95type_405.png"},{"name":"Narcissus (Damaged)","pic":"pic_95type_405_D.png"},{"name":"Summer Cicada","pic":"pic_95type_1102.png"},{"name":"Summer Cicada (Damaged)","pic":"pic_95type_1102_D.png"},{"name":"Untranslated1","pic":"pic_95type_3702.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_95type_3702_D.png"}]},{"name":"Type 97","type":"AR","num":130,"rating":5,"internalName":"97type","img":"pic_97type.png","costumes":[{"name":"Default","pic":"pic_97type.png"},{"name":"Default (Damaged)","pic":"pic_97type_D.png"},{"name":"Peony","pic":"pic_97type_406.png"},{"name":"Peony (Damaged)","pic":"pic_97type_406_D.png"},{"name":"Untranslated1","pic":"pic_97type_3703.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_97type_3703_D.png"}]},{"name":"Type 97 Shotgun","type":"SG","num":161,"rating":4,"internalName":"97typeS","img":"pic_97typeS.png","costumes":[{"name":"Default","pic":"pic_97typeS.png"},{"name":"Default (Damaged)","pic":"pic_97typeS_D.png"},{"name":"Untranslated1","pic":"pic_97typeS_3807.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_97typeS_3807_D.png"}]},{"name":"UKM-2000","type":"MG","num":254,"rating":4,"internalName":"UKM2000","img":"pic_UKM2000.png","costumes":[{"name":"Default","pic":"pic_UKM2000.png"},{"name":"Default (Damaged)","pic":"pic_UKM2000_D.png"},{"name":"Untranslated1","pic":"pic_UKM2000_3903.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_UKM2000_3903_D.png"}]},{"name":"UMP40","type":"SMG","num":102,"rating":4,"internalName":"UMP40","img":"pic_UMP40.png","costumes":[{"name":"Default","pic":"pic_UMP40.png"},{"name":"Default (Damaged)","pic":"pic_UMP40_D.png"},{"name":"Untranslated1","pic":"pic_UMP40_539.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_UMP40_539_D.png"}]},{"name":"UMP45","type":"SMG","num":103,"rating":4,"internalName":"UMP45","img":"pic_UMP45.png","costumes":[{"name":"Default","pic":"pic_UMP45.png"},{"name":"Default (Damaged)","pic":"pic_UMP45_D.png"},{"name":"MOD 3","pic":"pic_UMP45Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_UMP45Mod_D.png"},{"name":"Untranslated1","pic":"pic_UMP45_535.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_UMP45_535_D.png"},{"name":"Flower of Diamond","pic":"pic_UMP45_2107.png"},{"name":"Flower of Diamond (Damaged)","pic":"pic_UMP45_2107_D.png"},{"name":"Untranslated2","pic":"pic_UMP45_3403.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_UMP45_3403_D.png"},{"name":"Winter Trip","pic":"pic_UMP45_521.png"},{"name":"Winter Trip (Damaged)","pic":"pic_UMP45_521_D.png"},{"name":"Just this time.","pic":"pic_UMP45_410.png"},{"name":"Just this time. (Damaged)","pic":"pic_UMP45_410_D.png"}]},{"name":"UMP45 MOD 1","type":"SMG","num":103,"rating":5,"internalName":"UMP45","img":"pic_UMP45.png"},{"name":"UMP45 MOD 2","type":"SMG","num":103,"rating":5,"internalName":"UMP45","img":"pic_UMP45.png"},{"name":"UMP45 MOD 3","type":"SMG","num":103,"rating":5,"internalName":"UMP45Mod","img":"pic_UMP45Mod.png","costumes":[{"name":"Default","pic":"pic_UMP45Mod.png"},{"name":"Default (Damaged)","pic":"pic_UMP45Mod_D.png"}]},{"name":"UMP9","type":"SMG","num":101,"rating":4,"internalName":"UMP9","img":"pic_UMP9.png","costumes":[{"name":"Default","pic":"pic_UMP9.png"},{"name":"Default (Damaged)","pic":"pic_UMP9_D.png"},{"name":"MOD 3","pic":"pic_UMP9Mod.png"},{"name":"MOD 3 (Damaged)","pic":"pic_UMP9Mod_D.png"},{"name":"\"Am I Late?\"","pic":"pic_UMP9_409.png"},{"name":"\"Am I Late?\" (Damaged)","pic":"pic_UMP9_409_D.png"},{"name":"Untranslated1","pic":"pic_UMP9_3404.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_UMP9_3404_D.png"},{"name":"The World's Melody","pic":"pic_UMP9_2106.png"},{"name":"The World's Melody (Damaged)","pic":"pic_UMP9_2106_D.png"},{"name":"Untranslated2","pic":"pic_UMP9_536.png"},{"name":"Untranslated2 (Damaged)","pic":"pic_UMP9_536_D.png"}]},{"name":"UMP9 MOD 1","type":"SMG","num":101,"rating":5,"internalName":"UMP9","img":"pic_UMP9.png"},{"name":"UMP9 MOD 2","type":"SMG","num":101,"rating":5,"internalName":"UMP9","img":"pic_UMP9.png"},{"name":"UMP9 MOD 3","type":"SMG","num":101,"rating":5,"internalName":"UMP9Mod","img":"pic_UMP9Mod.png","costumes":[{"name":"Default","pic":"pic_UMP9Mod.png"},{"name":"Default (Damaged)","pic":"pic_UMP9Mod_D.png"}]},{"name":"USAS-12","type":"SG","num":189,"rating":4,"internalName":"USAS12","img":"pic_USAS12.png","costumes":[{"name":"Default","pic":"pic_USAS12.png"},{"name":"Default (Damaged)","pic":"pic_USAS12_D.png"},{"name":"VRAIN Power","pic":"pic_USAS12_2704.png"},{"name":"VRAIN Power (Damaged)","pic":"pic_USAS12_2704_D.png"}]},{"name":"USP Compact","type":"HG","num":141,"rating":2,"internalName":"USPCompact","img":"pic_USPCompact.png","costumes":[{"name":"Default","pic":"pic_USPCompact.png"},{"name":"Default (Damaged)","pic":"pic_USPCompact_D.png"}]},{"name":"VHS","type":"AR","num":318,"rating":5},{"name":"VP70","type":"HG","num":277,"rating":3,"internalName":"VP70","img":"pic_VP70.png","costumes":[{"name":"Default","pic":"pic_VP70.png"},{"name":"Default (Damaged)","pic":"pic_VP70_D.png"}]},{"name":"VSK-94","type":"RF","num":312,"rating":5},{"name":"Vector","type":"SMG","num":20,"rating":5,"internalName":"Vector","img":"pic_Vector.png","costumes":[{"name":"Default","pic":"pic_Vector.png"},{"name":"Default (Damaged)","pic":"pic_Vector_D.png"},{"name":"Kitty Paws","pic":"pic_Vector_2.png"},{"name":"Kitty Paws (Damaged)","pic":"pic_Vector_2_D.png"},{"name":"Ardent Devotion","pic":"pic_Vector_1901.png"},{"name":"Ardent Devotion (Damaged)","pic":"pic_Vector_1901_D.png"}]},{"name":"Vepr","type":"AR","num":-1,"rating":3,"internalName":"VEPR","img":"pic_VEPR.png","costumes":[{"name":"Default","pic":"pic_VEPR.png"},{"name":"Default (Damaged)","pic":"pic_VEPR_D.png"}]},{"name":"WA2000","type":"RF","num":48,"rating":5,"internalName":"WA2000","img":"pic_WA2000.png","costumes":[{"name":"Default","pic":"pic_WA2000.png"},{"name":"Default (Damaged)","pic":"pic_WA2000_D.png"},{"name":"Date in the Snow","pic":"pic_WA2000_306.png"},{"name":"Date in the Snow (Damaged)","pic":"pic_WA2000_306_D.png"},{"name":"Op. Manta Ray","pic":"pic_WA2000_1108.png"},{"name":"Op. Manta Ray (Damaged)","pic":"pic_WA2000_1108_D.png"},{"name":"Haunted Castle","pic":"pic_WA2000_6.png"},{"name":"Haunted Castle (Damaged)","pic":"pic_WA2000_6_D.png"},{"name":"Ballroom Interlude","pic":"pic_WA2000_804.png"},{"name":"Ballroom Interlude (Damaged)","pic":"pic_WA2000_804_D.png"}]},{"name":"WKp","type":"HG","num":-1,"rating":3},{"name":"Webley","type":"HG","num":294,"rating":5,"internalName":"Webley","img":"pic_Webley.png","costumes":[{"name":"Default","pic":"pic_Webley.png"},{"name":"Default (Damaged)","pic":"pic_Webley_D.png"}]},{"name":"Welrod MkII","type":"HG","num":114,"rating":5,"internalName":"Welrod","img":"pic_Welrod.png","costumes":[{"name":"Default","pic":"pic_Welrod.png"},{"name":"Default (Damaged)","pic":"pic_Welrod_D.png"},{"name":"English in Love","pic":"pic_Welrod_411.png"},{"name":"English in Love (Damaged)","pic":"pic_Welrod_411_D.png"},{"name":"Nightfall Crisis","pic":"pic_Welrod_2103.png"},{"name":"Nightfall Crisis (Damaged)","pic":"pic_Welrod_2103_D.png"},{"name":"Lord of Shadow","pic":"pic_Welrod_1401.png"},{"name":"Lord of Shadow (Damaged)","pic":"pic_Welrod_1401_D.png"}]},{"name":"X95","type":"SMG","num":251,"rating":5,"internalName":"X95","img":"pic_X95.png","costumes":[{"name":"Default","pic":"pic_X95.png"},{"name":"Default (Damaged)","pic":"pic_X95_D.png"}]},{"name":"XM3","type":"RF","num":200,"rating":4,"internalName":"xm3","img":"pic_xm3.png","costumes":[{"name":"Default","pic":"pic_xm3.png"},{"name":"Default (Damaged)","pic":"pic_xm3_D.png"}]},{"name":"XM8","type":"AR","num":216,"rating":4,"internalName":"XM8","img":"pic_XM8.png","costumes":[{"name":"Default","pic":"pic_XM8.png"},{"name":"Default (Damaged)","pic":"pic_XM8_D.png"}]},{"name":"Z-62","type":"SMG","num":116,"rating":3,"internalName":"Z62","img":"pic_Z62.png","costumes":[{"name":"Default","pic":"pic_Z62.png"},{"name":"Default (Damaged)","pic":"pic_Z62_D.png"},{"name":"Untranslated1","pic":"pic_Z62_3507.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_Z62_3507_D.png"}]},{"name":"ZB-26","type":"MG","num":307,"rating":5,"internalName":"ZB26","img":"pic_ZB26.png","costumes":[{"name":"Default","pic":"pic_ZB26.png"},{"name":"Default (Damaged)","pic":"pic_ZB26_D.png"}]},{"name":"Zas M21","type":"AR","num":196,"rating":5,"internalName":"ZastavaM21","img":"pic_ZastavaM21.png","costumes":[{"name":"Default","pic":"pic_ZastavaM21.png"},{"name":"Default (Damaged)","pic":"pic_ZastavaM21_D.png"},{"name":"White Queen","pic":"pic_ZastavaM21_2104.png"},{"name":"White Queen (Damaged)","pic":"pic_ZastavaM21_2104_D.png"},{"name":"Untranslated1","pic":"pic_ZastavaM21_4304.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_ZastavaM21_4304_D.png"},{"name":"Gunshot in the Snow","pic":"pic_ZastavaM21_1603.png"},{"name":"Gunshot in the Snow (Damaged)","pic":"pic_ZastavaM21_1603_D.png"}]},{"name":"Zas M76","type":"RF","num":-1,"rating":3,"internalName":"ZasM76","img":"pic_ZasM76.png","costumes":[{"name":"Default","pic":"pic_ZasM76.png"},{"name":"Default (Damaged)","pic":"pic_ZasM76_D.png"},{"name":"Untranslated1","pic":"pic_ZasM76_4511.png"},{"name":"Untranslated1 (Damaged)","pic":"pic_ZasM76_4511_D.png"}]},{"name":"m45","type":"SMG","num":33,"rating":2,"internalName":"m45","img":"pic_m45.png","costumes":[{"name":"Default","pic":"pic_m45.png"},{"name":"Default (Damaged)","pic":"pic_m45_D.png"},{"name":"Candy Express","pic":"pic_m45_4.png"},{"name":"Candy Express (Damaged)","pic":"pic_m45_4_D.png"}]},{"name":"wz.29","type":"RF","num":182,"rating":3,"internalName":"wz29","img":"pic_wz29.png","costumes":[{"name":"Default","pic":"pic_wz29.png"},{"name":"Default (Damaged)","pic":"pic_wz29_D.png"}]},{"name":"Alma","type":"MG","num":1021,"rating":7,"internalName":"Alma","img":"pic_Alma.png","costumes":[{"name":"Default","pic":"pic_Alma.png"},{"name":"Default (Damaged)","pic":"pic_Alma_D.png"},{"name":"Middle School Adventure","pic":"pic_Alma_528.png"},{"name":"Middle School Adventure (Damaged)","pic":"pic_Alma_528_D.png"}]},{"name":"Angelica","type":"AR","num":1027,"rating":7},{"name":"Bronya","type":"RF","num":1005,"rating":7,"internalName":"Bronya","img":"pic_Bronya.png","costumes":[{"name":"Default","pic":"pic_Bronya.png"},{"name":"Default (Damaged)","pic":"pic_Bronya_D.png"},{"name":"Bronya's Armor","pic":"pic_Bronya_507.png"},{"name":"Bronya's Armor (Damaged)","pic":"pic_Bronya_507_D.png"}]},{"name":"Claes","type":"MG","num":1026,"rating":7},{"name":"Clear","type":"HG","num":1009,"rating":7,"internalName":"CLEAR","img":"pic_CLEAR.png","costumes":[{"name":"Default","pic":"pic_CLEAR.png"},{"name":"Default (Damaged)","pic":"pic_CLEAR_D.png"},{"name":"Pocket City Queen the Second","pic":"pic_CLEAR_509.png"},{"name":"Pocket City Queen the Second (Damaged)","pic":"pic_CLEAR_509_D.png"},{"name":"Doll Annihilator","pic":"pic_CLEAR_505.png"},{"name":"Doll Annihilator (Damaged)","pic":"pic_CLEAR_505_D.png"}]},{"name":"Dana","type":"SG","num":1022,"rating":7,"internalName":"Dana","img":"pic_Dana.png","costumes":[{"name":"Default","pic":"pic_Dana.png"},{"name":"Default (Damaged)","pic":"pic_Dana_D.png"},{"name":"Red Comet","pic":"pic_Dana_526.png"},{"name":"Red Comet (Damaged)","pic":"pic_Dana_526_D.png"}]},{"name":"Dorothy","type":"SMG","num":1019,"rating":7,"internalName":"Dorothy","img":"pic_Dorothy.png","costumes":[{"name":"Default","pic":"pic_Dorothy.png"},{"name":"Default (Damaged)","pic":"pic_Dorothy_D.png"},{"name":"Precious Christmas Outfit","pic":"pic_Dorothy_525.png"},{"name":"Precious Christmas Outfit (Damaged)","pic":"pic_Dorothy_525_D.png"}]},{"name":"Elphelt","type":"SG","num":1002,"rating":7,"internalName":"GG_elfeldt","img":"pic_GG_elfeldt.png","costumes":[{"name":"Default","pic":"pic_GG_elfeldt.png"},{"name":"Default (Damaged)","pic":"pic_GG_elfeldt_D.png"}]},{"name":"Fail","type":"HG","num":1010,"rating":7,"internalName":"FAIL","img":"pic_FAIL.png","costumes":[{"name":"Default","pic":"pic_FAIL.png"},{"name":"Default (Damaged)","pic":"pic_FAIL_D.png"},{"name":"Kiana's Dress","pic":"pic_FAIL_506.png"},{"name":"Kiana's Dress (Damaged)","pic":"pic_FAIL_506_D.png"},{"name":"Pocket City Queen the Third","pic":"pic_FAIL_510.png"},{"name":"Pocket City Queen the Third (Damaged)","pic":"pic_FAIL_510_D.png"}]},{"name":"Henrietta","type":"SMG","num":1023,"rating":7},{"name":"Jill","type":"HG","num":1017,"rating":7,"internalName":"Jill","img":"pic_Jill.png","costumes":[{"name":"Default","pic":"pic_Jill.png"},{"name":"Default (Damaged)","pic":"pic_Jill_D.png"},{"name":"Model Warrior","pic":"pic_Jill_529.png"},{"name":"Model Warrior (Damaged)","pic":"pic_Jill_529_D.png"}]},{"name":"Kiana","type":"HG","num":1003,"rating":7,"internalName":"Kiana","img":"pic_Kiana.png","costumes":[{"name":"Default","pic":"pic_Kiana.png"},{"name":"Default (Damaged)","pic":"pic_Kiana_D.png"},{"name":"Kiana's Dress","pic":"pic_Kiana_506.png"},{"name":"Kiana's Dress (Damaged)","pic":"pic_Kiana_506_D.png"}]},{"name":"Murata Himeko","type":"AR","num":1007,"rating":7,"internalName":"Himeko","img":"pic_Himeko.png","costumes":[{"name":"Default","pic":"pic_Himeko.png"},{"name":"Default (Damaged)","pic":"pic_Himeko_D.png"}]},{"name":"Noel","type":"HG","num":1001,"rating":7,"internalName":"BB_Noel","img":"pic_BB_Noel.png","costumes":[{"name":"Default","pic":"pic_BB_Noel.png"},{"name":"Default (Damaged)","pic":"pic_BB_Noel_D.png"}]},{"name":"Raiden Mei","type":"RF","num":1004,"rating":7,"internalName":"RaidenMei","img":"pic_RaidenMei.png","costumes":[{"name":"Default","pic":"pic_RaidenMei.png"},{"name":"Default (Damaged)","pic":"pic_RaidenMei_D.png"}]},{"name":"Rico","type":"RF","num":1024,"rating":7},{"name":"Seele","type":"SG","num":1008,"rating":7,"internalName":"Seele","img":"pic_Seele.png","costumes":[{"name":"Default","pic":"pic_Seele.png"},{"name":"Default (Damaged)","pic":"pic_Seele_D.png"},{"name":"Seele's Ceremony","pic":"pic_Seele_508.png"},{"name":"Seele's Ceremony (Damaged)","pic":"pic_Seele_508_D.png"}]},{"name":"Sei","type":"HG","num":1018,"rating":7,"internalName":"SEI","img":"pic_SEI.png","costumes":[{"name":"Default","pic":"pic_SEI.png"},{"name":"Default (Damaged)","pic":"pic_SEI_D.png"},{"name":"Kitty Paws","pic":"pic_SEI_2.png"},{"name":"Kitty Paws (Damaged)","pic":"pic_SEI_2_D.png"},{"name":"Best Friend's Casual Dress","pic":"pic_SEI_527.png"},{"name":"Best Friend's Casual Dress (Damaged)","pic":"pic_SEI_527_D.png"},{"name":"Nocturnal Familiar","pic":"pic_SEI_3.png"},{"name":"Nocturnal Familiar (Damaged)","pic":"pic_SEI_3_D.png"},{"name":"Candy Express","pic":"pic_SEI_4.png"},{"name":"Candy Express (Damaged)","pic":"pic_SEI_4_D.png"},{"name":"Pumpkin Mishka","pic":"pic_SEI_1.png"},{"name":"Pumpkin Mishka (Damaged)","pic":"pic_SEI_1_D.png"}]},{"name":"Stella","type":"RF","num":1020,"rating":7,"internalName":"Stella","img":"pic_Stella.png","costumes":[{"name":"Default","pic":"pic_Stella.png"},{"name":"Default (Damaged)","pic":"pic_Stella_D.png"},{"name":"Best Friend's Armor","pic":"pic_Stella_524.png"},{"name":"Best Friend's Armor (Damaged)","pic":"pic_Stella_524_D.png"}]},{"name":"Theresa","type":"HG","num":1006,"rating":7,"internalName":"Theresa","img":"pic_Theresa.png","costumes":[{"name":"Default","pic":"pic_Theresa.png"},{"name":"Default (Damaged)","pic":"pic_Theresa_D.png"}]},{"name":"Triela","type":"SG","num":1025,"rating":7},{"name":"GM6 Lynx","type":"RF","num":-1,"rating":3},{"name":"K7","type":"SMG","num":-1,"rating":5,"internalName":"K7","img":"pic_K7.png","costumes":[{"name":"Default","pic":"pic_K7.png"},{"name":"Default (Damaged)","pic":"pic_K7_D.png"}]},{"name":"KGP-9","type":"SMG","num":-1,"rating":3,"internalName":"KGP9","img":"pic_KGP9.png","costumes":[{"name":"Default","pic":"pic_KGP9.png"},{"name":"Default (Damaged)","pic":"pic_KGP9_D.png"}]},{"name":"Elisa","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Elisa","img":"pic_Eliza_Hidden.png","costumes":[{"name":"Hidden","pic":"pic_Eliza_Hidden.png"},{"name":"Full","pic":"Eliza.png"},{"name":"Armed (Polarized Light)","pic":"pic_Eliza_boss_LL.png","spoiler":true}]},{"name":"Agent","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Agent","img":"pic_Agent.png"},{"name":"Ouroboros","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Ouroboros","img":"Ouroboros.png"},{"name":"Destroyer","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Destroyer","img":"Destroyer.png","costumes":[{"name":"Default","pic":"Destroyer.png"},{"name":"Gaia","pic":"DestroyerPlus.png"}]},{"name":"Hunter","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Hunter","img":"Hunter.png"},{"name":"Alchemist","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Alchemist","img":"pic_Alchemist_LL.png"},{"name":"Intruder","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Intruder","img":"Intruder.png"},{"name":"Scarecrow","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Scarecrow","img":"Scarecrow.png"},{"name":"Executioner","type":"Sangvis Ferri Doll","num":-1,"rating":3,"internalName":"Executioner","img":"Excutioner.png","costumes":[{"name":"Default","pic":"Excutioner.png"},{"name":"Elite","pic":"ExcutionerElite.png"}]},{"name":"Gager","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Gager","img":"Gager.png"},{"name":"Architect","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Architect","img":"Architect.png"},{"name":"Dreamer","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Dreamer","img":"Dreamer.png"},{"name":"Judge","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"BossJustice","img":"BossJustice.png"},{"name":"Beak","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"internalName":"Beak_M16","img":"Beak_M16.png"},{"name":"M16A1 (Sangvis Ferri)","type":"Sangvis Ferri Doll","num":-1,"rating":-1,"img":"pic_M16A1_Boss.png"},{"name":"Kalina","type":"Secretary","num":-1,"rating":-1,"internalName":"NPC_Kalina","img":"pic_NPC_Kalina.png","costumes":[{"name":"Default","pic":"pic_NPC_Kalina.png"},{"name":"Rays of Youth","pic":"NPC_Kalina_201.png"},{"name":"Urban Freedom","pic":"NPC_Kalina_202.png"},{"name":"Rock 'n' Spanner","pic":"NPC_Kalina_203.png"},{"name":"Griffon Uniform","pic":"NPC_Kalina_204.png"},{"name":"Reporter Disguise","pic":"NPC-KalinReporter.png"}]},{"name":"OGAS","type":"pͧ̅ͅḁ͋̿ṙ̭a̗ͪ̇p̦̈̅lui͔͎̪e ̊͋̇v̊͒̽i͊ͧ̊ru̳̠s","num":-1,"rating":-1,"internalName":"OGAS"},{"name":"Dandelai","type":"pͧ̅ͅḁ͋̿ṙ̭a̗ͪ̇p̦̈̅lui͔͎̪e ̊͋̇v̊͒̽i͊ͧ̊ru̳̠s","num":-1,"rating":-1,"internalName":"OGAS","img":"Nyto_Isomer_Shadow.png"},{"name":"Nyto","type":"Nyto","num":-1,"rating":-1,"internalName":"Nyto","img":"Nyto.png","costumes":[{"name":"Default","pic":"Nyto.png"},{"name":"Black (Obelisk)","pic":"Nyto_black.png"},{"name":"White (Polarday)","pic":"Nyto_white.png"},{"name":"Gold","pic":"Nyto_Gold.png"},{"name":"Silver","pic":"Nyto_Silver.png"},{"name":"Abandoned","pic":"Abandoned_Isomer.png"},{"name":"Shadow ||(Dandelai)||","pic":"Nyto_Isomer_Shadow.png"},{"name":"White (ISOMER version)","pic":"Nyto_Isomer_White.png"}]},{"name":"Ange","type":"NPC","num":-1,"rating":-1,"img":"NPC-Ange.png","costumes":[{"name":"Default","pic":"NPC-Ange.png"},{"name":"Alternate","pic":"NPC-AngeStreet.png"}]},{"name":"Kryuger","type":"NPC","num":-1,"rating":-1},{"name":"Helian","type":"NPC","num":-1,"rating":-1,"img":"pic_NPC-Helian.png"}]
+[
+    {
+        "name": "43M",
+        "type": "SMG",
+        "num": 291,
+        "rating": 3
+    },
+    {
+        "name": "6P62",
+        "type": "AR",
+        "num": 138,
+        "rating": 3,
+        "internalName": "6P62"
+    },
+    {
+        "name": "9A-91",
+        "type": "AR",
+        "num": 118,
+        "rating": 4,
+        "internalName": "9A91"
+    },
+    {
+        "name": "A-91",
+        "type": "AR",
+        "num": 227,
+        "rating": 4,
+        "internalName": "A91"
+    },
+    {
+        "name": "AA-12",
+        "type": "SG",
+        "num": 163,
+        "rating": 5,
+        "internalName": "AA12"
+    },
+    {
+        "name": "AAT-52",
+        "type": "MG",
+        "num": 111,
+        "rating": 2,
+        "internalName": "AAT52"
+    },
+    {
+        "name": "ACR",
+        "type": "AR",
+        "num": 274,
+        "rating": 5,
+        "internalName": "ACR"
+    },
+    {
+        "name": "ADS",
+        "type": "AR",
+        "num": 214,
+        "rating": 5,
+        "internalName": "ADS"
+    },
+    {
+        "name": "AEK-999",
+        "type": "MG",
+        "num": 149,
+        "rating": 4,
+        "internalName": "AEK999"
+    },
+    {
+        "name": "AK-12",
+        "type": "AR",
+        "num": 206,
+        "rating": 5,
+        "internalName": "AK12"
+    },
+    {
+        "name": "AK-15",
+        "type": "AR",
+        "num": 293,
+        "rating": 5,
+        "internalName": "AK15"
+    },
+    {
+        "name": "AK-47",
+        "type": "AR",
+        "num": 58,
+        "rating": 3,
+        "internalName": "AK47"
+    },
+    {
+        "name": "AK-74U",
+        "type": "SMG",
+        "num": 59,
+        "rating": 5,
+        "internalName": "AK74U"
+    },
+    {
+        "name": "AK-Alfa",
+        "type": "AR",
+        "num": 306,
+        "rating": 5,
+        "internalName": "AKAlfa"
+    },
+    {
+        "name": "AN-94",
+        "type": "AR",
+        "num": 205,
+        "rating": 5,
+        "internalName": "AN94"
+    },
+    {
+        "name": "AR70",
+        "type": "AR",
+        "num": 134,
+        "rating": 3,
+        "internalName": "AR70"
+    },
+    {
+        "name": "ART556",
+        "type": "AR",
+        "num": 175,
+        "rating": 5,
+        "internalName": "ART556"
+    },
+    {
+        "name": "ARX-160",
+        "type": "AR",
+        "num": 120,
+        "rating": 3,
+        "internalName": "ARX160"
+    },
+    {
+        "name": "AS Val",
+        "type": "AR",
+        "num": 60,
+        "rating": 4,
+        "internalName": "ASVAL"
+    },
+    {
+        "name": "AS Val MOD 1",
+        "type": "AR",
+        "num": 60,
+        "rating": 5,
+        "internalName": "ASVAL"
+    },
+    {
+        "name": "AS Val MOD 2",
+        "type": "AR",
+        "num": 60,
+        "rating": 5,
+        "internalName": "ASVAL"
+    },
+    {
+        "name": "AS Val MOD 3",
+        "type": "AR",
+        "num": 60,
+        "rating": 5,
+        "internalName": "ASVALMod"
+    },
+    {
+        "name": "ASh-12.7",
+        "type": "AR",
+        "num": 170,
+        "rating": 3,
+        "internalName": "Ash127"
+    },
+    {
+        "name": "AUG",
+        "type": "AR",
+        "num": 73,
+        "rating": 5,
+        "internalName": "AUG"
+    },
+    {
+        "name": "AUG Para",
+        "type": "SMG",
+        "num": 315,
+        "rating": 5,
+        "internalName": "AUGPARA"
+    },
+    {
+        "name": "Ak 5",
+        "type": "AR",
+        "num": 187,
+        "rating": 4,
+        "internalName": "Ak5"
+    },
+    {
+        "name": "Ameli",
+        "type": "MG",
+        "num": 185,
+        "rating": 4,
+        "internalName": "Ameli"
+    },
+    {
+        "name": "Astra Revolver",
+        "type": "HG",
+        "num": 14,
+        "rating": 3,
+        "internalName": "357"
+    },
+    {
+        "name": "BM59",
+        "type": "RF",
+        "num": 52,
+        "rating": 2,
+        "internalName": "BM59"
+    },
+    {
+        "name": "Ballista",
+        "type": "RF",
+        "num": 204,
+        "rating": 5,
+        "internalName": "Ballista"
+    },
+    {
+        "name": "Beretta Model 38",
+        "type": "SMG",
+        "num": 31,
+        "rating": 2,
+        "internalName": "MAB38"
+    },
+    {
+        "name": "Beretta Model 38 MOD 1",
+        "type": "SMG",
+        "num": 31,
+        "rating": 4,
+        "internalName": "MAB38"
+    },
+    {
+        "name": "Beretta Model 38 MOD 2",
+        "type": "SMG",
+        "num": 31,
+        "rating": 4,
+        "internalName": "MAB38"
+    },
+    {
+        "name": "Beretta Model 38 MOD 3",
+        "type": "SMG",
+        "num": 31,
+        "rating": 4,
+        "internalName": "MAB38Mod"
+    },
+    {
+        "name": "Bren",
+        "type": "MG",
+        "num": 89,
+        "rating": 3,
+        "internalName": "BrenMK"
+    },
+    {
+        "name": "Bren MOD 1",
+        "type": "MG",
+        "num": 89,
+        "rating": 4,
+        "internalName": "BrenMK"
+    },
+    {
+        "name": "Bren MOD 2",
+        "type": "MG",
+        "num": 89,
+        "rating": 4,
+        "internalName": "BrenMK"
+    },
+    {
+        "name": "Bren MOD 3",
+        "type": "MG",
+        "num": 89,
+        "rating": 4,
+        "internalName": "BrenMKMod"
+    },
+    {
+        "name": "Bren Ten",
+        "type": "HG",
+        "num": 139,
+        "rating": 2,
+        "internalName": "BrenTen"
+    },
+    {
+        "name": "C-93",
+        "type": "HG",
+        "num": 285,
+        "rating": 5,
+        "internalName": "C93"
+    },
+    {
+        "name": "C-MS",
+        "type": "SMG",
+        "num": 213,
+        "rating": 5,
+        "internalName": "CBJMS"
+    },
+    {
+        "name": "C14",
+        "type": "RF",
+        "num": -1,
+        "rating": 3,
+        "internalName": "C14"
+    },
+    {
+        "name": "C96",
+        "type": "HG",
+        "num": 12,
+        "rating": 3,
+        "internalName": "C96"
+    },
+    {
+        "name": "C96 MOD 1",
+        "type": "HG",
+        "num": 12,
+        "rating": 4,
+        "internalName": "C96"
+    },
+    {
+        "name": "C96 MOD 2",
+        "type": "HG",
+        "num": 12,
+        "rating": 4,
+        "internalName": "C96"
+    },
+    {
+        "name": "C96 MOD 3",
+        "type": "HG",
+        "num": 12,
+        "rating": 4,
+        "internalName": "C96Mod"
+    },
+    {
+        "name": "CAR",
+        "type": "MG",
+        "num": 300,
+        "rating": 3,
+        "internalName": "CAR"
+    },
+    {
+        "name": "CAWS",
+        "type": "SG",
+        "num": 281,
+        "rating": 5,
+        "internalName": "HKCAWS"
+    },
+    {
+        "name": "CF05",
+        "type": "SMG",
+        "num": 295,
+        "rating": 4
+    },
+    {
+        "name": "CR-21",
+        "type": "AR",
+        "num": 288,
+        "rating": 4,
+        "internalName": "CR21"
+    },
+    {
+        "name": "CZ-805",
+        "type": "AR",
+        "num": 108,
+        "rating": 3,
+        "internalName": "CZ805"
+    },
+    {
+        "name": "CZ2000",
+        "type": "AR",
+        "num": 207,
+        "rating": 4,
+        "internalName": "CZ2000"
+    },
+    {
+        "name": "CZ52",
+        "type": "HG",
+        "num": 210,
+        "rating": 3,
+        "internalName": "CZ52"
+    },
+    {
+        "name": "CZ75",
+        "type": "HG",
+        "num": 166,
+        "rating": 5,
+        "internalName": "CZ75"
+    },
+    {
+        "name": "Carcano M1891",
+        "type": "RF",
+        "num": 197,
+        "rating": 5,
+        "internalName": "Carcano1891"
+    },
+    {
+        "name": "Carcano M91∕38",
+        "type": "RF",
+        "num": 198,
+        "rating": 5,
+        "internalName": "Carcano1938"
+    },
+    {
+        "name": "Chauchat",
+        "type": "MG",
+        "num": 264,
+        "rating": 4,
+        "internalName": "ChauchatM1915"
+    },
+    {
+        "name": "Colt Revolver",
+        "type": "HG",
+        "num": 1,
+        "rating": 4,
+        "internalName": "M1873"
+    },
+    {
+        "name": "Colt Revolver MOD 1",
+        "type": "HG",
+        "num": 1,
+        "rating": 5,
+        "internalName": "M1873"
+    },
+    {
+        "name": "Colt Revolver MOD 2",
+        "type": "HG",
+        "num": 1,
+        "rating": 5,
+        "internalName": "M1873"
+    },
+    {
+        "name": "Colt Revolver MOD 3",
+        "type": "HG",
+        "num": 1,
+        "rating": 5,
+        "internalName": "M1873Mod"
+    },
+    {
+        "name": "Contender",
+        "type": "HG",
+        "num": 183,
+        "rating": 5,
+        "internalName": "Contender"
+    },
+    {
+        "name": "Cx4 Storm",
+        "type": "SMG",
+        "num": 225,
+        "rating": 4,
+        "internalName": "Cx4Storm"
+    },
+    {
+        "name": "DP-12",
+        "type": "SG",
+        "num": 282,
+        "rating": 5,
+        "internalName": "DP12"
+    },
+    {
+        "name": "DP28",
+        "type": "MG",
+        "num": 82,
+        "rating": 2,
+        "internalName": "DP28"
+    },
+    {
+        "name": "DSR-50",
+        "type": "RF",
+        "num": 179,
+        "rating": 5,
+        "internalName": "DSR50"
+    },
+    {
+        "name": "Defender",
+        "type": "SG",
+        "num": 302,
+        "rating": 4
+    },
+    {
+        "name": "Desert Eagle",
+        "type": "HG",
+        "num": 272,
+        "rating": 5,
+        "internalName": "DesertEagle"
+    },
+    {
+        "name": "EM-2",
+        "type": "AR",
+        "num": 262,
+        "rating": 4,
+        "internalName": "EM2"
+    },
+    {
+        "name": "EVO 3",
+        "type": "SMG",
+        "num": 131,
+        "rating": 3,
+        "internalName": "EVO3"
+    },
+    {
+        "name": "F1",
+        "type": "SMG",
+        "num": 178,
+        "rating": 3,
+        "internalName": "F1"
+    },
+    {
+        "name": "F2000",
+        "type": "AR",
+        "num": 107,
+        "rating": 2,
+        "internalName": "F2000"
+    },
+    {
+        "name": "FAL",
+        "type": "AR",
+        "num": 106,
+        "rating": 5,
+        "internalName": "FNFAL"
+    },
+    {
+        "name": "FAMAS",
+        "type": "AR",
+        "num": 69,
+        "rating": 4,
+        "internalName": "FAMAS"
+    },
+    {
+        "name": "FG42",
+        "type": "MG",
+        "num": 110,
+        "rating": 2,
+        "internalName": "FG42"
+    },
+    {
+        "name": "FMG-9",
+        "type": "SMG",
+        "num": 19,
+        "rating": 3,
+        "internalName": "FMG9"
+    },
+    {
+        "name": "FN-49",
+        "type": "RF",
+        "num": 51,
+        "rating": 2,
+        "internalName": "FN49"
+    },
+    {
+        "name": "FN-49 MOD 1",
+        "type": "RF",
+        "num": 51,
+        "rating": 4,
+        "internalName": "FN49"
+    },
+    {
+        "name": "FN-49 MOD 2",
+        "type": "RF",
+        "num": 51,
+        "rating": 4,
+        "internalName": "FN49"
+    },
+    {
+        "name": "FN-49 MOD 3",
+        "type": "RF",
+        "num": 51,
+        "rating": 4,
+        "internalName": "FN49Mod"
+    },
+    {
+        "name": "FNC",
+        "type": "AR",
+        "num": 70,
+        "rating": 3,
+        "internalName": "FNFNC"
+    },
+    {
+        "name": "FNP-9",
+        "type": "HG",
+        "num": 90,
+        "rating": 2,
+        "internalName": "FNP9"
+    },
+    {
+        "name": "FP-6",
+        "type": "SG",
+        "num": 164,
+        "rating": 5,
+        "internalName": "FP6"
+    },
+    {
+        "name": "Falcon",
+        "type": "RF",
+        "num": 256,
+        "rating": 3,
+        "internalName": "Falcon"
+    },
+    {
+        "name": "Five-seveN",
+        "type": "HG",
+        "num": 142,
+        "rating": 5,
+        "internalName": "FN57"
+    },
+    {
+        "name": "G11",
+        "type": "AR",
+        "num": 122,
+        "rating": 5,
+        "internalName": "G11"
+    },
+    {
+        "name": "G28",
+        "type": "RF",
+        "num": 146,
+        "rating": 4,
+        "internalName": "G28"
+    },
+    {
+        "name": "G3",
+        "type": "AR",
+        "num": 63,
+        "rating": 2,
+        "internalName": "G3"
+    },
+    {
+        "name": "G3 MOD 1",
+        "type": "AR",
+        "num": 63,
+        "rating": 4,
+        "internalName": "G3"
+    },
+    {
+        "name": "G3 MOD 2",
+        "type": "AR",
+        "num": 63,
+        "rating": 4,
+        "internalName": "G3"
+    },
+    {
+        "name": "G3 MOD 3",
+        "type": "AR",
+        "num": 63,
+        "rating": 4,
+        "internalName": "G3Mod"
+    },
+    {
+        "name": "G36",
+        "type": "AR",
+        "num": 64,
+        "rating": 4,
+        "internalName": "G36"
+    },
+    {
+        "name": "G36 MOD 1",
+        "type": "AR",
+        "num": 64,
+        "rating": 5,
+        "internalName": "G36"
+    },
+    {
+        "name": "G36 MOD 2",
+        "type": "AR",
+        "num": 64,
+        "rating": 5,
+        "internalName": "G36"
+    },
+    {
+        "name": "G36 MOD 3",
+        "type": "AR",
+        "num": 64,
+        "rating": 5,
+        "internalName": "G36Mod"
+    },
+    {
+        "name": "G36C",
+        "type": "SMG",
+        "num": 104,
+        "rating": 5,
+        "internalName": "G36C"
+    },
+    {
+        "name": "G41",
+        "type": "AR",
+        "num": 62,
+        "rating": 5,
+        "internalName": "G41"
+    },
+    {
+        "name": "G43",
+        "type": "RF",
+        "num": 47,
+        "rating": 2,
+        "internalName": "G43"
+    },
+    {
+        "name": "GM6 Lynx",
+        "type": "RF",
+        "num": -1,
+        "rating": 3,
+        "internalName": "Gm6Lynx"
+    },
+    {
+        "name": "GSh-18",
+        "type": "HG",
+        "num": 221,
+        "rating": 3,
+        "internalName": "GSH18"
+    },
+    {
+        "name": "Galil",
+        "type": "AR",
+        "num": 71,
+        "rating": 2,
+        "internalName": "AR"
+    },
+    {
+        "name": "General Liu",
+        "type": "RF",
+        "num": 316,
+        "rating": 5,
+        "internalName": "GeneralLiu"
+    },
+    {
+        "name": "Gepard M1",
+        "type": "RF",
+        "num": 201,
+        "rating": 3,
+        "internalName": "GepardM1"
+    },
+    {
+        "name": "Glock 17",
+        "type": "HG",
+        "num": 15,
+        "rating": 3,
+        "internalName": "Glock17"
+    },
+    {
+        "name": "Grizzly MkV",
+        "type": "HG",
+        "num": 96,
+        "rating": 5,
+        "internalName": "Grizzly"
+    },
+    {
+        "name": "HK21",
+        "type": "MG",
+        "num": 208,
+        "rating": 5,
+        "internalName": "HK21"
+    },
+    {
+        "name": "HK23",
+        "type": "MG",
+        "num": 195,
+        "rating": 3,
+        "internalName": "HK23"
+    },
+    {
+        "name": "HK33",
+        "type": "AR",
+        "num": 265,
+        "rating": 3,
+        "internalName": "HK33"
+    },
+    {
+        "name": "HK416",
+        "type": "AR",
+        "num": 65,
+        "rating": 5,
+        "internalName": "HK416"
+    },
+    {
+        "name": "HK416 MOD 1",
+        "type": "AR",
+        "num": 65,
+        "rating": 6,
+        "internalName": "HK416"
+    },
+    {
+        "name": "HK416 MOD 2",
+        "type": "AR",
+        "num": 65,
+        "rating": 6,
+        "internalName": "HK416"
+    },
+    {
+        "name": "HK416 MOD 3",
+        "type": "AR",
+        "num": 65,
+        "rating": 6,
+        "internalName": "HK416Mod"
+    },
+    {
+        "name": "HK45",
+        "type": "HG",
+        "num": 167,
+        "rating": 3,
+        "internalName": "HK45"
+    },
+    {
+        "name": "HK512",
+        "type": "SG",
+        "num": 326,
+        "rating": 4,
+        "internalName": "HK512"
+    },
+    {
+        "name": "HP-35",
+        "type": "HG",
+        "num": 303,
+        "rating": 5
+    },
+    {
+        "name": "HS2000",
+        "type": "HG",
+        "num": 250,
+        "rating": 5,
+        "internalName": "HS2000"
+    },
+    {
+        "name": "HSM10",
+        "type": "SG",
+        "num": 299,
+        "rating": 3,
+        "internalName": "HSM10"
+    },
+    {
+        "name": "Hanyang Type 88",
+        "type": "RF",
+        "num": 95,
+        "rating": 3,
+        "internalName": "88type"
+    },
+    {
+        "name": "Hanyang Type 88 MOD 1",
+        "type": "RF",
+        "num": 95,
+        "rating": 4,
+        "internalName": "88type"
+    },
+    {
+        "name": "Hanyang Type 88 MOD 2",
+        "type": "RF",
+        "num": 95,
+        "rating": 4,
+        "internalName": "88type"
+    },
+    {
+        "name": "Hanyang Type 88 MOD 3",
+        "type": "RF",
+        "num": 95,
+        "rating": 4,
+        "internalName": "88typeMod"
+    },
+    {
+        "name": "Honey Badger",
+        "type": "SMG",
+        "num": 203,
+        "rating": 4,
+        "internalName": "PDW"
+    },
+    {
+        "name": "Howa Type 64",
+        "type": "AR",
+        "num": 243,
+        "rating": 5,
+        "internalName": "Type64-AR"
+    },
+    {
+        "name": "Howa Type 89",
+        "type": "AR",
+        "num": 290,
+        "rating": 5,
+        "internalName": "HowaType89"
+    },
+    {
+        "name": "IDW",
+        "type": "SMG",
+        "num": 93,
+        "rating": 2,
+        "internalName": "IDW"
+    },
+    {
+        "name": "IDW MOD 1",
+        "type": "SMG",
+        "num": 93,
+        "rating": 4,
+        "internalName": "IDW"
+    },
+    {
+        "name": "IDW MOD 2",
+        "type": "SMG",
+        "num": 93,
+        "rating": 4,
+        "internalName": "IDW"
+    },
+    {
+        "name": "IDW MOD 3",
+        "type": "SMG",
+        "num": 93,
+        "rating": 4,
+        "internalName": "IDWMod"
+    },
+    {
+        "name": "INSAS",
+        "type": "AR",
+        "num": 279,
+        "rating": 3,
+        "internalName": "INSAS"
+    },
+    {
+        "name": "IWS 2000",
+        "type": "RF",
+        "num": 148,
+        "rating": 5,
+        "internalName": "IWS2000"
+    },
+    {
+        "name": "JS 9",
+        "type": "SMG",
+        "num": 234,
+        "rating": 5,
+        "internalName": "JS9mm"
+    },
+    {
+        "name": "JS05",
+        "type": "RF",
+        "num": 192,
+        "rating": 5,
+        "internalName": "JS-127"
+    },
+    {
+        "name": "Jericho",
+        "type": "HG",
+        "num": 248,
+        "rating": 4,
+        "internalName": "Jericho"
+    },
+    {
+        "name": "K11",
+        "type": "AR",
+        "num": 236,
+        "rating": 5,
+        "internalName": "K11"
+    },
+    {
+        "name": "K2",
+        "type": "AR",
+        "num": 194,
+        "rating": 5,
+        "internalName": "K2"
+    },
+    {
+        "name": "K3",
+        "type": "MG",
+        "num": 271,
+        "rating": 3,
+        "internalName": "K3"
+    },
+    {
+        "name": "K31",
+        "type": "RF",
+        "num": 247,
+        "rating": 4,
+        "internalName": "K31"
+    },
+    {
+        "name": "K5",
+        "type": "HG",
+        "num": 212,
+        "rating": 4,
+        "internalName": "K5"
+    },
+    {
+        "name": "KAC-PDW",
+        "type": "SMG",
+        "num": 286,
+        "rating": 4
+    },
+    {
+        "name": "KLIN",
+        "type": "SMG",
+        "num": 177,
+        "rating": 4,
+        "internalName": "KLIN"
+    },
+    {
+        "name": "KS-23",
+        "type": "SG",
+        "num": 158,
+        "rating": 3,
+        "internalName": "KS23"
+    },
+    {
+        "name": "KSG",
+        "type": "SG",
+        "num": 157,
+        "rating": 5,
+        "internalName": "KSG"
+    },
+    {
+        "name": "KSVK",
+        "type": "RF",
+        "num": 252,
+        "rating": 4,
+        "internalName": "KSVK"
+    },
+    {
+        "name": "Kar98k",
+        "type": "RF",
+        "num": 46,
+        "rating": 5,
+        "internalName": "98K"
+    },
+    {
+        "name": "Kord",
+        "type": "MG",
+        "num": 276,
+        "rating": 5,
+        "internalName": "Kord"
+    },
+    {
+        "name": "L85A1",
+        "type": "AR",
+        "num": 68,
+        "rating": 2,
+        "internalName": "L85A1"
+    },
+    {
+        "name": "LTLX 7000",
+        "type": "SG",
+        "num": 323,
+        "rating": 5,
+        "internalName": "LTLX7000"
+    },
+    {
+        "name": "LWMMG",
+        "type": "MG",
+        "num": 81,
+        "rating": 2,
+        "internalName": "LWMMG"
+    },
+    {
+        "name": "LWMMG MOD 1",
+        "type": "MG",
+        "num": 81,
+        "rating": 4,
+        "internalName": "LWMMG"
+    },
+    {
+        "name": "LWMMG MOD 2",
+        "type": "MG",
+        "num": 81,
+        "rating": 4,
+        "internalName": "LWMMG"
+    },
+    {
+        "name": "LWMMG MOD 3",
+        "type": "MG",
+        "num": 81,
+        "rating": 4,
+        "internalName": "LWMMGMod"
+    },
+    {
+        "name": "Lee-Enfield",
+        "type": "RF",
+        "num": 50,
+        "rating": 5,
+        "internalName": "MLEMK1"
+    },
+    {
+        "name": "Lewis",
+        "type": "MG",
+        "num": 253,
+        "rating": 5,
+        "internalName": "Lewis"
+    },
+    {
+        "name": "Liberator",
+        "type": "SG",
+        "num": 283,
+        "rating": 4,
+        "internalName": "Liberator"
+    },
+    {
+        "name": "Lusa",
+        "type": "SMG",
+        "num": 311,
+        "rating": 5,
+        "internalName": "Lusa"
+    },
+    {
+        "name": "M1 Garand",
+        "type": "RF",
+        "num": 34,
+        "rating": 3,
+        "internalName": "M1"
+    },
+    {
+        "name": "M1014",
+        "type": "SG",
+        "num": 165,
+        "rating": 4,
+        "internalName": "M1014"
+    },
+    {
+        "name": "M12",
+        "type": "SMG",
+        "num": 191,
+        "rating": 3,
+        "internalName": "M12"
+    },
+    {
+        "name": "M14",
+        "type": "RF",
+        "num": 37,
+        "rating": 3,
+        "internalName": "M14"
+    },
+    {
+        "name": "M14 MOD 1",
+        "type": "RF",
+        "num": 37,
+        "rating": 4,
+        "internalName": "M14"
+    },
+    {
+        "name": "M14 MOD 2",
+        "type": "RF",
+        "num": 37,
+        "rating": 4,
+        "internalName": "M14"
+    },
+    {
+        "name": "M14 MOD 3",
+        "type": "RF",
+        "num": 37,
+        "rating": 4,
+        "internalName": "M14Mod"
+    },
+    {
+        "name": "M16A1",
+        "type": "AR",
+        "num": 54,
+        "rating": 4,
+        "internalName": "M16A1"
+    },
+    {
+        "name": "M1887",
+        "type": "SG",
+        "num": 151,
+        "rating": 5,
+        "internalName": "M1887"
+    },
+    {
+        "name": "M1895 CB",
+        "type": "MG",
+        "num": 275,
+        "rating": 4,
+        "internalName": "M1895MG"
+    },
+    {
+        "name": "M1897",
+        "type": "SG",
+        "num": 152,
+        "rating": 3,
+        "internalName": "M1897"
+    },
+    {
+        "name": "M1911",
+        "type": "HG",
+        "num": 2,
+        "rating": 2,
+        "internalName": "M1911"
+    },
+    {
+        "name": "M1911 MOD 1",
+        "type": "HG",
+        "num": 2,
+        "rating": 4,
+        "internalName": "M1911"
+    },
+    {
+        "name": "M1911 MOD 2",
+        "type": "HG",
+        "num": 2,
+        "rating": 4,
+        "internalName": "M1911"
+    },
+    {
+        "name": "M1911 MOD 3",
+        "type": "HG",
+        "num": 2,
+        "rating": 4,
+        "internalName": "M1911Mod"
+    },
+    {
+        "name": "M1918",
+        "type": "MG",
+        "num": 75,
+        "rating": 4,
+        "internalName": "M1918"
+    },
+    {
+        "name": "M1918 MOD 1",
+        "type": "MG",
+        "num": 75,
+        "rating": 5,
+        "internalName": "M1918"
+    },
+    {
+        "name": "M1918 MOD 2",
+        "type": "MG",
+        "num": 75,
+        "rating": 5,
+        "internalName": "M1918"
+    },
+    {
+        "name": "M1918 MOD 3",
+        "type": "MG",
+        "num": 75,
+        "rating": 5,
+        "internalName": "M1918Mod"
+    },
+    {
+        "name": "M1919A4",
+        "type": "MG",
+        "num": 80,
+        "rating": 3,
+        "internalName": "M1919A4"
+    },
+    {
+        "name": "M1A1",
+        "type": "RF",
+        "num": 35,
+        "rating": 3,
+        "internalName": "M1A1"
+    },
+    {
+        "name": "M200",
+        "type": "RF",
+        "num": 257,
+        "rating": 5,
+        "internalName": "M200"
+    },
+    {
+        "name": "M21",
+        "type": "RF",
+        "num": 38,
+        "rating": 3,
+        "internalName": "M21"
+    },
+    {
+        "name": "M249 SAW",
+        "type": "MG",
+        "num": 79,
+        "rating": 3,
+        "internalName": "M249SAW"
+    },
+    {
+        "name": "M2HB",
+        "type": "MG",
+        "num": 77,
+        "rating": 3,
+        "internalName": "M2HB"
+    },
+    {
+        "name": "M3",
+        "type": "SMG",
+        "num": 17,
+        "rating": 2,
+        "internalName": "M3"
+    },
+    {
+        "name": "M37",
+        "type": "SG",
+        "num": 153,
+        "rating": 4,
+        "internalName": "Ithaca37"
+    },
+    {
+        "name": "M4 SOPMOD II",
+        "type": "AR",
+        "num": 56,
+        "rating": 4,
+        "internalName": "M4 SOPMOD II"
+    },
+    {
+        "name": "M4 SOPMOD II MOD 1",
+        "type": "AR",
+        "num": 56,
+        "rating": 5,
+        "internalName": "M4 SOPMOD II"
+    },
+    {
+        "name": "M4 SOPMOD II MOD 2",
+        "type": "AR",
+        "num": 56,
+        "rating": 5,
+        "internalName": "M4 SOPMOD II"
+    },
+    {
+        "name": "M4 SOPMOD II MOD 3",
+        "type": "AR",
+        "num": 56,
+        "rating": 5,
+        "internalName": "M4 SOPMOD IIMod"
+    },
+    {
+        "name": "M4A1",
+        "type": "AR",
+        "num": 55,
+        "rating": 4,
+        "internalName": "M4A1"
+    },
+    {
+        "name": "M4A1 MOD 1",
+        "type": "AR",
+        "num": 55,
+        "rating": 5,
+        "internalName": "M4A1"
+    },
+    {
+        "name": "M4A1 MOD 2",
+        "type": "AR",
+        "num": 55,
+        "rating": 5,
+        "internalName": "M4A1"
+    },
+    {
+        "name": "M4A1 MOD 3",
+        "type": "AR",
+        "num": 55,
+        "rating": 5,
+        "internalName": "M4A1Mod"
+    },
+    {
+        "name": "M500",
+        "type": "SG",
+        "num": 154,
+        "rating": 3,
+        "internalName": "M500"
+    },
+    {
+        "name": "M590",
+        "type": "SG",
+        "num": 155,
+        "rating": 4,
+        "internalName": "M590"
+    },
+    {
+        "name": "M6 ASW",
+        "type": "SG",
+        "num": 324,
+        "rating": 5,
+        "internalName": "M6ASW"
+    },
+    {
+        "name": "M60",
+        "type": "MG",
+        "num": 78,
+        "rating": 4,
+        "internalName": "M60"
+    },
+    {
+        "name": "M82",
+        "type": "AR",
+        "num": 297,
+        "rating": 4,
+        "internalName": "M82"
+    },
+    {
+        "name": "M82A1",
+        "type": "RF",
+        "num": 231,
+        "rating": 5,
+        "internalName": "M82A1"
+    },
+    {
+        "name": "M870",
+        "type": "SG",
+        "num": 229,
+        "rating": 5,
+        "internalName": "M870P"
+    },
+    {
+        "name": "M9",
+        "type": "HG",
+        "num": 3,
+        "rating": 3,
+        "internalName": "M9"
+    },
+    {
+        "name": "M950A",
+        "type": "HG",
+        "num": 97,
+        "rating": 5,
+        "internalName": "M950A"
+    },
+    {
+        "name": "M99",
+        "type": "RF",
+        "num": 128,
+        "rating": 5,
+        "internalName": "M99"
+    },
+    {
+        "name": "MAC-10",
+        "type": "SMG",
+        "num": 18,
+        "rating": 3,
+        "internalName": "MAC10"
+    },
+    {
+        "name": "MAS-38",
+        "type": "SMG",
+        "num": 301,
+        "rating": 3,
+        "internalName": "MAS38"
+    },
+    {
+        "name": "MAT-49",
+        "type": "SMG",
+        "num": 280,
+        "rating": 4,
+        "internalName": "MAT49"
+    },
+    {
+        "name": "MDR",
+        "type": "AR",
+        "num": 215,
+        "rating": 5,
+        "internalName": "MDR"
+    },
+    {
+        "name": "MG3",
+        "type": "MG",
+        "num": 88,
+        "rating": 4,
+        "internalName": "MG3"
+    },
+    {
+        "name": "MG34",
+        "type": "MG",
+        "num": 87,
+        "rating": 2,
+        "internalName": "MG34"
+    },
+    {
+        "name": "MG36",
+        "type": "MG",
+        "num": 263,
+        "rating": 5,
+        "internalName": "MG36"
+    },
+    {
+        "name": "MG4",
+        "type": "MG",
+        "num": 125,
+        "rating": 5,
+        "internalName": "MG4"
+    },
+    {
+        "name": "MG42",
+        "type": "MG",
+        "num": 86,
+        "rating": 3,
+        "internalName": "MG42"
+    },
+    {
+        "name": "MG5",
+        "type": "MG",
+        "num": 109,
+        "rating": 5,
+        "internalName": "MG5"
+    },
+    {
+        "name": "MP-443",
+        "type": "HG",
+        "num": 220,
+        "rating": 3,
+        "internalName": "MP443"
+    },
+    {
+        "name": "MP-446",
+        "type": "HG",
+        "num": 91,
+        "rating": 2,
+        "internalName": "MP446"
+    },
+    {
+        "name": "MP-446 MOD 1",
+        "type": "HG",
+        "num": 91,
+        "rating": 4,
+        "internalName": "MP446"
+    },
+    {
+        "name": "MP-446 MOD 2",
+        "type": "HG",
+        "num": 91,
+        "rating": 4,
+        "internalName": "MP446"
+    },
+    {
+        "name": "MP-446 MOD 3",
+        "type": "HG",
+        "num": 91,
+        "rating": 4,
+        "internalName": "MP446Mod"
+    },
+    {
+        "name": "MP-448",
+        "type": "HG",
+        "num": 232,
+        "rating": 3,
+        "internalName": "MP448"
+    },
+    {
+        "name": "MP40",
+        "type": "SMG",
+        "num": 25,
+        "rating": 2,
+        "internalName": "MP40"
+    },
+    {
+        "name": "MP41",
+        "type": "SMG",
+        "num": 267,
+        "rating": 3,
+        "internalName": "MP41"
+    },
+    {
+        "name": "MP5",
+        "type": "SMG",
+        "num": 26,
+        "rating": 4,
+        "internalName": "MP5"
+    },
+    {
+        "name": "MP5 MOD 1",
+        "type": "SMG",
+        "num": 26,
+        "rating": 5,
+        "internalName": "MP5"
+    },
+    {
+        "name": "MP5 MOD 2",
+        "type": "SMG",
+        "num": 26,
+        "rating": 5,
+        "internalName": "MP5"
+    },
+    {
+        "name": "MP5 MOD 3",
+        "type": "SMG",
+        "num": 26,
+        "rating": 5,
+        "internalName": "MP5Mod"
+    },
+    {
+        "name": "MP7",
+        "type": "SMG",
+        "num": 28,
+        "rating": 5,
+        "internalName": "MP7"
+    },
+    {
+        "name": "MT-9",
+        "type": "SMG",
+        "num": 144,
+        "rating": 3,
+        "internalName": "MT9"
+    },
+    {
+        "name": "Magal",
+        "type": "AR",
+        "num": 258,
+        "rating": 3,
+        "internalName": "Magal"
+    },
+    {
+        "name": "Makarov",
+        "type": "HG",
+        "num": 8,
+        "rating": 3,
+        "internalName": "PM"
+    },
+    {
+        "name": "Micro Uzi",
+        "type": "SMG",
+        "num": 32,
+        "rating": 3,
+        "internalName": "MicroUZI"
+    },
+    {
+        "name": "Micro Uzi MOD 1",
+        "type": "SMG",
+        "num": 32,
+        "rating": 4,
+        "internalName": "MicroUZI"
+    },
+    {
+        "name": "Micro Uzi MOD 2",
+        "type": "SMG",
+        "num": 32,
+        "rating": 4,
+        "internalName": "MicroUZI"
+    },
+    {
+        "name": "Micro Uzi MOD 3",
+        "type": "SMG",
+        "num": 32,
+        "rating": 4,
+        "internalName": "MicroUZIMod"
+    },
+    {
+        "name": "Mk 12",
+        "type": "RF",
+        "num": 226,
+        "rating": 4,
+        "internalName": "Mk12"
+    },
+    {
+        "name": "Mk23",
+        "type": "HG",
+        "num": 99,
+        "rating": 4,
+        "internalName": "Mk23"
+    },
+    {
+        "name": "Mk46",
+        "type": "MG",
+        "num": 240,
+        "rating": 4,
+        "internalName": "Mk46"
+    },
+    {
+        "name": "Mk48",
+        "type": "MG",
+        "num": 121,
+        "rating": 4,
+        "internalName": "MK48"
+    },
+    {
+        "name": "Model L",
+        "type": "AR",
+        "num": 223,
+        "rating": 3,
+        "internalName": "CETME556"
+    },
+    {
+        "name": "Mondragon",
+        "type": "RF",
+        "num": 317,
+        "rating": 4
+    },
+    {
+        "name": "Mosin-Nagant",
+        "type": "RF",
+        "num": 39,
+        "rating": 4,
+        "internalName": "M1891"
+    },
+    {
+        "name": "Mosin-Nagant MOD 1",
+        "type": "RF",
+        "num": 39,
+        "rating": 5,
+        "internalName": "M1891"
+    },
+    {
+        "name": "Mosin-Nagant MOD 2",
+        "type": "RF",
+        "num": 39,
+        "rating": 5,
+        "internalName": "M1891"
+    },
+    {
+        "name": "Mosin-Nagant MOD 3",
+        "type": "RF",
+        "num": 39,
+        "rating": 5,
+        "internalName": "M1891Mod"
+    },
+    {
+        "name": "NS2000",
+        "type": "SG",
+        "num": 190,
+        "rating": 3,
+        "internalName": "NS2000"
+    },
+    {
+        "name": "NTW-20",
+        "type": "RF",
+        "num": 53,
+        "rating": 5,
+        "internalName": "NTW20"
+    },
+    {
+        "name": "NTW-20 MOD 1",
+        "type": "RF",
+        "num": 53,
+        "rating": 6,
+        "internalName": "NTW20"
+    },
+    {
+        "name": "NTW-20 MOD 2",
+        "type": "RF",
+        "num": 53,
+        "rating": 6,
+        "internalName": "NTW20"
+    },
+    {
+        "name": "NTW-20 MOD 3",
+        "type": "RF",
+        "num": 53,
+        "rating": 6,
+        "internalName": "NTW20Mod"
+    },
+    {
+        "name": "NZ75",
+        "type": "HG",
+        "num": 126,
+        "rating": 5,
+        "internalName": "NZ75"
+    },
+    {
+        "name": "Nagant Revolver",
+        "type": "HG",
+        "num": 5,
+        "rating": 2,
+        "internalName": "M1895"
+    },
+    {
+        "name": "Nagant Revolver MOD 1",
+        "type": "HG",
+        "num": 5,
+        "rating": 4,
+        "internalName": "M1895"
+    },
+    {
+        "name": "Nagant Revolver MOD 2",
+        "type": "HG",
+        "num": 5,
+        "rating": 4,
+        "internalName": "M1895"
+    },
+    {
+        "name": "Nagant Revolver MOD 3",
+        "type": "HG",
+        "num": 5,
+        "rating": 4,
+        "internalName": "M1895Mod"
+    },
+    {
+        "name": "Negev",
+        "type": "MG",
+        "num": 112,
+        "rating": 5,
+        "internalName": "NEGEV"
+    },
+    {
+        "name": "OBR",
+        "type": "RF",
+        "num": 230,
+        "rating": 3,
+        "internalName": "OBR"
+    },
+    {
+        "name": "OTs-12",
+        "type": "AR",
+        "num": 105,
+        "rating": 3,
+        "internalName": "OTs12"
+    },
+    {
+        "name": "OTs-14",
+        "type": "AR",
+        "num": 119,
+        "rating": 5,
+        "internalName": "OTs14"
+    },
+    {
+        "name": "OTs-39",
+        "type": "SMG",
+        "num": 209,
+        "rating": 3,
+        "internalName": "OTs39"
+    },
+    {
+        "name": "OTs-44",
+        "type": "RF",
+        "num": 145,
+        "rating": 3,
+        "internalName": "OC44"
+    },
+    {
+        "name": "P08",
+        "type": "HG",
+        "num": 11,
+        "rating": 3,
+        "internalName": "P08"
+    },
+    {
+        "name": "P22",
+        "type": "HG",
+        "num": 242,
+        "rating": 5,
+        "internalName": "P22"
+    },
+    {
+        "name": "P226",
+        "type": "HG",
+        "num": 186,
+        "rating": 3,
+        "internalName": "P226"
+    },
+    {
+        "name": "P30",
+        "type": "HG",
+        "num": 269,
+        "rating": 4,
+        "internalName": "P30"
+    },
+    {
+        "name": "P38",
+        "type": "HG",
+        "num": 9,
+        "rating": 2,
+        "internalName": "P38"
+    },
+    {
+        "name": "P7",
+        "type": "HG",
+        "num": 100,
+        "rating": 4,
+        "internalName": "P7"
+    },
+    {
+        "name": "P90",
+        "type": "SMG",
+        "num": 245,
+        "rating": 5,
+        "internalName": "P90"
+    },
+    {
+        "name": "P99",
+        "type": "HG",
+        "num": 123,
+        "rating": 3,
+        "internalName": "P99"
+    },
+    {
+        "name": "PA-15",
+        "type": "HG",
+        "num": 260,
+        "rating": 5,
+        "internalName": "PA15"
+    },
+    {
+        "name": "PK",
+        "type": "MG",
+        "num": 85,
+        "rating": 4,
+        "internalName": "PK"
+    },
+    {
+        "name": "PKP",
+        "type": "MG",
+        "num": 173,
+        "rating": 5,
+        "internalName": "PKP"
+    },
+    {
+        "name": "PM-06",
+        "type": "SMG",
+        "num": 224,
+        "rating": 5,
+        "internalName": "PM06"
+    },
+    {
+        "name": "PM-9",
+        "type": "SMG",
+        "num": 259,
+        "rating": 5,
+        "internalName": "PM9"
+    },
+    {
+        "name": "PM1910",
+        "type": "MG",
+        "num": 319,
+        "rating": 4,
+        "internalName": "PM1910"
+    },
+    {
+        "name": "PP-19",
+        "type": "SMG",
+        "num": 136,
+        "rating": 4,
+        "internalName": "PP19"
+    },
+    {
+        "name": "PP-19-01",
+        "type": "SMG",
+        "num": 137,
+        "rating": 4,
+        "internalName": "PP1901"
+    },
+    {
+        "name": "PP-2000",
+        "type": "SMG",
+        "num": 24,
+        "rating": 2,
+        "internalName": "PP2000"
+    },
+    {
+        "name": "PP-90",
+        "type": "SMG",
+        "num": 23,
+        "rating": 4,
+        "internalName": "PP90"
+    },
+    {
+        "name": "PPK",
+        "type": "HG",
+        "num": 10,
+        "rating": 2,
+        "internalName": "PPK"
+    },
+    {
+        "name": "PPS-43",
+        "type": "SMG",
+        "num": 22,
+        "rating": 3,
+        "internalName": "PPS43"
+    },
+    {
+        "name": "PPSh-41",
+        "type": "SMG",
+        "num": 21,
+        "rating": 2,
+        "internalName": "PPsh41"
+    },
+    {
+        "name": "PSG-1",
+        "type": "RF",
+        "num": 117,
+        "rating": 4,
+        "internalName": "PSG1"
+    },
+    {
+        "name": "PSM",
+        "type": "HG",
+        "num": 140,
+        "rating": 3,
+        "internalName": "PSM"
+    },
+    {
+        "name": "PTRD",
+        "type": "RF",
+        "num": 42,
+        "rating": 4,
+        "internalName": "PTRD"
+    },
+    {
+        "name": "Px4 Storm",
+        "type": "HG",
+        "num": 233,
+        "rating": 5,
+        "internalName": "Px4Storm"
+    },
+    {
+        "name": "Python",
+        "type": "HG",
+        "num": 4,
+        "rating": 5,
+        "internalName": "Python"
+    },
+    {
+        "name": "PzB 39",
+        "type": "RF",
+        "num": 180,
+        "rating": 4,
+        "internalName": "PzB39"
+    },
+    {
+        "name": "QBU-88",
+        "type": "RF",
+        "num": 261,
+        "rating": 5,
+        "internalName": "QBU88"
+    },
+    {
+        "name": "QSB-91",
+        "type": "HG",
+        "num": 322,
+        "rating": 3,
+        "internalName": "QSB91"
+    },
+    {
+        "name": "R5",
+        "type": "AR",
+        "num": 289,
+        "rating": 5
+    },
+    {
+        "name": "R93",
+        "type": "RF",
+        "num": 266,
+        "rating": 5,
+        "internalName": "R93"
+    },
+    {
+        "name": "RFB",
+        "type": "AR",
+        "num": 172,
+        "rating": 5,
+        "internalName": "RFB"
+    },
+    {
+        "name": "RMB-93",
+        "type": "SG",
+        "num": 159,
+        "rating": 3,
+        "internalName": "RMB93"
+    },
+    {
+        "name": "RO635",
+        "type": "SMG",
+        "num": 143,
+        "rating": 5,
+        "internalName": "RO635"
+    },
+    {
+        "name": "RPD",
+        "type": "MG",
+        "num": 84,
+        "rating": 3,
+        "internalName": "RPD"
+    },
+    {
+        "name": "RPK-16",
+        "type": "MG",
+        "num": 292,
+        "rating": 5,
+        "internalName": "RPK16"
+    },
+    {
+        "name": "RT-20",
+        "type": "RF",
+        "num": 241,
+        "rating": 3,
+        "internalName": "RT20"
+    },
+    {
+        "name": "Rex Zero 1",
+        "type": "HG",
+        "num": 310,
+        "rating": 4,
+        "internalName": "RexZero1"
+    },
+    {
+        "name": "Ribeyrolles",
+        "type": "AR",
+        "num": 171,
+        "rating": 4,
+        "internalName": "Ribeyrolles"
+    },
+    {
+        "name": "S.A.T.8",
+        "type": "SG",
+        "num": 188,
+        "rating": 5,
+        "internalName": "SAT8"
+    },
+    {
+        "name": "SAF",
+        "type": "SMG",
+        "num": 304,
+        "rating": 4,
+        "internalName": "SAF"
+    },
+    {
+        "name": "SAR-21",
+        "type": "AR",
+        "num": 237,
+        "rating": 4,
+        "internalName": "SAR21"
+    },
+    {
+        "name": "SCW",
+        "type": "SMG",
+        "num": 169,
+        "rating": 3,
+        "internalName": "ColtSCW"
+    },
+    {
+        "name": "SIG-510",
+        "type": "AR",
+        "num": 74,
+        "rating": 2,
+        "internalName": "SIG510"
+    },
+    {
+        "name": "SIG-556",
+        "type": "AR",
+        "num": 287,
+        "rating": 5,
+        "internalName": "SIG556"
+    },
+    {
+        "name": "SL8",
+        "type": "RF",
+        "num": 296,
+        "rating": 5,
+        "internalName": "SL8"
+    },
+    {
+        "name": "SM-1",
+        "type": "RF",
+        "num": 217,
+        "rating": 3,
+        "internalName": "HEZISM1"
+    },
+    {
+        "name": "SPAS-12",
+        "type": "SG",
+        "num": 162,
+        "rating": 4,
+        "internalName": "SPAS12"
+    },
+    {
+        "name": "SPP-1",
+        "type": "HG",
+        "num": 98,
+        "rating": 4,
+        "internalName": "SPP1"
+    },
+    {
+        "name": "SPR A3G",
+        "type": "RF",
+        "num": 235,
+        "rating": 4,
+        "internalName": "FNSPR"
+    },
+    {
+        "name": "SR-3MP",
+        "type": "SMG",
+        "num": 135,
+        "rating": 5,
+        "internalName": "SR3MP"
+    },
+    {
+        "name": "SRS",
+        "type": "RF",
+        "num": 211,
+        "rating": 5,
+        "internalName": "DTASRS"
+    },
+    {
+        "name": "SSG 3000",
+        "type": "RF",
+        "num": 273,
+        "rating": 4,
+        "internalName": "SSG3000"
+    },
+    {
+        "name": "SSG 69",
+        "type": "RF",
+        "num": 147,
+        "rating": 3,
+        "internalName": "SSG69"
+    },
+    {
+        "name": "ST AR-15",
+        "type": "AR",
+        "num": 57,
+        "rating": 4,
+        "internalName": "AR15"
+    },
+    {
+        "name": "ST AR-15 MOD 1",
+        "type": "AR",
+        "num": 57,
+        "rating": 5,
+        "internalName": "AR15"
+    },
+    {
+        "name": "ST AR-15 MOD 2",
+        "type": "AR",
+        "num": 57,
+        "rating": 5,
+        "internalName": "AR15"
+    },
+    {
+        "name": "ST AR-15 MOD 3",
+        "type": "AR",
+        "num": 57,
+        "rating": 5,
+        "internalName": "AR15Mod"
+    },
+    {
+        "name": "SV-98",
+        "type": "RF",
+        "num": 44,
+        "rating": 3,
+        "internalName": "SV98"
+    },
+    {
+        "name": "SV-98 MOD 1",
+        "type": "RF",
+        "num": 44,
+        "rating": 4,
+        "internalName": "SV98"
+    },
+    {
+        "name": "SV-98 MOD 2",
+        "type": "RF",
+        "num": 44,
+        "rating": 4,
+        "internalName": "SV98"
+    },
+    {
+        "name": "SV-98 MOD 3",
+        "type": "RF",
+        "num": 44,
+        "rating": 4,
+        "internalName": "SV98Mod"
+    },
+    {
+        "name": "SVD",
+        "type": "RF",
+        "num": 43,
+        "rating": 4,
+        "internalName": "SVD"
+    },
+    {
+        "name": "SVT-38",
+        "type": "RF",
+        "num": 40,
+        "rating": 2,
+        "internalName": "SVT38"
+    },
+    {
+        "name": "Saiga-12",
+        "type": "SG",
+        "num": 160,
+        "rating": 5,
+        "internalName": "Saiga12"
+    },
+    {
+        "name": "Serdyukov",
+        "type": "HG",
+        "num": 113,
+        "rating": 3,
+        "internalName": "SPS"
+    },
+    {
+        "name": "Shipka",
+        "type": "SMG",
+        "num": 150,
+        "rating": 4,
+        "internalName": "Shipka"
+    },
+    {
+        "name": "Simonov",
+        "type": "RF",
+        "num": 41,
+        "rating": 2,
+        "internalName": "SKS"
+    },
+    {
+        "name": "Six12",
+        "type": "SG",
+        "num": 278,
+        "rating": 3,
+        "internalName": "Six12"
+    },
+    {
+        "name": "Skorpion",
+        "type": "SMG",
+        "num": 27,
+        "rating": 3,
+        "internalName": "VZ61"
+    },
+    {
+        "name": "Spectre M4",
+        "type": "SMG",
+        "num": 92,
+        "rating": 2,
+        "internalName": "SpectreM4"
+    },
+    {
+        "name": "Spitfire",
+        "type": "HG",
+        "num": 168,
+        "rating": 4,
+        "internalName": "Spitfire"
+    },
+    {
+        "name": "Springfield",
+        "type": "RF",
+        "num": 36,
+        "rating": 4,
+        "internalName": "M1903"
+    },
+    {
+        "name": "StG-940",
+        "type": "AR",
+        "num": 314,
+        "rating": 3,
+        "internalName": "stg940"
+    },
+    {
+        "name": "StG44",
+        "type": "AR",
+        "num": 61,
+        "rating": 3,
+        "internalName": "STG44"
+    },
+    {
+        "name": "StG44 MOD 1",
+        "type": "AR",
+        "num": 61,
+        "rating": 4,
+        "internalName": "STG44"
+    },
+    {
+        "name": "StG44 MOD 2",
+        "type": "AR",
+        "num": 61,
+        "rating": 4,
+        "internalName": "STG44"
+    },
+    {
+        "name": "StG44 MOD 3",
+        "type": "AR",
+        "num": 61,
+        "rating": 4,
+        "internalName": "STG44Mod"
+    },
+    {
+        "name": "Stechkin",
+        "type": "HG",
+        "num": 7,
+        "rating": 4,
+        "internalName": "APS"
+    },
+    {
+        "name": "Sten MkII",
+        "type": "SMG",
+        "num": 29,
+        "rating": 3,
+        "internalName": "StenMK2"
+    },
+    {
+        "name": "Sten MkII MOD 1",
+        "type": "SMG",
+        "num": 29,
+        "rating": 4,
+        "internalName": "StenMK2"
+    },
+    {
+        "name": "Sten MkII MOD 2",
+        "type": "SMG",
+        "num": 29,
+        "rating": 4,
+        "internalName": "StenMK2"
+    },
+    {
+        "name": "Sten MkII MOD 3",
+        "type": "SMG",
+        "num": 29,
+        "rating": 4,
+        "internalName": "StenMK2Mod"
+    },
+    {
+        "name": "Steyr ACR",
+        "type": "AR",
+        "num": 313,
+        "rating": 5
+    },
+    {
+        "name": "Steyr Scout",
+        "type": "RF",
+        "num": 255,
+        "rating": 3,
+        "internalName": "scout"
+    },
+    {
+        "name": "Suomi",
+        "type": "SMG",
+        "num": 115,
+        "rating": 5,
+        "internalName": "KP31"
+    },
+    {
+        "name": "Super SASS",
+        "type": "RF",
+        "num": 124,
+        "rating": 3,
+        "internalName": "SuperSASS"
+    },
+    {
+        "name": "Super-Shorty",
+        "type": "SG",
+        "num": 156,
+        "rating": 4,
+        "internalName": "SuperShorty"
+    },
+    {
+        "name": "T-5000",
+        "type": "RF",
+        "num": 184,
+        "rating": 4,
+        "internalName": "T5000"
+    },
+    {
+        "name": "T-CMS",
+        "type": "RF",
+        "num": 268,
+        "rating": 3,
+        "internalName": "TCMS"
+    },
+    {
+        "name": "T65",
+        "type": "AR",
+        "num": 193,
+        "rating": 3,
+        "internalName": "T65"
+    },
+    {
+        "name": "T77",
+        "type": "SMG",
+        "num": 218,
+        "rating": 3,
+        "internalName": "T77"
+    },
+    {
+        "name": "T91",
+        "type": "AR",
+        "num": 181,
+        "rating": 5,
+        "internalName": "T91"
+    },
+    {
+        "name": "TAC-50",
+        "type": "RF",
+        "num": 222,
+        "rating": 5,
+        "internalName": "TAC50"
+    },
+    {
+        "name": "TAR-21",
+        "type": "AR",
+        "num": 72,
+        "rating": 4,
+        "internalName": "TAR21"
+    },
+    {
+        "name": "TEC-9",
+        "type": "HG",
+        "num": 244,
+        "rating": 3,
+        "internalName": "TEC9"
+    },
+    {
+        "name": "TMP",
+        "type": "SMG",
+        "num": 176,
+        "rating": 3,
+        "internalName": "TMP"
+    },
+    {
+        "name": "TS12",
+        "type": "SG",
+        "num": -1,
+        "rating": 3
+    },
+    {
+        "name": "Tabuk",
+        "type": "RF",
+        "num": 305,
+        "rating": 4,
+        "internalName": "Tabuk"
+    },
+    {
+        "name": "Thompson",
+        "type": "SMG",
+        "num": 16,
+        "rating": 5,
+        "internalName": "M1928A1"
+    },
+    {
+        "name": "Thunder",
+        "type": "HG",
+        "num": 202,
+        "rating": 4,
+        "internalName": "Thunder50"
+    },
+    {
+        "name": "Tokarev",
+        "type": "HG",
+        "num": 6,
+        "rating": 3,
+        "internalName": "TT33"
+    },
+    {
+        "name": "Type 03",
+        "type": "AR",
+        "num": 239,
+        "rating": 3,
+        "internalName": "Type03"
+    },
+    {
+        "name": "Type 100",
+        "type": "SMG",
+        "num": 228,
+        "rating": 5,
+        "internalName": "Type100"
+    },
+    {
+        "name": "Type 4",
+        "type": "RF",
+        "num": 270,
+        "rating": 4,
+        "internalName": "4type"
+    },
+    {
+        "name": "Type 56",
+        "type": "RF",
+        "num": 49,
+        "rating": 3,
+        "internalName": "56typeR"
+    },
+    {
+        "name": "Type 56-1",
+        "type": "AR",
+        "num": 66,
+        "rating": 4,
+        "internalName": "56-1type"
+    },
+    {
+        "name": "Type 59",
+        "type": "HG",
+        "num": 132,
+        "rating": 3,
+        "internalName": "59type"
+    },
+    {
+        "name": "Type 62",
+        "type": "MG",
+        "num": 249,
+        "rating": 3,
+        "internalName": "Type62"
+    },
+    {
+        "name": "Type 63",
+        "type": "AR",
+        "num": 133,
+        "rating": 2,
+        "internalName": "63type"
+    },
+    {
+        "name": "Type 64",
+        "type": "SMG",
+        "num": 94,
+        "rating": 2,
+        "internalName": "64type"
+    },
+    {
+        "name": "Type 64 MOD 1",
+        "type": "SMG",
+        "num": 94,
+        "rating": 4,
+        "internalName": "64type"
+    },
+    {
+        "name": "Type 64 MOD 2",
+        "type": "SMG",
+        "num": 94,
+        "rating": 4,
+        "internalName": "64type"
+    },
+    {
+        "name": "Type 64 MOD 3",
+        "type": "SMG",
+        "num": 94,
+        "rating": 4,
+        "internalName": "64typeMod"
+    },
+    {
+        "name": "Type 79",
+        "type": "SMG",
+        "num": 127,
+        "rating": 5,
+        "internalName": "79type"
+    },
+    {
+        "name": "Type 80",
+        "type": "MG",
+        "num": 199,
+        "rating": 4,
+        "internalName": "80type"
+    },
+    {
+        "name": "Type 81 Carbine",
+        "type": "RF",
+        "num": 174,
+        "rating": 3,
+        "internalName": "81typeR"
+    },
+    {
+        "name": "Type 88",
+        "type": "MG",
+        "num": 238,
+        "rating": 5,
+        "internalName": "Type88"
+    },
+    {
+        "name": "Type 92",
+        "type": "HG",
+        "num": 13,
+        "rating": 3,
+        "internalName": "92type"
+    },
+    {
+        "name": "Type 95",
+        "type": "AR",
+        "num": 129,
+        "rating": 5,
+        "internalName": "95type"
+    },
+    {
+        "name": "Type 97",
+        "type": "AR",
+        "num": 130,
+        "rating": 5,
+        "internalName": "97type"
+    },
+    {
+        "name": "Type 97 Shotgun",
+        "type": "SG",
+        "num": 161,
+        "rating": 4,
+        "internalName": "97typeS"
+    },
+    {
+        "name": "UKM-2000",
+        "type": "MG",
+        "num": 254,
+        "rating": 4,
+        "internalName": "UKM2000"
+    },
+    {
+        "name": "UMP40",
+        "type": "SMG",
+        "num": 102,
+        "rating": 4,
+        "internalName": "UMP40"
+    },
+    {
+        "name": "UMP45",
+        "type": "SMG",
+        "num": 103,
+        "rating": 4,
+        "internalName": "UMP45"
+    },
+    {
+        "name": "UMP45 MOD 1",
+        "type": "SMG",
+        "num": 103,
+        "rating": 5,
+        "internalName": "UMP45"
+    },
+    {
+        "name": "UMP45 MOD 2",
+        "type": "SMG",
+        "num": 103,
+        "rating": 5,
+        "internalName": "UMP45"
+    },
+    {
+        "name": "UMP45 MOD 3",
+        "type": "SMG",
+        "num": 103,
+        "rating": 5,
+        "internalName": "UMP45Mod"
+    },
+    {
+        "name": "UMP9",
+        "type": "SMG",
+        "num": 101,
+        "rating": 4,
+        "internalName": "UMP9"
+    },
+    {
+        "name": "UMP9 MOD 1",
+        "type": "SMG",
+        "num": 101,
+        "rating": 5,
+        "internalName": "UMP9"
+    },
+    {
+        "name": "UMP9 MOD 2",
+        "type": "SMG",
+        "num": 101,
+        "rating": 5,
+        "internalName": "UMP9"
+    },
+    {
+        "name": "UMP9 MOD 3",
+        "type": "SMG",
+        "num": 101,
+        "rating": 5,
+        "internalName": "UMP9Mod"
+    },
+    {
+        "name": "USAS-12",
+        "type": "SG",
+        "num": 189,
+        "rating": 4,
+        "internalName": "USAS12"
+    },
+    {
+        "name": "USP Compact",
+        "type": "HG",
+        "num": 141,
+        "rating": 2,
+        "internalName": "USPCompact"
+    },
+    {
+        "name": "V-PM5",
+        "type": "SG",
+        "num": 325,
+        "rating": 4,
+        "internalName": "VPM5"
+    },
+    {
+        "name": "VHS",
+        "type": "AR",
+        "num": 318,
+        "rating": 5,
+        "internalName": "VHS"
+    },
+    {
+        "name": "VP70",
+        "type": "HG",
+        "num": 277,
+        "rating": 3,
+        "internalName": "VP70"
+    },
+    {
+        "name": "VSK-94",
+        "type": "RF",
+        "num": 312,
+        "rating": 5
+    },
+    {
+        "name": "Vector",
+        "type": "SMG",
+        "num": 20,
+        "rating": 5,
+        "internalName": "Vector"
+    },
+    {
+        "name": "Vepr",
+        "type": "AR",
+        "num": -1,
+        "rating": 3,
+        "internalName": "VEPR"
+    },
+    {
+        "name": "WA2000",
+        "type": "RF",
+        "num": 48,
+        "rating": 5,
+        "internalName": "WA2000"
+    },
+    {
+        "name": "WKp",
+        "type": "HG",
+        "num": -1,
+        "rating": 3,
+        "internalName": "WKP"
+    },
+    {
+        "name": "Webley",
+        "type": "HG",
+        "num": 294,
+        "rating": 5,
+        "internalName": "Webley"
+    },
+    {
+        "name": "Welrod MkII",
+        "type": "HG",
+        "num": 114,
+        "rating": 5,
+        "internalName": "Welrod"
+    },
+    {
+        "name": "X95",
+        "type": "SMG",
+        "num": 251,
+        "rating": 5,
+        "internalName": "X95"
+    },
+    {
+        "name": "XM3",
+        "type": "RF",
+        "num": 200,
+        "rating": 4,
+        "internalName": "xm3"
+    },
+    {
+        "name": "XM8",
+        "type": "AR",
+        "num": 216,
+        "rating": 4,
+        "internalName": "XM8"
+    },
+    {
+        "name": "Z-62",
+        "type": "SMG",
+        "num": 116,
+        "rating": 3,
+        "internalName": "Z62"
+    },
+    {
+        "name": "ZB-26",
+        "type": "MG",
+        "num": 307,
+        "rating": 5,
+        "internalName": "ZB26"
+    },
+    {
+        "name": "Zas M21",
+        "type": "AR",
+        "num": 196,
+        "rating": 5,
+        "internalName": "ZastavaM21"
+    },
+    {
+        "name": "Zas M76",
+        "type": "RF",
+        "num": -1,
+        "rating": 3,
+        "internalName": "ZasM76"
+    },
+    {
+        "name": "m45",
+        "type": "SMG",
+        "num": 33,
+        "rating": 2,
+        "internalName": "m45"
+    },
+    {
+        "name": "wz.29",
+        "type": "RF",
+        "num": 182,
+        "rating": 3,
+        "internalName": "wz29"
+    },
+    {
+        "name": "Agent 416",
+        "type": "AR",
+        "num": 1029,
+        "rating": 7
+    },
+    {
+        "name": "Agent Vector",
+        "type": "SMG",
+        "num": 1028,
+        "rating": 7
+    },
+    {
+        "name": "Alma",
+        "type": "MG",
+        "num": 1021,
+        "rating": 7,
+        "internalName": "Alma"
+    },
+    {
+        "name": "Angelica",
+        "type": "AR",
+        "num": 1027,
+        "rating": 7,
+        "internalName": "Angelica"
+    },
+    {
+        "name": "Bronya",
+        "type": "RF",
+        "num": 1005,
+        "rating": 7,
+        "internalName": "Bronya"
+    },
+    {
+        "name": "Claes",
+        "type": "MG",
+        "num": 1026,
+        "rating": 7,
+        "internalName": "Claes"
+    },
+    {
+        "name": "Clear",
+        "type": "HG",
+        "num": 1009,
+        "rating": 7,
+        "internalName": "CLEAR"
+    },
+    {
+        "name": "Dana",
+        "type": "SG",
+        "num": 1022,
+        "rating": 7,
+        "internalName": "Dana"
+    },
+    {
+        "name": "Dorothy",
+        "type": "SMG",
+        "num": 1019,
+        "rating": 7,
+        "internalName": "Dorothy"
+    },
+    {
+        "name": "Elphelt",
+        "type": "SG",
+        "num": 1002,
+        "rating": 7,
+        "internalName": "GG_elfeldt"
+    },
+    {
+        "name": "Fail",
+        "type": "HG",
+        "num": 1010,
+        "rating": 7,
+        "internalName": "FAIL"
+    },
+    {
+        "name": "Henrietta",
+        "type": "SMG",
+        "num": 1023,
+        "rating": 7,
+        "internalName": "Henrietta"
+    },
+    {
+        "name": "Jill",
+        "type": "HG",
+        "num": 1017,
+        "rating": 7,
+        "internalName": "Jill"
+    },
+    {
+        "name": "Kiana",
+        "type": "HG",
+        "num": 1003,
+        "rating": 7,
+        "internalName": "Kiana"
+    },
+    {
+        "name": "Murata Himeko",
+        "type": "AR",
+        "num": 1007,
+        "rating": 7,
+        "internalName": "Himeko"
+    },
+    {
+        "name": "Noel",
+        "type": "HG",
+        "num": 1001,
+        "rating": 7,
+        "internalName": "BB_Noel"
+    },
+    {
+        "name": "Raiden Mei",
+        "type": "RF",
+        "num": 1004,
+        "rating": 7,
+        "internalName": "RaidenMei"
+    },
+    {
+        "name": "Rico",
+        "type": "RF",
+        "num": 1024,
+        "rating": 7,
+        "internalName": "Rico"
+    },
+    {
+        "name": "Seele",
+        "type": "SG",
+        "num": 1008,
+        "rating": 7,
+        "internalName": "Seele"
+    },
+    {
+        "name": "Sei",
+        "type": "HG",
+        "num": 1018,
+        "rating": 7,
+        "internalName": "SEI"
+    },
+    {
+        "name": "Stella",
+        "type": "RF",
+        "num": 1020,
+        "rating": 7,
+        "internalName": "Stella"
+    },
+    {
+        "name": "Theresa",
+        "type": "HG",
+        "num": 1006,
+        "rating": 7,
+        "internalName": "Theresa"
+    },
+    {
+        "name": "Triela",
+        "type": "SG",
+        "num": 1025,
+        "rating": 7,
+        "internalName": "Triela"
+    },
+    {
+        "name": "SUB-2000",
+        "type": "SMG",
+        "num": -1,
+        "rating": 3,
+        "internalName": "SUB2000"
+    },
+    {
+        "name": "K7",
+        "type": "SMG",
+        "num": -1,
+        "rating": 5,
+        "internalName": "K7"
+    },
+    {
+        "name": "KGP-9",
+        "type": "SMG",
+        "num": -1,
+        "rating": 3,
+        "internalName": "KGP9"
+    },
+    {
+        "name": "Elisa",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Elisa"
+    },
+    {
+        "name": "Agent",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Agent"
+    },
+    {
+        "name": "Ouroboros",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Ouroboros"
+    },
+    {
+        "name": "Destroyer",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "BOSS-6"
+    },
+    {
+        "name": "Hunter",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Hunter"
+    },
+    {
+        "name": "Alchemist",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Alchemist"
+    },
+    {
+        "name": "Intruder",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Intruder"
+    },
+    {
+        "name": "Scarecrow",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Scarecrow"
+    },
+    {
+        "name": "Executioner",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": 3,
+        "internalName": "Executioner"
+    },
+    {
+        "name": "Gager",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Gager"
+    },
+    {
+        "name": "Architect",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Architect"
+    },
+    {
+        "name": "Dreamer",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Dreamer"
+    },
+    {
+        "name": "Judge",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "BossJustice"
+    },
+    {
+        "name": "Beak",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Beak_M16"
+    },
+    {
+        "name": "M16A1 (Sangvis Ferri)",
+        "type": "Sangvis Ferri Doll",
+        "num": -1,
+        "rating": -1
+    },
+    {
+        "name": "Kalina",
+        "type": "Secretary",
+        "num": -1,
+        "rating": -1,
+        "internalName": "NPC-Kalin"
+    },
+    {
+        "name": "OGAS",
+        "type": "pͧ̅ͅḁ͋̿ṙ̭a̗ͪ̇p̦̈̅lui͔͎̪e ̊͋̇v̊͒̽i͊ͧ̊ru̳̠s",
+        "num": -1,
+        "rating": -1,
+        "internalName": "OGAS"
+    },
+    {
+        "name": "Dandelai",
+        "type": "pͧ̅ͅḁ͋̿ṙ̭a̗ͪ̇p̦̈̅lui͔͎̪e ̊͋̇v̊͒̽i͊ͧ̊ru̳̠s",
+        "num": -1,
+        "rating": -1,
+        "internalName": "OGAS"
+    },
+    {
+        "name": "Nyto",
+        "type": "Nyto",
+        "num": -1,
+        "rating": -1,
+        "internalName": "Nyto"
+    },
+    {
+        "name": "Ange",
+        "type": "NPC",
+        "num": -1,
+        "rating": -1
+    },
+    {
+        "name": "Kryuger",
+        "type": "NPC",
+        "num": -1,
+        "rating": -1
+    },
+    {
+        "name": "Helian",
+        "type": "NPC",
+        "num": -1,
+        "rating": -1
+    }
+]

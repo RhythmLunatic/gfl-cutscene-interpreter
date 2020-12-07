@@ -29,11 +29,17 @@ with open('girlsfrontline.json','r') as gfld:
 		newDoll['num'] = doll['num']
 		newDoll['rating'] = doll['rating']
 		if 'internalName' in doll:
+			#Oops, turns out MOD 1 and MOD 2 data was overwriting the portraitDatabase
+			if 'mod' in doll and doll['mod'] != 3:
+				continue
 			newDoll['internalName'] = doll['internalName']
 			if 'img' in doll:
 				portraitDatabase[doll['internalName']] = [doll['img']];
+				#if doll['internalName'] == "BrenMK":
+				#	print(doll['costumes'])
 				if 'costumes' in doll:
 					portraitDatabase[doll['internalName']].append(doll['costumes'][1]['pic'])
+					#assert(len(portraitDatabase[doll['internalName']]) > 1)
 		#if 'img' in doll:
 		#	newDoll['img'] = doll['img']
 		#I don't know if this is gonna be needed later
@@ -73,6 +79,9 @@ portraitDatabase["MK2"]=[
 portraitDatabase["FAMASHalloween"]=[
 	"pic_FAMAS_2604.png"
 ]
+portraitDatabase["MDR"].extend(["pic_MDR_2603.png","pic_MDR_2603_D.png"])
+portraitDatabase["BrenMK"].extend(["pic_BrenMK_2605.png","pic_BrenMK_2605_D.png"])
+portraitDatabase["SAT8"].extend(["pic_SAT8_1802.png","pic_SAT8_1802_D.png","pic_SAT8_2601.png","pic_SAT8_2601_D.png"])
 
 portraitDatabase['AR15'].extend(["special/AR15_T.png"])
 portraitDatabase["M4A1"].extend([None,"special/M4A1_T.png"])

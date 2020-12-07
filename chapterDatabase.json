@@ -1,0 +1,3494 @@
+{
+	"main": [
+		{
+			"name": "Chapter 0",
+			"episodes": [
+				{
+					"name": "Normal 0-0",
+					"parts": [
+						"0-0-1.txt",
+						"0-0-2.txt"
+					]
+				},
+				{
+					"name": "Normal 0-1",
+					"parts": [
+						"0-1-1.txt",
+						"0-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 0-2",
+					"parts": [
+						"0-2-1.txt",
+						"0-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 0-3",
+					"parts": [
+						"0-3-1.txt",
+						"0-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 0-4",
+					"parts": [
+						"0-4-1.txt",
+						"0-4-2.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 1",
+			"episodes": [
+				{
+					"name": "Normal 1-1",
+					"parts": [
+						"1-1-1.txt",
+						"1-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 1-2",
+					"parts": [
+						"1-2-1.txt",
+						"1-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 1-3",
+					"parts": [
+						"1-3-1.txt",
+						"1-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 1-4",
+					"parts": [
+						"1-4-1.txt",
+						"1-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 1-5",
+					"parts": [
+						"1-5-1.txt",
+						"1-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 1-6",
+					"parts": [
+						"1-6-1.txt",
+						"1-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 1-1",
+					"parts": [
+						"1-1-1E.txt",
+						"1-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 1-2",
+					"parts": [
+						"1-2-1E.txt",
+						"1-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 1-3",
+					"parts": [
+						"1-3-1E.txt",
+						"1-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 1-4",
+					"parts": [
+						"1-4-1E.txt",
+						"1-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 1-1",
+					"parts": [
+						"1-1-1N.txt",
+						"1-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 1-2",
+					"parts": [
+						"1-2-1N.txt",
+						"1-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 1-3",
+					"parts": [
+						"1-3-1N.txt",
+						"1-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 1-4",
+					"parts": [
+						"1-4-1N.txt",
+						"1-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 2",
+			"episodes": [
+				{
+					"name": "Normal 2-1",
+					"parts": [
+						"2-1-1.txt",
+						"2-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 2-2",
+					"parts": [
+						"2-2-1.txt",
+						"2-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 2-3",
+					"parts": [
+						"2-3-1.txt",
+						"2-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 2-4",
+					"parts": [
+						"2-4-1.txt",
+						"2-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 2-5",
+					"parts": [
+						"2-5-1.txt",
+						"2-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 2-6",
+					"parts": [
+						"2-6-1.txt",
+						"2-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 2-1",
+					"parts": [
+						"2-1-1E.txt",
+						"2-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 2-2",
+					"parts": [
+						"2-2-1E.txt",
+						"2-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 2-3",
+					"parts": [
+						"2-3-1E.txt",
+						"2-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 2-4",
+					"parts": [
+						"2-4-1E.txt",
+						"2-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 2-1",
+					"parts": [
+						"2-1-1N.txt",
+						"2-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 2-2",
+					"parts": [
+						"2-2-1N.txt",
+						"2-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 2-3",
+					"parts": [
+						"2-3-1N.txt",
+						"2-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 2-4",
+					"parts": [
+						"2-4-1N.txt",
+						"2-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 3",
+			"episodes": [
+				{
+					"name": "Normal 3-1",
+					"parts": [
+						"3-1-1.txt",
+						"3-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 3-2",
+					"parts": [
+						"3-2-1.txt",
+						"3-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 3-3",
+					"parts": [
+						"3-3-1.txt",
+						"3-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 3-4",
+					"parts": [
+						"3-4-1.txt",
+						"3-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 3-5",
+					"parts": [
+						"3-5-1.txt",
+						"3-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 3-6",
+					"parts": [
+						"3-6-1.txt",
+						"3-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 3-1",
+					"parts": [
+						"3-1-1E.txt",
+						"3-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 3-2",
+					"parts": [
+						"3-2-1E.txt",
+						"3-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 3-3",
+					"parts": [
+						"3-3-1E.txt",
+						"3-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 3-4",
+					"parts": [
+						"3-4-1E.txt",
+						"3-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 3-1",
+					"parts": [
+						"3-1-1N.txt",
+						"3-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 3-2",
+					"parts": [
+						"3-2-1N.txt",
+						"3-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 3-3",
+					"parts": [
+						"3-3-1N.txt",
+						"3-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 3-4",
+					"parts": [
+						"3-4-1N.txt",
+						"3-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 4",
+			"episodes": [
+				{
+					"name": "Normal 4-1",
+					"parts": [
+						"4-1-1.txt",
+						"4-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 4-2",
+					"parts": [
+						"4-2-1.txt",
+						"4-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 4-3",
+					"parts": [
+						"4-3-1.txt",
+						"4-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 4-4",
+					"parts": [
+						"4-4-1.txt",
+						"4-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 4-5",
+					"parts": [
+						"4-5-1.txt",
+						"4-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 4-6",
+					"parts": [
+						"4-6-1.txt",
+						"4-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 4-1",
+					"parts": [
+						"4-1-1E.txt",
+						"4-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 4-2",
+					"parts": [
+						"4-2-1E.txt",
+						"4-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 4-3",
+					"parts": [
+						"4-3-1E.txt",
+						"4-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 4-4",
+					"parts": [
+						"4-4-1E.txt",
+						"4-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 4-1",
+					"parts": [
+						"4-1-1N.txt",
+						"4-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 4-2",
+					"parts": [
+						"4-2-1N.txt",
+						"4-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 4-3",
+					"parts": [
+						"4-3-1N.txt",
+						"4-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 4-4",
+					"parts": [
+						"4-4-1N.txt",
+						"4-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 5",
+			"episodes": [
+				{
+					"name": "Normal 5-1",
+					"parts": [
+						"5-1-1.txt",
+						"5-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 5-2",
+					"parts": [
+						"5-2-1.txt",
+						"5-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 5-3",
+					"parts": [
+						"5-3-1.txt",
+						"5-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 5-4",
+					"parts": [
+						"5-4-1.txt",
+						"5-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 5-5",
+					"parts": [
+						"5-5-1.txt",
+						"5-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 5-6",
+					"parts": [
+						"5-6-1.txt",
+						"5-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 5-1",
+					"parts": [
+						"5-1-1E.txt",
+						"5-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 5-2",
+					"parts": [
+						"5-2-1E.txt",
+						"5-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 5-3",
+					"parts": [
+						"5-3-1E.txt",
+						"5-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 5-4",
+					"parts": [
+						"5-4-1E.txt",
+						"5-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 5-1",
+					"parts": [
+						"5-1-1N.txt",
+						"5-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 5-2",
+					"parts": [
+						"5-2-1N.txt",
+						"5-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 5-3",
+					"parts": [
+						"5-3-1N.txt",
+						"5-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 5-4",
+					"parts": [
+						"5-4-1N.txt",
+						"5-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 6",
+			"episodes": [
+				{
+					"name": "Normal 6-1",
+					"parts": [
+						"6-1-1.txt",
+						"6-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 6-2",
+					"parts": [
+						"6-2-1.txt",
+						"6-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 6-3",
+					"parts": [
+						"6-3-1.txt",
+						"6-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 6-4",
+					"parts": [
+						"6-4-1.txt",
+						"6-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 6-5",
+					"parts": [
+						"6-5-1.txt",
+						"6-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 6-6",
+					"parts": [
+						"6-6-1.txt",
+						"6-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 6-1",
+					"parts": [
+						"6-1-1E.txt",
+						"6-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 6-2",
+					"parts": [
+						"6-2-1E.txt",
+						"6-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 6-3",
+					"parts": [
+						"6-3-1E.txt",
+						"6-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 6-4",
+					"parts": [
+						"6-4-1E.txt",
+						"6-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 6-1",
+					"parts": [
+						"6-1-1N.txt",
+						"6-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 6-2",
+					"parts": [
+						"6-2-1N.txt",
+						"6-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 6-3",
+					"parts": [
+						"6-3-1N.txt",
+						"6-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 6-4",
+					"parts": [
+						"6-4-1N.txt",
+						"6-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 7",
+			"episodes": [
+				{
+					"name": "Normal 7-1",
+					"parts": [
+						"7-1-1.txt",
+						"7-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 7-2",
+					"parts": [
+						"7-2-1.txt",
+						"7-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 7-3",
+					"parts": [
+						"7-3-1.txt",
+						"7-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 7-4",
+					"parts": [
+						"7-4-1.txt",
+						"7-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 7-5",
+					"parts": [
+						"7-5-1.txt",
+						"7-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 7-6",
+					"parts": [
+						"7-6-1.txt",
+						"7-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 7-1",
+					"parts": [
+						"7-1-1E.txt",
+						"7-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 7-2",
+					"parts": [
+						"7-2-1E.txt",
+						"7-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 7-3",
+					"parts": [
+						"7-3-1E.txt",
+						"7-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 7-4",
+					"parts": [
+						"7-4-1E.txt",
+						"7-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 7-1",
+					"parts": [
+						"7-1-1N.txt",
+						"7-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 7-2",
+					"parts": [
+						"7-2-1N.txt",
+						"7-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 7-3",
+					"parts": [
+						"7-3-1N.txt",
+						"7-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 7-4",
+					"parts": [
+						"7-4-1N.txt",
+						"7-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 8",
+			"episodes": [
+				{
+					"name": "Normal 8-1",
+					"parts": [
+						"8-1-1.txt",
+						"8-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 8-2",
+					"parts": [
+						"8-2-1.txt",
+						"8-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 8-3",
+					"parts": [
+						"8-3-1.txt",
+						"8-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 8-4",
+					"parts": [
+						"8-4-1.txt",
+						"8-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 8-5",
+					"parts": [
+						"8-5-1.txt",
+						"8-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 8-6",
+					"parts": [
+						"8-6-1.txt",
+						"8-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 8-1",
+					"parts": [
+						"8-1-1E.txt",
+						"8-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 8-2",
+					"parts": [
+						"8-2-1E.txt",
+						"8-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 8-3",
+					"parts": [
+						"8-3-1E.txt",
+						"8-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 8-4",
+					"parts": [
+						"8-4-1E.txt",
+						"8-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 8-1",
+					"parts": [
+						"8-1-1N.txt",
+						"8-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 8-2",
+					"parts": [
+						"8-2-1N.txt",
+						"8-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 8-3",
+					"parts": [
+						"8-3-1N.txt",
+						"8-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 8-4",
+					"parts": [
+						"8-4-1N.txt",
+						"8-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 9",
+			"episodes": [
+				{
+					"name": "Normal 9-1",
+					"parts": [
+						"9-1-1.txt",
+						"9-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 9-2",
+					"parts": [
+						"9-2-1.txt",
+						"9-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 9-3",
+					"parts": [
+						"9-3-1.txt",
+						"9-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 9-4",
+					"parts": [
+						"9-4-1.txt",
+						"9-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 9-5",
+					"parts": [
+						"9-5-1.txt",
+						"9-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 9-6",
+					"parts": [
+						"9-6-1.txt",
+						"9-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 9-1",
+					"parts": [
+						"9-1-1E.txt",
+						"9-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 9-2",
+					"parts": [
+						"9-2-1E.txt",
+						"9-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 9-3",
+					"parts": [
+						"9-3-1E.txt",
+						"9-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 9-4",
+					"parts": [
+						"9-4-1E.txt",
+						"9-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 9-1",
+					"parts": [
+						"9-1-1N.txt",
+						"9-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 9-2",
+					"parts": [
+						"9-2-1N.txt",
+						"9-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 9-3",
+					"parts": [
+						"9-3-1N.txt",
+						"9-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 9-4",
+					"parts": [
+						"9-4-1N.txt",
+						"9-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 10",
+			"episodes": [
+				{
+					"name": "Normal 10-1",
+					"parts": [
+						"10-1-1.txt",
+						"10-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 10-2",
+					"parts": [
+						"10-2-1.txt",
+						"10-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 10-3",
+					"parts": [
+						"10-3-1.txt",
+						"10-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 10-4",
+					"parts": [
+						"10-4-1.txt",
+						"10-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 10-5",
+					"parts": [
+						"10-5-1.txt",
+						"10-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 10-6",
+					"parts": [
+						"10-6-1.txt",
+						"10-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 10-1",
+					"parts": [
+						"10-1-1E.txt",
+						"10-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 10-2",
+					"parts": [
+						"10-2-1E.txt",
+						"10-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 10-3",
+					"parts": [
+						"10-3-1E.txt",
+						"10-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 10-4",
+					"parts": [
+						"10-4-1E.txt",
+						"10-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 10-1",
+					"parts": [
+						"10-1-1N.txt",
+						"10-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 10-2",
+					"parts": [
+						"10-2-1N.txt",
+						"10-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 10-3",
+					"parts": [
+						"10-3-1N.txt",
+						"10-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 10-4",
+					"parts": [
+						"10-4-1N.txt",
+						"10-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 11",
+			"episodes": [
+				{
+					"name": "Normal 11-1",
+					"parts": [
+						"11-1-1.txt",
+						"11-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 11-2",
+					"parts": [
+						"11-2-1.txt",
+						"11-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 11-3",
+					"parts": [
+						"11-3-1.txt",
+						"11-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 11-4",
+					"parts": [
+						"11-4-1.txt",
+						"11-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 11-5",
+					"parts": [
+						"11-5-1.txt",
+						"11-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 11-6",
+					"parts": [
+						"11-6-1.txt",
+						"11-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 11-1",
+					"parts": [
+						"11-1-1E.txt",
+						"11-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 11-2",
+					"parts": [
+						"11-2-1E.txt",
+						"11-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 11-3",
+					"parts": [
+						"11-3-1E.txt",
+						"11-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 11-4",
+					"parts": [
+						"11-4-1E.txt",
+						"11-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 11-1",
+					"parts": [
+						"11-1-1N.txt",
+						"11-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 11-2",
+					"parts": [
+						"11-2-1N.txt",
+						"11-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 11-3",
+					"parts": [
+						"11-3-1N.txt",
+						"11-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 11-4",
+					"parts": [
+						"11-4-1N.txt",
+						"11-4-2N.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Chapter 12",
+			"episodes": [
+				{
+					"name": "Normal 12-1",
+					"parts": [
+						"12-1-1.txt",
+						"12-1-2.txt"
+					]
+				},
+				{
+					"name": "Normal 12-2",
+					"parts": [
+						"12-2-1.txt",
+						"12-2-2.txt"
+					]
+				},
+				{
+					"name": "Normal 12-3",
+					"parts": [
+						"12-3-1.txt",
+						"12-3-2.txt"
+					]
+				},
+				{
+					"name": "Normal 12-4",
+					"parts": [
+						"12-4-1.txt",
+						"12-4-2.txt"
+					]
+				},
+				{
+					"name": "Normal 12-5",
+					"parts": [
+						"12-5-1.txt",
+						"12-5-2.txt"
+					]
+				},
+				{
+					"name": "Normal 12-6",
+					"parts": [
+						"12-6-1.txt",
+						"12-6-2.txt"
+					]
+				},
+				{
+					"name": "Emergency 12-1",
+					"parts": [
+						"12-1-1E.txt",
+						"12-1-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 12-2",
+					"parts": [
+						"12-2-1E.txt",
+						"12-2-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 12-3",
+					"parts": [
+						"12-3-1E.txt",
+						"12-3-2E.txt"
+					]
+				},
+				{
+					"name": "Emergency 12-4",
+					"parts": [
+						"12-4-1E.txt",
+						"12-4-2E.txt"
+					]
+				},
+				{
+					"name": "Midnight 12-1",
+					"parts": [
+						"12-1-1N.txt",
+						"12-1-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 12-2",
+					"parts": [
+						"12-2-1N.txt",
+						"12-2-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 12-3",
+					"parts": [
+						"12-3-1N.txt",
+						"12-3-2N.txt"
+					]
+				},
+				{
+					"name": "Midnight 12-4",
+					"parts": [
+						"12-4-1N.txt",
+						"12-4-2N.txt"
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"name": "Prologue",
+			"episodes": [
+				{
+					"name": "Start0",
+					"parts": [
+						"startavg/Start0.txt"
+					]
+				},
+				{
+					"name": "Start1",
+					"parts": [
+						"startavg/Start1.txt"
+					]
+				},
+				{
+					"name": "Start2",
+					"parts": [
+						"startavg/Start2.txt"
+					]
+				},
+				{
+					"name": "Start3",
+					"parts": [
+						"startavg/Start3.txt"
+					]
+				},
+				{
+					"name": "Start4",
+					"parts": [
+						"startavg/Start4.txt"
+					]
+				},
+				{
+					"name": "Start5",
+					"parts": [
+						"startavg/Start5.txt"
+					]
+				},
+				{
+					"name": "Start6",
+					"parts": [
+						"startavg/Start6.txt"
+					]
+				},
+				{
+					"name": "Start7",
+					"parts": [
+						"startavg/Start7.txt"
+					]
+				},
+				{
+					"name": "Start8",
+					"parts": [
+						"startavg/Start8.txt"
+					]
+				},
+				{
+					"name": "Start9",
+					"parts": [
+						"startavg/Start9.txt"
+					]
+				},
+				{
+					"name": "Start10",
+					"parts": [
+						"startavg/Start10.txt"
+					]
+				},
+				{
+					"name": "Start11",
+					"parts": [
+						"startavg/Start11.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. 7.5: Arctic Warfare",
+			"episodes": [
+				{
+					"name": "The Wolves Gather I",
+					"parts": [
+						"-2-1-4-Point2179.txt",
+						"-2-1-1.txt",
+						"-2-1-2First.txt",
+						"-2-1-4-Point2007.txt",
+						"-2-1-4-Point2207.txt"
+					]
+				},
+				{
+					"name": "The Wolves Gather II",
+					"parts": [
+						"-2-2-1.txt",
+						"-2-2-2First.txt",
+						"-2-2-4-Point2204.txt"
+					]
+				},
+				{
+					"name": "The Wolves Gather III",
+					"parts": [
+						"-2-3-1.txt",
+						"-2-3-2First.txt",
+						"-2-3-4-Point2058.txt",
+						"-2-3-4-Point2215.txt"
+					]
+				},
+				{
+					"name": "The Wolves Gather IV",
+					"parts": [
+						"-2-4-1.txt",
+						"-2-4-2End.txt",
+						"-2-4-2First.txt"
+					]
+				},
+				{
+					"name": "Lighting Curfew I",
+					"parts": [
+						"-3-1-1.txt",
+						"-3-1-2First.txt"
+					]
+				},
+				{
+					"name": "Lighting Curfew II",
+					"parts": [
+						"-3-2-1.txt",
+						"-3-2-2First.txt"
+					]
+				},
+				{
+					"name": "Lighting Curfew III",
+					"parts": [
+						"-3-3-1.txt",
+						"-3-3-2First.txt"
+					]
+				},
+				{
+					"name": "Lighting Curfew IV",
+					"parts": [
+						"-3-4-1.txt",
+						"-3-4-2End.txt",
+						"-3-4-2First.txt",
+						"-3-4-4-Point2499.txt"
+					]
+				},
+				{
+					"name": "Operation Homecoming I",
+					"parts": [
+						"-4-1-1.txt",
+						"-4-1-2First.txt"
+					]
+				},
+				{
+					"name": "Operation Homecoming II",
+					"parts": [
+						"-4-2-1.txt",
+						"-4-2-2First.txt"
+					]
+				},
+				{
+					"name": "Operation Homecoming III",
+					"parts": [
+						"-4-3-2First.txt",
+						"-4-3-1.txt"
+					]
+				},
+				{
+					"name": "Operation Homecoming IV",
+					"parts": [
+						"-4-4-1.txt",
+						"-4-4-2End.txt",
+						"-4-4-2First.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. 7.5: Hypothermia",
+			"episodes": [
+				{
+					"name": "Unlimited Mode I",
+					"parts": [
+						"-5-1-1.txt",
+						"-5-1-3Round10.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. 5.5: Operation Cube+",
+			"episodes": [
+				{
+					"name": "Operation Cube I",
+					"parts": [
+						"-6-1-1.txt",
+						"-6-1-2First.txt"
+					]
+				},
+				{
+					"name": "Operation Cube II",
+					"parts": [
+						"-6-2-1.txt",
+						"-6-2-2End.txt",
+						"-6-2-2First.txt"
+					]
+				},
+				{
+					"name": "Operation Cube III",
+					"parts": [
+						"-6-3-1.txt",
+						"-6-3-2End.txt",
+						"-6-3-2First.txt"
+					]
+				},
+				{
+					"name": "Operation Cube IV",
+					"parts": [
+						"-6-4-1.txt",
+						"-6-4-2End.txt",
+						"-6-4-2First.txt"
+					]
+				},
+				{
+					"name": "Blindfold Theorem I",
+					"parts": [
+						"-7-1-1.txt",
+						"-7-1-2End.txt",
+						"-7-1-2First.txt",
+						"-7-1-3Round2.txt",
+						"-7-1-4-Point3498.txt",
+						"-7-1-3Round1.txt"
+					]
+				},
+				{
+					"name": "Blindfold Theorem II",
+					"parts": [
+						"-7-2-1.txt",
+						"-7-2-2End.txt",
+						"-7-2-2First.txt",
+						"-7-2-3Round1.txt",
+						"-7-2-3Round2.txt",
+						"-7-2-4-Point3342.txt"
+					]
+				},
+				{
+					"name": "Blindfold Theorem III",
+					"parts": [
+						"-7-3-1.txt",
+						"-7-3-2End.txt",
+						"-7-3-2First.txt",
+						"-7-3-3Round1.txt",
+						"-7-3-3Round2.txt",
+						"-7-3-4-Point3533.txt"
+					]
+				},
+				{
+					"name": "Blindfold Theorem IV",
+					"parts": [
+						"-7-4-1.txt",
+						"-7-4-2End.txt",
+						"-7-4-2First.txt",
+						"-7-4-3Round1.txt",
+						"-7-4-3Round2.txt",
+						"-7-4-4-Point3612.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. 8.5: Deep Dive",
+			"episodes": [
+				{
+					"name": "Cognitive Conundrum I",
+					"parts": [
+						"-10-1-1.txt",
+						"-10-1-2First.txt"
+					]
+				},
+				{
+					"name": "Cognitive Conundrum II",
+					"parts": [
+						"-10-2-1.txt",
+						"-10-2-2First.txt"
+					]
+				},
+				{
+					"name": "Cognitive Conundrum III",
+					"parts": [
+						"-10-3-1.txt",
+						"-10-3-2First.txt",
+						"-10-3-4-Point4229.txt"
+					]
+				},
+				{
+					"name": "Cognitive Conundrum IV",
+					"parts": [
+						"-10-4-1.txt",
+						"-10-4-2End.txt",
+						"-10-4-2First.txt"
+					]
+				},
+				{
+					"name": "Hyperbolic Function I",
+					"parts": [
+						"-11-1-1.txt",
+						"-11-1-2First.txt",
+						"-11-1-4-Point4270.txt"
+					]
+				},
+				{
+					"name": "Hyperbolic Function II",
+					"parts": [
+						"-11-2-1.txt",
+						"-11-2-2First.txt",
+						"-11-2-4-Point4292.txt"
+					]
+				},
+				{
+					"name": "Hyperbolic Function III",
+					"parts": [
+						"-11-3-1.txt",
+						"-11-3-2First.txt",
+						"-11-3-4-Point4411.txt"
+					]
+				},
+				{
+					"name": "Hyperbolic Function IV",
+					"parts": [
+						"-11-4-1.txt",
+						"-11-4-2End.txt",
+						"-11-4-2First.txt",
+						"-11-4-4-Point4431.txt"
+					]
+				},
+				{
+					"name": "Relative Behavior I",
+					"parts": [
+						"-12-1-1.txt",
+						"-12-1-2First.txt",
+						"-12-1-4-Point4528.txt",
+						"-12-1-4-Point4538.txt",
+						"-12-1-4-Point4540.txt"
+					]
+				},
+				{
+					"name": "Relative Behavior II",
+					"parts": [
+						"-12-2-2First.txt",
+						"-12-2-4-Point4560.txt",
+						"-12-2-4-Point4562.txt",
+						"-12-2-4-Point4601.txt",
+						"-12-2-1.txt"
+					]
+				},
+				{
+					"name": "Relative Behavior III",
+					"parts": [
+						"-12-3-1.txt",
+						"-12-3-2First.txt",
+						"-12-3-4-Point4605.txt",
+						"-12-3-4-Point4615.txt",
+						"-12-3-4-Point4641.txt"
+					]
+				},
+				{
+					"name": "Relative Behavior IV",
+					"parts": [
+						"-12-4-1.txt",
+						"-12-4-2End.txt",
+						"-12-4-2First.txt",
+						"-12-4-4-Point4518.txt",
+						"-12-4-4-Point4671.txt",
+						"-12-4-4-Point4723.txt",
+						"-12-4-4-Point4724.txt"
+					]
+				},
+				{
+					"name": "Imaginary Maze I",
+					"parts": [
+						"-13-1-1.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. 10.5: Singularity",
+			"episodes": [
+				{
+					"name": "Great Retreat I",
+					"parts": [
+						"-16-10-1.txt",
+						"-16-11-2First.txt",
+						"-16-12-2First.txt",
+						"-16-13-2First.txt",
+						"-16-14-2First.txt",
+						"-16-15-2First.txt",
+						"-16-16-1.txt"
+					]
+				},
+				{
+					"name": "Great Retreat II",
+					"parts": [
+						"-16-2-1.txt"
+					]
+				},
+				{
+					"name": "Great Retreat III",
+					"parts": [
+						"-16-3-1.txt"
+					]
+				},
+				{
+					"name": "Great Retreat IV",
+					"parts": [
+						"-16-4-1.txt",
+						"-16-4-2First.txt",
+						"-16-4-4-Point5546.txt"
+					]
+				},
+				{
+					"name": "Great Retreat V",
+					"parts": [
+						"-16-5-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat VI",
+					"parts": [
+						"-16-6-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat VII",
+					"parts": [
+						"-16-7-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat VIII",
+					"parts": [
+						"-16-8-2First.txt",
+						"-16-8-4-Point5627.txt"
+					]
+				},
+				{
+					"name": "Great Retreat IX",
+					"parts": [
+						"-16-9-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat X",
+					"parts": [
+						"-16-10-1.txt"
+					]
+				},
+				{
+					"name": "Great Retreat XI",
+					"parts": [
+						"-16-11-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat XII",
+					"parts": [
+						"-16-12-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat XIII",
+					"parts": [
+						"-16-13-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat XIV",
+					"parts": [
+						"-16-14-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat XV",
+					"parts": [
+						"-16-15-2First.txt"
+					]
+				},
+				{
+					"name": "Great Retreat XVI",
+					"parts": [
+						"-16-16-1.txt"
+					]
+				},
+				{
+					"name": "Second Moon I",
+					"parts": [
+						"-17-10-1.txt",
+						"-17-1-1.txt",
+						"-17-1-2First.txt",
+						"-17-11-1.txt",
+						"-17-11-2First.txt",
+						"-17-12-2First.txt",
+						"-17-13-1.txt",
+						"-17-13-2First.txt",
+						"-17-14-1.txt",
+						"-17-14-2First.txt",
+						"-17-15-1.txt",
+						"-17-15-2First.txt",
+						"-17-16-1.txt",
+						"-17-16-2First.txt",
+						"-17-17-1.txt",
+						"-17-17-2First.txt",
+						"-17-18-1.txt"
+					]
+				},
+				{
+					"name": "Second Moon II",
+					"parts": [
+						"-17-2-1.txt",
+						"-17-2-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon III",
+					"parts": [
+						"-17-3-1.txt",
+						"-17-3-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon IV",
+					"parts": [
+						"-17-4-2First.txt",
+						"-17-4-1.txt"
+					]
+				},
+				{
+					"name": "Second Moon V",
+					"parts": [
+						"-17-5-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon VI",
+					"parts": [
+						"-17-6-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon VII",
+					"parts": [
+						"-17-7-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon VIII",
+					"parts": [
+						"-17-8-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon IX",
+					"parts": [
+						"-17-9-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon X",
+					"parts": [
+						"-17-10-1.txt"
+					]
+				},
+				{
+					"name": "Second Moon XI",
+					"parts": [
+						"-17-11-1.txt",
+						"-17-11-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XII",
+					"parts": [
+						"-17-12-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XIII",
+					"parts": [
+						"-17-13-1.txt",
+						"-17-13-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XIV",
+					"parts": [
+						"-17-14-1.txt",
+						"-17-14-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XV",
+					"parts": [
+						"-17-15-1.txt",
+						"-17-15-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XVI",
+					"parts": [
+						"-17-16-1.txt",
+						"-17-16-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XVII",
+					"parts": [
+						"-17-17-1.txt",
+						"-17-17-2First.txt"
+					]
+				},
+				{
+					"name": "Second Moon XVIII",
+					"parts": [
+						"-17-18-1.txt"
+					]
+				},
+				{
+					"name": "Endgame I",
+					"parts": [
+						"-18-1-1.txt",
+						"-18-1-2First.txt"
+					]
+				},
+				{
+					"name": "Endgame II",
+					"parts": [
+						"-18-2-1.txt",
+						"-18-2-2First.txt",
+						"-18-2-4-Point6188.txt"
+					]
+				},
+				{
+					"name": "Endgame III",
+					"parts": [
+						"-18-3-1.txt",
+						"-18-3-2First.txt"
+					]
+				},
+				{
+					"name": "Endgame IV",
+					"parts": [
+						"-18-4-1.txt",
+						"-18-4-2First.txt"
+					]
+				},
+				{
+					"name": "Endgame V",
+					"parts": [
+						"-18-5-1.txt",
+						"-18-5-2First.txt",
+						"-18-5-4-Point6303.txt"
+					]
+				},
+				{
+					"name": "Endgame VI",
+					"parts": [
+						"-18-6-1.txt",
+						"-18-6-2First.txt"
+					]
+				},
+				{
+					"name": "Endgame VII",
+					"parts": [
+						"-18-7-1.txt"
+					]
+				},
+				{
+					"name": "Endgame VIII",
+					"parts": [
+						"-18-8-1.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. 10.75: Continuum Turbulence",
+			"episodes": [
+				{
+					"name": "Daybreak I",
+					"parts": [
+						"-24-13-2First.txt",
+						"-24-1-1.txt",
+						"-24-1-2First.txt",
+						"-24-10-1.txt",
+						"-24-10-2.txt",
+						"-24-10-2First.txt",
+						"-24-11-1.txt",
+						"-24-11-2.txt",
+						"-24-11-2First.txt",
+						"-24-12-1.txt",
+						"-24-12-2.txt",
+						"-24-12-2First.txt",
+						"-24-13-1.txt",
+						"-24-13-2.txt",
+						"-24-14-1.txt",
+						"-24-14-2.txt",
+						"-24-14-2First.txt",
+						"-24-15-1.txt",
+						"-24-15-2.txt",
+						"-24-15-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak II",
+					"parts": [
+						"-24-2-1.txt",
+						"-24-2-2.txt"
+					]
+				},
+				{
+					"name": "Daybreak III",
+					"parts": [
+						"-24-3-2.txt",
+						"-24-3-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak IV",
+					"parts": [
+						"-24-4-1.txt",
+						"-24-4-2.txt",
+						"-24-4-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak V",
+					"parts": [
+						"-24-5-1.txt",
+						"-24-5-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak VI",
+					"parts": [
+						"-24-6-1.txt",
+						"-24-6-2.txt"
+					]
+				},
+				{
+					"name": "Daybreak VII",
+					"parts": [
+						"-24-7-1.txt",
+						"-24-7-2.txt",
+						"-24-7-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak VIII",
+					"parts": [
+						"-24-8-1.txt",
+						"-24-8-2.txt",
+						"-24-8-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak IX",
+					"parts": [
+						"-24-9-2.txt",
+						"-24-9-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak X",
+					"parts": [
+						"-24-10-1.txt",
+						"-24-10-2.txt",
+						"-24-10-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak XI",
+					"parts": [
+						"-24-11-1.txt",
+						"-24-11-2.txt",
+						"-24-11-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak XII",
+					"parts": [
+						"-24-12-1.txt",
+						"-24-12-2.txt",
+						"-24-12-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak XIII",
+					"parts": [
+						"-24-13-2First.txt",
+						"-24-13-1.txt",
+						"-24-13-2.txt"
+					]
+				},
+				{
+					"name": "Daybreak XIV",
+					"parts": [
+						"-24-14-1.txt",
+						"-24-14-2.txt",
+						"-24-14-2First.txt"
+					]
+				},
+				{
+					"name": "Daybreak XV",
+					"parts": [
+						"-24-15-1.txt",
+						"-24-15-2.txt",
+						"-24-15-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence I",
+					"parts": [
+						"-25-1-1.txt",
+						"-25-1-2First.txt",
+						"-25-10-1.txt",
+						"-25-10-2First.txt",
+						"-25-11-1.txt",
+						"-25-12-2First.txt",
+						"-25-13-2First.txt",
+						"-25-14-2First.txt",
+						"-25-15-2First.txt",
+						"-25-16-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence II",
+					"parts": [
+						"-25-2-1.txt"
+					]
+				},
+				{
+					"name": "Convergence III",
+					"parts": [
+						"-25-3-2First.txt",
+						"-25-3-1.txt"
+					]
+				},
+				{
+					"name": "Convergence IV",
+					"parts": [
+						"-25-4-1.txt"
+					]
+				},
+				{
+					"name": "Convergence V",
+					"parts": [
+						"-25-5-1.txt"
+					]
+				},
+				{
+					"name": "Convergence VI",
+					"parts": [
+						"-25-6-1.txt"
+					]
+				},
+				{
+					"name": "Convergence VII",
+					"parts": [
+						"-25-7-1.txt"
+					]
+				},
+				{
+					"name": "Convergence VIII",
+					"parts": [
+						"-25-8-1.txt",
+						"-25-8-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence IX",
+					"parts": [
+						"-25-9-1.txt",
+						"-25-9-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence X",
+					"parts": [
+						"-25-10-1.txt",
+						"-25-10-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence XI",
+					"parts": [
+						"-25-11-1.txt"
+					]
+				},
+				{
+					"name": "Convergence XII",
+					"parts": [
+						"-25-12-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence XIII",
+					"parts": [
+						"-25-13-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence XIV",
+					"parts": [
+						"-25-14-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence XV",
+					"parts": [
+						"-25-15-2First.txt"
+					]
+				},
+				{
+					"name": "Convergence XVI",
+					"parts": [
+						"-25-16-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday I",
+					"parts": [
+						"-26-15-2First.txt",
+						"-26-1-1.txt",
+						"-26-1-2First.txt",
+						"-26-10-2First.txt",
+						"-26-11-1.txt",
+						"-26-11-2First.txt",
+						"-26-12-1.txt",
+						"-26-13-1.txt",
+						"-26-13-2First.txt",
+						"-26-14-1.txt",
+						"-26-14-2End.txt",
+						"-26-14-2First.txt",
+						"-26-18-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday II",
+					"parts": [
+						"-26-2-1.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday III",
+					"parts": [
+						"-26-3-1.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday IV",
+					"parts": [
+						"-26-4-1.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday V",
+					"parts": [
+						"-26-5-1.txt",
+						"-26-5-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday VI",
+					"parts": [
+						"-26-6-1.txt",
+						"-26-6-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday VII",
+					"parts": [
+						"-26-7-1.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday VIII",
+					"parts": [
+						"-26-8-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday IX",
+					"parts": [
+						"-26-9-1.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday X",
+					"parts": [
+						"-26-10-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday XI",
+					"parts": [
+						"-26-11-1.txt",
+						"-26-11-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday XII",
+					"parts": [
+						"-26-12-1.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday XIII",
+					"parts": [
+						"-26-13-1.txt",
+						"-26-13-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday XIV",
+					"parts": [
+						"-26-14-1.txt",
+						"-26-14-2End.txt",
+						"-26-14-2First.txt"
+					]
+				},
+				{
+					"name": "Surviving Doomsday XV",
+					"parts": [
+						"-26-15-2First.txt"
+					]
+				},
+				{
+					"name": "Hurricane Rescue I",
+					"parts": [
+						"-27-1-1.txt",
+						"-27-1-3Round6.txt"
+					]
+				},
+				{
+					"name": "Hidden Scenario I",
+					"parts": [
+						"-28-1-1.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. ??: ISOMER",
+			"episodes": [
+				{
+					"name": "??? I",
+					"parts": [
+						"-31-1A1-1.txt",
+						"-31-1A11-1.txt",
+						"-31-1A2-1.txt",
+						"-31-1A21-1.txt",
+						"-31-1A3-1.txt",
+						"-31-1A4-1.txt",
+						"-31-1A5-1.txt",
+						"-31-1B1-1.txt",
+						"-31-1B2-1.txt",
+						"-31-1B3-1.txt",
+						"-31-1B31-1.txt",
+						"-31-1B4-1.txt",
+						"-31-1C1-1.txt",
+						"-31-1C2-1.txt",
+						"-31-1C3-1.txt",
+						"-31-1C4-1.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-31-2A1-1.txt",
+						"-31-2A11-1.txt",
+						"-31-2A12-1.txt",
+						"-31-2A2-1.txt",
+						"-31-2A21-1.txt",
+						"-31-2A3-1.txt",
+						"-31-2B1-1.txt",
+						"-31-2B11-1.txt",
+						"-31-2B2-1.txt",
+						"-31-2B3-1.txt",
+						"-31-2B4-1.txt",
+						"-31-2C1-1.txt",
+						"-31-2C2-1.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-31-3C1-1.txt",
+						"-31-3A1-1.txt",
+						"-31-3A2-1.txt",
+						"-31-3A3-1.txt",
+						"-31-3B1-1.txt",
+						"-31-3B2-1.txt",
+						"-31-3B3-1.txt",
+						"-31-3B4-1.txt",
+						"-31-3B5-1.txt",
+						"-31-3B6-1.txt",
+						"-31-3B7-1.txt",
+						"-31-3C2-1.txt",
+						"-31-3C21-1.txt",
+						"-31-3C3-1.txt",
+						"-31-3C4-1.txt",
+						"-31-3C5-1.txt",
+						"-31-3C6-1.txt",
+						"-31-3C61-1.txt",
+						"-31-3C62-1.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-31-4-1.txt"
+					]
+				}
+			]
+		}
+	],
+	"side": [
+		{
+			"name": "Skin Stories",
+			"episodes": [
+				{
+					"name": "AA-12 - The Sun Never Rises",
+					"parts": [
+						"skin/2403.txt"
+					]
+				},
+				{
+					"name": "AEK-999 - Babe Driver",
+					"parts": [
+						"skin/1505.txt"
+					]
+				},
+				{
+					"name": "AK-12 - Age of Slushies",
+					"parts": [
+						"skin/2402.txt"
+					]
+				},
+				{
+					"name": "AK-12 - Untranslated1",
+					"parts": [
+						"skin/3302.txt"
+					]
+				},
+				{
+					"name": "AK-47 - Kitty Paws",
+					"parts": [
+						"skin/2.txt"
+					]
+				},
+				{
+					"name": "AK-74U - Lily of the Valley",
+					"parts": [
+						"skin/3002.txt"
+					]
+				},
+				{
+					"name": "AN-94 - The Diving Bell and the Doll",
+					"parts": [
+						"skin/2404.txt"
+					]
+				},
+				{
+					"name": "AN-94 - Untranslated1",
+					"parts": [
+						"skin/3303.txt"
+					]
+				},
+				{
+					"name": "ART556 - Haunted Castle",
+					"parts": [
+						"skin/6.txt"
+					]
+				},
+				{
+					"name": "ART556 - Little Chimney Sweeper",
+					"parts": [
+						"skin/2803.txt"
+					]
+				},
+				{
+					"name": "ART556 - White Cabbage",
+					"parts": [
+						"skin/1803.txt"
+					]
+				},
+				{
+					"name": "Ameli - Ameli's Receive",
+					"parts": [
+						"skin/2409.txt"
+					]
+				},
+				{
+					"name": "Bren - Jack the Trine",
+					"parts": [
+						"skin/2605.txt"
+					]
+				},
+				{
+					"name": "C-MS - Untranslated1",
+					"parts": [
+						"skin/3503.txt"
+					]
+				},
+				{
+					"name": "CAWS - Untranslated1",
+					"parts": [
+						"skin/4003.txt"
+					]
+				},
+				{
+					"name": "CZ52 - Tweedia",
+					"parts": [
+						"skin/3007.txt"
+					]
+				},
+				{
+					"name": "CZ75 - Monks Cress",
+					"parts": [
+						"skin/3005.txt"
+					]
+				},
+				{
+					"name": "Colt Revolver - Queen of Miracles",
+					"parts": [
+						"skin/2105.txt"
+					]
+				},
+				{
+					"name": "Colt Revolver - Wish Upon A Star",
+					"parts": [
+						"skin/301.txt"
+					]
+				},
+				{
+					"name": "Contender - Flowerful Maid",
+					"parts": [
+						"skin/2302.txt"
+					]
+				},
+				{
+					"name": "Contender - Opera Ghost",
+					"parts": [
+						"skin/1502.txt"
+					]
+				},
+				{
+					"name": "DP-12 - Untranslated1",
+					"parts": [
+						"skin/4201.txt"
+					]
+				},
+				{
+					"name": "DSR-50 - Highest Bid",
+					"parts": [
+						"skin/2101.txt"
+					]
+				},
+				{
+					"name": "DSR-50 - Red Peony",
+					"parts": [
+						"skin/1801.txt"
+					]
+				},
+				{
+					"name": "EM-2 - Untranslated1",
+					"parts": [
+						"skin/4209.txt"
+					]
+				},
+				{
+					"name": "EVO 3 - White Night Star",
+					"parts": [
+						"skin/2109.txt"
+					]
+				},
+				{
+					"name": "F1 - Dark Sorceress Academy",
+					"parts": [
+						"skin/2606.txt"
+					]
+				},
+				{
+					"name": "FAL - FAL's Summer",
+					"parts": [
+						"skin/2406.txt"
+					]
+				},
+				{
+					"name": "FAL - Winter Supply",
+					"parts": [
+						"skin/308.txt"
+					]
+				},
+				{
+					"name": "FAMAS - Guns N' Side Boxes",
+					"parts": [
+						"skin/2604.txt"
+					]
+				},
+				{
+					"name": "FNC - Untranslated1",
+					"parts": [
+						"skin/4308.txt"
+					]
+				},
+				{
+					"name": "FP-6 - Satellite of Love",
+					"parts": [
+						"skin/2804.txt"
+					]
+				},
+				{
+					"name": "Five-seveN - Blue Christmas",
+					"parts": [
+						"skin/2805.txt"
+					]
+				},
+				{
+					"name": "Five-seveN - Smile of Acceptance",
+					"parts": [
+						"skin/1902.txt"
+					]
+				},
+				{
+					"name": "G11 - Neet Zombie",
+					"parts": [
+						"skin/9.txt"
+					]
+				},
+				{
+					"name": "G28 - Untranslated1",
+					"parts": [
+						"skin/3307.txt"
+					]
+				},
+				{
+					"name": "G28 - Wiesnbier",
+					"parts": [
+						"skin/2304.txt"
+					]
+				},
+				{
+					"name": "G36 - \"Sommelier\"",
+					"parts": [
+						"skin/1507.txt"
+					]
+				},
+				{
+					"name": "G36 - 50 Days with Gr G36",
+					"parts": [
+						"skin/2407.txt"
+					]
+				},
+				{
+					"name": "G36 - Every Child's X'mas Dream",
+					"parts": [
+						"skin/2806.txt"
+					]
+				},
+				{
+					"name": "G36 - Pure White Cornflower",
+					"parts": [
+						"skin/1904.txt"
+					]
+				},
+				{
+					"name": "G36C - Untranslated1",
+					"parts": [
+						"skin/3802.txt"
+					]
+				},
+				{
+					"name": "G36C - You Who Steps Up",
+					"parts": [
+						"skin/3103.txt"
+					]
+				},
+				{
+					"name": "G41 - Beach Punk 2064",
+					"parts": [
+						"skin/2401.txt"
+					]
+				},
+				{
+					"name": "Gepard M1 - Contracted Today",
+					"parts": [
+						"skin/2305.txt"
+					]
+				},
+				{
+					"name": "Gepard M1 - Exciting Future",
+					"parts": [
+						"skin/3107.txt"
+					]
+				},
+				{
+					"name": "Gepard M1 - Untranslated1",
+					"parts": [
+						"skin/4006.txt"
+					]
+				},
+				{
+					"name": "Grizzly MkV - Starry Night Ball",
+					"parts": [
+						"skin/2102.txt"
+					]
+				},
+				{
+					"name": "Grizzly MkV - Untranslated1",
+					"parts": [
+						"skin/4303.txt"
+					]
+				},
+				{
+					"name": "HK21 - Untranslated1",
+					"parts": [
+						"skin/4002.txt"
+					]
+				},
+				{
+					"name": "HK416 - Carmilla",
+					"parts": [
+						"skin/7.txt"
+					]
+				},
+				{
+					"name": "HK416 - Haunted Castle",
+					"parts": [
+						"skin/6.txt"
+					]
+				},
+				{
+					"name": "HK416 - Starry Cocoon",
+					"parts": [
+						"skin/805.txt"
+					]
+				},
+				{
+					"name": "Honey Badger - Untranslated1",
+					"parts": [
+						"skin/4005.txt"
+					]
+				},
+				{
+					"name": "IDW - Cat in the Box",
+					"parts": [
+						"skin/2108.txt"
+					]
+				},
+				{
+					"name": "IWS 2000 - Edelweiss",
+					"parts": [
+						"skin/3004.txt"
+					]
+				},
+				{
+					"name": "JS 9 - Untranslated2",
+					"parts": [
+						"skin/4204.txt"
+					]
+				},
+				{
+					"name": "JS05 - Fairy Lily",
+					"parts": [
+						"skin/1804.txt"
+					]
+				},
+				{
+					"name": "K2 - Before Dawn",
+					"parts": [
+						"skin/3301.txt"
+					]
+				},
+				{
+					"name": "K5 - Untranslated1",
+					"parts": [
+						"skin/3308.txt"
+					]
+				},
+				{
+					"name": "KSVK - Untranslated1",
+					"parts": [
+						"skin/3805.txt"
+					]
+				},
+				{
+					"name": "Kar98k - Untranslated1",
+					"parts": [
+						"skin/4301.txt"
+					]
+				},
+				{
+					"name": "LWMMG - Golden Starthistle",
+					"parts": [
+						"skin/1808.txt"
+					]
+				},
+				{
+					"name": "LWMMG - Untranslated1",
+					"parts": [
+						"skin/4007.txt"
+					]
+				},
+				{
+					"name": "Lewis - Untranslated1",
+					"parts": [
+						"skin/4001.txt"
+					]
+				},
+				{
+					"name": "Lewis - Untranslated2",
+					"parts": [
+						"skin/3502.txt"
+					]
+				},
+				{
+					"name": "M1014 - Untranslated1",
+					"parts": [
+						"skin/4305.txt"
+					]
+				},
+				{
+					"name": "M14 - Xmas Parade",
+					"parts": [
+						"skin/303.txt"
+					]
+				},
+				{
+					"name": "M1918 - Tender Nocturne",
+					"parts": [
+						"skin/806.txt"
+					]
+				},
+				{
+					"name": "M1919A4 - Carmilla",
+					"parts": [
+						"skin/7.txt"
+					]
+				},
+				{
+					"name": "M21 - Xmas At Home",
+					"parts": [
+						"skin/304.txt"
+					]
+				},
+				{
+					"name": "M590 - Angel's Trumpet",
+					"parts": [
+						"skin/1806.txt"
+					]
+				},
+				{
+					"name": "M870 - Candy Express",
+					"parts": [
+						"skin/4.txt"
+					]
+				},
+				{
+					"name": "M870 - Untranslated1",
+					"parts": [
+						"skin/3803.txt"
+					]
+				},
+				{
+					"name": "M950A - Concert Diva!",
+					"parts": [
+						"skin/808.txt"
+					]
+				},
+				{
+					"name": "M950A - Home Ec Training",
+					"parts": [
+						"skin/2303.txt"
+					]
+				},
+				{
+					"name": "M950A - Untranslated1",
+					"parts": [
+						"skin/4302.txt"
+					]
+				},
+				{
+					"name": "M99 - Untranslated1",
+					"parts": [
+						"skin/3304.txt"
+					]
+				},
+				{
+					"name": "MDR - Ghost Trap",
+					"parts": [
+						"skin/2603.txt"
+					]
+				},
+				{
+					"name": "MDR - Untranslated1",
+					"parts": [
+						"skin/3305.txt"
+					]
+				},
+				{
+					"name": "MG3 - Untranslated2",
+					"parts": [
+						"skin/3806.txt"
+					]
+				},
+				{
+					"name": "MG34 - Untranslated1",
+					"parts": [
+						"skin/4210.txt"
+					]
+				},
+				{
+					"name": "MG36 - Untranslated1",
+					"parts": [
+						"skin/4205.txt"
+					]
+				},
+				{
+					"name": "MG5 - Call of the Hunter",
+					"parts": [
+						"skin/1504.txt"
+					]
+				},
+				{
+					"name": "MG5 - Crimson Guardian",
+					"parts": [
+						"skin/309.txt"
+					]
+				},
+				{
+					"name": "MP5 - A Small Step",
+					"parts": [
+						"skin/1903.txt"
+					]
+				},
+				{
+					"name": "MP5 - Nocturnal Familiar",
+					"parts": [
+						"skin/3.txt"
+					]
+				},
+				{
+					"name": "MP5 - Vietnamese Balm",
+					"parts": [
+						"skin/3006.txt"
+					]
+				},
+				{
+					"name": "MP7 - Candy Express",
+					"parts": [
+						"skin/4.txt"
+					]
+				},
+				{
+					"name": "MP7 - Lollipop Ammo",
+					"parts": [
+						"skin/2405.txt"
+					]
+				},
+				{
+					"name": "Makarov - Pumpkin Mishka",
+					"parts": [
+						"skin/1.txt"
+					]
+				},
+				{
+					"name": "Makarov - Untranslated1",
+					"parts": [
+						"skin/4310.txt"
+					]
+				},
+				{
+					"name": "Mk23 - Conveyed Feelings",
+					"parts": [
+						"skin/3105.txt"
+					]
+				},
+				{
+					"name": "Mk23 - Honey Flower",
+					"parts": [
+						"skin/1805.txt"
+					]
+				},
+				{
+					"name": "Mk23 - Impish Sweetheart",
+					"parts": [
+						"skin/8.txt"
+					]
+				},
+				{
+					"name": "Model L - Untranslated1",
+					"parts": [
+						"skin/3809.txt"
+					]
+				},
+				{
+					"name": "Mosin-Nagant - Moonlit Ocean",
+					"parts": [
+						"skin/803.txt"
+					]
+				},
+				{
+					"name": "NTW-20 - The Aristocrat Experience",
+					"parts": [
+						"skin/2301.txt"
+					]
+				},
+				{
+					"name": "NTW-20 - Xmas Reindeer",
+					"parts": [
+						"skin/307.txt"
+					]
+				},
+				{
+					"name": "OTs-14 - Crassula Volkensii",
+					"parts": [
+						"skin/3001.txt"
+					]
+				},
+				{
+					"name": "P38 - Apprentice Witch",
+					"parts": [
+						"skin/2410.txt"
+					]
+				},
+				{
+					"name": "P7 - Haunted Castle",
+					"parts": [
+						"skin/6.txt"
+					]
+				},
+				{
+					"name": "P90 - Scarlet Turbo",
+					"parts": [
+						"skin/2802.txt"
+					]
+				},
+				{
+					"name": "PA-15 - Untranslated2",
+					"parts": [
+						"skin/4202.txt"
+					]
+				},
+				{
+					"name": "PKP - L.A.D.Y",
+					"parts": [
+						"skin/1503.txt"
+					]
+				},
+				{
+					"name": "PKP - Silver Star",
+					"parts": [
+						"skin/3102.txt"
+					]
+				},
+				{
+					"name": "PKP - Untranslated1",
+					"parts": [
+						"skin/4203.txt"
+					]
+				},
+				{
+					"name": "PP-90 - Kitty Paws",
+					"parts": [
+						"skin/2.txt"
+					]
+				},
+				{
+					"name": "PSG-1 - Untranslated1",
+					"parts": [
+						"skin/3808.txt"
+					]
+				},
+				{
+					"name": "Px4 Storm - Queen of X'mas Morning",
+					"parts": [
+						"skin/2801.txt"
+					]
+				},
+				{
+					"name": "PzB 39 - Raging Rider",
+					"parts": [
+						"skin/1506.txt"
+					]
+				},
+				{
+					"name": "QBU-88 - Untranslated1",
+					"parts": [
+						"skin/3801.txt"
+					]
+				},
+				{
+					"name": "R93 - Untranslated1",
+					"parts": [
+						"skin/3501.txt"
+					]
+				},
+				{
+					"name": "RMB-93 - Untranslated1",
+					"parts": [
+						"skin/4309.txt"
+					]
+				},
+				{
+					"name": "S.A.T.8 - Pumpkin Skewers",
+					"parts": [
+						"skin/2601.txt"
+					]
+				},
+				{
+					"name": "S.A.T.8 - Wintersweet",
+					"parts": [
+						"skin/1802.txt"
+					]
+				},
+				{
+					"name": "SPAS-12 - Midsummer Fruit",
+					"parts": [
+						"skin/2408.txt"
+					]
+				},
+				{
+					"name": "SPP-1 - Untranslated1",
+					"parts": [
+						"skin/4207.txt"
+					]
+				},
+				{
+					"name": "SR-3MP - Bunny Macchiato",
+					"parts": [
+						"skin/807.txt"
+					]
+				},
+				{
+					"name": "SV-98 - Pierce Your Heart!",
+					"parts": [
+						"skin/1906.txt"
+					]
+				},
+				{
+					"name": "SVD - Winter Fairy",
+					"parts": [
+						"skin/305.txt"
+					]
+				},
+				{
+					"name": "Serdyukov - Untranslated1",
+					"parts": [
+						"skin/3506.txt"
+					]
+				},
+				{
+					"name": "Skorpion - Crimson Starlet",
+					"parts": [
+						"skin/801.txt"
+					]
+				},
+				{
+					"name": "Springfield - Classic Witch",
+					"parts": [
+						"skin/5.txt"
+					]
+				},
+				{
+					"name": "Springfield - O Holy Night",
+					"parts": [
+						"skin/302.txt"
+					]
+				},
+				{
+					"name": "Springfield - Queen in Radiance",
+					"parts": [
+						"skin/802.txt"
+					]
+				},
+				{
+					"name": "Stechkin - Untranslated1",
+					"parts": [
+						"skin/4306.txt"
+					]
+				},
+				{
+					"name": "Suomi - Blissful Mission",
+					"parts": [
+						"skin/3101.txt"
+					]
+				},
+				{
+					"name": "Suomi - Korvatunturi Pixie",
+					"parts": [
+						"skin/310.txt"
+					]
+				},
+				{
+					"name": "T-5000 - Oath of Transformation",
+					"parts": [
+						"skin/3106.txt"
+					]
+				},
+				{
+					"name": "T91 - Untranslated1",
+					"parts": [
+						"skin/4206.txt"
+					]
+				},
+				{
+					"name": "TAC-50 - Elf Helsing",
+					"parts": [
+						"skin/2602.txt"
+					]
+				},
+				{
+					"name": "TMP - Red-Eared Cat",
+					"parts": [
+						"skin/2807.txt"
+					]
+				},
+				{
+					"name": "Thompson - Demon Hunter",
+					"parts": [
+						"skin/1501.txt"
+					]
+				},
+				{
+					"name": "Thunder - Untranslated1",
+					"parts": [
+						"skin/3309.txt"
+					]
+				},
+				{
+					"name": "Type 100 - Untranslated2",
+					"parts": [
+						"skin/4004.txt"
+					]
+				},
+				{
+					"name": "Type 4 - Untranslated2",
+					"parts": [
+						"skin/3505.txt"
+					]
+				},
+				{
+					"name": "Type 56-1 - As One, Forever Entwined",
+					"parts": [
+						"skin/1905.txt"
+					]
+				},
+				{
+					"name": "Type 64 - Witch from Afar",
+					"parts": [
+						"skin/11.txt"
+					]
+				},
+				{
+					"name": "Type 79 - Untranslated1",
+					"parts": [
+						"skin/3306.txt"
+					]
+				},
+				{
+					"name": "Type 81 Carbine - White Camellia",
+					"parts": [
+						"skin/1807.txt"
+					]
+				},
+				{
+					"name": "Type 88 - Noble Orchid",
+					"parts": [
+						"skin/3003.txt"
+					]
+				},
+				{
+					"name": "Type 88 - Untranslated1",
+					"parts": [
+						"skin/3504.txt"
+					]
+				},
+				{
+					"name": "Type 97 Shotgun - Untranslated1",
+					"parts": [
+						"skin/3807.txt"
+					]
+				},
+				{
+					"name": "UMP45 - Flower of Diamond",
+					"parts": [
+						"skin/2107.txt"
+					]
+				},
+				{
+					"name": "UMP9 - The World's Melody",
+					"parts": [
+						"skin/2106.txt"
+					]
+				},
+				{
+					"name": "Vector - Ardent Devotion",
+					"parts": [
+						"skin/1901.txt"
+					]
+				},
+				{
+					"name": "Vector - Kitty Paws",
+					"parts": [
+						"skin/2.txt"
+					]
+				},
+				{
+					"name": "WA2000 - Ballroom Interlude",
+					"parts": [
+						"skin/804.txt"
+					]
+				},
+				{
+					"name": "WA2000 - Date in the Snow",
+					"parts": [
+						"skin/306.txt"
+					]
+				},
+				{
+					"name": "WA2000 - Haunted Castle",
+					"parts": [
+						"skin/6.txt"
+					]
+				},
+				{
+					"name": "Welrod MkII - Nightfall Crisis",
+					"parts": [
+						"skin/2103.txt"
+					]
+				},
+				{
+					"name": "Z-62 - Untranslated1",
+					"parts": [
+						"skin/3507.txt"
+					]
+				},
+				{
+					"name": "Zas M21 - Untranslated1",
+					"parts": [
+						"skin/4304.txt"
+					]
+				},
+				{
+					"name": "Zas M21 - White Queen",
+					"parts": [
+						"skin/2104.txt"
+					]
+				},
+				{
+					"name": "m45 - Candy Express",
+					"parts": [
+						"skin/4.txt"
+					]
+				}
+			]
+		}
+	],
+	"crossover": [
+		{
+			"name": "Gunslinger Girl",
+			"episodes": [
+				{
+					"name": "??? I",
+					"parts": [
+						"-38-1-1.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-38-2-1.txt",
+						"-38-2-2End.txt",
+						"-38-2-2First.txt",
+						"-38-2-2Round.txt",
+						"-38-2-3.txt",
+						"-38-2-4First.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-38-3-1.txt",
+						"-38-3-1First.txt",
+						"-38-3-2End.txt",
+						"-38-3-2Round.txt",
+						"-38-3-3.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-38-4-1End.txt",
+						"-38-4-1First.txt",
+						"-38-4-1Round.txt"
+					]
+				},
+				{
+					"name": "??? V",
+					"parts": [
+						"-38-5-1End.txt",
+						"-38-5-1First.txt",
+						"-38-5-1Round.txt"
+					]
+				},
+				{
+					"name": "??? VI",
+					"parts": [
+						"-38-6-1End.txt",
+						"-38-6-1First.txt",
+						"-38-6-1Round.txt"
+					]
+				},
+				{
+					"name": "??? VII",
+					"parts": [
+						"-38-7-1.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "VA-11 HALL-A",
+			"episodes": [
+				{
+					"name": "Bartending Cutscenes",
+					"parts": [
+						"va11/VA11_1.txt",
+						"va11/VA11_2.txt",
+						"va11/VA11_3.txt",
+						"va11/VA11_4.txt",
+						"va11/VA11_5.txt",
+						"va11/VA11_6.txt",
+						"va11/VA11_7.txt",
+						"va11/VA11_8.txt"
+					]
+				},
+				{
+					"name": "??? I",
+					"parts": [
+						"-32-1-1.txt",
+						"-32-1-2First.txt",
+						"-32-10-4-Point12875.txt",
+						"-32-12-4-Point12932.txt",
+						"-32-13-4-Point12945.txt",
+						"-32-15-4-Point13027.txt",
+						"-32-16-4-Point13052.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-32-2-1.txt",
+						"-32-2-2First.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-32-3-2First.txt",
+						"-32-3-1.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-32-4-1.txt",
+						"-32-4-2First.txt"
+					]
+				},
+				{
+					"name": "??? V",
+					"parts": [
+						"-32-5-1.txt",
+						"-32-5-2First.txt"
+					]
+				},
+				{
+					"name": "??? VI",
+					"parts": [
+						"-32-6-1.txt",
+						"-32-6-2First.txt"
+					]
+				},
+				{
+					"name": "??? VII",
+					"parts": [
+						"-32-7-1.txt",
+						"-32-7-2First.txt"
+					]
+				},
+				{
+					"name": "??? VIII",
+					"parts": [
+						"-32-8-1.txt",
+						"-32-8-2End.txt",
+						"-32-8-2First.txt",
+						"-32-8-4-Point12833.txt"
+					]
+				}
+			]
+		}
+	]
+}

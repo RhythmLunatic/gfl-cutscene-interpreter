@@ -132,20 +132,6 @@
         "internalName": "ASVAL"
     },
     {
-        "name": "AS Val MOD 1",
-        "type": "AR",
-        "num": 60,
-        "rating": 5,
-        "internalName": "ASVAL"
-    },
-    {
-        "name": "AS Val MOD 2",
-        "type": "AR",
-        "num": 60,
-        "rating": 5,
-        "internalName": "ASVAL"
-    },
-    {
         "name": "AS Val MOD 3",
         "type": "AR",
         "num": 60,
@@ -216,20 +202,6 @@
         "internalName": "MAB38"
     },
     {
-        "name": "Beretta Model 38 MOD 1",
-        "type": "SMG",
-        "num": 31,
-        "rating": 4,
-        "internalName": "MAB38"
-    },
-    {
-        "name": "Beretta Model 38 MOD 2",
-        "type": "SMG",
-        "num": 31,
-        "rating": 4,
-        "internalName": "MAB38"
-    },
-    {
         "name": "Beretta Model 38 MOD 3",
         "type": "SMG",
         "num": 31,
@@ -241,20 +213,6 @@
         "type": "MG",
         "num": 89,
         "rating": 3,
-        "internalName": "BrenMK"
-    },
-    {
-        "name": "Bren MOD 1",
-        "type": "MG",
-        "num": 89,
-        "rating": 4,
-        "internalName": "BrenMK"
-    },
-    {
-        "name": "Bren MOD 2",
-        "type": "MG",
-        "num": 89,
-        "rating": 4,
         "internalName": "BrenMK"
     },
     {
@@ -297,20 +255,6 @@
         "type": "HG",
         "num": 12,
         "rating": 3,
-        "internalName": "C96"
-    },
-    {
-        "name": "C96 MOD 1",
-        "type": "HG",
-        "num": 12,
-        "rating": 4,
-        "internalName": "C96"
-    },
-    {
-        "name": "C96 MOD 2",
-        "type": "HG",
-        "num": 12,
-        "rating": 4,
         "internalName": "C96"
     },
     {
@@ -401,20 +345,6 @@
         "type": "HG",
         "num": 1,
         "rating": 4,
-        "internalName": "M1873"
-    },
-    {
-        "name": "Colt Revolver MOD 1",
-        "type": "HG",
-        "num": 1,
-        "rating": 5,
-        "internalName": "M1873"
-    },
-    {
-        "name": "Colt Revolver MOD 2",
-        "type": "HG",
-        "num": 1,
-        "rating": 5,
         "internalName": "M1873"
     },
     {
@@ -536,20 +466,6 @@
         "internalName": "FN49"
     },
     {
-        "name": "FN-49 MOD 1",
-        "type": "RF",
-        "num": 51,
-        "rating": 4,
-        "internalName": "FN49"
-    },
-    {
-        "name": "FN-49 MOD 2",
-        "type": "RF",
-        "num": 51,
-        "rating": 4,
-        "internalName": "FN49"
-    },
-    {
         "name": "FN-49 MOD 3",
         "type": "RF",
         "num": 51,
@@ -613,20 +529,6 @@
         "internalName": "G3"
     },
     {
-        "name": "G3 MOD 1",
-        "type": "AR",
-        "num": 63,
-        "rating": 4,
-        "internalName": "G3"
-    },
-    {
-        "name": "G3 MOD 2",
-        "type": "AR",
-        "num": 63,
-        "rating": 4,
-        "internalName": "G3"
-    },
-    {
         "name": "G3 MOD 3",
         "type": "AR",
         "num": 63,
@@ -638,20 +540,6 @@
         "type": "AR",
         "num": 64,
         "rating": 4,
-        "internalName": "G36"
-    },
-    {
-        "name": "G36 MOD 1",
-        "type": "AR",
-        "num": 64,
-        "rating": 5,
-        "internalName": "G36"
-    },
-    {
-        "name": "G36 MOD 2",
-        "type": "AR",
-        "num": 64,
-        "rating": 5,
         "internalName": "G36"
     },
     {
@@ -760,20 +648,6 @@
         "internalName": "HK416"
     },
     {
-        "name": "HK416 MOD 1",
-        "type": "AR",
-        "num": 65,
-        "rating": 6,
-        "internalName": "HK416"
-    },
-    {
-        "name": "HK416 MOD 2",
-        "type": "AR",
-        "num": 65,
-        "rating": 6,
-        "internalName": "HK416"
-    },
-    {
         "name": "HK416 MOD 3",
         "type": "AR",
         "num": 65,
@@ -822,20 +696,6 @@
         "internalName": "88type"
     },
     {
-        "name": "Hanyang Type 88 MOD 1",
-        "type": "RF",
-        "num": 95,
-        "rating": 4,
-        "internalName": "88type"
-    },
-    {
-        "name": "Hanyang Type 88 MOD 2",
-        "type": "RF",
-        "num": 95,
-        "rating": 4,
-        "internalName": "88type"
-    },
-    {
         "name": "Hanyang Type 88 MOD 3",
         "type": "RF",
         "num": 95,
@@ -868,20 +728,6 @@
         "type": "SMG",
         "num": 93,
         "rating": 2,
-        "internalName": "IDW"
-    },
-    {
-        "name": "IDW MOD 1",
-        "type": "SMG",
-        "num": 93,
-        "rating": 4,
-        "internalName": "IDW"
-    },
-    {
-        "name": "IDW MOD 2",
-        "type": "SMG",
-        "num": 93,
-        "rating": 4,
         "internalName": "IDW"
     },
     {
@@ -1031,20 +877,6 @@
         "internalName": "LWMMG"
     },
     {
-        "name": "LWMMG MOD 1",
-        "type": "MG",
-        "num": 81,
-        "rating": 4,
-        "internalName": "LWMMG"
-    },
-    {
-        "name": "LWMMG MOD 2",
-        "type": "MG",
-        "num": 81,
-        "rating": 4,
-        "internalName": "LWMMG"
-    },
-    {
         "name": "LWMMG MOD 3",
         "type": "MG",
         "num": 81,
@@ -1108,20 +940,6 @@
         "internalName": "M14"
     },
     {
-        "name": "M14 MOD 1",
-        "type": "RF",
-        "num": 37,
-        "rating": 4,
-        "internalName": "M14"
-    },
-    {
-        "name": "M14 MOD 2",
-        "type": "RF",
-        "num": 37,
-        "rating": 4,
-        "internalName": "M14"
-    },
-    {
         "name": "M14 MOD 3",
         "type": "RF",
         "num": 37,
@@ -1164,20 +982,6 @@
         "internalName": "M1911"
     },
     {
-        "name": "M1911 MOD 1",
-        "type": "HG",
-        "num": 2,
-        "rating": 4,
-        "internalName": "M1911"
-    },
-    {
-        "name": "M1911 MOD 2",
-        "type": "HG",
-        "num": 2,
-        "rating": 4,
-        "internalName": "M1911"
-    },
-    {
         "name": "M1911 MOD 3",
         "type": "HG",
         "num": 2,
@@ -1189,20 +993,6 @@
         "type": "MG",
         "num": 75,
         "rating": 4,
-        "internalName": "M1918"
-    },
-    {
-        "name": "M1918 MOD 1",
-        "type": "MG",
-        "num": 75,
-        "rating": 5,
-        "internalName": "M1918"
-    },
-    {
-        "name": "M1918 MOD 2",
-        "type": "MG",
-        "num": 75,
-        "rating": 5,
         "internalName": "M1918"
     },
     {
@@ -1276,20 +1066,6 @@
         "internalName": "M4 SOPMOD II"
     },
     {
-        "name": "M4 SOPMOD II MOD 1",
-        "type": "AR",
-        "num": 56,
-        "rating": 5,
-        "internalName": "M4 SOPMOD II"
-    },
-    {
-        "name": "M4 SOPMOD II MOD 2",
-        "type": "AR",
-        "num": 56,
-        "rating": 5,
-        "internalName": "M4 SOPMOD II"
-    },
-    {
         "name": "M4 SOPMOD II MOD 3",
         "type": "AR",
         "num": 56,
@@ -1301,20 +1077,6 @@
         "type": "AR",
         "num": 55,
         "rating": 4,
-        "internalName": "M4A1"
-    },
-    {
-        "name": "M4A1 MOD 1",
-        "type": "AR",
-        "num": 55,
-        "rating": 5,
-        "internalName": "M4A1"
-    },
-    {
-        "name": "M4A1 MOD 2",
-        "type": "AR",
-        "num": 55,
-        "rating": 5,
         "internalName": "M4A1"
     },
     {
@@ -1479,20 +1241,6 @@
         "internalName": "MP446"
     },
     {
-        "name": "MP-446 MOD 1",
-        "type": "HG",
-        "num": 91,
-        "rating": 4,
-        "internalName": "MP446"
-    },
-    {
-        "name": "MP-446 MOD 2",
-        "type": "HG",
-        "num": 91,
-        "rating": 4,
-        "internalName": "MP446"
-    },
-    {
         "name": "MP-446 MOD 3",
         "type": "HG",
         "num": 91,
@@ -1525,20 +1273,6 @@
         "type": "SMG",
         "num": 26,
         "rating": 4,
-        "internalName": "MP5"
-    },
-    {
-        "name": "MP5 MOD 1",
-        "type": "SMG",
-        "num": 26,
-        "rating": 5,
-        "internalName": "MP5"
-    },
-    {
-        "name": "MP5 MOD 2",
-        "type": "SMG",
-        "num": 26,
-        "rating": 5,
         "internalName": "MP5"
     },
     {
@@ -1581,20 +1315,6 @@
         "type": "SMG",
         "num": 32,
         "rating": 3,
-        "internalName": "MicroUZI"
-    },
-    {
-        "name": "Micro Uzi MOD 1",
-        "type": "SMG",
-        "num": 32,
-        "rating": 4,
-        "internalName": "MicroUZI"
-    },
-    {
-        "name": "Micro Uzi MOD 2",
-        "type": "SMG",
-        "num": 32,
-        "rating": 4,
         "internalName": "MicroUZI"
     },
     {
@@ -1653,20 +1373,6 @@
         "internalName": "M1891"
     },
     {
-        "name": "Mosin-Nagant MOD 1",
-        "type": "RF",
-        "num": 39,
-        "rating": 5,
-        "internalName": "M1891"
-    },
-    {
-        "name": "Mosin-Nagant MOD 2",
-        "type": "RF",
-        "num": 39,
-        "rating": 5,
-        "internalName": "M1891"
-    },
-    {
         "name": "Mosin-Nagant MOD 3",
         "type": "RF",
         "num": 39,
@@ -1688,20 +1394,6 @@
         "internalName": "NTW20"
     },
     {
-        "name": "NTW-20 MOD 1",
-        "type": "RF",
-        "num": 53,
-        "rating": 6,
-        "internalName": "NTW20"
-    },
-    {
-        "name": "NTW-20 MOD 2",
-        "type": "RF",
-        "num": 53,
-        "rating": 6,
-        "internalName": "NTW20"
-    },
-    {
         "name": "NTW-20 MOD 3",
         "type": "RF",
         "num": 53,
@@ -1720,20 +1412,6 @@
         "type": "HG",
         "num": 5,
         "rating": 2,
-        "internalName": "M1895"
-    },
-    {
-        "name": "Nagant Revolver MOD 1",
-        "type": "HG",
-        "num": 5,
-        "rating": 4,
-        "internalName": "M1895"
-    },
-    {
-        "name": "Nagant Revolver MOD 2",
-        "type": "HG",
-        "num": 5,
-        "rating": 4,
         "internalName": "M1895"
     },
     {
@@ -2170,20 +1848,6 @@
         "internalName": "AR15"
     },
     {
-        "name": "ST AR-15 MOD 1",
-        "type": "AR",
-        "num": 57,
-        "rating": 5,
-        "internalName": "AR15"
-    },
-    {
-        "name": "ST AR-15 MOD 2",
-        "type": "AR",
-        "num": 57,
-        "rating": 5,
-        "internalName": "AR15"
-    },
-    {
         "name": "ST AR-15 MOD 3",
         "type": "AR",
         "num": 57,
@@ -2195,20 +1859,6 @@
         "type": "RF",
         "num": 44,
         "rating": 3,
-        "internalName": "SV98"
-    },
-    {
-        "name": "SV-98 MOD 1",
-        "type": "RF",
-        "num": 44,
-        "rating": 4,
-        "internalName": "SV98"
-    },
-    {
-        "name": "SV-98 MOD 2",
-        "type": "RF",
-        "num": 44,
-        "rating": 4,
         "internalName": "SV98"
     },
     {
@@ -2310,20 +1960,6 @@
         "internalName": "STG44"
     },
     {
-        "name": "StG44 MOD 1",
-        "type": "AR",
-        "num": 61,
-        "rating": 4,
-        "internalName": "STG44"
-    },
-    {
-        "name": "StG44 MOD 2",
-        "type": "AR",
-        "num": 61,
-        "rating": 4,
-        "internalName": "STG44"
-    },
-    {
         "name": "StG44 MOD 3",
         "type": "AR",
         "num": 61,
@@ -2342,20 +1978,6 @@
         "type": "SMG",
         "num": 29,
         "rating": 3,
-        "internalName": "StenMK2"
-    },
-    {
-        "name": "Sten MkII MOD 1",
-        "type": "SMG",
-        "num": 29,
-        "rating": 4,
-        "internalName": "StenMK2"
-    },
-    {
-        "name": "Sten MkII MOD 2",
-        "type": "SMG",
-        "num": 29,
-        "rating": 4,
         "internalName": "StenMK2"
     },
     {
@@ -2560,20 +2182,6 @@
         "internalName": "64type"
     },
     {
-        "name": "Type 64 MOD 1",
-        "type": "SMG",
-        "num": 94,
-        "rating": 4,
-        "internalName": "64type"
-    },
-    {
-        "name": "Type 64 MOD 2",
-        "type": "SMG",
-        "num": 94,
-        "rating": 4,
-        "internalName": "64type"
-    },
-    {
         "name": "Type 64 MOD 3",
         "type": "SMG",
         "num": 94,
@@ -2658,20 +2266,6 @@
         "internalName": "UMP45"
     },
     {
-        "name": "UMP45 MOD 1",
-        "type": "SMG",
-        "num": 103,
-        "rating": 5,
-        "internalName": "UMP45"
-    },
-    {
-        "name": "UMP45 MOD 2",
-        "type": "SMG",
-        "num": 103,
-        "rating": 5,
-        "internalName": "UMP45"
-    },
-    {
         "name": "UMP45 MOD 3",
         "type": "SMG",
         "num": 103,
@@ -2683,20 +2277,6 @@
         "type": "SMG",
         "num": 101,
         "rating": 4,
-        "internalName": "UMP9"
-    },
-    {
-        "name": "UMP9 MOD 1",
-        "type": "SMG",
-        "num": 101,
-        "rating": 5,
-        "internalName": "UMP9"
-    },
-    {
-        "name": "UMP9 MOD 2",
-        "type": "SMG",
-        "num": 101,
-        "rating": 5,
         "internalName": "UMP9"
     },
     {

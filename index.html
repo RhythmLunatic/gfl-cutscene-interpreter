@@ -25,20 +25,88 @@ body
 	/*background-color: black;
 	color: white*/
 	text-align:center;
+	
+	--text-color: white;
+	--nav-color: #ee6e73;
+	--btn-color: #26a69a;
+	--card-color: #fff;
+	--collection-item-color:#fff;
+	--dropdown-text-color:#26a69a;
+	--dropdown-hover-color:#eee;
 }
 
-/*button
-{
+body.dark-theme{
+	background-color: #333333;
+	--text-color: white;
+	color: var(--text-color);
+	--nav-color:#1a237e;
+	--btn-color: #26a69a;
+	--card-color: #455a64;
+	--collection-item-color:#2b2b2b;
+	--dropdown-text-color: white;
+	--dropdown-hover-color: black;
+}
+body.black-theme{
 	background-color: black;
-	color:white;
-}*/
+	--text-color: white;
+	color: var(--text-color);
+	--nav-color: #212121;
+	--btn-color: #455a64;
+	--card-color: #2e3436;
+	--collection-item-color: black;
+	--dropdown-text-color: white;
+	--dropdown-hover-color: black;
+}
 
-table, th, td {
+nav {
+	background-color: var(--nav-color);
+}
+textarea{
+	color:var(--text-color);
+}
+
+/*table, th, td {
    border: 1px solid #222222;
    border-collapse: collapse;
 }
 th {
 	background-color: purple;
+}*/
+
+.header-desktop{
+	display: inline-block;
+}
+.header-mobile{
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .header-desktop{
+       display:none;
+    }
+    
+    .header-mobile{
+       display:inline-block;
+    }
+}
+
+.btn {
+	background-color: var(--btn-color);
+}
+.card {
+	background-color: var(--card-color);
+}
+.collection .collection-item{
+	background-color: var(--collection-item-color)
+}
+.dropdown-content{
+	background-color: var(--card-color);
+}
+.dropdown-content li > a {
+	color: var(--dropdown-text-color);
+}
+.dropdown-content li:hover, .dropdown-content li.active {
+  background-color: var(--dropdown-hover-color);
 }
 
 /*#head, #foot {
@@ -81,7 +149,7 @@ th {
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  background-color: DodgerBlue;
+  /*background-color: DodgerBlue;*/
   justify-content: center;
   align-items: center;
 }
@@ -198,6 +266,37 @@ I have no idea how it works
 <!--<script src="phaser.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+<!--Helper functions-->
+<script>
+	//https://stackoverflow.com/a/57401891
+	function adjustColor(color, amount) {
+		return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+	}
+	
+	//https://www.w3schools.com/js/js_cookies.asp
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+ d.toUTCString();
+		document.cookie = cname + "=" + cvalue + ";SameSite=Lax;" + expires + ";path=/";
+	}
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	} 
+</script>
+<!--The main program-->
 <script>
 	/*
 	This program is free software: you can redistribute it and/or modify
@@ -217,10 +316,10 @@ I have no idea how it works
 	*/
 	
 	/*
-		Just gonna say it right now, I don't know an ounce of JavaScript or phaser.
-		I interpreted lua and my game engine knowledge until this worked.
-		
-		So that's the answer as to why the chapter select looks like dogshit. Make a PR if you want it to be fixed.
+	Just gonna say it right now, I don't know an ounce of JavaScript or phaser.
+	I interpreted lua and my game engine knowledge until this worked. Also lots of 'pythonic' logic in the JavaScript.
+	
+	So that's the answer as to why the chapter select looks horrible. Make a PR if you want it to be fixed.
 	*/
 
 	/* opcode dictionary
@@ -235,6 +334,8 @@ I have no idea how it works
 		<黑屏X> - Black screen fade in and out
 		<通讯框> - "Communication box". Display character portrait inside a communication box.
 		<震屏> - Screen shake effect
+		<回忆> - Set orange textbox
+		<关闭蒙版> - Possibly related to orange textbox
 		: - End of opcodes, text goes here (Other than +)
 		+ - End text. Text will continue in a new box (no close/open animation) when clicked.
 		
@@ -303,6 +404,32 @@ I have no idea how it works
 		}
 	}
 	
+	
+	//Night mode
+	isDarkMode=false;
+	function NightMode()
+	{
+		let theme = "dark-theme"
+		if (document.body.classList.contains("dark-theme"))
+		{
+			theme='black-theme';
+			document.body.classList.replace("dark-theme",theme);
+			isDarkMode=true
+		}
+		else if (document.body.classList.contains("black-theme"))
+		{
+			theme='light-theme';
+			document.body.classList.replace("black-theme",theme);
+			isDarkMode=false;
+		}
+		else
+		{
+			document.body.classList.replace('light-theme',theme);
+			isDarkMode=true;
+		}
+		setCookie('theme',theme,180);
+	}
+	
 	//interpreter related
 	
 	const OPCODES = {
@@ -352,8 +479,11 @@ I have no idea how it works
 		18: "单挑",
 		19: "SFs",
 		22: "工厂背景avg",
+		72: "17xh-Networld",
+		87: "BG-BarHallow",
 		89: "BG-WarehouseON",
-		99: "BG-WildBattle"
+		99: "BG-WildBattle",
+		186: "va11_BAR"
 	}
 	
 	//To be loaded later.
@@ -745,26 +875,6 @@ I have no idea how it works
 			//console.assert(text,lines[i])
 			
 			//Yeah I know tags are supposed to be in order, No I don't really care sorry
-			const tags = ["Speaker","BGM","BIN"]
-			tags.forEach(tag => {
-				//console.log(tag);
-				let tagRes = getFromTag(cmds,tag);
-				//console.log(tagRes)
-				if (tagRes != null)
-				{
-					structuredLines.push([tag2opcode[tag],tagRes])
-					removeTag(cmds,tag)
-				}
-			})
-			//const tags = [
-			var nextPortraitIsMasked = false;
-			if (cmds.includes("<通讯框>"))
-			{
-				nextPortraitIsMasked = true;
-				//structuredLines.push([OPCODES.SETMASKEDPORTRAIT])
-				cmds=cmds.replace("<通讯框>","");
-			}
-			
 			
 			//So portraits are set in any order... But how the fuck are you supposed to tell when a name is if there's <> tags
 			//I'm just going to search portraits after removing <> tags, it probably won't matter
@@ -772,6 +882,25 @@ I have no idea how it works
 			let thisLineHadAtLeastTwoPortraits = (cmds.indexOf(";") != -1)
 			if (thisLineHadAtLeastTwoPortraits && prevLineHadAtLeastTwoPortraits)
 				flipDim = !flipDim;
+				
+			//Add portrait removal command
+			if (prevLineHadAtLeastTwoPortraits && !thisLineHadAtLeastTwoPortraits)
+			{
+				let [charID,charSpr] = cmds.slice(0,cmds.indexOf(")")).split("(")
+				//let newPortrait = 
+				//It's -2 because the last line is always MSGBOXTRANSITION
+				for(var lll=structuredLines.length-2; lll>=0; lll--)
+				{
+					let m = structuredLines[lll];
+					if (m[0]==OPCODES.MSGBOXTRANSITION)
+						break;
+					else if (m[0]==OPCODES.PORTRAIT && m[2]!=charID)
+					{
+						structuredLines.push([OPCODES.NOPORTRAIT,m[1]])
+						break;
+					}
+				}
+			}
 			//console.log(thisLineHadAtLeastTwoPortraits);
 			//Limit it to 5 because I don't want a dumb infinite loop that crashes the browser
 			for(j=0;j<5;j++)
@@ -791,18 +920,20 @@ I have no idea how it works
 						let shouldDim = false;
 						if (thisLineHadAtLeastTwoPortraits)
 						{
-							shouldDim = flipDim ? j==0 : j != 0;
+							shouldDim = flipDim ? j !=0 : j == 0;
+							//debugger;
 						}
-						structuredLines.push([OPCODES.PORTRAIT,numPortraits,charID,charSpr,shouldDim,nextPortraitIsMasked])
-						nextPortraitIsMasked = false;
+						structuredLines.push([OPCODES.PORTRAIT,numPortraits,charID,charSpr,shouldDim,false])
+						//nextPortraitIsMasked = false;
 						numPortraits++;
 					}
 					//I think speaker name gets cleared if it's ()? Not sure
 					//Portrait gets cleared
 					else
 					{
-						structuredLines.push([OPCODES.NOPORTRAIT])
-						//structuredLines.push([OPCODES.SPEAKER,""])
+						structuredLines.push([OPCODES.NOPORTRAIT,1])
+						structuredLines.push([OPCODES.NOPORTRAIT,0])
+						structuredLines.push([OPCODES.SPEAKER,""])					
 						//numPortraits=0;
 					}
 					cmds = sliceAndRemove(cmds,charTagStart,charTagEnd+1);
@@ -814,6 +945,55 @@ I have no idea how it works
 				}
 			}
 			prevLineHadAtLeastTwoPortraits = thisLineHadAtLeastTwoPortraits;
+			if(!prevLineHadAtLeastTwoPortraits)
+				flipDim=false;
+			
+			const tags = ["BGM","BIN"]
+			
+			let speakerRes = getFromTag(cmds,"Speaker")
+			//Optimization: If prevLine was another speaker line, overwrite it instead of writing another
+			if (speakerRes)
+			{
+				let prevLine = structuredLines[structuredLines.length-1]
+				if (prevLine[0]==OPCODES.SPEAKER)
+					structuredLines[structuredLines.length-1]=[OPCODES.SPEAKER,speakerRes]
+				else
+					structuredLines.push([OPCODES.SPEAKER,speakerRes])
+			}
+			
+			tags.forEach(tag => {
+				//console.log(tag);
+				let tagRes = getFromTag(cmds,tag);
+				//console.log(tagRes)
+				if (tagRes != null)
+				{
+					structuredLines.push([tag2opcode[tag],tagRes])
+					removeTag(cmds,tag)
+				}
+			})
+			//const tags = [
+			//var nextPortraitIsMasked = false;
+			//Since portraits are searched before modifiers...
+			if (cmds.includes("<通讯框>"))
+			{
+				for(var lll=structuredLines.length-1; lll>=0; lll--)
+				{
+					let m = structuredLines[lll];
+					console.assert(m)
+					if(m[0]==OPCODES.MSG)
+					{
+						consoleWarn("Found a message opcode before a portrait opcode... Messages shouldn't exist at this point")
+						break;
+					}
+					else if (m[0]==OPCODES.PORTRAIT)
+					{
+						structuredLines[lll][5]=true
+					}
+				}
+				//nextPortraitIsMasked = true;
+				//structuredLines.push([OPCODES.SETMASKEDPORTRAIT])
+				cmds=cmds.replace("<通讯框>","");
+			}
 			/**/
 			
 			//Now do text... But first check if there is any text (some lines are only commands)
@@ -961,12 +1141,20 @@ I have no idea how it works
 			opcodesDiv.innerHTML = "<textarea rows='6' cols='50' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
 			thisPartDiv.appendChild(opcodesDiv)
 			
+			let maskThing = document.createElement('img');
+			maskThing.src= "avgtexture/夜间蒙版.png";
+			maskThing.classList.add("storydoll");
+			maskThing.style="z-index: 10";
+			
+			
 			let lastSpeakerName = "";
 			let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
 			let didBGOrPortraitOrNameChange = false;
 			let shownPortraits = []
 			
 			let fancyDisplayType = document.getElementById('fancyOrNot').checked;
+			//I am NOT adding another function just for this
+			setCookie('fancyText',fancyDisplayType,180);
 			
 			for(var i=0;i<structuredLines.length;i++)
 			{
@@ -979,7 +1167,9 @@ I have no idea how it works
 						didBGOrPortraitOrNameChange = true
 						break;
 					case OPCODES.PORTRAIT:
-						console.log(portraitStructToString(structuredLines[i]))
+						if (!fancyDisplayType)
+							break;
+						//console.log(portraitStructToString(structuredLines[i]))
 						let idx = structuredLines[i][1]
 						let name = structuredLines[i][2]
 						let type = structuredLines[i][3]
@@ -988,7 +1178,7 @@ I have no idea how it works
 							//console.log(shownPortraits.length);
 							if (structuredLines[i][1] > shownPortraits.length-1)
 							{
-								console.log("Pushed new portrait with idx "+idx);
+								//console.log("Pushed new portrait with idx "+idx);
 								shownPortraits.push(structuredLines[i]);
 								didBGOrPortraitOrNameChange = true;
 							}
@@ -1000,7 +1190,7 @@ I have no idea how it works
 									console.log("New portrait set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
 								else
 								{
-									console.log("Portrait replaced "+portraitStructToString(oldPortrait) +" -> "+portraitStructToString(newPortrait))
+									//console.log("Portrait replaced "+portraitStructToString(oldPortrait) +" -> "+portraitStructToString(newPortrait))
 									shownPortraits[idx]=newPortrait;
 									didBGOrPortraitOrNameChange = true;
 								}
@@ -1009,6 +1199,7 @@ I have no idea how it works
 						}
 						else
 						{
+							consoleWarn(portraitStructToString(structuredLines[i]))
 							consoleWarn("Portrait missing from database, ignoring.")
 						}
 						break;
@@ -1017,6 +1208,8 @@ I have no idea how it works
 						didBGOrPortraitOrNameChange = true;
 						break;
 					case OPCODES.BG:
+						if (!fancyDisplayType)
+							break;
 						let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
 						if (newBG == lastBGUsed)
 						{
@@ -1031,6 +1224,31 @@ I have no idea how it works
 						break;
 					case OPCODES.MSG:
 						//Spawn new BG with speaker and portrait here.
+						let message = structuredLines[i][1]
+						for(var ccc = 0; ccc < 10; ccc++)
+						{
+							if(ccc > 5)
+							{
+								consoleWarn("Encountered more than 5 color codes in a message... This is very unusal, so bailing out");
+								break;
+							}
+							//If you haven't already guessed, I don't know regex
+							let idx = message.indexOf("<color=");
+							if (idx != -1)
+							{
+								//console.log(message);
+								let end = message.indexOf('>',idx)
+								let color = message.slice(idx+7,end)
+								//console.log(color)
+								if (!isDarkMode)
+									color = adjustColor(color,-80);
+								newStr = "<span style='color:"+color+"'>"
+								message = message.slice(0,idx)+newStr+message.slice(end+1).replace("</color>","</span>")
+							}
+							else
+								break;
+						}
+						//message=message.replace("<color=","<span style='color:'
 						if (fancyDisplayType)
 						{
 							//console.log("aaa");
@@ -1047,7 +1265,8 @@ I have no idea how it works
 									console.assert(shownPortraits[j]);
 									let portraitImg = document.createElement('img');
 									portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
-									console.log(portraitImg.src);
+									//console.log(portraitImg.src);
+									
 									portraitImg.classList.add("storydoll");
 									if (shownPortraits[j][4])
 										portraitImg.classList.add('dim')
@@ -1055,6 +1274,14 @@ I have no idea how it works
 									portraitImg.classList.add(int2str[shownPortraits.length]);
 									
 									storyBox.appendChild(portraitImg);
+									
+									if (shownPortraits[j][5])
+									{
+										let a = maskThing.cloneNode(true);
+										a.classList.add(int2strPos[j+1])
+										a.classList.add(int2str[shownPortraits.length]);
+										storyBox.appendChild(a);
+									}
 								}
 								thisPartDiv.appendChild(storyBox);
 								
@@ -1072,16 +1299,16 @@ I have no idea how it works
 							}
 							let p = document.createElement('p');
 							p.classList.add('storyText')
-							p.innerText = structuredLines[i][1];
+							p.innerHTML = message;
 							thisPartDiv.appendChild(p);
 						}
 						else
 						{
 							let p = document.createElement('p');
 							if (lastSpeakerName == "")
-								p.innerText = structuredLines[i][1];
+								p.innerHTML = message;
 							else
-								p.innerText = lastSpeakerName + ": "+structuredLines[i][1];
+								p.innerHTML = lastSpeakerName + ": "+message;
 							thisPartDiv.appendChild(p);
 						}
 						break;
@@ -1135,6 +1362,11 @@ I have no idea how it works
 		//button.innerText = "started!"
 		
 	}
+	
+	/*function fancyDisplayThing()
+	{
+	
+	}*/
 	/*function reset()
 	{
 		game.restart()
@@ -1193,14 +1425,7 @@ I have no idea how it works
 		return false;
 	}
 	
-	function appendFromij(i,j,name,letter)
-	{
-		return {
-			name:  name+' '+i+'-'+j,
-			parts: [i+'-'+j+'-1'+letter+'.txt',
-					i+'-'+j+'-2'+letter+'.txt'],
-		}
-	}
+
 	
 	//I finally used a class, aren't you happy? 
 	class FilterableList {
@@ -1320,1969 +1545,12 @@ I have no idea how it works
 	}
 	
 	//name field is structured like type-chapter-episode
-	listOfChapters={
-		'main':[],
-		'event':[],
-		'side':[], //also skin
-		'crossover':[]
-	}
+	listOfChapters=false;
+	
 	function generateTables() {
 		
-		//Special for chapter 0
-		{
-			let chapterZero = []
-			for(j=1;j<5;j++)
-			{
-				chapterZero.push(appendFromij(0,j,"Normal",''))
-			}
-			listOfChapters['main'].push({name:"Chapter 0",episodes:chapterZero});
-		}
-		//Normal chapters
-		for(i=1;i<13;i++)
-		{
-			let curChapter = []
-			for(j=1;j<=6;j++)
-			{
-				curChapter.push(appendFromij(i,j,"Normal",''))
-			}
-			for(j=1;j<=4;j++)
-			{
-				curChapter.push(appendFromij(i,j,"Emergency",'E'))
-			}
-			for(j=1;j<=4;j++)
-			{
-				curChapter.push(appendFromij(i,j,"Midnight",'N'))
-			}
-			listOfChapters['main'].push({name:'Chapter '+i,episodes:curChapter});
-			
-			//What am I supposed to do?
-			/*if (i==5)
-			{
-				listOfChapters.push({
-					name:"Operation Cube",
-					episodes:[
-						{name:"Seven Step Puzzle",begin:,mid:end:},
-					]
-				})
-			}*/
-		}
-		
-		//Events
-		let prologue = []
-		for(i=0;i<12;i++)
-		{
-			prologue.push({name:"Start"+i,parts:['startavg/Start'+i+".txt"]});
-		}
-		listOfChapters['event'].push({name:"Prologue",episodes:prologue});
-		
-		//Yep. Here we are.
-		listOfChapters['event'].push({
-			"name": "CH. 5.5: Operation Cube",
-			"episodes": [
-				{
-					"name": "-1-1",
-					"parts": [
-						"-1-1-1.txt",
-						"-1-1-2.txt"
-					]
-				},
-				{
-					"name": "-1-2",
-					"parts": [
-						"-1-2-1.txt",
-						"-1-2-2End.txt",
-						"-1-2-2First.txt"
-					]
-				},
-				{
-					"name": "-1-3",
-					"parts": [
-						"-1-3-1.txt",
-						"-1-3-2End.txt",
-						"-1-3-2First.txt"
-					]
-				},
-				{
-					"name": "-1-4",
-					"parts": [
-						"-1-4-1.txt",
-						"-1-4-2End.txt",
-						"-1-4-2First.txt"
-					]
-				}
-			]
-		})
-		listOfChapters['event'].push({
-			"name": "CH. 7.5: Arctic Warfare",
-			"episodes": [
-				{
-					"name": "-2-1",
-					"parts": [
-						"-2-1-4-Point2179.txt",
-						"-2-1-1.txt",
-						"-2-1-2First.txt",
-						"-2-1-4-Point2007.txt",
-						"-2-1-4-Point2207.txt"
-					]
-				},
-				{
-					"name": "-2-2",
-					"parts": [
-						"-2-2-1.txt",
-						"-2-2-2First.txt",
-						"-2-2-4-Point2204.txt"
-					]
-				},
-				{
-					"name": "-2-3",
-					"parts": [
-						"-2-3-1.txt",
-						"-2-3-2First.txt",
-						"-2-3-4-Point2058.txt",
-						"-2-3-4-Point2215.txt"
-					]
-				},
-				{
-					"name": "-2-4",
-					"parts": [
-						"-2-4-1.txt",
-						"-2-4-2End.txt",
-						"-2-4-2First.txt"
-					]
-				},
-				{
-					"name": "-3-1",
-					"parts": [
-						"-3-1-1.txt",
-						"-3-1-2First.txt"
-					]
-				},
-				{
-					"name": "-3-2",
-					"parts": [
-						"-3-2-1.txt",
-						"-3-2-2First.txt"
-					]
-				},
-				{
-					"name": "-3-3",
-					"parts": [
-						"-3-3-1.txt",
-						"-3-3-2First.txt"
-					]
-				},
-				{
-					"name": "-3-4",
-					"parts": [
-						"-3-4-1.txt",
-						"-3-4-2End.txt",
-						"-3-4-2First.txt",
-						"-3-4-4-Point2499.txt"
-					]
-				},
-				{
-					"name": "-4-1",
-					"parts": [
-						"-4-1-1.txt",
-						"-4-1-2First.txt"
-					]
-				},
-				{
-					"name": "-4-2",
-					"parts": [
-						"-4-2-1.txt",
-						"-4-2-2First.txt"
-					]
-				},
-				{
-					"name": "-4-3",
-					"parts": [
-						"-4-3-2First.txt",
-						"-4-3-1.txt"
-					]
-				},
-				{
-					"name": "-4-4",
-					"parts": [
-						"-4-4-1.txt",
-						"-4-4-2End.txt",
-						"-4-4-2First.txt"
-					]
-				},
-				{
-					"name": "-5-1",
-					"parts": [
-						"-5-1-1.txt",
-						"-5-1-3Round10.txt"
-					]
-				}
-			]
-		})
-		listOfChapters['event'].push({
-			"name": "CH. 7.75: Operation Cube+",
-			"episodes": [
-				{
-					"name": "-7-1",
-					"parts": [
-						"-7-1-1.txt",
-						"-7-1-2End.txt",
-						"-7-1-2First.txt",
-						"-7-1-3Round2.txt",
-						"-7-1-4-Point3498.txt",
-						"-7-1-3Round1.txt"
-					]
-				},
-				{
-					"name": "-7-2",
-					"parts": [
-						"-7-2-1.txt",
-						"-7-2-2End.txt",
-						"-7-2-2First.txt",
-						"-7-2-3Round1.txt",
-						"-7-2-3Round2.txt",
-						"-7-2-4-Point3342.txt"
-					]
-				},
-				{
-					"name": "-7-3",
-					"parts": [
-						"-7-3-1.txt",
-						"-7-3-2End.txt",
-						"-7-3-2First.txt",
-						"-7-3-3Round1.txt",
-						"-7-3-3Round2.txt",
-						"-7-3-4-Point3533.txt"
-					]
-				},
-				{
-					"name": "-7-4",
-					"parts": [
-						"-7-4-1.txt",
-						"-7-4-2End.txt",
-						"-7-4-2First.txt",
-						"-7-4-3Round1.txt",
-						"-7-4-3Round2.txt",
-						"-7-4-4-Point3612.txt"
-					]
-				}
-			]
-		})
-		listOfChapters['event'].push({
-			"name": "CH. 8.5: Deep Dive",
-			"episodes": [
-				{
-					"name": "-10-1",
-					"parts": [
-						"-10-1-1.txt",
-						"-10-1-2First.txt"
-					]
-				},
-				{
-					"name": "-10-2",
-					"parts": [
-						"-10-2-1.txt",
-						"-10-2-2First.txt"
-					]
-				},
-				{
-					"name": "-10-3",
-					"parts": [
-						"-10-3-1.txt",
-						"-10-3-2First.txt",
-						"-10-3-4-Point4229.txt"
-					]
-				},
-				{
-					"name": "-10-4",
-					"parts": [
-						"-10-4-1.txt",
-						"-10-4-2End.txt",
-						"-10-4-2First.txt"
-					]
-				},
-				{
-					"name": "-11-1",
-					"parts": [
-						"-11-1-1.txt",
-						"-11-1-2First.txt",
-						"-11-1-4-Point4270.txt"
-					]
-				},
-				{
-					"name": "-11-2",
-					"parts": [
-						"-11-2-1.txt",
-						"-11-2-2First.txt",
-						"-11-2-4-Point4292.txt"
-					]
-				},
-				{
-					"name": "-11-3",
-					"parts": [
-						"-11-3-1.txt",
-						"-11-3-2First.txt",
-						"-11-3-4-Point4411.txt"
-					]
-				},
-				{
-					"name": "-11-4",
-					"parts": [
-						"-11-4-1.txt",
-						"-11-4-2End.txt",
-						"-11-4-2First.txt",
-						"-11-4-4-Point4431.txt"
-					]
-				},
-				{
-					"name": "-12-1",
-					"parts": [
-						"-12-1-1.txt",
-						"-12-1-2First.txt",
-						"-12-1-4-Point4528.txt",
-						"-12-1-4-Point4538.txt",
-						"-12-1-4-Point4540.txt"
-					]
-				},
-				{
-					"name": "-12-2",
-					"parts": [
-						"-12-2-2First.txt",
-						"-12-2-4-Point4560.txt",
-						"-12-2-4-Point4562.txt",
-						"-12-2-4-Point4601.txt",
-						"-12-2-1.txt"
-					]
-				},
-				{
-					"name": "-12-3",
-					"parts": [
-						"-12-3-1.txt",
-						"-12-3-2First.txt",
-						"-12-3-4-Point4605.txt",
-						"-12-3-4-Point4615.txt",
-						"-12-3-4-Point4641.txt"
-					]
-				},
-				{
-					"name": "-12-4",
-					"parts": [
-						"-12-4-1.txt",
-						"-12-4-2End.txt",
-						"-12-4-2First.txt",
-						"-12-4-4-Point4518.txt",
-						"-12-4-4-Point4671.txt",
-						"-12-4-4-Point4723.txt",
-						"-12-4-4-Point4724.txt"
-					]
-				},
-				{
-					"name": "-13-1",
-					"parts": [
-						"-13-1-1.txt"
-					]
-				}
-			]
-		})
-		listOfChapters['event'].push({
-			"name": "CH. 10.5: Singularity",
-			"episodes": [
-				{
-					"name": "-16-1",
-					"parts": [
-						"-16-10-1.txt",
-						"-16-11-2First.txt",
-						"-16-12-2First.txt",
-						"-16-13-2First.txt",
-						"-16-14-2First.txt",
-						"-16-15-2First.txt",
-						"-16-16-1.txt"
-					]
-				},
-				{
-					"name": "-16-2",
-					"parts": [
-						"-16-2-1.txt"
-					]
-				},
-				{
-					"name": "-16-3",
-					"parts": [
-						"-16-3-1.txt"
-					]
-				},
-				{
-					"name": "-16-4",
-					"parts": [
-						"-16-4-1.txt",
-						"-16-4-2First.txt",
-						"-16-4-4-Point5546.txt"
-					]
-				},
-				{
-					"name": "-16-5",
-					"parts": [
-						"-16-5-2First.txt"
-					]
-				},
-				{
-					"name": "-16-6",
-					"parts": [
-						"-16-6-2First.txt"
-					]
-				},
-				{
-					"name": "-16-7",
-					"parts": [
-						"-16-7-2First.txt"
-					]
-				},
-				{
-					"name": "-16-8",
-					"parts": [
-						"-16-8-2First.txt",
-						"-16-8-4-Point5627.txt"
-					]
-				},
-				{
-					"name": "-16-9",
-					"parts": [
-						"-16-9-2First.txt"
-					]
-				},
-				{
-					"name": "-16-10",
-					"parts": [
-						"-16-10-1.txt"
-					]
-				},
-				{
-					"name": "-16-11",
-					"parts": [
-						"-16-11-2First.txt"
-					]
-				},
-				{
-					"name": "-16-12",
-					"parts": [
-						"-16-12-2First.txt"
-					]
-				},
-				{
-					"name": "-16-13",
-					"parts": [
-						"-16-13-2First.txt"
-					]
-				},
-				{
-					"name": "-16-14",
-					"parts": [
-						"-16-14-2First.txt"
-					]
-				},
-				{
-					"name": "-16-15",
-					"parts": [
-						"-16-15-2First.txt"
-					]
-				},
-				{
-					"name": "-16-16",
-					"parts": [
-						"-16-16-1.txt"
-					]
-				},
-				{
-					"name": "-17-1",
-					"parts": [
-						"-17-10-1.txt",
-						"-17-1-1.txt",
-						"-17-1-2First.txt",
-						"-17-11-1.txt",
-						"-17-11-2First.txt",
-						"-17-12-2First.txt",
-						"-17-13-1.txt",
-						"-17-13-2First.txt",
-						"-17-14-1.txt",
-						"-17-14-2First.txt",
-						"-17-15-1.txt",
-						"-17-15-2First.txt",
-						"-17-16-1.txt",
-						"-17-16-2First.txt",
-						"-17-17-1.txt",
-						"-17-17-2First.txt",
-						"-17-18-1.txt"
-					]
-				},
-				{
-					"name": "-17-2",
-					"parts": [
-						"-17-2-1.txt",
-						"-17-2-2First.txt"
-					]
-				},
-				{
-					"name": "-17-3",
-					"parts": [
-						"-17-3-1.txt",
-						"-17-3-2First.txt"
-					]
-				},
-				{
-					"name": "-17-4",
-					"parts": [
-						"-17-4-2First.txt",
-						"-17-4-1.txt"
-					]
-				},
-				{
-					"name": "-17-5",
-					"parts": [
-						"-17-5-2First.txt"
-					]
-				},
-				{
-					"name": "-17-6",
-					"parts": [
-						"-17-6-2First.txt"
-					]
-				},
-				{
-					"name": "-17-7",
-					"parts": [
-						"-17-7-2First.txt"
-					]
-				},
-				{
-					"name": "-17-8",
-					"parts": [
-						"-17-8-2First.txt"
-					]
-				},
-				{
-					"name": "-17-9",
-					"parts": [
-						"-17-9-2First.txt"
-					]
-				},
-				{
-					"name": "-17-10",
-					"parts": [
-						"-17-10-1.txt"
-					]
-				},
-				{
-					"name": "-17-11",
-					"parts": [
-						"-17-11-1.txt",
-						"-17-11-2First.txt"
-					]
-				},
-				{
-					"name": "-17-12",
-					"parts": [
-						"-17-12-2First.txt"
-					]
-				},
-				{
-					"name": "-17-13",
-					"parts": [
-						"-17-13-1.txt",
-						"-17-13-2First.txt"
-					]
-				},
-				{
-					"name": "-17-14",
-					"parts": [
-						"-17-14-1.txt",
-						"-17-14-2First.txt"
-					]
-				},
-				{
-					"name": "-17-15",
-					"parts": [
-						"-17-15-1.txt",
-						"-17-15-2First.txt"
-					]
-				},
-				{
-					"name": "-17-16",
-					"parts": [
-						"-17-16-1.txt",
-						"-17-16-2First.txt"
-					]
-				},
-				{
-					"name": "-17-17",
-					"parts": [
-						"-17-17-1.txt",
-						"-17-17-2First.txt"
-					]
-				},
-				{
-					"name": "-17-18",
-					"parts": [
-						"-17-18-1.txt"
-					]
-				},
-				{
-					"name": "-18-1",
-					"parts": [
-						"-18-1-1.txt",
-						"-18-1-2First.txt"
-					]
-				},
-				{
-					"name": "-18-2",
-					"parts": [
-						"-18-2-1.txt",
-						"-18-2-2First.txt",
-						"-18-2-4-Point6188.txt"
-					]
-				},
-				{
-					"name": "-18-3",
-					"parts": [
-						"-18-3-1.txt",
-						"-18-3-2First.txt"
-					]
-				},
-				{
-					"name": "-18-4",
-					"parts": [
-						"-18-4-1.txt",
-						"-18-4-2First.txt"
-					]
-				},
-				{
-					"name": "-18-5",
-					"parts": [
-						"-18-5-1.txt",
-						"-18-5-2First.txt",
-						"-18-5-4-Point6303.txt"
-					]
-				},
-				{
-					"name": "-18-6",
-					"parts": [
-						"-18-6-1.txt",
-						"-18-6-2First.txt"
-					]
-				},
-				{
-					"name": "-18-7",
-					"parts": [
-						"-18-7-1.txt"
-					]
-				},
-				{
-					"name": "-18-8",
-					"parts": [
-						"-18-8-1.txt"
-					]
-				}
-			]
-		})
-		listOfChapters['event'].push({
-			"name": "Ch. 10.75: Continuum Turbulence",
-			"episodes": [
-				{
-					"name": "Waste",
-					"parts": [
-						"-24-2-1.txt",
-						"-24-2-2.txt"
-					]
-				},
-				{
-					"name": "-24-1",
-					"parts": [
-						"-24-13-2First.txt",
-						"-24-1-1.txt",
-						"-24-1-2First.txt",
-						"-24-10-1.txt",
-						"-24-10-2.txt",
-						"-24-10-2First.txt",
-						"-24-11-1.txt",
-						"-24-11-2.txt",
-						"-24-11-2First.txt",
-						"-24-12-1.txt",
-						"-24-12-2.txt",
-						"-24-12-2First.txt",
-						"-24-13-1.txt",
-						"-24-13-2.txt",
-						"-24-14-1.txt",
-						"-24-14-2.txt",
-						"-24-14-2First.txt",
-						"-24-15-1.txt",
-						"-24-15-2.txt",
-						"-24-15-2First.txt"
-					]
-				},
-				{
-					"name": "-24-3",
-					"parts": [
-						"-24-3-2.txt",
-						"-24-3-2First.txt"
-					]
-				},
-				{
-					"name": "-24-4",
-					"parts": [
-						"-24-4-1.txt",
-						"-24-4-2.txt",
-						"-24-4-2First.txt"
-					]
-				},
-				{
-					"name": "-24-5",
-					"parts": [
-						"-24-5-1.txt",
-						"-24-5-2First.txt"
-					]
-				},
-				{
-					"name": "-24-6",
-					"parts": [
-						"-24-6-1.txt",
-						"-24-6-2.txt"
-					]
-				},
-				{
-					"name": "-24-7",
-					"parts": [
-						"-24-7-1.txt",
-						"-24-7-2.txt",
-						"-24-7-2First.txt"
-					]
-				},
-				{
-					"name": "-24-8",
-					"parts": [
-						"-24-8-1.txt",
-						"-24-8-2.txt",
-						"-24-8-2First.txt"
-					]
-				},
-				{
-					"name": "-24-9",
-					"parts": [
-						"-24-9-2.txt",
-						"-24-9-2First.txt"
-					]
-				},
-				{
-					"name": "-24-10",
-					"parts": [
-						"-24-10-1.txt",
-						"-24-10-2.txt",
-						"-24-10-2First.txt"
-					]
-				},
-				{
-					"name": "-24-11",
-					"parts": [
-						"-24-11-1.txt",
-						"-24-11-2.txt",
-						"-24-11-2First.txt"
-					]
-				},
-				{
-					"name": "-24-12",
-					"parts": [
-						"-24-12-1.txt",
-						"-24-12-2.txt",
-						"-24-12-2First.txt"
-					]
-				},
-				{
-					"name": "-24-13",
-					"parts": [
-						"-24-13-2First.txt",
-						"-24-13-1.txt",
-						"-24-13-2.txt"
-					]
-				},
-				{
-					"name": "-24-14",
-					"parts": [
-						"-24-14-1.txt",
-						"-24-14-2.txt",
-						"-24-14-2First.txt"
-					]
-				},
-				{
-					"name": "-24-15",
-					"parts": [
-						"-24-15-1.txt",
-						"-24-15-2.txt",
-						"-24-15-2First.txt"
-					]
-				},
-				{
-					"name": "-25-1",
-					"parts": [
-						"-25-1-1.txt",
-						"-25-1-2First.txt",
-						"-25-10-1.txt",
-						"-25-10-2First.txt",
-						"-25-11-1.txt",
-						"-25-12-2First.txt",
-						"-25-13-2First.txt",
-						"-25-14-2First.txt",
-						"-25-15-2First.txt",
-						"-25-16-2First.txt"
-					]
-				},
-				{
-					"name": "-25-2",
-					"parts": [
-						"-25-2-1.txt"
-					]
-				},
-				{
-					"name": "-25-3",
-					"parts": [
-						"-25-3-2First.txt",
-						"-25-3-1.txt"
-					]
-				},
-				{
-					"name": "-25-4",
-					"parts": [
-						"-25-4-1.txt"
-					]
-				},
-				{
-					"name": "-25-5",
-					"parts": [
-						"-25-5-1.txt"
-					]
-				},
-				{
-					"name": "-25-6",
-					"parts": [
-						"-25-6-1.txt"
-					]
-				},
-				{
-					"name": "-25-7",
-					"parts": [
-						"-25-7-1.txt"
-					]
-				},
-				{
-					"name": "-25-8",
-					"parts": [
-						"-25-8-1.txt",
-						"-25-8-2First.txt"
-					]
-				},
-				{
-					"name": "-25-9",
-					"parts": [
-						"-25-9-1.txt",
-						"-25-9-2First.txt"
-					]
-				},
-				{
-					"name": "-25-10",
-					"parts": [
-						"-25-10-1.txt",
-						"-25-10-2First.txt"
-					]
-				},
-				{
-					"name": "-25-11",
-					"parts": [
-						"-25-11-1.txt"
-					]
-				},
-				{
-					"name": "-25-12",
-					"parts": [
-						"-25-12-2First.txt"
-					]
-				},
-				{
-					"name": "-25-13",
-					"parts": [
-						"-25-13-2First.txt"
-					]
-				},
-				{
-					"name": "-25-14",
-					"parts": [
-						"-25-14-2First.txt"
-					]
-				},
-				{
-					"name": "-25-15",
-					"parts": [
-						"-25-15-2First.txt"
-					]
-				},
-				{
-					"name": "-25-16",
-					"parts": [
-						"-25-16-2First.txt"
-					]
-				},
-				{
-					"name": "-26-1",
-					"parts": [
-						"-26-15-2First.txt",
-						"-26-1-1.txt",
-						"-26-1-2First.txt",
-						"-26-10-2First.txt",
-						"-26-11-1.txt",
-						"-26-11-2First.txt",
-						"-26-12-1.txt",
-						"-26-13-1.txt",
-						"-26-13-2First.txt",
-						"-26-14-1.txt",
-						"-26-14-2End.txt",
-						"-26-14-2First.txt",
-						"-26-18-2First.txt"
-					]
-				},
-				{
-					"name": "-26-2",
-					"parts": [
-						"-26-2-1.txt"
-					]
-				},
-				{
-					"name": "-26-3",
-					"parts": [
-						"-26-3-1.txt"
-					]
-				},
-				{
-					"name": "-26-4",
-					"parts": [
-						"-26-4-1.txt"
-					]
-				},
-				{
-					"name": "-26-5",
-					"parts": [
-						"-26-5-1.txt",
-						"-26-5-2First.txt"
-					]
-				},
-				{
-					"name": "-26-6",
-					"parts": [
-						"-26-6-1.txt",
-						"-26-6-2First.txt"
-					]
-				},
-				{
-					"name": "-26-7",
-					"parts": [
-						"-26-7-1.txt"
-					]
-				},
-				{
-					"name": "-26-8",
-					"parts": [
-						"-26-8-2First.txt"
-					]
-				},
-				{
-					"name": "-26-9",
-					"parts": [
-						"-26-9-1.txt"
-					]
-				},
-				{
-					"name": "-26-10",
-					"parts": [
-						"-26-10-2First.txt"
-					]
-				},
-				{
-					"name": "-26-11",
-					"parts": [
-						"-26-11-1.txt",
-						"-26-11-2First.txt"
-					]
-				},
-				{
-					"name": "-26-12",
-					"parts": [
-						"-26-12-1.txt"
-					]
-				},
-				{
-					"name": "-26-13",
-					"parts": [
-						"-26-13-1.txt",
-						"-26-13-2First.txt"
-					]
-				},
-				{
-					"name": "-26-14",
-					"parts": [
-						"-26-14-1.txt",
-						"-26-14-2End.txt",
-						"-26-14-2First.txt"
-					]
-				},
-				{
-					"name": "-26-15",
-					"parts": [
-						"-26-15-2First.txt"
-					]
-				},
-				{
-					"name": "-28-1",
-					"parts": [
-						"-28-1-1.txt"
-					]
-				}
-			]
-		})
-		
-		listOfChapters['side'].push({name:"Skin Stories",episodes:[
-	{
-		"name": "Makarov - Pumpkin Mishka",
-		"parts": [
-			"skin/1.txt"
-		]
-	},
-	{
-		"name": "Type 64 - Witch from Afar",
-		"parts": [
-			"skin/11.txt"
-		]
-	},
-	{
-		"name": "Thompson - Demon Hunter",
-		"parts": [
-			"skin/1501.txt"
-		]
-	},
-	{
-		"name": "Contender - Opera Ghost",
-		"parts": [
-			"skin/1502.txt"
-		]
-	},
-	{
-		"name": "PKP - L.A.D.Y",
-		"parts": [
-			"skin/1503.txt"
-		]
-	},
-	{
-		"name": "MG5 - Call of the Hunter",
-		"parts": [
-			"skin/1504.txt"
-		]
-	},
-	{
-		"name": "AEK-999 - Babe Driver",
-		"parts": [
-			"skin/1505.txt"
-		]
-	},
-	{
-		"name": "PzB 39 - Raging Rider",
-		"parts": [
-			"skin/1506.txt"
-		]
-	},
-	{
-		"name": "G36 - \"Sommelier\"",
-		"parts": [
-			"skin/1507.txt"
-		]
-	},
-	{
-		"name": "DSR-50 - Red Peony",
-		"parts": [
-			"skin/1801.txt"
-		]
-	},
-	{
-		"name": "S.A.T.8 - Wintersweet",
-		"parts": [
-			"skin/1802.txt"
-		]
-	},
-	{
-		"name": "ART556 - White Cabbage",
-		"parts": [
-			"skin/1803.txt"
-		]
-	},
-	{
-		"name": "JS05 - Fairy Lily",
-		"parts": [
-			"skin/1804.txt"
-		]
-	},
-	{
-		"name": "Mk23 - Honey Flower",
-		"parts": [
-			"skin/1805.txt"
-		]
-	},
-	{
-		"name": "M590 - Angel's Trumpet",
-		"parts": [
-			"skin/1806.txt"
-		]
-	},
-	{
-		"name": "Type 81 Carbine - White Camellia",
-		"parts": [
-			"skin/1807.txt"
-		]
-	},
-	{
-		"name": "LWMMG - Golden Starthistle",
-		"parts": [
-			"skin/1808.txt"
-		]
-	},
-	{
-		"name": "Vector - Ardent Devotion",
-		"parts": [
-			"skin/1901.txt"
-		]
-	},
-	{
-		"name": "Five-seveN - Smile of Acceptance",
-		"parts": [
-			"skin/1902.txt"
-		]
-	},
-	{
-		"name": "G36 - Pure White Cornflower",
-		"parts": [
-			"skin/1904.txt"
-		]
-	},
-	{
-		"name": "Type 56-1 - As One, Forever Entwined",
-		"parts": [
-			"skin/1905.txt"
-		]
-	},
-	{
-		"name": "SV-98 - Pierce Your Heart!",
-		"parts": [
-			"skin/1906.txt"
-		]
-	},
-	{
-		"name": "AK-47 - Kitty Paws",
-		"parts": [
-			"skin/2.txt"
-		]
-	},
-	{
-		"name": "PP-90 - Kitty Paws",
-		"parts": [
-			"skin/2.txt"
-		]
-	},
-	{
-		"name": "Vector - Kitty Paws",
-		"parts": [
-			"skin/2.txt"
-		]
-	},
-	{
-		"name": "DSR-50 - Highest Bid",
-		"parts": [
-			"skin/2101.txt"
-		]
-	},
-	{
-		"name": "Grizzly MkV - Starry Night Ball",
-		"parts": [
-			"skin/2102.txt"
-		]
-	},
-	{
-		"name": "Welrod MkII - Nightfall Crisis",
-		"parts": [
-			"skin/2103.txt"
-		]
-	},
-	{
-		"name": "Zas M21 - White Queen",
-		"parts": [
-			"skin/2104.txt"
-		]
-	},
-	{
-		"name": "Colt Revolver - Queen of Miracles",
-		"parts": [
-			"skin/2105.txt"
-		]
-	},
-	{
-		"name": "UMP9 - The World's Melody",
-		"parts": [
-			"skin/2106.txt"
-		]
-	},
-	{
-		"name": "UMP45 - Flower of Diamond",
-		"parts": [
-			"skin/2107.txt"
-		]
-	},
-	{
-		"name": "IDW - Cat in the Box",
-		"parts": [
-			"skin/2108.txt"
-		]
-	},
-	{
-		"name": "EVO 3 - White Night Star",
-		"parts": [
-			"skin/2109.txt"
-		]
-	},
-	{
-		"name": "NTW-20 - The Aristocrat Experience",
-		"parts": [
-			"skin/2301.txt"
-		]
-	},
-	{
-		"name": "Contender - Flowerful Maid",
-		"parts": [
-			"skin/2302.txt"
-		]
-	},
-	{
-		"name": "M950A - Home Ec Training",
-		"parts": [
-			"skin/2303.txt"
-		]
-	},
-	{
-		"name": "G28 - Wiesnbier",
-		"parts": [
-			"skin/2304.txt"
-		]
-	},
-	{
-		"name": "Gepard M1 - Contracted Today",
-		"parts": [
-			"skin/2305.txt"
-		]
-	},
-	{
-		"name": "G41 - Beach Punk 2064",
-		"parts": [
-			"skin/2401.txt"
-		]
-	},
-	{
-		"name": "AA-12 - The Sun Never Rises",
-		"parts": [
-			"skin/2403.txt"
-		]
-	},
-	{
-		"name": "AN-94 - The Diving Bell and the Doll",
-		"parts": [
-			"skin/2404.txt"
-		]
-	},
-	{
-		"name": "MP7 - Lollipop Ammo",
-		"parts": [
-			"skin/2405.txt"
-		]
-	},
-	{
-		"name": "FAL - FAL's Summer",
-		"parts": [
-			"skin/2406.txt"
-		]
-	},
-	{
-		"name": "G36 - 50 Days with Gr G36",
-		"parts": [
-			"skin/2407.txt"
-		]
-	},
-	{
-		"name": "SPAS-12 - Midsummer Fruit",
-		"parts": [
-			"skin/2408.txt"
-		]
-	},
-	{
-		"name": "Ameli - Ameli's Receive",
-		"parts": [
-			"skin/2409.txt"
-		]
-	},
-	{
-		"name": "P38 - Apprentice Witch",
-		"parts": [
-			"skin/2410.txt"
-		]
-	},
-	{
-		"name": "S.A.T.8 - Pumpkin Skewers",
-		"parts": [
-			"skin/2601.txt"
-		]
-	},
-	{
-		"name": "TAC-50 - Elf Helsing",
-		"parts": [
-			"skin/2602.txt"
-		]
-	},
-	{
-		"name": "MDR - Ghost Trap",
-		"parts": [
-			"skin/2603.txt"
-		]
-	},
-	{
-		"name": "FAMAS - Guns N' Side Boxes",
-		"parts": [
-			"skin/2604.txt"
-		]
-	},
-	{
-		"name": "Bren - Jack the Trine",
-		"parts": [
-			"skin/2605.txt"
-		]
-	},
-	{
-		"name": "F1 - Dark Sorceress Academy",
-		"parts": [
-			"skin/2606.txt"
-		]
-	},
-	{
-		"name": "Px4 Storm - Queen of X'mas Morning",
-		"parts": [
-			"skin/2801.txt"
-		]
-	},
-	{
-		"name": "P90 - Scarlet Turbo",
-		"parts": [
-			"skin/2802.txt"
-		]
-	},
-	{
-		"name": "ART556 - Little Chimney Sweeper",
-		"parts": [
-			"skin/2803.txt"
-		]
-	},
-	{
-		"name": "FP-6 - Satellite of Love",
-		"parts": [
-			"skin/2804.txt"
-		]
-	},
-	{
-		"name": "Five-seveN - Blue Christmas",
-		"parts": [
-			"skin/2805.txt"
-		]
-	},
-	{
-		"name": "TMP - Red-Eared Cat",
-		"parts": [
-			"skin/2807.txt"
-		]
-	},
-	{
-		"name": "MP5 - Nocturnal Familiar",
-		"parts": [
-			"skin/3.txt"
-		]
-	},
-	{
-		"name": "OTs-14 - Crassula Volkensii",
-		"parts": [
-			"skin/3001.txt"
-		]
-	},
-	{
-		"name": "AK-74U - Lily of the Valley",
-		"parts": [
-			"skin/3002.txt"
-		]
-	},
-	{
-		"name": "Type 88 - Noble Orchid",
-		"parts": [
-			"skin/3003.txt"
-		]
-	},
-	{
-		"name": "IWS 2000 - Edelweiss",
-		"parts": [
-			"skin/3004.txt"
-		]
-	},
-	{
-		"name": "CZ75 - Monks Cress",
-		"parts": [
-			"skin/3005.txt"
-		]
-	},
-	{
-		"name": "MP5 - Vietnamese Balm",
-		"parts": [
-			"skin/3006.txt"
-		]
-	},
-	{
-		"name": "CZ52 - Tweedia",
-		"parts": [
-			"skin/3007.txt"
-		]
-	},
-	{
-		"name": "Colt Revolver - Wish Upon A Star",
-		"parts": [
-			"skin/301.txt"
-		]
-	},
-	{
-		"name": "Springfield - O Holy Night",
-		"parts": [
-			"skin/302.txt"
-		]
-	},
-	{
-		"name": "M14 - Xmas Parade",
-		"parts": [
-			"skin/303.txt"
-		]
-	},
-	{
-		"name": "M21 - Xmas At Home",
-		"parts": [
-			"skin/304.txt"
-		]
-	},
-	{
-		"name": "SVD - Winter Fairy",
-		"parts": [
-			"skin/305.txt"
-		]
-	},
-	{
-		"name": "WA2000 - Date in the Snow",
-		"parts": [
-			"skin/306.txt"
-		]
-	},
-	{
-		"name": "NTW-20 - Xmas Reindeer",
-		"parts": [
-			"skin/307.txt"
-		]
-	},
-	{
-		"name": "FAL - Winter Supply",
-		"parts": [
-			"skin/308.txt"
-		]
-	},
-	{
-		"name": "MG5 - Crimson Guardian",
-		"parts": [
-			"skin/309.txt"
-		]
-	},
-	{
-		"name": "Suomi - Korvatunturi Pixie",
-		"parts": [
-			"skin/310.txt"
-		]
-	},
-	{
-		"name": "PKP - Silver Star",
-		"parts": [
-			"skin/3102.txt"
-		]
-	},
-	{
-		"name": "G36C - You Who Steps Up",
-		"parts": [
-			"skin/3103.txt"
-		]
-	},
-	{
-		"name": "Mk23 - Conveyed Feelings",
-		"parts": [
-			"skin/3105.txt"
-		]
-	},
-	{
-		"name": "T-5000 - Oath of Transformation",
-		"parts": [
-			"skin/3106.txt"
-		]
-	},
-	{
-		"name": "Gepard M1 - Exciting Future",
-		"parts": [
-			"skin/3107.txt"
-		]
-	},
-	{
-		"name": "K2 - Before Dawn",
-		"parts": [
-			"skin/3301.txt"
-		]
-	},
-	{
-		"name": "AK-12 - Untranslated1",
-		"parts": [
-			"skin/3302.txt"
-		]
-	},
-	{
-		"name": "AN-94 - Untranslated1",
-		"parts": [
-			"skin/3303.txt"
-		]
-	},
-	{
-		"name": "M99 - Untranslated1",
-		"parts": [
-			"skin/3304.txt"
-		]
-	},
-	{
-		"name": "MDR - Untranslated1",
-		"parts": [
-			"skin/3305.txt"
-		]
-	},
-	{
-		"name": "Type 79 - Untranslated1",
-		"parts": [
-			"skin/3306.txt"
-		]
-	},
-	{
-		"name": "G28 - Untranslated1",
-		"parts": [
-			"skin/3307.txt"
-		]
-	},
-	{
-		"name": "K5 - Untranslated1",
-		"parts": [
-			"skin/3308.txt"
-		]
-	},
-	{
-		"name": "Thunder - Untranslated1",
-		"parts": [
-			"skin/3309.txt"
-		]
-	},
-	{
-		"name": "R93 - Untranslated1",
-		"parts": [
-			"skin/3501.txt"
-		]
-	},
-	{
-		"name": "Lewis - Untranslated2",
-		"parts": [
-			"skin/3502.txt"
-		]
-	},
-	{
-		"name": "C-MS - Untranslated1",
-		"parts": [
-			"skin/3503.txt"
-		]
-	},
-	{
-		"name": "Type 88 - Untranslated1",
-		"parts": [
-			"skin/3504.txt"
-		]
-	},
-	{
-		"name": "Type 4 - Untranslated2",
-		"parts": [
-			"skin/3505.txt"
-		]
-	},
-	{
-		"name": "MP5 - A Small Step",
-		"parts": [
-			"skin/1903.txt"
-		]
-	},
-	{
-		"name": "AK-12 - Age of Slushies",
-		"parts": [
-			"skin/2402.txt"
-		]
-	},
-	{
-		"name": "G36 - Every Child's X'mas Dream",
-		"parts": [
-			"skin/2806.txt"
-		]
-	},
-	{
-		"name": "Suomi - Blissful Mission",
-		"parts": [
-			"skin/3101.txt"
-		]
-	},
-	{
-		"name": "Serdyukov - Untranslated1",
-		"parts": [
-			"skin/3506.txt"
-		]
-	},
-	{
-		"name": "PKP - Untranslated1",
-		"parts": [
-			"skin/4203.txt"
-		]
-	},
-	{
-		"name": "Z-62 - Untranslated1",
-		"parts": [
-			"skin/3507.txt"
-		]
-	},
-	{
-		"name": "QBU-88 - Untranslated1",
-		"parts": [
-			"skin/3801.txt"
-		]
-	},
-	{
-		"name": "G36C - Untranslated1",
-		"parts": [
-			"skin/3802.txt"
-		]
-	},
-	{
-		"name": "M870 - Untranslated1",
-		"parts": [
-			"skin/3803.txt"
-		]
-	},
-	{
-		"name": "KSVK - Untranslated1",
-		"parts": [
-			"skin/3805.txt"
-		]
-	},
-	{
-		"name": "MG3 - Untranslated2",
-		"parts": [
-			"skin/3806.txt"
-		]
-	},
-	{
-		"name": "Type 97 Shotgun - Untranslated1",
-		"parts": [
-			"skin/3807.txt"
-		]
-	},
-	{
-		"name": "PSG-1 - Untranslated1",
-		"parts": [
-			"skin/3808.txt"
-		]
-	},
-	{
-		"name": "Model L - Untranslated1",
-		"parts": [
-			"skin/3809.txt"
-		]
-	},
-	{
-		"name": "M870 - Candy Express",
-		"parts": [
-			"skin/4.txt"
-		]
-	},
-	{
-		"name": "MP7 - Candy Express",
-		"parts": [
-			"skin/4.txt"
-		]
-	},
-	{
-		"name": "m45 - Candy Express",
-		"parts": [
-			"skin/4.txt"
-		]
-	},
-	{
-		"name": "Lewis - Untranslated1",
-		"parts": [
-			"skin/4001.txt"
-		]
-	},
-	{
-		"name": "HK21 - Untranslated1",
-		"parts": [
-			"skin/4002.txt"
-		]
-	},
-	{
-		"name": "CAWS - Untranslated1",
-		"parts": [
-			"skin/4003.txt"
-		]
-	},
-	{
-		"name": "Type 100 - Untranslated2",
-		"parts": [
-			"skin/4004.txt"
-		]
-	},
-	{
-		"name": "Honey Badger - Untranslated1",
-		"parts": [
-			"skin/4005.txt"
-		]
-	},
-	{
-		"name": "Gepard M1 - Untranslated1",
-		"parts": [
-			"skin/4006.txt"
-		]
-	},
-	{
-		"name": "LWMMG - Untranslated1",
-		"parts": [
-			"skin/4007.txt"
-		]
-	},
-	{
-		"name": "DP-12 - Untranslated1",
-		"parts": [
-			"skin/4201.txt"
-		]
-	},
-	{
-		"name": "PA-15 - Untranslated2",
-		"parts": [
-			"skin/4202.txt"
-		]
-	},
-	{
-		"name": "JS 9 - Untranslated2",
-		"parts": [
-			"skin/4204.txt"
-		]
-	},
-	{
-		"name": "MG36 - Untranslated1",
-		"parts": [
-			"skin/4205.txt"
-		]
-	},
-	{
-		"name": "T91 - Untranslated1",
-		"parts": [
-			"skin/4206.txt"
-		]
-	},
-	{
-		"name": "SPP-1 - Untranslated1",
-		"parts": [
-			"skin/4207.txt"
-		]
-	},
-	{
-		"name": "EM-2 - Untranslated1",
-		"parts": [
-			"skin/4209.txt"
-		]
-	},
-	{
-		"name": "MG34 - Untranslated1",
-		"parts": [
-			"skin/4210.txt"
-		]
-	},
-	{
-		"name": "Kar98k - Untranslated1",
-		"parts": [
-			"skin/4301.txt"
-		]
-	},
-	{
-		"name": "M950A - Untranslated1",
-		"parts": [
-			"skin/4302.txt"
-		]
-	},
-	{
-		"name": "Grizzly MkV - Untranslated1",
-		"parts": [
-			"skin/4303.txt"
-		]
-	},
-	{
-		"name": "Zas M21 - Untranslated1",
-		"parts": [
-			"skin/4304.txt"
-		]
-	},
-	{
-		"name": "M1014 - Untranslated1",
-		"parts": [
-			"skin/4305.txt"
-		]
-	},
-	{
-		"name": "Stechkin - Untranslated1",
-		"parts": [
-			"skin/4306.txt"
-		]
-	},
-	{
-		"name": "FNC - Untranslated1",
-		"parts": [
-			"skin/4308.txt"
-		]
-	},
-	{
-		"name": "RMB-93 - Untranslated1",
-		"parts": [
-			"skin/4309.txt"
-		]
-	},
-	{
-		"name": "Makarov - Untranslated1",
-		"parts": [
-			"skin/4310.txt"
-		]
-	},
-	{
-		"name": "Springfield - Classic Witch",
-		"parts": [
-			"skin/5.txt"
-		]
-	},
-	{
-		"name": "ART556 - Haunted Castle",
-		"parts": [
-			"skin/6.txt"
-		]
-	},
-	{
-		"name": "HK416 - Haunted Castle",
-		"parts": [
-			"skin/6.txt"
-		]
-	},
-	{
-		"name": "P7 - Haunted Castle",
-		"parts": [
-			"skin/6.txt"
-		]
-	},
-	{
-		"name": "WA2000 - Haunted Castle",
-		"parts": [
-			"skin/6.txt"
-		]
-	},
-	{
-		"name": "HK416 - Carmilla",
-		"parts": [
-			"skin/7.txt"
-		]
-	},
-	{
-		"name": "M1919A4 - Carmilla",
-		"parts": [
-			"skin/7.txt"
-		]
-	},
-	{
-		"name": "Mk23 - Impish Sweetheart",
-		"parts": [
-			"skin/8.txt"
-		]
-	},
-	{
-		"name": "Skorpion - Crimson Starlet",
-		"parts": [
-			"skin/801.txt"
-		]
-	},
-	{
-		"name": "Springfield - Queen in Radiance",
-		"parts": [
-			"skin/802.txt"
-		]
-	},
-	{
-		"name": "Mosin-Nagant - Moonlit Ocean",
-		"parts": [
-			"skin/803.txt"
-		]
-	},
-	{
-		"name": "WA2000 - Ballroom Interlude",
-		"parts": [
-			"skin/804.txt"
-		]
-	},
-	{
-		"name": "HK416 - Starry Cocoon",
-		"parts": [
-			"skin/805.txt"
-		]
-	},
-	{
-		"name": "M1918 - Tender Nocturne",
-		"parts": [
-			"skin/806.txt"
-		]
-	},
-	{
-		"name": "SR-3MP - Bunny Macchiato",
-		"parts": [
-			"skin/807.txt"
-		]
-	},
-	{
-		"name": "M950A - Concert Diva!",
-		"parts": [
-			"skin/808.txt"
-		]
-	},
-	{
-		"name": "G11 - Neet Zombie",
-		"parts": [
-			"skin/9.txt"
-		]
-	}
-]});
-		
-		
+		console.log(listOfChapters);
+		//return listOfChapters;
 		/*var _table_ = document.createElement('table'),
 			_tr_ = document.createElement('tr'),
 			_th_ = document.createElement('th'),
@@ -3323,6 +1591,7 @@ I have no idea how it works
 		
 		for (const key in listOfChapters)
 		{
+			//console.log(key)
 			let episodeContainer = document.getElementById(key+'Episodes')
 			//let trChapterDropdowns = _tr_.cloneNode(false);
 			//let trChapterDropdowns = 
@@ -3377,8 +1646,6 @@ I have no idea how it works
 		//table.appendChild(thead);
 		//table.appendChild(tbody);
 		
-		console.log(listOfChapters);
-		return listOfChapters;
 	}
 	
 	//materialize.js makes it irrelevant
@@ -3449,6 +1716,7 @@ I have no idea how it works
 			
 			document.getElementById("tDollDialogueActivity").style.display = "inherit";
 			document.getElementById('tDollDialogueName').firstChild.textContent=dollName;
+			document.getElementById('tDollDialogueName').setAttribute('href',"#tDollSearch"+dollName)
 			document.getElementById("tDollSearchActivity").style.display="none";
 			
 			//jump to top of page
@@ -3490,6 +1758,7 @@ I have no idea how it works
 			li.className = "collection-item avatar waves-effect"; //waves-effect waves-light
 			li.style.display = '';
 			
+			
 			var icon = document.createElement("i");
 			icon.className = "material-icons circle red";
 			li.appendChild(icon);
@@ -3509,7 +1778,10 @@ I have no idea how it works
 				
 			}*/
 			if (results[i].internalName)
+			{
 				li.setAttribute("onclick","TDollInfo(\""+results[i].internalName+"\")")
+				li.id = "tDollSearch"+results[i].internalName
+			}
 			
 			
 			//Handle stars
@@ -3606,16 +1878,25 @@ I have no idea how it works
 	//Keep this at the bottom
 	window.onload=function()
 	{
-		generateTables();
+		fetch('chapterDatabase.json')
+		.then(response => response.json())
+		.then(json => {
+			console.log("chapters loaded!");
+			listOfChapters = json
+			generateTables();
+			document.querySelectorAll('.dropdown-trigger').forEach(elems => {
+				var instances = M.Dropdown.init(elems, {constrainWidth:false});
+			});
+		});
 		
 		document.querySelectorAll('.tabs').forEach(el => {
 			var instance = M.Tabs.init(el, null);
 			//instance.updateTabIndicator();
 		});
 		
-		document.querySelectorAll('.dropdown-trigger').forEach(elems => {
+		/*document.querySelectorAll('.dropdown-trigger').forEach(elems => {
 			var instances = M.Dropdown.init(elems, {constrainWidth:false});
-		});
+		});*/
 		
 		 
 		document.querySelectorAll('.collapsible').forEach(elems => {
@@ -3629,9 +1910,43 @@ I have no idea how it works
 				PORTRAITS = json;
 			});
 		
+		// Select the button
+		//const btn = document.querySelector(".nightMode-toggle");
+		// Check for dark mode preference at the OS level
+		const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+		// Get the user's theme preference from local storage, if it's available
+		//const currentTheme = localStorage.getItem("theme");
+		const currentTheme = getCookie('theme');
+		//print(currentTheme);
 
+
+		// If the user's preference in localStorage is dark...
+		if (currentTheme == "")
+		{
+			document.body.classList.toggle(prefersDarkScheme ? "dark-theme" : "light-theme")
+			setCookie('theme',prefersDarkScheme ? "dark-theme" : "light-theme",180);
+		}
+		else if (currentTheme == "black-theme") {
+			document.body.classList.toggle("black-theme");
+			isDarkMode=true
+		}
+		else if (currentTheme == "dark-theme") {
+		  // ...let's toggle the .dark-theme class on the body
+		  document.body.classList.toggle("dark-theme");
+		  isDarkMode=true
+		// Otherwise, if the user's preference in localStorage is light...
+		} else {
+		  // ...let's toggle the .light-theme class on the body
+		  document.body.classList.toggle("light-theme");
+		  isDarkMode=false;
+		}
+		//console.log(getCookie('fancyText'));
+		document.getElementById('fancyOrNot').checked = getCookie('fancyText');
 		//showSelectedEpisodes('mainEpisodes');
 	}
+	
+
+
 	
 </script>
 <body>
@@ -3639,12 +1954,15 @@ I have no idea how it works
 	<!--<h2>...And a way to read the game dialogue.</h2>-->
   <nav class='nav-extended'>
     <div class="nav-wrapper" id='theTop' style="overflow:hidden;">
-      <a href="#" class="brand-logo center truncate" style="text-overflow: ellipsis; white-space: nowrap;">GFL Cutscene Intrepeter (very alpha)</a>
-      <!--<ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>-->
+      <a href="#" class="brand-logo center" style="text-overflow: ellipsis; white-space: nowrap;">
+      	<span class='header-desktop'>GFL Cutscene Intrepeter (very alpha)</span>
+      	<span class='header-mobile'>GFL C.I.</span>
+      	
+	</a>
+	
+      <ul id="nav-mobile" class="right">
+        <li><a href="#!" onclick="NightMode()" class="waves-effect waves-light"><i class="material-icons left">brightness_2</i><span class='header-desktop'>Night Mode</span></a></li>
+      </ul>
     </div>
 			<div class="col s12 nav-content">
 				<ul class="tabs tabs-transparent">

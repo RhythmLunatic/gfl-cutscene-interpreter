@@ -68,7 +68,8 @@
         "pic_ARX160_D.png"
     ],
     "ASVAL": [
-        "pic_ASVAL.png"
+        "pic_ASVAL.png",
+        "pic_ASVAL_D.png"
     ],
     "ASVALMod": [
         "pic_ASVALMod.png",
@@ -107,14 +108,18 @@
         "pic_Ballista_D.png"
     ],
     "MAB38": [
-        "pic_MAB38.png"
+        "pic_MAB38.png",
+        "pic_MAB38_D.png"
     ],
     "MAB38Mod": [
         "pic_MAB38Mod.png",
         "pic_MAB38Mod_D.png"
     ],
     "BrenMK": [
-        "pic_BrenMK.png"
+        "pic_BrenMK.png",
+        "pic_BrenMK_D.png",
+        "pic_BrenMK_2605.png",
+        "pic_BrenMK_2605_D.png"
     ],
     "BrenMKMod": [
         "pic_BrenMKMod.png",
@@ -137,7 +142,8 @@
         "pic_C14_D.png"
     ],
     "C96": [
-        "pic_C96.png"
+        "pic_C96.png",
+        "pic_C96_D.png"
     ],
     "C96Mod": [
         "pic_C96Mod.png",
@@ -184,7 +190,8 @@
         "pic_ChauchatM1915_D.png"
     ],
     "M1873": [
-        "pic_M1873.png"
+        "pic_M1873.png",
+        "pic_M1873_D.png"
     ],
     "M1873Mod": [
         "pic_M1873Mod.png",
@@ -247,7 +254,8 @@
         "pic_FMG9_D.png"
     ],
     "FN49": [
-        "pic_FN49.png"
+        "pic_FN49.png",
+        "pic_FN49_D.png"
     ],
     "FN49Mod": [
         "pic_FN49Mod.png",
@@ -282,14 +290,16 @@
         "pic_G28_D.png"
     ],
     "G3": [
-        "pic_G3.png"
+        "pic_G3.png",
+        "pic_G3_D.png"
     ],
     "G3Mod": [
         "pic_G3Mod.png",
         "pic_G3Mod_D.png"
     ],
     "G36": [
-        "pic_G36.png"
+        "pic_G36.png",
+        "pic_G36_D.png"
     ],
     "G36Mod": [
         "pic_G36Mod.png",
@@ -348,7 +358,8 @@
         "pic_HK33_D.png"
     ],
     "HK416": [
-        "pic_HK416.png"
+        "pic_HK416.png",
+        "pic_HK416_D.png"
     ],
     "HK416Mod": [
         "pic_HK416Mod.png",
@@ -371,7 +382,8 @@
         "pic_HSM10_D.png"
     ],
     "88type": [
-        "pic_88type.png"
+        "pic_88type.png",
+        "pic_88type_D.png"
     ],
     "88typeMod": [
         "pic_88typeMod.png",
@@ -390,7 +402,8 @@
         "pic_HowaType89_D.png"
     ],
     "IDW": [
-        "pic_IDW.png"
+        "pic_IDW.png",
+        "pic_IDW_D.png"
     ],
     "IDWMod": [
         "pic_IDWMod.png",
@@ -469,7 +482,8 @@
         "pic_LTLX7000_D.png"
     ],
     "LWMMG": [
-        "pic_LWMMG.png"
+        "pic_LWMMG.png",
+        "pic_LWMMG_D.png"
     ],
     "LWMMGMod": [
         "pic_LWMMGMod.png",
@@ -504,7 +518,8 @@
         "pic_M12_D.png"
     ],
     "M14": [
-        "pic_M14.png"
+        "pic_M14.png",
+        "pic_M14_D.png"
     ],
     "M14Mod": [
         "pic_M14Mod.png",
@@ -527,14 +542,16 @@
         "pic_M1897_D.png"
     ],
     "M1911": [
-        "pic_M1911.png"
+        "pic_M1911.png",
+        "pic_M1911_D.png"
     ],
     "M1911Mod": [
         "pic_M1911Mod.png",
         "pic_M1911Mod_D.png"
     ],
     "M1918": [
-        "pic_M1918.png"
+        "pic_M1918.png",
+        "pic_M1918_D.png"
     ],
     "M1918Mod": [
         "pic_M1918Mod.png",
@@ -573,13 +590,15 @@
         "pic_Ithaca37_D.png"
     ],
     "M4 SOPMOD II": [
-        "pic_M4 SOPMOD II.png"
+        "pic_M4 SOPMOD II.png",
+        "pic_M4 SOPMOD II_D.png"
     ],
     "M4 SOPMOD IIMod": [
         "pic_M4 SOPMOD IIMod.png"
     ],
     "M4A1": [
         "pic_M4A1.png",
+        "pic_M4A1_D.png",
         null,
         "special/M4A1_T.png"
     ],
@@ -641,7 +660,9 @@
     ],
     "MDR": [
         "pic_MDR.png",
-        "pic_MDR_D.png"
+        "pic_MDR_D.png",
+        "pic_MDR_2603.png",
+        "pic_MDR_2603_D.png"
     ],
     "MG3": [
         "pic_MG3.png",
@@ -672,7 +693,8 @@
         "pic_MP443_D.png"
     ],
     "MP446": [
-        "pic_MP446.png"
+        "pic_MP446.png",
+        "pic_MP446_D.png"
     ],
     "MP446Mod": [
         "pic_MP446Mod.png",
@@ -691,7 +713,8 @@
         "pic_MP41_D.png"
     ],
     "MP5": [
-        "pic_MP5.png"
+        "pic_MP5.png",
+        "pic_MP5_D.png"
     ],
     "MP5Mod": [
         "pic_MP5Mod.png",
@@ -714,7 +737,8 @@
         "pic_PM_D.png"
     ],
     "MicroUZI": [
-        "pic_MicroUZI.png"
+        "pic_MicroUZI.png",
+        "pic_MicroUZI_D.png"
     ],
     "MicroUZIMod": [
         "pic_MicroUZIMod.png",
@@ -741,7 +765,8 @@
         "pic_CETME556_D.png"
     ],
     "M1891": [
-        "pic_M1891.png"
+        "pic_M1891.png",
+        "pic_M1891_D.png"
     ],
     "M1891Mod": [
         "pic_M1891Mod.png",
@@ -752,7 +777,8 @@
         "pic_NS2000_D.png"
     ],
     "NTW20": [
-        "pic_NTW20.png"
+        "pic_NTW20.png",
+        "pic_NTW20_D.png"
     ],
     "NTW20Mod": [
         "pic_NTW20Mod.png",
@@ -763,7 +789,8 @@
         "pic_NZ75_D.png"
     ],
     "M1895": [
-        "pic_M1895.png"
+        "pic_M1895.png",
+        "pic_M1895_D.png"
     ],
     "M1895Mod": [
         "pic_M1895Mod.png",
@@ -947,7 +974,11 @@
     ],
     "SAT8": [
         "pic_SAT8.png",
-        "pic_SAT8_D.png"
+        "pic_SAT8_D.png",
+        "pic_SAT8_1802.png",
+        "pic_SAT8_1802_D.png",
+        "pic_SAT8_2601.png",
+        "pic_SAT8_2601_D.png"
     ],
     "SAF": [
         "pic_SAF.png",
@@ -1007,6 +1038,7 @@
     ],
     "AR15": [
         "pic_AR15.png",
+        "pic_AR15_D.png",
         "special/AR15_T.png"
     ],
     "AR15Mod": [
@@ -1014,7 +1046,8 @@
         "pic_AR15Mod_D.png"
     ],
     "SV98": [
-        "pic_SV98.png"
+        "pic_SV98.png",
+        "pic_SV98_D.png"
     ],
     "SV98Mod": [
         "pic_SV98Mod.png",
@@ -1069,7 +1102,8 @@
         "pic_stg940_D.png"
     ],
     "STG44": [
-        "pic_STG44.png"
+        "pic_STG44.png",
+        "pic_STG44_D.png"
     ],
     "STG44Mod": [
         "pic_STG44Mod.png",
@@ -1080,7 +1114,8 @@
         "pic_APS_D.png"
     ],
     "StenMK2": [
-        "pic_StenMK2.png"
+        "pic_StenMK2.png",
+        "pic_StenMK2_D.png"
     ],
     "StenMK2Mod": [
         "pic_StenMK2Mod.png",
@@ -1187,7 +1222,8 @@
         "pic_63type_D.png"
     ],
     "64type": [
-        "pic_64type.png"
+        "pic_64type.png",
+        "pic_64type_D.png"
     ],
     "64typeMod": [
         "pic_64typeMod.png",
@@ -1234,14 +1270,16 @@
         "pic_UMP40_D.png"
     ],
     "UMP45": [
-        "pic_UMP45.png"
+        "pic_UMP45.png",
+        "pic_UMP45_D.png"
     ],
     "UMP45Mod": [
         "pic_UMP45Mod.png",
         "pic_UMP45Mod_D.png"
     ],
     "UMP9": [
-        "pic_UMP9.png"
+        "pic_UMP9.png",
+        "pic_UMP9_D.png"
     ],
     "UMP9Mod": [
         "pic_UMP9Mod.png",

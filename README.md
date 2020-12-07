@@ -9,6 +9,7 @@ In action: http://gfl.amaryllisworks.pw
 - Sometimes the text interpreter screws up.
 - The UI for picking a chapter is... Horrible.
 - Missing BGs, doll portraits, and much more...
+- T-Doll dialogue section crashes mobile web browsers (too much memory?)
 
 # TODO
 - More dialogue

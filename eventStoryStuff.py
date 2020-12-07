@@ -144,9 +144,20 @@ with open('girlsfrontline.json') as gfld:
 				for c in doll['costumes']:
 					if c['pic'].endswith('_'+n+'.png'):
 						skinStories.append({'name':doll['name']+' - '+c['name'],'parts':["skin/"+f]})
+
 #print(skinStories)
 skinStories = sorted(skinStories,key=lambda k: k['name'])
 js['side'].append({'name':"Skin Stories",'episodes':skinStories})
+
+modStories = []
+modStoryFiles = os.listdir('./avgtxt/memoir')
+for doll in frontlinedex:
+	if doll['num'] and 'mod' not in doll:
+		#episodes = []
+		parts = ['memoir/'+filename for filename in modStoryFiles if filename.startswith(str(doll['num'])+'_')]
+		if parts:
+			modStories.append({'name':doll['name'],'parts':parts})
+js['side'].append({'name':"MOD 3 Stories",'episodes':modStories})
 
 with open('chapterDatabase.json','wb') as f:
 	f.write(JSON.dumps(js, sort_keys=False, indent='\t', separators=(',', ': '), ensure_ascii=False).encode('utf8'))

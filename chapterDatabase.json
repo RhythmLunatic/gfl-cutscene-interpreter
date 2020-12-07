@@ -3344,6 +3344,362 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "MOD 3 Stories",
+			"episodes": [
+				{
+					"name": "AS Val",
+					"parts": [
+						"memoir/60_1.txt",
+						"memoir/60_2.txt",
+						"memoir/60_3.txt",
+						"memoir/60_4.txt"
+					]
+				},
+				{
+					"name": "Beretta Model 38",
+					"parts": [
+						"memoir/31_1.txt",
+						"memoir/31_2.txt",
+						"memoir/31_3.txt",
+						"memoir/31_4.txt"
+					]
+				},
+				{
+					"name": "Bren",
+					"parts": [
+						"memoir/89_1.txt",
+						"memoir/89_2.txt",
+						"memoir/89_3.txt",
+						"memoir/89_4.txt"
+					]
+				},
+				{
+					"name": "C96",
+					"parts": [
+						"memoir/12_1.txt",
+						"memoir/12_2.txt",
+						"memoir/12_3.txt",
+						"memoir/12_4.txt"
+					]
+				},
+				{
+					"name": "Colt Revolver",
+					"parts": [
+						"memoir/1_1.txt",
+						"memoir/1_2.txt",
+						"memoir/1_3.txt",
+						"memoir/1_4.txt"
+					]
+				},
+				{
+					"name": "FN-49",
+					"parts": [
+						"memoir/51_1.txt",
+						"memoir/51_2.txt",
+						"memoir/51_3.txt",
+						"memoir/51_4.txt"
+					]
+				},
+				{
+					"name": "G11",
+					"parts": [
+						"memoir/122_1.txt",
+						"memoir/122_2.txt",
+						"memoir/122_3.txt",
+						"memoir/122_4.txt"
+					]
+				},
+				{
+					"name": "G3",
+					"parts": [
+						"memoir/63_1.txt",
+						"memoir/63_2.txt",
+						"memoir/63_3.txt",
+						"memoir/63_4.txt"
+					]
+				},
+				{
+					"name": "G36",
+					"parts": [
+						"memoir/64_1.txt",
+						"memoir/64_2.txt",
+						"memoir/64_3.txt",
+						"memoir/64_4.txt"
+					]
+				},
+				{
+					"name": "GSh-18",
+					"parts": [
+						"memoir/221_1.txt",
+						"memoir/221_2.txt",
+						"memoir/221_3.txt",
+						"memoir/221_4.txt"
+					]
+				},
+				{
+					"name": "HK416",
+					"parts": [
+						"memoir/65_4.txt",
+						"memoir/65_1.txt",
+						"memoir/65_2.txt",
+						"memoir/65_3.txt"
+					]
+				},
+				{
+					"name": "Hanyang Type 88",
+					"parts": [
+						"memoir/95_1.txt",
+						"memoir/95_2.txt",
+						"memoir/95_3.txt",
+						"memoir/95_4.txt"
+					]
+				},
+				{
+					"name": "IDW",
+					"parts": [
+						"memoir/93_1.txt",
+						"memoir/93_2.txt",
+						"memoir/93_3.txt",
+						"memoir/93_4.txt"
+					]
+				},
+				{
+					"name": "KSVK",
+					"parts": [
+						"memoir/252_1.txt",
+						"memoir/252_2.txt",
+						"memoir/252_3.txt",
+						"memoir/252_4.txt"
+					]
+				},
+				{
+					"name": "LWMMG",
+					"parts": [
+						"memoir/81_1.txt",
+						"memoir/81_2.txt",
+						"memoir/81_3.txt",
+						"memoir/81_4.txt"
+					]
+				},
+				{
+					"name": "M14",
+					"parts": [
+						"memoir/37_1.txt",
+						"memoir/37_2.txt",
+						"memoir/37_3.txt",
+						"memoir/37_4.txt"
+					]
+				},
+				{
+					"name": "M1911",
+					"parts": [
+						"memoir/2_1.txt",
+						"memoir/2_2.txt",
+						"memoir/2_3.txt",
+						"memoir/2_4.txt"
+					]
+				},
+				{
+					"name": "M1918",
+					"parts": [
+						"memoir/75_1.txt",
+						"memoir/75_2.txt",
+						"memoir/75_3.txt",
+						"memoir/75_4.txt"
+					]
+				},
+				{
+					"name": "M4 SOPMOD II",
+					"parts": [
+						"memoir/56_1.txt",
+						"memoir/56_2.txt",
+						"memoir/56_3.txt",
+						"memoir/56_4.txt"
+					]
+				},
+				{
+					"name": "M4A1",
+					"parts": [
+						"memoir/55_1.txt",
+						"memoir/55_2.txt",
+						"memoir/55_3.txt",
+						"memoir/55_4.txt"
+					]
+				},
+				{
+					"name": "M500",
+					"parts": [
+						"memoir/154_1.txt",
+						"memoir/154_2.txt",
+						"memoir/154_3.txt",
+						"memoir/154_4.txt"
+					]
+				},
+				{
+					"name": "M950A",
+					"parts": [
+						"memoir/97_1.txt",
+						"memoir/97_2.txt",
+						"memoir/97_3.txt",
+						"memoir/97_4.txt"
+					]
+				},
+				{
+					"name": "MP-446",
+					"parts": [
+						"memoir/91_1.txt",
+						"memoir/91_2.txt",
+						"memoir/91_3.txt",
+						"memoir/91_4.txt"
+					]
+				},
+				{
+					"name": "MP5",
+					"parts": [
+						"memoir/26_1.txt",
+						"memoir/26_2.txt",
+						"memoir/26_3.txt",
+						"memoir/26_4.txt"
+					]
+				},
+				{
+					"name": "Micro Uzi",
+					"parts": [
+						"memoir/32_1.txt",
+						"memoir/32_2.txt",
+						"memoir/32_3.txt",
+						"memoir/32_4.txt"
+					]
+				},
+				{
+					"name": "Mosin-Nagant",
+					"parts": [
+						"memoir/39_1.txt",
+						"memoir/39_2.txt",
+						"memoir/39_3.txt",
+						"memoir/39_4.txt"
+					]
+				},
+				{
+					"name": "NTW-20",
+					"parts": [
+						"memoir/53_1.txt",
+						"memoir/53_2.txt",
+						"memoir/53_3.txt",
+						"memoir/53_4.txt"
+					]
+				},
+				{
+					"name": "Nagant Revolver",
+					"parts": [
+						"memoir/5_1.txt",
+						"memoir/5_2.txt",
+						"memoir/5_3.txt",
+						"memoir/5_4.txt"
+					]
+				},
+				{
+					"name": "RO635",
+					"parts": [
+						"memoir/143_1.txt",
+						"memoir/143_2.txt",
+						"memoir/143_3.txt",
+						"memoir/143_4.txt"
+					]
+				},
+				{
+					"name": "ST AR-15",
+					"parts": [
+						"memoir/57_1.txt",
+						"memoir/57_2.txt",
+						"memoir/57_3.txt",
+						"memoir/57_4.txt"
+					]
+				},
+				{
+					"name": "SV-98",
+					"parts": [
+						"memoir/44_1.txt",
+						"memoir/44_2.txt",
+						"memoir/44_3.txt",
+						"memoir/44_4.txt"
+					]
+				},
+				{
+					"name": "StG44",
+					"parts": [
+						"memoir/61_1.txt",
+						"memoir/61_2.txt",
+						"memoir/61_3.txt",
+						"memoir/61_4.txt"
+					]
+				},
+				{
+					"name": "Stechkin",
+					"parts": [
+						"memoir/7_1.txt",
+						"memoir/7_2.txt",
+						"memoir/7_3.txt",
+						"memoir/7_4.txt"
+					]
+				},
+				{
+					"name": "Sten MkII",
+					"parts": [
+						"memoir/29_1.txt",
+						"memoir/29_2.txt",
+						"memoir/29_3.txt",
+						"memoir/29_4.txt"
+					]
+				},
+				{
+					"name": "Super SASS",
+					"parts": [
+						"memoir/124_1.txt",
+						"memoir/124_2.txt",
+						"memoir/124_3.txt",
+						"memoir/124_4.txt"
+					]
+				},
+				{
+					"name": "Type 64",
+					"parts": [
+						"memoir/94_1.txt",
+						"memoir/94_2.txt",
+						"memoir/94_3.txt",
+						"memoir/94_4.txt"
+					]
+				},
+				{
+					"name": "Type 97 Shotgun",
+					"parts": [
+						"memoir/161_1.txt",
+						"memoir/161_2.txt",
+						"memoir/161_3.txt",
+						"memoir/161_4.txt"
+					]
+				},
+				{
+					"name": "UMP45",
+					"parts": [
+						"memoir/103_1.txt",
+						"memoir/103_2.txt",
+						"memoir/103_3.txt",
+						"memoir/103_4.txt"
+					]
+				},
+				{
+					"name": "UMP9",
+					"parts": [
+						"memoir/101_1.txt",
+						"memoir/101_2.txt",
+						"memoir/101_3.txt",
+						"memoir/101_4.txt"
+					]
+				}
+			]
 		}
 	],
 	"crossover": [

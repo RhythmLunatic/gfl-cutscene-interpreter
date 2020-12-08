@@ -13,7 +13,9 @@
     ],
     "AA12": [
         "pic_AA12.png",
-        "pic_AA12_D.png"
+        "pic_AA12_D.png",
+        "pic_AA12_2403.png",
+        "pic_AA12_2403_D.png"
     ],
     "AAT52": [
         "pic_AAT52.png",
@@ -29,11 +31,23 @@
     ],
     "AEK999": [
         "pic_AEK999.png",
-        "pic_AEK999_D.png"
+        "pic_AEK999_D.png",
+        "pic_AEK999_1505.png",
+        "pic_AEK999_1505_D.png"
     ],
     "AK12": [
         "pic_AK12.png",
-        "pic_AK12_D.png"
+        "pic_AK12_D.png",
+        null,
+        null,
+        null,
+        null,
+        null,
+        "pic_AK12_2402.png",
+        "pic_AK12_2402_D.png",
+        null,
+        "pic_AK12_3302.png",
+        "pic_AK12_3302_D.png"
     ],
     "AK15": [
         "pic_AK15.png",
@@ -45,7 +59,9 @@
     ],
     "AK74U": [
         "pic_AK74U.png",
-        "pic_AK74U_D.png"
+        "pic_AK74U_D.png",
+        "pic_AK74U_3002.png",
+        "pic_AK74U_3002_D.png"
     ],
     "AKAlfa": [
         "pic_AKAlfa.png",
@@ -53,7 +69,13 @@
     ],
     "AN94": [
         "pic_AN94.png",
-        "pic_AN94_D.png"
+        "pic_AN94_D.png",
+        null,
+        "pic_AN94_3303.png",
+        "pic_AN94_3303_D.png",
+        null,
+        "pic_AN94_2404.png",
+        "pic_AN94_2404_D.png"
     ],
     "AR70": [
         "pic_AR70.png",
@@ -61,7 +83,11 @@
     ],
     "ART556": [
         "pic_ART556.png",
-        "pic_ART556_D.png"
+        "pic_ART556_D.png",
+        "pic_ART556_1803.png",
+        "pic_ART556_1803_D.png",
+        "pic_ART556_2803.png",
+        "pic_ART556_2803_D.png"
     ],
     "ARX160": [
         "pic_ARX160.png",
@@ -93,7 +119,11 @@
     ],
     "Ameli": [
         "pic_Ameli.png",
-        "pic_Ameli_D.png"
+        "pic_Ameli_D.png",
+        null,
+        null,
+        "pic_Ameli_2409.png",
+        "pic_Ameli_2409_D.png"
     ],
     "357": [
         "pic_357.png",
@@ -135,7 +165,11 @@
     ],
     "CBJMS": [
         "pic_CBJMS.png",
-        "pic_CBJMS_D.png"
+        "pic_CBJMS_D.png",
+        null,
+        null,
+        "pic_CBJMS_3503.png",
+        "pic_CBJMS_3503_D.png"
     ],
     "C14": [
         "pic_C14.png",
@@ -171,11 +205,17 @@
     ],
     "CZ52": [
         "pic_CZ52.png",
-        "pic_CZ52_D.png"
+        "pic_CZ52_D.png",
+        "pic_CZ52_3007.png",
+        "pic_CZ52_3007_D.png"
     ],
     "CZ75": [
         "pic_CZ75.png",
-        "pic_CZ75_D.png"
+        "pic_CZ75_D.png",
+        null,
+        null,
+        "pic_CZ75_3005.png",
+        "pic_CZ75_3005_D.png"
     ],
     "Carcano1891": [
         "pic_Carcano1891.png",
@@ -191,7 +231,11 @@
     ],
     "M1873": [
         "pic_M1873.png",
-        "pic_M1873_D.png"
+        "pic_M1873_D.png",
+        "pic_M1873_301.png",
+        "pic_M1873_301_D.png",
+        "pic_M1873_2105.png",
+        "pic_M1873_2105_D.png"
     ],
     "M1873Mod": [
         "pic_M1873Mod.png",
@@ -199,7 +243,11 @@
     ],
     "Contender": [
         "pic_Contender.png",
-        "pic_Contender_D.png"
+        "pic_Contender_D.png",
+        "pic_Contender_1502.png",
+        "pic_Contender_1502_D.png",
+        "pic_Contender_2302.png",
+        "pic_Contender_2302_D.png"
     ],
     "Cx4Storm": [
         "pic_Cx4Storm.png",
@@ -207,7 +255,9 @@
     ],
     "DP12": [
         "pic_DP12.png",
-        "pic_DP12_D.png"
+        "pic_DP12_D.png",
+        "pic_DP12_4201.png",
+        "pic_DP12_4201_D.png"
     ],
     "DP28": [
         "pic_DP28.png",
@@ -215,7 +265,11 @@
     ],
     "DSR50": [
         "pic_DSR50.png",
-        "pic_DSR50_D.png"
+        "pic_DSR50_D.png",
+        "pic_DSR50_1801.png",
+        "pic_DSR50_1801_D.png",
+        "pic_DSR50_2101.png",
+        "pic_DSR50_2101_D.png"
     ],
     "DesertEagle": [
         "pic_DesertEagle.png",
@@ -227,11 +281,15 @@
     ],
     "EVO3": [
         "pic_EVO3.png",
-        "pic_EVO3_D.png"
+        "pic_EVO3_D.png",
+        "pic_EVO3_2109.png",
+        "pic_EVO3_2109_D.png"
     ],
     "F1": [
         "pic_F1.png",
-        "pic_F1_D.png"
+        "pic_F1_D.png",
+        "pic_F1_2606.png",
+        "pic_F1_2606_D.png"
     ],
     "F2000": [
         "pic_F2000.png",
@@ -263,7 +321,11 @@
     ],
     "FNFNC": [
         "pic_FNFNC.png",
-        "pic_FNFNC_D.png"
+        "pic_FNFNC_D.png",
+        null,
+        null,
+        "pic_FNFNC_4308.png",
+        "pic_FNFNC_4308_D.png"
     ],
     "FNP9": [
         "pic_FNP9.png",
@@ -271,7 +333,9 @@
     ],
     "FP6": [
         "pic_FP6.png",
-        "pic_FP6_D.png"
+        "pic_FP6_D.png",
+        "pic_FP6_2804.png",
+        "pic_FP6_2804_D.png"
     ],
     "Falcon": [
         "pic_Falcon.png",
@@ -279,15 +343,28 @@
     ],
     "FN57": [
         "pic_FN57.png",
-        "pic_FN57_D.png"
+        "pic_FN57_D.png",
+        "pic_FN57_1902.png",
+        "pic_FN57_1902_D.png",
+        "pic_FN57_2805.png",
+        "pic_FN57_2805_D.png"
     ],
     "G11": [
         "pic_G11.png",
-        "pic_G11_D.png"
+        "pic_G11_D.png",
+        null,
+        "pic_G11_9.png",
+        "pic_G11_9_D.png"
     ],
     "G28": [
         "pic_G28.png",
-        "pic_G28_D.png"
+        "pic_G28_D.png",
+        "pic_G28_2304.png",
+        "pic_G28_2304_D.png",
+        null,
+        null,
+        "pic_G28_3307.png",
+        "pic_G28_3307_D.png"
     ],
     "G3": [
         "pic_G3.png",
@@ -299,7 +376,15 @@
     ],
     "G36": [
         "pic_G36.png",
-        "pic_G36_D.png"
+        "pic_G36_D.png",
+        "pic_G36_1507.png",
+        "pic_G36_1507_D.png",
+        "pic_G36_2806.png",
+        "pic_G36_2806_D.png",
+        "pic_G36_1904.png",
+        "pic_G36_1904_D.png",
+        "pic_G36_2407.png",
+        "pic_G36_2407_D.png"
     ],
     "G36Mod": [
         "pic_G36Mod.png",
@@ -307,11 +392,17 @@
     ],
     "G36C": [
         "pic_G36C.png",
-        "pic_G36C_D.png"
+        "pic_G36C_D.png",
+        "pic_G36C_3103.png",
+        "pic_G36C_3103_D.png",
+        "pic_G36C_3802.png",
+        "pic_G36C_3802_D.png"
     ],
     "G41": [
         "pic_G41.png",
-        "pic_G41_D.png"
+        "pic_G41_D.png",
+        "pic_G41_2401.png",
+        "pic_G41_2401_D.png"
     ],
     "G43": [
         "pic_G43.png",
@@ -335,7 +426,13 @@
     ],
     "GepardM1": [
         "pic_GepardM1.png",
-        "pic_GepardM1_D.png"
+        "pic_GepardM1_D.png",
+        "pic_GepardM1_2305.png",
+        "pic_GepardM1_2305_D.png",
+        "pic_GepardM1_3107.png",
+        "pic_GepardM1_3107_D.png",
+        "pic_GepardM1_4006.png",
+        "pic_GepardM1_4006_D.png"
     ],
     "Glock17": [
         "pic_Glock17.png",
@@ -343,11 +440,17 @@
     ],
     "Grizzly": [
         "pic_Grizzly.png",
-        "pic_Grizzly_D.png"
+        "pic_Grizzly_D.png",
+        "pic_Grizzly_2102.png",
+        "pic_Grizzly_2102_D.png",
+        "pic_Grizzly_4303.png",
+        "pic_Grizzly_4303_D.png"
     ],
     "HK21": [
         "pic_HK21.png",
-        "pic_HK21_D.png"
+        "pic_HK21_D.png",
+        "pic_HK21_4002.png",
+        "pic_HK21_4002_D.png"
     ],
     "HK23": [
         "pic_HK23.png",
@@ -360,8 +463,14 @@
     "HK416": [
         "pic_HK416.png",
         "pic_HK416_D.png",
-        "special/pic_HK416_1.png",
-        "special/pic_HK416_2.png"
+        [
+            "special/pic_HK416_1.png"
+        ],
+        [
+            "special/pic_HK416_2.png"
+        ],
+        "pic_HK416_805.png",
+        "pic_HK416_805_D.png"
     ],
     "HK416Mod": [
         "pic_HK416Mod.png",
@@ -393,7 +502,9 @@
     ],
     "PDW": [
         "pic_PDW.png",
-        "pic_PDW_D.png"
+        "pic_PDW_D.png",
+        "pic_PDW_4005.png",
+        "pic_PDW_4005_D.png"
     ],
     "Type64-AR": [
         "pic_Type64-AR.png",
@@ -405,7 +516,9 @@
     ],
     "IDW": [
         "pic_IDW.png",
-        "pic_IDW_D.png"
+        "pic_IDW_D.png",
+        "pic_IDW_2108.png",
+        "pic_IDW_2108_D.png"
     ],
     "IDWMod": [
         "pic_IDWMod.png",
@@ -417,15 +530,23 @@
     ],
     "IWS2000": [
         "pic_IWS2000.png",
-        "pic_IWS2000_D.png"
+        "pic_IWS2000_D.png",
+        null,
+        null,
+        "pic_IWS2000_3004.png",
+        "pic_IWS2000_3004_D.png"
     ],
     "JS9mm": [
         "pic_JS9mm.png",
-        "pic_JS9mm_D.png"
+        "pic_JS9mm_D.png",
+        "pic_JS9mm_4204.png",
+        "pic_JS9mm_4204_D.png"
     ],
     "JS-127": [
         "pic_JS-127.png",
-        "pic_JS-127_D.png"
+        "pic_JS-127_D.png",
+        "pic_JS-127_1804.png",
+        "pic_JS-127_1804_D.png"
     ],
     "Jericho": [
         "pic_Jericho.png",
@@ -437,7 +558,11 @@
     ],
     "K2": [
         "pic_K2.png",
-        "pic_K2_D.png"
+        "pic_K2_D.png",
+        null,
+        null,
+        "pic_K2_3301.png",
+        "pic_K2_3301_D.png"
     ],
     "K3": [
         "pic_K3.png",
@@ -449,7 +574,11 @@
     ],
     "K5": [
         "pic_K5.png",
-        "pic_K5_D.png"
+        "pic_K5_D.png",
+        null,
+        null,
+        "pic_K5_3308.png",
+        "pic_K5_3308_D.png"
     ],
     "KLIN": [
         "pic_KLIN.png",
@@ -465,7 +594,12 @@
     ],
     "KSVK": [
         "pic_KSVK.png",
-        "pic_KSVK_D.png"
+        "pic_KSVK_D.png",
+        null,
+        null,
+        null,
+        "pic_KSVK_3805.png",
+        "pic_KSVK_3805_D.png"
     ],
     "98K": [
         "pic_98K.png",
@@ -485,7 +619,11 @@
     ],
     "LWMMG": [
         "pic_LWMMG.png",
-        "pic_LWMMG_D.png"
+        "pic_LWMMG_D.png",
+        "pic_LWMMG_1808.png",
+        "pic_LWMMG_1808_D.png",
+        "pic_LWMMG_4007.png",
+        "pic_LWMMG_4007_D.png"
     ],
     "LWMMGMod": [
         "pic_LWMMGMod.png",
@@ -497,7 +635,11 @@
     ],
     "Lewis": [
         "pic_Lewis.png",
-        "pic_Lewis_D.png"
+        "pic_Lewis_D.png",
+        "pic_Lewis_3502.png",
+        "pic_Lewis_3502_D.png",
+        "pic_Lewis_4001.png",
+        "pic_Lewis_4001_D.png"
     ],
     "Liberator": [
         "pic_Liberator.png",
@@ -513,7 +655,11 @@
     ],
     "M1014": [
         "pic_M1014.png",
-        "pic_M1014_D.png"
+        "pic_M1014_D.png",
+        null,
+        null,
+        "pic_M1014_4305.png",
+        "pic_M1014_4305_D.png"
     ],
     "M12": [
         "pic_M12.png",
@@ -521,7 +667,9 @@
     ],
     "M14": [
         "pic_M14.png",
-        "pic_M14_D.png"
+        "pic_M14_D.png",
+        "pic_M14_303.png",
+        "pic_M14_303_D.png"
     ],
     "M14Mod": [
         "pic_M14Mod.png",
@@ -553,7 +701,9 @@
     ],
     "M1918": [
         "pic_M1918.png",
-        "pic_M1918_D.png"
+        "pic_M1918_D.png",
+        "pic_M1918_806.png",
+        "pic_M1918_806_D.png"
     ],
     "M1918Mod": [
         "pic_M1918Mod.png",
@@ -561,7 +711,9 @@
     ],
     "M1919A4": [
         "pic_M1919A4.png",
-        "pic_M1919A4_D.png"
+        "pic_M1919A4_D.png",
+        "pic_M1919A4_7.png",
+        "pic_M1919A4_7_D.png"
     ],
     "M1A1": [
         "pic_M1A1.png",
@@ -573,7 +725,9 @@
     ],
     "M21": [
         "pic_M21.png",
-        "pic_M21_D.png"
+        "pic_M21_D.png",
+        "pic_M21_304.png",
+        "pic_M21_304_D.png"
     ],
     "M249SAW": [
         "pic_M249SAW.png",
@@ -614,7 +768,9 @@
     ],
     "M590": [
         "pic_M590.png",
-        "pic_M590_D.png"
+        "pic_M590_D.png",
+        "pic_M590_1806.png",
+        "pic_M590_1806_D.png"
     ],
     "M6ASW": [
         "pic_M6ASW.png",
@@ -634,7 +790,9 @@
     ],
     "M870P": [
         "pic_M870P.png",
-        "pic_M870P_D.png"
+        "pic_M870P_D.png",
+        "pic_M870P_3803.png",
+        "pic_M870P_3803_D.png"
     ],
     "M9": [
         "pic_M9.png",
@@ -642,11 +800,23 @@
     ],
     "M950A": [
         "pic_M950A.png",
-        "pic_M950A_D.png"
+        "pic_M950A_D.png",
+        "pic_M950A_4302.png",
+        "pic_M950A_4302_D.png",
+        null,
+        null,
+        "pic_M950A_2303.png",
+        "pic_M950A_2303_D.png"
     ],
     "M99": [
         "pic_M99.png",
-        "pic_M99_D.png"
+        "pic_M99_D.png",
+        null,
+        null,
+        null,
+        null,
+        "pic_M99_3304.png",
+        "pic_M99_3304_D.png"
     ],
     "MAC10": [
         "pic_MAC10.png",
@@ -664,19 +834,29 @@
         "pic_MDR.png",
         "pic_MDR_D.png",
         "pic_MDR_2603.png",
-        "pic_MDR_2603_D.png"
+        "pic_MDR_2603_D.png",
+        "pic_MDR_3305.png",
+        "pic_MDR_3305_D.png"
     ],
     "MG3": [
         "pic_MG3.png",
-        "pic_MG3_D.png"
+        "pic_MG3_D.png",
+        null,
+        null,
+        "pic_MG3_3806.png",
+        "pic_MG3_3806_D.png"
     ],
     "MG34": [
         "pic_MG34.png",
-        "pic_MG34_D.png"
+        "pic_MG34_D.png",
+        "pic_MG34_4210.png",
+        "pic_MG34_4210_D.png"
     ],
     "MG36": [
         "pic_MG36.png",
-        "pic_MG36_D.png"
+        "pic_MG36_D.png",
+        "pic_MG36_4205.png",
+        "pic_MG36_4205_D.png"
     ],
     "MG4": [
         "Pic_MG4.png",
@@ -688,7 +868,11 @@
     ],
     "MG5": [
         "pic_MG5.png",
-        "pic_MG5_D.png"
+        "pic_MG5_D.png",
+        "pic_MG5_309.png",
+        "pic_MG5_309_D.png",
+        "pic_MG5_1504.png",
+        "pic_MG5_1504_D.png"
     ],
     "MP443": [
         "pic_MP443.png",
@@ -716,7 +900,13 @@
     ],
     "MP5": [
         "pic_MP5.png",
-        "pic_MP5_D.png"
+        "pic_MP5_D.png",
+        "pic_MP5_3.png",
+        "pic_MP5_3_D.png",
+        "pic_MP5_1903.png",
+        "pic_MP5_1903_D.png",
+        "pic_MP5_3006.png",
+        "pic_MP5_3006_D.png"
     ],
     "MP5Mod": [
         "pic_MP5Mod.png",
@@ -724,7 +914,9 @@
     ],
     "MP7": [
         "pic_MP7.png",
-        "pic_MP7_D.png"
+        "pic_MP7_D.png",
+        "pic_MP7_2405.png",
+        "pic_MP7_2405_D.png"
     ],
     "MT9": [
         "pic_MT9.png",
@@ -736,7 +928,11 @@
     ],
     "PM": [
         "pic_PM.png",
-        "pic_PM_D.png"
+        "pic_PM_D.png",
+        "pic_PM_1.png",
+        "pic_PM_1_D.png",
+        "pic_PM_4310.png",
+        "pic_PM_4310_D.png"
     ],
     "MicroUZI": [
         "pic_MicroUZI.png",
@@ -752,7 +948,13 @@
     ],
     "Mk23": [
         "pic_Mk23.png",
-        "pic_Mk23_D.png"
+        "pic_Mk23_D.png",
+        "pic_Mk23_8.png",
+        "pic_Mk23_8_D.png",
+        "pic_Mk23_1805.png",
+        "pic_Mk23_1805_D.png",
+        "pic_Mk23_3105.png",
+        "pic_Mk23_3105_D.png"
     ],
     "Mk46": [
         "pic_Mk46.png",
@@ -764,11 +966,15 @@
     ],
     "CETME556": [
         "pic_CETME556.png",
-        "pic_CETME556_D.png"
+        "pic_CETME556_D.png",
+        "pic_CETME556_3809.png",
+        "pic_CETME556_3809_D.png"
     ],
     "M1891": [
         "pic_M1891.png",
-        "pic_M1891_D.png"
+        "pic_M1891_D.png",
+        "pic_M1891_803.png",
+        "pic_M1891_803_D.png"
     ],
     "M1891Mod": [
         "pic_M1891Mod.png",
@@ -780,7 +986,11 @@
     ],
     "NTW20": [
         "pic_NTW20.png",
-        "pic_NTW20_D.png"
+        "pic_NTW20_D.png",
+        "pic_NTW20_307.png",
+        "pic_NTW20_307_D.png",
+        "pic_NTW20_2301.png",
+        "pic_NTW20_2301_D.png"
     ],
     "NTW20Mod": [
         "pic_NTW20Mod.png",
@@ -812,7 +1022,11 @@
     ],
     "OTs14": [
         "pic_OTs14.png",
-        "pic_OTs14_D.png"
+        "pic_OTs14_D.png",
+        null,
+        null,
+        "pic_OTs14_3001.png",
+        "pic_OTs14_3001_D.png"
     ],
     "OTs39": [
         "pic_OTs39.png",
@@ -840,7 +1054,9 @@
     ],
     "P38": [
         "pic_P38.png",
-        "pic_P38_D.png"
+        "pic_P38_D.png",
+        "pic_P38_2410.png",
+        "pic_P38_2410_D.png"
     ],
     "P7": [
         "pic_P7.png",
@@ -848,7 +1064,9 @@
     ],
     "P90": [
         "pic_P90.png",
-        "pic_P90_D.png"
+        "pic_P90_D.png",
+        "pic_P90_2802.png",
+        "pic_P90_2802_D.png"
     ],
     "P99": [
         "pic_P99.png",
@@ -864,7 +1082,15 @@
     ],
     "PKP": [
         "pic_PKP.png",
-        "pic_PKP_D.png"
+        "pic_PKP_D.png",
+        null,
+        null,
+        "pic_PKP_1503.png",
+        "pic_PKP_1503_D.png",
+        "pic_PKP_3102.png",
+        "pic_PKP_3102_D.png",
+        "pic_PKP_4203.png",
+        "pic_PKP_4203_D.png"
     ],
     "PM06": [
         "pic_PM06.png",
@@ -908,7 +1134,9 @@
     ],
     "PSG1": [
         "pic_PSG1.png",
-        "pic_PSG1_D.png"
+        "pic_PSG1_D.png",
+        "pic_PSG1_3808.png",
+        "pic_PSG1_3808_D.png"
     ],
     "PSM": [
         "pic_PSM.png",
@@ -920,7 +1148,9 @@
     ],
     "Px4Storm": [
         "pic_Px4Storm.png",
-        "pic_Px4Storm_D.png"
+        "pic_Px4Storm_D.png",
+        "pic_Px4Storm_2801.png",
+        "pic_Px4Storm_2801_D.png"
     ],
     "Python": [
         "pic_Python.png",
@@ -928,11 +1158,17 @@
     ],
     "PzB39": [
         "pic_PzB39.png",
-        "pic_PzB39_D.png"
+        "pic_PzB39_D.png",
+        "pic_PzB39_1506.png",
+        "pic_PzB39_1506_D.png"
     ],
     "QBU88": [
         "pic_QBU88.png",
-        "pic_QBU88_D.png"
+        "pic_QBU88_D.png",
+        null,
+        null,
+        "pic_QBU88_3801.png",
+        "pic_QBU88_3801_D.png"
     ],
     "QSB91": [
         "pic_QSB91.png",
@@ -940,7 +1176,9 @@
     ],
     "R93": [
         "pic_R93.png",
-        "pic_R93_D.png"
+        "pic_R93_D.png",
+        "pic_R93_3501.png",
+        "pic_R93_3501_D.png"
     ],
     "RFB": [
         "pic_RFB.png",
@@ -948,7 +1186,11 @@
     ],
     "RMB93": [
         "pic_RMB93.png",
-        "pic_RMB93_D.png"
+        "pic_RMB93_D.png",
+        null,
+        null,
+        "pic_RMB93_4309.png",
+        "pic_RMB93_4309_D.png"
     ],
     "RO635": [
         "pic_RO635.png",
@@ -1012,11 +1254,17 @@
     ],
     "SPAS12": [
         "pic_SPAS12.png",
-        "pic_SPAS12_D.png"
+        "pic_SPAS12_D.png",
+        "pic_SPAS12_2408.png",
+        "pic_SPAS12_2408_D.png"
     ],
     "SPP1": [
         "pic_SPP1.png",
-        "pic_SPP1_D.png"
+        "pic_SPP1_D.png",
+        null,
+        null,
+        "pic_SPP1_4207.png",
+        "pic_SPP1_4207_D.png"
     ],
     "FNSPR": [
         "pic_FNSPR.png",
@@ -1024,7 +1272,9 @@
     ],
     "SR3MP": [
         "pic_SR3MP.png",
-        "pic_SR3MP_D.png"
+        "pic_SR3MP_D.png",
+        "pic_SR3MP_807.png",
+        "pic_SR3MP_807_D.png"
     ],
     "DTASRS": [
         "pic_DTASRS.png",
@@ -1049,7 +1299,9 @@
     ],
     "SV98": [
         "pic_SV98.png",
-        "pic_SV98_D.png"
+        "pic_SV98_D.png",
+        "pic_SV98_1906.png",
+        "pic_SV98_1906_D.png"
     ],
     "SV98Mod": [
         "pic_SV98Mod.png",
@@ -1057,7 +1309,9 @@
     ],
     "SVD": [
         "pic_SVD.png",
-        "pic_SVD_D.png"
+        "pic_SVD_D.png",
+        "pic_SVD_305.png",
+        "pic_SVD_305_D.png"
     ],
     "SVT38": [
         "pic_SVT38.png",
@@ -1069,7 +1323,9 @@
     ],
     "SPS": [
         "pic_SPS.png",
-        "pic_SPS_D.png"
+        "pic_SPS_D.png",
+        "pic_SPS_3506.png",
+        "pic_SPS_3506_D.png"
     ],
     "Shipka": [
         "pic_Shipka.png",
@@ -1085,7 +1341,9 @@
     ],
     "VZ61": [
         "pic_VZ61.png",
-        "pic_VZ61_D.png"
+        "pic_VZ61_D.png",
+        "pic_VZ61_801.png",
+        "pic_VZ61_801_D.png"
     ],
     "SpectreM4": [
         "pic_SpectreM4.png",
@@ -1097,7 +1355,13 @@
     ],
     "M1903": [
         "pic_M1903.png",
-        "pic_M1903_D.png"
+        "pic_M1903_D.png",
+        "pic_M1903_302.png",
+        "pic_M1903_302_D.png",
+        "pic_M1903_5.png",
+        "pic_M1903_5_D.png",
+        "pic_M1903_802.png",
+        "pic_M1903_802_D.png"
     ],
     "stg940": [
         "pic_stg940.png",
@@ -1113,7 +1377,9 @@
     ],
     "APS": [
         "pic_APS.png",
-        "pic_APS_D.png"
+        "pic_APS_D.png",
+        "pic_APS_4306.png",
+        "pic_APS_4306_D.png"
     ],
     "StenMK2": [
         "pic_StenMK2.png",
@@ -1129,7 +1395,11 @@
     ],
     "KP31": [
         "pic_KP31.png",
-        "pic_KP31_D.png"
+        "pic_KP31_D.png",
+        "pic_KP31_310.png",
+        "pic_KP31_310_D.png",
+        "pic_KP31_3101.png",
+        "pic_KP31_3101_D.png"
     ],
     "SuperSASS": [
         "pic_SuperSASS.png",
@@ -1141,7 +1411,9 @@
     ],
     "T5000": [
         "pic_T5000.png",
-        "pic_T5000_D.png"
+        "pic_T5000_D.png",
+        "pic_T5000_3106.png",
+        "pic_T5000_3106_D.png"
     ],
     "TCMS": [
         "pic_TCMS.png",
@@ -1157,11 +1429,15 @@
     ],
     "T91": [
         "pic_T91.png",
-        "pic_T91_D.png"
+        "pic_T91_D.png",
+        "pic_T91_4206.png",
+        "pic_T91_4206_D.png"
     ],
     "TAC50": [
         "pic_TAC50.png",
-        "pic_TAC50_D.png"
+        "pic_TAC50_D.png",
+        "pic_TAC50_2602.png",
+        "pic_TAC50_2602_D.png"
     ],
     "TAR21": [
         "pic_TAR21.png",
@@ -1173,7 +1449,9 @@
     ],
     "TMP": [
         "pic_TMP.png",
-        "pic_TMP_D.png"
+        "pic_TMP_D.png",
+        "pic_TMP_2807.png",
+        "pic_TMP_2807_D.png"
     ],
     "Tabuk": [
         "pic_Tabuk.png",
@@ -1181,11 +1459,15 @@
     ],
     "M1928A1": [
         "pic_M1928A1.png",
-        "pic_M1928A1_D.png"
+        "pic_M1928A1_D.png",
+        "pic_M1928A1_1501.png",
+        "pic_M1928A1_1501_D.png"
     ],
     "Thunder50": [
         "pic_Thunder50.png",
-        "pic_Thunder50_D.png"
+        "pic_Thunder50_D.png",
+        "pic_Thunder50_3309.png",
+        "pic_Thunder50_3309_D.png"
     ],
     "TT33": [
         "pic_TT33.png",
@@ -1197,11 +1479,17 @@
     ],
     "Type100": [
         "pic_Type100.png",
-        "pic_Type100_D.png"
+        "pic_Type100_D.png",
+        null,
+        null,
+        "pic_Type100_4004.png",
+        "pic_Type100_4004_D.png"
     ],
     "4type": [
         "pic_4type.png",
-        "pic_4type_D.png"
+        "pic_4type_D.png",
+        "pic_4type_3505.png",
+        "pic_4type_3505_D.png"
     ],
     "56typeR": [
         "pic_56typeR.png",
@@ -1209,7 +1497,9 @@
     ],
     "56-1type": [
         "pic_56-1type.png",
-        "pic_56-1type_D.png"
+        "pic_56-1type_D.png",
+        "pic_56-1type_1905.png",
+        "pic_56-1type_1905_D.png"
     ],
     "59type": [
         "pic_59type.png",
@@ -1225,7 +1515,9 @@
     ],
     "64type": [
         "pic_64type.png",
-        "pic_64type_D.png"
+        "pic_64type_D.png",
+        "pic_64type_11.png",
+        "pic_64type_11_D.png"
     ],
     "64typeMod": [
         "pic_64typeMod.png",
@@ -1233,7 +1525,11 @@
     ],
     "79type": [
         "pic_79type.png",
-        "pic_79type_D.png"
+        "pic_79type_D.png",
+        null,
+        null,
+        "pic_79type_3306.png",
+        "pic_79type_3306_D.png"
     ],
     "80type": [
         "pic_80type.png",
@@ -1241,11 +1537,17 @@
     ],
     "81typeR": [
         "pic_81typeR.png",
-        "pic_81typeR_D.png"
+        "pic_81typeR_D.png",
+        "pic_81typeR_1807.png",
+        "pic_81typeR_1807_D.png"
     ],
     "Type88": [
         "pic_Type88.png",
-        "pic_Type88_D.png"
+        "pic_Type88_D.png",
+        "pic_Type88_3003.png",
+        "pic_Type88_3003_D.png",
+        "pic_Type88_3504.png",
+        "pic_Type88_3504_D.png"
     ],
     "92type": [
         "pic_92type.png",
@@ -1261,7 +1563,9 @@
     ],
     "97typeS": [
         "pic_97typeS.png",
-        "pic_97typeS_D.png"
+        "pic_97typeS_D.png",
+        "pic_97typeS_3807.png",
+        "pic_97typeS_3807_D.png"
     ],
     "UKM2000": [
         "pic_UKM2000.png",
@@ -1273,7 +1577,11 @@
     ],
     "UMP45": [
         "pic_UMP45.png",
-        "pic_UMP45_D.png"
+        "pic_UMP45_D.png",
+        null,
+        null,
+        "pic_UMP45_2107.png",
+        "pic_UMP45_2107_D.png"
     ],
     "UMP45Mod": [
         "pic_UMP45Mod.png",
@@ -1281,7 +1589,13 @@
     ],
     "UMP9": [
         "pic_UMP9.png",
-        "pic_UMP9_D.png"
+        "pic_UMP9_D.png",
+        null,
+        null,
+        null,
+        null,
+        "pic_UMP9_2106.png",
+        "pic_UMP9_2106_D.png"
     ],
     "UMP9Mod": [
         "pic_UMP9Mod.png",
@@ -1309,7 +1623,11 @@
     ],
     "Vector": [
         "pic_Vector.png",
-        "pic_Vector_D.png"
+        "pic_Vector_D.png",
+        "pic_Vector_2.png",
+        "pic_Vector_2_D.png",
+        "pic_Vector_1901.png",
+        "pic_Vector_1901_D.png"
     ],
     "VEPR": [
         "pic_VEPR.png",
@@ -1317,7 +1635,15 @@
     ],
     "WA2000": [
         "pic_WA2000.png",
-        "pic_WA2000_D.png"
+        "pic_WA2000_D.png",
+        "pic_WA2000_306.png",
+        "pic_WA2000_306_D.png",
+        "pic_WA2000_6.png",
+        "pic_WA2000_6_D.png",
+        null,
+        null,
+        "pic_WA2000_804.png",
+        "pic_WA2000_804_D.png"
     ],
     "WKP": [
         "pic_WKP.png",
@@ -1329,7 +1655,9 @@
     ],
     "Welrod": [
         "pic_Welrod.png",
-        "pic_Welrod_D.png"
+        "pic_Welrod_D.png",
+        "pic_Welrod_2103.png",
+        "pic_Welrod_2103_D.png"
     ],
     "X95": [
         "pic_X95.png",
@@ -1345,7 +1673,9 @@
     ],
     "Z62": [
         "pic_Z62.png",
-        "pic_Z62_D.png"
+        "pic_Z62_D.png",
+        "pic_Z62_3507.png",
+        "pic_Z62_3507_D.png"
     ],
     "ZB26": [
         "pic_ZB26.png",
@@ -1353,7 +1683,13 @@
     ],
     "ZastavaM21": [
         "pic_ZastavaM21.png",
-        "pic_ZastavaM21_D.png"
+        "pic_ZastavaM21_D.png",
+        null,
+        null,
+        "pic_ZastavaM21_2104.png",
+        "pic_ZastavaM21_2104_D.png",
+        "pic_ZastavaM21_4304.png",
+        "pic_ZastavaM21_4304_D.png"
     ],
     "ZasM76": [
         "pic_ZasM76.png",
@@ -1361,7 +1697,9 @@
     ],
     "m45": [
         "pic_m45.png",
-        "pic_m45_D.png"
+        "pic_m45_D.png",
+        "pic_m45_4.png",
+        "pic_m45_4_D.png"
     ],
     "wz29": [
         "pic_wz29.png",
@@ -1536,6 +1874,10 @@
     "NPC-Deele": [
         "pic_NPC-Deele.png"
     ],
+    "NPC-Seele": [
+        "pic_NPC-Seele.png",
+        "pic_NPC-Seele_1.png"
+    ],
     "G11story": [
         "special/shadow.png",
         "special/shadow.png"
@@ -1543,11 +1885,27 @@
     "Jillmagic": [
         "pic_Jill_529.png"
     ],
+    "BOSS-9": [
+        "pic_BossArchitect_LL.png"
+    ],
+    "M1903bar": [
+        "special/M1903_Bartender.png"
+    ],
+    "M1903Cafe": [
+        "special/M1903Cafe.png"
+    ],
     "MK2": [
         "pic_StenMK2.png",
         "pic_StenMK2_D.png"
     ],
+    "FAL": [
+        "pic_FNFAL.png",
+        "pic_FNFAL_D.png"
+    ],
     "FAMASHalloween": [
         "pic_FAMAS_2604.png"
+    ],
+    "missing": [
+        "missing.png"
     ]
 }

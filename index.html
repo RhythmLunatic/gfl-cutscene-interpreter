@@ -890,9 +890,9 @@ I have no idea how it works
 		let structuredLines = [];
 		
 		
-		//It's really stupid but flipDim has to know the state of the previous dimmed portraits because normally the GFL engine only supports two portraits and I wanted more
+		//It's really stupid but dimRightSide has to know the state of the previous dimmed portraits because normally the GFL engine only supports two portraits and I wanted more
 		let prevLineHadAtLeastTwoPortraits = false;
-		let flipDim = false;
+		let dimRightSide = false;
 		for(i=0;i<lines.length;i++)
 		{
 			if (!lines[i])
@@ -908,8 +908,9 @@ I have no idea how it works
 			//I'm just going to search portraits after removing <> tags, it probably won't matter
 			let numPortraits = 0;
 			let thisLineHadAtLeastTwoPortraits = (cmds.indexOf(";") != -1)
+			//This doesn't work correctly... If a new portrait gets pushed and the previous line had two portraits then the dimmed one is the existing portrait from the previous line
 			if (thisLineHadAtLeastTwoPortraits && prevLineHadAtLeastTwoPortraits)
-				flipDim = !flipDim;
+					dimRightSide = !dimRightSide;
 				
 			//Add portrait removal command
 			if (prevLineHadAtLeastTwoPortraits && !thisLineHadAtLeastTwoPortraits)
@@ -943,12 +944,51 @@ I have no idea how it works
 					//console.log(charID)
 					//console.log(charSpr)
 					//Ignore empty sprite IDs, they do nothing.
-					if (charSpr != "")
+					if (charSpr != undefined && charSpr != "")
 					{
 						let shouldDim = false;
 						if (thisLineHadAtLeastTwoPortraits)
 						{
-							shouldDim = flipDim ? j !=0 : j == 0;
+							if (!prevLineHadAtLeastTwoPortraits)
+							{
+								//debugger;
+								//If this is the second portrait being added, we can just check the state of the previous portrait.
+								if (numPortraits>0)
+								{
+									let m = structuredLines[structuredLines.length-1]
+									if (m[0]==OPCODES.PORTRAIT)
+										{
+											shouldDim=!m[4]
+											dimRightSide=shouldDim;
+										}
+									else
+										consoleWarn("wtf?")
+								}
+								else
+									//It's -2 because the last line is always MSGBOXTRANSITION.
+									for(var lll=structuredLines.length-2; lll>=0; lll--)
+									{
+										let m = structuredLines[lll];
+										if (m[0]==OPCODES.MSGBOXTRANSITION)
+											break;
+										//Search for single old portrait, if it matches then it shouldn't dim
+										else if (m[0]==OPCODES.PORTRAIT)
+										{
+											//debugger;
+											//Insert terrible programmer meme here
+											//The new portrait is the one NOT dimmed
+											shouldDim = (m[2] == charID)
+											//????????????????????????????????????????
+											//Maybe dimRightSide=!shouldDim will also work?
+											dimRightSide=(shouldDim ? j==0 : j!=0)
+											break;
+										}
+									}
+							}
+							else
+							{
+								shouldDim = dimRightSide ? j !=0 : j == 0;
+							}
 							//debugger;
 						}
 						structuredLines.push([OPCODES.PORTRAIT,numPortraits,charID,charSpr,shouldDim,false])
@@ -973,8 +1013,6 @@ I have no idea how it works
 				}
 			}
 			prevLineHadAtLeastTwoPortraits = thisLineHadAtLeastTwoPortraits;
-			if(!prevLineHadAtLeastTwoPortraits)
-				flipDim=false;
 			
 			
 			let speakerRes = getFromTag(cmds,"Speaker")
@@ -1249,7 +1287,10 @@ I have no idea how it works
 						else
 						{
 							consoleWarn(portraitStructToString(structuredLines[i]))
-							consoleWarn("Portrait missing from database, ignoring.")
+							consoleWarn("Portrait missing from database.")
+							shownPortraits[idx]=structuredLines[i];
+							shownPortraits[idx][2]='missing'
+							shownPortraits[idx][3]=0
 						}
 						break;
 					case OPCODES.NOPORTRAIT:
@@ -2092,6 +2133,7 @@ I have no idea how it works
 						<p>.txt is the cutscene scripting language GFL uses. The interpreter will always support importing .txt and playing it back.</p>
 						<p>.iop.json (<b>I</b>ntermediate <b>Op</b>codes, definitely not a coincidence) is the scripting language designed for the interpreter. It has some advantages compared to the GFL engine:</p>
 						<p>- Display more than two characters at a time. Dim multiple charcters.</p>
+						<p>- Dimming doesn't randomly break, because dimming is manually set. </p>
 						<p>- The commands are in english.</p>
 						<p>- (Coming soon) branch paths, allowing you to use the interpreter like a VN engine of sorts and write interactive stories</p>
 						</div>

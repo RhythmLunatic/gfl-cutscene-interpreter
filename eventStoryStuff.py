@@ -154,7 +154,7 @@ modStoryFiles = os.listdir('./avgtxt/memoir')
 for doll in frontlinedex:
 	if doll['num'] and 'mod' not in doll:
 		#episodes = []
-		parts = ['memoir/'+filename for filename in modStoryFiles if filename.startswith(str(doll['num'])+'_')]
+		parts = sorted(['memoir/'+filename for filename in modStoryFiles if filename.startswith(str(doll['num'])+'_')])
 		if parts:
 			modStories.append({'name':doll['name'],'parts':parts})
 js['side'].append({'name':"MOD 3 Stories",'episodes':modStories})
@@ -162,3 +162,5 @@ js['side'].append({'name':"MOD 3 Stories",'episodes':modStories})
 with open('chapterDatabase.json','wb') as f:
 	f.write(JSON.dumps(js, sort_keys=False, indent='\t', separators=(',', ': '), ensure_ascii=False).encode('utf8'))
 	
+#with open('profiles.txt','r') as backgrounds:
+#	print([line.strip() for line in backgrounds.readlines()])

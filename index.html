@@ -433,6 +433,7 @@ I have no idea how it works
 	//interpreter related
 	
 	const OPCODES = {
+		STOPBGM : 0,
 		BGM : 1,
 		BG : 2,
 		SPEAKER : 3,
@@ -446,7 +447,7 @@ I have no idea how it works
 	//For JSON structured or making your own
 	//Pro tip: use opcode2string.indexOf(s) to get the opcode number
 	const opcode2string = [
-		'none',
+		'stopBGM',
 		'bgm',
 		'bg',
 		'speaker',
@@ -464,27 +465,47 @@ I have no idea how it works
 		//"通讯框":OPCODES.SETMASKEDPORTRAIT,
 	}
 	
-	const backgrounds = {
-		1: "树林",
-		2: "机场",
-		3: "街道",
-		4: "主界面背景",
-		6: "冰湖",
-		7: "雪地",
-		8: "作战室avg",
-		9: "black",
-		10: "PlaybackBG1",
-		15: "室内战斗",
-		17: "ANTIRAIN",
-		18: "单挑",
-		19: "SFs",
-		22: "工厂背景avg",
-		72: "17xh-Networld",
-		87: "BG-BarHallow",
-		89: "BG-WarehouseON",
-		99: "BG-WildBattle",
-		186: "va11_BAR"
-	}
+	//profiles.txt
+	const backgrounds = [
+		'Square_A', '树林', '机场', '街道', '主界面背景', '大桥',
+		'冰湖', '雪地', '作战室avg', 'black', 'White', '掐脖子', 
+		'打海猫', '打海猫2', 'M16开枪', '室内战斗', 'eliza0', 'ANTIRAIN', 
+		'单挑', 'SFs', 'StoryCG5', '作战室avg', '工厂背景avg', 'CG.1-6 无人', 
+		'CG.1-6 有人', 'CG.2-6', 'CG.4-2', 'CG.5-6', 'CG.5', '夜间蒙版', '404', 'sp2.2.1', 
+		'sp2.2.2', 'sp2.2.3', 'sp2.2.4', '3X', '6CG-M4', '6CG-AR15a', '6CG-AR15b', 
+		'PlaybackBG1', 'PlaybackBG2', 'CG4N', 'CG4N1', 'CG4N2', 'CG7-3', 'CG7-6', 'BG7-3', 
+		'BG7-4', 'CG-Cannon', 'CG-2017Winter1', 'CG-2017Winter2', 'Ouroboros', 'CG8-1', 'CG8-2', 
+		'SFBase', 'Metro', 'CG8-3.1', 'CG8-3.2', 'GGXX1', 'GGXX2', '17xhCG1-0', '17xhCG1-1', '17xhCG2-0', 
+		'17xhCG2-1', '17xhCG2-2', '17xhCG2-3', '17xhCG3-0', '17xhCG3-1', '17xhCG4-0', '17xhCG4-1', '17xh-404Room', 
+		'17xh-ButterflyFactory', '17xh-Networld', '17xh-ShootingRange', 'CG9-1.1', 'CG9-1.2', 'CG9-1.3', 'CG9-2.1', 
+		'CG9-2.2', 'BG9-Dinner', 'BG-Bar', 'BG-BarXmas', 'BG-Dorm', 'BG_Base', 'BG_City', 'BG_Inner', 'BG_Street', 
+		'BG-BarHallow', 'BG-WarehouseOFF', 'BG-WarehouseON', 'CG-Houkai2-1-1', 'CG-Houkai2-1-2', 'CG-Houkai2-2-1', 
+		'CG-Houkai2-2-2', 'CG-Houkai2-3-1', 'CG-Houkai2-3-2', 'BG-Theatre', 'BG-Corridor', 'BG-BurnCity', 'BG-WildBattle', 
+		'CG10-1-1', 'CG10-1-2', 'CG10-1-3', 'CG10-2-1', 'CG10-2-2', 'CG10-2-3', 'CG10-2-4', 'CG10-3-1', 'CG10-3-2', 'CG10-4-1', 
+		'CG10-4-2', 'CG10-4-3', 'CG10-5-1', 'CG10-5-2', 'CG10-5-3', 'CG10-6-1', 'CG10-6-2', '2018Winter1-1', '2018Winter1-2', 
+		'2018Winter2-1', '2018Winter2-2', '2018Winter2-3', '2018Winter3-1', '2018Winter3-2', '2018Winter4-1', '2018Winter4-2', 
+		'2018Winter4-3', '2018Winter5-1', 'BG-BarSpring', 'BG-Kitchen', '2018Winter0-1', '2018Winter0-2', '2018Winter6-1', 
+		'2018Winter7-1', '2018Winter8-1', '2018Winter9-1', 'BG-Wedding', 'BG-Grass', 'BG-GrassWedding', 'BG-DinnerNoMan', 
+		'BG-DjmaxCity', 'BG-DjmaxGraveyard', 'BG-DjmaxLight', 'BG-DjmaxCemetery', 'CG-DJMAX1', 'CG-DJMAX2', '2018SummerCG1-1', 
+		'2018SummerCG1-2', '2018SummerCG2-1', '2018SummerCG2-2', '2018SummerCG3', '2018SummerCG4', '2018SummerCG5', 
+		'2018SummerCG6-1', '2018SummerCG6-2', '2018SummerCG7', '2018SummerCG8', 'BG-ContaminatedZone', 'BG-InterrogationRoom', 
+		'BG-RuinedCity', 'BG-Sanatorium', 'BG-TemporaryBase', 'BG-Beach', 'BG-BeachNight', 'CG11-1', 'CG11-2', 'BG-Cybercity', 
+		'BG-Sewer', 'BG-Slum', 'BG-Wall', '19WinterCG1', '19WinterCG2', '19WinterCG3', '19WinterCG4', '19WinterCG5', 
+		'19WinterCG5-1', '19WinterCG6', '19WinterCG7', '19WinterCG7-1', 'BG-Fortress', 'BG-Mullet', 'BG-Monument', 
+		'BG-Guildhall', 'fullwhite', 'va11_cg1', 'va11_cg2', 'va11_BAR', 'Desert', 'va11_cg3', 'va11_cg4', 'va11_cg3_1', 
+		'va11_cg3_2', 'va11_end', 'va11_end_1', 'va11_cg1', '2019summer_1', '2019summer_2', '2019summer_3', '2019summer_4_1', 
+		'2019summer_4_2', '2019summer_5', '2019summer_6', '2019summer_7', '2019summer_8', '2019summer_9', '2019summer_10', 
+		'2019summer_11', '2019summer_12', '2019summer_13', '2019summer_14', '2019summer_15', '2019halloween_1', '2019halloween_2', 
+		'19christmas_1', '19christmas_2', '19christmas_3', '19winter_ange_1', '19winter_ange_2', '19winter_4516', '19winter_biggun', 
+		'19winter_m4_1', '19winter_inbg_1', '19winter_inbg_2', '19winter_door_close', '19winter_door_open', '19winter_doorandtank', 
+		'19winter_doorexplode', '19winter_aurora', '19winter_ump45vs', '19winter_lab', '19winter_ finalvs', '19winter_ hole_1', 
+		'19winter_ hole_2', '19winter_ hole_3', '19winter_ sea', 'ABYSS_~1', '19winter_finalvs2', 'ABYSS_~1.PNG', 'PK', '2020white-1', 
+		'2020white-2', '13CG3', 'Topomap_D', '13CG4', '13CG1', '13CG2', 'RED', 'REDNET', 'REDNET', 'WHITENET', '13CG3v2', 
+		'TEAPARTYDAY', 'TEAPARTYNIGHT', 'LAKE', 'RICOCG4', 'TRIELLACG5', 'HenriettaCG6', 'SEAPARTYCG1', 'SEAPARTYCG2', 'gunCGgarden1', 
+		'gunCGgarden2', 'gunCGHenrietta', 'gunCGlake', 'gunCGrico', 'gunCGtriella', 'gunCGstreet', 'gunCGend', 'gunCGhdz', 'nakamaCG1', 
+		'2020summerFlowerfield', '2020summerOrphanage', '2020summerPaper', '20summerLAB', '2020summerTransport', '2020summerBattle1', 
+		'2020summerBattle2', '2020summerOffice', '2020summer94&K', '2020summerA&M1', '2020summerA&M2', '2020summerAnge', '2020summerRefugees'
+	]
 	
 	//To be loaded later.
 	let PORTRAITS = undefined;
@@ -714,6 +735,13 @@ I have no idea how it works
 		return sliceAndRemove(str,str.indexOf(beginTag),str.indexOf(endTag)+endTag.length)
 	}
 	
+	function playNewAudio(fileName)
+	{
+		let audioPlayer = document.getElementById('audioPlayer');
+		audioPlayer.firstElementChild.src = fileName
+		audioPlayer.load();
+		audioPlayer.play();
+	}
 	
 	
 	let curEpisodePart = 0
@@ -948,7 +976,6 @@ I have no idea how it works
 			if(!prevLineHadAtLeastTwoPortraits)
 				flipDim=false;
 			
-			const tags = ["BGM","BIN"]
 			
 			let speakerRes = getFromTag(cmds,"Speaker")
 			//Optimization: If prevLine was another speaker line, overwrite it instead of writing another
@@ -961,6 +988,16 @@ I have no idea how it works
 					structuredLines.push([OPCODES.SPEAKER,speakerRes])
 			}
 			
+			let bgmRes = getFromTag(cmds,"BGM")
+			if (bgmRes != null)
+			{
+				if(bgmRes=="BGM_Empty")
+					structuredLines.push([OPCODES.STOPBGM])
+				else
+					structuredLines.push([OPCODES.BGM,bgmRes])
+			}
+			
+			const tags = ["BIN"]
 			tags.forEach(tag => {
 				//console.log(tag);
 				let tagRes = getFromTag(cmds,tag);
@@ -1072,6 +1109,9 @@ I have no idea how it works
 		let NewSimpleTextDiv = document.createElement('div');
 		NewSimpleTextDiv.id="verySimpleText";
 		
+		//Don't keep audio running
+		document.getElementById('audioPlayer').pause();
+		
 		//let partNum = 0;
 		for(var p = 0; p < episode.parts.length;p++)
 		{
@@ -1135,6 +1175,10 @@ I have no idea how it works
 			thisPartDiv.appendChild(button);
 			thisPartDiv.appendChild(document.createElement('br'));
 			
+			let playBGMbutton = document.createElement('a');
+			playBGMbutton.setAttribute("class","waves-effect waves-light btn");
+			playBGMbutton.innerHTML='<i class="material-icons left">music_note</i>Play audio for this cutscene'
+			
 			let opcodesDiv = document.createElement('div');
 			opcodesDiv.id= "div_"+fileName
 			opcodesDiv.style="display: none;"
@@ -1162,6 +1206,11 @@ I have no idea how it works
 				//console.log(structuredLines[i]);
 				switch (opcode)
 				{
+					case OPCODES.BGM:
+						let newPlayBGMButton = playBGMbutton.cloneNode(true);
+						newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+".ogg')")
+						thisPartDiv.appendChild(newPlayBGMButton);
+						break;
 					case OPCODES.SPEAKER:
 						lastSpeakerName=structuredLines[i][1];
 						didBGOrPortraitOrNameChange = true
@@ -2111,6 +2160,10 @@ I have no idea how it works
 	<div id="verySimpleText"></div>
 	<a class="waves-effect waves-light btn" href="#theTop"><i class="material-icons left">vertical_align_top</i>Back to top</a> <a class="waves-effect waves-light btn" href="#theTop" onclick="goToNextEpisode();"><i class="material-icons left">chevron_right</i>Go to the next cutscene</a>
 	<hr>
+	<audio controls loop id="audioPlayer">
+		<source src="audio/m_va_your_love_is_a_drug_song.ogg" type="audio/ogg">
+		Your browser does not support the audio tag.
+	</audio>
 	<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
 	<p>Can someone please fix the horrible UI? I'm a programmer, not a designer. Please fork the source code and make a pull request.</p>
 	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b></p>

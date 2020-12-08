@@ -3441,10 +3441,10 @@
 				{
 					"name": "HK416",
 					"parts": [
-						"memoir/65_4.txt",
 						"memoir/65_1.txt",
 						"memoir/65_2.txt",
-						"memoir/65_3.txt"
+						"memoir/65_3.txt",
+						"memoir/65_4.txt"
 					]
 				},
 				{

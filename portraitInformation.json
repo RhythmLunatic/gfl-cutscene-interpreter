@@ -359,7 +359,9 @@
     ],
     "HK416": [
         "pic_HK416.png",
-        "pic_HK416_D.png"
+        "pic_HK416_D.png",
+        "special/pic_HK416_1.png",
+        "special/pic_HK416_2.png"
     ],
     "HK416Mod": [
         "pic_HK416Mod.png",
@@ -1461,8 +1463,7 @@
         "pic_KGP9.png",
         "pic_KGP9_D.png"
     ],
-    "Elisa": [
-        "pic_Eliza_Hidden.png",
+    "BOSS-12": [
         "Eliza.png"
     ],
     "Agent": [
@@ -1532,8 +1533,19 @@
     "NPC-Helian": [
         "pic_NPC-Helian.png"
     ],
+    "NPC-Deele": [
+        "pic_NPC-Deele.png"
+    ],
+    "G11story": [
+        "special/shadow.png",
+        "special/shadow.png"
+    ],
+    "Jillmagic": [
+        "pic_Jill_529.png"
+    ],
     "MK2": [
-        "pic_StenMK2.png"
+        "pic_StenMK2.png",
+        "pic_StenMK2_D.png"
     ],
     "FAMASHalloween": [
         "pic_FAMAS_2604.png"

@@ -25,3 +25,6 @@ For debugging: `python3 -m http.server`, then go to http://localhost:8000 in you
 
 # license
 AGPLv3
+- In case of the client side code used in this webpage being converted to server side (ex. txt -> json conversion in advance instead of on the fly), you must distribute the source code to comply with the license.
+- Modifying the python scripts does require you to give out the source code, should you decide to host an instance of this software on your own webserver.
+- Please include a link to the source code somewhere easily accessible. For example, at the bottom of the page like how it is on mine. (Of course if you don't ever modify anything you can just keep the link as-is)

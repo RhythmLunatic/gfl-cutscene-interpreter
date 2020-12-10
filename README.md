@@ -19,7 +19,7 @@ First, dump all the game data.
 Then put avgtxt and avgtexture in the same folder.
 Then copy VA11 folder from resources/dabao/avgtxt/
 
-Then host a webserver. 
+Then host a webserver. You'll want to add this CSP to your webserver if you're allowing user created cutscenes to be loaded: `Header set Content-Security-Policy "default-src 'self' data: https://fonts.gstatic.com; style-src 'unsafe-inline' cdnjs.cloudflare.com https://fonts.gstatic.com https://fonts.googleapis.com; script-src 'unsafe-inline' cdnjs.cloudflare.com cdn.jsdelivr.net;"`
 
 For debugging: `python3 -m http.server`, then go to http://localhost:8000 in your internet browser
 

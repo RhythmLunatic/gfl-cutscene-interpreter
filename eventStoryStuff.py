@@ -40,11 +40,19 @@ def appendFromij(i,j,name,letter):
 
 def getAllByPrefix(files,prefix,episodeName):
 	episodes = []
+	#Some episodes start at 0 instead of 1. Manually search for them.
+	startedAtZero=False
+	prefixed = [filename for filename in files if filename.startswith(prefix+'-0')]
+	if prefixed:
+		startedAtZero=True
+		episodes.append({'name':episodeName,'parts':prefixed})
+	
+	#Search normally for 1 onwards
 	i=1
 	while True:
 		prefixed = [filename for filename in files if filename.startswith(prefix+'-'+str(i))]
 		if prefixed:
-			episodes.append({'name':episodeName + ' '+write_roman(i),'parts':prefixed})
+			episodes.append({'name':episodeName + ' '+write_roman(i+1 if startedAtZero else i),'parts':prefixed})
 			i=i+1
 		else:
 			return episodes
@@ -130,7 +138,135 @@ for line in evStoryInformation:
 	]
 },
 '''
+#js['crossover'].append({'name':"DJMax Respect",'episodes':getAllByPrefix(files,'-19',"Chapter 1 ")})
+#js['crossover'][-1]['episodes'].extend(getAllByPrefix(files,'-20',"Chapter 2"))
+
+js['event'].append({'name':"CH. ??: Operation Cube?",'episodes':getAllByPrefix(files,'-1','???')})
+#-2 to -7 already indexed
+js['crossover'].append({'name':"Guilty Gear x BlazBlue",'episodes':getAllByPrefix(files,'-8','Part')})
+#No -9
+js['crossover'].append({'name':"Honkai Impact (Untranslated)",'episodes':getAllByPrefix(files,'-14','Chapter 1')})
+js['crossover'][-1]['episodes'].extend(getAllByPrefix(files,'-15',"Chapter 2"))
+
+js['crossover'].append({
+	"name": "DJMax Respect",
+	"episodes": [
+		{
+			"name": "Chapter 1 Stage I",
+			"parts": [
+				"-19-1-1.txt",
+				#"-19-1-2First.txt", #duplicate file
+				"-19-1-2.txt",
+			]
+		},
+		{
+			"name": "Chapter 1 Stage II",
+			"parts": [
+				"-19-2-1.txt",
+				#"-19-2-2First.txt", #duplicate file
+				"-19-2-2.txt",
+			]
+		},
+		{
+			"name": "Chapter 1 Stage III",
+			"parts": [
+				"-19-3-1.txt",
+				#"-19-3-2First.txt", #duplicate file
+				"-19-3-2.txt",
+			]
+		},
+		{
+			"name": "Chapter 2 Stage I",
+			"parts": [
+				"-20-1-1.txt",
+				"-20-1-2First.txt",
+			]
+		},
+		{
+			"name": "Chapter 2 Stage II",
+			"parts": [
+				"-20-2-1.txt",
+				"-20-2-2First.txt",
+			]
+		},
+		{
+			"name": "Chapter 2 Stage III",
+			"parts": [
+				"-20-3-1.txt",
+				"-20-3-2First.txt",
+				"-20-3-2End.txt",
+			]
+		},
+		{
+			"name":"Bonus Cutscenes During Stages",
+			"parts": [
+				"-19-2-4-Point6737.txt",
+				"-19-2-4-Point6738.txt",
+				"-19-3-4-Point6750.txt",
+				"-19-3-4-Point7023.txt",
+				"-20-1-4-Point6780.txt",
+				"-20-1-4-Point7026.txt",
+				"-20-2-4-Point6819.txt",
+				"-20-2-4-Point7029.txt",
+				"-20-3-4-Point6845.txt",
+				"-20-3-4-Point6846.txt"
+			]
+		}
+	]
+})
+#Nothing from 21 to 23, 24-28 alrady indexed
+
 js['event'].append({'name':"CH. ??: ISOMER",'episodes':getAllByPrefix(files,'-31','???')})
+#-32 is valhalla
+js['event'].append({'name':"CH. ??: Shattered Connexion",'episodes':getAllByPrefix(files,'-33','???')})
+js['side'].append({'name':"Halloween 2019",'episodes':getAllByPrefix(files,'-34','Episode')})
+js['side'].append({
+	"name": "Christmas 2019",
+	"episodes": [
+		{
+			"name": "Episode I",
+			"parts": [
+				"-35-1-1First.txt",
+				"-35-1-2End.txt"
+			]
+		},
+		{
+			"name": "Episode II",
+			"parts": [
+				"-35-2-1First.txt",
+				"-35-2-2End.txt"
+			]
+		},
+		{
+			"name": "Episode III",
+			"parts": [
+				"-35-3-1First.txt",
+				"-35-3-2End.txt",
+			]
+		},
+		{
+			"name": "Episode IV",
+			"parts": [
+				"-35-4-1First.txt",
+				"-35-4-2End.txt"
+			]
+		}
+	]
+})
+#js['side'].append({'name':"Christmas 2019",'episodes':getAllByPrefix(files,'-35','Episode')})
+js['event'].append({'name':"Polarized Light (Untranslated)",'episodes':getAllByPrefix(files,'-36','???')})
+js['side'].append({'name':"White Day 2020(?)",'episodes':getAllByPrefix(files,'-37','Episode')})
+#-38 is gunslinger girl
+#-39 is just one dialogue box
+js['side'].append({'name':"Summer 2020: Far Side of the Sea",'episodes':getAllByPrefix(files,'-40','Episode')})
+js['event'].append({'name':"Dual Randomness (Untranslated)",'episodes':getAllByPrefix(files,'-41','???')})
+js['side'].append({'name':"Halloween 2020? (Untranslated)",'episodes':getAllByPrefix(files,'-42','???')})
+js['crossover'].append({'name':"The Division (Untranslated) (Missing some)",'episodes':getAllByPrefix(files,'-43','???')})
+
+
+js['side'].append({'name':"Interpreter Test Room",'episodes':[{'name':file,'parts':['testroom/'+file]} for file in os.listdir('./avgtxt/testroom')]})
+
+#TODO: Check for any unknown prefixes
 
 skinStories = []
 with open('girlsfrontline.json') as gfld:
@@ -162,5 +298,10 @@ js['side'].append({'name':"MOD 3 Stories",'episodes':modStories})
 with open('chapterDatabase.json','wb') as f:
 	f.write(JSON.dumps(js, sort_keys=False, indent='\t', separators=(',', ': '), ensure_ascii=False).encode('utf8'))
 	
-#with open('profiles.txt','r') as backgrounds:
-#	print([line.strip() for line in backgrounds.readlines()])
+
+#I can't explain this shit, but BG10 is PlaybackBG1
+backgroundsRename = {
+	"White":"PlaybackBG1"
+}
+with open('profiles.txt','r') as backgrounds:
+	print([line.strip() for line in backgrounds.readlines()])

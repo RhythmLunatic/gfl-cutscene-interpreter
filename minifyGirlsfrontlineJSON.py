@@ -17,6 +17,18 @@ def RepresentsInt(s):
 	except ValueError:
 		return False
 
+def quickInsertCostumeAtIdx(l,idx,name):
+	#+2 because lists start at 0 but also because we want to add damaged art too
+	l = extendListIfTooShort(l,idx+2)
+	internalName = l[0].split('_')[1].split('.')[0]
+	#print(l)
+	l[idx]='pic_'+internalName+'_'+name+'.png'
+	l[idx+1]='pic_'+internalName+'_'+name+'_D.png'
+	return l
+
+#def quickAppendCostume(name):
+#	return ['pic_'+name+'.png','pic_'+name+'_D.png']
+
 newDatabase = []
 portraitDatabase = {}
 with open('girlsfrontline.json','r') as gfld:
@@ -91,6 +103,8 @@ with open('girlsfrontline.json','r') as gfld:
 														#console.log(charSpr)
 														#Ignore empty sprite IDs, they do nothing.
 														if charID == doll['internalName'] and charSpr > 1:
+															#TODO: Some dolls use multiple sprites in a story (ex. Team DEFY or AR), this will get it wrong if they do
+															#Although for those it can probably just be overwritten at the end
 															print("Found unknown type "+str(charSpr)+" being used in "+charID)
 															portraitDatabase[doll['internalName']] = extendListIfTooShort(portraitDatabase[doll['internalName']],charSpr+2)
 															print(doll['costumes'][i]['pic'])
@@ -159,28 +173,81 @@ portraitDatabase['NPC-Seele']=[
 
 portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
-portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
-portraitDatabase['BOSS-12']=['Eliza.png']
+portraitDatabase['RO635-NoArmor']=['special/pic_RO635_NoArmor0.png']
+#portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
+#portraitDatabase['BOSS-12']=['Eliza.png']
+portraitDatabase['NytoIsomer'] = extendListIfTooShort(portraitDatabase['NytoIsomer'],5)
+portraitDatabase['NytoIsomer'][4]="Nyto_Isomer_Shadow.png"
 
 portraitDatabase['M1903bar']=["special/M1903_Bartender.png"]
 portraitDatabase['M1903Cafe']=["special/M1903Cafe.png"]
+portraitDatabase['M1903']=quickInsertCostumeAtIdx(portraitDatabase['M1903'],8,"1107")
 
 portraitDatabase['HK416'][2] = ['special/pic_HK416_1.png']
 portraitDatabase['HK416'][3] = ['special/pic_HK416_2.png']
 
+#M16 has more than two portraits, but this will have to do for now...
+portraitDatabase['M16']=portraitDatabase["M16A1"]
 portraitDatabase["MK2"]=portraitDatabase['StenMK2']
 portraitDatabase['FAL']=portraitDatabase['FNFAL']
+#Yes really
+portraitDatabase['PPSh41']=portraitDatabase['PPsh41']
 
 portraitDatabase["FAMASHalloween"]=["pic_FAMAS_2604.png"]
+
+portraitDatabase['Ithaca37'] = quickInsertCostumeAtIdx(portraitDatabase['Ithaca37'],2,"1105")
+portraitDatabase['95type'] = quickInsertCostumeAtIdx(portraitDatabase['95type'],2,"1102")
+portraitDatabase['m1'] = quickInsertCostumeAtIdx(portraitDatabase['M1'],2,"1106")
+portraitDatabase['FN57'] = quickInsertCostumeAtIdx(portraitDatabase['FN57'],6,"1109")
+portraitDatabase['FAL'] = quickInsertCostumeAtIdx(portraitDatabase['FAL'],4,"2406")
+portraitDatabase['KP31'] = quickInsertCostumeAtIdx(portraitDatabase['KP31'],6,"1103")
+portraitDatabase['WA2000'] = quickInsertCostumeAtIdx(portraitDatabase['WA2000'],6,'1108')
+portraitDatabase['NTW20'] = quickInsertCostumeAtIdx(portraitDatabase['NTW20'],6,'1101')
 
 #portraitDatabase["MDR"].extend(["pic_MDR_2603.png","pic_MDR_2603_D.png"])
 #portraitDatabase["BrenMK"].extend(["pic_BrenMK_2605.png","pic_BrenMK_2605_D.png"])
 #portraitDatabase["SAT8"].extend(["pic_SAT8_1802.png","pic_SAT8_1802_D.png","pic_SAT8_2601.png","pic_SAT8_2601_D.png"])
 
+
+#fairies
+portraitDatabase['DJMAXSUEE']=['equip/fairy/DJMAXSUEE_1.png']
+portraitDatabase['DJMAXPREIYA']=['equip/fairy/DJMAXPREIYA_1.png']
+portraitDatabase['DJMAXSEHRA']=['equip/fairy/DJMAXSEHRA_1.png']
+portraitDatabase['FairyWarrior']=['equip/fairy/fighting_1.png']
+
+#TODO: This shouldn't be using extend
 portraitDatabase['AR15'].extend(["special/AR15_T.png"])
 portraitDatabase["M4A1"].extend([None,"special/M4A1_T.png"])
+
 portraitDatabase['missing'] = ['missing.png']
+
 
 with open('portraitInformation.json','wb') as file:
 	j = JSON.dumps(portraitDatabase, sort_keys=False, indent=4, separators=(',', ': '), ensure_ascii=False).encode('utf8')
-	file.write(j);
+	file.write(j)
+
+
+musicDB = """
+GF_Title_loop;Title - Y2064
+GF_Lobby_New_loop;Main Menu - DAY1
+GF_Factory_loop_old;Factory (old) - D.O.L.L
+GF_Factory_loop;Factory - X5
+GF_Simulation_loop;Simulation - INITIALIZE
+GF_MAP1_BGM;MAP1 - SAFETY FIRST.B
+GF_MAP2_BGM_0;MAP2 - GREENLIGHT.A
+GF_MAP2_BGM_1;MAP2 - GREENLIGHT.B
+GF_BOSS_Common;Vs. Boss - Made in Heaven;Boss battle theme
+GF_Song;What Am I Fighting For
+m_19summer_lobby;Shattered Connexion - Menu
+m_19summer_mainenemy_n;Shattered Connexion - Normal Battle;Shattered Connexion normal battle theme
+m_19summer_mainenemy_h;Shattered Connexion - Hard Battle;Shattered Connexion hard battle theme
+m_19summer_song;Shattered Connexion - Ending Theme "Connexion" (Short cut);Shattered Connexion ending theme
+DJMAX_GloryDay;DJMAX - Ending "glory day (Acoustic Ver.)";DJMax Event Ending Theme
+DJMAX_BlackCat;DJMAX - Vs. El Fail "Black Cat";DJMax Event vs. FAIL
+DJMAX_OBLIVION;DJMAX - OBLIVION
+DJMAX_AskToWind;DJMAX - Minigame Song 1 "Ask To Wind"
+DJMAX_IWantYou;DJMAX - ??? "I Want You"
+m_halloween19_made_in_heaven;Halloween 2019 - Made In Heaven (Chiptune Ver.);Halloween 2019 event battle theme
+m_halloween19_host;Halloween 2019 - Menu
+"""
+

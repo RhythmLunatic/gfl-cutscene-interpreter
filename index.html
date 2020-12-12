@@ -294,7 +294,18 @@ I have no idea how it works
 			}
 		}
 		return "";
-	} 
+	}
+	
+	//https://stackoverflow.com/a/29998400
+	function JavaSplit(string,separator,n) {
+		var split = string.split(separator);
+		if (split.length <= n)
+			return split;
+		var out = split.slice(0,n-1);
+		out.push(split.slice(n-1).join(separator));
+		return out;
+	}
+
 </script>
 <!--The main program-->
 <script>
@@ -468,7 +479,7 @@ I have no idea how it works
 	//profiles.txt
 	const backgrounds = [
 		'Square_A', '树林', '机场', '街道', '主界面背景', '大桥',
-		'冰湖', '雪地', '作战室avg', 'black', 'White', '掐脖子', 
+		'冰湖', '雪地', '作战室avg', 'black', 'PlaybackBG1', '掐脖子', 
 		'打海猫', '打海猫2', 'M16开枪', '室内战斗', 'eliza0', 'ANTIRAIN', 
 		'单挑', 'SFs', 'StoryCG5', '作战室avg', '工厂背景avg', 'CG.1-6 无人', 
 		'CG.1-6 有人', 'CG.2-6', 'CG.4-2', 'CG.5-6', 'CG.5', '夜间蒙版', '404', 'sp2.2.1', 
@@ -877,7 +888,6 @@ I have no idea how it works
 	var imageActor;
 	var vntext;
 	
-
 	
 	function convertGFLTextToOpcodes(out)
 	{
@@ -898,9 +908,12 @@ I have no idea how it works
 			if (!lines[i])
 				continue;
 			//print(lines[i]);
-			let [cmds,text] = lines[i].replace("：",':').split(':')
+			let [cmds,text] = JavaSplit(lines[i].replace("：",':').replace("；",";"),":",2)
 			console.assert(cmds,lines[i])
+			//There can be lines without any text so asserting is pointless
 			//console.assert(text,lines[i])
+			//console.log(text)
+			//
 			
 			//Yeah I know tags are supposed to be in order, No I don't really care sorry
 			
@@ -1027,12 +1040,19 @@ I have no idea how it works
 			}
 			
 			let bgmRes = getFromTag(cmds,"BGM")
+			let bgmRenames = {
+				"BGM_Sunshine":"home_formation_factory",
+				"BGM_NightOPS":"GUN_CineTense_loop"
+			}
 			if (bgmRes != null)
 			{
 				if(bgmRes=="BGM_Empty")
 					structuredLines.push([OPCODES.STOPBGM])
 				else
-					structuredLines.push([OPCODES.BGM,bgmRes])
+				{
+					structuredLines.push([OPCODES.BGM,bgmRenames[bgmRes] ? bgmRenames[bgmRes] : bgmRes])
+				}
+				
 			}
 			
 			const tags = ["BIN"]
@@ -1119,10 +1139,35 @@ I have no idea how it works
 		{
 			let newMsg = lines[i].split(';')
 			newMsg[0] = opcode2string.indexOf(newMsg[0])
+			if (newMsg[0] == OPCODES.PORTRAIT)
+			{
+				//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+				//*Someone said the site stopped working because I used the operators so I had to change it back :V
+				newMsg[4] = (newMsg[4] != undefined ? newMsg[4].toLowerCase() == "true" : false)
+				newMsg[5] = (newMsg[5] != undefined ? newMsg[5].toLowerCase() == "true" : false)
+				//newMsg[4] = (newMsg[4]?.toLowerCase() == "true")
+				//newMsg[5] = (newMsg[5]?.toLowerCase() == "true")
+			}
 			structuredLines.push(newMsg)
 		}
 		return structuredLines;
 	}
+	
+	//Anti-XSS
+	function sanitize(string) {
+		const map = {
+			'&': '&amp;',
+			'<': '&lt;',
+			'>': '&gt;',
+			'"': '&quot;',
+			"'": '&#x27;',
+			"/": '&#x2F;',
+			"`": '&grave;'
+		};
+		const reg = /[&<>"'/]/ig;
+		return string.replace(reg, (match)=>(map[match]));
+	}
+
 	
 	//You're probably wondering why the fuck there's two of these functions when a routableKeyString is always passed in
 	//That's because I want to support running from an episode object without the keyString (for user stuff)
@@ -1132,6 +1177,282 @@ I have no idea how it works
 			value = curEpKey;
 		let [type,chapter,episode] = getKeysFromRoutableString(value)
 		run(listOfChapters[type][chapter]['episodes'][episode],value)
+	}
+	
+	function runFromUserInput()
+	{
+		let out = document.getElementById('textarea1').value;
+		let structuredLines = stringToStructuredLines(out);
+		currentEpisodeAsOpcodes = [structuredLines];
+		curEpKey = "";
+		let simpleTextDiv = document.getElementById("verySimpleText");
+		let NewSimpleTextDiv = document.createElement('div');
+		NewSimpleTextDiv.id="verySimpleText";
+		NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,0))
+		
+		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
+	}
+	
+	//input: structuredLines
+	//output: a div with the elements rendered
+	function renderStructuredLinesToDiv(structuredLines,part)
+	{
+		//console.log(structuredLines)
+		//document.getElementById("DebugTextArea").value = structuredLinesToString(s)
+		
+		
+		
+		//It has underscores because it's going to be cloned
+		/*let _div_ = document.createElement('div');
+		_div_.className="container";
+		
+		let _img_ = document.createElement("img");
+		_img_.src="textbox.png";
+		_img_.style.width="100%";
+		_div_.appendChild(_img_);
+		
+		let charName = document.createElement("div");
+		charName.className="charName";
+		_div_.appendChild(charName);
+		
+		let text = document.createElement("div");
+		text.className="absText";
+		text.id="text";
+		_div_.appendChild(text);
+		
+		//let textboxDiv = document.getElementById("Textboxes");
+		let newTextboxDiv = document.createElement('div');
+		newTextboxDiv.id="Textboxes";*/
+		
+		let thisPartDiv = document.createElement('div');
+		let h3 = document.createElement('h3');
+		//console.log(partNum);
+		h3.innerText="Part "+(part+1);
+		//partNum++;
+		thisPartDiv.appendChild(h3);
+		
+		let button = document.createElement('a');
+		//fuck your javascript
+		button.setAttribute("class","waves-effect waves-light btn");
+		button.setAttribute("onclick","showOpcodes('div_cutscene_"+part+"')")
+		button.innerText="Show opcodes for this section (For debugging)"
+		thisPartDiv.appendChild(button);
+		thisPartDiv.appendChild(document.createElement('br'));
+		
+		let playBGMbutton = document.createElement('a');
+		playBGMbutton.setAttribute("class","waves-effect waves-light btn");
+		playBGMbutton.innerHTML='<i class="material-icons left">music_note</i>Play audio for this cutscene'
+		
+		let opcodesDiv = document.createElement('div');
+		opcodesDiv.id= "div_cutscene_"+part
+		opcodesDiv.style="display: none;"
+		opcodesDiv.innerHTML = "<textarea rows='6' cols='50' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
+		thisPartDiv.appendChild(opcodesDiv)
+		
+		let maskThing = document.createElement('img');
+		maskThing.src= "avgtexture/夜间蒙版.png";
+		maskThing.classList.add("storydoll");
+		maskThing.style="z-index: 10";
+		
+		
+		let lastSpeakerName = "";
+		let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
+		let didBGOrPortraitOrNameChange = false;
+		let shownPortraits = []
+		
+		let fancyDisplayType = document.getElementById('fancyOrNot').checked;
+		//I am NOT adding another function just for this
+		setCookie('fancyText',fancyDisplayType,180);
+		
+		for(var i=0;i<structuredLines.length;i++)
+		{
+			let opcode = structuredLines[i][0]
+			//console.log(structuredLines[i]);
+			switch (opcode)
+			{
+				case OPCODES.BGM:
+					let newPlayBGMButton = playBGMbutton.cloneNode(true);
+					newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+".ogg')")
+					thisPartDiv.appendChild(newPlayBGMButton);
+					break;
+				case OPCODES.SPEAKER:
+					lastSpeakerName=structuredLines[i][1];
+					didBGOrPortraitOrNameChange = true
+					break;
+				case OPCODES.PORTRAIT:
+					if (!fancyDisplayType)
+						break;
+					console.log(portraitStructToString(structuredLines[i]))
+					let idx = structuredLines[i][1]
+					let name = structuredLines[i][2]
+					let type = structuredLines[i][3]
+					if (PORTRAITS[name] && PORTRAITS[name][type])
+					{
+						//console.log(shownPortraits.length);
+						if (structuredLines[i][1] > shownPortraits.length-1)
+						{
+							//console.log("Pushed new portrait with idx "+idx);
+							shownPortraits.push(structuredLines[i]);
+							didBGOrPortraitOrNameChange = true;
+						}
+						else
+						{
+							let newPortrait = structuredLines[i]
+							let oldPortrait = shownPortraits[idx]
+							if (newPortrait[1] == oldPortrait[1] && newPortrait[2] == oldPortrait[2] && newPortrait[3] == oldPortrait[3] && newPortrait[4] == oldPortrait[4])
+								console.log("New portrait set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
+							else
+							{
+								//console.log("Portrait replaced "+portraitStructToString(oldPortrait) +" -> "+portraitStructToString(newPortrait))
+								shownPortraits[idx]=newPortrait;
+								didBGOrPortraitOrNameChange = true;
+							}
+						}
+						//console.log("NumPortraits: "+shownPortraits.length);
+					}
+					else
+					{
+						consoleWarn(portraitStructToString(structuredLines[i]))
+						consoleWarn("Portrait missing from database.")
+						shownPortraits[idx]=structuredLines[i];
+						shownPortraits[idx][2]='missing'
+						shownPortraits[idx][3]=0
+					}
+					break;
+				case OPCODES.NOPORTRAIT:
+					shownPortraits = [];
+					didBGOrPortraitOrNameChange = true;
+					break;
+				case OPCODES.BG:
+					if (!fancyDisplayType)
+						break;
+					let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
+					if (newBG == lastBGUsed)
+					{
+						console.log("New BG set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
+					}
+					else
+					{
+						console.log(lastBGUsed + " -> "+newBG)
+						lastBGUsed = newBG
+						didBGOrPortraitOrNameChange = true;
+					}
+					break;
+				case OPCODES.MSG:
+					//Spawn new BG with speaker and portrait here.
+					let message = structuredLines[i][1]
+					for(var ccc = 0; ccc < 10; ccc++)
+					{
+						if(ccc > 5)
+						{
+							consoleWarn("Encountered more than 5 color codes in a message... This is very unusal, so bailing out");
+							break;
+						}
+						//If you haven't already guessed, I don't know regex
+						let idx = message.indexOf("<color=");
+						if (idx != -1)
+						{
+							//console.log(message);
+							let end = message.indexOf('>',idx)
+							let color = message.slice(idx+7,end)
+							//console.log(color)
+							if (!isDarkMode)
+								color = adjustColor(color,-80);
+							let spanTagStart = "<span style='color:"+color+"'>"
+							//First sanitize the part outside the <color> tag, then insert the new <span> tag, then sanitize the section inside the span tag, then insert the end tag
+							//Then finally insert the rest of the unsanitized message.
+							//debugger;
+							message = sanitize(message.slice(0,idx))+spanTagStart+sanitize(message.slice(end+1,message.indexOf("</color>")))+"</span>"+message.slice(message.indexOf("</color>")+8)
+						}
+						else
+						{
+							//Sanitize the rest of the message.
+							//I added a CSP to my website so there's no need to sanitize anything else (I think). Sanitizing the message is so you can see the tags. I guess.
+							let sanitizedUpTo = message.lastIndexOf("</span>")
+							//debugger;
+							if (sanitizedUpTo != -1)
+								message = message.slice(0,sanitizedUpTo+7)+sanitize(message.slice(sanitizedUpTo+7))
+							else
+								message = sanitize(message)
+							//console.log(message)
+							break;
+						}
+					}
+					//<size=20>A beer.</size>
+					
+					if (fancyDisplayType)
+					{
+						//console.log("aaa");
+						if (didBGOrPortraitOrNameChange)
+						{
+							let storyBox = document.createElement('div');
+							storyBox.classList.add('storyImg');
+							let bgImage = document.createElement('img');
+							bgImage.style = "width:100%;position:relative;z-index:";
+							bgImage.src = lastBGUsed;
+							storyBox.appendChild(bgImage);
+							for(var j=0;j<shownPortraits.length;j++)
+							{
+								console.assert(shownPortraits[j]);
+								let portraitImg = document.createElement('img');
+								portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
+								//console.log(portraitImg.src);
+								
+								portraitImg.classList.add("storydoll");
+								if (shownPortraits[j][4]==true)
+									portraitImg.classList.add('dim')
+								portraitImg.classList.add(int2strPos[j+1]);
+								portraitImg.classList.add(int2str[shownPortraits.length]);
+								
+								storyBox.appendChild(portraitImg);
+								
+								if (shownPortraits[j][5]==true)
+								{
+									
+									let a = maskThing.cloneNode(true);
+									a.classList.add(int2strPos[j+1])
+									a.classList.add(int2str[shownPortraits.length]);
+									storyBox.appendChild(a);
+								}
+							}
+							thisPartDiv.appendChild(storyBox);
+							
+							if (lastSpeakerName != "")
+							{
+								let p = document.createElement('p');
+								p.innerText = lastSpeakerName;
+								//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
+								p.classList.add("storyText");
+								p.classList.add("speakerName");
+								thisPartDiv.appendChild(p);
+							}
+							
+							didBGOrPortraitOrNameChange = false;
+						}
+						let p = document.createElement('p');
+						p.classList.add('storyText')
+						//TODO: This is a great way to get hacked if someone ever decides to insert a <script> tag
+						p.innerHTML = message;
+						thisPartDiv.appendChild(p);
+					}
+					else
+					{
+						let p = document.createElement('p');
+						if (lastSpeakerName == "")
+							p.innerHTML = message;
+						else
+							p.innerHTML = lastSpeakerName + ": "+message;
+						thisPartDiv.appendChild(p);
+					}
+					break;
+				default:
+					//console.log("unknown OPCODES..");
+			}
+		}
+		return thisPartDiv;
+		
+	//})
+	//})
 	}
 	
 	async function run(episode, routableKeyString)
@@ -1168,261 +1489,23 @@ I have no idea how it works
 			//.then((out) => {
 			//fetchTextFile(fileName).then(out => {
 			//console.log('got '+fileName);
+			//TODO: Add check if it's JSON (iop format) and then use a JSON parser if it is
 			let structuredLines = convertGFLTextToOpcodes(out);
-			
-			//console.log(structuredLines)
-
-			//document.getElementById("DebugTextArea").value = structuredLinesToString(s)
-			
-			
-			
-			//It has underscores because it's going to be cloned
-			/*let _div_ = document.createElement('div');
-			_div_.className="container";
-			
-			let _img_ = document.createElement("img");
-			_img_.src="textbox.png";
-			_img_.style.width="100%";
-			_div_.appendChild(_img_);
-			
-			let charName = document.createElement("div");
-			charName.className="charName";
-			_div_.appendChild(charName);
-			
-			let text = document.createElement("div");
-			text.className="absText";
-			text.id="text";
-			_div_.appendChild(text);
-			
-			//let textboxDiv = document.getElementById("Textboxes");
-			let newTextboxDiv = document.createElement('div');
-			newTextboxDiv.id="Textboxes";*/
-			
-			let thisPartDiv = document.createElement('div');
-			let h3 = document.createElement('h3');
-			//console.log(partNum);
-			h3.innerText="Part "+(p+1);
-			//partNum++;
-			thisPartDiv.appendChild(h3);
-			
-			let button = document.createElement('a');
-			//fuck your javascript
-			button.setAttribute("class","waves-effect waves-light btn");
-			button.setAttribute("onclick","showOpcodes('div_"+fileName+"')")
-			button.innerText="Show opcodes for this section (For debugging)"
-			thisPartDiv.appendChild(button);
-			thisPartDiv.appendChild(document.createElement('br'));
-			
-			let playBGMbutton = document.createElement('a');
-			playBGMbutton.setAttribute("class","waves-effect waves-light btn");
-			playBGMbutton.innerHTML='<i class="material-icons left">music_note</i>Play audio for this cutscene'
-			
-			let opcodesDiv = document.createElement('div');
-			opcodesDiv.id= "div_"+fileName
-			opcodesDiv.style="display: none;"
-			opcodesDiv.innerHTML = "<textarea rows='6' cols='50' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
-			thisPartDiv.appendChild(opcodesDiv)
-			
-			let maskThing = document.createElement('img');
-			maskThing.src= "avgtexture/夜间蒙版.png";
-			maskThing.classList.add("storydoll");
-			maskThing.style="z-index: 10";
-			
-			
-			let lastSpeakerName = "";
-			let lastBGUsed = ""; //'avgtexture/'+backgrounds[num]+'.png'
-			let didBGOrPortraitOrNameChange = false;
-			let shownPortraits = []
-			
-			let fancyDisplayType = document.getElementById('fancyOrNot').checked;
-			//I am NOT adding another function just for this
-			setCookie('fancyText',fancyDisplayType,180);
-			
-			for(var i=0;i<structuredLines.length;i++)
-			{
-				let opcode = structuredLines[i][0]
-				//console.log(structuredLines[i]);
-				switch (opcode)
-				{
-					case OPCODES.BGM:
-						let newPlayBGMButton = playBGMbutton.cloneNode(true);
-						newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+".ogg')")
-						thisPartDiv.appendChild(newPlayBGMButton);
-						break;
-					case OPCODES.SPEAKER:
-						lastSpeakerName=structuredLines[i][1];
-						didBGOrPortraitOrNameChange = true
-						break;
-					case OPCODES.PORTRAIT:
-						if (!fancyDisplayType)
-							break;
-						//console.log(portraitStructToString(structuredLines[i]))
-						let idx = structuredLines[i][1]
-						let name = structuredLines[i][2]
-						let type = structuredLines[i][3]
-						if (PORTRAITS[name] && PORTRAITS[name][type])
-						{
-							//console.log(shownPortraits.length);
-							if (structuredLines[i][1] > shownPortraits.length-1)
-							{
-								//console.log("Pushed new portrait with idx "+idx);
-								shownPortraits.push(structuredLines[i]);
-								didBGOrPortraitOrNameChange = true;
-							}
-							else
-							{
-								let newPortrait = structuredLines[i]
-								let oldPortrait = shownPortraits[idx]
-								if (newPortrait[1] == oldPortrait[1] && newPortrait[2] == oldPortrait[2] && newPortrait[3] == oldPortrait[3] && newPortrait[4] == oldPortrait[4])
-									console.log("New portrait set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
-								else
-								{
-									//console.log("Portrait replaced "+portraitStructToString(oldPortrait) +" -> "+portraitStructToString(newPortrait))
-									shownPortraits[idx]=newPortrait;
-									didBGOrPortraitOrNameChange = true;
-								}
-							}
-							//console.log("NumPortraits: "+shownPortraits.length);
-						}
-						else
-						{
-							consoleWarn(portraitStructToString(structuredLines[i]))
-							consoleWarn("Portrait missing from database.")
-							shownPortraits[idx]=structuredLines[i];
-							shownPortraits[idx][2]='missing'
-							shownPortraits[idx][3]=0
-						}
-						break;
-					case OPCODES.NOPORTRAIT:
-						shownPortraits = [];
-						didBGOrPortraitOrNameChange = true;
-						break;
-					case OPCODES.BG:
-						if (!fancyDisplayType)
-							break;
-						let newBG = 'avgtexture/'+backgrounds[structuredLines[i][1]]+'.png'
-						if (newBG == lastBGUsed)
-						{
-							console.log("New BG set is identical to old one, ignoring change. (TODO: This should be left to the opcode interpreter to filter out!)");
-						}
-						else
-						{
-							console.log(lastBGUsed + " -> "+newBG)
-							lastBGUsed = newBG
-							didBGOrPortraitOrNameChange = true;
-						}
-						break;
-					case OPCODES.MSG:
-						//Spawn new BG with speaker and portrait here.
-						let message = structuredLines[i][1]
-						for(var ccc = 0; ccc < 10; ccc++)
-						{
-							if(ccc > 5)
-							{
-								consoleWarn("Encountered more than 5 color codes in a message... This is very unusal, so bailing out");
-								break;
-							}
-							//If you haven't already guessed, I don't know regex
-							let idx = message.indexOf("<color=");
-							if (idx != -1)
-							{
-								//console.log(message);
-								let end = message.indexOf('>',idx)
-								let color = message.slice(idx+7,end)
-								//console.log(color)
-								if (!isDarkMode)
-									color = adjustColor(color,-80);
-								newStr = "<span style='color:"+color+"'>"
-								message = message.slice(0,idx)+newStr+message.slice(end+1).replace("</color>","</span>")
-							}
-							else
-								break;
-						}
-						//message=message.replace("<color=","<span style='color:'
-						if (fancyDisplayType)
-						{
-							//console.log("aaa");
-							if (didBGOrPortraitOrNameChange)
-							{
-								let storyBox = document.createElement('div');
-								storyBox.classList.add('storyImg');
-								let bgImage = document.createElement('img');
-								bgImage.style = "width:100%;position:relative;z-index:";
-								bgImage.src = lastBGUsed;
-								storyBox.appendChild(bgImage);
-								for(var j=0;j<shownPortraits.length;j++)
-								{
-									console.assert(shownPortraits[j]);
-									let portraitImg = document.createElement('img');
-									portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
-									//console.log(portraitImg.src);
-									
-									portraitImg.classList.add("storydoll");
-									if (shownPortraits[j][4])
-										portraitImg.classList.add('dim')
-									portraitImg.classList.add(int2strPos[j+1]);
-									portraitImg.classList.add(int2str[shownPortraits.length]);
-									
-									storyBox.appendChild(portraitImg);
-									
-									if (shownPortraits[j][5])
-									{
-										let a = maskThing.cloneNode(true);
-										a.classList.add(int2strPos[j+1])
-										a.classList.add(int2str[shownPortraits.length]);
-										storyBox.appendChild(a);
-									}
-								}
-								thisPartDiv.appendChild(storyBox);
-								
-								if (lastSpeakerName != "")
-								{
-									let p = document.createElement('p');
-									p.innerHTML = lastSpeakerName;
-									//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
-									p.classList.add("storyText");
-									p.classList.add("speakerName");
-									thisPartDiv.appendChild(p);
-								}
-								
-								didBGOrPortraitOrNameChange = false;
-							}
-							let p = document.createElement('p');
-							p.classList.add('storyText')
-							p.innerHTML = message;
-							thisPartDiv.appendChild(p);
-						}
-						else
-						{
-							let p = document.createElement('p');
-							if (lastSpeakerName == "")
-								p.innerHTML = message;
-							else
-								p.innerHTML = lastSpeakerName + ": "+message;
-							thisPartDiv.appendChild(p);
-						}
-						break;
-					default:
-						//console.log("unknown OPCODES..");
-				}
-			}
-			NewSimpleTextDiv.appendChild(thisPartDiv);
+			NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,p));
 			//Now replace the old div...
 			/*let textboxDiv = document.getElementById("Textboxes");
 			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
 			
 			currentEpisodeAsOpcodes.push(structuredLines);
 			
-			//If phaser is already init, go ahead and set the new scene
-			//...By destroying the old one and recreating it.
-			if (game != undefined)
-			{
-				game.scene.remove('GirlsFrontlineScene');
-				game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
-			}
-			
-		//})
-		//})
+		}
+		
+		//If phaser is already init, go ahead and set the new scene
+		//...By destroying the old one and recreating it.
+		if (game != undefined)
+		{
+			game.scene.remove('GirlsFrontlineScene');
+			game.scene.add('GirlsFrontlineScene',GirlsFrontlineScene,true);
 		}
 		let simpleTextDiv = document.getElementById("verySimpleText")
 		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
@@ -2033,6 +2116,18 @@ I have no idea how it works
 		//console.log(getCookie('fancyText'));
 		document.getElementById('fancyOrNot').checked = getCookie('fancyText');
 		//showSelectedEpisodes('mainEpisodes');
+		
+		document.getElementById("textarea1").value = `portrait;0;FAIL;0;false;false;
+speaker;El Fail
+bgm;intro_number_61
+bg;140
+msg;Hello world!
+msg;<color=#00CCFF&>This is colored text.</color>
+msg;As you can see, this section is still a work in progress. So you should probably check back later.
+portrait;0;FAIL;0;true;false;
+portrait;1;NytoIsomer;4;false;false;
+speaker;Dandelai;
+msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not be saved here.</color>`
 	}
 	
 
@@ -2120,24 +2215,75 @@ I have no idea how it works
 				<div id="customCutscene">
 					<p>WORK IN PROGRESS</p>
 					<p>Opcode structure isn't finalized, check back later... No, the buttons don't do anything.</p>
-					<a class="waves-effect waves-light btn"><i class="material-icons right">folder_open</i>Load .txt</a>
-					<a class="waves-effect waves-light btn"><i class="material-icons right">folder_open</i>Load .iop.json</a>
+					<a class="waves-effect waves-light btn" onclick="document.getElementById('file-input-txt').click();"><i class="material-icons right">folder_open</i>Load .txt</a>
+					<a class="waves-effect waves-light btn" onclick="document.getElementById('file-input-json').click();"><i class="material-icons right">folder_open</i>Load .iop.json</a>
+					<input id="file-input-txt" type="file" name="name" style="display: none;" />
+					<input id="file-input-json" type="file" name="name" style="display: none;" />
 			        <!--<div class="input-field col s12">
 						<textarea id="textarea1" class="materialize-textarea"></textarea>
 						<label for="textarea1">Textarea</label>
 					</div>-->
 					<textarea id="textarea1" class="materialize-textarea"></textarea>
+					<a class="waves-effect waves-light btn" onclick="runFromUserInput();"><i class="material-icons right">code</i>Run!</a>
 				    <div class="card blue-grey darken-1" style="text-align:left">
         				<div class="card-content white-text">
 						<span class="card-title">About .txt vs .iop.json</span>
 						<p>.txt is the cutscene scripting language GFL uses. The interpreter will always support importing .txt and playing it back.</p>
 						<p>.iop.json (<b>I</b>ntermediate <b>Op</b>codes, definitely not a coincidence) is the scripting language designed for the interpreter. It has some advantages compared to the GFL engine:</p>
-						<p>- Display more than two characters at a time. Dim multiple charcters.</p>
+						<p>- Display more than two characters at a time. Dim multiple charcters. Dim no characters.</p>
 						<p>- Dimming doesn't randomly break, because dimming is manually set. </p>
-						<p>- The commands are in english.</p>
+						<p>- The commands are in english. It's also very verbose.</p>
+						<p>- You can use + in messages. (GFL's txt script treats + as 'next line')</p>
 						<p>- (Coming soon) branch paths, allowing you to use the interpreter like a VN engine of sorts and write interactive stories</p>
+						<p>- Load multiple parts, since the only reasonable way to have more than one part would be to use JSON.</p>
+						<p>The disadvantages:</p>
+						<p>- The verbosity will make you type a lot.</p>
+						<p>- Since dimming is manually done, it might get confusing.</p>
+						<p>- Good luck memorizing all 5 arguments for a message opcode.</p>
 						</div>
 					</div>
+					<div class="card blue-grey darken-1" style="text-align:left">
+        				<div class="card-content white-text">
+							<span class="card-title">How to specify a background?</span>
+							<p>Backgrounds are stored in the avgtexture folder and indexed in-game with profiles.txt.</p>
+							<p>As displaying every single image would be disasterous and I only have about 500GB of bandwidth per month on this webserver, please click the link below to show an image of all the backgrounds with IDs arranged in a neat grid.</p>
+						</div>
+						<div class="card-action">
+							<a href="#">BG picker helper (Jk it doesn't exist yet)</a>
+						</div>
+					</div>
+					<div class="card blue-grey darken-1" style="text-align:left">
+        				<div class="card-content white-text">
+							<span class="card-title">How to specify a portrait?</span>
+							<p>Portraits are in the format of: idx;name;type;dim;isMasked</p>
+							<p>Arguments 4 and 5 can be omitted, they will automatically be converted to false.<p>
+							<p>idx - Which side. 0 for left, 1 for right. (indexes above 1 are not supported currently)</p>
+							<p>name - The internal name of the T-Doll. Hint: Ctrl+F portraitInformation.json</p>
+							<p>type - Usually costume, sometimes expression</p>
+							<p>dim (optional) - true for dim, false for not dim</p>
+							<p>isMasked (optional) - like dim</p>
+						</div>
+						<div class="card-action">
+							<a href="/portraitInformation.json">portraitInformation.json</a>
+						</div>
+					</div>
+					<div class="card blue-grey darken-1" style="text-align:left">
+        				<div class="card-content white-text">
+							<span class="card-title">How to specify music?</span>
+							<p>Music is just the filename.</p>
+							<p>The file index is enabled. Click the button to see all the files.</p>
+							<p>Alternatively you can use the dropdown and it will paste a bgm command at the end. As it is still WIP and has to be updated manually, you're better off using the index.</p>
+						</div>
+						<div class="card-action">
+							<a href="/audio">Index</a>
+							<a href="#" class='dropdown-trigger' data-target='dropdownMusic'>Select by name</a>
+						</div>
+					</div>
+					  <!-- Dropdown Structure -->
+					  <ul id='dropdownMusic' class='dropdown-content'>
+						<li><a href="#!">one</a></li>
+						<li><a href="#!">two</a></li>
+					  </ul>
 					<!--<ul class="collapsible">
 						<li>
 						  <div class="collapsible-header">About .txt vs .iop.json</div>
@@ -2207,7 +2353,7 @@ I have no idea how it works
 		Your browser does not support the audio tag.
 	</audio>
 	<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
-	<p>Can someone please fix the horrible UI? I'm a programmer, not a designer. Please fork the source code and make a pull request.</p>
+	<p>If you would like an improved UI, fix it yourself and submit a pull request. I don't know React/Vue/etc.</p>
 	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b></p>
 	<br>
 	<!--<a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot. T-Doll info, quotes, costumes, and more!</a>-->

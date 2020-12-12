@@ -2329,10 +2329,52 @@
 			]
 		},
 		{
-			"name": "CH. ??: ISOMER",
+			"name": "CH. ??: Operation Cube?",
 			"episodes": [
 				{
 					"name": "??? I",
+					"parts": [
+						"-1-1-1.txt",
+						"-1-1-2.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-1-2-1.txt",
+						"-1-2-2End.txt",
+						"-1-2-2First.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-1-3-1.txt",
+						"-1-3-2End.txt",
+						"-1-3-2First.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-1-4-1.txt",
+						"-1-4-2End.txt",
+						"-1-4-2First.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. ??: ISOMER",
+			"episodes": [
+				{
+					"name": "???",
+					"parts": [
+						"-31-0-1.txt"
+					]
+				},
+				{
+					"name": "??? II",
 					"parts": [
 						"-31-1A1-1.txt",
 						"-31-1A11-1.txt",
@@ -2353,7 +2395,7 @@
 					]
 				},
 				{
-					"name": "??? II",
+					"name": "??? III",
 					"parts": [
 						"-31-2A1-1.txt",
 						"-31-2A11-1.txt",
@@ -2371,7 +2413,7 @@
 					]
 				},
 				{
-					"name": "??? III",
+					"name": "??? IV",
 					"parts": [
 						"-31-3C1-1.txt",
 						"-31-3A1-1.txt",
@@ -2395,15 +2437,541 @@
 					]
 				},
 				{
-					"name": "??? IV",
+					"name": "??? V",
 					"parts": [
 						"-31-4-1.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "CH. ??: Shattered Connexion",
+			"episodes": [
+				{
+					"name": "??? I",
+					"parts": [
+						"-33-1-1First.txt",
+						"-33-11-1First.txt",
+						"-33-13-1First.txt",
+						"-33-15-1First.txt",
+						"-33-17-1First.txt",
+						"-33-18-1First.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-33-20-1First.txt",
+						"-33-22-1First.txt",
+						"-33-25-1First.txt",
+						"-33-26-1First.txt",
+						"-33-27-1First.txt",
+						"-33-29-1First.txt",
+						"-33-23-1First.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-33-3-1First.txt",
+						"-33-31-1First.txt",
+						"-33-33-1First.txt",
+						"-33-35-1First.txt",
+						"-33-37-1First.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-33-4-1First.txt",
+						"-33-40-1First.txt",
+						"-33-42-1First.txt",
+						"-33-43-1First.txt",
+						"-33-45-1First.txt",
+						"-33-46-1First.txt",
+						"-33-48-1First.txt",
+						"-33-49-1First.txt"
+					]
+				},
+				{
+					"name": "??? V",
+					"parts": [
+						"-33-51-4-Point13117.txt",
+						"-33-52-4-Point13142.txt",
+						"-33-59-4-Point13290.txt",
+						"-33-59-4-Point80174.txt",
+						"-33-5-1First.txt"
+					]
+				},
+				{
+					"name": "??? VI",
+					"parts": [
+						"-33-62-4-Point13467.txt"
+					]
+				},
+				{
+					"name": "??? VII",
+					"parts": [
+						"-33-7-1First.txt",
+						"-33-72-4-Point13325.txt",
+						"-33-72-4-Point83325.txt",
+						"-33-73-1First.txt",
+						"-33-74-1First.txt",
+						"-33-75-1First.txt",
+						"-33-76-1First.txt",
+						"-33-77-1First.txt",
+						"-33-78-1First.txt",
+						"-33-79-1First.txt"
+					]
+				},
+				{
+					"name": "??? VIII",
+					"parts": [
+						"-33-80-1First.txt",
+						"-33-81-1First.txt",
+						"-33-82-1First.txt",
+						"-33-84-1First.txt",
+						"-33-85-1First.txt",
+						"-33-86-1First.txt",
+						"-33-87-1First.txt",
+						"-33-83-1First.txt"
+					]
+				},
+				{
+					"name": "??? IX",
+					"parts": [
+						"-33-9-1First.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Polarized Light (Untranslated)",
+			"episodes": [
+				{
+					"name": "??? I",
+					"parts": [
+						"-36-1-1.txt",
+						"-36-1-10.txt",
+						"-36-1-2.txt",
+						"-36-1-3.txt",
+						"-36-1-4.txt",
+						"-36-1-5.txt",
+						"-36-1-6.txt",
+						"-36-1-7.txt",
+						"-36-1-8.txt",
+						"-36-1-9.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-36-2-1.txt",
+						"-36-2-10.txt",
+						"-36-2-2.txt",
+						"-36-2-3.txt",
+						"-36-2-4.txt",
+						"-36-2-5.txt",
+						"-36-2-6.txt",
+						"-36-2-8.txt",
+						"-36-2-9.txt",
+						"-36-2-7.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-36-3-1.txt",
+						"-36-3-12-Point90429.txt",
+						"-36-3-14-Point90521.txt",
+						"-36-3-16-Point90564.txt",
+						"-36-3-2.txt",
+						"-36-3-3.txt",
+						"-36-3-30-Point90663.txt",
+						"-36-3-30-Point90687.txt",
+						"-36-3-38-Point90883.txt",
+						"-36-3-4.txt",
+						"-36-3-5.txt",
+						"-36-3-6.txt",
+						"-36-3-7.txt",
+						"-36-3-8.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-36-4-1.txt",
+						"-36-4-10.txt",
+						"-36-4-11.txt",
+						"-36-4-13.txt",
+						"-36-4-2.txt",
+						"-36-4-27-Point91119.txt",
+						"-36-4-3.txt",
+						"-36-4-4.txt",
+						"-36-4-5.txt",
+						"-36-4-6.txt",
+						"-36-4-7.txt",
+						"-36-4-8.txt",
+						"-36-4-9.txt",
+						"-36-4-12.txt"
+					]
+				},
+				{
+					"name": "??? V",
+					"parts": [
+						"-36-5-1.txt",
+						"-36-5-2.txt",
+						"-36-5-3.txt",
+						"-36-5-4.txt",
+						"-36-5-5.txt",
+						"-36-5-6End.txt",
+						"-36-5-6First.txt",
+						"-36-5-EX.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Dual Randomness (Untranslated)",
+			"episodes": [
+				{
+					"name": "??? I",
+					"parts": [
+						"-41-1-1End.txt",
+						"-41-1-1First.txt",
+						"-41-1-2.txt",
+						"-41-1-3End.txt",
+						"-41-1-3First.txt",
+						"-41-1-4.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-41-2-10.txt",
+						"-41-2-11.txt",
+						"-41-2-12.txt",
+						"-41-2-1First.txt",
+						"-41-2-2First.txt",
+						"-41-2-3First.txt",
+						"-41-2-4-EX1Point91924.txt",
+						"-41-2-4-EX1Point91926.txt",
+						"-41-2-4-EX2Point92278.txt",
+						"-41-2-4-EX3Point92127.txt",
+						"-41-2-4-EX4Point92161.txt",
+						"-41-2-4-EX5Point92614.txt",
+						"-41-2-4-EX6Point92372.txt",
+						"-41-2-4First.txt",
+						"-41-2-5First.txt",
+						"-41-2-6.txt",
+						"-41-2-7.txt",
+						"-41-2-8.txt",
+						"-41-2-9.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-41-3-10.txt",
+						"-41-3-11.txt",
+						"-41-3-12.txt",
+						"-41-3-1First.txt",
+						"-41-3-2First.txt",
+						"-41-3-3First.txt",
+						"-41-3-4-EX1Point91991.txt",
+						"-41-3-4-EX2Point91990.txt",
+						"-41-3-4-EX3Point92264.txt",
+						"-41-3-4-EX4Point92396.txt",
+						"-41-3-4-EX5Point92254.txt",
+						"-41-3-4-EX6Point92335.txt",
+						"-41-3-4-EX99Point92405.txt",
+						"-41-3-4-EX99Point92444.txt",
+						"-41-3-4-EX99Point92495.txt",
+						"-41-3-4-EX99Point92509.txt",
+						"-41-3-4-EX99Point92589.txt",
+						"-41-3-4-EX99Point92610.txt",
+						"-41-3-4-EX99Point92612.txt",
+						"-41-3-4-EX99Point92613.txt",
+						"-41-3-4-Point71201.txt",
+						"-41-3-4-Point71305.txt",
+						"-41-3-4-Point72006.txt",
+						"-41-3-4First.txt",
+						"-41-3-5.txt",
+						"-41-3-6.txt",
+						"-41-3-7.txt",
+						"-41-3-8.txt",
+						"-41-3-9.txt",
+						"-41-3-4-EX99Point92611.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-41-4-10.txt",
+						"-41-4-11.txt",
+						"-41-4-1First.txt",
+						"-41-4-2First.txt",
+						"-41-4-3First.txt",
+						"-41-4-4-EX99Point92686.txt",
+						"-41-4-4-EX99Point92797.txt",
+						"-41-4-4-EX99Point92804.txt",
+						"-41-4-4-EX99Point92871.txt",
+						"-41-4-4-EX99Point92878.txt",
+						"-41-4-4First.txt",
+						"-41-4-5.txt",
+						"-41-4-6.txt",
+						"-41-4-7.txt",
+						"-41-4-8.txt",
+						"-41-4-9.txt",
+						"-41-4-4-EX99Point92810.txt"
+					]
+				},
+				{
+					"name": "??? V",
+					"parts": [
+						"-41-5-1First.txt",
+						"-41-5-2First.txt",
+						"-41-5-3First.txt",
+						"-41-5-4First.txt",
+						"-41-5-5.txt"
+					]
+				},
+				{
+					"name": "??? VI",
+					"parts": [
+						"-41-6-1.txt",
+						"-41-6-2.txt"
 					]
 				}
 			]
 		}
 	],
 	"side": [
+		{
+			"name": "Halloween 2019",
+			"episodes": [
+				{
+					"name": "Episode I",
+					"parts": [
+						"-34-1-1First.txt"
+					]
+				},
+				{
+					"name": "Episode II",
+					"parts": [
+						"-34-2-1First.txt"
+					]
+				},
+				{
+					"name": "Episode III",
+					"parts": [
+						"-34-3-1First.txt"
+					]
+				},
+				{
+					"name": "Episode IV",
+					"parts": [
+						"-34-4-1First.txt",
+						"-34-4-2End.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Christmas 2019",
+			"episodes": [
+				{
+					"name": "Episode I",
+					"parts": [
+						"-35-1-1First.txt",
+						"-35-1-2End.txt"
+					]
+				},
+				{
+					"name": "Episode II",
+					"parts": [
+						"-35-2-1First.txt",
+						"-35-2-2End.txt"
+					]
+				},
+				{
+					"name": "Episode III",
+					"parts": [
+						"-35-3-1First.txt",
+						"-35-3-2End.txt"
+					]
+				},
+				{
+					"name": "Episode IV",
+					"parts": [
+						"-35-4-1First.txt",
+						"-35-4-2End.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "White Day 2020(?)",
+			"episodes": [
+				{
+					"name": "Episode I",
+					"parts": [
+						"-37-1-1.txt"
+					]
+				},
+				{
+					"name": "Episode II",
+					"parts": [
+						"-37-2-1.txt"
+					]
+				},
+				{
+					"name": "Episode III",
+					"parts": [
+						"-37-3-1First.txt",
+						"-37-3-2End.txt",
+						"-37-3-4-Point70626.txt",
+						"-37-3-4-Point70633.txt"
+					]
+				},
+				{
+					"name": "Episode IV",
+					"parts": [
+						"-37-4-1.txt",
+						"-37-4-4-Point70712.txt"
+					]
+				},
+				{
+					"name": "Episode V",
+					"parts": [
+						"-37-5-1First.txt",
+						"-37-5-2End.txt"
+					]
+				},
+				{
+					"name": "Episode VI",
+					"parts": [
+						"-37-6-1.txt",
+						"-37-6-4-Point70901.txt",
+						"-37-6-4-Point70905.txt",
+						"-37-6-4-Point70906.txt",
+						"-37-6-4-Point70912.txt",
+						"-37-6-4-Point70918.txt",
+						"-37-6-4-Point70923.txt",
+						"-37-6-4-Point70919.txt"
+					]
+				},
+				{
+					"name": "Episode VII",
+					"parts": [
+						"-37-7-1First.txt",
+						"-37-7-2End.txt",
+						"-37-7-4-Point71024.txt"
+					]
+				},
+				{
+					"name": "Episode VIII",
+					"parts": [
+						"-37-8-1.txt"
+					]
+				},
+				{
+					"name": "Episode IX",
+					"parts": [
+						"-37-9-1.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Summer 2020: Far Side of the Sea",
+			"episodes": [
+				{
+					"name": "Episode I",
+					"parts": [
+						"-40-1-1First.txt",
+						"-40-1-2End.txt"
+					]
+				},
+				{
+					"name": "Episode II",
+					"parts": [
+						"-40-2-1First.txt",
+						"-40-2-2End.txt"
+					]
+				},
+				{
+					"name": "Episode III",
+					"parts": [
+						"-40-3-1First.txt",
+						"-40-3-2End.txt"
+					]
+				},
+				{
+					"name": "Episode IV",
+					"parts": [
+						"-40-4-1First.txt",
+						"-40-4-2End.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Halloween 2020? (Untranslated)",
+			"episodes": [
+				{
+					"name": "??? I",
+					"parts": [
+						"-42-1-1First.txt",
+						"-42-1-2.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-42-2-1First.txt",
+						"-42-2-2.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-42-3-1First.txt",
+						"-42-3-3.txt",
+						"-42-3-4.txt",
+						"-42-3-5.txt",
+						"-42-3-6.txt",
+						"-42-3-7.txt",
+						"-42-3-8.txt",
+						"-42-3-2.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-42-4-1First.txt",
+						"-42-4-2.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Interpreter Test Room",
+			"episodes": [
+				{
+					"name": "test.txt",
+					"parts": [
+						"testroom/test.txt"
+					]
+				},
+				{
+					"name": "test2.txt",
+					"parts": [
+						"testroom/test2.txt"
+					]
+				}
+			]
+		},
 		{
 			"name": "Skin Stories",
 			"episodes": [
@@ -2705,18 +3273,6 @@
 					"name": "HK21 - Untranslated1",
 					"parts": [
 						"skin/4002.txt"
-					]
-				},
-				{
-					"name": "HK416 - Carmilla",
-					"parts": [
-						"skin/7.txt"
-					]
-				},
-				{
-					"name": "HK416 - Haunted Castle",
-					"parts": [
-						"skin/6.txt"
 					]
 				},
 				{
@@ -3707,13 +4263,19 @@
 			"name": "Gunslinger Girl",
 			"episodes": [
 				{
-					"name": "??? I",
+					"name": "???",
+					"parts": [
+						"-38-0-1.txt"
+					]
+				},
+				{
+					"name": "??? II",
 					"parts": [
 						"-38-1-1.txt"
 					]
 				},
 				{
-					"name": "??? II",
+					"name": "??? III",
 					"parts": [
 						"-38-2-1.txt",
 						"-38-2-2End.txt",
@@ -3724,7 +4286,7 @@
 					]
 				},
 				{
-					"name": "??? III",
+					"name": "??? IV",
 					"parts": [
 						"-38-3-1.txt",
 						"-38-3-1First.txt",
@@ -3734,7 +4296,7 @@
 					]
 				},
 				{
-					"name": "??? IV",
+					"name": "??? V",
 					"parts": [
 						"-38-4-1End.txt",
 						"-38-4-1First.txt",
@@ -3742,7 +4304,7 @@
 					]
 				},
 				{
-					"name": "??? V",
+					"name": "??? VI",
 					"parts": [
 						"-38-5-1End.txt",
 						"-38-5-1First.txt",
@@ -3750,7 +4312,7 @@
 					]
 				},
 				{
-					"name": "??? VI",
+					"name": "??? VII",
 					"parts": [
 						"-38-6-1End.txt",
 						"-38-6-1First.txt",
@@ -3758,7 +4320,7 @@
 					]
 				},
 				{
-					"name": "??? VII",
+					"name": "??? VIII",
 					"parts": [
 						"-38-7-1.txt"
 					]
@@ -3842,6 +4404,220 @@
 						"-32-8-2End.txt",
 						"-32-8-2First.txt",
 						"-32-8-4-Point12833.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Guilty Gear x BlazBlue",
+			"episodes": [
+				{
+					"name": "Part I",
+					"parts": [
+						"-8-1-1.txt",
+						"-8-1-2First.txt"
+					]
+				},
+				{
+					"name": "Part II",
+					"parts": [
+						"-8-2-1.txt",
+						"-8-2-2End.txt",
+						"-8-2-2First.txt"
+					]
+				},
+				{
+					"name": "Part III",
+					"parts": [
+						"-8-3-1.txt",
+						"-8-3-2First.txt"
+					]
+				},
+				{
+					"name": "Part IV",
+					"parts": [
+						"-8-4-1.txt",
+						"-8-4-2End.txt",
+						"-8-4-2First.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Honkai Impact (Untranslated)",
+			"episodes": [
+				{
+					"name": "Chapter 1 I",
+					"parts": [
+						"-14-1-2First.txt",
+						"-14-1-4-Point4968.txt",
+						"-14-1-1.txt"
+					]
+				},
+				{
+					"name": "Chapter 1 II",
+					"parts": [
+						"-14-2-1.txt",
+						"-14-2-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 1 III",
+					"parts": [
+						"-14-3-1.txt",
+						"-14-3-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 1 IV",
+					"parts": [
+						"-14-4-1.txt",
+						"-14-4-2End.txt",
+						"-14-4-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 I",
+					"parts": [
+						"-15-1-1.txt",
+						"-15-1-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 II",
+					"parts": [
+						"-15-2-1.txt",
+						"-15-2-2End.txt",
+						"-15-2-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 III",
+					"parts": [
+						"-15-3-1.txt",
+						"-15-3-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 IV",
+					"parts": [
+						"-15-4-1.txt",
+						"-15-4-2End.txt",
+						"-15-4-2First.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "DJMax Respect",
+			"episodes": [
+				{
+					"name": "Chapter 1 Stage I",
+					"parts": [
+						"-19-1-1.txt",
+						"-19-1-2.txt"
+					]
+				},
+				{
+					"name": "Chapter 1 Stage II",
+					"parts": [
+						"-19-2-1.txt",
+						"-19-2-2.txt"
+					]
+				},
+				{
+					"name": "Chapter 1 Stage III",
+					"parts": [
+						"-19-3-1.txt",
+						"-19-3-2.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 Stage I",
+					"parts": [
+						"-20-1-1.txt",
+						"-20-1-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 Stage II",
+					"parts": [
+						"-20-2-1.txt",
+						"-20-2-2First.txt"
+					]
+				},
+				{
+					"name": "Chapter 2 Stage III",
+					"parts": [
+						"-20-3-1.txt",
+						"-20-3-2First.txt",
+						"-20-3-2End.txt"
+					]
+				},
+				{
+					"name": "Bonus Cutscenes During Stages",
+					"parts": [
+						"-19-2-4-Point6737.txt",
+						"-19-2-4-Point6738.txt",
+						"-19-3-4-Point6750.txt",
+						"-19-3-4-Point7023.txt",
+						"-20-1-4-Point6780.txt",
+						"-20-1-4-Point7026.txt",
+						"-20-2-4-Point6819.txt",
+						"-20-2-4-Point7029.txt",
+						"-20-3-4-Point6845.txt",
+						"-20-3-4-Point6846.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "The Division (Untranslated) (Missing some)",
+			"episodes": [
+				{
+					"name": "???",
+					"parts": [
+						"-43-0-1.txt"
+					]
+				},
+				{
+					"name": "??? II",
+					"parts": [
+						"-43-1-1.txt",
+						"-43-1-2.txt",
+						"-43-1-3.txt"
+					]
+				},
+				{
+					"name": "??? III",
+					"parts": [
+						"-43-2-1.txt",
+						"-43-2-2.txt",
+						"-43-2-3.txt",
+						"-43-2-4.txt"
+					]
+				},
+				{
+					"name": "??? IV",
+					"parts": [
+						"-43-3-1.txt",
+						"-43-3-2.txt",
+						"-43-3-3.txt"
+					]
+				},
+				{
+					"name": "??? V",
+					"parts": [
+						"-43-4-1.txt",
+						"-43-4-2.txt",
+						"-43-4-3.txt"
+					]
+				},
+				{
+					"name": "??? VI",
+					"parts": [
+						"-43-5-1.txt",
+						"-43-5-2.txt"
 					]
 				}
 			]

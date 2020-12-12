@@ -347,7 +347,9 @@
         "pic_FN57_1902.png",
         "pic_FN57_1902_D.png",
         "pic_FN57_2805.png",
-        "pic_FN57_2805_D.png"
+        "pic_FN57_2805_D.png",
+        "pic_FN57_1109.png",
+        "pic_FN57_1109_D.png"
     ],
     "G11": [
         "pic_G11.png",
@@ -743,7 +745,9 @@
     ],
     "Ithaca37": [
         "pic_Ithaca37.png",
-        "pic_Ithaca37_D.png"
+        "pic_Ithaca37_D.png",
+        "pic_Ithaca37_1105.png",
+        "pic_Ithaca37_1105_D.png"
     ],
     "M4 SOPMOD II": [
         "pic_M4 SOPMOD II.png",
@@ -990,7 +994,9 @@
         "pic_NTW20_307.png",
         "pic_NTW20_307_D.png",
         "pic_NTW20_2301.png",
-        "pic_NTW20_2301_D.png"
+        "pic_NTW20_2301_D.png",
+        "pic_NTW20_1101.png",
+        "pic_NTW20_1101_D.png"
     ],
     "NTW20Mod": [
         "pic_NTW20Mod.png",
@@ -1361,7 +1367,9 @@
         "pic_M1903_5.png",
         "pic_M1903_5_D.png",
         "pic_M1903_802.png",
-        "pic_M1903_802_D.png"
+        "pic_M1903_802_D.png",
+        "pic_M1903_1107.png",
+        "pic_M1903_1107_D.png"
     ],
     "stg940": [
         "pic_stg940.png",
@@ -1399,7 +1407,9 @@
         "pic_KP31_310.png",
         "pic_KP31_310_D.png",
         "pic_KP31_3101.png",
-        "pic_KP31_3101_D.png"
+        "pic_KP31_3101_D.png",
+        "pic_KP31_1103.png",
+        "pic_KP31_1103_D.png"
     ],
     "SuperSASS": [
         "pic_SuperSASS.png",
@@ -1555,7 +1565,9 @@
     ],
     "95type": [
         "pic_95type.png",
-        "pic_95type_D.png"
+        "pic_95type_D.png",
+        "pic_95type_1102.png",
+        "pic_95type_1102_D.png"
     ],
     "97type": [
         "pic_97type.png",
@@ -1640,8 +1652,8 @@
         "pic_WA2000_306_D.png",
         "pic_WA2000_6.png",
         "pic_WA2000_6_D.png",
-        null,
-        null,
+        "pic_WA2000_1108.png",
+        "pic_WA2000_1108_D.png",
         "pic_WA2000_804.png",
         "pic_WA2000_804_D.png"
     ],
@@ -1802,7 +1814,8 @@
         "pic_KGP9_D.png"
     ],
     "BOSS-12": [
-        "Eliza.png"
+        "pic_Eliza_Hidden.png",
+        "pic_Eliza_Hidden.png"
     ],
     "Agent": [
         "pic_Agent.png"
@@ -1814,29 +1827,29 @@
         "Destroyer.png",
         "DestroyerPlus.png"
     ],
-    "Hunter": [
+    "BOSS-3": [
         "Hunter.png"
     ],
     "Alchemist": [
         "pic_Alchemist_LL.png"
     ],
-    "Intruder": [
+    "BOSS-4": [
         "Intruder.png"
     ],
     "Scarecrow": [
         "Scarecrow.png"
     ],
-    "Executioner": [
+    "BOSS-2": [
         "Excutioner.png",
         "ExcutionerElite.png"
     ],
     "Gager": [
         "Gager.png"
     ],
-    "Architect": [
+    "BOSS-9": [
         "Architect.png"
     ],
-    "Dreamer": [
+    "BOSS-11": [
         "Dreamer.png"
     ],
     "BossJustice": [
@@ -1859,9 +1872,12 @@
     "OGAS": [
         "Nyto_Isomer_Shadow.png"
     ],
-    "Nyto": [
+    "NytoIsomer": [
         "Nyto.png",
-        "Nyto_black.png"
+        "Nyto_black.png",
+        null,
+        null,
+        "Nyto_Isomer_Shadow.png"
     ],
     "NPC-Persica": [
         "pic_NPC-Persica.png",
@@ -1885,8 +1901,8 @@
     "Jillmagic": [
         "pic_Jill_529.png"
     ],
-    "BOSS-9": [
-        "pic_BossArchitect_LL.png"
+    "RO635-NoArmor": [
+        "special/pic_RO635_NoArmor0.png"
     ],
     "M1903bar": [
         "special/M1903_Bartender.png"
@@ -1894,16 +1910,42 @@
     "M1903Cafe": [
         "special/M1903Cafe.png"
     ],
+    "M16": [
+        "pic_M16A1.png",
+        "pic_M16A1_D.png"
+    ],
     "MK2": [
         "pic_StenMK2.png",
         "pic_StenMK2_D.png"
     ],
     "FAL": [
         "pic_FNFAL.png",
-        "pic_FNFAL_D.png"
+        "pic_FNFAL_D.png",
+        null,
+        null,
+        "pic_FNFAL_2406.png",
+        "pic_FNFAL_2406_D.png"
     ],
     "FAMASHalloween": [
         "pic_FAMAS_2604.png"
+    ],
+    "m1": [
+        "pic_M1.png",
+        "pic_M1_D.png",
+        "pic_M1_1106.png",
+        "pic_M1_1106_D.png"
+    ],
+    "DJMAXSUEE": [
+        "equip/fairy/DJMAXSUEE_1.png"
+    ],
+    "DJMAXPREIYA": [
+        "equip/fairy/DJMAXPREIYA_1.png"
+    ],
+    "DJMAXSEHRA": [
+        "equip/fairy/DJMAXSEHRA_1.png"
+    ],
+    "FairyWarrior": [
+        "equip/fairy/fighting_1.png"
     ],
     "missing": [
         "missing.png"

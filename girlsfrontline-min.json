@@ -2645,7 +2645,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Hunter"
+        "internalName": "BOSS-3"
     },
     {
         "name": "Alchemist",
@@ -2659,7 +2659,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Intruder"
+        "internalName": "BOSS-4"
     },
     {
         "name": "Scarecrow",
@@ -2673,7 +2673,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": 3,
-        "internalName": "Executioner"
+        "internalName": "BOSS-2"
     },
     {
         "name": "Gager",
@@ -2687,14 +2687,14 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Architect"
+        "internalName": "BOSS-9"
     },
     {
         "name": "Dreamer",
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Dreamer"
+        "internalName": "BOSS-11"
     },
     {
         "name": "Judge",
@@ -2742,7 +2742,7 @@
         "type": "Nyto",
         "num": -1,
         "rating": -1,
-        "internalName": "Nyto"
+        "internalName": "NytoIsomer"
     },
     {
         "name": "Ange",

@@ -232,7 +232,7 @@ I have no idea how it works
 	left:15%; /*???*/
 }
 .storydoll.first.two{
-	right:25%
+	right:35%
 }
 .storydoll.second.two{
 	left:35%
@@ -1191,6 +1191,8 @@ I have no idea how it works
 		NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,0))
 		
 		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
+		if (game == undefined)
+			document.getElementById("startButton").classList.remove('disabled');
 	}
 	
 	//input: structuredLines
@@ -1282,7 +1284,7 @@ I have no idea how it works
 				case OPCODES.PORTRAIT:
 					if (!fancyDisplayType)
 						break;
-					console.log(portraitStructToString(structuredLines[i]))
+					//console.log(portraitStructToString(structuredLines[i]))
 					let idx = structuredLines[i][1]
 					let name = structuredLines[i][2]
 					let type = structuredLines[i][3]
@@ -2039,7 +2041,7 @@ I have no idea how it works
 			listResults(frontlinedex);
 		});
 		
-		fetch('NewCharacterVoice.json')
+		fetch('CharacterVoicePlus.json')
 		.then(response => response.json())
 		.then(json => {
 			console.log("NewCharacterVoice.json loaded!");
@@ -2122,7 +2124,7 @@ speaker;El Fail
 bgm;intro_number_61
 bg;140
 msg;Hello world!
-msg;<color=#00CCFF&>This is colored text.</color>
+msg;<color=#00CCFF>This is colored text.</color>
 msg;As you can see, this section is still a work in progress. So you should probably check back later.
 portrait;0;FAIL;0;true;false;
 portrait;1;NytoIsomer;4;false;false;
@@ -2140,7 +2142,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
   <nav class='nav-extended'>
     <div class="nav-wrapper" id='theTop' style="overflow:hidden;">
       <a href="#" class="brand-logo center" style="text-overflow: ellipsis; white-space: nowrap;">
-      	<span class='header-desktop'>GFL Cutscene Intrepeter (very alpha)</span>
+      	<span class='header-desktop'>GFL Cutscene Intrepeter (kind of alpha)</span>
       	<span class='header-mobile'>GFL C.I.</span>
       	
 	</a>
@@ -2202,8 +2204,8 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 					</form>
 					
 					<div id="SearchResultsDiv"  class="" >
-						<p>If you are seeing this it's still loading, please wait 1 second for the JSON to load</a>
-						
+						<p>If you are seeing this it's still loading, please wait 1 second for the JSON to load</p>
+						<p>Either that or your browser is broken, please check for an update.</p>
 						<div class="progress">
 						  <div class="indeterminate"></div>
 						</div>
@@ -2213,8 +2215,8 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			</div>
 			<div class="col s12" id="customCutsceneWrapper">
 				<div id="customCutscene">
-					<p>WORK IN PROGRESS</p>
-					<p>Opcode structure isn't finalized, check back later... No, the buttons don't do anything.</p>
+					<p>WORK IN PROGRESS - IGNORE THE TERRIBLE UI</p>
+					<p>These buttons don't do anything yet, but you can type in the textbox below and run your custom cutscene.</p>
 					<a class="waves-effect waves-light btn" onclick="document.getElementById('file-input-txt').click();"><i class="material-icons right">folder_open</i>Load .txt</a>
 					<a class="waves-effect waves-light btn" onclick="document.getElementById('file-input-json').click();"><i class="material-icons right">folder_open</i>Load .iop.json</a>
 					<input id="file-input-txt" type="file" name="name" style="display: none;" />
@@ -2355,6 +2357,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
 	<p>If you would like an improved UI, fix it yourself and submit a pull request. I don't know React/Vue/etc.</p>
 	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b></p>
+	<p><a href='/LICENSE.html'>This webpage is free and open source software and licensed under AGPLv3.</a></p>
 	<br>
 	<!--<a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot. T-Doll info, quotes, costumes, and more!</a>-->
 </body>

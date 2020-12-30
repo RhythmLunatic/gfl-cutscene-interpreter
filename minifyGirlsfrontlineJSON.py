@@ -161,7 +161,8 @@ portraitDatabase['NPC-Persica'] = [
 	"pic_NPC-Persica_J.png"
 ]
 portraitDatabase["NPC-Helian"]=[
-	"pic_NPC-Helian.png"
+	"pic_NPC-Helian.png",
+	"pic_NPC-Helian_A.png"
 ]
 portraitDatabase['NPC-Deele']=[
 	"pic_NPC-Deele.png"
@@ -170,6 +171,7 @@ portraitDatabase['NPC-Seele']=[
 	"pic_NPC-Seele.png",
 	"pic_NPC-Seele_1.png"
 ]
+portraitDatabase['NPC-Kyruger']=['pic_NPC-Kyruger.png']
 
 portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
@@ -190,11 +192,20 @@ portraitDatabase['HK416'][3] = ['special/pic_HK416_2.png']
 portraitDatabase['M16']=portraitDatabase["M16A1"]
 portraitDatabase["MK2"]=portraitDatabase['StenMK2']
 portraitDatabase['FAL']=portraitDatabase['FNFAL']
+portraitDatabase['FAL'] = extendListIfTooShort(portraitDatabase['FAL'],4)
+portraitDatabase['FAL'][2] = "pic_FNFAL_308.png"
+portraitDatabase['FAL'][3] = "pic_FNFAL_308_D.png"
+
 #Yes really
 portraitDatabase['PPSh41']=portraitDatabase['PPsh41']
 
 portraitDatabase["FAMASHalloween"]=["pic_FAMAS_2604.png"]
 
+portraitDatabase['P7']=quickInsertCostumeAtIdx(portraitDatabase['P7'],2,"1404")
+portraitDatabase['KSVK']=quickInsertCostumeAtIdx(portraitDatabase['KSVK'],4,"3805")
+portraitDatabase['Ameli']=quickInsertCostumeAtIdx(portraitDatabase['Ameli'],2,"1605")
+portraitDatabase["Welrod"]=quickInsertCostumeAtIdx(portraitDatabase["Welrod"],4,"1401")
+portraitDatabase["Spitfire"]=quickInsertCostumeAtIdx(portraitDatabase["Spitfire"],2,"1405")
 portraitDatabase['Ithaca37'] = quickInsertCostumeAtIdx(portraitDatabase['Ithaca37'],2,"1105")
 portraitDatabase['95type'] = quickInsertCostumeAtIdx(portraitDatabase['95type'],2,"1102")
 portraitDatabase['m1'] = quickInsertCostumeAtIdx(portraitDatabase['M1'],2,"1106")
@@ -203,6 +214,10 @@ portraitDatabase['FAL'] = quickInsertCostumeAtIdx(portraitDatabase['FAL'],4,"240
 portraitDatabase['KP31'] = quickInsertCostumeAtIdx(portraitDatabase['KP31'],6,"1103")
 portraitDatabase['WA2000'] = quickInsertCostumeAtIdx(portraitDatabase['WA2000'],6,'1108')
 portraitDatabase['NTW20'] = quickInsertCostumeAtIdx(portraitDatabase['NTW20'],6,'1101')
+portraitDatabase['OC44'] = quickInsertCostumeAtIdx(portraitDatabase['OC44'],2,'1608')
+portraitDatabase['CZ75'] = quickInsertCostumeAtIdx(portraitDatabase['CZ75'],2,'1604')
+portraitDatabase['RFB'] = quickInsertCostumeAtIdx(portraitDatabase['RFB'],2,'1601')
+portraitDatabase['G11'] = quickInsertCostumeAtIdx(portraitDatabase['G11'],6,'1602')
 
 #portraitDatabase["MDR"].extend(["pic_MDR_2603.png","pic_MDR_2603_D.png"])
 #portraitDatabase["BrenMK"].extend(["pic_BrenMK_2605.png","pic_BrenMK_2605_D.png"])

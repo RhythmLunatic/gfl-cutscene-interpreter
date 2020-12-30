@@ -1150,6 +1150,13 @@
         "internalName": "M950A"
     },
     {
+        "name": "M950A MOD 3",
+        "type": "HG",
+        "num": 97,
+        "rating": 6,
+        "internalName": "M950AMod"
+    },
+    {
         "name": "M99",
         "type": "RF",
         "num": 128,
@@ -1853,6 +1860,13 @@
         "num": 57,
         "rating": 5,
         "internalName": "AR15Mod"
+    },
+    {
+        "name": "SUB-2000",
+        "type": "SMG",
+        "num": -1,
+        "rating": 3,
+        "internalName": "SUB2000"
     },
     {
         "name": "SV-98",
@@ -2592,13 +2606,6 @@
         "internalName": "Triela"
     },
     {
-        "name": "SUB-2000",
-        "type": "SMG",
-        "num": -1,
-        "rating": 3,
-        "internalName": "SUB2000"
-    },
-    {
         "name": "K7",
         "type": "SMG",
         "num": -1,
@@ -2624,7 +2631,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Agent"
+        "internalName": "BOSS-7"
     },
     {
         "name": "Ouroboros",
@@ -2652,7 +2659,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Alchemist"
+        "internalName": "BOSS-5"
     },
     {
         "name": "Intruder",
@@ -2666,7 +2673,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Scarecrow"
+        "internalName": "BOSS-1"
     },
     {
         "name": "Executioner",
@@ -2680,7 +2687,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "Gager"
+        "internalName": "BOSS-7"
     },
     {
         "name": "Architect",
@@ -2754,7 +2761,8 @@
         "name": "Kryuger",
         "type": "NPC",
         "num": -1,
-        "rating": -1
+        "rating": -1,
+        "internalName": "NPC-Kyruger"
     },
     {
         "name": "Helian",

@@ -152,7 +152,7 @@ js['crossover'].append({
 	"name": "DJMax Respect",
 	"episodes": [
 		{
-			"name": "Chapter 1 Stage I",
+			"name": "Stage 1-1: Stalker",
 			"parts": [
 				"-19-1-1.txt",
 				#"-19-1-2First.txt", #duplicate file
@@ -160,7 +160,7 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name": "Chapter 1 Stage II",
+			"name": "Stage 1-2: Heartbeat",
 			"parts": [
 				"-19-2-1.txt",
 				#"-19-2-2First.txt", #duplicate file
@@ -168,7 +168,7 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name": "Chapter 1 Stage III",
+			"name": "Stage 1-3: Waiting For You",
 			"parts": [
 				"-19-3-1.txt",
 				#"-19-3-2First.txt", #duplicate file
@@ -176,21 +176,21 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name": "Chapter 2 Stage I",
+			"name": "Stage 2-1: Sunset Rider",
 			"parts": [
 				"-20-1-1.txt",
 				"-20-1-2First.txt",
 			]
 		},
 		{
-			"name": "Chapter 2 Stage II",
+			"name": "Stage 2-2: Fate",
 			"parts": [
 				"-20-2-1.txt",
 				"-20-2-2First.txt",
 			]
 		},
 		{
-			"name": "Chapter 2 Stage III",
+			"name": "Stage 2-3: End of the Moonlight",
 			"parts": [
 				"-20-3-1.txt",
 				"-20-3-2First.txt",
@@ -300,8 +300,8 @@ with open('chapterDatabase.json','wb') as f:
 	
 
 #I can't explain this shit, but BG10 is PlaybackBG1
-backgroundsRename = {
+'''backgroundsRename = {
 	"White":"PlaybackBG1"
 }
 with open('profiles.txt','r') as backgrounds:
-	print([line.strip() for line in backgrounds.readlines()])
+	print([line.strip() for line in backgrounds.readlines()])'''

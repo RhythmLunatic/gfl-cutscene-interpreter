@@ -120,8 +120,8 @@
     "Ameli": [
         "pic_Ameli.png",
         "pic_Ameli_D.png",
-        null,
-        null,
+        "pic_Ameli_1605.png",
+        "pic_Ameli_1605_D.png",
         "pic_Ameli_2409.png",
         "pic_Ameli_2409_D.png"
     ],
@@ -212,8 +212,8 @@
     "CZ75": [
         "pic_CZ75.png",
         "pic_CZ75_D.png",
-        null,
-        null,
+        "pic_CZ75_1604.png",
+        "pic_CZ75_1604_D.png",
         "pic_CZ75_3005.png",
         "pic_CZ75_3005_D.png"
     ],
@@ -356,7 +356,10 @@
         "pic_G11_D.png",
         null,
         "pic_G11_9.png",
-        "pic_G11_9_D.png"
+        "pic_G11_9_D.png",
+        null,
+        "pic_G11_1602.png",
+        "pic_G11_1602_D.png"
     ],
     "G28": [
         "pic_G28.png",
@@ -599,8 +602,8 @@
         "pic_KSVK_D.png",
         null,
         null,
-        null,
         "pic_KSVK_3805.png",
+        "pic_KSVK_3805_D.png",
         "pic_KSVK_3805_D.png"
     ],
     "98K": [
@@ -811,6 +814,10 @@
         null,
         "pic_M950A_2303.png",
         "pic_M950A_2303_D.png"
+    ],
+    "M950AMod": [
+        "pic_M950AMod.png",
+        "pic_M950AMod_D.png"
     ],
     "M99": [
         "pic_M99.png",
@@ -1040,7 +1047,9 @@
     ],
     "OC44": [
         "pic_OC44.png",
-        "pic_OC44_D.png"
+        "pic_OC44_D.png",
+        "pic_OC44_1608.png",
+        "pic_OC44_1608_D.png"
     ],
     "P08": [
         "pic_P08.png",
@@ -1066,7 +1075,9 @@
     ],
     "P7": [
         "pic_P7.png",
-        "pic_P7_D.png"
+        "pic_P7_D.png",
+        "pic_P7_1404.png",
+        "pic_P7_1404_D.png"
     ],
     "P90": [
         "pic_P90.png",
@@ -1188,7 +1199,9 @@
     ],
     "RFB": [
         "pic_RFB.png",
-        "pic_RFB_D.png"
+        "pic_RFB_D.png",
+        "pic_RFB_1601.png",
+        "pic_RFB_1601_D.png"
     ],
     "RMB93": [
         "pic_RMB93.png",
@@ -1303,6 +1316,10 @@
         "pic_AR15Mod.png",
         "pic_AR15Mod_D.png"
     ],
+    "SUB2000": [
+        "pic_SUB2000.png",
+        "pic_SUB2000_D.png"
+    ],
     "SV98": [
         "pic_SV98.png",
         "pic_SV98_D.png",
@@ -1357,7 +1374,9 @@
     ],
     "Spitfire": [
         "pic_Spitfire.png",
-        "pic_Spitfire_D.png"
+        "pic_Spitfire_D.png",
+        "pic_Spitfire_1405.png",
+        "pic_Spitfire_1405_D.png"
     ],
     "M1903": [
         "pic_M1903.png",
@@ -1669,7 +1688,9 @@
         "pic_Welrod.png",
         "pic_Welrod_D.png",
         "pic_Welrod_2103.png",
-        "pic_Welrod_2103_D.png"
+        "pic_Welrod_2103_D.png",
+        "pic_Welrod_1401.png",
+        "pic_Welrod_1401_D.png"
     ],
     "X95": [
         "pic_X95.png",
@@ -1801,10 +1822,6 @@
         "pic_Triela.png",
         "pic_Triela_D.png"
     ],
-    "SUB2000": [
-        "pic_SUB2000.png",
-        "pic_SUB2000_D.png"
-    ],
     "K7": [
         "pic_K7.png",
         "pic_K7_D.png"
@@ -1817,8 +1834,8 @@
         "pic_Eliza_Hidden.png",
         "pic_Eliza_Hidden.png"
     ],
-    "Agent": [
-        "pic_Agent.png"
+    "BOSS-7": [
+        "Gager.png"
     ],
     "Ouroboros": [
         "Ouroboros.png"
@@ -1830,24 +1847,21 @@
     "BOSS-3": [
         "Hunter.png"
     ],
-    "Alchemist": [
+    "BOSS-5": [
         "pic_Alchemist_LL.png"
     ],
     "BOSS-4": [
         "Intruder.png"
     ],
-    "Scarecrow": [
+    "BOSS-1": [
         "Scarecrow.png"
     ],
     "BOSS-2": [
         "Excutioner.png",
         "ExcutionerElite.png"
     ],
-    "Gager": [
-        "Gager.png"
-    ],
     "BOSS-9": [
-        "Architect.png"
+        "pic_BossArchitect_LL.png"
     ],
     "BOSS-11": [
         "Dreamer.png"
@@ -1879,13 +1893,17 @@
         null,
         "Nyto_Isomer_Shadow.png"
     ],
+    "NPC-Kyruger": [
+        "pic_NPC-Kyruger.png"
+    ],
     "NPC-Persica": [
         "pic_NPC-Persica.png",
         null,
         "pic_NPC-Persica_J.png"
     ],
     "NPC-Helian": [
-        "pic_NPC-Helian.png"
+        "pic_NPC-Helian.png",
+        "pic_NPC-Helian_A.png"
     ],
     "NPC-Deele": [
         "pic_NPC-Deele.png"
@@ -1921,10 +1939,14 @@
     "FAL": [
         "pic_FNFAL.png",
         "pic_FNFAL_D.png",
-        null,
-        null,
+        "pic_FNFAL_308.png",
+        "pic_FNFAL_308_D.png",
         "pic_FNFAL_2406.png",
         "pic_FNFAL_2406_D.png"
+    ],
+    "PPSh41": [
+        "pic_PPsh41.png",
+        "pic_PPsh41_D.png"
     ],
     "FAMASHalloween": [
         "pic_FAMAS_2604.png"

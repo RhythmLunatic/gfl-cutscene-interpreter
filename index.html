@@ -36,6 +36,7 @@ body
 	--collection-item-color:#fff;
 	--dropdown-text-color:#26a69a;
 	--dropdown-hover-color:#eee;
+	--settings-row-border-color: rgba(0, 0, 0, 0.12);
 	
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -50,6 +51,8 @@ body.dark-theme{
 	--collection-item-color:#2b2b2b;
 	--dropdown-text-color: white;
 	--dropdown-hover-color: black;
+	
+	--settings-row-border-color: rgba(255, 255, 255, 0.5);
 }
 body.black-theme{
 	--bg-color: black;
@@ -60,12 +63,17 @@ body.black-theme{
 	--collection-item-color: black;
 	--dropdown-text-color: white;
 	--dropdown-hover-color: black;
+	
+	--settings-row-border-color: rgba(255, 255, 255, 0.8);
 }
 
 nav {
 	background-color: var(--nav-color);
 }
 textarea{
+	color:var(--text-color);
+}
+input{
 	color:var(--text-color);
 }
 .textarea-wrapper{
@@ -103,13 +111,16 @@ th {
 	display: none;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 900px) {
     .header-desktop{
        display:none;
     }
     
     .header-desktop-shorter{
        display:inline-block;
+    }
+    .navbarButton{
+    	padding: 0 5px; /*Since text is hidden, remove the padding between buttons*/
     }
     
     .modal {
@@ -122,7 +133,7 @@ th {
     	height:100%;
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
     .header-desktop{
        display:none;
     }
@@ -159,7 +170,30 @@ th {
   background-color: var(--dropdown-hover-color);
 }
 
+/*Something I actually wrote myself*/
+.material-settings-table {
+	padding: 0px;
+}
+.material-settings-table td {
+	padding: 0px;
+}
+.material-settings-table p {
+	margin: 0px;
+}
+.material-settings-table tr {
+	border-bottom-color: var(--settings-row-border-color);
+}
 
+.material-settings-table .title {
+	font-weight: bold;
+	font-size:120%
+}
+#settingsModal .modal-footer {
+	background-color: rgba(128,128,128,0.3);
+}
+#settingsModal .modal-footer > a {
+	color: var(--text-color);
+}
 
 /*#head, #foot {
 	height: 6%;
@@ -213,12 +247,12 @@ th {
   font-size: 30px;*/
 }
 
-tr:nth-child(odd) {
+/*tr:nth-child(odd) {
     background-color: #000000CC;
 }
 tr:nth-child(even) {
     background-color: #111111CC;
-}
+}*/
 
 #verySimpleText{
 	text-align: left;
@@ -1330,26 +1364,31 @@ I have no idea how it works
 		//partNum++;
 		thisPartDiv.appendChild(h3);
 		
-		let button = document.createElement('a');
-		//fuck your javascript
-		button.setAttribute("class","waves-effect waves-light btn");
-		button.setAttribute("onclick","showOpcodes('div_cutscene_"+part+"')")
-		button.innerText="Show opcodes for this section (For debugging)"
-		thisPartDiv.appendChild(button);
-		thisPartDiv.appendChild(document.createElement('br'));
+		if (document.getElementById('showDebugOpcodeButton').checked)
+		{
+			let button = document.createElement('a');
+			//fuck your javascript
+			button.setAttribute("class","waves-effect waves-light btn");
+			button.setAttribute("onclick","showOpcodes('div_cutscene_"+part+"')")
+			button.innerText="Show opcodes for this section (For debugging)"
+			thisPartDiv.appendChild(button);
+			thisPartDiv.appendChild(document.createElement('br'));
+		
+			let opcodesDiv = document.createElement('div');
+			opcodesDiv.id= "div_cutscene_"+part
+			opcodesDiv.style="display: none;"
+			opcodesDiv.classList.add("textarea-wrapper");
+			opcodesDiv.innerHTML = "<textarea rows='6' cols='50' id='textarea_cutscene_"+part+"' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
+			//debugger;
+			TLN.append_line_numbers_obj(opcodesDiv.firstElementChild,"textarea_cutscene_"+part)
+			thisPartDiv.appendChild(opcodesDiv)
+		}
 		
 		let playBGMbutton = document.createElement('a');
 		playBGMbutton.setAttribute("class","waves-effect waves-light btn");
 		playBGMbutton.innerHTML='<i class="material-icons left">music_note</i>Play audio for this cutscene'
 		
-		let opcodesDiv = document.createElement('div');
-		opcodesDiv.id= "div_cutscene_"+part
-		opcodesDiv.style="display: none;"
-		opcodesDiv.classList.add("textarea-wrapper");
-		opcodesDiv.innerHTML = "<textarea rows='6' cols='50' id='textarea_cutscene_"+part+"' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
-		//debugger;
-		TLN.append_line_numbers_obj(opcodesDiv.firstElementChild,"textarea_cutscene_"+part)
-		thisPartDiv.appendChild(opcodesDiv)
+
 		
 		//<img src="avgtexture/夜间蒙版.png" class="storydoll first one mask" style="mask-image: url(pic/pic_NPC-Helian.png);">
 		let maskThing = document.createElement('img');
@@ -2219,6 +2258,10 @@ I have no idea how it works
 		}
 		//console.log(getCookie('fancyText'));
 		document.getElementById('fancyOrNot').checked = getCookie('fancyText');
+		setCheckboxFromCookie('showDebugOpcodeButton',false);
+		setCheckboxFromCookie('chapterHistoryRouting',true);
+		
+		
 		//showSelectedEpisodes('mainEpisodes');
 		
 		document.getElementById("textarea1").value = `portrait;0;FAIL;0;false;false;
@@ -2234,6 +2277,22 @@ speaker;Dandelai;
 msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not be saved here.</color>`
 	}
 	
+	function setCheckboxFromCookie(idOfCheckbox,defaultValueIfNotSet)
+	{
+		let c = getCookie(idOfCheckbox);
+		if (c==undefined || c=="")
+		{
+			c=defaultValueIfNotSet;
+			setCookie(idOfCheckbox,defaultValueIfNotSet,180);
+		}
+		//console.assert(c);
+		console.log("Setting "+idOfCheckbox+" to "+c);
+		document.getElementById(idOfCheckbox).checked = (c=='true');
+	}
+	function setCookieFromCheckbox(idOfCheckbox)
+	{
+		setCookie(idOfCheckbox,document.getElementById(idOfCheckbox).checked,180);
+	}
 
 
 	
@@ -2244,14 +2303,15 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
   <nav class='nav-extended'>
     <div class="nav-wrapper" id='theTop' style="overflow:hidden;">
       <a href="#" class="brand-logo center" style="text-overflow: ellipsis; white-space: nowrap;">
-      	<span class='header-desktop'>GFL Cutscene Intrepeter (kind of alpha)</span>
+      	<span class='header-desktop'>GFL Cutscene Intrepeter (beta)</span>
       	<span class='header-desktop-shorter'>GFL Cutscene Intrepeter</span>
       	<span class='header-mobile'>GFL C.I.</span>
       	
 	</a>
 	
       <ul id="nav-mobile" class="right">
-        <li><a href="#!" onclick="NightMode()" class="waves-effect waves-light"><i class="material-icons left">brightness_2</i><span class='header-desktop'>Night Mode</span></a></li>
+        <li><a href="#!" onclick="NightMode()" class="waves-effect waves-light navbarButton"><i class="material-icons left">brightness_2</i><span class='header-desktop'>Night Mode</span></a></li>
+        <li><a href="#settingsModal" class="waves-effect waves-light modal-trigger navbarButton"><i class="material-icons left">settings</i><span class='header-desktop'>Settings</span></a></li>
       </ul>
     </div>
 			<div class="col s12 nav-content">
@@ -2265,7 +2325,61 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 				</ul>
 			</div>
   </nav>
-  
+
+	<!-- Modal Structure -->
+	<div id="settingsModal" class="modal">
+		<div class="modal-content">
+		  <h4>Settings</h4>
+
+		<table class="material-settings-table">
+			<tr>
+				<td style="width:100%">
+					<span class="title">Display images and portraits in cutscenes</span>
+					<p>Turn it off if you want to save your mobile data.</p>
+				</td>
+				<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" onclick="runFromRoutableKeyString()" id="fancyOrNot">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+    			<td style="width:100%">
+    				<span class="title">Last chapter history</span>
+    				<p>Upon reloading the page, returns you to the last viewed cutscene by using the routing string (The string after the # on your URL bar).</p>
+    			</td>
+    			<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" id="chapterHistoryRouting" onclick="setCookieFromCheckbox('chapterHistoryRouting')">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100%">
+					<span class="title">Show opcode debug buttons</span>
+					<p>Displays buttons for showing debug opcodes in cutscenes. You probably don't want this enabled.</p>
+				</td>
+				<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" id="showDebugOpcodeButton" onclick="setCookieFromCheckbox('showDebugOpcodeButton')">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div class="modal-footer">
+		  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
 	<!-- Needs to be here so the modal for T-Doll search will be fullscreen on mobile devices. Otherwise it will be below the navbar.-->
 	<div id="tDollDialogueActivity" class="modal modal-fixed-footer" style="overflow:hidden">
 		<nav style="position:initial;">
@@ -2409,17 +2523,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		</div>
 		
 	</div>
-	
-	  <!-- Modal Structure -->
-  <!--<div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>-->
+	  
 	<!--<h2><a href="#Textboxes">Mobile devices are stupid and the canvas absorbs touch, so click here to jump to the part without the canvas</a></h2>-->
 	<h2 id="chapterName">Chapter Name Here</h2>
     <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn disabled">Start interactive interpreter (It's like playing the game!)</a>
@@ -2440,30 +2544,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<h2>Static Textboxes</h2>
 	<div id="Textboxes"></div>-->
 	<hr>
-	<!--<h2></h2>-->
-	<!--<form>
-	Display Style
-	<input type="radio" id="fancy" name="displayStyle" value="male">
-	<label for="fancy">Fancy</label>
-	<input type="radio" id="simple" name="displayStyle" value="female">
-	<label for="simple">Simple</label>
-	</form>-->
-	  <div class="switch">
-    <label>
-      Text Only
-      <input type="checkbox" onclick="runFromRoutableKeyString()" id="fancyOrNot">
-      <span class="lever"></span>
-      Fancy
-    </label>
-  </div>
-  	  <!--<div class="switch">
-    <label>
-      Text Only
-      <input type="checkbox" onclick="runFromRoutableKeyString()" id="showDebugButtons">
-      <span class="lever"></span>
-      Fancy
-    </label>
-  </div>-->
+
 	<div id="verySimpleText"></div>
 	<a class="waves-effect waves-light btn" href="#theTop"><i class="material-icons left">vertical_align_top</i>Back to top</a> <a class="waves-effect waves-light btn" href="#theTop" onclick="goToNextEpisode();"><i class="material-icons left">chevron_right</i>Go to the next cutscene</a>
 	<hr>

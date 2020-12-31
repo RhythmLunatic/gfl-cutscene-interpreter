@@ -1,0 +1,331 @@
+<!doctype html>
+<head>
+	<!--THIS WEBPAGE IS NOT USED!!!-->
+    <title>Girls' Frontline Quote Browser</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!--Resources -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--<link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+</head>
+<style type="text/css">
+
+#SearchResults {
+	cursor: pointer;
+	display: block;
+	text-align: left;
+}
+/*lol */
+.collection-item.waves-effect {
+	display: inherit;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+	gfcolors = [
+		"#000000", //NPCs & SF - Black?
+		"0",        //Nothing has 1 stars.
+		"#adadad", //2 stars   - Grey
+		"#6bdfce", //3 stars   - Turquoise
+		"#d6e35a", //4 stars   - Green
+		"#ffb600", //5 stars   - Orange
+		"#ff6a00", //6 stars   - Orange
+		"#dfb6ff"  //EXTRAstar - Purple
+	]
+	
+	function num2stars(div, numStars)
+	{
+		var _star_ = document.createElement("i");
+		_star_.className = "material-icons";
+		
+		if (numStars < 1)
+		{
+		
+		}
+		else if (numStars == 7)
+		{
+			var star = _star_.cloneNode(false);
+			star.innerHTML = "stars"
+			star.style.color = gfcolors[7];
+			div.appendChild(star);
+		}
+		else if (numStars > 5)
+		{
+			for (var j=0;j<numStars;j++)
+			{
+				var star = _star_.cloneNode(false);
+				star.innerHTML = "star";
+				star.style.color = gfcolors[numStars];
+				div.appendChild(star);
+			}
+		}
+		else
+		{
+			for (var j=0;j<5;j++)
+			{
+				var star = _star_.cloneNode(false);
+				if (j < numStars)
+					star.innerHTML = "star";
+				else
+					star.innerHTML = "star_border";
+				star.style.color = gfcolors[numStars];
+				div.appendChild(star);
+			}
+		}
+	}
+
+	let frontlinedex = null;
+	let CharacterVoice = null;
+	
+	let dialogueKeysToEnglish = {
+		'dialogue1':"Adjutant 1",
+		'dialogue2':"Adjutant 2",
+		'dialogue3':"Adjutant 3",
+		'soulcontract':"Marriage Line",
+		'introduce':"Introduction (In the index, but usually identical to obtain)",
+		'gain':'When Obtained',
+		'allhallows':"During Halloween",
+		'christmas':"During Christmas",
+		'valentine':"During Valentine's",
+		'dialoguewedding':"Adjutant 4 (After Marriage)"
+	}
+	
+	function TDollInfo(dollName)
+	{
+		/*console.log(dollName);
+		console.assert(CharacterVoice)
+		console.log(CharacterVoice);*/
+		//Destroy everything in here
+		let tDollDialogue = document.getElementById('tDollDialogue')
+		tDollDialogue.innerHTML = "";
+		/*let ul = document.createElement("ul");
+		ul.className = 'collapsible'*/
+		let _div_ = document.createElement('div');
+		_div_.classList.add("card");
+		let _cardContent = document.createElement('div');
+		_cardContent.classList.add("card-content");
+		let dialogue = CharacterVoice[dollName];
+		if (dialogue)
+		{
+			Object.keys(dialogue).forEach(key => {
+				let card = _div_.cloneNode(true);
+				let cardContent = _cardContent.cloneNode(true);
+				let cardTitle = document.createElement('span');
+				cardTitle.classList.add('card-title');
+				if (dialogueKeysToEnglish[key])
+					cardTitle.innerText = dialogueKeysToEnglish[key];
+				else
+					cardTitle.innerText = key;
+				let p = document.createElement('p');
+				//console.log(typeof dialogue[key]);
+				p.innerHTML= dialogue[key].join([separator = '<br>'])
+				cardContent.appendChild(cardTitle);
+				cardContent.appendChild(p);
+				card.appendChild(cardContent);
+				tDollDialogue.appendChild(card);
+			});
+			
+			
+			document.getElementById('tDollDialogueName').firstChild.textContent=dollName;
+			document.getElementById('tDollDialogueName').setAttribute('href',"#tDollSearch"+dollName)
+			M.Modal.getInstance(document.getElementById('tDollDialogueActivity')).open()
+			//jump to top of page
+			//window.location.href="#tDollDialogueActivity"
+		}
+		else
+		{
+			//console.log("aa");
+			M.toast({html: "T-Doll "+dollName+" not present in json..."})
+		}
+		//document.getElementById('tDollDialogue').appendChild(_div_);
+	}
+	function listResults(results)
+	{
+		//console.log(results);
+			/*<li class="collection-item avatar">
+		  <img src="images/yuna.jpg" alt="" class="circle">
+		  <span class="title">Title</span>
+		  <p>First Line <br>
+		     Second Line
+		  </p>
+		  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+		</li>*/
+		//Destroy everything inside the div.
+		document.getElementById("SearchResultsDiv").innerHTML = "";
+		var ul = document.createElement("ul");
+		ul.className= "collection";
+		ul.id = "SearchResults";
+		for (var i=0, n=results.length; i<n; ++i)
+		{
+			//let result = frontlinedex[results]
+			var li = document.createElement("li");
+			li.className = "collection-item avatar waves-effect"; //waves-effect waves-light
+			li.style.display = '';
+			
+			
+			var icon = document.createElement("i");
+			icon.className = "material-icons circle red";
+			li.appendChild(icon);
+			
+			var span = document.createElement("span");
+			span.className = "title";
+			span.innerText = results[i].name;
+			li.appendChild(span);
+			
+			var p = document.createElement("p");
+			p.innerHTML = results[i].type + " <br> No." + (results[i].num>0 ? results[i].num : "?");
+			li.appendChild(p);
+			
+			//You're probably gonna say this is terrible and blah blah but T-Doll names are unique anyways
+			/*for (var j =0; j < frontlinedex.length;j++)
+			{
+				
+			}*/
+			if (results[i].internalName)
+			{
+				li.setAttribute("onclick","TDollInfo(\""+results[i].internalName+"\")")
+				li.id = "tDollSearch"+results[i].internalName
+			}
+			
+			
+			//Handle stars
+			var secondaryContent = document.createElement("div");
+			secondaryContent.className = "secondary-content";
+			num2stars(secondaryContent,results[i].rating)
+			li.appendChild(secondaryContent);
+			
+			ul.appendChild(li);
+		}
+		
+		document.getElementById("SearchResultsDiv").appendChild(ul);
+	}
+	
+	var delayTimer;
+	function searchDolls(query)
+	{
+		clearTimeout(delayTimer);
+		delayTimer = setTimeout(function() {
+			
+			if (query == "" || query == undefined)
+			{
+				listResults(frontlinedex);
+			}
+			else
+			{
+				
+				query = query.toLowerCase();
+				/*for (var i=0, n=frontlinedex.length; i<n; ++i)
+				{
+					if ('alias' in frontlinedex[i] && query == frontlinedex[i]['alias'].toLowerCase())
+					{
+						console.log("Found alias for "+frontlinedex[i]['name']);
+						//console.log(frontlinedex[i]);
+						listResults([frontlinedex[i]]);
+						return true;
+					}
+				}*/
+				console.log("Searching for "+query);
+				
+				var results = fuse.search(query);
+				console.log("Got "+results.length + " results");
+				//I don't care if it's slow
+				listResults(Array.from(results, r => r['item']));
+			}
+		}, 300);
+	}
+	
+	function FetchTDollInfo()
+	{
+		if (frontlinedex != null && CharacterVoice != null)
+			return;
+		fetch("girlsfrontline-min.json")
+		.then(response => response.json())
+		.then(json => {
+			console.log("girlsfrontline-min loaded!");
+			console.log(json);
+			
+			frontlinedex = json;
+			
+			/*fetch("gf_flavortext.json").then(response => response.json()).then(json2 => {
+				console.log("Bonus information loaded.");
+				console.log("Injecting aliases and quotes...");
+				bonusdex = json2;
+				frontlinedex.forEach(doll => {
+					if (doll['name'] in bonusdex)
+					{
+						if ('alias' in bonusdex[doll['name']])
+							doll['alias'] = bonusdex[doll['name']]['alias']
+					}
+				})
+				console.log("Done.");
+			});*/
+			
+			fuse = new Fuse(frontlinedex, {
+				keys: ['name']
+			})
+			//fuse = new Fuse(Object.keys(frontlinedex));
+			
+
+			
+			listResults(frontlinedex);
+		});
+		
+		fetch('CharacterVoicePlus.json')
+		.then(response => response.json())
+		.then(json => {
+			console.log("NewCharacterVoice.json loaded!");
+			CharacterVoice = json;
+		});
+	}
+	
+	window.onload=function()
+	{
+		FetchTDollInfo();
+		document.querySelectorAll('.modal').forEach(el => {
+			var instance = M.Modal.init(el, null);
+			//instance.updateTabIndicator();
+		});
+	}
+</script>
+<body>
+	<div id="tDollDialogueActivity" class="modal modal-fixed-footer" style="overflow:hidden">
+		<nav style="position:initial;">
+			<div class="nav-wrapper blue" style="text-align: left;">
+			  <a href="#!" class="brand-logo modal-close" id='tDollDialogueName'>Insert T-Doll Name Here<i class="material-icons">arrow_back</i></a>
+			</div>
+		</nav>
+		<div id="tDollDialogue" class='modal-content'>
+		
+		</div>
+		<!--<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>-->
+	</div>
+	<div id="tDollSearchActivity">
+		<form action="?">
+		<div class="input-field" style="text-align: left;">
+			<i class="material-icons prefix">search</i>
+			<!--<label class="label-icon" for="search">
+			</label>-->
+			<input id="search" type="search" oninput="searchDolls(document.getElementById('search').value)" onkeydown="if (event.key == 'Enter') blur(); return;" onsubmit="blur()" required>
+			
+			<i class="material-icons" onclick="clearSearch()">close</i>
+		</div>
+		</form>
+		
+		<div id="SearchResultsDiv"  class="" >
+			<p>If you are seeing this it's still loading, please wait 1 second for the JSON to load</p>
+			<p>Either that or your browser is broken, please check for an update.</p>
+			<div class="progress">
+			  <div class="indeterminate"></div>
+			</div>
+
+		</div>
+	</div>
+</body>

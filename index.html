@@ -28,7 +28,7 @@ body
 	/*background-color: black;
 	color: white*/
 	text-align:center;
-	
+	--bg-color: white;
 	--text-color: black;
 	--nav-color: #ee6e73;
 	--btn-color: #26a69a;
@@ -36,12 +36,14 @@ body
 	--collection-item-color:#fff;
 	--dropdown-text-color:#26a69a;
 	--dropdown-hover-color:#eee;
+	
+	background-color: var(--bg-color);
+	color: var(--text-color);
 }
 
 body.dark-theme{
-	background-color: #333333;
+	--bg-color: #333333;
 	--text-color: white;
-	color: var(--text-color);
 	--nav-color:#1a237e;
 	--btn-color: #26a69a;
 	--card-color: #455a64;
@@ -50,9 +52,8 @@ body.dark-theme{
 	--dropdown-hover-color: black;
 }
 body.black-theme{
-	background-color: black;
+	--bg-color: black;
 	--text-color: white;
-	color: var(--text-color);
 	--nav-color: #212121;
 	--btn-color: #455a64;
 	--card-color: #2e3436;
@@ -110,6 +111,16 @@ th {
     .header-desktop-shorter{
        display:inline-block;
     }
+    
+    .modal {
+    	width:100%;
+    	max-height:100%;
+    	height:100%;
+    	top:0 !important;
+    }
+    .modal.modal-fixed-footer{
+    	height:100%;
+    }
 }
 @media screen and (max-width: 480px) {
     .header-desktop{
@@ -130,6 +141,11 @@ th {
 .card {
 	background-color: var(--card-color);
 }
+.modal {
+	background-color: var(--bg-color);
+	/* sadly animating 'top' breaks the modal showing */
+	transition: width 0.2s ease-out, height 0.2s ease-out;
+}
 .collection .collection-item{
 	background-color: var(--collection-item-color)
 }
@@ -142,6 +158,8 @@ th {
 .dropdown-content li:hover, .dropdown-content li.active {
   background-color: var(--dropdown-hover-color);
 }
+
+
 
 /*#head, #foot {
 	height: 6%;
@@ -1975,13 +1993,11 @@ I have no idea how it works
 			});
 			
 			
-			document.getElementById("tDollDialogueActivity").style.display = "inherit";
 			document.getElementById('tDollDialogueName').firstChild.textContent=dollName;
-			document.getElementById('tDollDialogueName').setAttribute('href',"#tDollSearch"+dollName)
-			document.getElementById("tDollSearchActivity").style.display="none";
-			
+			//document.getElementById('tDollDialogueName').setAttribute('href',"#tDollSearch"+dollName)
+			M.Modal.getInstance(document.getElementById('tDollDialogueActivity')).open()
 			//jump to top of page
-			window.location.href="#tDollDialogueActivity"
+			//window.location.href="#tDollDialogueActivity"
 		}
 		else
 		{
@@ -1989,11 +2005,6 @@ I have no idea how it works
 			M.toast({html: "T-Doll "+dollName+" not present in json..."})
 		}
 		//document.getElementById('tDollDialogue').appendChild(_div_);
-	}
-	function returnTotDollSearch()
-	{
-		document.getElementById("tDollDialogueActivity").style.display = "none";
-		document.getElementById("tDollSearchActivity").style.display="inherit";
 	}
 	
 	function listResults(results)
@@ -2164,6 +2175,11 @@ I have no idea how it works
 			var instances = M.Collapsible.init(elems, null);
 		});
 		
+		document.querySelectorAll('.modal').forEach(el => {
+			var instance = M.Modal.init(el, null);
+			//instance.updateTabIndicator();
+		});
+		
 		fetch('portraitInformation.json')
 			.then(response => response.json())
 			.then(json => {
@@ -2250,6 +2266,18 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			</div>
   </nav>
   
+	<!-- Needs to be here so the modal for T-Doll search will be fullscreen on mobile devices. Otherwise it will be below the navbar.-->
+	<div id="tDollDialogueActivity" class="modal modal-fixed-footer" style="overflow:hidden">
+		<nav style="position:initial;">
+			<div class="nav-wrapper blue" style="text-align: left;">
+			  <a href="#!" class="brand-logo modal-close" id='tDollDialogueName'>Insert T-Doll Name Here<i class="material-icons">arrow_back</i></a>
+			</div>
+		</nav>
+		<div id="tDollDialogue" class='modal-content'>
+		
+		</div>
+	</div>
+  
 	<noscript><h1>Turn on JavaScript. This is not a static webpage, it is literally interpreting the GFL text on the fly using JS and rendering it to HTML elements to display it in your browser.</h1></noscript>
 	<noscript><h3>Static HTTP pages are coming never. You'll have to look at the source code and write it yourself.</h3></noscript>
 	<div id='chapterSelect' class='navbar-fixed'>
@@ -2271,16 +2299,9 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 				<div class="flex-container col s12" id="crossoverEpisodes"></div>
 			</div>
 			<div class="col s12" id="TDollStuff">
-				<div id="tDollDialogueActivity" style='display:none;'>
-					<nav style="position:initial;">
-						<div class="nav-wrapper blue" style="text-align: left;">
-						  <a href="#!" onclick="returnTotDollSearch()" class="brand-logo" id='tDollDialogueName'>Insert T-Doll Name Here<i class="material-icons">arrow_back</i></a>
-						</div>
-					</nav>
-					<div id="tDollDialogue">
-					
-					</div>
-				</div>
+				<!--I don't know how to do iframes or AJAX, apparently-->
+				<!--<iframe src="quoteBrowser.html"></iframe>-->
+
 				<div id="tDollSearchActivity">
 					<form action="?">
 					<div class="input-field" style="text-align: left;">
@@ -2390,7 +2411,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	</div>
 	
 	  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <!--<div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Modal Header</h4>
       <p>A bunch of text</p>
@@ -2398,9 +2419,8 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
-  </div>
+  </div>-->
 	<!--<h2><a href="#Textboxes">Mobile devices are stupid and the canvas absorbs touch, so click here to jump to the part without the canvas</a></h2>-->
-	<!---->
 	<h2 id="chapterName">Chapter Name Here</h2>
     <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn disabled">Start interactive interpreter (It's like playing the game!)</a>
 	<div id="interactiveInterpreterSection" style="display:none;">

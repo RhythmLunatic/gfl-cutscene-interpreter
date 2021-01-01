@@ -1940,7 +1940,7 @@ I have no idea how it works
 				{
 					
 					let ep = _li_.cloneNode(true);
-					ep.innerHTML = "<a href='#!' onclick=\"onChapterSelected('"+getRoutableKeyString(key,i,j)+"')\">"+curChapter[j]['name']+"</a>"
+					ep.innerHTML = "<a href='#"+getRoutableKeyString(key,i,j)+"' onclick=\"onChapterSelected('"+getRoutableKeyString(key,i,j)+"')\">"+curChapter[j]['name']+"</a>"
 					dropdown.appendChild(ep);
 					/*let option = _option_.cloneNode(false);
 					option.value=getRoutableKeyString(key,i,j)
@@ -2189,6 +2189,12 @@ I have no idea how it works
 	//Keep this at the bottom
 	window.onload=function()
 	{
+		document.getElementById('fancyOrNot').checked = getCookie('fancyText');
+		setCheckboxFromCookie('showInteractiveInterpreter',false);
+		hideInterpreterButton();
+		setCheckboxFromCookie('showDebugOpcodeButton',false);
+		setCheckboxFromCookie('chapterHistoryRouting',true);
+	
 		fetch('chapterDatabase.json')
 		.then(response => response.json())
 		.then(json => {
@@ -2198,6 +2204,12 @@ I have no idea how it works
 			document.querySelectorAll('.dropdown-trigger').forEach(elems => {
 				var instances = M.Dropdown.init(elems, {constrainWidth:false});
 			});
+			
+			//Can't run until chapters are loaded
+			if (document.getElementById('chapterHistoryRouting').checked)
+			{
+				runFromRoutableKeyString(window.location.hash.slice(1));
+			}
 		});
 		
 		document.querySelectorAll('.tabs').forEach(el => {
@@ -2256,13 +2268,6 @@ I have no idea how it works
 		  document.body.classList.toggle("light-theme");
 		  isDarkMode=false;
 		}
-		//console.log(getCookie('fancyText'));
-		document.getElementById('fancyOrNot').checked = getCookie('fancyText');
-		setCheckboxFromCookie('showDebugOpcodeButton',false);
-		setCheckboxFromCookie('chapterHistoryRouting',true);
-		
-		
-		//showSelectedEpisodes('mainEpisodes');
 		
 		document.getElementById("textarea1").value = `portrait;0;FAIL;0;false;false;
 speaker;El Fail
@@ -2292,6 +2297,18 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	function setCookieFromCheckbox(idOfCheckbox)
 	{
 		setCookie(idOfCheckbox,document.getElementById(idOfCheckbox).checked,180);
+	}
+	
+	function hideInterpreterButton()
+	{
+		if (!document.getElementById('showInteractiveInterpreter').checked)
+		{
+			document.getElementById("startButton").style="display:none"
+		}
+		else
+		{
+			document.getElementById("startButton").style=""
+		}
 	}
 
 
@@ -2341,6 +2358,20 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 					<div class="switch">
 						<label>
 						  <input type="checkbox" onclick="runFromRoutableKeyString()" id="fancyOrNot">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100%">
+					<span class="title">Show interactive interpreter button</span>
+					<p>Not every browser supports the interactive interpreter and it happens to be very buggy.</p>
+				</td>
+				<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" id="showInteractiveInterpreter" onclick="setCookieFromCheckbox('showInteractiveInterpreter'); hideInterpreterButton()">
 						  <span class="lever"></span>
 						</label>
 					</div>
@@ -2537,12 +2568,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			<button onclick="reRunWithNewOpcodes()">Re-run scene with these opcodes</button>
 		</div>
 	</div>
-	<!--<canvas id="myCanvas" width="1280" height="720"></canvas>--><br><br>
-    <!--<h1 id="title">This is a header!</h1>-->
-	<!--<img src="textbox.png"></img>-->
-	<!--<h2><a href="#verySimpleText">Click HERE to jump to the text without any textboxes which is probably what you want anyways</a></h2>
-	<h2>Static Textboxes</h2>
-	<div id="Textboxes"></div>-->
+
 	<hr>
 
 	<div id="verySimpleText"></div>

@@ -468,12 +468,8 @@
     "HK416": [
         "pic_HK416.png",
         "pic_HK416_D.png",
-        [
-            "special/pic_HK416_1.png"
-        ],
-        [
-            "special/pic_HK416_2.png"
-        ],
+        "special/pic_HK416_1.png",
+        "special/pic_HK416_2.png",
         "pic_HK416_805.png",
         "pic_HK416_805_D.png"
     ],

@@ -1719,6 +1719,9 @@ I have no idea how it works
 	}
 	function goToNextEpisode()
 	{
+		//To make it jump to the top
+		window.location.assign("#theTop");
+		
 		let value = curEpKey;
 		console.log(value);
 		let [type,chapter,episode] = getKeysFromRoutableString(value)
@@ -1726,6 +1729,7 @@ I have no idea how it works
 		if (listOfChapters[type][chapter]['episodes'][episode])
 		{
 			runFromRoutableKeyString(getRoutableKeyString(type,chapter,episode))
+			window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
 			return true;
 		}
 		else
@@ -1737,6 +1741,7 @@ I have no idea how it works
 		if (listOfChapters[type][chapter]['episodes'][episode])
 		{
 			runFromRoutableKeyString(getRoutableKeyString(type,chapter,episode))
+			window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
 			return true;
 		}
 		
@@ -2572,7 +2577,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<hr>
 
 	<div id="verySimpleText"></div>
-	<a class="waves-effect waves-light btn" href="#theTop"><i class="material-icons left">vertical_align_top</i>Back to top</a> <a class="waves-effect waves-light btn" href="#theTop" onclick="goToNextEpisode();"><i class="material-icons left">chevron_right</i>Go to the next cutscene</a>
+	<a class="waves-effect waves-light btn" href="#theTop"><i class="material-icons left">vertical_align_top</i>Back to top</a> <a class="waves-effect waves-light btn" onclick="goToNextEpisode();"><i class="material-icons left">chevron_right</i>Go to the next cutscene</a>
 	<hr>
 	<audio controls loop id="audioPlayer">
 		<source src="" type="audio/ogg"> <!-- Turns out putting something in makes firefox load it when you load the page, wasting bandwidth. But leaving it blank is fine. -->

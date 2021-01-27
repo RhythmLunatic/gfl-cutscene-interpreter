@@ -185,8 +185,8 @@ portraitDatabase['M1903bar']=["special/M1903_Bartender.png"]
 portraitDatabase['M1903Cafe']=["special/M1903Cafe.png"]
 portraitDatabase['M1903']=quickInsertCostumeAtIdx(portraitDatabase['M1903'],8,"1107")
 
-portraitDatabase['HK416'][2] = ['special/pic_HK416_1.png']
-portraitDatabase['HK416'][3] = ['special/pic_HK416_2.png']
+portraitDatabase['HK416'][2] = 'special/pic_HK416_1.png'
+portraitDatabase['HK416'][3] = 'special/pic_HK416_2.png'
 
 #M16 has more than two portraits, but this will have to do for now...
 portraitDatabase['M16']=portraitDatabase["M16A1"]

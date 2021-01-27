@@ -2,6 +2,7 @@
 import os
 import json as JSON
 from collections import OrderedDict
+import re
 
 #https://stackoverflow.com/a/28777781
 def write_roman(num):
@@ -30,6 +31,33 @@ def write_roman(num):
 				break
 
 	return "".join([a for a in roman_num(num)])
+
+
+#
+def tryint(s):
+	try:
+		return int(s)
+	except:
+		return s
+
+#https://stackoverflow.com/a/4623518
+def alphanum_key(s):
+	""" Turn a string into a list of string and number chunks.
+		"z23a" -> ["z", 23, "a"]
+	"""
+	return [ tryint(c) for c in re.split('([0-9]+)', s) ]
+
+
+def extendListIfTooShort(l,idx):
+	diff_len=idx-len(l)
+	if diff_len > 0:
+		l=l+[None]*diff_len
+	return l
+	
+def insertIntoListAt(l,idx,element):
+	l=extendListIfTooShort(l,idx+1)
+	l[idx]=element
+	return l
 
 def appendFromij(i,j,name,letter):
 	return {
@@ -263,6 +291,38 @@ js['event'].append({'name':"Dual Randomness (Untranslated)",'episodes':getAllByP
 js['side'].append({'name':"Halloween 2020? (Untranslated)",'episodes':getAllByPrefix(files,'-42','???')})
 js['crossover'].append({'name':"The Division (Untranslated) (Missing some)",'episodes':getAllByPrefix(files,'-43','???')})
 
+#todo...
+fetter = {'name':"Bookshelf of Memories",'episodes':[]}
+with open('fetter.json','r') as f:
+	fj = JSON.loads(f.read())
+	with open('fetter_story.json','r') as f2:
+		fj2 = JSON.loads(f2.read())
+		for epKey in fj.keys():
+			num = int(epKey[8:])
+			epName = fj[epKey]
+			if not epName:
+				epName = "(Untranslated) Event "+str(num)
+			#I don't feel like using a lambda
+			files = os.listdir('./avgtxt/fetter/'+str(num))
+			files.sort(key=alphanum_key)
+			ep = {'name':epName,'parts':['fetter/'+str(num)+'/'+file for file in files]}
+			
+			namedParts = []
+			for i in range(len(files)):
+				fName = files[i]
+				partNameKey = "fetter_story-10000"+fName.split('.')[0]
+				#print(partNameKey)
+				if partNameKey in fj2 and fj2[partNameKey] != "":
+					namedParts=insertIntoListAt(namedParts,i,fj2[partNameKey])
+			if namedParts:
+				ep['part_names'] = namedParts
+					#print(fj2[partNameKey])
+			#for partNameKey in fk2.keys():
+				#partNum = int(partNameKey[13:])-10000000
+			
+			fetter['episodes'].append(ep)
+		
+js['side'].append(fetter)
 
 js['side'].append({'name':"Interpreter Test Room",'episodes':[{'name':file,'parts':['testroom/'+file]} for file in os.listdir('./avgtxt/testroom')]})
 

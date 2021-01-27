@@ -2956,6 +2956,109 @@
 			]
 		},
 		{
+			"name": "Bookshelf of Memories",
+			"episodes": [
+				{
+					"name": "Becoming a Star",
+					"parts": [
+						"fetter/1/101.txt",
+						"fetter/1/102.txt",
+						"fetter/1/103.txt",
+						"fetter/1/104.txt",
+						"fetter/1/105.txt",
+						"fetter/1/106.txt",
+						"fetter/1/107.txt",
+						"fetter/1/108.txt",
+						"fetter/1/109.txt",
+						"fetter/1/110.txt",
+						"fetter/1/111.txt"
+					],
+					"part_names": [
+						"Thrifty Witch",
+						"Phantom in Pursuit",
+						"Finalized Plan",
+						"Delicious Murmur",
+						"Departure from Failure",
+						"Conditional Help",
+						"Flutter of a Fledgling's Wings",
+						"Priceless Sincerity",
+						"A Witch's Night",
+						"Dazzling Future",
+						"Interlude of Dreams"
+					]
+				},
+				{
+					"name": "Weekend Poker Night",
+					"parts": [
+						"fetter/2/201.txt",
+						"fetter/2/202.txt",
+						"fetter/2/203.txt",
+						"fetter/2/204.txt",
+						"fetter/2/205.txt",
+						"fetter/2/206.txt",
+						"fetter/2/207.txt",
+						"fetter/2/208.txt",
+						"fetter/2/209.txt",
+						"fetter/2/210.txt"
+					],
+					"part_names": [
+						"Dealer",
+						"Player",
+						"Bet",
+						"Call",
+						"Odds",
+						"Deal",
+						"Goddess of Luck",
+						"Blind",
+						"1v1",
+						"Fold"
+					]
+				},
+				{
+					"name": "(Untranslated) Event 3",
+					"parts": [
+						"fetter/3/301.txt",
+						"fetter/3/302.txt",
+						"fetter/3/303.txt",
+						"fetter/3/304.txt",
+						"fetter/3/305.txt",
+						"fetter/3/306.txt",
+						"fetter/3/307.txt",
+						"fetter/3/308.txt",
+						"fetter/3/309.txt",
+						"fetter/3/310.txt"
+					],
+					"part_names": [
+						"Orion",
+						"Specular Reflection",
+						"Orion's Belt",
+						"Hesitation",
+						"Microgravity",
+						"Intuition",
+						"Stargazer",
+						"Morning Star",
+						"Extraterrestrial Civilization",
+						"Seafarer"
+					]
+				},
+				{
+					"name": "(Untranslated) Event 4",
+					"parts": [
+						"fetter/4/401.txt",
+						"fetter/4/402.txt",
+						"fetter/4/403.txt",
+						"fetter/4/404.txt",
+						"fetter/4/405.txt",
+						"fetter/4/406.txt",
+						"fetter/4/407.txt",
+						"fetter/4/408.txt",
+						"fetter/4/409.txt",
+						"fetter/4/410.txt"
+					]
+				}
+			]
+		},
+		{
 			"name": "Interpreter Test Room",
 			"episodes": [
 				{
@@ -2968,6 +3071,12 @@
 					"name": "maskingTest.txt",
 					"parts": [
 						"testroom/maskingTest.txt"
+					]
+				},
+				{
+					"name": "maskingTest2.txt",
+					"parts": [
+						"testroom/maskingTest2.txt"
 					]
 				},
 				{
@@ -4007,6 +4116,15 @@
 					]
 				},
 				{
+					"name": "Galil",
+					"parts": [
+						"memoir/71_1.txt",
+						"memoir/71_2.txt",
+						"memoir/71_3.txt",
+						"memoir/71_4.txt"
+					]
+				},
+				{
 					"name": "HK416",
 					"parts": [
 						"memoir/65_1.txt",
@@ -4058,6 +4176,15 @@
 						"memoir/37_2.txt",
 						"memoir/37_3.txt",
 						"memoir/37_4.txt"
+					]
+				},
+				{
+					"name": "M1897",
+					"parts": [
+						"memoir/152_1.txt",
+						"memoir/152_2.txt",
+						"memoir/152_3.txt",
+						"memoir/152_4.txt"
 					]
 				},
 				{
@@ -4166,6 +4293,15 @@
 						"memoir/5_2.txt",
 						"memoir/5_3.txt",
 						"memoir/5_4.txt"
+					]
+				},
+				{
+					"name": "PP-19",
+					"parts": [
+						"memoir/136_1.txt",
+						"memoir/136_2.txt",
+						"memoir/136_3.txt",
+						"memoir/136_4.txt"
 					]
 				},
 				{

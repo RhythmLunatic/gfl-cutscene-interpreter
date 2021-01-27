@@ -1193,9 +1193,11 @@ I have no idea how it works
 				
 				let posOfMaskCmd = cmds.indexOf("<通讯框>");
 				let posOfCmdDivider = cmds.indexOf(";")
+				console.log(posOfCmdDivider+" "+posOfMaskCmd+" "+cmds)
 				//If this line had more than one portrait AND the ; is before the mask command, we should be masking the portrait at idx 1 instead of 0
-				if (posOfCmdDivider > 0 && posOfCmdDivider < posOfMaskCmd)
+				if (posOfCmdDivider > -1 && posOfCmdDivider < posOfMaskCmd)
 				{
+					//console.log("checking portrait on right side to mask")
 					idxToCheck = 1;
 				}
 				
@@ -1210,6 +1212,7 @@ I have no idea how it works
 					}
 					else if (m[0]==OPCODES.PORTRAIT && m[1] == idxToCheck)
 					{
+						//console.log("set mask true for portrait "+portraitStructToString(structuredLines[lll]))
 						structuredLines[lll][5]=true
 						break;
 					}
@@ -1298,69 +1301,20 @@ I have no idea how it works
 		const reg = /[&<>"'/]/ig;
 		return string.replace(reg, (match)=>(map[match]));
 	}
-
-	
-	//You're probably wondering why the fuck there's two of these functions when a routableKeyString is always passed in
-	//That's because I want to support running from an episode object without the keyString (for user stuff)
-	function runFromRoutableKeyString(value)
-	{
-		if (value == undefined)
-			value = curEpKey;
-		let [type,chapter,episode] = getKeysFromRoutableString(value)
-		run(listOfChapters[type][chapter]['episodes'][episode],value)
-	}
-	
-	function runFromUserInput()
-	{
-		let out = document.getElementById('textarea1').value;
-		let structuredLines = stringToStructuredLines(out);
-		currentEpisodeAsOpcodes = [structuredLines];
-		curEpKey = "";
-		let simpleTextDiv = document.getElementById("verySimpleText");
-		let NewSimpleTextDiv = document.createElement('div');
-		NewSimpleTextDiv.id="verySimpleText";
-		NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,0))
-		
-		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
-		if (game == undefined)
-			document.getElementById("startButton").classList.remove('disabled');
-	}
 	
 	//input: structuredLines
 	//output: a div with the elements rendered
-	function renderStructuredLinesToDiv(structuredLines,part)
+	//This function does not cause side effects.
+	function renderStructuredLinesToDiv(structuredLines,part,partName)
 	{
-		//console.log(structuredLines)
-		//document.getElementById("DebugTextArea").value = structuredLinesToString(s)
-		
-		
-		
-		//It has underscores because it's going to be cloned
-		/*let _div_ = document.createElement('div');
-		_div_.className="container";
-		
-		let _img_ = document.createElement("img");
-		_img_.src="textbox.png";
-		_img_.style.width="100%";
-		_div_.appendChild(_img_);
-		
-		let charName = document.createElement("div");
-		charName.className="charName";
-		_div_.appendChild(charName);
-		
-		let text = document.createElement("div");
-		text.className="absText";
-		text.id="text";
-		_div_.appendChild(text);
-		
-		//let textboxDiv = document.getElementById("Textboxes");
-		let newTextboxDiv = document.createElement('div');
-		newTextboxDiv.id="Textboxes";*/
 		
 		let thisPartDiv = document.createElement('div');
 		let h3 = document.createElement('h3');
 		//console.log(partNum);
-		h3.innerText="Part "+(part+1);
+		if (partName != undefined)
+			h3.innerText="Part "+(part+1)+": "+partName
+		else
+			h3.innerText="Part "+(part+1);
 		//partNum++;
 		thisPartDiv.appendChild(h3);
 		
@@ -1404,8 +1358,6 @@ I have no idea how it works
 		let shownPortraits = []
 		
 		let fancyDisplayType = document.getElementById('fancyOrNot').checked;
-		//I am NOT adding another function just for this
-		setCookie('fancyText',fancyDisplayType,180);
 		
 		for(var i=0;i<structuredLines.length;i++)
 		{
@@ -1521,6 +1473,7 @@ I have no idea how it works
 							break;
 						}
 					}
+					//TODO: Support size commands too
 					//<size=20>A beer.</size>
 					
 					if (fancyDisplayType)
@@ -1595,9 +1548,32 @@ I have no idea how it works
 			}
 		}
 		return thisPartDiv;
+	}
+	
+	//You're probably wondering why the fuck there's two of these functions when a routableKeyString is always passed in
+	//That's because I want to support running from an episode object without the keyString (for user stuff)
+	function runFromRoutableKeyString(value)
+	{
+		if (value == undefined)
+			value = curEpKey;
+		let [type,chapter,episode] = getKeysFromRoutableString(value)
+		run(listOfChapters[type][chapter]['episodes'][episode],value)
+	}
+	
+	function runFromUserInput()
+	{
+		let out = document.getElementById('textarea1').value;
+		let structuredLines = stringToStructuredLines(out);
+		currentEpisodeAsOpcodes = [structuredLines];
+		curEpKey = "";
+		let simpleTextDiv = document.getElementById("verySimpleText");
+		let NewSimpleTextDiv = document.createElement('div');
+		NewSimpleTextDiv.id="verySimpleText";
+		NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,0))
 		
-	//})
-	//})
+		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
+		if (game == undefined)
+			document.getElementById("startButton").classList.remove('disabled');
 	}
 	
 	async function run(episode, routableKeyString)
@@ -1605,7 +1581,6 @@ I have no idea how it works
 		currentEpisodeAsOpcodes = [];
 		curEpisodePart = 0;
 		curEpKey = routableKeyString;
-		
 		
 		document.getElementById('chapterName').innerText = episode['name'];
 		
@@ -1620,6 +1595,9 @@ I have no idea how it works
 		for(var p = 0; p < episode.parts.length;p++)
 		{
 			let fileName = episode.parts[p];
+			let partName = null
+			if (episode['part_names'] != undefined)
+				partName=episode['part_names'][p]
 			
 			//We have to await so it doesn't load the parts in the wrong order. Which is an actual thing that has happened.
 			console.log("fetching "+fileName);
@@ -1636,7 +1614,7 @@ I have no idea how it works
 			//console.log('got '+fileName);
 			//TODO: Add check if it's JSON (iop format) and then use a JSON parser if it is
 			let structuredLines = convertGFLTextToOpcodes(out);
-			NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,p));
+			NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,p,partName));
 			//Now replace the old div...
 			/*let textboxDiv = document.getElementById("Textboxes");
 			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
@@ -1654,6 +1632,12 @@ I have no idea how it works
 		}
 		let simpleTextDiv = document.getElementById("verySimpleText")
 		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
+		
+		if (document.getElementById('chapterHistoryRouting').checked && routableKeyString != undefined)
+		{
+			setCookie('lastViewedScene',routableKeyString,180);
+		}
+		window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
 	}
 	
 	function reRunWithNewOpcodes()
@@ -1712,7 +1696,7 @@ I have no idea how it works
 	function onChapterSelected(value)
 	{
 		console.log(value);
-		let [type,chapter,episode] = getKeysFromRoutableString(value)
+		//let [type,chapter,episode] = getKeysFromRoutableString(value)
 		runFromRoutableKeyString(value)
 		if (game == undefined)
 			document.getElementById("startButton").classList.remove('disabled');
@@ -1729,7 +1713,6 @@ I have no idea how it works
 		if (listOfChapters[type][chapter]['episodes'][episode])
 		{
 			runFromRoutableKeyString(getRoutableKeyString(type,chapter,episode))
-			window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
 			return true;
 		}
 		else
@@ -1741,7 +1724,6 @@ I have no idea how it works
 		if (listOfChapters[type][chapter]['episodes'][episode])
 		{
 			runFromRoutableKeyString(getRoutableKeyString(type,chapter,episode))
-			window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
 			return true;
 		}
 		
@@ -2194,7 +2176,7 @@ I have no idea how it works
 	//Keep this at the bottom
 	window.onload=function()
 	{
-		document.getElementById('fancyOrNot').checked = getCookie('fancyText');
+		setCheckboxFromCookie('fancyOrNot',true);
 		setCheckboxFromCookie('showInteractiveInterpreter',false);
 		hideInterpreterButton();
 		setCheckboxFromCookie('showDebugOpcodeButton',false);
@@ -2213,7 +2195,11 @@ I have no idea how it works
 			//Can't run until chapters are loaded
 			if (document.getElementById('chapterHistoryRouting').checked)
 			{
-				runFromRoutableKeyString(window.location.hash.slice(1));
+				let [type,chapter,episode] = getKeysFromRoutableString(window.location.hash.slice(1))
+				if (listOfChapters[type][chapter]['episodes'][episode])
+					runFromRoutableKeyString(window.location.hash.slice(1));
+				else
+					runFromRoutableKeyString(getCookie('lastViewedScene'));
 			}
 		});
 		
@@ -2292,11 +2278,12 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		let c = getCookie(idOfCheckbox);
 		if (c==undefined || c=="")
 		{
-			c=defaultValueIfNotSet;
+			//Cookies can only be strings
+			c=defaultValueIfNotSet.toString();
 			setCookie(idOfCheckbox,defaultValueIfNotSet,180);
 		}
 		//console.assert(c);
-		console.log("Setting "+idOfCheckbox+" to "+c);
+		//console.log("Setting "+idOfCheckbox+" to "+c);
 		document.getElementById(idOfCheckbox).checked = (c=='true');
 	}
 	function setCookieFromCheckbox(idOfCheckbox)
@@ -2332,7 +2319,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	</a>
 	
       <ul id="nav-mobile" class="right">
-        <li><a href="#!" onclick="NightMode()" class="waves-effect waves-light navbarButton"><i class="material-icons left">brightness_2</i><span class='header-desktop'>Night Mode</span></a></li>
+        <li><a onclick="NightMode()" class="waves-effect waves-light navbarButton"><i class="material-icons left">brightness_2</i><span class='header-desktop'>Night Mode</span></a></li>
         <li><a href="#settingsModal" class="waves-effect waves-light modal-trigger navbarButton"><i class="material-icons left">settings</i><span class='header-desktop'>Settings</span></a></li>
       </ul>
     </div>
@@ -2351,7 +2338,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<!-- Modal Structure -->
 	<div id="settingsModal" class="modal">
 		<div class="modal-content">
-		  <h4>Settings</h4>
+		<h4>Settings</h4>
 
 		<table class="material-settings-table">
 			<tr>
@@ -2362,7 +2349,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 				<td>
 					<div class="switch">
 						<label>
-						  <input type="checkbox" onclick="runFromRoutableKeyString()" id="fancyOrNot">
+						  <input type="checkbox" onclick="setCookieFromCheckbox('fancyOrNot'); runFromRoutableKeyString()" id="fancyOrNot">
 						  <span class="lever"></span>
 						</label>
 					</div>
@@ -2385,7 +2372,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			<tr>
     			<td style="width:100%">
     				<span class="title">Last chapter history</span>
-    				<p>Upon reloading the page, returns you to the last viewed cutscene by using the routing string (The string after the # on your URL bar).</p>
+    				<p>Upon reloading the page, returns you to the last viewed cutscene by using cookies. Having a routing string in your url bar (ex. #crossover-4-1) will override this. </p>
     			</td>
     			<td>
 					<div class="switch">
@@ -2413,7 +2400,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		</table>
 		</div>
 		<div class="modal-footer">
-		  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+		  <a class="modal-close waves-effect waves-green btn-flat">Close</a>
 		</div>
 	</div>
 	<!-- Needs to be here so the modal for T-Doll search will be fullscreen on mobile devices. Otherwise it will be below the navbar.-->

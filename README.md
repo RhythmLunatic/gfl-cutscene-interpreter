@@ -13,15 +13,15 @@ In action: http://gfl.amaryllisworks.pw
 
 # TODO
 - More dialogue
+- A makefile
+- Make public the modified gfl dumper (I modified abunpack.py to dump everything instead of whatever was in config.json)
 
 # HOW DO I USE???
-First, dump all the game data.
-Then put avgtxt and avgtexture in the same folder.
-Then copy VA11 folder from resources/dabao/avgtxt/
-
-Then run minifyGirlsfrontlineJSON.py and eventStoryStuff.py to generate the files for the webpage (sorry, I should really make a makefile)
-
-Then host a webserver. You'll want to add this CSP to your webserver if you're allowing user created cutscenes to be loaded: `Header set Content-Security-Policy "default-src 'self' data: https://fonts.gstatic.com; style-src 'unsafe-inline' cdnjs.cloudflare.com https://fonts.gstatic.com https://fonts.googleapis.com; script-src 'unsafe-inline' cdnjs.cloudflare.com cdn.jsdelivr.net;"`
+1. First, dump all the game data. Yes, all of it. It's required so you have portraits, music, and text.
+2. Then put avgtxt and avgtexture in the same folder.
+3. Then copy VA11 folder from resources/dabao/avgtxt/
+4. Then run minifyGirlsfrontlineJSON.py and eventStoryStuff.py to generate the files for the webpage (sorry, I should really make a makefile)
+5. Then host a webserver. You'll want to add this CSP to your webserver if you're allowing user created cutscenes to be loaded: `Header set Content-Security-Policy "default-src 'self' data: https://fonts.gstatic.com; style-src 'unsafe-inline' cdnjs.cloudflare.com https://fonts.gstatic.com https://fonts.googleapis.com; script-src 'unsafe-inline' cdnjs.cloudflare.com cdn.jsdelivr.net;"`
 
 For debugging: `python3 -m http.server`, then go to http://localhost:8000 in your internet browser
 

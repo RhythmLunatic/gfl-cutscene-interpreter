@@ -37,6 +37,7 @@ body
 	--dropdown-text-color:#26a69a;
 	--dropdown-hover-color:#eee;
 	--settings-row-border-color: rgba(0, 0, 0, 0.12);
+	--colored-dialogue: brightness(0.6);
 	
 	background-color: var(--bg-color);
 	color: var(--text-color);
@@ -53,6 +54,7 @@ body.dark-theme{
 	--dropdown-hover-color: black;
 	
 	--settings-row-border-color: rgba(255, 255, 255, 0.5);
+	--colored-dialogue: brightness(1.0);
 }
 body.black-theme{
 	--bg-color: black;
@@ -65,6 +67,7 @@ body.black-theme{
 	--dropdown-hover-color: black;
 	
 	--settings-row-border-color: rgba(255, 255, 255, 0.8);
+	--colored-dialogue: brightness(1.0);
 }
 
 nav {
@@ -254,11 +257,27 @@ tr:nth-child(even) {
     background-color: #111111CC;
 }*/
 
+
+
 #verySimpleText{
 	text-align: left;
-	width: 700px;
-	margin: 0 auto;
 	font-family: 'Noto Sans KR', sans-serif;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.coloredDialogue{
+	filter: var(--colored-dialogue);
+}
+
+/*To make everything nice and centered on desktop.*/
+@media screen and (min-width:701px) {
+
+	#verySimpleText{
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 700px; 
+		margin: 0 auto;
+	}
 }
 
 /*.container {
@@ -305,11 +324,11 @@ I have no idea how it works
 .storyImg{
 	position:relative;
 	overflow:hidden; /*Keep portraits within div */
-	width:700px;
+	width:100%;
 	padding-top:1rem;
 }
 .storydoll{
-	width:500px; /*Why is width 500px? */
+	width:71%;
 	position: absolute;
 	bottom: -30%;
 	z-index: 5;
@@ -330,7 +349,7 @@ I have no idea how it works
 }
 .storydoll.mask {
 	mask-position: center;
-	mask-size: 500px;
+	mask-size: 100%; /* I don't know why 100% works but it does */
 	filter: brightness(300%) opacity(75%);
 }
 
@@ -360,9 +379,9 @@ I have no idea how it works
 <!--Helper functions-->
 <script>
 	//https://stackoverflow.com/a/57401891
-	function adjustColor(color, amount) {
+	/*function adjustColor(color, amount) {
 		return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
-	}
+	}*/
 	
 	//https://www.w3schools.com/js/js_cookies.asp
 	function setCookie(cname, cvalue, exdays) {
@@ -1451,9 +1470,9 @@ I have no idea how it works
 							let end = message.indexOf('>',idx)
 							let color = message.slice(idx+7,end)
 							//console.log(color)
-							if (!isDarkMode)
-								color = adjustColor(color,-80);
-							let spanTagStart = "<span style='color:"+color+"'>"
+							//if (!isDarkMode)
+							//	color = adjustColor(color,-80);
+							let spanTagStart = "<span class='coloredDialogue' style='color:"+color+"'>"
 							//First sanitize the part outside the <color> tag, then insert the new <span> tag, then sanitize the section inside the span tag, then insert the end tag
 							//Then finally insert the rest of the unsanitized message.
 							//debugger;
@@ -2570,9 +2589,9 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		<source src="" type="audio/ogg"> <!-- Turns out putting something in makes firefox load it when you load the page, wasting bandwidth. But leaving it blank is fine. -->
 		Your browser does not support the audio tag.
 	</audio>
-	<p>Dandelai is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
-	<p>If you would like an improved UI, fix it yourself and submit a pull request. I don't know React/Vue/etc.</p>
-	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b></p>
+	<p>Dandelion is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
+	<!--<p>If you would like an improved UI, fix it yourself and submit a pull request. I don't know React/Vue/etc.</p>-->
+	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b> or <b>email me</b> (Find it on github)</p>
 	<p><a href='/LICENSE.html'>The interpreter is free and open source software and licensed under AGPLv3.</a></p>
 	<p><a href='https://github.com/MatheusAvellar/textarea-line-numbers'>Textarea line numbers</a> by MatheusAvellar. Some modifications made for modifying elements directly instead of through ID.</p>
 	<br>

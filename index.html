@@ -13,15 +13,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
 	<!--Resources -->
+<!--#ifdef LOCAL_ONLY
+	<link rel="stylesheet" href="materialize.css">
+#else-->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">  
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--<link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	
+<!--#endif-->
 	<link rel="stylesheet" type="text/css" href="./tln.css"/>
 	<script type="text/javascript" src="./tln.js"></script>
 </head>
+<!--#literal ON-->
 <style type="text/css">
 body
 {
@@ -369,13 +373,23 @@ I have no idea how it works
 }
 
 </style>
-<script type="text/javascript"></script>
+<!--#literal OFF
+<script type="text/javascript"></script>-->
+
+<!--#ifdef LOCAL_ONLY
+<script src='materialize.js'></script>
+<script src='phaser.js'></script>
+<script src='fuse.js'></script>
+#else-->
 <!-- tfw no bandwidth -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--<script type="text/javascript" src="materialize.js"></script>-->
 <!--<script src="phaser.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
+<!--#endif-->
+
 <!--Helper functions-->
 <script>
 	//https://stackoverflow.com/a/57401891
@@ -1165,10 +1179,11 @@ I have no idea how it works
 			
 			
 			let speakerRes = getFromTag(cmds,"Speaker")
-			//Optimization: If prevLine was another speaker line, overwrite it instead of writing another
-			if (speakerRes)
+			//debugger;
+			if (speakerRes != undefined)
 			{
 				let prevLine = structuredLines[structuredLines.length-1]
+				//Optimization: If prevLine was another speaker line, overwrite it instead of writing another
 				if (prevLine[0]==OPCODES.SPEAKER)
 					structuredLines[structuredLines.length-1]=[OPCODES.SPEAKER,speakerRes]
 				else
@@ -1321,7 +1336,7 @@ I have no idea how it works
 		return string.replace(reg, (match)=>(map[match]));
 	}
 	
-	//input: structuredLines
+	//input: structuredLines (string), part (int starting at 0), partName (string. Optional, if present replaces the "Part X" header
 	//output: a div with the elements rendered
 	//This function does not cause side effects.
 	function renderStructuredLinesToDiv(structuredLines,part,partName)
@@ -1342,13 +1357,13 @@ I have no idea how it works
 			let button = document.createElement('a');
 			//fuck your javascript
 			button.setAttribute("class","waves-effect waves-light btn");
-			button.setAttribute("onclick","showOpcodes('div_cutscene_"+part+"')")
+			button.setAttribute("onclick","showOpcodes('div_cutscene_iop_"+part+"')")
 			button.innerText="Show opcodes for this section (For debugging)"
 			thisPartDiv.appendChild(button);
 			thisPartDiv.appendChild(document.createElement('br'));
 		
 			let opcodesDiv = document.createElement('div');
-			opcodesDiv.id= "div_cutscene_"+part
+			opcodesDiv.id= "div_cutscene_iop_"+part
 			opcodesDiv.style="display: none;"
 			opcodesDiv.classList.add("textarea-wrapper");
 			opcodesDiv.innerHTML = "<textarea rows='6' cols='50' id='textarea_cutscene_"+part+"' readonly>"+structuredLinesToString(structuredLines)+"</textarea><br>"
@@ -1377,6 +1392,7 @@ I have no idea how it works
 		let shownPortraits = []
 		
 		let fancyDisplayType = document.getElementById('fancyOrNot').checked;
+		let inlineText = document.getElementById('inlineText').checked
 		
 		for(var i=0;i<structuredLines.length;i++)
 		{
@@ -1532,25 +1548,63 @@ I have no idea how it works
 									storyBox.appendChild(m);
 								}
 							}
-							thisPartDiv.appendChild(storyBox);
 							
-							if (lastSpeakerName != "")
+							if (inlineText)
 							{
-								let p = document.createElement('p');
-								p.innerText = lastSpeakerName;
-								//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
-								p.classList.add("storyText");
-								p.classList.add("speakerName");
-								thisPartDiv.appendChild(p);
+								let textboxDiv = document.createElement('div');
+								if (inlineText)
+									textboxDiv.style="color:white; position: absolute; bottom: 0%; width:100%; z-index: 100; padding-top: 30px; padding-bottom:10px; background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)"
+								if (lastSpeakerName != "")
+								{
+									let p = document.createElement('p');
+									p.innerText = lastSpeakerName;
+									if (inlineText)
+										p.style="margin-left: 10px; margin-right:10px;"
+									//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
+									p.classList.add("storyText");
+									p.classList.add("speakerName");
+									textboxDiv.appendChild(p);
+								}
+								storyBox.appendChild(textboxDiv)
+								
+								
+								thisPartDiv.appendChild(storyBox);
+							}
+							else
+							{
+								thisPartDiv.appendChild(storyBox);
+								
+								if (lastSpeakerName != "")
+								{
+									let p = document.createElement('p');
+									p.innerText = lastSpeakerName;
+									//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
+									p.classList.add("storyText");
+									p.classList.add("speakerName");
+									thisPartDiv.appendChild(p);
+								}
 							}
 							
 							didBGOrPortraitOrNameChange = false;
 						}
-						let p = document.createElement('p');
-						p.classList.add('storyText')
-						//TODO: This is a great way to get hacked if someone ever decides to insert a <script> tag
-						p.innerHTML = message;
-						thisPartDiv.appendChild(p);
+						
+						//No, it's not well written. No, I don't know how to fix it.
+						if (inlineText)
+						{
+							let p = document.createElement('p');
+							p.classList.add('storyText')
+							p.style="color:white; margin-left: 10px; margin-right:10px; margin-bottom:5px; margin-top: 5px;"
+							p.innerHTML = message;
+							let d = thisPartDiv.lastChild.getElementsByTagName('div')[0].appendChild(p);
+						}
+						else
+						{
+							
+							let p = document.createElement('p');
+							p.classList.add('storyText')
+							p.innerHTML = message;
+							thisPartDiv.appendChild(p);
+						}
 					}
 					else
 					{
@@ -1633,6 +1687,18 @@ I have no idea how it works
 			//console.log('got '+fileName);
 			//TODO: Add check if it's JSON (iop format) and then use a JSON parser if it is
 			let structuredLines = convertGFLTextToOpcodes(out);
+			
+			if (document.getElementById('showDebugOpcodeButton').checked)
+			{
+				let button2 = document.createElement('a');
+				//fuck your javascript
+				button2.setAttribute("class","waves-effect waves-light btn");
+				button2.setAttribute("href","avgtxt/"+fileName);
+				button2.innerText="original text file for this section (For debugging)"
+				NewSimpleTextDiv.appendChild(button2);
+				NewSimpleTextDiv.appendChild(document.createElement('br'));
+				
+			}
 			NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,p,partName));
 			//Now replace the old div...
 			/*let textboxDiv = document.getElementById("Textboxes");
@@ -1656,7 +1722,7 @@ I have no idea how it works
 		{
 			setCookie('lastViewedScene',routableKeyString,180);
 		}
-		window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
+		//window.location.assign("#"+getRoutableKeyString(type,chapter,episode))
 	}
 	
 	function reRunWithNewOpcodes()
@@ -2196,6 +2262,7 @@ I have no idea how it works
 	window.onload=function()
 	{
 		setCheckboxFromCookie('fancyOrNot',true);
+		setCheckboxFromCookie('inlineText',false);
 		setCheckboxFromCookie('showInteractiveInterpreter',false);
 		hideInterpreterButton();
 		setCheckboxFromCookie('showDebugOpcodeButton',false);
@@ -2376,8 +2443,22 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			</tr>
 			<tr>
 				<td style="width:100%">
+					<span class="title">Inline Text</span>
+					<p>Make the text display on top of the image.</p>
+				</td>
+				<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" onclick="setCookieFromCheckbox('inlineText'); runFromRoutableKeyString()" id="inlineText">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:100%">
 					<span class="title">Show interactive interpreter button</span>
-					<p>Not every browser supports the interactive interpreter and it happens to be very buggy.</p>
+					<p>It doesn't work well and not every browser supports it. You probably want to keep this disabled.<br>(Interpreter v2 coming eventually I swear)</p>
 				</td>
 				<td>
 					<div class="switch">
@@ -2573,6 +2654,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		<a id='stopButton' class="waves-effect waves-light btn"> Stop the interpreter (You'll have to refresh the site to start it up again, sorry)</a>
 		<p id="curIndexDebug"></p>
 		<div id="phaser"></div>
+		<!--This is for phaser only!-->
 		<br><br><button onclick="showOpcodes('myDIV')">Show converted opcodes (For debugging)</button><br>
 		<div id='myDIV' style="display: none;">
 			<textarea rows='6' cols='50' id="DebugTextArea"></textarea><br>
@@ -2591,7 +2673,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	</audio>
 	<p>Dandelion is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
 	<!--<p>If you would like an improved UI, fix it yourself and submit a pull request. I don't know React/Vue/etc.</p>-->
-	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b> or <b>email me</b> (Find it on github)</p>
+	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b> or <a onmousemove="(function(self){self.href='mailto:kirbyrulez'+String.fromCharCode(64)+'att.net'})(this)" href="mailto:'hover mouse over the link twice to pass the bot check'"><b>email me</b></a></p>
 	<p><a href='/LICENSE.html'>The interpreter is free and open source software and licensed under AGPLv3.</a></p>
 	<p><a href='https://github.com/MatheusAvellar/textarea-line-numbers'>Textarea line numbers</a> by MatheusAvellar. Some modifications made for modifying elements directly instead of through ID.</p>
 	<br>

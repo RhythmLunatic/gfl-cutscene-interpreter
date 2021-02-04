@@ -3059,41 +3059,6 @@
 			]
 		},
 		{
-			"name": "Interpreter Test Room",
-			"episodes": [
-				{
-					"name": "1-1-2N.txt",
-					"parts": [
-						"testroom/1-1-2N.txt"
-					]
-				},
-				{
-					"name": "maskingTest.txt",
-					"parts": [
-						"testroom/maskingTest.txt"
-					]
-				},
-				{
-					"name": "maskingTest2.txt",
-					"parts": [
-						"testroom/maskingTest2.txt"
-					]
-				},
-				{
-					"name": "test.txt",
-					"parts": [
-						"testroom/test.txt"
-					]
-				},
-				{
-					"name": "test2.txt",
-					"parts": [
-						"testroom/test2.txt"
-					]
-				}
-			]
-		},
-		{
 			"name": "Skin Stories",
 			"episodes": [
 				{
@@ -4401,6 +4366,41 @@
 						"memoir/101_2.txt",
 						"memoir/101_3.txt",
 						"memoir/101_4.txt"
+					]
+				}
+			]
+		},
+		{
+			"name": "Interpreter Test Room",
+			"episodes": [
+				{
+					"name": "1-1-2N.txt",
+					"parts": [
+						"testroom/1-1-2N.txt"
+					]
+				},
+				{
+					"name": "maskingTest.txt",
+					"parts": [
+						"testroom/maskingTest.txt"
+					]
+				},
+				{
+					"name": "maskingTest2.txt",
+					"parts": [
+						"testroom/maskingTest2.txt"
+					]
+				},
+				{
+					"name": "test.txt",
+					"parts": [
+						"testroom/test.txt"
+					]
+				},
+				{
+					"name": "test2.txt",
+					"parts": [
+						"testroom/test2.txt"
 					]
 				}
 			]

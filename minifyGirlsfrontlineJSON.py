@@ -4,11 +4,24 @@
 import json as JSON
 import os
 
-def extendListIfTooShort(l,idx):
-	diff_len=idx-len(l)
-	if diff_len > 0:
-		l=l+[None]*diff_len
-	return l
+class bcolors:
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
+    
+def printWarn(text):
+	print(bcolors.WARNING + text + bcolors.ENDC)
+	
+def printError(text):
+	print(bcolors.FAIL + text + bcolors.ENDC)
+	
+def printOK(text):
+	print(bcolors.OKGREEN + text + bcolors.ENDC)
 	
 def RepresentsInt(s):
 	try: 
@@ -17,14 +30,30 @@ def RepresentsInt(s):
 	except ValueError:
 		return False
 
-def quickInsertCostumeAtIdx(l,idx,name):
-	#+2 because lists start at 0 but also because we want to add damaged art too
-	l = extendListIfTooShort(l,idx+2)
-	internalName = l[0].split('_')[1].split('.')[0]
-	#print(l)
-	l[idx]='pic_'+internalName+'_'+name+'.png'
-	l[idx+1]='pic_'+internalName+'_'+name+'_D.png'
-	return l
+class ResizingList(list):
+	
+	def extendListIfTooShort(self,idx):
+		diff_len=idx-len(self)
+		if diff_len > 0:
+			self+=[None]*diff_len
+	
+	def __setitem__(self,i,val):
+		self.extendListIfTooShort(i+1)
+		super(ResizingList,self).__setitem__(i,val)
+	
+	def quickInsertCostumeAtIdx(self,idx,name):
+		#+2 because lists start at 0 but also because we want to add damaged art too
+		#extendListIfTooShort(idx+2)
+		internalName = self[0].split('_')[1].split('.')[0]
+		#print(l)
+		self[idx]='pic_'+internalName+'_'+name+'.png'
+		self[idx+1]='pic_'+internalName+'_'+name+'_D.png'
+		
+
+		
+	#def __getitem__(self,i):
+	#	return self.l[i]
+		#return l
 
 #def quickAppendCostume(name):
 #	return ['pic_'+name+'.png','pic_'+name+'_D.png']
@@ -62,7 +91,7 @@ with open('girlsfrontline.json','r') as gfld:
 			#This should be moved to a separate loop since we don't want to pollute girlsfrontline-min with portrait IDs but we also need those IDs to correctly search portraits.
 			#ex. FNFAL is FAL in the portrait database
 			if 'img' in doll:
-				portraitDatabase[doll['internalName']] = [doll['img']];
+				portraitDatabase[doll['internalName']] = ResizingList([doll['img']]);
 				#if doll['internalName'] == "BrenMK":
 				#	print(doll['costumes'])
 				if 'costumes' in doll:
@@ -105,8 +134,8 @@ with open('girlsfrontline.json','r') as gfld:
 														if charID == doll['internalName'] and charSpr > 1:
 															#TODO: Some dolls use multiple sprites in a story (ex. Team DEFY or AR), this will get it wrong if they do
 															#Although for those it can probably just be overwritten at the end
-															print("Found unknown type "+str(charSpr)+" being used in "+charID)
-															portraitDatabase[doll['internalName']] = extendListIfTooShort(portraitDatabase[doll['internalName']],charSpr+2)
+															printWarn("Found unknown type "+str(charSpr)+" being used in "+charID)
+															#portraitDatabase[doll['internalName']] = extendListIfTooShort(portraitDatabase[doll['internalName']],charSpr+2)
 															print(doll['costumes'][i]['pic'])
 															print(doll['costumes'][i+1]['pic'])
 															portraitDatabase[doll['internalName']][charSpr]=doll['costumes'][i]['pic']
@@ -117,8 +146,11 @@ with open('girlsfrontline.json','r') as gfld:
 															break
 													cmds = cmds[:0]+cmds[charTagEnd+1:];
 													#print("newCMDS: "+cmds)
-												except:
-													print("This line is bugged... Just skipping")
+												except Exception as e:
+													#printError(print(e))
+													print(e)
+													printError("This line is bugged... Just skipping.")
+													printError(line)
 											
 											else:
 											
@@ -153,8 +185,27 @@ portraitDatabase["NPC-Kalin"] = [
 	"special/版娘-5.png",
 	"special/版娘-6.png",
 	"special/版娘-7.png",
-	"special/版娘-8.png"
+	"special/版娘-8.png",
+	None,
+	None,
+	"special/NPC-Kalin_11.png",
+	"special/NPC-Kalin_12.png",
+	"special/NPC-Kalin_13.png",
 ]
+
+portraitDatabase['NPC-Ange'] = ResizingList([
+	'NPC-Ange.png',
+	'NPC-Ange_1.png',
+	None,
+	'NPC-Ange(3).png',
+	'NPC-Ange(4).png',
+	'NPC-Ange(5).png',
+	'NPC-Ange(6).png',
+	'NPC-Ange(7).png'
+])
+#portraitDatabase['NPC-Ange'][3] = 'NPC-Ange(3).png'
+
+
 portraitDatabase['NPC-Persica'] = [
 	"pic_NPC-Persica.png",
 	None,
@@ -171,6 +222,13 @@ portraitDatabase['NPC-Seele']=[
 	"pic_NPC-Seele.png",
 	"pic_NPC-Seele_1.png"
 ]
+portraitDatabase['NPC-Dima']=[
+	'NPC-Dima(0).png',
+	'NPC-Dima(1).png',
+	'NPC-Dima(2).png',
+	'NPC-Dima(3).png'
+]
+
 portraitDatabase['NPC-Kyruger']=['pic_NPC-Kyruger.png']
 
 portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
@@ -178,46 +236,58 @@ portraitDatabase['Jillmagic']=['pic_Jill_529.png']
 portraitDatabase['RO635-NoArmor']=['special/pic_RO635_NoArmor0.png']
 #portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
 #portraitDatabase['BOSS-12']=['Eliza.png']
-portraitDatabase['NytoIsomer'] = extendListIfTooShort(portraitDatabase['NytoIsomer'],5)
+
 portraitDatabase['NytoIsomer'][4]="Nyto_Isomer_Shadow.png"
 
 portraitDatabase['M1903bar']=["special/M1903_Bartender.png"]
 portraitDatabase['M1903Cafe']=["special/M1903Cafe.png"]
-portraitDatabase['M1903']=quickInsertCostumeAtIdx(portraitDatabase['M1903'],8,"1107")
+portraitDatabase['M1903'].quickInsertCostumeAtIdx(8,"1107")
 
 portraitDatabase['HK416'][2] = 'special/pic_HK416_1.png'
 portraitDatabase['HK416'][3] = 'special/pic_HK416_2.png'
+
+portraitDatabase['HK416Mod'][2]='special/pic_HK416Mod_1.png'
 
 #M16 has more than two portraits, but this will have to do for now...
 portraitDatabase['M16']=portraitDatabase["M16A1"]
 portraitDatabase["MK2"]=portraitDatabase['StenMK2']
 portraitDatabase['FAL']=portraitDatabase['FNFAL']
-portraitDatabase['FAL'] = extendListIfTooShort(portraitDatabase['FAL'],4)
 portraitDatabase['FAL'][2] = "pic_FNFAL_308.png"
 portraitDatabase['FAL'][3] = "pic_FNFAL_308_D.png"
 
 #Yes really
 portraitDatabase['PPSh41']=portraitDatabase['PPsh41']
+portraitDatabase['m1'] = portraitDatabase['M1']
+portraitDatabase['m500'] = portraitDatabase['M500']
 
 portraitDatabase["FAMASHalloween"]=["pic_FAMAS_2604.png"]
 
-portraitDatabase['P7']=quickInsertCostumeAtIdx(portraitDatabase['P7'],2,"1404")
-portraitDatabase['KSVK']=quickInsertCostumeAtIdx(portraitDatabase['KSVK'],4,"3805")
-portraitDatabase['Ameli']=quickInsertCostumeAtIdx(portraitDatabase['Ameli'],2,"1605")
-portraitDatabase["Welrod"]=quickInsertCostumeAtIdx(portraitDatabase["Welrod"],4,"1401")
-portraitDatabase["Spitfire"]=quickInsertCostumeAtIdx(portraitDatabase["Spitfire"],2,"1405")
-portraitDatabase['Ithaca37'] = quickInsertCostumeAtIdx(portraitDatabase['Ithaca37'],2,"1105")
-portraitDatabase['95type'] = quickInsertCostumeAtIdx(portraitDatabase['95type'],2,"1102")
-portraitDatabase['m1'] = quickInsertCostumeAtIdx(portraitDatabase['M1'],2,"1106")
-portraitDatabase['FN57'] = quickInsertCostumeAtIdx(portraitDatabase['FN57'],6,"1109")
-portraitDatabase['FAL'] = quickInsertCostumeAtIdx(portraitDatabase['FAL'],4,"2406")
-portraitDatabase['KP31'] = quickInsertCostumeAtIdx(portraitDatabase['KP31'],6,"1103")
-portraitDatabase['WA2000'] = quickInsertCostumeAtIdx(portraitDatabase['WA2000'],6,'1108')
-portraitDatabase['NTW20'] = quickInsertCostumeAtIdx(portraitDatabase['NTW20'],6,'1101')
-portraitDatabase['OC44'] = quickInsertCostumeAtIdx(portraitDatabase['OC44'],2,'1608')
-portraitDatabase['CZ75'] = quickInsertCostumeAtIdx(portraitDatabase['CZ75'],2,'1604')
-portraitDatabase['RFB'] = quickInsertCostumeAtIdx(portraitDatabase['RFB'],2,'1601')
-portraitDatabase['G11'] = quickInsertCostumeAtIdx(portraitDatabase['G11'],6,'1602')
+portraitDatabase['P7'].quickInsertCostumeAtIdx(2,"1404")
+portraitDatabase['KSVK'].quickInsertCostumeAtIdx(4,"3805")
+portraitDatabase['Ameli'].quickInsertCostumeAtIdx(2,"1605")
+portraitDatabase["Welrod"].quickInsertCostumeAtIdx(4,"1401")
+portraitDatabase["Spitfire"].quickInsertCostumeAtIdx(2,"1405")
+portraitDatabase['Ithaca37'].quickInsertCostumeAtIdx(2,"1105")
+portraitDatabase['95type'].quickInsertCostumeAtIdx(2,"1102")
+portraitDatabase['m1'].quickInsertCostumeAtIdx(2,"1106")
+portraitDatabase['FN57'].quickInsertCostumeAtIdx(6,"1109")
+portraitDatabase['FAL'].quickInsertCostumeAtIdx(4,"2406")
+portraitDatabase['KP31'].quickInsertCostumeAtIdx(6,"1103")
+portraitDatabase['WA2000'].quickInsertCostumeAtIdx(6,'1108')
+portraitDatabase['NTW20'].quickInsertCostumeAtIdx(6,'1101')
+portraitDatabase['OC44'].quickInsertCostumeAtIdx(2,'1608')
+portraitDatabase['CZ75'].quickInsertCostumeAtIdx(2,'1604')
+portraitDatabase['RFB'].quickInsertCostumeAtIdx(2,'1601')
+
+portraitDatabase['G11'].quickInsertCostumeAtIdx(6,'1602')
+#This doesn't seem correct...
+#portraitDatabase['G11'][1] = 'special/pic_G11_1.png'
+#portraitDatabase['G11'][2] = 'special/pic_G11_2.png'
+portraitDatabase['G11'][9] = 'special/pic_G11_9.png'
+
+portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
+portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'
+portraitDatabase['UMP9Mod'][3] = 'special/pic_UMP9Mod_happy.png'
 
 #portraitDatabase["MDR"].extend(["pic_MDR_2603.png","pic_MDR_2603_D.png"])
 #portraitDatabase["BrenMK"].extend(["pic_BrenMK_2605.png","pic_BrenMK_2605_D.png"])

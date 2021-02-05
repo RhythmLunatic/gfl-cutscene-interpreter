@@ -289,7 +289,58 @@ js['side'].append({'name':"White Day 2020(?)",'episodes':getAllByPrefix(files,'-
 js['side'].append({'name':"Summer 2020: Far Side of the Sea",'episodes':getAllByPrefix(files,'-40','Episode')})
 js['event'].append({'name':"Dual Randomness (Untranslated)",'episodes':getAllByPrefix(files,'-41','???')})
 js['side'].append({'name':"Halloween 2020? (Untranslated)",'episodes':getAllByPrefix(files,'-42','???')})
-js['crossover'].append({'name':"The Division (Untranslated) (Missing some)",'episodes':getAllByPrefix(files,'-43','???')})
+#js['crossover'].append({'name':"The Division (Untranslated) (Missing some)",'episodes':getAllByPrefix(files,'-43','???')})
+js['crossover'].append({
+	"name": "The Division",
+	"episodes": [
+		{
+			"name": "Chapter 0: The Night Before",
+			"parts": [
+				"-43-0-1.txt"
+			]
+		},
+		{
+			"name": "Chapter 1: 0:05 Hudson Refugee Camp",
+			"parts": [
+				"-43-1-1.txt",
+				"-43-1-2.txt",
+				"-43-1-3.txt"
+			]
+		},
+		{
+			"name": "Chapter 2: 0:07 New York Public Library",
+			"parts": [
+				"-43-2-1.txt",
+				"-43-2-2.txt",
+				"-43-2-3.txt",
+				"-43-2-4.txt"
+			]
+		},
+		{
+			"name": "??? IV",
+			"parts": [
+				"-43-3-1.txt",
+				"-43-3-2.txt",
+				"-43-3-3.txt"
+			]
+		},
+		{
+			"name": "??? V",
+			"parts": [
+				"-43-4-1.txt",
+				"-43-4-2.txt",
+				"-43-4-3.txt"
+			]
+		},
+		{
+			"name": "??? VI",
+			"parts": [
+				"-43-5-1.txt",
+				"-43-5-2.txt"
+			]
+		}
+	]
+})
 
 #todo...
 fetter = {'name':"Bookshelf of Memories",'episodes':[]}
@@ -324,7 +375,6 @@ with open('fetter.json','r') as f:
 		
 js['side'].append(fetter)
 
-js['side'].append({'name':"Interpreter Test Room",'episodes':[{'name':file,'parts':['testroom/'+file]} for file in os.listdir('./avgtxt/testroom')]})
 
 #TODO: Check for any unknown prefixes
 
@@ -355,12 +405,16 @@ for doll in frontlinedex:
 			modStories.append({'name':doll['name'],'parts':parts})
 js['side'].append({'name':"MOD 3 Stories",'episodes':modStories})
 
+#This should be last, nobody wants to click on this
+js['side'].append({'name':"Interpreter Test Room",'episodes':[{'name':file,'parts':['testroom/'+file]} for file in os.listdir('./avgtxt/testroom')]})
+
 with open('chapterDatabase.json','wb') as f:
 	f.write(JSON.dumps(js, sort_keys=False, indent='\t', separators=(',', ': '), ensure_ascii=False).encode('utf8'))
-	
+	print("Generated chapterDatabase.json")
 
 #I can't explain this shit, but BG10 is PlaybackBG1
-'''backgroundsRename = {
+'''sys.exit(0)
+backgroundsRename = {
 	"White":"PlaybackBG1"
 }
 with open('profiles.txt','r') as backgrounds:

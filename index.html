@@ -493,6 +493,7 @@ I have no idea how it works
 		
 		These are used in text:
 		<color=#00CCFF></color> - Take a wild guess
+		<size=n></size> - Take a wild guess. 55 is slightly larger. 60 is very large.
 		<下雪> - Add snow animation to cutscene
 		<火焰销毁> - Stop all cutscene animations, probably
 		
@@ -2371,7 +2372,7 @@ I have no idea how it works
 			if (document.getElementById('chapterHistoryRouting').checked)
 			{
 				let [type,chapter,episode] = getKeysFromRoutableString(window.location.hash.slice(1))
-				if (listOfChapters[type][chapter]['episodes'][episode])
+				if (type && chapter && episode && listOfChapters[type][chapter]['episodes'][episode])
 					runFromRoutableKeyString(window.location.hash.slice(1));
 				else
 					runFromRoutableKeyString(getCookie('lastViewedScene'));

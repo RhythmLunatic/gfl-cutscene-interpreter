@@ -317,7 +317,7 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name": "??? IV",
+			"name": "Chapter 3: 0:23 Grand Central Terminal",
 			"parts": [
 				"-43-3-1.txt",
 				"-43-3-2.txt",
@@ -325,7 +325,7 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name": "??? V",
+			"name": "Chapter 4: 0:50 Dark Zone",
 			"parts": [
 				"-43-4-1.txt",
 				"-43-4-2.txt",
@@ -333,12 +333,82 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name": "??? VI",
+			"name": "Chapter 5: 1:10 Extraction Point",
 			"parts": [
 				"-43-5-1.txt",
 				"-43-5-2.txt"
 			]
-		}
+		},
+		{
+			"name": "Side Chapter: Squad Am RFB",
+			"parts": [
+				"-43-A-1.txt"
+			],
+			"part_names":[
+				"Connection Successful"
+			]
+		},
+		{
+			"name":"Side Chapter: Squad AK-47",
+			"parts":[
+				"-43-B-1.txt",
+				"-43-B-2.txt",
+				"-43-B-3.txt"
+			],
+			"part_names":[
+				"Chug It!",
+				"Pickled Cucumber!",
+				"Big Ivan!"
+			]
+		},
+		{
+			"name": "Side Chapter: Squad Springfield",
+			"parts": [
+				"-43-C-1.txt",
+				"-43-C-2.txt",
+				"-43-C-3.txt"
+			],
+			"part_names":[
+				"Stir the Ingredients",
+				"Cut and Decorate",
+				"Story of Baking"
+			]
+		},
+		{
+			"name":"Side Chapter: Squad M870",
+			"parts":[
+				"-43-D-1.txt",
+				"-43-D-2.txt"
+			],
+			"part_names":[
+				"Alcohol Detector",
+				"Scales of Justice"
+			]
+		},
+		{
+			"name":"Side Chapter: Squad Vector",
+			"parts":[
+				"-43-E-1.txt",
+				"-43-E-2.txt"
+			],
+			"part_names":[
+				"A Small Target",
+				"A Large Target"
+			]
+		},
+		{
+			"name":"Side Chapter: Squad 404",
+			"parts":[
+				"-43-F-1.txt",
+				"-43-F-2.txt",
+				"-43-F-3.txt"
+			],
+			"part_names":[
+				"Hide Behind the Wall!",
+				"Hide Behind the Bushes!",
+				"Hide Behind the Bug!"
+			]
+		},
 	]
 })
 

@@ -3080,15 +3080,9 @@
 					]
 				},
 				{
-					"name": "AK-12 - Untranslated1",
+					"name": "AK-12 - Quiet Azure",
 					"parts": [
 						"skin/3302.txt"
-					]
-				},
-				{
-					"name": "AK-47 - Kitty Paws",
-					"parts": [
-						"skin/2.txt"
 					]
 				},
 				{
@@ -3098,21 +3092,15 @@
 					]
 				},
 				{
-					"name": "AN-94 - The Diving Bell and the Doll",
-					"parts": [
-						"skin/2404.txt"
-					]
-				},
-				{
-					"name": "AN-94 - Untranslated1",
+					"name": "AN-94 - Silent Rouge",
 					"parts": [
 						"skin/3303.txt"
 					]
 				},
 				{
-					"name": "ART556 - Haunted Castle",
+					"name": "AN-94 - The Diving Bell and the Doll",
 					"parts": [
-						"skin/6.txt"
+						"skin/2404.txt"
 					]
 				},
 				{
@@ -3140,19 +3128,19 @@
 					]
 				},
 				{
-					"name": "C-MS - Untranslated1",
+					"name": "C-MS - Flying Fish Assault",
 					"parts": [
 						"skin/3503.txt"
 					]
 				},
 				{
-					"name": "CAWS - Untranslated1",
+					"name": "CAWS - 120 Winter Gifts",
 					"parts": [
 						"skin/4003.txt"
 					]
 				},
 				{
-					"name": "CZ52 - Tweedia",
+					"name": "CZ52 - Baby Blue Eyes",
 					"parts": [
 						"skin/3007.txt"
 					]
@@ -3188,7 +3176,7 @@
 					]
 				},
 				{
-					"name": "DP-12 - Untranslated1",
+					"name": "DP-12 - Echeveria Lantern",
 					"parts": [
 						"skin/4201.txt"
 					]
@@ -3206,7 +3194,7 @@
 					]
 				},
 				{
-					"name": "EM-2 - Untranslated1",
+					"name": "EM-2 - Fragrant Clove",
 					"parts": [
 						"skin/4209.txt"
 					]
@@ -3242,7 +3230,7 @@
 					]
 				},
 				{
-					"name": "FNC - Untranslated1",
+					"name": "FNC - Strawberry Cake & Garden Cosmos",
 					"parts": [
 						"skin/4308.txt"
 					]
@@ -3272,7 +3260,7 @@
 					]
 				},
 				{
-					"name": "G28 - Untranslated1",
+					"name": "G28 - Moonlight and Emerald",
 					"parts": [
 						"skin/3307.txt"
 					]
@@ -3308,7 +3296,7 @@
 					]
 				},
 				{
-					"name": "G36C - Untranslated1",
+					"name": "G36C - Burning-Eyed Gr G36c",
 					"parts": [
 						"skin/3802.txt"
 					]
@@ -3326,6 +3314,18 @@
 					]
 				},
 				{
+					"name": "GSh-18 - Kitty Paws",
+					"parts": [
+						"skin/2.txt"
+					]
+				},
+				{
+					"name": "GSh-18 - Pumpkin Mishka",
+					"parts": [
+						"skin/1.txt"
+					]
+				},
+				{
 					"name": "Gepard M1 - Contracted Today",
 					"parts": [
 						"skin/2305.txt"
@@ -3338,7 +3338,7 @@
 					]
 				},
 				{
-					"name": "Gepard M1 - Untranslated1",
+					"name": "Gepard M1 - Unblemished Protector",
 					"parts": [
 						"skin/4006.txt"
 					]
@@ -3356,7 +3356,7 @@
 					]
 				},
 				{
-					"name": "HK21 - Untranslated1",
+					"name": "HK21 - Vixen's Platform ⅑",
 					"parts": [
 						"skin/4002.txt"
 					]
@@ -3368,7 +3368,7 @@
 					]
 				},
 				{
-					"name": "Honey Badger - Untranslated1",
+					"name": "Honey Badger - The X'mas Princess and the Stony Pett",
 					"parts": [
 						"skin/4005.txt"
 					]
@@ -3386,7 +3386,7 @@
 					]
 				},
 				{
-					"name": "JS 9 - Untranslated2",
+					"name": "JS 9 - Tender Marigold",
 					"parts": [
 						"skin/4204.txt"
 					]
@@ -3404,13 +3404,13 @@
 					]
 				},
 				{
-					"name": "K5 - Untranslated1",
+					"name": "K5 - Destiny Waltz",
 					"parts": [
 						"skin/3308.txt"
 					]
 				},
 				{
-					"name": "KSVK - Untranslated1",
+					"name": "KSVK - Darkside Moonwalk",
 					"parts": [
 						"skin/3805.txt"
 					]
@@ -3428,19 +3428,19 @@
 					]
 				},
 				{
-					"name": "LWMMG - Untranslated1",
+					"name": "LWMMG - My Lie in December",
 					"parts": [
 						"skin/4007.txt"
 					]
 				},
 				{
-					"name": "Lewis - Untranslated1",
+					"name": "Lewis - Holy Night Promise",
 					"parts": [
 						"skin/4001.txt"
 					]
 				},
 				{
-					"name": "Lewis - Untranslated2",
+					"name": "Lewis - Sunscreen Battle",
 					"parts": [
 						"skin/3502.txt"
 					]
@@ -3482,13 +3482,7 @@
 					]
 				},
 				{
-					"name": "M870 - Candy Express",
-					"parts": [
-						"skin/4.txt"
-					]
-				},
-				{
-					"name": "M870 - Untranslated1",
+					"name": "M870 - Pumpkin Fortress",
 					"parts": [
 						"skin/3803.txt"
 					]
@@ -3506,15 +3500,21 @@
 					]
 				},
 				{
-					"name": "M950A - Untranslated1",
+					"name": "M950A - Untranslated2",
 					"parts": [
 						"skin/4302.txt"
 					]
 				},
 				{
-					"name": "M99 - Untranslated1",
+					"name": "M99 - White Rabbit Summer Banquet",
 					"parts": [
 						"skin/3304.txt"
+					]
+				},
+				{
+					"name": "MDR - Cocktail Observer",
+					"parts": [
+						"skin/3305.txt"
 					]
 				},
 				{
@@ -3524,25 +3524,19 @@
 					]
 				},
 				{
-					"name": "MDR - Untranslated1",
-					"parts": [
-						"skin/3305.txt"
-					]
-				},
-				{
-					"name": "MG3 - Untranslated2",
+					"name": "MG3 - Open Your Eyes, It's Full Moon.",
 					"parts": [
 						"skin/3806.txt"
 					]
 				},
 				{
-					"name": "MG34 - Untranslated1",
+					"name": "MG34 - Divine Peach Blossom",
 					"parts": [
 						"skin/4210.txt"
 					]
 				},
 				{
-					"name": "MG36 - Untranslated1",
+					"name": "MG36 - Scarlet Turk's Cap",
 					"parts": [
 						"skin/4205.txt"
 					]
@@ -3575,12 +3569,6 @@
 					"name": "MP5 - Vietnamese Balm",
 					"parts": [
 						"skin/3006.txt"
-					]
-				},
-				{
-					"name": "MP7 - Candy Express",
-					"parts": [
-						"skin/4.txt"
 					]
 				},
 				{
@@ -3620,7 +3608,7 @@
 					]
 				},
 				{
-					"name": "Model L - Untranslated1",
+					"name": "Model L - Nocturnal Executioner",
 					"parts": [
 						"skin/3809.txt"
 					]
@@ -3644,7 +3632,7 @@
 					]
 				},
 				{
-					"name": "OTs-14 - Crassula Volkensii",
+					"name": "OTs-14 - Sangria Succulent",
 					"parts": [
 						"skin/3001.txt"
 					]
@@ -3656,21 +3644,21 @@
 					]
 				},
 				{
-					"name": "P7 - Haunted Castle",
-					"parts": [
-						"skin/6.txt"
-					]
-				},
-				{
 					"name": "P90 - Scarlet Turbo",
 					"parts": [
 						"skin/2802.txt"
 					]
 				},
 				{
-					"name": "PA-15 - Untranslated2",
+					"name": "PA-15 - Alluring Larkspur",
 					"parts": [
 						"skin/4202.txt"
+					]
+				},
+				{
+					"name": "PKP - Dignified Bamboo",
+					"parts": [
+						"skin/4203.txt"
 					]
 				},
 				{
@@ -3686,19 +3674,7 @@
 					]
 				},
 				{
-					"name": "PKP - Untranslated1",
-					"parts": [
-						"skin/4203.txt"
-					]
-				},
-				{
-					"name": "PP-90 - Kitty Paws",
-					"parts": [
-						"skin/2.txt"
-					]
-				},
-				{
-					"name": "PSG-1 - Untranslated1",
+					"name": "PSG-1 - Phantom Assault",
 					"parts": [
 						"skin/3808.txt"
 					]
@@ -3716,13 +3692,13 @@
 					]
 				},
 				{
-					"name": "QBU-88 - Untranslated1",
+					"name": "QBU-88 - Candy Mugger!",
 					"parts": [
 						"skin/3801.txt"
 					]
 				},
 				{
-					"name": "R93 - Untranslated1",
+					"name": "R93 - Holiday Lucky Star",
 					"parts": [
 						"skin/3501.txt"
 					]
@@ -3752,7 +3728,7 @@
 					]
 				},
 				{
-					"name": "SPP-1 - Untranslated1",
+					"name": "SPP-1 - Night of Blue Lotus",
 					"parts": [
 						"skin/4207.txt"
 					]
@@ -3776,7 +3752,7 @@
 					]
 				},
 				{
-					"name": "Serdyukov - Untranslated1",
+					"name": "Serdyukov - Crow Lifeguard",
 					"parts": [
 						"skin/3506.txt"
 					]
@@ -3830,7 +3806,7 @@
 					]
 				},
 				{
-					"name": "T91 - Untranslated1",
+					"name": "T91 - Snowy Plum Blossom",
 					"parts": [
 						"skin/4206.txt"
 					]
@@ -3854,19 +3830,19 @@
 					]
 				},
 				{
-					"name": "Thunder - Untranslated1",
+					"name": "Thunder - Black Swan's Dream",
 					"parts": [
 						"skin/3309.txt"
 					]
 				},
 				{
-					"name": "Type 100 - Untranslated2",
+					"name": "Type 100 - Treasure Buried Deep Within",
 					"parts": [
 						"skin/4004.txt"
 					]
 				},
 				{
-					"name": "Type 4 - Untranslated2",
+					"name": "Type 4 - Cape No. 4",
 					"parts": [
 						"skin/3505.txt"
 					]
@@ -3884,7 +3860,7 @@
 					]
 				},
 				{
-					"name": "Type 79 - Untranslated1",
+					"name": "Type 79 - Fox Steps Under Star Night",
 					"parts": [
 						"skin/3306.txt"
 					]
@@ -3896,19 +3872,19 @@
 					]
 				},
 				{
+					"name": "Type 88 - Anti-Drowning Accessories",
+					"parts": [
+						"skin/3504.txt"
+					]
+				},
+				{
 					"name": "Type 88 - Noble Orchid",
 					"parts": [
 						"skin/3003.txt"
 					]
 				},
 				{
-					"name": "Type 88 - Untranslated1",
-					"parts": [
-						"skin/3504.txt"
-					]
-				},
-				{
-					"name": "Type 97 Shotgun - Untranslated1",
+					"name": "Type 97 Shotgun - Ingenious Stratagem No.97",
 					"parts": [
 						"skin/3807.txt"
 					]
@@ -3962,7 +3938,7 @@
 					]
 				},
 				{
-					"name": "Z-62 - Untranslated1",
+					"name": "Z-62 - Swimming Lesson",
 					"parts": [
 						"skin/3507.txt"
 					]
@@ -4392,6 +4368,12 @@
 					]
 				},
 				{
+					"name": "snowTest.txt",
+					"parts": [
+						"testroom/snowTest.txt"
+					]
+				},
+				{
 					"name": "test.txt",
 					"parts": [
 						"testroom/test.txt"
@@ -4720,16 +4702,16 @@
 			]
 		},
 		{
-			"name": "The Division (Untranslated) (Missing some)",
+			"name": "The Division",
 			"episodes": [
 				{
-					"name": "???",
+					"name": "Chapter 0: The Night Before",
 					"parts": [
 						"-43-0-1.txt"
 					]
 				},
 				{
-					"name": "??? II",
+					"name": "Chapter 1: 0:05 Hudson Refugee Camp",
 					"parts": [
 						"-43-1-1.txt",
 						"-43-1-2.txt",
@@ -4737,7 +4719,7 @@
 					]
 				},
 				{
-					"name": "??? III",
+					"name": "Chapter 2: 0:07 New York Public Library",
 					"parts": [
 						"-43-2-1.txt",
 						"-43-2-2.txt",
@@ -4746,7 +4728,7 @@
 					]
 				},
 				{
-					"name": "??? IV",
+					"name": "Chapter 3: 0:23 Grand Central Terminal",
 					"parts": [
 						"-43-3-1.txt",
 						"-43-3-2.txt",
@@ -4754,7 +4736,7 @@
 					]
 				},
 				{
-					"name": "??? V",
+					"name": "Chapter 4: 0:50 Dark Zone",
 					"parts": [
 						"-43-4-1.txt",
 						"-43-4-2.txt",
@@ -4762,10 +4744,80 @@
 					]
 				},
 				{
-					"name": "??? VI",
+					"name": "Chapter 5: 1:10 Extraction Point",
 					"parts": [
 						"-43-5-1.txt",
 						"-43-5-2.txt"
+					]
+				},
+				{
+					"name": "Side Chapter: Squad Am RFB",
+					"parts": [
+						"-43-A-1.txt"
+					],
+					"part_names": [
+						"Connection Successful"
+					]
+				},
+				{
+					"name": "Side Chapter: Squad AK-47",
+					"parts": [
+						"-43-B-1.txt",
+						"-43-B-2.txt",
+						"-43-B-3.txt"
+					],
+					"part_names": [
+						"Chug It!",
+						"Pickled Cucumber!",
+						"Big Ivan!"
+					]
+				},
+				{
+					"name": "Side Chapter: Squad Springfield",
+					"parts": [
+						"-43-C-1.txt",
+						"-43-C-2.txt",
+						"-43-C-3.txt"
+					],
+					"part_names": [
+						"Stir the Ingredients",
+						"Cut and Decorate",
+						"Story of Baking"
+					]
+				},
+				{
+					"name": "Side Chapter: Squad M870",
+					"parts": [
+						"-43-D-1.txt",
+						"-43-D-2.txt"
+					],
+					"part_names": [
+						"Alcohol Detector",
+						"Scales of Justice"
+					]
+				},
+				{
+					"name": "Side Chapter: Squad Vector",
+					"parts": [
+						"-43-E-1.txt",
+						"-43-E-2.txt"
+					],
+					"part_names": [
+						"A Small Target",
+						"A Large Target"
+					]
+				},
+				{
+					"name": "Side Chapter: Squad 404",
+					"parts": [
+						"-43-F-1.txt",
+						"-43-F-2.txt",
+						"-43-F-3.txt"
+					],
+					"part_names": [
+						"Hide Behind the Wall!",
+						"Hide Behind the Bushes!",
+						"Hide Behind the Bug!"
 					]
 				}
 			]

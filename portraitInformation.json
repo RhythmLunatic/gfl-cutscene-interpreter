@@ -38,7 +38,7 @@
     "AK12": [
         "pic_AK12.png",
         "pic_AK12_D.png",
-        null,
+        "special/pic_AK12_2.png",
         null,
         null,
         null,
@@ -55,7 +55,8 @@
     ],
     "AK47": [
         "pic_AK47.png",
-        "pic_AK47_D.png"
+        "pic_AK47_D.png",
+        "special/pic_AK47_2.png"
     ],
     "AK74U": [
         "pic_AK74U.png",
@@ -70,12 +71,16 @@
     "AN94": [
         "pic_AN94.png",
         "pic_AN94_D.png",
-        null,
+        "special/pic_AN94_2.png",
         "pic_AN94_3303.png",
         "pic_AN94_3303_D.png",
         null,
         "pic_AN94_2404.png",
         "pic_AN94_2404_D.png"
+    ],
+    "AR57": [
+        "pic_AR57.png",
+        "pic_AR57_D.png"
     ],
     "AR70": [
         "pic_AR70.png",
@@ -87,7 +92,8 @@
         "pic_ART556_1803.png",
         "pic_ART556_1803_D.png",
         "pic_ART556_2803.png",
-        "pic_ART556_2803_D.png"
+        "pic_ART556_2803_D.png",
+        "special/pic_ART556_6.png"
     ],
     "ARX160": [
         "pic_ARX160.png",
@@ -297,7 +303,11 @@
     ],
     "FNFAL": [
         "pic_FNFAL.png",
-        "pic_FNFAL_D.png"
+        "pic_FNFAL_D.png",
+        "pic_FNFAL_308.png",
+        "pic_FNFAL_308_D.png",
+        "pic_FNFAL_2406.png",
+        "pic_FNFAL_2406_D.png"
     ],
     "FAMAS": [
         "pic_FAMAS.png",
@@ -337,6 +347,10 @@
         "pic_FP6_2804.png",
         "pic_FP6_2804_D.png"
     ],
+    "FX05": [
+        "pic_FX05.png",
+        "pic_FX05_D.png"
+    ],
     "Falcon": [
         "pic_Falcon.png",
         "pic_Falcon_D.png"
@@ -353,13 +367,15 @@
     ],
     "G11": [
         "pic_G11.png",
-        "pic_G11_D.png",
-        null,
+        "special/pic_G11_1.png",
+        "special/pic_G11_2.png",
         "pic_G11_9.png",
         "pic_G11_9_D.png",
         null,
         "pic_G11_1602.png",
-        "pic_G11_1602_D.png"
+        "pic_G11_1602_D.png",
+        null,
+        "special/pic_G11_9.png"
     ],
     "G28": [
         "pic_G28.png",
@@ -419,7 +435,8 @@
     ],
     "GSH18": [
         "pic_GSH18.png",
-        "pic_GSH18_D.png"
+        "pic_GSH18_D.png",
+        "special/pic_GSH18_2.png"
     ],
     "AR": [
         "pic_AR.png",
@@ -471,11 +488,14 @@
         "special/pic_HK416_1.png",
         "special/pic_HK416_2.png",
         "pic_HK416_805.png",
-        "pic_HK416_805_D.png"
+        "pic_HK416_805_D.png",
+        "special/pic_HK416_6.png",
+        "special/pic_HK416_7.png"
     ],
     "HK416Mod": [
         "pic_HK416Mod.png",
-        "pic_HK416Mod_D.png"
+        "pic_HK416Mod_D.png",
+        "special/pic_HK416Mod_1.png"
     ],
     "HK45": [
         "pic_HK45.png",
@@ -596,7 +616,7 @@
     "KSVK": [
         "pic_KSVK.png",
         "pic_KSVK_D.png",
-        null,
+        "special/pic_KSVK_2.png",
         null,
         "pic_KSVK_3805.png",
         "pic_KSVK_3805_D.png",
@@ -652,7 +672,9 @@
     ],
     "M1": [
         "pic_M1.png",
-        "pic_M1_D.png"
+        "pic_M1_D.png",
+        "pic_M1_1106.png",
+        "pic_M1_1106_D.png"
     ],
     "M1014": [
         "pic_M1014.png",
@@ -678,7 +700,11 @@
     ],
     "M16A1": [
         "pic_M16A1.png",
-        "pic_M16A1_D.png"
+        "pic_M16A1_D.png",
+        "special/pic_M16A1_2.png",
+        "special/pic_M16A1_3.png",
+        "special/pic_M16A1_4.png",
+        "special/pic_M16A1_5.png"
     ],
     "M1887": [
         "pic_M1887.png",
@@ -722,7 +748,8 @@
     ],
     "M200": [
         "pic_M200.png",
-        "pic_M200_D.png"
+        "pic_M200_D.png",
+        "special/pic_M200_2.png"
     ],
     "M21": [
         "pic_M21.png",
@@ -753,7 +780,8 @@
         "pic_M4 SOPMOD II_D.png"
     ],
     "M4 SOPMOD IIMod": [
-        "pic_M4 SOPMOD IIMod.png"
+        "pic_M4 SOPMOD IIMod.png",
+        "pic_M4 SOPMOD IIMod_D.png"
     ],
     "M4A1": [
         "pic_M4A1.png",
@@ -768,6 +796,10 @@
     "M500": [
         "pic_M500.png",
         "pic_M500_D.png"
+    ],
+    "M500Mod": [
+        "pic_M500Mod.png",
+        "pic_M500Mod_D.png"
     ],
     "M590": [
         "pic_M590.png",
@@ -795,7 +827,8 @@
         "pic_M870P.png",
         "pic_M870P_D.png",
         "pic_M870P_3803.png",
-        "pic_M870P_3803_D.png"
+        "pic_M870P_3803_D.png",
+        "special/pic_M870P_4.png"
     ],
     "M9": [
         "pic_M9.png",
@@ -923,7 +956,8 @@
         "pic_MP7.png",
         "pic_MP7_D.png",
         "pic_MP7_2405.png",
-        "pic_MP7_2405_D.png"
+        "pic_MP7_2405_D.png",
+        "special/pic_MP7_4.png"
     ],
     "MT9": [
         "pic_MT9.png",
@@ -1073,7 +1107,10 @@
         "pic_P7.png",
         "pic_P7_D.png",
         "pic_P7_1404.png",
-        "pic_P7_1404_D.png"
+        "pic_P7_1404_D.png",
+        null,
+        null,
+        "special/pic_P7_6.png"
     ],
     "P90": [
         "pic_P90.png",
@@ -1131,7 +1168,8 @@
     ],
     "PP90": [
         "pic_PP90.png",
-        "pic_PP90_D.png"
+        "pic_PP90_D.png",
+        "special/pic_PP90_2.png"
     ],
     "PPK": [
         "pic_PPK.png",
@@ -1209,7 +1247,10 @@
     ],
     "RO635": [
         "pic_RO635.png",
-        "pic_RO635_D.png"
+        "pic_RO635_D.png",
+        "special/pic_RO635_2.png",
+        "special/pic_RO635_3.png",
+        "special/pic_RO635_4.png"
     ],
     "RPD": [
         "pic_RPD.png",
@@ -1217,7 +1258,10 @@
     ],
     "RPK16": [
         "pic_RPK16.png",
-        "pic_RPK16_D.png"
+        "pic_RPK16_D.png",
+        "special/pic_RPK16_2.png",
+        "special/pic_RPK16_3.png",
+        "special/pic_RPK16_4.png"
     ],
     "RT20": [
         "pic_RT20.png",
@@ -1326,6 +1370,10 @@
         "pic_SV98Mod.png",
         "pic_SV98Mod_D.png"
     ],
+    "SVCh": [
+        "pic_SVCh.png",
+        "pic_SVCh_D.png"
+    ],
     "SVD": [
         "pic_SVD.png",
         "pic_SVD_D.png",
@@ -1352,7 +1400,9 @@
     ],
     "SKS": [
         "pic_SKS.png",
-        "pic_SKS_D.png"
+        "pic_SKS_D.png",
+        "special/pic_SKS_2.png",
+        "special/pic_SKS_3.png"
     ],
     "Six12": [
         "pic_Six12.png",
@@ -1384,7 +1434,11 @@
         "pic_M1903_802.png",
         "pic_M1903_802_D.png",
         "pic_M1903_1107.png",
-        "pic_M1903_1107_D.png"
+        "pic_M1903_1107_D.png",
+        "special/pic_M1903_10.png",
+        "special/pic_M1903_11.png",
+        "special/pic_M1903_12.png",
+        "special/pic_M1903_13.png"
     ],
     "stg940": [
         "pic_stg940.png",
@@ -1586,7 +1640,11 @@
     ],
     "97type": [
         "pic_97type.png",
-        "pic_97type_D.png"
+        "pic_97type_D.png",
+        null,
+        null,
+        "special/pic_97type_4.png",
+        "special/pic_97type_5.png"
     ],
     "97typeS": [
         "pic_97typeS.png",
@@ -1605,7 +1663,7 @@
     "UMP45": [
         "pic_UMP45.png",
         "pic_UMP45_D.png",
-        null,
+        "special/pic_UMP45_2.png",
         null,
         "pic_UMP45_2107.png",
         "pic_UMP45_2107_D.png"
@@ -1617,8 +1675,8 @@
     "UMP9": [
         "pic_UMP9.png",
         "pic_UMP9_D.png",
-        null,
-        null,
+        "special/pic_UMP9_2.png",
+        "special/pic_UMP9_3.png",
         null,
         null,
         "pic_UMP9_2106.png",
@@ -1626,7 +1684,10 @@
     ],
     "UMP9Mod": [
         "pic_UMP9Mod.png",
-        "pic_UMP9Mod_D.png"
+        "pic_UMP9Mod_D.png",
+        "special/pic_UMP9Mod_dislike.png",
+        "special/pic_UMP9Mod_happy.png",
+        "special/pic_UMP9Mod_angry.png"
     ],
     "USAS12": [
         "pic_USAS12.png",
@@ -1648,13 +1709,19 @@
         "pic_VP70.png",
         "pic_VP70_D.png"
     ],
+    "VSK": [
+        "pic_VSK.png",
+        "pic_VSK_D.png"
+    ],
     "Vector": [
         "pic_Vector.png",
         "pic_Vector_D.png",
         "pic_Vector_2.png",
         "pic_Vector_2_D.png",
         "pic_Vector_1901.png",
-        "pic_Vector_1901_D.png"
+        "pic_Vector_1901_D.png",
+        "special/pic_Vector_6.png",
+        "special/pic_Vector_7.png"
     ],
     "VEPR": [
         "pic_VEPR.png",
@@ -1734,6 +1801,18 @@
         "pic_wz29.png",
         "pic_wz29_D.png"
     ],
+    "HK416Agent": [
+        "pic_HK416Agent.png",
+        "pic_HK416Agent_D.png",
+        "special/pic_HK416Agent_2.png",
+        "special/pic_HK416Agent_3.png"
+    ],
+    "VectorAgent": [
+        "pic_VectorAgent.png",
+        "pic_VectorAgent_D.png",
+        "special/pic_VectorAgent_2.png",
+        "special/pic_VectorAgent_3.png"
+    ],
     "Alma": [
         "pic_Alma.png",
         "pic_Alma_D.png"
@@ -1772,7 +1851,10 @@
     ],
     "Henrietta": [
         "pic_Henrietta.png",
-        "pic_Henrietta_D.png"
+        "pic_Henrietta_D.png",
+        "special/pic_Henrietta_2.png",
+        "special/pic_Henrietta_3.png",
+        "special/pic_Henrietta_4.png"
     ],
     "Jill": [
         "pic_Jill.png",
@@ -1804,7 +1886,10 @@
     ],
     "SEI": [
         "pic_SEI.png",
-        "pic_SEI_D.png"
+        "pic_SEI_D.png",
+        "special/pic_SEI_2.png",
+        "special/pic_SEI_3.png",
+        "special/pic_SEI_4.png"
     ],
     "Stella": [
         "pic_Stella.png",
@@ -1877,7 +1962,12 @@
         "special/版娘-5.png",
         "special/版娘-6.png",
         "special/版娘-7.png",
-        "special/版娘-8.png"
+        "special/版娘-8.png",
+        "special/版娘Armor.png",
+        null,
+        "special/NPC-Kalin_11.png",
+        "special/NPC-Kalin_12.png",
+        "special/NPC-Kalin_13.png"
     ],
     "OGAS": [
         "Nyto_Isomer_Shadow.png"
@@ -1891,6 +1981,16 @@
     ],
     "NPC-Kyruger": [
         "pic_NPC-Kyruger.png"
+    ],
+    "NPC-Ange": [
+        "NPC-Ange.png",
+        "NPC-Ange_1.png",
+        null,
+        "NPC-Ange(3).png",
+        "NPC-Ange(4).png",
+        "NPC-Ange(5).png",
+        "NPC-Ange(6).png",
+        "NPC-Ange(7).png"
     ],
     "NPC-Persica": [
         "pic_NPC-Persica.png",
@@ -1908,9 +2008,11 @@
         "pic_NPC-Seele.png",
         "pic_NPC-Seele_1.png"
     ],
-    "G11story": [
-        "special/shadow.png",
-        "special/shadow.png"
+    "NPC-Dima": [
+        "NPC-Dima(0).png",
+        "NPC-Dima(1).png",
+        "NPC-Dima(2).png",
+        "NPC-Dima(3).png"
     ],
     "Jillmagic": [
         "pic_Jill_529.png"
@@ -1926,7 +2028,11 @@
     ],
     "M16": [
         "pic_M16A1.png",
-        "pic_M16A1_D.png"
+        "pic_M16A1_D.png",
+        "special/pic_M16A1_2.png",
+        "special/pic_M16A1_3.png",
+        "special/pic_M16A1_4.png",
+        "special/pic_M16A1_5.png"
     ],
     "MK2": [
         "pic_StenMK2.png",
@@ -1944,14 +2050,22 @@
         "pic_PPsh41.png",
         "pic_PPsh41_D.png"
     ],
-    "FAMASHalloween": [
-        "pic_FAMAS_2604.png"
-    ],
     "m1": [
         "pic_M1.png",
         "pic_M1_D.png",
         "pic_M1_1106.png",
         "pic_M1_1106_D.png"
+    ],
+    "m500": [
+        "pic_M500.png",
+        "pic_M500_D.png"
+    ],
+    "FAMASHalloween": [
+        "pic_FAMAS_2604.png"
+    ],
+    "G11story": [
+        "special/shadow.png",
+        "special/shadow.png"
     ],
     "DJMAXSUEE": [
         "equip/fairy/DJMAXSUEE_1.png"

@@ -104,6 +104,13 @@
         "internalName": "AN94"
     },
     {
+        "name": "AR-57",
+        "type": "SMG",
+        "num": 328,
+        "rating": 4,
+        "internalName": "AR57"
+    },
+    {
         "name": "AR70",
         "type": "AR",
         "num": 134,
@@ -246,7 +253,7 @@
     {
         "name": "C14",
         "type": "RF",
-        "num": -1,
+        "num": 308,
         "rating": 3,
         "internalName": "C14"
     },
@@ -492,6 +499,13 @@
         "num": 164,
         "rating": 5,
         "internalName": "FP6"
+    },
+    {
+        "name": "FX-05",
+        "type": "AR",
+        "num": 330,
+        "rating": 4,
+        "internalName": "FX05"
     },
     {
         "name": "Falcon",
@@ -1092,6 +1106,13 @@
         "num": 154,
         "rating": 3,
         "internalName": "M500"
+    },
+    {
+        "name": "M500 MOD 3",
+        "type": "SG",
+        "num": 154,
+        "rating": 4,
+        "internalName": "M500Mod"
     },
     {
         "name": "M590",
@@ -1864,7 +1885,7 @@
     {
         "name": "SUB-2000",
         "type": "SMG",
-        "num": -1,
+        "num": 327,
         "rating": 3,
         "internalName": "SUB2000"
     },
@@ -1881,6 +1902,13 @@
         "num": 44,
         "rating": 4,
         "internalName": "SV98Mod"
+    },
+    {
+        "name": "SVCh",
+        "type": "RF",
+        "num": 329,
+        "rating": 5,
+        "internalName": "SVCh"
     },
     {
         "name": "SVD",
@@ -2101,7 +2129,7 @@
     {
         "name": "TS12",
         "type": "SG",
-        "num": -1,
+        "num": 321,
         "rating": 3
     },
     {
@@ -2339,7 +2367,8 @@
         "name": "VSK-94",
         "type": "RF",
         "num": 312,
-        "rating": 5
+        "rating": 5,
+        "internalName": "VSK"
     },
     {
         "name": "Vector",
@@ -2351,7 +2380,7 @@
     {
         "name": "Vepr",
         "type": "AR",
-        "num": -1,
+        "num": 298,
         "rating": 3,
         "internalName": "VEPR"
     },
@@ -2365,7 +2394,7 @@
     {
         "name": "WKp",
         "type": "HG",
-        "num": -1,
+        "num": 309,
         "rating": 3,
         "internalName": "WKP"
     },
@@ -2450,13 +2479,15 @@
         "name": "Agent 416",
         "type": "AR",
         "num": 1029,
-        "rating": 7
+        "rating": 7,
+        "internalName": "HK416Agent"
     },
     {
         "name": "Agent Vector",
         "type": "SMG",
         "num": 1028,
-        "rating": 7
+        "rating": 7,
+        "internalName": "VectorAgent"
     },
     {
         "name": "Alma",

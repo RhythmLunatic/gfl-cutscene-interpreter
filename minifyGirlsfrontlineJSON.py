@@ -3,6 +3,7 @@
 #
 import json as JSON
 import os
+import glob
 
 class bcolors:
 	HEADER = '\033[95m'
@@ -48,6 +49,10 @@ class ResizingList(list):
 		#print(l)
 		self[idx]='pic_'+internalName+'_'+name+'.png'
 		self[idx+1]='pic_'+internalName+'_'+name+'_D.png'
+		
+	def quickInsertSpecial(self,idx):
+		internalName = self[0].split('_')[1].split('.')[0]
+		self[idx]='special/pic_'+internalName+'_'+str(idx)+'.png'
 		
 
 		
@@ -134,14 +139,14 @@ with open('girlsfrontline.json','r') as gfld:
 														if charID == doll['internalName'] and charSpr > 1:
 															#TODO: Some dolls use multiple sprites in a story (ex. Team DEFY or AR), this will get it wrong if they do
 															#Although for those it can probably just be overwritten at the end
-															printWarn("Found unknown type "+str(charSpr)+" being used in "+charID)
+															print("Found unknown type "+str(charSpr)+" being used in "+charID)
 															#portraitDatabase[doll['internalName']] = extendListIfTooShort(portraitDatabase[doll['internalName']],charSpr+2)
 															print(doll['costumes'][i]['pic'])
 															print(doll['costumes'][i+1]['pic'])
 															portraitDatabase[doll['internalName']][charSpr]=doll['costumes'][i]['pic']
 															portraitDatabase[doll['internalName']][charSpr+1]=doll['costumes'][i+1]['pic']
-															print("Added to database")
-															print(portraitDatabase[doll['internalName']])
+															printOK("Added to database")
+															printOK(str(portraitDatabase[doll['internalName']]))
 															foundCostume=True
 															break
 													cmds = cmds[:0]+cmds[charTagEnd+1:];
@@ -162,6 +167,26 @@ with open('girlsfrontline.json','r') as gfld:
 							
 					
 					#assert(len(portraitDatabase[doll['internalName']]) > 1)
+				#Automatically search for special portraits since they're usually named correctly
+				expressionFiles = glob.glob("pic/special/pic_"+doll['internalName']+"_*")
+				for expressionFile in expressionFiles:
+					fParams = expressionFile.split("_")
+					fNameNoDir = expressionFile.split("/")[-1]
+					#If it's not 3 params... Just ignore it
+					if len(fParams)==3:
+						portraitType = fParams[-1][:-4]
+						try:
+							portraitIdx = int(portraitType)
+							if len(portraitDatabase[doll['internalName']])-1 < portraitIdx or (len(portraitDatabase[doll['internalName']]) > portraitIdx and portraitDatabase[doll['internalName']][portraitIdx] == None):
+								portraitDatabase[doll['internalName']][portraitIdx]='special/'+fNameNoDir
+								printOK("Inserted special portrait: "+portraitDatabase[doll['internalName']][portraitIdx])
+							else:
+								printWarn("A portrait ID already exists where a special portrait was found. Not inserting portrait "+fNameNoDir)
+								printWarn(str(portraitDatabase[doll['internalName']]))
+						except Exception as e:
+							pass
+							#printError(str(e))
+							#printError(str(portraitDatabase[doll['internalName']]))
 		#if 'img' in doll:
 		#	newDoll['img'] = doll['img']
 		#I don't know if this is gonna be needed later
@@ -186,7 +211,7 @@ portraitDatabase["NPC-Kalin"] = [
 	"special/版娘-6.png",
 	"special/版娘-7.png",
 	"special/版娘-8.png",
-	None,
+	'special/版娘Armor.png',
 	None,
 	"special/NPC-Kalin_11.png",
 	"special/NPC-Kalin_12.png",
@@ -231,7 +256,8 @@ portraitDatabase['NPC-Dima']=[
 
 portraitDatabase['NPC-Kyruger']=['pic_NPC-Kyruger.png']
 
-portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
+portraitDatabase['AK47'].quickInsertSpecial(2)
+
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
 portraitDatabase['RO635-NoArmor']=['special/pic_RO635_NoArmor0.png']
 #portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
@@ -243,9 +269,11 @@ portraitDatabase['M1903bar']=["special/M1903_Bartender.png"]
 portraitDatabase['M1903Cafe']=["special/M1903Cafe.png"]
 portraitDatabase['M1903'].quickInsertCostumeAtIdx(8,"1107")
 
+#Not incorrect, slot 1 is occupied by damaged art
 portraitDatabase['HK416'][2] = 'special/pic_HK416_1.png'
 portraitDatabase['HK416'][3] = 'special/pic_HK416_2.png'
 
+#Not incorrect either
 portraitDatabase['HK416Mod'][2]='special/pic_HK416Mod_1.png'
 
 #M16 has more than two portraits, but this will have to do for now...
@@ -262,7 +290,9 @@ portraitDatabase['m500'] = portraitDatabase['M500']
 
 portraitDatabase["FAMASHalloween"]=["pic_FAMAS_2604.png"]
 
+
 portraitDatabase['P7'].quickInsertCostumeAtIdx(2,"1404")
+#portraitDatabase['P7'][6]='special/pic_P7_6.png'
 portraitDatabase['KSVK'].quickInsertCostumeAtIdx(4,"3805")
 portraitDatabase['Ameli'].quickInsertCostumeAtIdx(2,"1605")
 portraitDatabase["Welrod"].quickInsertCostumeAtIdx(4,"1401")
@@ -280,10 +310,9 @@ portraitDatabase['CZ75'].quickInsertCostumeAtIdx(2,'1604')
 portraitDatabase['RFB'].quickInsertCostumeAtIdx(2,'1601')
 
 portraitDatabase['G11'].quickInsertCostumeAtIdx(6,'1602')
-#This doesn't seem correct...
-#portraitDatabase['G11'][1] = 'special/pic_G11_1.png'
-#portraitDatabase['G11'][2] = 'special/pic_G11_2.png'
-portraitDatabase['G11'][9] = 'special/pic_G11_9.png'
+portraitDatabase['G11'][1] = 'special/pic_G11_1.png'
+portraitDatabase['G11'][2] = 'special/pic_G11_2.png'
+portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
 
 portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'

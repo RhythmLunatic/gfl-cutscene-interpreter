@@ -21,7 +21,10 @@ Examples:
 ### ;
 Determines when to dim a portrait. If it's before the <Speaker> tag it dims the left, if it's after it dims the right.
 
-### <通讯框>
+### 通讯框
+
+Ex. `<通讯框>`.
+
 "Communication box". Display previous character portrait inside a communication box.
 
 ### <Grey>
@@ -29,12 +32,17 @@ Unknown. Probably colors the previous portrait grey.
 
 Used in the valhalla collab.
 
-### <Position>i,j</Position>
+### Position
+
+Ex. `<Position>i,j</Position>`
+
 Set position of last portrait. No idea what i,j is but assume x and y values
 
 ## Other
 
-### <BGM></BGM>
+### BGM
+
+ex. <BGM>djmax_gloryday</BGM>
 
 Sets BGM. Usually whatever is in the tag is the exact file name, but oddly enough some file names are different.
 
@@ -42,10 +50,16 @@ Known tags vs actual filenames:
 * BGM_Sunshine -> home_formation_factory
 * BGM_NightOPS -> GUN_CineTense_loop
 
-### <BIN></BIN>
+### BIN
+
+ex. <BIN>112</BIN>
+
 Set background. Aside from a few special cases it's whatever background is at that line in profiles.txt.
 
-### <Speaker></Speaker>
+### Speaker
+
+ex. `<Speaker>Dandelai</Speaker>`
+
 Set the speaker name. Duh.
 
 ### || 
@@ -58,7 +72,10 @@ Set orange textbox
 ### <关闭蒙版>
 Unknown, possibly related to orange textbox
 
-### <SE1></SE1>, <SE2></SE2>
+### SE1, SE2
+
+ex. `<SE1></SE1>`, `<SE2></SE2>`
+
 Not sure what the difference is between 1 or 2.
 
 ## Screen transitions
@@ -90,10 +107,16 @@ End of opcodes, text goes after this (Other than +)
 ### + 
 End text. Text will continue in a new box (no close/open animation) when clicked.
 
-### <color=#00CCFF></color>
+### color
+
+ex. `<color=#00CCFF>This is holo blue</color>`
+
 Take a wild guess
 
-### <size=n></size>
+### size
+
+ex. `<size=60>THIS IS LARGE TEXT</size>`
+
 Take a wild guess. 
 
 Known sizes:

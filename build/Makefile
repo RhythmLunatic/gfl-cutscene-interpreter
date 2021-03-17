@@ -26,7 +26,6 @@ build: girlsfrontline.json fetter.json fetter_story.json NormalActivityCampaign.
 	mv portraitInformation.json ../
 	mv missingPortraits.json ../
 	mv girlsfrontline-min.json ../
-	mv CharacterVoicePlus.json ../
 	#ifdef local
 	#	./gtml -DLOCAL_ONLY=True index.gtml
 	#else

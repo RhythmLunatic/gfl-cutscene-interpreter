@@ -1,0 +1,17 @@
+junk/*
+pic/*
+avgtxt/*
+avgtexture/*
+pic_important backup/*
+audio/*
+#use make dl
+build/girlsfrontline.json
+#Stuff that needs to be dumped from the game
+NotoSansHans-DemiLight.otf
+build/profiles.txt
+build/fetter_story.json
+build/fetter.json
+build/mission.json
+build/NormalActivityCampaign.txt
+build/NewCharacterVoice.json
+build/AudioTemplate.txt

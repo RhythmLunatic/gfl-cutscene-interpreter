@@ -9,7 +9,7 @@ In action: http://gfl.amaryllisworks.pw
 - Named chapters, named episodes
 - Dark mode, light mode, etc
 - Material design. Webpage works on your phone, of course.
-- Free and open source copyleft stuff
+- Free and open source copyleft software
 
 
 # BUGS
@@ -23,6 +23,7 @@ In action: http://gfl.amaryllisworks.pw
 # TODO
 - More dialogue
 - Make public the modified gfl dumper (I modified abunpack.py to dump everything instead of whatever was in config.json)
+- Check issues page on github
 
 # HOW DO I USE?
 1. First, dump all the game data. Yes, all of it. It's required so you have portraits, music, and text.

@@ -403,6 +403,13 @@
         "rating": 4
     },
     {
+        "name": "Derringer",
+        "type": "HG",
+        "num": 332,
+        "rating": 4,
+        "internalName": "Derringer"
+    },
+    {
         "name": "Desert Eagle",
         "type": "HG",
         "num": 272,
@@ -429,6 +436,13 @@
         "num": 178,
         "rating": 3,
         "internalName": "F1"
+    },
+    {
+        "name": "F1 MOD 3",
+        "type": "SMG",
+        "num": 178,
+        "rating": 4,
+        "internalName": "F1Mod"
     },
     {
         "name": "F2000",
@@ -515,6 +529,13 @@
         "internalName": "Falcon"
     },
     {
+        "name": "Fedorov",
+        "type": "AR",
+        "num": 335,
+        "rating": 4,
+        "internalName": "Fedorov"
+    },
+    {
         "name": "Five-seveN",
         "type": "HG",
         "num": 142,
@@ -527,6 +548,13 @@
         "num": 122,
         "rating": 5,
         "internalName": "G11"
+    },
+    {
+        "name": "G11 MOD 3",
+        "type": "AR",
+        "num": 122,
+        "rating": 6,
+        "internalName": "G11Mod"
     },
     {
         "name": "G28",
@@ -599,11 +627,25 @@
         "internalName": "GSH18"
     },
     {
+        "name": "GSh-18 MOD 3",
+        "type": "HG",
+        "num": 221,
+        "rating": 4,
+        "internalName": "GSH18Mod"
+    },
+    {
         "name": "Galil",
         "type": "AR",
         "num": 71,
         "rating": 2,
         "internalName": "AR"
+    },
+    {
+        "name": "Galil MOD 3",
+        "type": "AR",
+        "num": 71,
+        "rating": 4,
+        "internalName": "ARMod"
     },
     {
         "name": "General Liu",
@@ -856,11 +898,25 @@
         "internalName": "KSVK"
     },
     {
+        "name": "KSVK MOD 3",
+        "type": "RF",
+        "num": 252,
+        "rating": 5,
+        "internalName": "KSVKMod"
+    },
+    {
         "name": "Kar98k",
         "type": "RF",
         "num": 46,
         "rating": 5,
         "internalName": "98K"
+    },
+    {
+        "name": "Kolibri",
+        "type": "HG",
+        "num": 331,
+        "rating": 5,
+        "internalName": "Kolibri"
     },
     {
         "name": "Kord",
@@ -987,6 +1043,13 @@
         "num": 152,
         "rating": 3,
         "internalName": "M1897"
+    },
+    {
+        "name": "M1897 MOD 3",
+        "type": "SG",
+        "num": 152,
+        "rating": 4,
+        "internalName": "M1897Mod"
     },
     {
         "name": "M1911",
@@ -1597,6 +1660,13 @@
         "internalName": "PP19"
     },
     {
+        "name": "PP-19 MOD 3",
+        "type": "SMG",
+        "num": 136,
+        "rating": 5,
+        "internalName": "PP19Mod"
+    },
+    {
         "name": "PP-19-01",
         "type": "SMG",
         "num": 137,
@@ -1727,6 +1797,13 @@
         "num": 143,
         "rating": 5,
         "internalName": "RO635"
+    },
+    {
+        "name": "RO635 MOD 3",
+        "type": "SMG",
+        "num": 143,
+        "rating": 6,
+        "internalName": "RO635Mod"
     },
     {
         "name": "RPD",
@@ -1932,6 +2009,13 @@
         "internalName": "Saiga12"
     },
     {
+        "name": "Savage 99",
+        "type": "RF",
+        "num": 334,
+        "rating": 5,
+        "internalName": "Savage99"
+    },
+    {
         "name": "Serdyukov",
         "type": "HG",
         "num": 113,
@@ -2016,6 +2100,13 @@
         "internalName": "APS"
     },
     {
+        "name": "Stechkin MOD 3",
+        "type": "HG",
+        "num": 7,
+        "rating": 5,
+        "internalName": "APSMod"
+    },
+    {
         "name": "Sten MkII",
         "type": "SMG",
         "num": 29,
@@ -2055,6 +2146,13 @@
         "num": 124,
         "rating": 3,
         "internalName": "SuperSASS"
+    },
+    {
+        "name": "Super SASS MOD 3",
+        "type": "RF",
+        "num": 124,
+        "rating": 4,
+        "internalName": "SuperSASSMod"
     },
     {
         "name": "Super-Shorty",
@@ -2189,6 +2287,13 @@
         "internalName": "56typeR"
     },
     {
+        "name": "Type 56 MOD 3",
+        "type": "RF",
+        "num": 49,
+        "rating": 4,
+        "internalName": "56typeRMod"
+    },
+    {
         "name": "Type 56-1",
         "type": "AR",
         "num": 66,
@@ -2245,6 +2350,13 @@
         "internalName": "80type"
     },
     {
+        "name": "Type 80 MOD 3",
+        "type": "MG",
+        "num": 199,
+        "rating": 5,
+        "internalName": "80typeMod"
+    },
+    {
         "name": "Type 81 Carbine",
         "type": "RF",
         "num": 174,
@@ -2256,7 +2368,7 @@
         "type": "MG",
         "num": 238,
         "rating": 5,
-        "internalName": "Type88"
+        "internalName": "88type"
     },
     {
         "name": "Type 92",
@@ -2285,6 +2397,13 @@
         "num": 161,
         "rating": 4,
         "internalName": "97typeS"
+    },
+    {
+        "name": "Type 97 Shotgun MOD 3",
+        "type": "SG",
+        "num": 161,
+        "rating": 5,
+        "internalName": "97typeSMod"
     },
     {
         "name": "UKM-2000",
@@ -2357,6 +2476,13 @@
         "internalName": "VHS"
     },
     {
+        "name": "VP1915",
+        "type": "SMG",
+        "num": 333,
+        "rating": 5,
+        "internalName": "VP1915"
+    },
+    {
         "name": "VP70",
         "type": "HG",
         "num": 277,
@@ -2411,6 +2537,13 @@
         "num": 114,
         "rating": 5,
         "internalName": "Welrod"
+    },
+    {
+        "name": "Welrod MkII MOD 3",
+        "type": "HG",
+        "num": 114,
+        "rating": 6,
+        "internalName": "WelrodMod"
     },
     {
         "name": "X95",
@@ -2662,7 +2795,7 @@
         "type": "Sangvis Ferri Doll",
         "num": -1,
         "rating": -1,
-        "internalName": "BOSS-7"
+        "internalName": "BOSS-8"
     },
     {
         "name": "Ouroboros",

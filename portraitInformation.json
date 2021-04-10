@@ -118,7 +118,8 @@
     ],
     "AUGPARA": [
         "pic_AUGPARA.png",
-        "pic_AUGPARA_D.png"
+        "pic_AUGPARA_D.png",
+        "special/pic_AUGPARA_2.png"
     ],
     "Ak5": [
         "pic_Ak5.png",
@@ -277,6 +278,10 @@
         "pic_DSR50_1801_D.png",
         "pic_DSR50_2101.png",
         "pic_DSR50_2101_D.png"
+    ],
+    "Delisle": [
+        "pic_Delisle.png",
+        "pic_Delisle_D.png"
     ],
     "Derringer": [
         "pic_Derringer.png",
@@ -478,7 +483,8 @@
     ],
     "GeneralLiu": [
         "pic_GeneralLiu.png",
-        "pic_GeneralLiu_D.png"
+        "pic_GeneralLiu_D.png",
+        "special/pic_GeneralLiu_2.png"
     ],
     "GepardM1": [
         "pic_GepardM1.png",
@@ -654,7 +660,11 @@
         null,
         "pic_KSVK_3805.png",
         "pic_KSVK_3805_D.png",
-        "pic_KSVK_3805_D.png"
+        "pic_KSVK_3805_D.png",
+        null,
+        null,
+        "pic_KSVK_4509.png",
+        "pic_KSVK_4509_D.png"
     ],
     "KSVKMod": [
         "pic_KSVKMod.png",
@@ -767,7 +777,9 @@
     ],
     "M1911": [
         "pic_M1911.png",
-        "pic_M1911_D.png"
+        "pic_M1911_D.png",
+        "pic_M1911_4514.png",
+        "pic_M1911_4514_D.png"
     ],
     "M1911Mod": [
         "pic_M1911Mod.png",
@@ -796,7 +808,9 @@
     "M200": [
         "pic_M200.png",
         "pic_M200_D.png",
-        "special/pic_M200_2.png"
+        "special/pic_M200_2.png",
+        "pic_M200_4502.png",
+        "pic_M200_4502_D.png"
     ],
     "M21": [
         "pic_M21.png",
@@ -824,7 +838,9 @@
     ],
     "M4 SOPMOD II": [
         "pic_M4 SOPMOD II.png",
-        "pic_M4 SOPMOD II_D.png"
+        "pic_M4 SOPMOD II_D.png",
+        "pic_M4 SOPMOD II.png",
+        "pic_M4 SOPMOD II.png"
     ],
     "M4 SOPMOD IIMod": [
         "pic_M4 SOPMOD IIMod.png",
@@ -833,8 +849,11 @@
     "M4A1": [
         "pic_M4A1.png",
         "pic_M4A1_D.png",
+        "special/M4A1_SAD.png",
+        "special/M4A1_T.png",
         null,
-        "special/M4A1_T.png"
+        "pic_M4A1_4505.png",
+        "pic_M4A1_4505_D.png"
     ],
     "M4A1Mod": [
         "pic_M4A1Mod.png",
@@ -1116,7 +1135,9 @@
         null,
         null,
         "pic_OTs14_3001.png",
-        "pic_OTs14_3001_D.png"
+        "pic_OTs14_3001_D.png",
+        "pic_OTs14_4501.png",
+        "pic_OTs14_4501_D.png"
     ],
     "OTs39": [
         "pic_OTs39.png",
@@ -1224,6 +1245,10 @@
         "pic_PP90_D.png",
         "special/pic_PP90_2.png"
     ],
+    "PPD40": [
+        "pic_PPD40.png",
+        "pic_PPD40_D.png"
+    ],
     "PPK": [
         "pic_PPK.png",
         "pic_PPK_D.png"
@@ -1272,7 +1297,9 @@
         null,
         null,
         "pic_QBU88_3801.png",
-        "pic_QBU88_3801_D.png"
+        "pic_QBU88_3801_D.png",
+        "pic_QBU88_4503.png",
+        "pic_QBU88_4503_D.png"
     ],
     "QSB91": [
         "pic_QSB91.png",
@@ -1303,7 +1330,11 @@
         "pic_RO635_D.png",
         "special/pic_RO635_2.png",
         "special/pic_RO635_3.png",
-        "special/pic_RO635_4.png"
+        "special/pic_RO635_4.png",
+        "special/pic_RO635_4.png",
+        null,
+        "pic_RO635_4504.png",
+        "pic_RO635_4504_D.png"
     ],
     "RO635Mod": [
         "pic_RO635Mod.png",
@@ -1319,6 +1350,10 @@
         "special/pic_RPK16_2.png",
         "special/pic_RPK16_3.png",
         "special/pic_RPK16_4.png"
+    ],
+    "RPK203": [
+        "pic_RPK203.png",
+        "pic_RPK203_D.png"
     ],
     "RT20": [
         "pic_RT20.png",
@@ -1351,6 +1386,10 @@
     "ColtSCW": [
         "pic_ColtSCW.png",
         "pic_ColtSCW_D.png"
+    ],
+    "SIGMCX": [
+        "pic_SIGMCX.png",
+        "pic_SIGMCX_D.png"
     ],
     "SIG510": [
         "pic_SIG510.png",
@@ -1409,6 +1448,9 @@
     "AR15": [
         "pic_AR15.png",
         "pic_AR15_D.png",
+        null,
+        "pic_AR15_4508.png",
+        "pic_AR15_4508_D.png",
         "special/AR15_T.png"
     ],
     "AR15Mod": [
@@ -1456,7 +1498,9 @@
     ],
     "Saiga12": [
         "pic_Saiga12.png",
-        "pic_Saiga12_D.png"
+        "pic_Saiga12_D.png",
+        "pic_Saiga12_4510.png",
+        "pic_Saiga12_4510_D.png"
     ],
     "Savage99": [
         "pic_Savage99.png",
@@ -1892,7 +1936,9 @@
     ],
     "ZasM76": [
         "pic_ZasM76.png",
-        "pic_ZasM76_D.png"
+        "pic_ZasM76_D.png",
+        "pic_ZasM76_4511.png",
+        "pic_ZasM76_4511_D.png"
     ],
     "m45": [
         "pic_m45.png",
@@ -2100,12 +2146,15 @@
     ],
     "NPC-Persica": [
         "pic_NPC-Persica.png",
-        null,
-        "pic_NPC-Persica_J.png"
+        "pic_NPC-Persica_C.png",
+        "pic_NPC-Persica_J.png",
+        "pic_NPC-Persica_T.png"
     ],
     "NPC-Helian": [
         "pic_NPC-Helian.png",
-        "pic_NPC-Helian_A.png"
+        "pic_NPC-Helian_A.png",
+        "pic_NPC-Helian_F.png",
+        "pic_NPC-Helian_T.png"
     ],
     "NPC-Deele": [
         "pic_NPC-Deele.png"
@@ -2144,6 +2193,9 @@
     ],
     "NPC-PasserbyF": [
         "NPC-PasserbyF.png"
+    ],
+    "NPC-Carter": [
+        "pic_NPC-Carter.png"
     ],
     "Jillmagic": [
         "pic_Jill_529.png"
@@ -2209,7 +2261,12 @@
     ],
     "SOPII": [
         "pic_M4 SOPMOD II.png",
-        "pic_M4 SOPMOD II_D.png"
+        "pic_M4 SOPMOD II_D.png",
+        "pic_M4 SOPMOD II.png",
+        "pic_M4 SOPMOD II.png"
+    ],
+    "M4 SOPMOD IIMod-Noarmor": [
+        "pic_M4 SOPMOD IIMod_NoArmor1.png"
     ],
     "pa15": [
         "pic_PA15.png",

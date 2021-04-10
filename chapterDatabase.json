@@ -414,13 +414,6 @@
 				"name": "Chapter 0",
 				"episodes": [
 					{
-						"name": "Normal 0-0",
-						"parts": [
-							"0-0-1.txt",
-							"0-0-2.txt"
-						]
-					},
-					{
 						"name": "Normal 0-1",
 						"parts": [
 							"0-1-1.txt",
@@ -438,7 +431,8 @@
 						"name": "Normal 0-3",
 						"parts": [
 							"0-3-1.txt",
-							"0-3-2.txt"
+							"0-3-2.txt",
+							"0-2-3Round2.txt"
 						]
 					},
 					{
@@ -1552,34 +1546,6 @@
 							"11-4-1E.txt",
 							"11-4-2E.txt"
 						]
-					},
-					{
-						"name": "Midnight 11-1",
-						"parts": [
-							"11-1-1N.txt",
-							"11-1-2N.txt"
-						]
-					},
-					{
-						"name": "Midnight 11-2",
-						"parts": [
-							"11-2-1N.txt",
-							"11-2-2N.txt"
-						]
-					},
-					{
-						"name": "Midnight 11-3",
-						"parts": [
-							"11-3-1N.txt",
-							"11-3-2N.txt"
-						]
-					},
-					{
-						"name": "Midnight 11-4",
-						"parts": [
-							"11-4-1N.txt",
-							"11-4-2N.txt"
-						]
 					}
 				]
 			},
@@ -1654,34 +1620,6 @@
 						"parts": [
 							"12-4-1E.txt",
 							"12-4-2E.txt"
-						]
-					},
-					{
-						"name": "Midnight 12-1",
-						"parts": [
-							"12-1-1N.txt",
-							"12-1-2N.txt"
-						]
-					},
-					{
-						"name": "Midnight 12-2",
-						"parts": [
-							"12-2-1N.txt",
-							"12-2-2N.txt"
-						]
-					},
-					{
-						"name": "Midnight 12-3",
-						"parts": [
-							"12-3-1N.txt",
-							"12-3-2N.txt"
-						]
-					},
-					{
-						"name": "Midnight 12-4",
-						"parts": [
-							"12-4-1N.txt",
-							"12-4-2N.txt"
 						]
 					}
 				]
@@ -2721,13 +2659,6 @@
 						"name": "Surviving Doomsday XV",
 						"parts": [
 							"-26-15-2First.txt"
-						]
-					},
-					{
-						"name": "Hurricane Rescue I",
-						"parts": [
-							"-27-1-1.txt",
-							"-27-1-3Round6.txt"
 						]
 					},
 					{
@@ -4002,7 +3933,8 @@
 						"parts": [
 							"-37-3-1First.txt",
 							"-37-3-4-Point70626.txt",
-							"-37-3-4-Point70633.txt-37-3-2End.txt"
+							"-37-3-4-Point70633.txt",
+							"-37-3-2End.txt"
 						]
 					},
 					{
@@ -4503,15 +4435,15 @@
 						]
 					},
 					{
-						"name": "Grizzly MkV - Starry Night Ball",
+						"name": "Grizzly MkV - Rain on a Starry Night",
 						"parts": [
-							"skin/2102.txt"
+							"skin/4303.txt"
 						]
 					},
 					{
-						"name": "Grizzly MkV - Untranslated1",
+						"name": "Grizzly MkV - Starry Night Ball",
 						"parts": [
-							"skin/4303.txt"
+							"skin/2102.txt"
 						]
 					},
 					{
@@ -4575,7 +4507,13 @@
 						]
 					},
 					{
-						"name": "Kar98k - Untranslated1",
+						"name": "KSVK - Untranslated1",
+						"parts": [
+							"skin/4509.txt"
+						]
+					},
+					{
+						"name": "Kar98k - Purity in Vermilion",
 						"parts": [
 							"skin/4301.txt"
 						]
@@ -4605,7 +4543,7 @@
 						]
 					},
 					{
-						"name": "M1014 - Untranslated1",
+						"name": "M1014 - Heartbeat Before the Angel Statue",
 						"parts": [
 							"skin/4305.txt"
 						]
@@ -4614,6 +4552,18 @@
 						"name": "M14 - Xmas Parade",
 						"parts": [
 							"skin/303.txt"
+						]
+					},
+					{
+						"name": "M16A1 - Untranslated1",
+						"parts": [
+							"skin/4506.txt"
+						]
+					},
+					{
+						"name": "M1911 - Untranslated1",
+						"parts": [
+							"skin/4514.txt"
 						]
 					},
 					{
@@ -4629,9 +4579,21 @@
 						]
 					},
 					{
+						"name": "M200 - War Correspondent",
+						"parts": [
+							"skin/4502.txt"
+						]
+					},
+					{
 						"name": "M21 - Xmas At Home",
 						"parts": [
 							"skin/304.txt"
+						]
+					},
+					{
+						"name": "M4A1 - Untranslated1",
+						"parts": [
+							"skin/4505.txt"
 						]
 					},
 					{
@@ -4659,7 +4621,7 @@
 						]
 					},
 					{
-						"name": "M950A - Untranslated1",
+						"name": "M950A - The Warbler and the Rose",
 						"parts": [
 							"skin/4302.txt"
 						]
@@ -4737,15 +4699,15 @@
 						]
 					},
 					{
-						"name": "Makarov - Pumpkin Mishka",
+						"name": "Makarov - A Certain Unscientific Sunflower",
 						"parts": [
-							"skin/1.txt"
+							"skin/4310.txt"
 						]
 					},
 					{
-						"name": "Makarov - Untranslated1",
+						"name": "Makarov - Pumpkin Mishka",
 						"parts": [
-							"skin/4310.txt"
+							"skin/1.txt"
 						]
 					},
 					{
@@ -4794,6 +4756,12 @@
 						"name": "OTs-14 - Sangria Succulent",
 						"parts": [
 							"skin/3001.txt"
+						]
+					},
+					{
+						"name": "OTs-14 - Untranslated1",
+						"parts": [
+							"skin/4501.txt"
 						]
 					},
 					{
@@ -4857,15 +4825,27 @@
 						]
 					},
 					{
+						"name": "QBU-88 - Untranslated1",
+						"parts": [
+							"skin/4503.txt"
+						]
+					},
+					{
 						"name": "R93 - Holiday Lucky Star",
 						"parts": [
 							"skin/3501.txt"
 						]
 					},
 					{
-						"name": "RMB-93 - Untranslated1",
+						"name": "RMB-93 - Moonlit Lover Beyond Reach",
 						"parts": [
 							"skin/4309.txt"
+						]
+					},
+					{
+						"name": "RO635 - Untranslated1",
+						"parts": [
+							"skin/4504.txt"
 						]
 					},
 					{
@@ -4899,6 +4879,12 @@
 						]
 					},
 					{
+						"name": "ST AR-15 - Untranslated1",
+						"parts": [
+							"skin/4508.txt"
+						]
+					},
+					{
 						"name": "SV-98 - Pierce Your Heart!",
 						"parts": [
 							"skin/1906.txt"
@@ -4908,6 +4894,12 @@
 						"name": "SVD - Winter Fairy",
 						"parts": [
 							"skin/305.txt"
+						]
+					},
+					{
+						"name": "Saiga-12 - Untranslated1",
+						"parts": [
+							"skin/4510.txt"
 						]
 					},
 					{
@@ -4941,7 +4933,7 @@
 						]
 					},
 					{
-						"name": "Stechkin - Untranslated1",
+						"name": "Stechkin - Miss Camellia's Special Service",
 						"parts": [
 							"skin/4306.txt"
 						]
@@ -5091,7 +5083,7 @@
 						]
 					},
 					{
-						"name": "Zas M21 - Untranslated1",
+						"name": "Zas M21 - Affections Behind the Bouquet",
 						"parts": [
 							"skin/4304.txt"
 						]
@@ -5100,6 +5092,12 @@
 						"name": "Zas M21 - White Queen",
 						"parts": [
 							"skin/2104.txt"
+						]
+					},
+					{
+						"name": "Zas M76 - Untranslated1",
+						"parts": [
+							"skin/4511.txt"
 						]
 					},
 					{

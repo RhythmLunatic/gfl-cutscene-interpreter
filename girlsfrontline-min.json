@@ -397,6 +397,13 @@
         "internalName": "DSR50"
     },
     {
+        "name": "De Lisle",
+        "type": "RF",
+        "num": 337,
+        "rating": 5,
+        "internalName": "Delisle"
+    },
+    {
         "name": "Defender",
         "type": "SG",
         "num": 302,
@@ -1688,6 +1695,13 @@
         "internalName": "PP90"
     },
     {
+        "name": "PPD-40",
+        "type": "SMG",
+        "num": 336,
+        "rating": 4,
+        "internalName": "PPD40"
+    },
+    {
         "name": "PPK",
         "type": "HG",
         "num": 10,
@@ -1820,6 +1834,13 @@
         "internalName": "RPK16"
     },
     {
+        "name": "RPK-203",
+        "type": "MG",
+        "num": 339,
+        "rating": 5,
+        "internalName": "RPK203"
+    },
+    {
         "name": "RT-20",
         "type": "RF",
         "num": 241,
@@ -1867,6 +1888,13 @@
         "num": 169,
         "rating": 3,
         "internalName": "ColtSCW"
+    },
+    {
+        "name": "SIG MCX",
+        "type": "AR",
+        "num": 338,
+        "rating": 5,
+        "internalName": "SIGMCX"
     },
     {
         "name": "SIG-510",

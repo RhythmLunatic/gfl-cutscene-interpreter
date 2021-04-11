@@ -2031,7 +2031,10 @@
     ],
     "Seele": [
         "pic_Seele.png",
-        "pic_Seele_D.png"
+        "pic_Seele_D.png",
+        [
+            "SeeleVollerei.png"
+        ]
     ],
     "SEI": [
         "pic_SEI.png",
@@ -2138,11 +2141,11 @@
         "NPC-Ange.png",
         "NPC-Ange_1.png",
         null,
-        "NPC-Ange(3).png",
-        "NPC-Ange(4).png",
-        "NPC-Ange(5).png",
-        "NPC-Ange(6).png",
-        "NPC-Ange(7).png"
+        "special/NPC-Ange(3).png",
+        "special/NPC-Ange(4).png",
+        "special/NPC-Ange(5).png",
+        "special/NPC-Ange(6).png",
+        "special/NPC-Ange(7).png"
     ],
     "NPC-Persica": [
         "pic_NPC-Persica.png",
@@ -2164,18 +2167,18 @@
         "pic_NPC-Seele_1.png"
     ],
     "NPC-Dima": [
-        "NPC-Dima(0).png",
-        "NPC-Dima(1).png",
-        "NPC-Dima(2).png",
-        "NPC-Dima(3).png"
+        "special/NPC-Dima(0).png",
+        "special/NPC-Dima(1).png",
+        "special/NPC-Dima(2).png",
+        "special/NPC-Dima(3).png"
     ],
     "NPC-Light": [
-        "NPC-Light(0).png",
-        "NPC-Light(1).png",
-        "NPC-Light(2).png",
-        "NPC-Light(3).png",
-        "NPC-Light(4).png",
-        "NPC-Light(5).png"
+        "special/NPC-Light(0).png",
+        "special/NPC-Light(1).png",
+        "special/NPC-Light(2).png",
+        "special/NPC-Light(3).png",
+        "special/NPC-Light(4).png",
+        "special/NPC-Light(5).png"
     ],
     "NPC-Ambassador": [
         "NPC-Ambassador.png"
@@ -2202,6 +2205,9 @@
     ],
     "RO635-NoArmor": [
         "special/pic_RO635_NoArmor0.png"
+    ],
+    "BossDestroyerPlus": [
+        "DestroyerPlus.png"
     ],
     "Nyto": [
         "Nyto.png",

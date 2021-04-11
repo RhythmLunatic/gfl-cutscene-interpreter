@@ -37,6 +37,9 @@ class ResizingList(list):
 		diff_len=idx-len(self)
 		if diff_len > 0:
 			self+=[None]*diff_len
+			
+	def getInternalName(self):
+		return self[0].split('_')[1].split('.')[0]
 	
 	def __setitem__(self,i,val):
 		self.extendListIfTooShort(i+1)
@@ -45,23 +48,24 @@ class ResizingList(list):
 	def quickInsertCostumeAtIdx(self,idx,name):
 		#+2 because lists start at 0 but also because we want to add damaged art too
 		#extendListIfTooShort(idx+2)
-		internalName = self[0].split('_')[1].split('.')[0]
+		internalName = self.getInternalName()
 		#print(l)
 		self[idx]='pic_'+internalName+'_'+name+'.png'
 		self[idx+1]='pic_'+internalName+'_'+name+'_D.png'
 		
 	def quickInsertSpecial(self,idx):
-		internalName = self[0].split('_')[1].split('.')[0]
+		internalName = self.getInternalName()
 		self[idx]='special/pic_'+internalName+'_'+str(idx)+'.png'
 		
+	def fillSpecial(self,name,begin,end):
+		#internalName = self.getInternalName()
+		for i in range(begin,end):
+			self[i]='special/'+name+'('+str(i)+').png'
 
-		
-	#def __getitem__(self,i):
-	#	return self.l[i]
-		#return l
-
-#def quickAppendCostume(name):
-#	return ['pic_'+name+'.png','pic_'+name+'_D.png']
+def quickGenerateNPC(name,upToIdxInclusive,isSpecial=True):
+	l = ResizingList([])
+	l.fillSpecial(name,0,upToIdxInclusive+1)
+	return l
 
 newDatabase = []
 portraitDatabase = {}
@@ -111,7 +115,7 @@ with open('girlsfrontline.json','r') as gfld:
 						if RepresentsInt(costumeID):
 							#print(costumeID)
 							#Search through costume story for an unknown ID for this T-Doll and assume it's the costume
-							fPath = "avgtxt/skin/"+ costumeID + ".txt"
+							fPath = "../avgtxt/skin/"+ costumeID + ".txt"
 							if os.path.isfile(fPath):
 								with open(fPath,'r') as costumeStory:
 									foundCostume=False
@@ -168,7 +172,7 @@ with open('girlsfrontline.json','r') as gfld:
 					
 					#assert(len(portraitDatabase[doll['internalName']]) > 1)
 				#Automatically search for special portraits since they're usually named correctly
-				expressionFiles = glob.glob("pic/special/pic_"+doll['internalName']+"_*")
+				expressionFiles = glob.glob("../pic/special/pic_"+doll['internalName']+"_*")
 				for expressionFile in expressionFiles:
 					fParams = expressionFile.split("_")
 					fNameNoDir = expressionFile.split("/")[-1]
@@ -222,21 +226,24 @@ portraitDatabase['NPC-Ange'] = ResizingList([
 	'NPC-Ange.png',
 	'NPC-Ange_1.png',
 	None,
-	'NPC-Ange(3).png',
-	'NPC-Ange(4).png',
-	'NPC-Ange(5).png',
-	'NPC-Ange(6).png',
-	'NPC-Ange(7).png'
+	'special/NPC-Ange(3).png',
+	'special/NPC-Ange(4).png',
+	'special/NPC-Ange(5).png',
+	'special/NPC-Ange(6).png',
+	'special/NPC-Ange(7).png'
 ])
 
 portraitDatabase['NPC-Persica'] = [
 	"pic_NPC-Persica.png",
-	None,
-	"pic_NPC-Persica_J.png"
+	"pic_NPC-Persica_C.png",
+	"pic_NPC-Persica_J.png",
+	"pic_NPC-Persica_T.png"
 ]
 portraitDatabase["NPC-Helian"]=[
 	"pic_NPC-Helian.png",
-	"pic_NPC-Helian_A.png"
+	"pic_NPC-Helian_A.png",
+	"pic_NPC-Helian_F.png",
+	"pic_NPC-Helian_T.png"
 ]
 portraitDatabase['NPC-Deele']=[
 	"pic_NPC-Deele.png"
@@ -245,33 +252,29 @@ portraitDatabase['NPC-Seele']=[
 	"pic_NPC-Seele.png",
 	"pic_NPC-Seele_1.png"
 ]
-portraitDatabase['NPC-Dima']=[
-	'NPC-Dima(0).png',
-	'NPC-Dima(1).png',
-	'NPC-Dima(2).png',
-	'NPC-Dima(3).png'
-]
-portraitDatabase['NPC-Light']=[
-	'NPC-Light(0).png',
-	'NPC-Light(1).png',
-	'NPC-Light(2).png',
-	'NPC-Light(3).png',
-	'NPC-Light(4).png',
-	'NPC-Light(5).png',
-]
+portraitDatabase['NPC-Dima']=quickGenerateNPC('NPC-Dima',3)
+portraitDatabase['NPC-Light']=quickGenerateNPC('NPC-Light',5)
+#print(quickGenerateNPC('NPC-Light',5))
+#sys.exit(0)
 portraitDatabase['NPC-Ambassador']=["NPC-Ambassador.png"]
 portraitDatabase['NPC-Jason']=["NPC-Jason.png","NPC-Jason_1.png"]
 portraitDatabase['NPC-Kyruger']=['pic_NPC-Kyruger.png']
 portraitDatabase['NPC-Havel']=["NPC-Havel.png","NPC-Havel2.png"]
 portraitDatabase['NPC-PasserbyM']=['NPC-PasserbyM.png']
 portraitDatabase['NPC-PasserbyF']=['NPC-PasserbyF.png']
+portraitDatabase['NPC-Carter']=['pic_NPC-Carter.png']
+
+portraitDatabase['Seele'][2]=['SeeleVollerei.png']
 
 portraitDatabase['AK47'].quickInsertSpecial(2)
 
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
 portraitDatabase['RO635-NoArmor']=['special/pic_RO635_NoArmor0.png']
+portraitDatabase['RO635'][5] = 'special/pic_RO635_4.png' #Yeah, apparently the filename doesn't match the index...
+
 #portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
 #portraitDatabase['BOSS-12']=['Eliza.png']
+portraitDatabase['BossDestroyerPlus']=['DestroyerPlus.png']
 
 portraitDatabase['Nyto'] = ResizingList(['Nyto.png'])
 portraitDatabase['Nyto'][7]="special/Nyto_7.png"
@@ -303,6 +306,11 @@ portraitDatabase['PPSh41']=portraitDatabase['PPsh41']
 portraitDatabase['m1'] = portraitDatabase['M1']
 portraitDatabase['m500'] = portraitDatabase['M500']
 portraitDatabase['SOPII'] = portraitDatabase['M4 SOPMOD II']
+portraitDatabase['SOPII'][2] = portraitDatabase['SOPII'][0]
+portraitDatabase['SOPII'][3] = portraitDatabase['SOPII'][0] #Weird, I guess they originally planned to draw more?
+
+portraitDatabase['M4 SOPMOD IIMod-Noarmor'] = ['pic_M4 SOPMOD IIMod_NoArmor1.png']
+
 portraitDatabase['pa15']=portraitDatabase['PA15']
 portraitDatabase['pa15'].quickInsertCostumeAtIdx(2,"4202")
 
@@ -352,7 +360,8 @@ portraitDatabase['FairyWarrior']=['equip/fairy/fighting_1.png']
 
 #TODO: This shouldn't be using extend
 portraitDatabase['AR15'].extend(["special/AR15_T.png"])
-portraitDatabase["M4A1"].extend([None,"special/M4A1_T.png"])
+portraitDatabase["M4A1"][2] = "special/M4A1_SAD.png"
+portraitDatabase["M4A1"][3] = "special/M4A1_T.png"
 
 portraitDatabase['missing'] = ['missing.png']
 

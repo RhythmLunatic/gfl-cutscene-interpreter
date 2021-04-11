@@ -32,6 +32,7 @@ build: girlsfrontline.json fetter.json fetter_story.json NormalActivityCampaign.
 	#	./gtml index.gtml
 	#endif
 	#./gtml index.gtml
+	rsync -arvu translated\ honkai/ ../avgtxt/
 	@echo "All done..."
 	#@echo "All done... Run 'make dist' if you want to copy everything in a distributable format"
 	

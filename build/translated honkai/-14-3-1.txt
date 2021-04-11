@@ -1,0 +1,27 @@
+()||<BGM>BGM_War</BGM>:[20 minutes later, at the command map of the temporary Griffin base.]
+PP90(0)<Speaker>PP90</Speaker>||:So if you want to redeploy units, all you need to do is tap here.
+PP90(0)<Speaker>Kiana</Speaker>||:You can do that too?+I understand! This is a really handy function!
+Vector(0)<Speaker>Vector</Speaker>||:It wasn’t always this convenient. This function was only added a few months ago as part of a major upgrade to our command systems.
+PP90(0)<Speaker>PP90</Speaker>||:Because the Commander complained, right? I remember that time.+Still, Kiana-san’s doing a great, she’s picking it up really fast!
+PP90(0)<Speaker>Kiana</Speaker>||:Am, am I? It feels pretty good, like I’m playing a game!
+Vector(0)<Speaker>Vector</Speaker>||:Well, it’s not that you can’t take it as playing as a game, just don’t send us all off in one shot.+Even I get unhappy when I have to be dragged back from the scene of a defeat, let alone dolls like PP90 who screw up easily.
+PP90(0)<Speaker>PP90</Speaker>||:Hey! That’s just because you always run off without saying anything and worry me!+Anyway, we’ll be protecting Kiana-san together this time, got that?
+PP90(0)<Speaker>Kiana</Speaker>||:So you want to be in the same echelon as Vivi then, PP? I can just drag you over like this, right?
+Vector(0)<Speaker>Vector</Speaker>||:This is very unwise. I’d advise you to reconsider.
+PP90(0)<Speaker>PP90</Speaker>||:You have to you have to! It’s totally important! Do that, Kiana-san!
+PP90(0)<Speaker>Kiana</Speaker>||<黑屏1>:Ahhhh, keep quiet and let me go over this again!+*mutters to self* This is “Formation”, this is “Combat”, and the resources are...
+PP90(0)<Speaker></Speaker>||<BIN>85</BIN><黑屏2>:…………
+PP90(0)<Speaker>PP90</Speaker>||:Whew… I guess she didn’t pick it up that quickly after all.+Vivi, do you think it’ll be alright to let Kiana-san be our commander?
+Vector(0)<Speaker>Vector</Speaker>||:Things being what they are, we’ve got no choice but to roll the dice.+That woman might be a little clueless, but she’s pretty skillful when she’s commanding. She’s definitely not an ordinary person.
+PP90(0)<Speaker>PP90</Speaker>||:Fortunately the preliminary matching for her went through.+With help from my permissions, she should be able to use the command system normally.+Hehe, this is a measure only allowed under special circumstances. So now, let’s move out together like we said earlier, Vivi!
+Vector(0)<Speaker>Vector</Speaker>||:We’d better follow the assignments from our temporary commander.+While I don’t think I’m absolutely essential on the battlefield...
+PP90(0)<Speaker>PP90</Speaker>||:Hehe, at least it’ll close the distance between you and the rest of us, Vivi!
+琪亚娜()<Speaker>Kiana</Speaker>||:Erm… everyone! How do I use the Deploy button! Like this, right?
+PP90(0)<Speaker>PP90</Speaker>||<黑屏1>:Let’s go. We’ll help out our temporary commander-san and get through this pinch with everyone!
+Vector()<Speaker>Vector</Speaker>||<黑屏1><BIN>9</BIN><黑屏2>:Close the distance… huh...
+PP90(0)<Speaker>PP90</Speaker>||<BIN>10</BIN><黑屏2>:Commander-san, according to the operational plan the Commander left behind, our current objective is to fall back to a nearby SF base.
+PP90(0)<Speaker>Kiana</Speaker>||:An SF base? Isn’t that enemy territory?
+Vector(0)<Speaker>Vector</Speaker>||:It used to be a base of ours, and it’s been taken down, so it’s safe for now.+The original reason we were deployed here was to retake that base.
+PP90(0)<Speaker>PP90</Speaker>||:That’s right. Originally, we would have fallen back to our own base, but then those Slain appeared halfway…+I checked the Commander’s report and the SF comms system ought to be intact.+As long as we can reach that base, we can hack into the enemy comms and contact the outside world.
+PP90(0)<Speaker>Kiana</Speaker>||<黑点1>:I see, so in short, we’re going to break out before a horde of Slain surrounds us and take that base, right?+Good! We’ll set out once everyone is ready!
+()||<BIN>10</BIN><黑点2>:

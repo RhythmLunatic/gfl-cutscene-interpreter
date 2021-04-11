@@ -5779,10 +5779,10 @@
 				]
 			},
 			{
-				"name": "Honkai Impact (Untranslated)",
+				"name": "Honkai Impact 2nd: Only Master (Fantranslated)",
 				"episodes": [
 					{
-						"name": "Chapter 1 I",
+						"name": "Stage 1-1: The Breakdown Descends",
 						"parts": [
 							"-14-1-1.txt",
 							"-14-1-4-Point4968.txt",
@@ -5790,55 +5790,55 @@
 						]
 					},
 					{
-						"name": "Chapter 1 II",
+						"name": "Stage 1-2: Curiousity Killed The Cat",
 						"parts": [
 							"-14-2-1.txt",
 							"-14-2-2First.txt"
 						]
 					},
 					{
-						"name": "Chapter 1 III",
+						"name": "Stage 1-3: Kiana Sorties",
 						"parts": [
 							"-14-3-1.txt",
 							"-14-3-2First.txt"
 						]
 					},
 					{
-						"name": "Chapter 1 IV",
+						"name": "Stage 1-4: Entry Forbidden",
 						"parts": [
 							"-14-4-1.txt",
-							"-14-4-2End.txt",
-							"-14-4-2First.txt"
+							"-14-4-2First.txt",
+							"-14-4-2End.txt"
 						]
 					},
 					{
-						"name": "Chapter 2 I",
+						"name": "Stage 2-1: Inauspicious Lightning",
 						"parts": [
 							"-15-1-1.txt",
 							"-15-1-2First.txt"
 						]
 					},
 					{
-						"name": "Chapter 2 II",
+						"name": "Stage 2-2: Swelling Desire",
 						"parts": [
 							"-15-2-1.txt",
-							"-15-2-2End.txt",
-							"-15-2-2First.txt"
+							"-15-2-2First.txt",
+							"-15-2-2End.txt"
 						]
 					},
 					{
-						"name": "Chapter 2 III",
+						"name": "Stage 2-3: Resentment",
 						"parts": [
 							"-15-3-1.txt",
 							"-15-3-2First.txt"
 						]
 					},
 					{
-						"name": "Chapter 2 IV",
+						"name": "Stage 2-4: If Only, One Day...",
 						"parts": [
 							"-15-4-1.txt",
-							"-15-4-2End.txt",
-							"-15-4-2First.txt"
+							"-15-4-2First.txt",
+							"-15-4-2End.txt"
 						]
 					}
 				]

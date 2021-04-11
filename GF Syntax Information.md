@@ -16,7 +16,8 @@ Examples:
 * `()` - No portrait. Essentially does nothing, but the game requires at least one portrait command. (The interpreter does not)
 * `RO635(0)` to display "RO635" with her default sprite (Type 0).
 * `M1873(4)` to display Colt Revolver with her 'Queen of Miracles' costume (Type 4).
-* `RO635()` Changes the speaker name to "RO635".
+* `RO635()` Changes the speaker name to "RO635". Does not create a portrait.
+* `(0)` Unknown (Read below)
 
 ### ;
 Determines when to dim a portrait. If it's before the <Speaker> tag it dims the left, if it's after it dims the right.
@@ -34,27 +35,25 @@ Used in the valhalla collab.
 
 ### Position
 
-Ex. `<Position>i,j</Position>`
+Ex. `<Position>x,y</Position>`
 
-Set position of last portrait. No idea what i,j is but assume x and y values
+Set position of last portrait. x,y is probably offset from default position.
 
 ## Other
 
 ### BGM
 
-ex. <BGM>djmax_gloryday</BGM>
+ex. `<BGM>djmax_gloryday</BGM>`
 
-Sets BGM. Usually whatever is in the tag is the exact file name, but oddly enough some file names are different.
-
-Known tags vs actual filenames:
-* BGM_Sunshine -> home_formation_factory
-* BGM_NightOPS -> GUN_CineTense_loop
+Sets BGM. Usually whatever is in the tag is the exact file name, but this pulls from a dictionary in /assets/resources/dabao/textdata/AudioTemplate.txt
 
 ### BIN
 
-ex. <BIN>112</BIN>
+ex. `<BIN>112</BIN>`
 
 Set background. Aside from a few special cases it's whatever background is at that line in profiles.txt.
+
+Note that the stage is rendered underneath the cutscene. So when a transparent background is used you can see the stage underneath.
 
 ### Speaker
 
@@ -78,6 +77,8 @@ ex. `<SE1></SE1>`, `<SE2></SE2>`
 
 Not sure what the difference is between 1 or 2.
 
+Like BGM, this pulls from a dictionary in /assets/resources/dabao/textdata/AudioTemplate.txt
+
 ## Screen transitions
 
 ### <黑点X>
@@ -85,6 +86,10 @@ Black dot screen transition. X=1 for in, 2 for out.
 
 ### <黑屏X>
 Black screen fade in and out
+
+Accepts a number parameter, which might be speed. Otherwise only the beginning tag is present.
+
+Example in Honkai Impact 2nd (-15-3-2First.txt): `芽衣()<Speaker>芽衣</Speaker>||<黑屏1>5</黑屏1>`
 		
 ### <震屏> 
 Screen shake effect
@@ -92,8 +97,35 @@ Screen shake effect
 		
 ## Animations/Background related
 
-### <下雪>
+### Night
+Take a wild guess.
+Normally this isn't used since night stages automatically have the blue filter applied to cutscenes.
+
+### 平移
+Pan background from left to right.
+
+There's only one background in the entire game that's in widescreen (StoryCG5). It's only ever seen in Chapter 0-4.
+
+The whole command: `<黑屏2><黑屏1><平移><SE1>Battlefield</SE1><刮花><边框>2</边框><BIN>20</BIN>`
+
+### 边框
+Add frame around background.
+
+Multiple frames exist.
+
+I don't know where the frames are stored.
+
+### 下雪
 Add snow animation to cutscene (Used in The Division)
+
+### 火花
+Add fire animation to cutscene. Takes a float as an argument, probably related to speed.
+
+Example: `<火花>1.7</火花>`
+
+### 刮花
+A different fire animation. It appears to be the textures in `/atlasclips/_nospritepacker/avg/`, just colored orange.
+
 ### <火焰销毁>
 Stop all cutscene animations, probably
 		
@@ -124,6 +156,12 @@ Known sizes:
 * 55 is slightly larger.
 * 60 is very large.
 
+### b
+
+Take a wild guess.
+
+It makes text bold. Only used one entire time in 'TMP - Red-Eared Cat' skin story (2807.txt)
+
 # Fun things I've found
 If a tag is missing the end, the entire tag gets ignored.
 
@@ -137,7 +175,6 @@ M4 SOPMOD II is in the database twice. In earlier files she's indexed as SOPII.
 
 # Unknown usages
 
-
 ## Portrait type specificed without a portrait
 
 It's possible this defaults to the gray shadow portrait. Which is funny, because it's already indexed as "G11story".
@@ -145,3 +182,13 @@ It's possible this defaults to the gray shadow portrait. Which is funny, because
 (0)<Speaker>Super-Shorty</Speaker>||:Batteries...
 (0)<Speaker>Dana</Speaker>||:Huh?
 ```
+
+Also seen in /avgtxt/skin/3501.txt. R93's Holiday Lucky Star skin story.
+
+# Unofficial opcodes
+
+Stuff the interpreter can do.
+
+### i
+
+This is probably officially implemented, but since it's never used it's "unofficial" until the existence can be confirmed.

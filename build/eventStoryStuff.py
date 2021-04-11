@@ -4,6 +4,26 @@ import json as JSON
 from collections import OrderedDict
 import re
 
+#One day I will make this an import I swear
+class bcolors:
+	HEADER = '\033[95m'
+	OKBLUE = '\033[94m'
+	OKGREEN = '\033[92m'
+	WARNING = '\033[93m'
+	FAIL = '\033[91m'
+	ENDC = '\033[0m'
+	BOLD = '\033[1m'
+	UNDERLINE = '\033[4m'
+    
+def printWarn(text):
+	print(bcolors.WARNING + text + bcolors.ENDC)
+	
+def printError(text):
+	print(bcolors.FAIL + text + bcolors.ENDC)
+	
+def printOK(text):
+	print(bcolors.OKGREEN + text + bcolors.ENDC)
+
 #https://stackoverflow.com/a/28777781
 def write_roman(num):
 
@@ -125,8 +145,9 @@ js = {'main':[],'event':[],'side':[],'crossover':[]}
 
 #Special for chapter 0
 chapterZero = []
-for j in range(5):
+for j in range(1,5):
 	chapterZero.append(appendFromij(0,j,"Normal",''))
+chapterZero[2]['parts'].append('0-2-3Round2.txt')
 #print(chapterZero)
 js['main'].append({'name':"Chapter 0",'episodes':chapterZero});
 
@@ -137,8 +158,9 @@ for i in range(1,13):
 		curChapter.append(appendFromij(i,j,"Normal",''))
 	for j in range(1,5):
 		curChapter.append(appendFromij(i,j,"Emergency",'E'))
-	for j in range(1,5):
-		curChapter.append(appendFromij(i,j,"Midnight",'N'))
+	if i < 11: #No midnight chapters beyond ch11
+		for j in range(1,5):
+			curChapter.append(appendFromij(i,j,"Midnight",'N'))
 	js['main'].append({'name':'Chapter '+str(i),'episodes':curChapter});
 
 
@@ -293,8 +315,71 @@ js['event'].append({'name':"CH. ??: Operation Cube? (WIP)",'episodes':getAllByPr
 #-2 to -7 already indexed
 js['crossover'].append({'name':"Guilty Gear x BlazBlue",'episodes':getAllByPrefix(files,'-8','Part')})
 #No -9
-js['crossover'].append({'name':"Honkai Impact (Untranslated)",'episodes':getAllByPrefix(files,'-14','Chapter 1')})
-js['crossover'][-1]['episodes'].extend(getAllByPrefix(files,'-15',"Chapter 2"))
+js['crossover'].append({
+	"name": "Honkai Impact 2nd: Only Master (Fantranslated)",
+	"episodes": [
+		{
+			"name": "Stage 1-1: The Breakdown Descends",
+			"parts": [
+				"-14-1-1.txt",
+				"-14-1-4-Point4968.txt",
+				"-14-1-2First.txt"
+			]
+		},
+		{
+			"name": "Stage 1-2: Curiousity Killed The Cat",
+			"parts": [
+				"-14-2-1.txt",
+				"-14-2-2First.txt"
+			]
+		},
+		{
+			"name": "Stage 1-3: Kiana Sorties",
+			"parts": [
+				"-14-3-1.txt",
+				"-14-3-2First.txt"
+			]
+		},
+		{
+			"name": "Stage 1-4: Entry Forbidden",
+			"parts": [
+				"-14-4-1.txt",
+				"-14-4-2First.txt",
+				"-14-4-2End.txt"
+			]
+		},
+		{
+			"name": "Stage 2-1: Inauspicious Lightning",
+			"parts": [
+				"-15-1-1.txt",
+				"-15-1-2First.txt"
+			]
+		},
+		{
+			"name": "Stage 2-2: Swelling Desire",
+			"parts": [
+				"-15-2-1.txt",
+				"-15-2-2First.txt",
+				"-15-2-2End.txt"
+			]
+		},
+		{
+			"name": "Stage 2-3: Resentment",
+			"parts": [
+				"-15-3-1.txt",
+				"-15-3-2First.txt"
+			]
+		},
+		{
+			"name": "Stage 2-4: If Only, One Day...",
+			"parts": [
+				"-15-4-1.txt",
+				"-15-4-2First.txt",
+				"-15-4-2End.txt"
+			]
+		}
+	]
+})
 
 js['crossover'].append({
 	"name": "DJMax Respect",
@@ -508,7 +593,7 @@ js['side'].append({'name':"White Day 2020: The Photo Studio Mystery",
 			"parts": [
 				"-37-3-1First.txt",
 				"-37-3-4-Point70626.txt", #I know it's strange, but these are during the stage
-				"-37-3-4-Point70633.txt"
+				"-37-3-4-Point70633.txt",
 				"-37-3-2End.txt",
 			]
 		},
@@ -775,6 +860,14 @@ for tID in dollsWithModStories:
 
 #This should be last, nobody wants to click on this
 js['side'].append({'name':"Interpreter Test Room",'episodes':[{'name':file,'parts':['testroom/'+file]} for file in os.listdir('../avgtxt/testroom')]})
+
+for t in js: #main, side, etc
+	for ep in js[t]:
+		for ep in ep['episodes']:
+			for part in ep['parts']:
+				fName = '../avgtxt/'+part
+				if not os.path.isfile(fName):
+					printError("Hey idiot, "+fName+" doesn't exist, fix the database: " +ep['name'])
 
 
 musicDB = {}

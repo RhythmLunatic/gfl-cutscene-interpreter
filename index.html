@@ -454,6 +454,27 @@ I have no idea how it works
 		out.push(split.slice(n-1).join(separator));
 		return out;
 	}
+	
+	
+	/**
+	 * String.prototype.replaceAll() polyfill
+	 * https://gomakethings.com/how-to-replace-a-section-of-a-string-with-another-one-with-vanilla-js/
+	 * @author Chris Ferdinandi
+	 * @license MIT
+	 */
+	if (!String.prototype.replaceAll) {
+		String.prototype.replaceAll = function(str, newStr){
+
+			// If a regex pattern
+			if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+				return this.replace(str, newStr);
+			}
+
+			// If a string
+			return this.replace(new RegExp(str, 'g'), newStr);
+
+		};
+	}
 
 </script>
 <!--The main program-->
@@ -848,7 +869,8 @@ I have no idea how it works
 	function playNewAudio(fileName)
 	{
 		let audioPlayer = document.getElementById('audioPlayer');
-		audioPlayer.firstElementChild.src = fileName
+		audioPlayer.getElementsByClassName('a_ogg')[0].src = fileName+".ogg"
+		audioPlayer.getElementsByClassName('a_mp3')[0].src = fileName+".mp3" //Imagine using a browser that doesn't support ogg
 		audioPlayer.load();
 		audioPlayer.play();
 	}
@@ -1357,6 +1379,11 @@ I have no idea how it works
 		
 		let playBGMbutton = document.createElement('a');
 		playBGMbutton.setAttribute("class","waves-effect waves-light btn");
+		/*if (!!document.getElementById('audioPlayer').canPlayType('audio/ogg;').replace(/no/,'') == false)
+		{
+			'<i class="material-icons left">music_note</i>Sorry, your browser is missing ogg support.'
+		}
+		else*/
 		playBGMbutton.innerHTML='<i class="material-icons left">music_note</i>Play audio for this cutscene'
 		
 
@@ -1375,6 +1402,9 @@ I have no idea how it works
 		let shownPortraits = []
 		
 		let fancyDisplayType = document.getElementById('fancyOrNot').checked;
+		let quickScroll = document.getElementById('quickScroll').checked;
+		let numStoryBoxRendered = part*1000+0; //For quick scroll. We start at a part because if there's multiple parts then it would jump back to the top and we don't want that.
+		
 		//let inlineText = document.getElementById('inlineText').checked
 		let advancedCSS = document.getElementById('advancedCSS').checked;
 		var snowDiv;
@@ -1384,7 +1414,6 @@ I have no idea how it works
 			snowDiv.classList.add('snow');
 			snowDiv.style='position: absolute; width:100%; height:100%;bottom: 0;'
 		}
-		
 		let snowEffect = false
 		
 		for(var i=0;i<structuredLines.length;i++)
@@ -1395,7 +1424,7 @@ I have no idea how it works
 			{
 				case OPCODES.BGM:
 					let newPlayBGMButton = playBGMbutton.cloneNode(true);
-					newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+".ogg')")
+					newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+"')")
 					thisPartDiv.appendChild(newPlayBGMButton);
 					break;
 				case OPCODES.SPEAKER:
@@ -1590,6 +1619,12 @@ I have no idea how it works
 						if (didBGOrPortraitOrNameChange)
 						{
 							let storyBox = document.createElement('div');
+							if (quickScroll)
+							{
+								storyBox.setAttribute('id','storyBox'+numStoryBoxRendered)
+								storyBox.setAttribute('onclick',"document.getElementById('storyBox"+(numStoryBoxRendered+1)+"').scrollIntoView({behavior:'auto',block:'center',inline:'center'});")
+								numStoryBoxRendered++;
+							}
 							storyBox.classList.add('storyImg');
 							let bgImage = document.createElement('img');
 							bgImage.style = "width:100%; position:relative; display:block;";
@@ -2921,7 +2956,8 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<a class="waves-effect waves-light btn" onclick="document.getElementById('theTop').scrollIntoView()"><i class="material-icons left">vertical_align_top</i>Back to top</a> <a class="waves-effect waves-light btn" onclick="goToNextEpisode();"><i class="material-icons left">chevron_right</i>Go to the next cutscene</a>
 	<hr>
 	<audio controls loop id="audioPlayer">
-		<source src="" type="audio/ogg"> <!-- Turns out putting something in makes firefox load it when you load the page, wasting bandwidth. But leaving it blank is fine. -->
+		<source class='a_ogg' src="" type="audio/ogg"> <!-- Turns out putting something in makes firefox load it when you load the page, wasting bandwidth. But leaving it blank is fine. -->
+		<source class='a_mp3' src="" type="audio/mp3"> <!-- Because iOS doesn't support ogg -->
 		Your browser does not support the audio tag.
 	</audio>
 	<p>Dandelion is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>

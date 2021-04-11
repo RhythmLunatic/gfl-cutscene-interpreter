@@ -1,0 +1,86 @@
+()||<BIN>9</BIN><BGM>BGM_Room</BGM>:[15 minutes later, Vector and Kiana are fumbling their way through the pitch-black base.]
+琪亚娜()<Speaker>Kiana</Speaker>||:…I understand.+Griffin is a private, mercenary, paramilitary organization, and their primary task is to maintain security in various regions.+And their combat personnel are all androids who resemble girls… like yourself, Vector-san?
+Vector()<Speaker>Vector</Speaker>||:The situation is urgent, but your understanding of the situation will not impede future operations.
+琪亚娜()<Speaker>Kiana</Speaker>||:Also, one thing I find hard to believe is… are you really artificial lifeforms? I can’t tell at all.
+Vector()<Speaker>Vector</Speaker>||:Oh? And who was the one who said I spoke like a robot, human-san?
+琪亚娜()<Speaker>Kiana</Speaker>||:Er… well...
+Vector()<Speaker>Vector</Speaker>||:Don’t worry about it, I’m just an inferior doll used to service humans.+And you don’t look like you’re lying from your expression, so you probably did barge in accidentally.
+琪亚娜()<Speaker>Kiana</Speaker>||:That’s why I’m saying, stop glaring at me like that!
+Vector()<Speaker>Vector</Speaker>||:Why? Does the fact that I’m an android upset you?
+琪亚娜()<Speaker>Kiana</Speaker>||:No, but surely even you’d feel uncomfortable if a human stared at you, right?
+Vector()<Speaker>Vector</Speaker>||:I’m sorry. Clearly my gaze is too vicious and it has made you uncomfortable. I shall turn around immediately.
+琪亚娜()<Speaker>Kiana</Speaker>||:Hey! Can’t you speak normally with other people?
+Vector()<Speaker>Vector</Speaker>||:Also, speaking face to face is not conducive to operational effectiveness. I would recommend we look in different directions.
+琪亚娜()<Speaker>Kiana</Speaker>||<黑屏1>:Hm… you’re not wrong to say that...
+Vector()<Speaker>Vector</Speaker>||<黑屏2><BIN>90</BIN>:It should be easier to see now that I’ve turned on the torch. I apologize for not realising you were using your cell phone light for so long.
+琪亚娜()<Speaker>Kiana</Speaker>||:No, no, this cell phone is used for other things.
+Vector()<Speaker>Vector</Speaker>||:Like say… detection purposes?
+琪亚娜()<Speaker>Kiana</Speaker>||:Huh? You could tell? Well, it’s not wrong to describe it that way.
+Vector()<Speaker>Vector</Speaker>||:You were telling me to avoid certain routes since just now; I take it you wanted to evade those zombies, no, the Slain, am I right?+I won’t ask too much. After all, a doll like me isn’t worth you baring your heart to me. I can understand if you want to keep secrets.
+琪亚娜()<Speaker>Kiana</Speaker>||:Er… that’s not the reason why I did that, but explaining is really troublesome, so let’s save that for after we get out of here.
+Vector()<Speaker>Vector</Speaker>||:You’re the client. By all means.
+琪亚娜()<Speaker>Kiana</Speaker>||:Speaking of which, are we the only two people left on this base?
+Vector()<Speaker>Vector</Speaker>||:Pretty much. All the other dolls should have evacuated by now.
+琪亚娜()<Speaker>Kiana</Speaker>||:I see…+Don’t tell me they abandoned you?
+Vector()<Speaker>Vector</Speaker>||:I volunteered to safeguard their retreat.+It was the most cost-effective course of action. It has always been… 
+琪亚娜()<Speaker>Kiana</Speaker>||:Is that so…
+()||:[Kiana looks around, and then back at Vector.]
+Vector()<Speaker>Vector</Speaker>||:What’s the matter?
+琪亚娜()<Speaker>Kiana</Speaker>||:Now that you mention it… I’ve been in a situation like this before…+Trapped with someone else in a place full of the Slain as we struggled to find a way out.+And that person… Later became one of my best friends.
+Vector()<Speaker>Vector</Speaker>||:What wonderful memories humans have. I hope they won’t be stained by the fact that I am your partner right now.
+琪亚娜()<Speaker>Kiana</Speaker>||:No, or rather… you look a lot like her in some ways.+Although… are all the other dolls like you, Vector?
+Vector()<Speaker>Vector</Speaker>||:I guess there aren’t as many dolls that are as hated as I am.
+琪亚娜()<Speaker>Kiana</Speaker>||:*quietly* Well, at least you know that…+So, when we get out of here later, you should be linking up with them, right?
+Vector()<Speaker>Vector</Speaker>||:Pretty much.+But I apologize, Kiana-san. Our current aim is not to leave this place.
+琪亚娜()<Speaker>Kiana</Speaker>||<黑屏1>4</黑屏1>:What?
+Vector()<Speaker>Vector</Speaker>||<黑屏2>8</黑屏2><BIN>91</BIN>:Haven’t you realized that we’ve come down this path once already?
+琪亚娜()<Speaker>Kiana</Speaker>||:Eh? Have we?+Looks like… huh, that really is the case, when was that?
+Vector()<Speaker>Vector</Speaker>||:You don’t seem to understand the concept of maps.+You would probably not be that clumsy if you were an industrial spy.
+琪亚娜()<Speaker>Kiana</Speaker>||:Hey! Were you running us around through a dark place like this that’s filled to the brim with Slain just to test me!?
+Vector()<Speaker>Vector</Speaker>||<黑屏1>:My aim was to inspect the communications facilities in the vicinity…+it seems this is the problematic room.
+()||<BGM>BGM_Empty</BGM><BIN>85</BIN><黑屏2>:[Vector enters a monitoring room and begins checking around. Kiana follows her inside and begins investigating this brand new world.]
+琪亚娜()<Speaker>Kiana</Speaker>||<BGM>BGM_Sneak</BGM>:Hey! Vector, wait for me!+Do you know how many Slain have made it into the base? I’m not recommending that you check any electrical circuits or whatnot! 
+Vector(0)<Speaker>Vector</Speaker>||:While it might be hard for you to believe, the course of action which I am undertaking is the safest. 
+ ()||:[After that, Vector kneels in the corner and begins fiddling with the equipment in the walls.]
+琪亚娜()<Speaker>Kiana</Speaker>||:Hey, I came with you because I felt sorry for you!+I could leave by myself if I wanted to, Vector!
+Vector(0)<Speaker>Vector</Speaker>||:Your sympathy could not possibly be more wasted than on me. And are you so sure you can leave the base by yourself?+You didn’t even remember that you walked down the same path three times.
+Vector(0)<Speaker>Kiana</Speaker>||:Three… three times!?
+Vector(0)<Speaker>Vector</Speaker>||:I am worried about whether you will be able to find the base entrance with that brain of yours, which is far below the average specifications for human beings.+As a point of clarification, when I said I was worried, I was not actually worried about you; that was simply a courtesy. I apologize for that.+*mutters to herself* Since the signal reception ability is intact, where could the fault be...
+Vector(0)<Speaker>Kiana</Speaker>||:Tch, I don’t need you to be worried about me, I’ll just shoot my way out!
+Vector(0)<Speaker>Vector</Speaker>||:I have no doubts about how many Slain you can kill, but I doubt your ammunition is compatible with ours, is it?+*mutters to herself* ...so it was a problem with the connection...
+Vector(0)<Speaker>Kiana</Speaker>||:Hah! Don’t look down on me, I can use other weapons handily!
+Vector(0)<Speaker>Vector</Speaker>||:Even if I told you where the armory was, would you know how to find it?
+Vector(0)<Speaker>Kiana</Speaker>||:Erk!
+Vector(0)<Speaker>Vector</Speaker>||:That’s why I’m certain that you’re not an industrial spy or other dangerous element.+*mutters to herself* ...Fortunately it was just jostled out of place, so all I need to do is connect this cable.
+Vector(0)<Speaker>Kiana</Speaker>||:Then do you know the exit? How would you have gotten rid of those Slain without me!?
+Vector(0)<Speaker></Speaker>||:[Vector adjusts the communications system and begins testing it.]
+Vector(0)<Speaker>Vector</Speaker>||: I know of a hidden exit, so please keep your voice down. Relax and let me handle it, Kiana-san.
+Vector(0)<Speaker>Kiana</Speaker>||:Tch, you said you were here to serve humans, so why are you making such a big fuss about things!?
+Vector(0)<Speaker>Vector</Speaker>||:*laughs coldly* Like I said, I’m not very likeable, and you have no choice but to rely on me.+*mutters to herself* Alright, it’s dialing.
+Vector(0)<Speaker></Speaker>||:…[Beep.]
+Vector(0)<Speaker>Vector</Speaker>||:Vector calling PP90, Vector calling PP90-
+Vector(0);PP90(0)<Speaker>PP90</Speaker><通讯框>||:V……Vivi？
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||<震屏>:Vivivivivivivivi——！
+琪亚娜()<Speaker>Kiana</Speaker>||:So first a doll with a personality problem, and then a doll with a speech problem...
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Did you fix the comms systems? Did you did you!?
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:I happened to be passing by so I fiddled with it.
+琪亚娜()<Speaker>Kiana</Speaker>||:……
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||<震屏>:Uwahhhh! Vivi! I’m so sorry!+There was an earthquake which wrecked our transmitter! I was too scared and I let the Commander move out without performing a safety check and everyone was stuck in here and I thought we were doomed! You saved us!+Vivi, I’m so glad you’re around!
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:It was just luck… How about our forces? Can we link up now?
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Of course we can! Come on over+ Wait, you said “us”? But everyone should be here now.
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:There’s a human hitching a ride with me. I’ll explain later. Tell me where our echelons are.
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Ohhh! We need to treat her well! I’ve sent out the coordinates!+Speaking of which, the Commander just sent a message about beginning the breakout! Can you get here ASAP?
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:That won’t be too hard. Make escape your top priority and don’t worry about me.
+Vector(0)<Speaker></Speaker>||:[Vector hangs up without waiting for PP90’s reply.]
+Vector(0)<Speaker>Kiana</Speaker>||:Well, you’re not being straightforward at all. What if she really does abandon us?
+Vector(0)<Speaker>Vector</Speaker>||:The one thing I hate most about PP90… is that she’s nice to everyone.
+Vector(0)<Speaker>Kiana</Speaker>||:Hah? Looks like you’re pretty weird even for a doll…+Forget it, where’s the hidden exit? Let’s go.
+Vector(0)<Speaker>Vector</Speaker>||:There’s no hidden exit. I just said so to keep you quiet during the transmission.
+Vector(0)<Speaker>Kiana</Speaker>||:You, are you a witch or something!? Is there any end to your wickedness?
+Vector(0)<Speaker>Vector</Speaker>||:Our Commander sent out a signal, so the doll echelons should be on the move again.+If we head out now, we should be able to catch up with them.
+()||:[Vector walks out of the room without bothering with Kiana.]
+琪亚娜()<Speaker>Kiana</Speaker>||:Hey, you! Wait for me!+I’ve just about had it, why am I letting an android run circles around me!?
+()||<黑屏1>:[Kiana follows her.]
+()||<黑屏2><BIN>10</BIN>:[At the same time, the Griffin doll echelons prepare for a breakout once again.]
+PP90(0)<Speaker>PP90</Speaker><通讯框>||:Commander, our forces are rested and ready, and we can continue the operation!+Also, Vector will meet up with us along the way, and she has a human with her! Ah… it doesn’t seem like something Vivi would do…+Anyway, while the two of them ought to be able to be able to just barely make it out, it would be best if you could send over any spare hands to help her out! Alright, that’s the end of the report. Let’s begin the breakout, Commander!
+()||<BIN>10</BIN><黑点2>:

@@ -3,7 +3,8 @@
         "name": "43M",
         "type": "SMG",
         "num": 291,
-        "rating": 3
+        "rating": 3,
+        "internalName": "Danuvia43M"
     },
     {
         "name": "6P62",
@@ -289,7 +290,8 @@
         "name": "CF05",
         "type": "SMG",
         "num": 295,
-        "rating": 4
+        "rating": 4,
+        "internalName": "06TypeSMG"
     },
     {
         "name": "CR-21",
@@ -407,7 +409,8 @@
         "name": "Defender",
         "type": "SG",
         "num": 302,
-        "rating": 4
+        "rating": 4,
+        "internalName": "ColtDefender"
     },
     {
         "name": "Derringer",
@@ -735,7 +738,8 @@
         "name": "HP-35",
         "type": "HG",
         "num": 303,
-        "rating": 5
+        "rating": 5,
+        "internalName": "BrowningHP"
     },
     {
         "name": "HS2000",
@@ -874,7 +878,8 @@
         "name": "KAC-PDW",
         "type": "SMG",
         "num": 286,
-        "rating": 4
+        "rating": 4,
+        "internalName": "KAC"
     },
     {
         "name": "KLIN",
@@ -1461,7 +1466,8 @@
         "name": "Mondragon",
         "type": "RF",
         "num": 317,
-        "rating": 4
+        "rating": 4,
+        "internalName": "MondragonM1908"
     },
     {
         "name": "Mosin-Nagant",
@@ -1782,7 +1788,8 @@
         "name": "R5",
         "type": "AR",
         "num": 289,
-        "rating": 5
+        "rating": 5,
+        "internalName": "R5RGP"
     },
     {
         "name": "R93",
@@ -2152,7 +2159,8 @@
         "name": "Steyr ACR",
         "type": "AR",
         "num": 313,
-        "rating": 5
+        "rating": 5,
+        "internalName": "SACR"
     },
     {
         "name": "Steyr Scout",
@@ -2256,7 +2264,8 @@
         "name": "TS12",
         "type": "SG",
         "num": 321,
-        "rating": 3
+        "rating": 3,
+        "internalName": "TavorTS12"
     },
     {
         "name": "Tabuk",

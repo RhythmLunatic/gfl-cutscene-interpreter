@@ -264,7 +264,7 @@ portraitDatabase['NPC-PasserbyM']=['NPC-PasserbyM.png']
 portraitDatabase['NPC-PasserbyF']=['NPC-PasserbyF.png']
 portraitDatabase['NPC-Carter']=['pic_NPC-Carter.png']
 
-portraitDatabase['Seele'][2]=['SeeleVollerei.png']
+portraitDatabase['Seele'][2]='SeeleVollerei.png'
 
 portraitDatabase['AK47'].quickInsertSpecial(2)
 
@@ -336,9 +336,15 @@ portraitDatabase['CZ75'].quickInsertCostumeAtIdx(2,'1604')
 portraitDatabase['RFB'].quickInsertCostumeAtIdx(2,'1601')
 
 portraitDatabase['G11'].quickInsertCostumeAtIdx(6,'1602')
-portraitDatabase['G11'][1] = 'special/pic_G11_1.png'
-portraitDatabase['G11'][2] = 'special/pic_G11_2.png'
+#It seems like  this was intended for the first slot, but it's identical to the regular expression aside from having a corrupted transparency. So instead, I'm using the regular image.
+#portraitDatabase['G11'][1] = 'special/pic_G11.png' 
+portraitDatabase['G11'][1] = 'pic_G11.png' 
+portraitDatabase['G11'][2] = 'special/pic_G11_1.png' #Confirmed in second slot
+portraitDatabase['G11'][3] = 'special/pic_G11_2.png' #I checked memoir/103_4.txt and confirmed this is being used in the third slot
 portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
+
+portraitDatabase['UMP9story'] = ResizingList(['special/ump9.png'])
+
 
 portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'

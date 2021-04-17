@@ -26,8 +26,9 @@ def printOK(text):
 with open('portraitInformation.json','r') as f:
 	portraits = JSON.loads(f.read())
 with open('chapterDatabase.json','r') as f:
-	chapters = JSON.loads(f.read())['story']
-	
+	j = JSON.loads(f.read())
+	chapters = j['story']
+	backgrounds = j['bg']
 
 def getCharsFromLine(cmds):
 	foundPortraits = []
@@ -47,6 +48,14 @@ def getCharsFromLine(cmds):
 		else:
 			break
 	return foundPortraits
+	
+def getFromTag(s,tag):
+	beginTag = "<"+tag+">"
+	endTag = "</"+tag+">"
+	n = s.find(beginTag)
+	if n != -1:
+		return s[n+len(beginTag):s.find(endTag)]
+	return None
 
 missingPortraitFiles = []
 missingPortraitsDB = {}
@@ -87,7 +96,36 @@ for section in chapters:
 											appendToMissingPortraits(section,chapter['name']+ " - " + episode['name'],part)
 										#print("Portrait "+str(p)+" missing in "+fName+ " "+ chapter['name']+" - "+episode['name'])
 										print("Missing portrait {:<30} from {:<35}".format(str(p),fName)+chapter['name']+" - "+episode['name'])
-							
+
+for doll in portraits:
+	#print(portraits[doll])
+	for variant in portraits[doll]:
+		if variant is not None:
+			if not os.path.isfile("../pic/"+variant):
+				printError("File "+variant+" missing from folder!!")
+
+missingBGs = {}
+for i in range(len(backgrounds)):
+	bg = backgrounds[i]
+	fName = '../avgtexture/'+bg+'.png'
+	if not os.path.isfile(fName):
+		missingBGs[i]=bg
+
+#Same dumb shit as last time...
+if len(missingBGs) > 0:
+	for section in chapters:
+		for chapter in chapters[section]:
+			for episode in chapter['episodes']:
+				for part in episode['parts']:
+					fName = '../avgtxt/'+part
+					if os.path.isfile(fName):
+						with open(fName,'r') as partText:
+							for line in partText.readlines():
+								cmds = line.replace("：",':').split(':')[0]
+								t = getFromTag(cmds,"BIN")
+								if t and int(t) in missingBGs:
+										print("Missing background {:<30} from {:<35}".format(missingBGs[int(t)],fName)+chapter['name']+" - "+episode['name'])
+
 #print(missingPortraits)
 #Now go through all of them and convert them to routing strings since it's what the interpreter takes
 def getRoutingString(section,fName):

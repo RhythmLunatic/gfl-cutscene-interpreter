@@ -1,4 +1,8 @@
 {
+    "Danuvia43M": [
+        "pic_Danuvia43M.png",
+        "pic_Danuvia43M_D.png"
+    ],
     "6P62": [
         "pic_6P62.png",
         "pic_6P62_D.png"
@@ -199,6 +203,10 @@
         "pic_HKCAWS.png",
         "pic_HKCAWS_D.png"
     ],
+    "06TypeSMG": [
+        "pic_06TypeSMG.png",
+        "pic_06TypeSMG_D.png"
+    ],
     "CR21": [
         "pic_CR21.png",
         "pic_CR21_D.png"
@@ -282,6 +290,10 @@
     "Delisle": [
         "pic_Delisle.png",
         "pic_Delisle_D.png"
+    ],
+    "ColtDefender": [
+        "pic_ColtDefender.png",
+        "pic_ColtDefender_D.png"
     ],
     "Derringer": [
         "pic_Derringer.png",
@@ -387,9 +399,9 @@
     ],
     "G11": [
         "pic_G11.png",
+        "pic_G11.png",
         "special/pic_G11_1.png",
         "special/pic_G11_2.png",
-        "pic_G11_9.png",
         "pic_G11_9_D.png",
         null,
         "pic_G11_1602.png",
@@ -545,6 +557,10 @@
         "pic_HK512.png",
         "pic_HK512_D.png"
     ],
+    "BrowningHP": [
+        "pic_BrowningHP.png",
+        "pic_BrowningHP_D.png"
+    ],
     "HS2000": [
         "pic_HS2000.png",
         "pic_HS2000_D.png"
@@ -640,6 +656,10 @@
         null,
         "pic_K5_3308.png",
         "pic_K5_3308_D.png"
+    ],
+    "KAC": [
+        "pic_KAC.png",
+        "pic_KAC_D.png"
     ],
     "KLIN": [
         "pic_KLIN.png",
@@ -1077,6 +1097,10 @@
         "pic_CETME556_3809.png",
         "pic_CETME556_3809_D.png"
     ],
+    "MondragonM1908": [
+        "pic_MondragonM1908.png",
+        "pic_MondragonM1908_D.png"
+    ],
     "M1891": [
         "pic_M1891.png",
         "pic_M1891_D.png",
@@ -1304,6 +1328,10 @@
     "QSB91": [
         "pic_QSB91.png",
         "pic_QSB91_D.png"
+    ],
+    "R5RGP": [
+        "pic_R5RGP.png",
+        "pic_R5RGP_D.png"
     ],
     "R93": [
         "pic_R93.png",
@@ -1589,6 +1617,10 @@
         "pic_StenMK2Mod.png",
         "pic_StenMK2Mod_D.png"
     ],
+    "SACR": [
+        "pic_SACR.png",
+        "pic_SACR_D.png"
+    ],
     "scout": [
         "pic_scout.png",
         "pic_scout_D.png"
@@ -1658,6 +1690,10 @@
         "pic_TMP_D.png",
         "pic_TMP_2807.png",
         "pic_TMP_2807_D.png"
+    ],
+    "TavorTS12": [
+        "pic_TavorTS12.png",
+        "pic_TavorTS12_D.png"
     ],
     "Tabuk": [
         "pic_Tabuk.png",
@@ -2032,9 +2068,7 @@
     "Seele": [
         "pic_Seele.png",
         "pic_Seele_D.png",
-        [
-            "SeeleVollerei.png"
-        ]
+        "SeeleVollerei.png"
     ],
     "SEI": [
         "pic_SEI.png",
@@ -2071,7 +2105,7 @@
         "pic_Agent.png"
     ],
     "Ouroboros": [
-        "Ouroboros.png"
+        "Sangvis/pic_Weaver_LL.png"
     ],
     "BOSS-6": [
         "Destroyer.png",
@@ -2081,7 +2115,7 @@
         "Hunter.png"
     ],
     "BOSS-5": [
-        "pic_Alchemist_LL.png"
+        "Sangvis/pic_Alchemist_LL.png"
     ],
     "BOSS-4": [
         "Intruder.png"
@@ -2094,13 +2128,13 @@
         "ExcutionerElite.png"
     ],
     "BOSS-7": [
-        "pic_BossGager_LL.png"
+        "Sangvis/pic_BossGager_LL.png"
     ],
     "BOSS-9": [
-        "pic_BossArchitect_LL.png"
+        "Sangvis/pic_BossArchitect_LL.png"
     ],
     "BOSS-11": [
-        "Dreamer.png"
+        "Sangvis/pic_Dreamer_LL.png"
     ],
     "BossJustice": [
         "BossJustice.png"
@@ -2286,6 +2320,9 @@
     "G11story": [
         "special/shadow.png",
         "special/shadow.png"
+    ],
+    "UMP9story": [
+        "special/ump9.png"
     ],
     "DJMAXSUEE": [
         "equip/fairy/DJMAXSUEE_1.png"

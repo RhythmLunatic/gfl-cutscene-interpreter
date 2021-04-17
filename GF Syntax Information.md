@@ -53,7 +53,9 @@ ex. `<BIN>112</BIN>`
 
 Set background. Aside from a few special cases it's whatever background is at that line in profiles.txt.
 
-Note that the stage is rendered underneath the cutscene. So when a transparent background is used you can see the stage underneath.
+BIN 10 is a special case; It's a fully transparent image that shows the stage underneath. However when replaying it through the index it will pick PlaybackBG1 or PlaybackBG2. It doesn't seem to be determined by anything in the script but rather stage metadata.
+
+Note that it's possible for there to be text without a background being set. I have no idea what the color would be in that case but you can probably just use black.
 
 ### Speaker
 
@@ -85,7 +87,7 @@ Like BGM, this pulls from a dictionary in /assets/resources/dabao/textdata/Audio
 Black dot screen transition. X=1 for in, 2 for out.
 
 ### <黑屏X>
-Black screen fade in and out
+Black screen fade in and out. 1 = out, 2 = in (Yes, it's reversed from the above one for some reason)
 
 Accepts a number parameter, which might be speed. Otherwise only the beginning tag is present.
 
@@ -94,12 +96,22 @@ Example in Honkai Impact 2nd (-15-3-2First.txt): `芽衣()<Speaker>芽衣</Speak
 ### <震屏> 
 Screen shake effect
 
+### 睁眼
+Translates to 'eyes open', eye open screen in transition
+
 		
 ## Animations/Background related
 
 ### Night
-Take a wild guess.
-Normally this isn't used since night stages automatically have the blue filter applied to cutscenes.
+Take a wild guess. Applies a blue filter over the previous background.
+
+Works on any background, not just outdoors ones.
+
+Blue filter is roughly brightness -100 and color temperature 3000 in GIMP.
+
+Since I have no idea what that is in raw RGB value manipulation the algorithm in the interpreter is just R/2, G/2 (B is untouched)
+
+Screen transitions will disable night BG.
 
 ### 平移
 Pan background from left to right.

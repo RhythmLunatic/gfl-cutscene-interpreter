@@ -85,11 +85,12 @@ def insertIntoListAt(l,idx,element):
 	l[idx]=element
 	return l
 
-def appendFromij(i,j,name,letter):
+def appendFromij(i,j,name,letter,isNight=False):
 	return {
 		'name':  name+' '+str(i)+'-'+str(j),
 		'parts': [str(i)+'-'+str(j)+'-1'+letter+'.txt',
-				str(i)+'-'+str(j)+'-2'+letter+'.txt']
+				str(i)+'-'+str(j)+'-2'+letter+'.txt'],
+		'night':[isNight,isNight]
 	}
 
 def getAllByPrefix(files,prefix,episodeName):
@@ -160,7 +161,7 @@ for i in range(1,13):
 		curChapter.append(appendFromij(i,j,"Emergency",'E'))
 	if i < 11: #No midnight chapters beyond ch11
 		for j in range(1,5):
-			curChapter.append(appendFromij(i,j,"Midnight",'N'))
+			curChapter.append(appendFromij(i,j,"Midnight",'N',True))
 	js['main'].append({'name':'Chapter '+str(i),'episodes':curChapter});
 
 
@@ -278,8 +279,125 @@ js['crossover'].append({
 js['crossover'].append(va11)
 
 
+#I think the text files are identical to Operation Cube Plus, so no point in including it. I haven't checked though
+#js['event'].append({'name':"CH. 5.5: Operation Cube (OLD)",'episodes':getAllByPrefix(files,'-1','Operation Cube')})
+
+js['event'].append({
+	"name": "CH. 7.5: Arctic Warfare",
+	"episodes": [
+		{
+			"name": "The Wolves Gather I",
+			"parts": [
+				"-2-1-1.txt",
+				"-2-1-2First.txt",
+				"-2-1-4-Point2007.txt",
+				"-2-1-4-Point2179.txt",
+				"-2-1-4-Point2207.txt",
+			]
+		},
+		{
+			"name": "The Wolves Gather II",
+			"parts": [
+				"-2-2-1.txt",
+				"-2-2-2First.txt",
+				"-2-2-4-Point2204.txt"
+			]
+		},
+		{
+			"name": "The Wolves Gather III",
+			"parts": [
+				"-2-3-1.txt",
+				"-2-3-2First.txt",
+				"-2-3-4-Point2058.txt",
+				"-2-3-4-Point2215.txt"
+			]
+		},
+		{
+			"name": "The Wolves Gather IV",
+			"parts": [
+				"-2-4-1.txt",
+				"-2-4-2First.txt",
+				"-2-4-2End.txt"
+			]
+		},
+		{
+			"name": "Lighting Curfew I",
+			"parts": [
+				"-3-1-1.txt",
+				"-3-1-2First.txt"
+			]
+		},
+		{
+			"name": "Lighting Curfew II",
+			"parts": [
+				"-3-2-1.txt",
+				"-3-2-2First.txt"
+			]
+		},
+		{
+			"name": "Lighting Curfew III",
+			"parts": [
+				"-3-3-1.txt",
+				"-3-3-2First.txt"
+			]
+		},
+		{
+			"name": "Lighting Curfew IV",
+			"parts": [
+				"-3-4-1.txt",
+				"-3-4-2First.txt",
+				"-3-4-2End.txt",
+				"-3-4-4-Point2499.txt"
+			]
+		},
+		{
+			"name": "Operation Homecoming I",
+			"parts": [
+				"-4-1-1.txt",
+				"-4-1-2First.txt"
+			]
+		},
+		{
+			"name": "Operation Homecoming II",
+			"parts": [
+				"-4-2-1.txt",
+				"-4-2-2First.txt"
+			]
+		},
+		{
+			"name": "Operation Homecoming III",
+			"parts": [
+				"-4-3-1.txt",
+				"-4-3-2First.txt"
+			]
+		},
+		{
+			"name": "Operation Homecoming IV",
+			"parts": [
+				"-4-4-1.txt",
+				"-4-4-2First.txt",
+				"-4-4-2End.txt",
+			]
+		}
+	]
+})
+js['event'].append({
+	"name": "CH. 7.5: Hypothermia",
+	"episodes": [
+		{
+			"name": "Into The Rabbit Hole",
+			"parts": [
+				"-5-1-1.txt",
+				"-5-1-3Round10.txt"
+			]
+		}
+	]
+})
+
 for line in evStoryInformation:
 	args = line.split("|")
+	if float(args[2]) == 7.5: #If Arctic Warfare, do a special case since the secret mission is a separate entry... It's like this on the index too
+		continue
 	#print(args)
 	chapterName = "CH. "+args[2]+": "+args[3]
 	episodeName = args[4]
@@ -310,13 +428,16 @@ for line in evStoryInformation:
 '''
 #js['crossover'].append({'name':"DJMax Respect",'episodes':getAllByPrefix(files,'-19',"Chapter 1 ")})
 #js['crossover'][-1]['episodes'].extend(getAllByPrefix(files,'-20',"Chapter 2"))
-
-js['event'].append({'name':"CH. ??: Operation Cube? (WIP)",'episodes':getAllByPrefix(files,'-1','???')})
 #-2 to -7 already indexed
-js['crossover'].append({'name':"Guilty Gear x BlazBlue",'episodes':getAllByPrefix(files,'-8','Part')})
+js['crossover'].append({
+	'name':"Guilty Gear x BlazBlue: Operation Rabbit Hunt",
+	'shortName':'Guilty Gear x BlazBlue',
+	'episodes':getAllByPrefix(files,'-8','Part')
+})
 #No -9
 js['crossover'].append({
-	"name": "Honkai Impact 2nd: Only Master (Fantranslated)",
+	"name": "Houkai Gakuen 2nd: Only Master (Fantranslated)",
+	"shortName":"Houkai Gakuen 2nd (Fantranslated)",
 	"episodes": [
 		{
 			"name": "Stage 1-1: The Breakdown Descends",
@@ -574,7 +695,9 @@ js['event'].append({
 		}
 	]
 })
-js['side'].append({'name':"White Day 2020: The Photo Studio Mystery",
+js['side'].append({
+	'name':"White Day 2020: The Photo Studio Mystery",
+	'shortName':"White Day 2020",
 	'episodes':[
 		{
 			"name": "Episode I: Rumors of the Haunted Mansion",
@@ -880,14 +1003,12 @@ with open('AudioTemplate.txt','r') as f:
 			audioInfo = line.split("|")
 			if audioInfo[2].isspace()==False and audioInfo[1] != audioInfo[2]:
 				musicDB[audioInfo[1]] = audioInfo[2]
-				
-				backgroundsRename = {
-	"White":"PlaybackBG1"
-}
 
 backgrounds = None
 with open('profiles.txt','r') as f:
 	backgrounds = [line.strip() for line in f.readlines()]
+
+
 
 with open('chapterDatabase.json','wb') as f:
 	f.write(JSON.dumps({'music':musicDB,'story':js,'bg':backgrounds}, sort_keys=False, indent='\t', separators=(',', ': '), ensure_ascii=False).encode('utf8'))

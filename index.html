@@ -382,13 +382,13 @@ I have no idea how it works
 	margin-top:1.5rem;
 }
 .storydoll{
-	width:71%;
+	width:71%; /*You're probably wondering why this is 71% instead of 70%. After all, left:15% will create the remaining 30% to center the image right? Well it turns out that the heads of most images are slightly to the left and not centered. I think gfl.zzzzz.kr did it on purpose so it would look slightly more centered. */
 	position: absolute;
 	bottom: -30%;
-	z-index: 5;
+	z-index: 5; /*higher number means it's drawn in front */
 }
 .storydoll.one{
-	left:15%; /*???*/
+	left:15%; /*Margin of 15%, which also creates a right margin of 15%, which adds up the remaining 30% in 'width' in storyImg class */
 }
 .storydoll.first.two{
 	right:35%
@@ -406,6 +406,26 @@ I have no idea how it works
 	mask-size: 100%; /* I don't know why 100% works but it does */
 	-webkit-mask-size: 100%;
 	filter: brightness(300%) opacity(75%);
+}
+
+.maskcontainer{
+	z-index:5;
+}
+.maskcontainer.one{
+	left:35%; /*This is a guess, I don't know how it works */
+}
+.maskcontainer.first.two{
+	left:15%;
+}
+.maskcontainer.second.two{
+	left:55%
+}
+/*Should probably fix later */
+.maskcontainer.dim{
+	z-index:4;
+}
+.maskcontainer > div > img.dim{
+	filter: brightness(50%);
 }
 
 /*.storydoll.saying{
@@ -699,6 +719,23 @@ I have no idea how it works
 		runtime.load.start();
 	}
 	
+	var p3BGM;
+	function loadBGM(runtime, fileName)
+	{
+		if (p3BGM != undefined)
+			p3BGM.destroy();
+		console.log("Loading "+fileName)
+		runtime.load.once('complete',function() { 
+			p3BGM = this.sound.add(fileName);
+			p3BGM.play();
+		},runtime)
+		
+		runtime.load.audio(fileName,[
+			'audio/'+fileName+".ogg",
+			'audio/'+fileName+".mp3" //Imagine using a browser that doesn't support ogg
+		]);
+		runtime.load.start();
+	}
 	//A pool of portraits since there's gonna be more than one
 	var portraitCollection = []
 	function loadPortrait(runtime,idx,name,type)
@@ -736,55 +773,38 @@ I have no idea how it works
 			this.curIndex = 0;
 			this.msgTable = msgTable;
 			
-			this.textActor = phaserRuntime.add.text(0,0,'Static Text Object', { fontFamily: 'Noto Sans KR', fontSize: 27, color: '#ffffff', wordWrap: {width:maxwidth,useAdvancedWrap:true} });
+			this.textActor = phaserRuntime.add.text(0,0,'Static Text Object', { fontFamily: 'Noto Sans KR', fontSize: 27, color: '#ffffff', wordWrap: {width:maxwidth, useAdvancedWrap:true} });
+			
+			
 		}
 		is_finished()
 		{
 			return this.cur_len == this.text.length;
 		}
 		
-		//In StepMania you can just chain a command (within an actor) with sleep over and over, but in phaser you have to attach it to the game engine?
-		//Attaching tweens to the game engine instead of actors is kind of a weird decision by the way, why wouldn't you attach them to the actor?
-		//I'm using setInterval anyways
+		//I finally found the correct way to do it
 		play()
 		{
 			
-			let f = function(self){
-				self.cur_len = self.textActor.text.length;
-				//console.log(self.cur_len+"/"+self.text.length);
-				if (self.cur_len < self.text.length)
-				{
-					let txt = self.text.slice(0,self.cur_len+1)
-					//console.log(txt);
-					self.textActor.setText(txt);
-				}
-				else
-				{
-					clearInterval(f);
-				}
-			}
-			
-			f(this);
-			
-			//console.log(1/this.spd*1000);
-			let interval = setInterval(f,1/this.spd*1000,this);
-			//This can't possibly be high performance...
-			
-			/*phaserRuntime.tweens.add({
+			//console.log(this.text.length);
+			this.timer = this.phaserRuntime.time.addEvent({
 				targets:this.textActor,
-				ease:'Linear',
-				duration:1/this.spd,
-				onComplete:this.play
-			)}*/
-				
+				delay:1/this.spd*1000,
+				callback: function() {
+					this.textActor.setText(this.text.slice(0,this.textActor.text.length+1))
+				},
+				callbackScope: this,
+				repeat: this.text.length,
+			});
 			
 		}
 		Text()
 		{
 			this.cur_len = this.textActor.text;
 			if (this.cur_len < this.text.length)
-				this.textActor.setText(this.text.slice(0,this.cur_len));
+				this.textActor.setText(this.text.slice(0,this.cur_len+1));
 		}
+		//Why is the processing code here? Why did I write it like this?
 		advance()
 		{
 			if (this.no_more_text())
@@ -815,6 +835,9 @@ I have no idea how it works
 					case OPCODES.PORTRAIT:
 						console.log(portraitStructToString(curMsg))
 						loadPortrait(this.phaserRuntime,curMsg[1],curMsg[2],curMsg[3])
+						break;
+					case OPCODES.BGM:
+						loadBGM(this.phaserRuntime,curMsg[1]);
 						break;
 					//lua junk from my message system. Just ignore it.
 					/*case OPCODESFMSG:
@@ -868,6 +891,7 @@ I have no idea how it works
 		{
 			this.textActor.setText(this.text);
 			this.cur_len = this.text.length;
+			this.timer.destroy();
 		}
 	}
 	
@@ -887,13 +911,12 @@ I have no idea how it works
 
 		var imgWidth=image.naturalWidth;
 		var imgHeight=image.naturalHeight;
-	  //console.log(image.width+'x'+image.height);
 	  // You'll get some string error if you fail to specify the dimensions
 	  myCanvas.width= imgWidth;
 	  myCanvas.height=imgHeight;
 	  myCanvasContext.drawImage(image,0,0);
 
-	  // This function cannot be called if the image is not rom the same domain.
+	  // This function cannot be called if the image is not from the same domain.
 	  // You'll get security error if you do.
 	  var imageData=myCanvasContext.getImageData(0,0, imgWidth, imgHeight);
 	  
@@ -913,10 +936,10 @@ I have no idea how it works
 			//var alpha=imageData.data[j+3];
 			imageData.data[j]=red*.4;
 			imageData.data[j+1]=green*.4;
-			imageData.data[j+2]=blue*.9;
+			imageData.data[j+2]=blue*.8;
 			//imageData.data[j+3]=255;
 		   
-		 }
+		}
 		 
 		//console.log("done!");
 		myCanvasContext.putImageData(imageData,0,0,0,0, imageData.width,   imageData.height);
@@ -956,6 +979,7 @@ I have no idea how it works
 	
 	
 	let curEpisodePart = 0
+	var vntext;
 	class GirlsFrontlineScene extends Phaser.Scene {
 		constructor()
 		{
@@ -974,18 +998,10 @@ I have no idea how it works
 			//input.touch only works on mobile devices. So it will break on desktop. reeeee
 			//game.input.touch.capture = false;
 			
-			//GFL, in all of it's genius, uses 1024x1024 images. With black borders.
-			/*bgActor = this.make.image({ x:game.config.width/2, y:game.config.height/2, add:true });
-			bgActor.displayWidth = 1024
-			bgActor.displayHeight= 1024*/
 			bgActor = this.add.image(game.config.width/2,game.config.height/2);
 			bgActor.texture = Phaser.Cache.DEFAULT;
 			bgActor.setDepth(0);
 			
-			/*var img = this.make.image({ x:game.config.width/2, y:game.config.height/2, key:'test',add:true })
-			img.displayWidth = game.config.width
-			img.displayHeight= game.config.height
-			img.setDepth(1);*/
 			
 			//Depth 2 is reserved for character portraits!
 			
@@ -1007,7 +1023,7 @@ I have no idea how it works
 			//TODO
 			document.getElementById("DebugTextArea").value = structuredLinesToString(currentEpisodeAsOpcodes[curEpisodePart]);
 			
-			vntext = new VNText4(this,'',800,13,currentEpisodeAsOpcodes[curEpisodePart]);
+			vntext = new VNText4(this,'',800,20,currentEpisodeAsOpcodes[curEpisodePart]);
 			vntext.textActor.x = 242;
 			vntext.textActor.y = game.config.height-160
 			vntext.textActor.setDepth(4);
@@ -1086,7 +1102,6 @@ I have no idea how it works
 	var game;
 	
 	var imageActor;
-	var vntext;
 	
 	//Input: string of gfl text
 	//output: structured lines (array with opcodes)
@@ -1103,7 +1118,6 @@ I have no idea how it works
 		
 		//It's really stupid but dimRightSide has to know the state of the previous dimmed portraits because normally the GFL engine only supports two portraits and I wanted more
 		let prevLineHadAtLeastTwoPortraits = false;
-		let dimRightSide = false;
 		for(i=0;i<lines.length;i++)
 		{
 			if (!lines[i])
@@ -1122,9 +1136,6 @@ I have no idea how it works
 			//I'm just going to search portraits after removing <> tags, it probably won't matter
 			let numPortraits = 0;
 			let thisLineHadAtLeastTwoPortraits = (cmds.indexOf(";") != -1)
-			//This doesn't work correctly... If a new portrait gets pushed and the previous line had two portraits then the dimmed one is the existing portrait from the previous line
-			if (thisLineHadAtLeastTwoPortraits && prevLineHadAtLeastTwoPortraits)
-					dimRightSide = !dimRightSide;
 				
 			//Add portrait removal command
 			if (prevLineHadAtLeastTwoPortraits && !thisLineHadAtLeastTwoPortraits)
@@ -1144,6 +1155,13 @@ I have no idea how it works
 					}
 				}
 			}
+			
+			
+			//Apply dimming by checking position of <Speaker> command.
+			//If ; is before the <Speaker> tag it dims the left, if it's after it dims the right.
+			let shouldDimLeft = thisLineHadAtLeastTwoPortraits && cmds.lastIndexOf(";") < cmds.lastIndexOf("</Speaker>")
+			
+			
 			//console.log(thisLineHadAtLeastTwoPortraits);
 			//Limit it to 5 because I don't want a dumb infinite loop that crashes the browser
 			for(j=0;j<5;j++)
@@ -1160,52 +1178,18 @@ I have no idea how it works
 					//Ignore empty sprite IDs, they do nothing.
 					if (charSpr != undefined && charSpr != "")
 					{
+						
 						let shouldDim = false;
 						if (thisLineHadAtLeastTwoPortraits)
 						{
-							if (!prevLineHadAtLeastTwoPortraits)
-							{
-								//debugger;
-								//If this is the second portrait being added, we can just check the state of the previous portrait.
-								if (numPortraits>0)
-								{
-									let m = structuredLines[structuredLines.length-1]
-									if (m[0]==OPCODES.PORTRAIT)
-										{
-											shouldDim=!m[4]
-											dimRightSide=shouldDim;
-										}
-									else
-										consoleWarn("wtf?")
-								}
-								else
-									//It's -2 because the last line is always MSGBOXTRANSITION.
-									for(var lll=structuredLines.length-2; lll>=0; lll--)
-									{
-										let m = structuredLines[lll];
-										if (m[0]==OPCODES.MSGBOXTRANSITION)
-											break;
-										//Search for single old portrait, if it matches then it shouldn't dim
-										else if (m[0]==OPCODES.PORTRAIT)
-										{
-											//debugger;
-											//Insert terrible programmer meme here
-											//The new portrait is the one NOT dimmed
-											shouldDim = (m[2] == charID)
-											//????????????????????????????????????????
-											//Maybe dimRightSide=!shouldDim will also work?
-											dimRightSide=(shouldDim ? j==0 : j!=0)
-											break;
-										}
-									}
-							}
+							//shouldDim = numPortraits < 1 ? shouldDimLeft : !shouldDimLeft
+							if (numPortraits < 1) //If we're handling the left portrait right now
+								shouldDim= shouldDimLeft;
 							else
-							{
-								shouldDim = dimRightSide ? j !=0 : j == 0;
-							}
-							//debugger;
+								shouldDim = !shouldDimLeft;
 						}
 						
+						//Search backwards for the previous mask value because the mask command is only applied once in GFL for some reason
 						let shouldMask = false;
 						//It's -2 because the last line is always MSGBOXTRANSITION.
 						for(var lll=structuredLines.length-2; lll>=0; lll--)
@@ -1218,7 +1202,7 @@ I have no idea how it works
 								//shouldMask=false;
 								break;
 							}
-							//Search for single old portrait, if it matches then it shouldn't dim
+							//Search for single old portrait, if it matches then it shouldn't mask
 							else if (m[0]==OPCODES.PORTRAIT)
 							{
 								if (m[2] == charID)
@@ -1235,8 +1219,8 @@ I have no idea how it works
 						//nextPortraitIsMasked = false;
 						numPortraits++;
 					}
-					//I think speaker name gets cleared if it's ()? Not sure
-					//Portrait gets cleared
+					//The () command sets the speaker to "".
+					//In fact () always sets the name, you just don't see it because <Speaker> is used in EN.
 					else
 					{
 						structuredLines.push([OPCODES.NOPORTRAIT,1])
@@ -1276,9 +1260,8 @@ I have no idea how it works
 				else
 				{
 					//If music exists in db then rename it before pushing
-					structuredLines.push([OPCODES.BGM,MUSIC[bgmRes] ? MUSIC[bgmRes] : bgmRes])
+					structuredLines.push([OPCODES.BGM, MUSIC[bgmRes] || bgmRes])
 				}
-				
 			}
 			
 			const tags = ["BIN"]
@@ -1789,24 +1772,46 @@ I have no idea how it works
 								portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
 								//console.log(portraitImg.src);
 								
-								portraitImg.classList.add("storydoll");
-								if (shownPortraits[j][4]==true)
-									portraitImg.classList.add('dim')
-								portraitImg.classList.add(int2strPos[j+1]);
-								portraitImg.classList.add(int2str[shownPortraits.length]);
-								storyBox.appendChild(portraitImg);
-								
+								if (!shownPortraits[j][5])
+								{
+									portraitImg.classList.add("storydoll");
+									if (shownPortraits[j][4]==true)
+										portraitImg.classList.add('dim')
+									portraitImg.classList.add(int2strPos[j+1]);
+									portraitImg.classList.add(int2str[shownPortraits.length]);
+									storyBox.appendChild(portraitImg);
+								}
+								else //Behold, pain
+								{
+									let d = document.createElement('div');
+									d.style='position:absolute;width:100%;top:10%'
+									d.classList.add('maskcontainer');
+									d.classList.add(int2strPos[j+1]);
+									d.classList.add(int2str[shownPortraits.length]);
+									if (shownPortraits[j][4]==true)
+										d.classList.add('dim')
+									let h = "<img src='maskBox.png' style='position:absolute;width:30%'>"
+									//width should be width of maskBox * 0.869209809 because width of this image is 86% of maskBox in terms of pixels
+									h+="<div style='overflow:hidden;position:absolute;width:26.076%;left:3%;padding-top:1%;'>"
+										//Don't forget display:block or the div containing this will be slightly too big. Because CSS is amazing.
+										h+="<img src='maskBox2.png' style='position:relative;z-index:1;width:100%;display:block;'>"
+										//How the fuck is it 270%? Or left -85%? How does this shit make ANY sense?
+										h+="<img src='"+portraitImg.src+"' class='"+(shownPortraits[j][4]?"dim":"")+"' style='position:absolute; min-width:270%; top:0; left:-85%; width:100%'>"
+									h+="</div>"
+									d.innerHTML=h
+									storyBox.appendChild(d);
+								}
 								//If mask (new)
 								//<img src="avgtexture/夜间蒙版.png" class="storydoll first one mask" style="mask-image: url(pic/pic_NPC-Helian.png);">
 								//Mask is a transparent masked blue image, so we overlay on top of the other img
-								if (shownPortraits[j][5]==true)
+								/*if (shownPortraits[j][5]==true)
 								{
 									let m = maskThing.cloneNode(true);
 									m.classList.add(int2strPos[j+1])
 									m.classList.add(int2str[shownPortraits.length]);
 									m.style = "mask-image: url('"+portraitImg.src+"');"+"-webkit-mask-image: url('"+portraitImg.src+"');"
 									storyBox.appendChild(m);
-								}
+								}*/
 							}
 							
 							if (snowEffect && advancedCSS)
@@ -3111,7 +3116,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		<li class="active waves-effect"><a href="#!">Part 4</a></li>
 	</ul>
 	<!--<a onclick="copyLink()" class="waves-effect waves-light btn">Copy chapter link</a>-->
-    <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn disabled">Start interactive interpreter (It's like playing the game!)</a>
+    <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn">Start interactive interpreter (It's like playing the game!)</a>
 	<div id="interactiveInterpreterSection" style="display:none;">
 		<a id='stopButton' class="waves-effect waves-light btn"> Stop the interpreter (You'll have to refresh the site to start it up again, sorry)</a>
 		<p id="curIndexDebug"></p>

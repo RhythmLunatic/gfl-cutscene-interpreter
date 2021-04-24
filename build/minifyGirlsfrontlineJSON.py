@@ -122,7 +122,7 @@ with open('girlsfrontline.json','r') as gfld:
 									for line in costumeStory.readlines():
 										if foundCostume:
 											break
-										cmds = line.replace("：",':').split(':')[0]
+										cmds = line.replace("：",':').replace('；',';').split(':')[0]
 										#print(cmds)
 										for j in range(5):
 											charTagEnd = cmds.find(")");
@@ -255,7 +255,7 @@ portraitDatabase['NPC-Seele']=[
 portraitDatabase['NPC-Dima']=quickGenerateNPC('NPC-Dima',3)
 portraitDatabase['NPC-Light']=quickGenerateNPC('NPC-Light',5)
 #print(quickGenerateNPC('NPC-Light',5))
-#sys.exit(0)
+
 portraitDatabase['NPC-Ambassador']=["NPC-Ambassador.png"]
 portraitDatabase['NPC-Jason']=["NPC-Jason.png","NPC-Jason_1.png"]
 portraitDatabase['NPC-Kyruger']=['pic_NPC-Kyruger.png']
@@ -302,12 +302,24 @@ portraitDatabase['FAL'][2] = "pic_FNFAL_308.png"
 portraitDatabase['FAL'][3] = "pic_FNFAL_308_D.png"
 
 #Yes really
+#...You know, shouldn't this be automated? Just go through all the files and find all the names and do a case insensitive check.
 portraitDatabase['PPSh41']=portraitDatabase['PPsh41']
 portraitDatabase['m1'] = portraitDatabase['M1']
 portraitDatabase['m500'] = portraitDatabase['M500']
+portraitDatabase['m500Mod']=portraitDatabase['M500Mod']
+portraitDatabase['hk23']=portraitDatabase['HK23']
+portraitDatabase['g43']=portraitDatabase['G43']
+portraitDatabase['98k']=portraitDatabase['98K']
+portraitDatabase['StG44']=portraitDatabase['STG44']
+portraitDatabase['pp19']=portraitDatabase["PP19"]
+portraitDatabase['m82']=portraitDatabase['M82']
+
+
 portraitDatabase['SOPII'] = portraitDatabase['M4 SOPMOD II']
 portraitDatabase['SOPII'][2] = portraitDatabase['SOPII'][0]
 portraitDatabase['SOPII'][3] = portraitDatabase['SOPII'][0] #Weird, I guess they originally planned to draw more?
+portraitDatabase['SOPIIDamage'] = ResizingList(['special/M4 SOPMOD IIDamage.png','special/M4 SOPMOD IIDamage2.png','special/M4 SOPMOD IIDamage3.png'])
+
 
 portraitDatabase['M4 SOPMOD IIMod-Noarmor'] = ['pic_M4 SOPMOD IIMod_NoArmor1.png']
 
@@ -341,14 +353,17 @@ portraitDatabase['G11'].quickInsertCostumeAtIdx(6,'1602')
 portraitDatabase['G11'][1] = 'pic_G11.png' 
 portraitDatabase['G11'][2] = 'special/pic_G11_1.png' #Confirmed in second slot
 portraitDatabase['G11'][3] = 'special/pic_G11_2.png' #I checked memoir/103_4.txt and confirmed this is being used in the third slot
-portraitDatabase['G11story']=['special/shadow.png','special/shadow.png']
+
+#Fun fact, this ID is missing from the EN servers: https://youtu.be/di7khdQ3vbE?t=559
+portraitDatabase['G11story']=['special/pic_G11_rugged.png','special/pic_G11_maid.png']
 
 portraitDatabase['UMP9story'] = ResizingList(['special/ump9.png'])
-
 
 portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'
 portraitDatabase['UMP9Mod'][3] = 'special/pic_UMP9Mod_happy.png'
+
+portraitDatabase['UMP45_Young'] = ResizingList(['special/UMP45-Young.png'])
 
 #Because it normally wouldn't overwrite idx 1
 portraitDatabase['Henrietta'].quickInsertSpecial(1)
@@ -364,8 +379,7 @@ portraitDatabase['DJMAXPREIYA']=['equip/fairy/DJMAXPREIYA_1.png']
 portraitDatabase['DJMAXSEHRA']=['equip/fairy/DJMAXSEHRA_1.png']
 portraitDatabase['FairyWarrior']=['equip/fairy/fighting_1.png']
 
-#TODO: This shouldn't be using extend
-portraitDatabase['AR15'].extend(["special/AR15_T.png"])
+portraitDatabase['AR15'][2] = "special/AR15_T.png"
 portraitDatabase["M4A1"][2] = "special/M4A1_SAD.png"
 portraitDatabase["M4A1"][3] = "special/M4A1_T.png"
 

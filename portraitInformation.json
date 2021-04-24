@@ -1366,7 +1366,11 @@
     ],
     "RO635Mod": [
         "pic_RO635Mod.png",
-        "pic_RO635Mod_D.png"
+        "pic_RO635Mod_D.png",
+        "special/pic_RO635Mod_2.png",
+        "special/pic_RO635Mod_3.png",
+        "special/pic_RO635Mod_4.png",
+        "special/pic_RO635Mod_5.png"
     ],
     "RPD": [
         "pic_RPD.png",
@@ -1476,10 +1480,9 @@
     "AR15": [
         "pic_AR15.png",
         "pic_AR15_D.png",
-        null,
+        "special/AR15_T.png",
         "pic_AR15_4508.png",
-        "pic_AR15_4508_D.png",
-        "special/AR15_T.png"
+        "pic_AR15_4508_D.png"
     ],
     "AR15Mod": [
         "pic_AR15Mod.png",
@@ -2299,11 +2302,44 @@
         "pic_M500.png",
         "pic_M500_D.png"
     ],
+    "m500Mod": [
+        "pic_M500Mod.png",
+        "pic_M500Mod_D.png"
+    ],
+    "hk23": [
+        "pic_HK23.png",
+        "pic_HK23_D.png"
+    ],
+    "g43": [
+        "pic_G43.png",
+        "pic_G43_D.png"
+    ],
+    "98k": [
+        "pic_98K.png",
+        "pic_98K_D.png"
+    ],
+    "StG44": [
+        "pic_STG44.png",
+        "pic_STG44_D.png"
+    ],
+    "pp19": [
+        "pic_PP19.png",
+        "pic_PP19_D.png"
+    ],
+    "m82": [
+        "pic_M82.png",
+        "pic_M82_D.png"
+    ],
     "SOPII": [
         "pic_M4 SOPMOD II.png",
         "pic_M4 SOPMOD II_D.png",
         "pic_M4 SOPMOD II.png",
         "pic_M4 SOPMOD II.png"
+    ],
+    "SOPIIDamage": [
+        "special/M4 SOPMOD IIDamage.png",
+        "special/M4 SOPMOD IIDamage2.png",
+        "special/M4 SOPMOD IIDamage3.png"
     ],
     "M4 SOPMOD IIMod-Noarmor": [
         "pic_M4 SOPMOD IIMod_NoArmor1.png"
@@ -2318,11 +2354,14 @@
         "pic_FAMAS_2604.png"
     ],
     "G11story": [
-        "special/shadow.png",
-        "special/shadow.png"
+        "special/pic_G11_rugged.png",
+        "special/pic_G11_maid.png"
     ],
     "UMP9story": [
         "special/ump9.png"
+    ],
+    "UMP45_Young": [
+        "special/UMP45-Young.png"
     ],
     "DJMAXSUEE": [
         "equip/fairy/DJMAXSUEE_1.png"

@@ -1,3 +1,14 @@
+# Stage filename information
+
+filenames are in the syntax of EPISODE-CHAPTER-PART(MODIFIER).txt
+
+Stage 1-1: 1-1-1.txt, 1-1-2.txt
+
+Stage 1-1 Emergency: 1-1-1E.txt, 1-1-2E.txt
+
+Stage 1-1 Night: 1-1-1N.txt, 1-1-2N.txt
+
+
 # opcode dictionary
 Seriously, who designed this thing? What is this ridiculous mix of HTML tags and control characters?
 
@@ -22,16 +33,22 @@ Examples:
 ### ;
 Determines when to dim a portrait. If it's before the <Speaker> tag it dims the left, if it's after it dims the right.
 
+The full-width `；` is also valid, for whatever reason.
+
 ### 通讯框
 
 Ex. `<通讯框>`.
 
 "Communication box". Display previous character portrait inside a communication box.
 
-### <Grey>
+### Grey
 Unknown. Probably colors the previous portrait grey.
 
 Used in the valhalla collab.
+
+### Shake
+
+Portrait shakes left and right a little upon appearance. Used in HK416 MOD story (memoir/65_1.txt)
 
 ### Position
 
@@ -89,10 +106,12 @@ Black dot screen transition. X=1 for in, 2 for out.
 ### <黑屏X>
 Black screen fade in and out. 1 = out, 2 = in (Yes, it's reversed from the above one for some reason)
 
-Accepts a number parameter, which might be speed. Otherwise only the beginning tag is present.
+Accepts two parameters, which might be speed and ???. Otherwise only the beginning tag is present.
 
 Example in Honkai Impact 2nd (-15-3-2First.txt): `芽衣()<Speaker>芽衣</Speaker>||<黑屏1>5</黑屏1>`
-		
+
+Example in ISOMER: `Nyto(0)<Speaker></Speaker>||<黑屏1>0.5,0.5</黑屏1>`
+
 ### <震屏> 
 Screen shake effect
 
@@ -135,16 +154,34 @@ Add fire animation to cutscene. Takes a float as an argument, probably related t
 
 Example: `<火花>1.7</火花>`
 
+### 关闭火花
+Disable fire animation.
+
 ### 刮花
 A different fire animation. It appears to be the textures in `/atlasclips/_nospritepacker/avg/`, just colored orange.
 
-### <火焰销毁>
-Stop all cutscene animations, probably
-		
+### 闪屏
+Unknown. Translates to 'splash screen'.
+
+Uses `duration` command for some reason.
+
+example: `<闪屏><duration>5</duration></闪屏>`
+
+### 火焰销毁
+Stop all cutscene animations, probably.
+
+An end tag is not required.
+
+### 分支
+Branch destination. See `<c>` for more info.
+
+### CGDelay
+Unknown. Appears to be text related? Might delay drawing text?
 
 ## : 
-End of opcodes, text goes after this (Other than +)
+End of opcodes, text and text commands go after this.
 
+Full width `:` is also valid.
 
 ## Text related
 
@@ -168,6 +205,22 @@ Known sizes:
 * 55 is slightly larger.
 * 60 is very large.
 
+### c
+Choice.
+Looks like choice will be up until the next command.
+
+Example: `... <c>I don't have a clue. <c>I'm not telling you. <c>She never would have told me.` creates choices `["I don't have a clue.", "I'm not telling you.", "She never would have told me."]`
+
+The result is stored as an int and the game searches until it finds the corresponding branch (1-indexed) marked with `分支`.
+
+Full example:
+```
+Nyto(0)<Speaker>Commander</Speaker>||:... <c>I don't have a clue. <c>I'm not telling you. <c>She never would have told me.
+Nyto(0)<Speaker>Nyto</Speaker>||<分支>1</分支>:Indeed, we have no evidence to either support or refute your claim.
+Nyto(0)<Speaker>Nyto</Speaker>||<分支>2</分支>:We know. It is an answer we expected.
+Nyto(0)<Speaker>Nyto</Speaker>||<分支>3</分支>:Then I can assume that she does not trust you all that much.
+```
+
 ### b
 
 Take a wild guess.
@@ -179,17 +232,21 @@ If a tag is missing the end, the entire tag gets ignored.
 
 One of the MOD stores contains three portrait commands in one line. The game doesn't support this, so the second portrait is replaced with the last used command.
 
+`98k(0);98k(0)<Speaker>Kar98k</Speaker>;STG44Mod(0)<通讯框>||:Nein, we still have a chance.` 10-3 Night has this typo.
+
 There is a typo in the valhalla collab, -32-1-1.txt: `()<Speaker>Dana</Speaker>)||:Most of us are gone, along with our civilization.`. The `)` probably gets ignored.
 
 Portraits don't match the internal names used for adjutant dialogue, for some reason. Also some portraits that should be types are their own name.
 
 M4 SOPMOD II is in the database twice. In earlier files she's indexed as SOPII.
 
+The ID 'G11story' is not indexed in EN for some reason. It should be G11 dressed in green and maid costume.
+
 # Unknown usages
 
 ## Portrait type specificed without a portrait
 
-It's possible this defaults to the gray shadow portrait. Which is funny, because it's already indexed as "G11story".
+It's possible this defaults to the gray shadow portrait, which is used when an invalid ID is specificed.
 ```
 (0)<Speaker>Super-Shorty</Speaker>||:Batteries...
 (0)<Speaker>Dana</Speaker>||:Huh?

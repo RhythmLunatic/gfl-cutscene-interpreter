@@ -85,13 +85,38 @@ def insertIntoListAt(l,idx,element):
 	l[idx]=element
 	return l
 
+
+files = os.listdir('../avgtxt')
+
 def appendFromij(i,j,name,letter,isNight=False):
-	return {
+	ep = {
+		#ex. Normal 1-6 -> [1-6-1.txt, 1-6-2.txt]
 		'name':  name+' '+str(i)+'-'+str(j),
 		'parts': [str(i)+'-'+str(j)+'-1'+letter+'.txt',
-				str(i)+'-'+str(j)+'-2'+letter+'.txt'],
-		'night':[isNight,isNight]
+				str(i)+'-'+str(j)+'-2'+letter+'.txt']
 	}
+	#Workaround for episode 13... I don't really feel like adding an altMode=true
+	if i == 13 and letter == '':
+		ep['parts'] = [
+			str(i)+'-'+str(j)+'-1First'+letter+'.txt',
+			str(i)+'-'+str(j)+'-2End'+letter+'.txt'
+		]
+	
+	#Account for mid-stage dialogue. Order doesn't really matter anyways.
+	for p in range(3,6):
+		matchString = str(i)+'-'+str(j)+'-'+str(p)+letter+'-'
+		match = [file for file in files if file.startswith(matchString)]
+		if match:
+			printOK("Picked up mid-stage parts "+str(match)+' matched to '+matchString)
+			for e in match:
+				ep['parts'].insert(1,e)
+				if 'part_names' not in ep:
+					ep['part_names'] = [None]*len(ep['parts'])
+				ep['part_names'].insert(1,'Mid-stage dialogue')
+	
+	if isNight:
+		ep['night']=[isNight]*len(ep['parts'])
+	return ep
 
 def getAllByPrefix(files,prefix,episodeName):
 	episodes = []
@@ -131,8 +156,6 @@ def getAllByPrefix2(files,prefix,episodeName = None):
 	return chapters
 	
 
-files = os.listdir('../avgtxt')
-
 #with open('mission_group_info.json','r') as f:
 #	MissionGroupInfo=JSON.loads(f.read())
 #with open('mission.json','r') as f:
@@ -148,12 +171,14 @@ js = {'main':[],'event':[],'side':[],'crossover':[]}
 chapterZero = []
 for j in range(1,5):
 	chapterZero.append(appendFromij(0,j,"Normal",''))
-chapterZero[2]['parts'].append('0-2-3Round2.txt')
+#print(chapterZero)
+chapterZero[1]['parts'].append('0-2-3Round2.txt')
+chapterZero[1]['part_names']=[None,None,"Unused part? (Not viewable in index, does not seem to match story)"]
 #print(chapterZero)
 js['main'].append({'name':"Chapter 0",'episodes':chapterZero});
 
 #Normal chapters
-for i in range(1,13):
+for i in range(1,14):
 	curChapter = []
 	for j in range(1,7):
 		curChapter.append(appendFromij(i,j,"Normal",''))
@@ -503,7 +528,7 @@ js['crossover'].append({
 })
 
 js['crossover'].append({
-	"name": "DJMax Respect",
+	"name": "DJMax Respect: Glory Day",
 	"episodes": [
 		{
 			"name": "Stage 1-1: Stalker",
@@ -552,27 +577,52 @@ js['crossover'].append({
 			]
 		},
 		{
-			"name":"Bonus Cutscenes During Stages",
-			"parts": [
+			'name':'Stage 1-2 Minigame',
+			'parts': [
 				"-19-2-4-Point6737.txt",
 				"-19-2-4-Point6738.txt",
+				"battleavg/-19-2-EGG.txt"
+			]
+		},
+		{
+			'name':"Stage 1-3 Minigame",
+			"parts": [
 				"-19-3-4-Point6750.txt",
 				"-19-3-4-Point7023.txt",
+				"battleavg/-19-3-EGG.txt"
+			]
+		},
+		{
+			'name':"Stage 2-1 Minigame",
+			"parts":[
 				"-20-1-4-Point6780.txt",
 				"-20-1-4-Point7026.txt",
+				"battleavg/-20-1-EGG.txt"
+			]
+		},
+		{
+			'name':"Stage 2-2 Minigame",
+			"parts":[
 				"-20-2-4-Point6819.txt",
 				"-20-2-4-Point7029.txt",
+				"battleavg/-20-2-EGG.txt"
+			]
+		},
+		{
+			"name":"Stage 2-3 Minigame",
+			"parts": [
 				"-20-3-4-Point6845.txt",
-				"-20-3-4-Point6846.txt"
+				"-20-3-4-Point6846.txt",
+				"battleavg/-20-3-EGG.txt"
 			]
 		}
 	]
 })
 #Nothing from 21 to 23, 24-28 alrady indexed
 
-js['event'].append({'name':"CH. ??: ISOMER (Unsorted)",'episodes':getAllByPrefix(files,'-31','???')})
+js['event'].append({'name':"CH. 11.5: ISOMER (Unsorted)",'episodes':getAllByPrefix(files,'-31','???')})
 #-32 is valhalla
-js['event'].append({'name':"CH. ??: Shattered Connexion (WIP)",'episodes':getAllByPrefix2(files,'-33','???')})
+js['event'].append({'name':"CH. 11.75: Shattered Connexion (WIP)",'episodes':getAllByPrefix2(files,'-33','???')})
 js['side'].append({'name':"Halloween 2019",'episodes':getAllByPrefix(files,'-34','Episode')})
 js['side'].append({
 	"name": "Christmas 2019",
@@ -610,7 +660,7 @@ js['side'].append({
 #js['side'].append({'name':"Christmas 2019",'episodes':getAllByPrefix(files,'-35','Episode')})
 #js['event'].append({'name':"Polarized Light (Untranslated)",'episodes':getAllByPrefix(files,'-36','???')})
 js['event'].append({
-	"name": "Polarized Light (Untranslated)",
+	"name": "CH 12.5: Polarized Light (Untranslated)",
 	"episodes": [
 		{
 			"name": "Chapter I",
@@ -772,7 +822,7 @@ js['side'].append({
 #-38 is gunslinger girl
 #-39 is just one dialogue box
 js['side'].append({'name':"Summer 2020: Far Side of the Sea",'episodes':getAllByPrefix(files,'-40','Episode')})
-js['event'].append({'name':"Dual Randomness (Untranslated)",'episodes':getAllByPrefix(files,'-41','???')})
+js['event'].append({'name':"CH. 13.5: Dual Randomness (Untranslated)",'episodes':getAllByPrefix(files,'-41','???')})
 js['side'].append({'name':"Halloween 2020? (Untranslated)",'episodes':getAllByPrefix(files,'-42','???')})
 js['crossover'].append({
 	"name": "The Division",
@@ -896,7 +946,11 @@ js['crossover'].append({
 	]
 })
 
-js['event'].append({'name':"Mirror Stage (Untranslated) (Good Luck)",'episodes':getAllByPrefix2(files,'-44')})
+js['event'].append({
+	'name':"CH. 13.75: Mirror Stage (Untranslated) (Good Luck)",
+	'shortName':"CH. 13.75: Mirror Stage",
+	'episodes':getAllByPrefix2(files,'-44')
+})
 
 fetter = {'name':"Bookshelf of Memories",'episodes':[]}
 with open('fetter.json','r') as f:

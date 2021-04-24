@@ -418,33 +418,26 @@
 						"parts": [
 							"0-1-1.txt",
 							"0-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
 						"name": "Normal 0-2",
 						"parts": [
 							"0-2-1.txt",
-							"0-2-2.txt"
+							"0-2-2.txt",
+							"0-2-3Round2.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							null,
+							"Unused part? (Not viewable in index, does not seem to match story)"
 						]
 					},
 					{
 						"name": "Normal 0-3",
 						"parts": [
 							"0-3-1.txt",
-							"0-3-2.txt",
-							"0-2-3Round2.txt"
-						],
-						"night": [
-							false,
-							false
+							"0-3-2.txt"
 						]
 					},
 					{
@@ -452,10 +445,6 @@
 						"parts": [
 							"0-4-1.txt",
 							"0-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					}
 				]
@@ -468,10 +457,6 @@
 						"parts": [
 							"1-1-1.txt",
 							"1-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -479,10 +464,6 @@
 						"parts": [
 							"1-2-1.txt",
 							"1-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -490,10 +471,6 @@
 						"parts": [
 							"1-3-1.txt",
 							"1-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -501,10 +478,6 @@
 						"parts": [
 							"1-4-1.txt",
 							"1-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -512,10 +485,6 @@
 						"parts": [
 							"1-5-1.txt",
 							"1-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -523,10 +492,6 @@
 						"parts": [
 							"1-6-1.txt",
 							"1-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -534,10 +499,6 @@
 						"parts": [
 							"1-1-1E.txt",
 							"1-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -545,10 +506,6 @@
 						"parts": [
 							"1-2-1E.txt",
 							"1-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -556,10 +513,6 @@
 						"parts": [
 							"1-3-1E.txt",
 							"1-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -567,10 +520,6 @@
 						"parts": [
 							"1-4-1E.txt",
 							"1-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -627,10 +576,6 @@
 						"parts": [
 							"2-1-1.txt",
 							"2-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -638,10 +583,6 @@
 						"parts": [
 							"2-2-1.txt",
 							"2-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -649,10 +590,6 @@
 						"parts": [
 							"2-3-1.txt",
 							"2-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -660,10 +597,6 @@
 						"parts": [
 							"2-4-1.txt",
 							"2-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -671,10 +604,6 @@
 						"parts": [
 							"2-5-1.txt",
 							"2-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -682,10 +611,6 @@
 						"parts": [
 							"2-6-1.txt",
 							"2-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -693,10 +618,6 @@
 						"parts": [
 							"2-1-1E.txt",
 							"2-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -704,10 +625,6 @@
 						"parts": [
 							"2-2-1E.txt",
 							"2-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -715,10 +632,6 @@
 						"parts": [
 							"2-3-1E.txt",
 							"2-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -726,10 +639,6 @@
 						"parts": [
 							"2-4-1E.txt",
 							"2-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -786,10 +695,6 @@
 						"parts": [
 							"3-1-1.txt",
 							"3-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -797,10 +702,6 @@
 						"parts": [
 							"3-2-1.txt",
 							"3-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -808,10 +709,6 @@
 						"parts": [
 							"3-3-1.txt",
 							"3-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -819,10 +716,6 @@
 						"parts": [
 							"3-4-1.txt",
 							"3-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -830,10 +723,6 @@
 						"parts": [
 							"3-5-1.txt",
 							"3-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -841,10 +730,6 @@
 						"parts": [
 							"3-6-1.txt",
 							"3-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -852,10 +737,6 @@
 						"parts": [
 							"3-1-1E.txt",
 							"3-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -863,10 +744,6 @@
 						"parts": [
 							"3-2-1E.txt",
 							"3-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -874,10 +751,6 @@
 						"parts": [
 							"3-3-1E.txt",
 							"3-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -885,10 +758,6 @@
 						"parts": [
 							"3-4-1E.txt",
 							"3-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -945,10 +814,6 @@
 						"parts": [
 							"4-1-1.txt",
 							"4-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -956,10 +821,6 @@
 						"parts": [
 							"4-2-1.txt",
 							"4-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -967,10 +828,6 @@
 						"parts": [
 							"4-3-1.txt",
 							"4-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -978,10 +835,6 @@
 						"parts": [
 							"4-4-1.txt",
 							"4-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -989,10 +842,6 @@
 						"parts": [
 							"4-5-1.txt",
 							"4-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1000,10 +849,6 @@
 						"parts": [
 							"4-6-1.txt",
 							"4-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1011,10 +856,6 @@
 						"parts": [
 							"4-1-1E.txt",
 							"4-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1022,10 +863,6 @@
 						"parts": [
 							"4-2-1E.txt",
 							"4-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1033,10 +870,6 @@
 						"parts": [
 							"4-3-1E.txt",
 							"4-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1044,10 +877,6 @@
 						"parts": [
 							"4-4-1E.txt",
 							"4-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1104,10 +933,6 @@
 						"parts": [
 							"5-1-1.txt",
 							"5-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1115,10 +940,6 @@
 						"parts": [
 							"5-2-1.txt",
 							"5-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1126,10 +947,6 @@
 						"parts": [
 							"5-3-1.txt",
 							"5-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1137,10 +954,6 @@
 						"parts": [
 							"5-4-1.txt",
 							"5-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1148,10 +961,6 @@
 						"parts": [
 							"5-5-1.txt",
 							"5-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1159,10 +968,6 @@
 						"parts": [
 							"5-6-1.txt",
 							"5-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1170,10 +975,6 @@
 						"parts": [
 							"5-1-1E.txt",
 							"5-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1181,10 +982,6 @@
 						"parts": [
 							"5-2-1E.txt",
 							"5-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1192,10 +989,6 @@
 						"parts": [
 							"5-3-1E.txt",
 							"5-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1203,10 +996,6 @@
 						"parts": [
 							"5-4-1E.txt",
 							"5-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1263,10 +1052,6 @@
 						"parts": [
 							"6-1-1.txt",
 							"6-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1274,10 +1059,6 @@
 						"parts": [
 							"6-2-1.txt",
 							"6-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1285,10 +1066,6 @@
 						"parts": [
 							"6-3-1.txt",
 							"6-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1296,10 +1073,6 @@
 						"parts": [
 							"6-4-1.txt",
 							"6-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1307,10 +1080,6 @@
 						"parts": [
 							"6-5-1.txt",
 							"6-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1318,10 +1087,6 @@
 						"parts": [
 							"6-6-1.txt",
 							"6-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1329,10 +1094,6 @@
 						"parts": [
 							"6-1-1E.txt",
 							"6-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1340,10 +1101,6 @@
 						"parts": [
 							"6-2-1E.txt",
 							"6-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1351,10 +1108,6 @@
 						"parts": [
 							"6-3-1E.txt",
 							"6-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1362,10 +1115,6 @@
 						"parts": [
 							"6-4-1E.txt",
 							"6-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1422,10 +1171,6 @@
 						"parts": [
 							"7-1-1.txt",
 							"7-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1433,10 +1178,6 @@
 						"parts": [
 							"7-2-1.txt",
 							"7-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1444,10 +1185,6 @@
 						"parts": [
 							"7-3-1.txt",
 							"7-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1455,10 +1192,6 @@
 						"parts": [
 							"7-4-1.txt",
 							"7-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1466,10 +1199,6 @@
 						"parts": [
 							"7-5-1.txt",
 							"7-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1477,10 +1206,6 @@
 						"parts": [
 							"7-6-1.txt",
 							"7-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1488,10 +1213,6 @@
 						"parts": [
 							"7-1-1E.txt",
 							"7-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1499,10 +1220,6 @@
 						"parts": [
 							"7-2-1E.txt",
 							"7-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1510,10 +1227,6 @@
 						"parts": [
 							"7-3-1E.txt",
 							"7-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1521,10 +1234,6 @@
 						"parts": [
 							"7-4-1E.txt",
 							"7-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1581,10 +1290,6 @@
 						"parts": [
 							"8-1-1.txt",
 							"8-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1592,10 +1297,6 @@
 						"parts": [
 							"8-2-1.txt",
 							"8-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1603,10 +1304,6 @@
 						"parts": [
 							"8-3-1.txt",
 							"8-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1614,10 +1311,6 @@
 						"parts": [
 							"8-4-1.txt",
 							"8-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1625,10 +1318,6 @@
 						"parts": [
 							"8-5-1.txt",
 							"8-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1636,10 +1325,6 @@
 						"parts": [
 							"8-6-1.txt",
 							"8-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1647,10 +1332,6 @@
 						"parts": [
 							"8-1-1E.txt",
 							"8-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1658,10 +1339,6 @@
 						"parts": [
 							"8-2-1E.txt",
 							"8-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1669,10 +1346,6 @@
 						"parts": [
 							"8-3-1E.txt",
 							"8-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1680,10 +1353,6 @@
 						"parts": [
 							"8-4-1E.txt",
 							"8-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1701,9 +1370,17 @@
 						"name": "Midnight 8-2",
 						"parts": [
 							"8-2-1N.txt",
+							"8-2-4N-Point7123.txt",
 							"8-2-2N.txt"
 						],
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
+						],
 						"night": [
+							true,
 							true,
 							true
 						]
@@ -1740,10 +1417,6 @@
 						"parts": [
 							"9-1-1.txt",
 							"9-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1751,10 +1424,6 @@
 						"parts": [
 							"9-2-1.txt",
 							"9-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1762,10 +1431,6 @@
 						"parts": [
 							"9-3-1.txt",
 							"9-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1773,10 +1438,6 @@
 						"parts": [
 							"9-4-1.txt",
 							"9-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1784,10 +1445,6 @@
 						"parts": [
 							"9-5-1.txt",
 							"9-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1795,10 +1452,6 @@
 						"parts": [
 							"9-6-1.txt",
 							"9-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1806,10 +1459,6 @@
 						"parts": [
 							"9-1-1E.txt",
 							"9-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1817,10 +1466,6 @@
 						"parts": [
 							"9-2-1E.txt",
 							"9-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1828,10 +1473,6 @@
 						"parts": [
 							"9-3-1E.txt",
 							"9-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1839,10 +1480,6 @@
 						"parts": [
 							"9-4-1E.txt",
 							"9-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1860,9 +1497,17 @@
 						"name": "Midnight 9-2",
 						"parts": [
 							"9-2-1N.txt",
+							"9-2-4N-Point12571.txt",
 							"9-2-2N.txt"
 						],
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
+						],
 						"night": [
+							true,
 							true,
 							true
 						]
@@ -1899,10 +1544,6 @@
 						"parts": [
 							"10-1-1.txt",
 							"10-1-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1910,10 +1551,6 @@
 						"parts": [
 							"10-2-1.txt",
 							"10-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1921,21 +1558,20 @@
 						"parts": [
 							"10-3-1.txt",
 							"10-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
 						"name": "Normal 10-4",
 						"parts": [
 							"10-4-1.txt",
+							"10-4-4-Point5302.txt",
 							"10-4-2.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
@@ -1943,10 +1579,6 @@
 						"parts": [
 							"10-5-1.txt",
 							"10-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1954,10 +1586,6 @@
 						"parts": [
 							"10-6-1.txt",
 							"10-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1965,21 +1593,20 @@
 						"parts": [
 							"10-1-1E.txt",
 							"10-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
 						"name": "Emergency 10-2",
 						"parts": [
 							"10-2-1E.txt",
+							"10-2-4E-Point5417.txt",
 							"10-2-2E.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
@@ -1987,10 +1614,6 @@
 						"parts": [
 							"10-3-1E.txt",
 							"10-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -1998,10 +1621,6 @@
 						"parts": [
 							"10-4-1E.txt",
 							"10-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2019,9 +1638,17 @@
 						"name": "Midnight 10-2",
 						"parts": [
 							"10-2-1N.txt",
+							"10-2-4N-Point80527.txt",
 							"10-2-2N.txt"
 						],
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
+						],
 						"night": [
+							true,
 							true,
 							true
 						]
@@ -2041,9 +1668,17 @@
 						"name": "Midnight 10-4",
 						"parts": [
 							"10-4-1N.txt",
+							"10-4-4N-Point80626.txt",
 							"10-4-2N.txt"
 						],
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
+						],
 						"night": [
+							true,
 							true,
 							true
 						]
@@ -2057,11 +1692,14 @@
 						"name": "Normal 11-1",
 						"parts": [
 							"11-1-1.txt",
+							"11-1-4-Point9245.txt",
 							"11-1-2.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
@@ -2069,10 +1707,6 @@
 						"parts": [
 							"11-2-1.txt",
 							"11-2-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2080,10 +1714,6 @@
 						"parts": [
 							"11-3-1.txt",
 							"11-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2091,21 +1721,20 @@
 						"parts": [
 							"11-4-1.txt",
 							"11-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
 						"name": "Normal 11-5",
 						"parts": [
 							"11-5-1.txt",
+							"11-5-4-Point9015.txt",
 							"11-5-2.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
@@ -2113,21 +1742,20 @@
 						"parts": [
 							"11-6-1.txt",
 							"11-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
 						"name": "Emergency 11-1",
 						"parts": [
 							"11-1-1E.txt",
+							"11-1-4E-Point9102.txt",
 							"11-1-2E.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
@@ -2135,10 +1763,6 @@
 						"parts": [
 							"11-2-1E.txt",
 							"11-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2146,21 +1770,20 @@
 						"parts": [
 							"11-3-1E.txt",
 							"11-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
 						"name": "Emergency 11-4",
 						"parts": [
 							"11-4-1E.txt",
+							"11-4-4E-Point9292.txt",
 							"11-4-2E.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					}
 				]
@@ -2172,22 +1795,30 @@
 						"name": "Normal 12-1",
 						"parts": [
 							"12-1-1.txt",
+							"12-1-4-Point90005.txt",
+							"12-1-4-Point90009.txt",
 							"12-1-2.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
 						"name": "Normal 12-2",
 						"parts": [
 							"12-2-1.txt",
+							"12-2-4-Point90087.txt",
 							"12-2-2.txt"
 						],
-						"night": [
-							false,
-							false
+						"part_names": [
+							null,
+							"Mid-stage dialogue",
+							null,
+							null
 						]
 					},
 					{
@@ -2195,10 +1826,6 @@
 						"parts": [
 							"12-3-1.txt",
 							"12-3-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2206,10 +1833,6 @@
 						"parts": [
 							"12-4-1.txt",
 							"12-4-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2217,10 +1840,6 @@
 						"parts": [
 							"12-5-1.txt",
 							"12-5-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2228,10 +1847,6 @@
 						"parts": [
 							"12-6-1.txt",
 							"12-6-2.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2239,10 +1854,6 @@
 						"parts": [
 							"12-1-1E.txt",
 							"12-1-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2250,10 +1861,6 @@
 						"parts": [
 							"12-2-1E.txt",
 							"12-2-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2261,10 +1868,6 @@
 						"parts": [
 							"12-3-1E.txt",
 							"12-3-2E.txt"
-						],
-						"night": [
-							false,
-							false
 						]
 					},
 					{
@@ -2272,10 +1875,81 @@
 						"parts": [
 							"12-4-1E.txt",
 							"12-4-2E.txt"
-						],
-						"night": [
-							false,
-							false
+						]
+					}
+				]
+			},
+			{
+				"name": "Chapter 13",
+				"episodes": [
+					{
+						"name": "Normal 13-1",
+						"parts": [
+							"13-1-1First.txt",
+							"13-1-2End.txt"
+						]
+					},
+					{
+						"name": "Normal 13-2",
+						"parts": [
+							"13-2-1First.txt",
+							"13-2-2End.txt"
+						]
+					},
+					{
+						"name": "Normal 13-3",
+						"parts": [
+							"13-3-1First.txt",
+							"13-3-2End.txt"
+						]
+					},
+					{
+						"name": "Normal 13-4",
+						"parts": [
+							"13-4-1First.txt",
+							"13-4-2End.txt"
+						]
+					},
+					{
+						"name": "Normal 13-5",
+						"parts": [
+							"13-5-1First.txt",
+							"13-5-2End.txt"
+						]
+					},
+					{
+						"name": "Normal 13-6",
+						"parts": [
+							"13-6-1First.txt",
+							"13-6-2End.txt"
+						]
+					},
+					{
+						"name": "Emergency 13-1",
+						"parts": [
+							"13-1-1E.txt",
+							"13-1-2E.txt"
+						]
+					},
+					{
+						"name": "Emergency 13-2",
+						"parts": [
+							"13-2-1E.txt",
+							"13-2-2E.txt"
+						]
+					},
+					{
+						"name": "Emergency 13-3",
+						"parts": [
+							"13-3-1E.txt",
+							"13-3-2E.txt"
+						]
+					},
+					{
+						"name": "Emergency 13-4",
+						"parts": [
+							"13-4-1E.txt",
+							"13-4-2E.txt"
 						]
 					}
 				]
@@ -3326,7 +3000,7 @@
 				]
 			},
 			{
-				"name": "CH. ??: ISOMER (Unsorted)",
+				"name": "CH. 11.5: ISOMER (Unsorted)",
 				"episodes": [
 					{
 						"name": "???",
@@ -3406,7 +3080,7 @@
 				]
 			},
 			{
-				"name": "CH. ??: Shattered Connexion (WIP)",
+				"name": "CH. 11.75: Shattered Connexion (WIP)",
 				"episodes": [
 					{
 						"name": "1",
@@ -3892,7 +3566,7 @@
 				]
 			},
 			{
-				"name": "Polarized Light (Untranslated)",
+				"name": "CH 12.5: Polarized Light (Untranslated)",
 				"episodes": [
 					{
 						"name": "Chapter I",
@@ -3978,7 +3652,7 @@
 				]
 			},
 			{
-				"name": "Dual Randomness (Untranslated)",
+				"name": "CH. 13.5: Dual Randomness (Untranslated)",
 				"episodes": [
 					{
 						"name": "??? I",
@@ -4092,7 +3766,8 @@
 				]
 			},
 			{
-				"name": "Mirror Stage (Untranslated) (Good Luck)",
+				"name": "CH. 13.75: Mirror Stage (Untranslated) (Good Luck)",
+				"shortName": "CH. 13.75: Mirror Stage",
 				"episodes": [
 					{
 						"name": "A0",
@@ -6479,7 +6154,7 @@
 				]
 			},
 			{
-				"name": "DJMax Respect",
+				"name": "DJMax Respect: Glory Day",
 				"episodes": [
 					{
 						"name": "Stage 1-1: Stalker",
@@ -6525,18 +6200,43 @@
 						]
 					},
 					{
-						"name": "Bonus Cutscenes During Stages",
+						"name": "Stage 1-2 Minigame",
 						"parts": [
 							"-19-2-4-Point6737.txt",
 							"-19-2-4-Point6738.txt",
+							"battleavg/-19-2-EGG.txt"
+						]
+					},
+					{
+						"name": "Stage 1-3 Minigame",
+						"parts": [
 							"-19-3-4-Point6750.txt",
 							"-19-3-4-Point7023.txt",
+							"battleavg/-19-3-EGG.txt"
+						]
+					},
+					{
+						"name": "Stage 2-1 Minigame",
+						"parts": [
 							"-20-1-4-Point6780.txt",
 							"-20-1-4-Point7026.txt",
+							"battleavg/-20-1-EGG.txt"
+						]
+					},
+					{
+						"name": "Stage 2-2 Minigame",
+						"parts": [
 							"-20-2-4-Point6819.txt",
 							"-20-2-4-Point7029.txt",
+							"battleavg/-20-2-EGG.txt"
+						]
+					},
+					{
+						"name": "Stage 2-3 Minigame",
+						"parts": [
 							"-20-3-4-Point6845.txt",
-							"-20-3-4-Point6846.txt"
+							"-20-3-4-Point6846.txt",
+							"battleavg/-20-3-EGG.txt"
 						]
 					}
 				]

@@ -1,0 +1,14 @@
+()||<BIN>2</BIN><BGM>BGM_Danger</BGM>:[The battle against Theresa is in progress.]
+Theresa(0)<Speaker>Theresa</Speaker><通讯框>||:What’s the matter, Kiana! Giving up already!?
+琪亚娜()<Speaker>Kiana</Speaker>||:It is really weird after all… Headmistress Theresa!+Why do you keep standing there instead of going in?
+Theresa(0)<Speaker>Theresa</Speaker>||:Because the entrance to this relic isn’t quite like the ones on our world, I’m still studying it!
+琪亚娜()<Speaker>Kiana</Speaker>||:I’m telling you! The Slain are everywhere! You should focus on that first!
+Theresa(0)<Speaker>Theresa</Speaker>||:Actually… I’m kind of curious.+Logically speaking, there shouldn't be any Breakdown Energy in this world.+So where did these Slain come from?
+琪亚娜()<Speaker>Kiana</Speaker>||:Huh? Headmistress, what do you mean...
+Theresa(0)<Speaker>Theresa</Speaker>||:Don’t you think this relic is very suspicious too?
+琪亚娜()<Speaker>Kiana</Speaker>||:Oh… is that so...
+Theresa(0)<Speaker>Theresa</Speaker>||:I’m thinking for the sake of this world too!
+琪亚娜()<Speaker>Kiana</Speaker>||:Urgh… It kind of makes sense...
+PP90(0)<Speaker>PP90</Speaker><通讯框>||:Kiana-san! How did the two of you suddenly end up understanding each other?+No, that’s just letting the other side run circles around you!
+琪亚娜()<Speaker>Kiana</Speaker>||:Urk! That’s right!+In any case, Headmistress, what you’re doing is forbidden, so please give up on it!
+Theresa(0)<Speaker>Theresa</Speaker><通讯框>||<黑屏1>:Aww, I almost managed to bluff my way through!+It can’t be helped then. I'll allow you to take a break before coming back to face me again!

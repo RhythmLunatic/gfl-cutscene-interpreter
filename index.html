@@ -367,6 +367,7 @@ tr:nth-child(even) {
 .storyText {
 	margin-top: 0.5ex;
 	margin-bottom: 0.5ex;
+	overflow-wrap: break-word;
 }
 
 .storyText.speakerName {
@@ -1738,6 +1739,8 @@ I have no idea how it works
 												nightBackgrounds[bgName]=nightFilter(bgImage)
 												console.log("Generated "+bgName);
 												bgImage.onload = null;
+												
+												//TODO: So it turns out FF can generate night BGs faster than the DOM is ready. I have no idea how to fix this.
 												document.querySelectorAll('.nightBG').forEach(el => {
 													if (nightBackgrounds[el.getAttribute('bg')])
 													{

@@ -1,0 +1,139 @@
+()||<BIN>86</BIN><Night><BGM>BGM_Sneak</BGM>:[Griffin conquers the the SF position in the city.]
+琪亚娜()<Speaker>Kiana</Speaker>||:Now, rush in!
+Theresa(0)<Speaker>Theresa</Speaker>||:Hehe, well done. At first I thought I’d have to step in.
+Himeko(0)<Speaker>Himeko</Speaker>||:Looks like your use of tactics has improved greatly, Kiana.+You might really be the hope of Destiny.
+Himeko(0)<Speaker>Kiana</Speaker>||:Hehe, I haven’t gone all-out yet.+Also, it’s thanks to these dolls. They’re all so cute and they’re very obedient!
+PP90(0)<Speaker>PP90</Speaker>||:Commander Kiana, we’ve completed the preliminary work for the search, awaiting your orders!
+PP90(0)<Speaker>Kiana</Speaker>||:And I need to thank my outstanding adjutant!+Alright, begin the search! Don’t miss a single room!
+PP90(0)<Speaker>PP90</Speaker>||<黑屏1>:Roger! Everyone, begin the search! Conditions are a little dark, so please make do.
+()||<BIN>9</BIN><黑屏2><SE1>Select</SE1>:[PP90 leads her forces into the SF base to begin the search.]
+PP90()<Speaker>PP90</Speaker>||:Has everyone received pictures of the targets? One of them is a black-haired girl called “Raiden Mei”, she looks kind and friendly.+The other is a gray-haired girl called Bronya, she looks… er, kind of like me…+Ahhh, quit laughing! Get a move on! First echelon, you head left, second, you go right, everyone else, go forward, and Vivi...
+PP90()<Speaker>PP90</Speaker>||:Ah… that’s right, Vivi’s not here…+Forget it, then I’ll hold the rear. I need to share the work with Vivi from time to time.
+()||<BGM>BGM_Empty</BGM>:[PP90 waits until the echelons split up before moving to secure their rear by herself.]
+PP90()<Speaker>PP90</Speaker>||:*muttering to herself* I wonder what’s happened to Vivi. We agreed to check in regularly with each other, but she never called at all…+Why is that… after this operation is done, I need to call her right away and give her a good scolding…+No, I can’t be too fierce either, or else she’ll lose her temper...
+琪亚娜()<Speaker>Kiana</Speaker>||<BGM>BGM_Battle</BGM>:PP, look out! There’s something above you!
+()||:[PP hears something behind her and hurriedly turns around.]
+()||:[...zzt.]
+琪亚娜()<Speaker>Kiana</Speaker>||:…Interference… it’s electricity! PP… that’s…!
+()||<SE1>RunStep</SE1>:[But she is too late, and the dark figure has already grabbed PP90’s clothes and pinned her to the ground.]
+PP90()<Speaker>PP90</Speaker>||:……! (So fast!)+Is that… A human?
+？？()<Speaker>？？</Speaker>||<SE2>Rope</SE2>:Don’t move.+Whether I’m a human or a doll, chopping your head off will only take a moment.
+PP90()<Speaker>PP90</Speaker>||:…Something on my neck… is it a katana?+So strong… I can’t move even if I want to…+Uwah!
+()||<SE1>Rope</SE1>:[The other party forcefully grabs PP90 by the neck.]
+？？()<Speaker>？？</Speaker>||:Your friends are scattered. They cannot help you.+I’ve disrupted your comms. Your commander cannot help you either.+You’re the Griffin team leader, right? Once I deal with you, Destroyer’s problems will...
+()||<SE1>Rope</SE1>:……！+……[Snap-crackle!]+……[Electrical sparks bloom in the other person’s hand!]
+？？()<Speaker>？？</Speaker>||:This is my first time using this on dolls. I need to avoid the important circuits-
+PP90()<Speaker>PP90</Speaker>||:An… an electrical current…!
+？？()<Speaker>？？</Speaker>||:Don’t worry, I won’t interfere too much with this world, and I won’t kill you.+I’ll just knock you out and then use you as a hostage, so sorry about this-
+()||<SE1>Rope</SE1>:……[Crackle!]+……[A wave of dizziness washes over PP90, and her digimind starts to become confused.]
+PP90()<Speaker>PP90</Speaker>||:Uuu...
+？？()<Speaker>？？</Speaker>||:Are you calling out for someone to save you? A doll? Or a human?+Say it, at least you’ll feel better that way-
+PP90()<Speaker>PP90</Speaker>||:(Save me? Who’s going to save me?)
+Vector(0)<Speaker>PP90</Speaker>||:(Vivi… )+(No, not Vivi… I can’t let her see how useless I am now!)
+()||<SE1>Rope</SE1>:[Crackle!]
+PP90()<Speaker>PP90</Speaker>||:(No good… my digimind’s about to short-circuit…)+(Survive… I need to survive...)
+？？()<Speaker>？？</Speaker>||:Survive? You’re not even human, doll.
+PP90()<Speaker>PP90</Speaker>||:(Human… mender… repairer…)+(That’s right… the first time I went on ops with Vivi… I saw her…)
+NPC-Seele(0)<Speaker>PP90</Speaker>||<BGM>BGM_Empty</BGM>:Sier… san...
+？？()<Speaker>？？</Speaker>||:You… what’s the meaning of this?+Why did you mention that name?
+()||:[The other party’s hand unconsciously relaxes its grip.]
+PP90()<Speaker>PP90</Speaker>||:Sier…+Sier-!
+？？()<Speaker>？？</Speaker>||<黑屏1>:…!+Why… Seele!?+Why did you mention that name?
+()||<BIN>89</BIN><黑屏2><SE1>Select</SE1>:……！+[The base lights suddenly come on, and the dolls are gathered in front of the enemy, which they proceed to surround.]
+琪亚娜()<Speaker>Kiana</Speaker>||:Whew… fortunately comms with the other echelons weren’t jammed…+Honestly, you two… what kind of weird superhero movie were you acting out?+PP90…+And Mei-senpai.
+RaidenMei(0)<Speaker>Mei</Speaker>||<BGM>GF_xBH2_Menu</BGM>:Kiana…+That voice… Is that Kiana?+Kiana! Where are you!?
+RaidenMei(0)<Speaker>Kiana</Speaker>||:I’m in a command room 15 km away, talking through you through the doll adjutant that you’re trampling underfoot.+Turns out… you nearly electrocuted her to death.
+RaidenMei(0)<Speaker>Mei</Speaker>||<黑屏1>:Doll… adjutant?+Huh? Your face…
+PP90()<Speaker>PP90</Speaker>||<BIN>9</BIN><黑屏2>:(So this is Mei-san, huh…)+(She... doesn’t look kind at all…)
+琪亚娜()<Speaker>Kiana</Speaker>||:Therefore… would you mind getting off my adjutant’s body?+PP90, are you alright? Can you hear me?
+PP90()<Speaker>PP90</Speaker>||:(Vivi… I survived…)+(Wonderful… looks like I’ll have an adventure to brag about to you as well…)
+琪亚娜()<Speaker>Kiana</Speaker>||:PP90? Hello, can you hear me?
+芽衣()<Speaker>Mei</Speaker>||:She’s just grinning like an idiot…+Did I shock her stupid or something...?
+琪亚娜()<Speaker>Kiana</Speaker>||:Hey! If you really broke her, you’re going to have to pay, senpai!
+芽衣()<Speaker>Mei</Speaker>||:I. I’m sorry, I’ll think of something.+This… what… what on earth is this...
+琪亚娜()<Speaker>Kiana</Speaker>||:Everyone, put your weapons away, we’ve found our objective! Your first priority is to rescue PP90!
+()||:[The dolls swiftly surround PP90 and begin emergency treatment.]
+PP90()<Speaker>PP90</Speaker>||<黑屏1>:(Still… I’d be embarrassed to let you see this…)+(Although, it’s not important any more… I wonder what Vivi’s doing now…)
+()||<BIN>2</BIN><Night><BGM>BGM_Empty</BGM><黑屏2>:[At about the same time, Vector is currently en route to Theresa’s mothership, the Hyperion.]+…………
+Vector(0)<Speaker>Vector</Speaker>||<BGM>BGM_Room</BGM>:It’s so quiet…+Nobody needs me, nobody’s thinking of me, nobody’s nagging me…+All I need to do is focus on my mission…+Yes… it’s better this way, I chose this.
+Vector(0)<Speaker></Speaker>||:[Vector raises her head and sees a gigantic airship in the distance.]
+Vector(0)<Speaker>Vector</Speaker>||:Is that… the Hyperion? Its design is really overelaborate…+Humans always like such pointless things, always rushing to dress themselves up in order to make others happy...
+Vector(0)<Speaker></Speaker>||:[Beep.]+[Vector glances at her communicator and sees that it’s a message from PP90.]
+Vector(0)<Speaker></Speaker>||:“Busy? Call me back if you see this.”
+()||<黑屏1>:[Vector puts away the communicator and walks toward the mothership.]
+Vector()<Speaker>Vector</Speaker>||<BIN>9</BIN><黑屏2>:Yes, I’m very busy… haha…+If I hadn’t found the mothership, I wouldn’t have known how to reject her…+Besides, she probably doesn’t care, it’s just a standard business greeting...
+PP90(0)<Speaker>Vector</Speaker>||:That’s right… her passion, kindness and smile are just instinctive actions with broad applicability.+They’ve got nothing to do with me or what I’ve done…+She’s the same with our Commander, with Kiana, with Theresa and Himeko, as well as me…+She treats people she’s known for a long time the same as people she might not meet again after a few hours. She treats people from another world the same way that she treats me…+This incident brought me into her social circle. It’s about time I pulled back the leg I reached in and return to how things used to be...
+()||:…………
+Vector()<Speaker>Vector</Speaker>||:Is… something happening ahead?
+()||<黑屏1>:[Vector sees a girl standing on the open ground outside the mothership.]+[Vector hurries over.]
+Vector(0)<Speaker>Vector</Speaker>||<BIN>2</BIN><Night><黑屏2>:Are you… Seele?
+Seele(0)<Speaker>Seele？</Speaker>||:……
+()||:[The girl looks at Vector in fright, not daring to speak.]
+Vector(0)<Speaker>Vector</Speaker>||:I’m sorry. I’m the Griffin Tactical Doll Vector.+Your friends Kiana-san and Theresa-san asked me to find the Hyperion and ensure your safety.
+Seele(0)<Speaker>Seele？</Speaker>||:……+Really?
+Vector(0)<Speaker>Vector</Speaker>||:Please take a look at this proof. Kiana-san gave it to me.
+Seele(0)<Speaker>Seele</Speaker>||:Then… what about Bronya-nee?
+Vector(0)<Speaker>Vector</Speaker>||:Bronya…?+(Is that the girl with the same sundae hair as PP90?)+We haven’t found her yet, but your friends are doing their best to find her.
+Seele(0)<Speaker>Seele</Speaker>||:…+Can… Seele go and find her?
+Vector(0)<Speaker>Vector</Speaker>||:I’m sorry, but as an ordinary Tactical Doll, I suggest that staying in that airship would be safer.
+Seele(0)<Speaker>Seele</Speaker>||:There… used to be lots of Slain… They gathered here…+I’m… scared...
+()||:……[Beep.]+[PP90 sends a comms request.]
+PP90(0)<Speaker>PP90</Speaker><通讯框>||:Vivi! Are you there!?
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:…What is it?
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:I’m checking on how things are going on your end! It’s your fault for not contacting me!+Didn’t we say we’d check in regularly! You worried me to death!
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:Is that all?
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Also! We managed to take down the SF base and found Mei-san!+She’s the first friend Kiana made! Apparently the two of them barely escaped with their lives from a zombie outbreak at school!
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:Is that so…+(So that friend of Kiana’s is called Mei, huh…)+But what does that have to do with me?
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Honestly, don’t always be like that, Vivi! Also, during the previous operation I was almost-
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:Also-+…Could you not call me that any more?
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Huh? But...
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:It didn’t matter before this, but now it’s just annoying me...
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:What’s the matter with you… did something happen...
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:PP90, if you really care about what I think, then this is the only thought I have…+Which is to say… I’ve had enough of you.
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:I’m sorry…+V… Vector…+Let’s get to business… Is there… any progress on your end?
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:I found the Hyperion, I’ll be sending the coordinates back.+Also, Seele left the ship by herself. She’s a little scared and wants to return with me to the base to find Bronya.
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Oh…+Theresa-san said… this sort of thing might happen…+In that case, bring her back safely. Are you… alright?
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:I’m fine, end the call.
+Vector(0);PP90(0)<Speaker>PP90</Speaker>||:Wait!+Vector… was it… something I did wrong?
+Vector(0)<Speaker>Vector</Speaker>;PP90(0)||:…No.+This is how it should have been.
+Vector(0)<Speaker></Speaker>||:[Vector ends the transmission.]
+Vector(0)<Speaker>Vector</Speaker>||:…………+(So, who’s at fault?)+Let’s go, Seele-san. Don’t worry, I’ll take care of your safety.
+Seele(0)<Speaker>Seele</Speaker>||:Um…+Did you… have an argument just now?
+Vector(0)<Speaker>Vector</Speaker>||<黑屏1>:No…+I just… went back to how things used to be.
+()||<BIN>9</BIN><黑屏1><黑屏2><BGM>BGM_Empty</BGM>:[At the same time, at the Griffin base.]
+琪亚娜()<Speaker>Kiana</Speaker>||<BIN>85</BIN><BGM>GF_xBH2_Menu</BGM><黑屏2>:That’s why I say, you’re just too nice, Mei-senpai!+Do you know how much trouble your actions caused for this world!
+RaidenMei(0)<Speaker>Mei</Speaker>||:Uu… but… I couldn’t just leave that girl alone...
+RaidenMei(0)<Speaker>Kiana</Speaker>||:Ah, PP90!+Huh? Are you… crying?
+PP90(0)<Speaker>PP90</Speaker>||:Ah! I’m fine!+My visual module is just a little dirty, so I’m rinsing it, haha...
+PP90(0)<Speaker>Kiana</Speaker>||:Oh… dolls really are wonderful, but good thing there’s no big problems!+Anyway, let’s leave that aside! I’ll introduce her to you again; this is Raiden Mei, my senior and my best friend!
+RaidenMei(0)<Speaker>Mei</Speaker>||:Greetings, PP90-san.+I’m very sorry about what I did to you just now. I’ll do my best to make it up to you in future.
+RaidenMei(0)<Speaker>Kiana</Speaker>||:Sorry about that, PP90-san.+What happened just now, and what happened before that… was all Mei-senpai’s doing.
+RaidenMei(0)<Speaker>Mei</Speaker>||:Uuu… how shall I say this, I didn’t quite know what was going on back then.+After being separated from everyone, the storm blew me to a base which looked like a modified city…+And then my powers went a bit out of control, and with the amplification of the storm, I ended up destroying everything around me.
+PP90(0)<Speaker>PP90</Speaker>||:Wow, so you were that amazing, Mei-san...
+PP90(0)<Speaker>Kiana</Speaker>||:Hmph, she’s just bad at controlling her powers.+After that, Mei-senpai met Destroyer from SF, and she told her how to control Breakdown Energy!
+RaidenMei(0)<Speaker>Mei</Speaker>||:Well… I was the one who wrecked their base, after all, so I felt that I had to do something…+And she was crying and crying and saying that she wouldn’t be able to explain this to her master, and she looked so pitiful...
+RaidenMei(0)<Speaker>Kiana</Speaker>||:Ahhh! You’re always like that, Mei-senpai! You just can’t leave people in trouble alone! That’s why screwups like this happen!
+RaidenMei(0)<Speaker>Mei</Speaker>||:This was my first time here, and I didn’t know SF and Griffin were on opposite sides.+And Destroyer was really nice to me too, she gave me lots of stuff and treats…+Besides, she was very cute too. I don’t believe you wouldn’t have fallen for it in my place, Kiana.
+RaidenMei(0)<Speaker>Kiana</Speaker>||:Ha! That’s nothing, of course I wouldn’t befriend an enemy because they were cute!+Listen here, Mei-senpai, I’d never have fallen for Destroyer’s lies!+PP90 can be my witness!+Er… PP90?
+PP90(0)<Speaker>PP90</Speaker>||:Ah! Sorry, I was a little distracted…+Ah… well, in any case, it’s good that you managed to find your friend, Kiana-san.+Also, it seems we’ve figured out the source of SF’s power. This operation was very successful.
+PP90(0)<Speaker>Kiana</Speaker>||:Yes. Now only Bronya’s left, and the only threat to you now is Destroyer, am I right?
+RaidenMei(0)<Speaker>Mei</Speaker>||:I landed near Bronya when the storm blew me away, but I don’t remember what happened after that...
+RaidenMei(0)<Speaker>Kiana</Speaker>||:That brat… where on earth is she hiding…+Still, she should be alright by herself. In any case, let’s take care of Destroyer first! It’s time to strike back!
+RaidenMei(0)<Speaker>Mei</Speaker>||:Are you sure? I don’t think Destroyer’s that unreasonable...
+RaidenMei(0)<Speaker>Kiana</Speaker>||:Wake up, Mei-senpai!+She’s part of SF, an organization that opposes mankind. Everything she did was just to use you! She would never have truly regarded you as a friend!
+RaidenMei(0)<Speaker>Mei</Speaker>||:Is that so? But… where are you going to find her?
+()||<BGM>BGM_Empty</BGM><黑屏1><震屏><SE2>Alarm</SE2>:[Whum!]
+Destroyer()<Speaker>Destroyer</Speaker>||<BIN>9</BIN><黑屏2><BGM>BGM_Boss</BGM>:Good afternoon, ladies of Griffin… and also, Raiden Mei-san...
+芽衣()<Speaker>Mei</Speaker>||:Huh?
+Destroyer()<Speaker>Destroyer</Speaker>||:I was not particularly surprised by your treachery.+Or rather, I had long expected that, so it had no effect on me… Besides, I’ve finished making use of you.
+琪亚娜()<Speaker>Kiana</Speaker>||:Hmph! See, Mei-senpai! That’s how it is!
+芽衣()<Speaker>Mei</Speaker>||:……
+Destroyer()<Speaker>Destroyer</Speaker>||:Of course, the conclusion’s the same to me, regardless of whose side you’re on...
+BossDestroyerPlus(0)<Speaker>Destroyer</Speaker><通讯框>||:Because I can fully control Breakdown Energy now!
+BossDestroyerPlus(0)<Speaker>PP90</Speaker>||:…!+That appearance! It’s the rumored-
+BossDestroyerPlus(0)<Speaker>Kiana</Speaker>||:Oi! She’s gotten bigger in just about every aspect!
+BossDestroyerPlus(0)<Speaker>Destroyer</Speaker>||:Hmph, it wasn’t as hard as you said it would be, Mei-san.+As long as you offer your desires to the “will” of the Breakdown...
+BossDestroyerPlus(0)<Speaker>Mei</Speaker>||:Stop that, Destroyer-san! I told you before, you must never do that!+That will… That will only make you...
+BossDestroyerPlus(0)<Speaker>Destroyer</Speaker>||:Hmph, didn’t you do that yourself in the past?+If you could survive it, then… I can too!
+BossDestroyerPlus(0)<Speaker>Mei</Speaker>||:I understand now…+So I really was deceived.+I want in on this battle no matter what!
+BossDestroyerPlus(0)<Speaker>Destroyer</Speaker>||<黑屏1>:Haha! I couldn’t ask for anything more!+Come! Receive the flames of my wrath and be destroyed by my complete form!+Ladies of Griffin… and ”Destiny”, your end is at hand!

@@ -328,6 +328,7 @@ portraitDatabase['AK47'].quickInsertSpecial(2)
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
 portraitDatabase['RO635-NoArmor']=['special/pic_RO635_NoArmor0.png']
 portraitDatabase['RO635'][5] = 'special/pic_RO635_4.png' #Yeah, apparently the filename doesn't match the index...
+portraitDatabase['RO635'][6] = 'special/RO635Dinergate.png'
 
 #portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
 #portraitDatabase['BOSS-12']=['Eliza.png']
@@ -399,6 +400,7 @@ portraitDatabase['G11story']=['special/pic_G11_rugged.png','special/pic_G11_maid
 
 portraitDatabase['UMP9story'] = ResizingList(['special/ump9.png'])
 
+portraitDatabase['UMP9'][4]='special/pic_UMP9_3.png' #Yes it's correct
 portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'
 portraitDatabase['UMP9Mod'][3] = 'special/pic_UMP9Mod_happy.png'

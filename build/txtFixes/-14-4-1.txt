@@ -1,0 +1,53 @@
+()||<BIN>85</BIN><BGM>BGM_Room</BGM>:…………
+琪亚娜()<Speaker>Kiana</Speaker>||:…Headmistress… Theresa?
+PP90(0)<Speaker>PP90</Speaker>||:Is she a friend of yours, Kiana-san?
+PP90(0)<Speaker>Kiana</Speaker>||:Ah…
+PP90(0)<Speaker>PP90</Speaker>||:She’s a human from another world just like you, am I right?
+PP90(0)<Speaker>Kiana</Speaker>||:…………+So you already knew, huh...
+PP90(0)<Speaker>PP90</Speaker>||:We just found it out. You can’t keep these things from us Griffin dolls-
+Vector(0)<Speaker>Vector</Speaker>||:Another world?+You mean… Kiana-san’s a person from another world?
+PP90(0)<Speaker>PP90</Speaker>||:Er… Vivi, do you know what kind of stuff FN57 usually handles?
+Vector(0)<Speaker>Vector</Speaker>||:What does her job have to do with me?
+PP90(0)<Speaker>PP90</Speaker>||:That’s why I’m saying you need to socialize more, Vivi!+FN57’s team is in charge of “aberrant” incidents. The fact that she’s showed up during this incident means people from another world have made their way here.+Think about it, it’s really weird, right… a whole bunch of zombie whatevers appearing out of nowhere, how could such things possibly happen all of a sudden...
+PP90(0)(0)<Speaker>Kiana</Speaker>||:It’s the Breakdown… it’s how the Breakdown expresses itself in your world.+That’s right, PP90-san. I’m a human from another world.
+Vector(0)<Speaker>Vector</Speaker>||:Huh? Is that… really so?
+Vector(0)<Speaker>Kiana</Speaker>||:Sorry for keeping a bunch of things from you earlier…+I wanted to be more low-key and leave once the time was right.+But I didn’t expect the Headmistress to move around so blatantly, so I have no choice but to come clean.
+PP90(0)<Speaker>PP90</Speaker>||<黑屏1>:Kiana-san, we believe that you’re a friendly human, but could you please give us more details?+I’m sure we’ll be able to help you if we understand more about you and your world.
+琪亚娜()<Speaker>Kiana</Speaker>||<BIN>9</BIN><黑屏2>:The Breakdown is a phenomenon unique to our world.+But it’s not so much a phenomenon as a will, a… destructive will.+It takes many forms, from wars, to plagues, to natural disasters, meteor impacts, and even zombie outbreaks and the appearance of scary monsters.+According to the records in our world, the Breakdown brings tremendous destruction to the species which controls the world.
+Vector()<Speaker>Vector</Speaker>||:The dinosaurs? You mean, the extinction of the dinosaurs was caused by the Breakdown?
+PP90()<Speaker>PP90</Speaker>||:Vivi, you don’t fit in with others because you’re always concerned about these things...
+琪亚娜()<Speaker>Kiana</Speaker>||:Uh… that was true in our world.+But according to my observations, your world had no signs of the Breakdown to begin with…+The Breakdown only began after we came to this world.
+PP90()<Speaker>PP90</Speaker>||:You mean… those Slain?
+琪亚娜()<Speaker>Kiana</Speaker>||<黑屏1>:Generating and sustaining Breakdown phenomena requires energy. We call it Breakdown Energy.+In our world, the Slain are created when human beings approach sources of Breakdown Energy, which eat away at their minds and bodies, turning them into zombie-like creatures.
+Vector(0)<Speaker>Vector</Speaker>||<BIN>85</BIN><黑屏2>:Yet the Slain we faced were zombie dolls from the SF plants.
+Vector(0)<Speaker>Kiana</Speaker>||:The Breakdown expresses itself differently in different environments. Perhaps the Breakdown manifested itself in this form because dolls are more numerous in this world.
+PP90(0)<Speaker>PP90</Speaker>||:So they’re the malicious product of an intelligent lifeform that is hostile to mankind… is that it?
+Vector(0)<Speaker>Vector</Speaker>||:Then your phone… is used to scan for Breakdown Energy, is that it?
+Vector(0)<Speaker>Kiana</Speaker>||:Yes. I’m a fighting member of the organization called Destiny. Our mission is to eliminate sources of Breakdown Energy and maintain Breakdown phenomena within a controllable limit.+In the past few days, we detected a strange source of Breakdown Energy, as though it were discharged from some kind of large weapon.+Under Headmistress Theresa’s orders, we began an in-depth investigation, and as we went in further, we found that we had passed into another world...
+PP90(0)<Speaker>PP90</Speaker>||:And that would be… our world?
+PP90(0)<Speaker>Kiana</Speaker>||:*nods* But our airship was damaged while we were moving, and the energy storm within the warp tunnel made it inside.+We barely managed to enter this world, but everyone was lost in the storm, and then… I ended up somewhere...
+Vector(0)<Speaker>Vector</Speaker>||:Which would be where I happened to be.+Still, wouldn’t that mean this Theresa is a friend of yours?
+Vector(0)<Speaker>Kiana</Speaker>||:Yes, but her position would make her our superior.+While it’s more complicated than that… all in all, she’s a none-too-reliable boss.
+PP90(0)<Speaker>PP90</Speaker>||:It would be great if she were a friend. We’d be able to avoid fighting and gain a new helper!
+PP90(0)<Speaker>Kiana</Speaker>||:Uu… yeah, after all, they ran onto other people’s turf to cause trouble…+Avoiding a fight… shouldn’t be a problem...
+Vector(0)<Speaker>Vector</Speaker>||<黑屏1>:……？
+()||<BIN>9</BIN><黑屏2><BGM>BGM_Empty</BGM>:[Half an hour later, they make contact with Theresa at the restricted area.]
+德丽莎()<Speaker>Theresa</Speaker>||<黑屏1>:No! Of course not!
+Theresa(0)<Speaker>Theresa</Speaker><通讯框>||<BGM>GF_xBH2_Menu</BGM><BIN>10</BIN><黑屏2>:I will! Never! Abandon my research!
+Theresa(0)<Speaker>Kiana</Speaker>||:Who cares about research at a time like this!
+Theresa(0)<Speaker>Theresa</Speaker>||:Kiana, I an very happy to see you safe and sound.+That said, I’m not that happy. After all, this place isn’t very dangerous, so it’s only natural for you to be safe.
+Vector(0)<Speaker>Vector</Speaker>;Theresa(0)||:Are all the people in your organization weirdos like this?
+Vector(0)<Speaker>Kiana</Speaker>;Theresa(0)||:Aren't you the least qualified to say that?+Headmistress, I made some friends here, and this place is under their supervision, so would you mind putting your research on hold for the time being?
+Vector(0);Theresa(0)<Speaker>Theresa</Speaker>||:You can make friends regardless of the situation…+Ah, forget it! In any case, Kiana, when we were passing by here, I found an extremely powerful abnormal energy signature.+For all we know, it might be a Relic of this world! It might even be a Divine Relic! How can I not investigate it?
+PP90(0)<Speaker>PP90</Speaker>;Theresa(0)||:Relics? Does their world have things like that too?
+PP90(0)<Speaker>Kiana</Speaker>;Theresa(0)||:Headmistress Theresa! Now’s not the time to worry about Relics or whatever!+The Slain are attacking this world en masse because of us. Why not help them out?
+PP90(0);Theresa(0)<Speaker>Theresa</Speaker>||:I don’t mind helping them out, as long as it’s after I finish my investigation!
+PP90(0)<Speaker>PP90</Speaker>;Theresa(0)||:Then… I’m very sorry about this, Theresa-san!+I’m a Tactical Doll from this world who is responsible for security work. You are trespassing in restricted territory that is under our jurisdiction!+If you refuse to leave, we will have to remove you by force!
+PP90(0);Theresa(0)<Speaker>Theresa</Speaker>||:Hah! Even if I wanted to leave, I’d have to get out from under a pile of Slain first!+So if you want to stop me, go get rid of those Slain first and then come see me.+Of course… I won’t go quietly even if you do meet me.
+Vector(0)<Speaker>Vector</Speaker>;Theresa(0)||:That woman… she’s not afraid of those Slain at all, so she must be really string.+But why is she just standing there… it’s like she’s waiting for us...
+Vector(0)<Speaker>Kiana</Speaker>;Theresa(0)||:I don’t care! You asked for it, Headmistress! I’m really coming over!
+Vector(0);Theresa(0)<Speaker>Theresa</Speaker>||:Hehe, you should know the odds you have against me pretty well, right?
+Vector(0);Theresa(0)<Speaker>Kiana</Speaker>||:Of course, but I’m not alone!
+PP90(0)<Speaker>PP90</Speaker>;Theresa(0)||:Oi oi! You’re sulking now! Please don’t mess around with our forces!
+PP90(0)<Speaker>Kiana</Speaker>;Theresa(0)||<黑屏1>:Don’t worry! I know my limits!+Headmistress Theresa, let’s spar again in this world!
+()||<BIN>10</BIN><黑点2>:

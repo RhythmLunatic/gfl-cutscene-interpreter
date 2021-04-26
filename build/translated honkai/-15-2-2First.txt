@@ -1,9 +1,0 @@
-()||<BIN>41</BIN><BGM>BGM_Danger</BGM>:[The battle with Destroyer is still in progress.]
-琪亚娜()<Speaker>Kiana</Speaker>||:How’s that! Ready to admit defeat, Destroyer?
-BossDestroyerPlus(0)<Speaker>Destroyer</Speaker>||:Looks like that’s all Griffin’s forces can do.+Meanwhile, I have Breakdown Energy on my side, and it is limitless!
-RaidenMei(0)<Speaker>Mei</Speaker>||:Destroyer… can still absorb Breakdown Energy?
-Himeko(0)<Speaker>Himeko</Speaker><通讯框>||:She’s going to lose control if this keeps up. We need to subdue her ASAP!
-Theresa(0)<Speaker>Theresa</Speaker><通讯框>||:Well, not too soon. Whittle her strength down slowly.+Otherwise a Breakdown Energy overload becomes very likely, and then it’ll start spreading over a wide area.
-琪亚娜()<Speaker>Kiana</Speaker>||<黑屏1>:I understand, this really is tricky…+Let’s rest first, then adjust our attack plan!
-()||<黑屏2><BIN>9</BIN>:[At the same time.]
-？？()<Speaker>？？</Speaker>||<黑屏1>:…………+Arrived at objective area.+Entering standby status while waiting for an opportunity.+I must protect Mei-nee and everyone.

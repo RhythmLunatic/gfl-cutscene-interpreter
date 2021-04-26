@@ -6,6 +6,8 @@ pic_important backup/*
 audio/*
 #use make dl
 build/girlsfrontline.json
+build/bgFixes/*
+build/imageFixes/*
 #Stuff that needs to be dumped from the game
 NotoSansHans-DemiLight.otf
 build/profiles.txt

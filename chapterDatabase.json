@@ -2034,6 +2034,88 @@
 				]
 			},
 			{
+				"name": "CH. 5.5: Operation Cube+",
+				"episodes": [
+					{
+						"name": "Operation Cube I",
+						"parts": [
+							"-6-1-1.txt",
+							"-6-1-2First.txt"
+						]
+					},
+					{
+						"name": "Operation Cube II",
+						"parts": [
+							"-6-2-1.txt",
+							"-6-2-2First.txt",
+							"-6-2-2End.txt"
+						]
+					},
+					{
+						"name": "Operation Cube III",
+						"parts": [
+							"-6-3-1.txt",
+							"-6-3-2First.txt",
+							"-6-3-2End.txt"
+						]
+					},
+					{
+						"name": "Operation Cube IV",
+						"parts": [
+							"-6-4-1.txt",
+							"-6-4-2First.txt",
+							"-6-4-2End.txt"
+						]
+					},
+					{
+						"name": "Blindfold Theorem I",
+						"parts": [
+							"-7-1-1.txt",
+							"-7-1-3Round2.txt",
+							"-7-1-2First.txt",
+							"-7-1-2End.txt"
+						]
+					},
+					{
+						"name": "Blindfold Theorem II",
+						"parts": [
+							"-7-2-1.txt",
+							"-7-2-4-Point3342.txt",
+							"-7-2-2First.txt",
+							"-7-2-2End.txt"
+						]
+					},
+					{
+						"name": "Blindfold Theorem III",
+						"parts": [
+							"-7-3-1.txt",
+							"-7-3-2First.txt",
+							"-7-3-4-Point3533.txt",
+							"-7-3-2End.txt"
+						],
+						"part_names": [
+							null,
+							null,
+							"Mid-stage dialogue"
+						]
+					},
+					{
+						"name": "Blindfold Theorem IV",
+						"parts": [
+							"-7-4-1.txt",
+							"-7-4-2First.txt",
+							"-7-4-4-Point3612.txt",
+							"-7-4-2End.txt"
+						],
+						"part_names": [
+							null,
+							null,
+							"Mid-stage dialogue"
+						]
+					}
+				]
+			},
+			{
 				"name": "CH. 7.5: Arctic Warfare",
 				"episodes": [
 					{
@@ -2140,86 +2222,6 @@
 						"parts": [
 							"-5-1-1.txt",
 							"-5-1-3Round10.txt"
-						]
-					}
-				]
-			},
-			{
-				"name": "CH. 5.5: Operation Cube+",
-				"episodes": [
-					{
-						"name": "Operation Cube I",
-						"parts": [
-							"-6-1-1.txt",
-							"-6-1-2First.txt"
-						]
-					},
-					{
-						"name": "Operation Cube II",
-						"parts": [
-							"-6-2-1.txt",
-							"-6-2-2End.txt",
-							"-6-2-2First.txt"
-						]
-					},
-					{
-						"name": "Operation Cube III",
-						"parts": [
-							"-6-3-1.txt",
-							"-6-3-2End.txt",
-							"-6-3-2First.txt"
-						]
-					},
-					{
-						"name": "Operation Cube IV",
-						"parts": [
-							"-6-4-1.txt",
-							"-6-4-2End.txt",
-							"-6-4-2First.txt"
-						]
-					},
-					{
-						"name": "Blindfold Theorem I",
-						"parts": [
-							"-7-1-1.txt",
-							"-7-1-2End.txt",
-							"-7-1-2First.txt",
-							"-7-1-3Round1.txt",
-							"-7-1-4-Point3498.txt",
-							"-7-1-3Round2.txt"
-						]
-					},
-					{
-						"name": "Blindfold Theorem II",
-						"parts": [
-							"-7-2-1.txt",
-							"-7-2-2End.txt",
-							"-7-2-2First.txt",
-							"-7-2-3Round1.txt",
-							"-7-2-3Round2.txt",
-							"-7-2-4-Point3342.txt"
-						]
-					},
-					{
-						"name": "Blindfold Theorem III",
-						"parts": [
-							"-7-3-1.txt",
-							"-7-3-2End.txt",
-							"-7-3-2First.txt",
-							"-7-3-3Round1.txt",
-							"-7-3-3Round2.txt",
-							"-7-3-4-Point3533.txt"
-						]
-					},
-					{
-						"name": "Blindfold Theorem IV",
-						"parts": [
-							"-7-4-1.txt",
-							"-7-4-2End.txt",
-							"-7-4-2First.txt",
-							"-7-4-3Round1.txt",
-							"-7-4-3Round2.txt",
-							"-7-4-4-Point3612.txt"
 						]
 					}
 				]
@@ -3000,16 +3002,16 @@
 				]
 			},
 			{
-				"name": "CH. 11.5: ISOMER (Unsorted)",
+				"name": "CH. 11.5: ISOMER",
 				"episodes": [
 					{
-						"name": "???",
+						"name": "Prologue: Souvenir",
 						"parts": [
 							"-31-0-1.txt"
 						]
 					},
 					{
-						"name": "??? II",
+						"name": "EP.1 Path I - Illusory Peace",
 						"parts": [
 							"-31-1A1-1.txt",
 							"-31-1A11-1.txt",
@@ -3017,12 +3019,22 @@
 							"-31-1A21-1.txt",
 							"-31-1A3-1.txt",
 							"-31-1A4-1.txt",
-							"-31-1A5-1.txt",
+							"-31-1A5-1.txt"
+						]
+					},
+					{
+						"name": "EP.1 Path II - Cat And Mouse",
+						"parts": [
 							"-31-1B1-1.txt",
 							"-31-1B2-1.txt",
 							"-31-1B3-1.txt",
 							"-31-1B31-1.txt",
-							"-31-1B4-1.txt",
+							"-31-1B4-1.txt"
+						]
+					},
+					{
+						"name": "EP.1 Path III - Beyond the Border",
+						"parts": [
 							"-31-1C1-1.txt",
 							"-31-1C2-1.txt",
 							"-31-1C3-1.txt",
@@ -3030,38 +3042,58 @@
 						]
 					},
 					{
-						"name": "??? III",
+						"name": "EP.2 Path I - Faith of Blood",
 						"parts": [
-							"-31-2A11-1.txt",
 							"-31-2A1-1.txt",
+							"-31-2A11-1.txt",
 							"-31-2A12-1.txt",
 							"-31-2A2-1.txt",
 							"-31-2A21-1.txt",
-							"-31-2A3-1.txt",
+							"-31-2A3-1.txt"
+						]
+					},
+					{
+						"name": "EP.2 Path II - Wolf and Owl",
+						"parts": [
 							"-31-2B1-1.txt",
 							"-31-2B11-1.txt",
 							"-31-2B2-1.txt",
 							"-31-2B3-1.txt",
-							"-31-2B4-1.txt",
+							"-31-2B4-1.txt"
+						]
+					},
+					{
+						"name": "EP.2 Path III - Under the Wall",
+						"parts": [
 							"-31-2C1-1.txt",
 							"-31-2C2-1.txt"
 						]
 					},
 					{
-						"name": "??? IV",
+						"name": "EP.3 Path I - Lost Bargaining Chip",
 						"parts": [
-							"-31-3C2-1.txt",
 							"-31-3A1-1.txt",
 							"-31-3A2-1.txt",
-							"-31-3A3-1.txt",
+							"-31-3A3-1.txt"
+						]
+					},
+					{
+						"name": "EP.3 Path II - Shark and the Sea",
+						"parts": [
 							"-31-3B1-1.txt",
 							"-31-3B2-1.txt",
 							"-31-3B3-1.txt",
 							"-31-3B4-1.txt",
 							"-31-3B5-1.txt",
 							"-31-3B6-1.txt",
-							"-31-3B7-1.txt",
+							"-31-3B7-1.txt"
+						]
+					},
+					{
+						"name": "EP.4 - Above the Hubbub",
+						"parts": [
 							"-31-3C1-1.txt",
+							"-31-3C2-1.txt",
 							"-31-3C21-1.txt",
 							"-31-3C3-1.txt",
 							"-31-3C4-1.txt",
@@ -3072,7 +3104,7 @@
 						]
 					},
 					{
-						"name": "??? V",
+						"name": "Reign of Chaos",
 						"parts": [
 							"-31-4-1.txt"
 						]
@@ -3080,487 +3112,135 @@
 				]
 			},
 			{
-				"name": "CH. 11.75: Shattered Connexion (WIP)",
+				"name": "CH. 11.75: Shattered Connexion",
 				"episodes": [
 					{
-						"name": "1",
+						"name": "Episode 1: Tallinn",
 						"parts": [
-							"-33-1-1First.txt"
-						],
-						"part_names": [
-							"-33-1-1First.txt"
-						]
-					},
-					{
-						"name": "3",
-						"parts": [
-							"-33-3-1First.txt"
-						],
-						"part_names": [
-							"-33-3-1First.txt"
-						]
-					},
-					{
-						"name": "4",
-						"parts": [
-							"-33-4-1First.txt"
-						],
-						"part_names": [
-							"-33-4-1First.txt"
-						]
-					},
-					{
-						"name": "5",
-						"parts": [
-							"-33-5-1First.txt"
-						],
-						"part_names": [
-							"-33-5-1First.txt"
-						]
-					},
-					{
-						"name": "7",
-						"parts": [
+							"-33-1-1First.txt",
+							"-33-3-1First.txt",
+							"-33-4-1First.txt",
+							"-33-5-1First.txt",
 							"-33-7-1First.txt"
 						],
 						"part_names": [
-							"-33-7-1First.txt"
+							"Quiet Presence",
+							"Two Jobs",
+							"Tracing the Source",
+							"Reunion with Old Friends",
+							"Shackled Spirit I"
 						]
 					},
 					{
-						"name": "9",
+						"name": "Episode 2: Ghosttown",
 						"parts": [
-							"-33-9-1First.txt"
-						],
-						"part_names": [
-							"-33-9-1First.txt"
-						]
-					},
-					{
-						"name": "11",
-						"parts": [
-							"-33-11-1First.txt"
-						],
-						"part_names": [
-							"-33-11-1First.txt"
-						]
-					},
-					{
-						"name": "13",
-						"parts": [
-							"-33-13-1First.txt"
-						],
-						"part_names": [
-							"-33-13-1First.txt"
-						]
-					},
-					{
-						"name": "15",
-						"parts": [
-							"-33-15-1First.txt"
-						],
-						"part_names": [
-							"-33-15-1First.txt"
-						]
-					},
-					{
-						"name": "17",
-						"parts": [
+							"-33-9-1First.txt",
+							"-33-11-1First.txt",
+							"-33-13-1First.txt",
+							"-33-15-1First.txt",
 							"-33-17-1First.txt"
 						],
 						"part_names": [
-							"-33-17-1First.txt"
+							"Bound Spirit II",
+							"Intangible Sigh I",
+							"Nameless Exiles I",
+							"Nameless Exiles II",
+							"Intangible Sigh II"
 						]
 					},
 					{
-						"name": "18",
+						"name": "Episode 3: Immolation",
 						"parts": [
-							"-33-18-1First.txt"
-						],
-						"part_names": [
-							"-33-18-1First.txt"
-						]
-					},
-					{
-						"name": "20",
-						"parts": [
-							"-33-20-1First.txt"
-						],
-						"part_names": [
-							"-33-20-1First.txt"
-						]
-					},
-					{
-						"name": "22",
-						"parts": [
-							"-33-22-1First.txt"
-						],
-						"part_names": [
-							"-33-22-1First.txt"
-						]
-					},
-					{
-						"name": "23",
-						"parts": [
-							"-33-23-1First.txt"
-						],
-						"part_names": [
-							"-33-23-1First.txt"
-						]
-					},
-					{
-						"name": "25",
-						"parts": [
+							"-33-18-1First.txt",
+							"-33-43-1First.txt",
+							"-33-20-1First.txt",
+							"-33-22-1First.txt",
+							"-33-23-1First.txt",
 							"-33-25-1First.txt"
 						],
 						"part_names": [
-							"-33-25-1First.txt"
+							"Fractured Cognition I",
+							"Fractured Cognition II",
+							"Subsurface Homecoming I",
+							"The Unwelcome",
+							"Fractured Cognition III",
+							"Fractured Cognition IV"
 						]
 					},
 					{
-						"name": "26",
+						"name": "Episode 4: Connexion",
 						"parts": [
-							"-33-26-1First.txt"
-						],
-						"part_names": [
-							"-33-26-1First.txt"
-						]
-					},
-					{
-						"name": "27",
-						"parts": [
-							"-33-27-1First.txt"
-						],
-						"part_names": [
-							"-33-27-1First.txt"
-						]
-					},
-					{
-						"name": "29",
-						"parts": [
-							"-33-29-1First.txt"
-						],
-						"part_names": [
-							"-33-29-1First.txt"
-						]
-					},
-					{
-						"name": "31",
-						"parts": [
-							"-33-31-1First.txt"
-						],
-						"part_names": [
-							"-33-31-1First.txt"
-						]
-					},
-					{
-						"name": "33",
-						"parts": [
+							"-33-26-1First.txt",
+							"-33-27-1First.txt",
+							"-33-29-1First.txt",
+							"-33-31-1First.txt",
 							"-33-33-1First.txt"
 						],
 						"part_names": [
-							"-33-33-1First.txt"
+							"Infinite Connections",
+							"Subsurface Homecoming II",
+							"Isomer I",
+							"Subsurface Homecoming III",
+							"Isomer II"
 						]
 					},
 					{
-						"name": "35",
+						"name": "Episode 5: Queen of the Night",
 						"parts": [
-							"-33-35-1First.txt"
-						],
-						"part_names": [
-							"-33-35-1First.txt"
-						]
-					},
-					{
-						"name": "37",
-						"parts": [
-							"-33-37-1First.txt"
-						],
-						"part_names": [
-							"-33-37-1First.txt"
-						]
-					},
-					{
-						"name": "40",
-						"parts": [
-							"-33-40-1First.txt"
-						],
-						"part_names": [
-							"-33-40-1First.txt"
-						]
-					},
-					{
-						"name": "42",
-						"parts": [
-							"-33-42-1First.txt"
-						],
-						"part_names": [
-							"-33-42-1First.txt"
-						]
-					},
-					{
-						"name": "43",
-						"parts": [
-							"-33-43-1First.txt"
-						],
-						"part_names": [
-							"-33-43-1First.txt"
-						]
-					},
-					{
-						"name": "45",
-						"parts": [
-							"-33-45-1First.txt"
-						],
-						"part_names": [
-							"-33-45-1First.txt"
-						]
-					},
-					{
-						"name": "46",
-						"parts": [
-							"-33-46-1First.txt"
-						],
-						"part_names": [
-							"-33-46-1First.txt"
-						]
-					},
-					{
-						"name": "48",
-						"parts": [
+							"-33-35-1First.txt",
+							"-33-37-1First.txt",
+							"-33-40-1First.txt",
+							"-33-42-1First.txt",
+							"-33-45-1First.txt",
+							"-33-46-1First.txt",
 							"-33-48-1First.txt"
 						],
 						"part_names": [
-							"-33-48-1First.txt"
+							"A Rock and a Hard Place",
+							"Operation Defang I",
+							"Operation Defang II",
+							"All-Devouring Sea of Flowers",
+							"Farewell, Tallinn I - Combat I",
+							"Farewell, Tallinn I - Combat II",
+							"Farewell, Tallinn II"
 						]
 					},
 					{
-						"name": "49",
+						"name": "Episode 5.5: Flowers of the End",
 						"parts": [
-							"-33-49-1First.txt"
-						],
-						"part_names": [
 							"-33-49-1First.txt"
 						]
 					},
 					{
-						"name": "51",
+						"name": "Episode 6: Confidential Information",
 						"parts": [
-							"-33-51-4-Point13117.txt"
-						],
-						"part_names": [
-							"-33-51-4-Point13117.txt"
-						]
-					},
-					{
-						"name": "52",
-						"parts": [
-							"-33-52-4-Point13142.txt"
-						],
-						"part_names": [
-							"-33-52-4-Point13142.txt"
-						]
-					},
-					{
-						"name": "59",
-						"parts": [
-							"-33-59-4-Point13290.txt",
-							"-33-59-4-Point80174.txt"
-						],
-						"part_names": [
-							"-33-59-4-Point13290.txt",
-							"-33-59-4-Point80174.txt"
-						]
-					},
-					{
-						"name": "62",
-						"parts": [
-							"-33-62-4-Point13467.txt"
-						],
-						"part_names": [
-							"-33-62-4-Point13467.txt"
-						]
-					},
-					{
-						"name": "72",
-						"parts": [
-							"-33-72-4-Point13325.txt",
-							"-33-72-4-Point83325.txt"
-						],
-						"part_names": [
-							"-33-72-4-Point13325.txt",
-							"-33-72-4-Point83325.txt"
-						]
-					},
-					{
-						"name": "73",
-						"parts": [
-							"-33-73-1First.txt"
-						],
-						"part_names": [
-							"-33-73-1First.txt"
-						]
-					},
-					{
-						"name": "74",
-						"parts": [
-							"-33-74-1First.txt"
-						],
-						"part_names": [
-							"-33-74-1First.txt"
-						]
-					},
-					{
-						"name": "75",
-						"parts": [
-							"-33-75-1First.txt"
-						],
-						"part_names": [
-							"-33-75-1First.txt"
-						]
-					},
-					{
-						"name": "76",
-						"parts": [
-							"-33-76-1First.txt"
-						],
-						"part_names": [
-							"-33-76-1First.txt"
-						]
-					},
-					{
-						"name": "77",
-						"parts": [
-							"-33-77-1First.txt"
-						],
-						"part_names": [
-							"-33-77-1First.txt"
-						]
-					},
-					{
-						"name": "78",
-						"parts": [
-							"-33-78-1First.txt"
-						],
-						"part_names": [
-							"-33-78-1First.txt"
-						]
-					},
-					{
-						"name": "79",
-						"parts": [
-							"-33-79-1First.txt"
-						],
-						"part_names": [
-							"-33-79-1First.txt"
-						]
-					},
-					{
-						"name": "80",
-						"parts": [
-							"-33-80-1First.txt"
-						],
-						"part_names": [
-							"-33-80-1First.txt"
-						]
-					},
-					{
-						"name": "81",
-						"parts": [
-							"-33-81-1First.txt"
-						],
-						"part_names": [
-							"-33-81-1First.txt"
-						]
-					},
-					{
-						"name": "82",
-						"parts": [
-							"-33-82-1First.txt"
-						],
-						"part_names": [
-							"-33-82-1First.txt"
-						]
-					},
-					{
-						"name": "83",
-						"parts": [
-							"-33-83-1First.txt"
-						],
-						"part_names": [
-							"-33-83-1First.txt"
-						]
-					},
-					{
-						"name": "84",
-						"parts": [
-							"-33-84-1First.txt"
-						],
-						"part_names": [
-							"-33-84-1First.txt"
-						]
-					},
-					{
-						"name": "85",
-						"parts": [
-							"-33-85-1First.txt"
-						],
-						"part_names": [
-							"-33-85-1First.txt"
-						]
-					},
-					{
-						"name": "86",
-						"parts": [
-							"-33-86-1First.txt"
-						],
-						"part_names": [
-							"-33-86-1First.txt"
-						]
-					},
-					{
-						"name": "87",
-						"parts": [
-							"-33-87-1First.txt"
-						],
-						"part_names": [
+							"-33-73-1First.txt",
+							"-33-74-1First.txt",
+							"-33-75-1First.txt",
+							"-33-76-1First.txt",
+							"-33-77-1First.txt",
+							"-33-78-1First.txt",
+							"-33-79-1First.txt",
+							"-33-80-1First.txt",
+							"-33-81-1First.txt",
+							"-33-82-1First.txt",
+							"-33-83-1First.txt",
+							"-33-84-1First.txt",
+							"-33-85-1First.txt",
+							"-33-86-1First.txt",
 							"-33-87-1First.txt"
 						]
 					},
 					{
-						"name": "X1",
+						"name": "Ranking Map Tips",
 						"parts": [
-							"-33-X1-4-Point.txt"
-						],
-						"part_names": [
-							"-33-X1-4-Point.txt"
-						]
-					},
-					{
-						"name": "X2",
-						"parts": [
-							"-33-X2-4-Point.txt"
-						],
-						"part_names": [
-							"-33-X2-4-Point.txt"
-						]
-					},
-					{
-						"name": "X3",
-						"parts": [
-							"-33-X3-4-Point.txt"
-						],
-						"part_names": [
-							"-33-X3-4-Point.txt"
-						]
-					},
-					{
-						"name": "X4",
-						"parts": [
-							"-33-X4-4-Point.txt"
-						],
-						"part_names": [
-							"-33-X4-4-Point.txt"
+							"-33-51-4-Point13117.txt",
+							"-33-52-4-Point13142.txt",
+							"-33-59-4-Point13290.txt",
+							"-33-59-4-Point80174.txt",
+							"-33-62-4-Point13467.txt",
+							"-33-72-4-Point13325.txt",
+							"-33-72-4-Point83325.txt"
 						]
 					}
 				]

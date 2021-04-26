@@ -2174,6 +2174,38 @@
     "NPC-Kyruger": [
         "pic_NPC-Kyruger.png"
     ],
+    "NPC-Persica": [
+        "pic_NPC-Persica.png",
+        "pic_NPC-Persica_C.png",
+        "pic_NPC-Persica_J.png",
+        "pic_NPC-Persica_T.png"
+    ],
+    "PPSh41": [
+        "pic_PPsh41.png",
+        "pic_PPsh41_D.png"
+    ],
+    "NPC-Helian": [
+        "pic_NPC-Helian.png",
+        "pic_NPC-Helian_A.png",
+        "pic_NPC-Helian_F.png",
+        "pic_NPC-Helian_T.png"
+    ],
+    "NPC-Carter": [
+        "pic_NPC-Carter.png"
+    ],
+    "NPC-Yegor": [
+        "NPC-Yegor.png"
+    ],
+    "NPC-Havel": [
+        "NPC-Havel.png",
+        "NPC-Havel2.png"
+    ],
+    "m1": [
+        "pic_M1.png",
+        "pic_M1_D.png",
+        "pic_M1_1106.png",
+        "pic_M1_1106_D.png"
+    ],
     "NPC-Ange": [
         "NPC-Ange.png",
         "NPC-Ange_1.png",
@@ -2184,24 +2216,198 @@
         "special/NPC-Ange(6).png",
         "special/NPC-Ange(7).png"
     ],
-    "NPC-Persica": [
-        "pic_NPC-Persica.png",
-        "pic_NPC-Persica_C.png",
-        "pic_NPC-Persica_J.png",
-        "pic_NPC-Persica_T.png"
+    "hk23": [
+        "pic_HK23.png",
+        "pic_HK23_D.png"
     ],
-    "NPC-Helian": [
-        "pic_NPC-Helian.png",
-        "pic_NPC-Helian_A.png",
-        "pic_NPC-Helian_F.png",
-        "pic_NPC-Helian_T.png"
+    "g43": [
+        "pic_G43.png",
+        "pic_G43_D.png"
     ],
-    "NPC-Deele": [
-        "pic_NPC-Deele.png"
+    "98k": [
+        "pic_98K.png",
+        "pic_98K_D.png"
+    ],
+    "NPC-Maid": [
+        "NPC-Maid.png"
+    ],
+    "NPC-Zielinski": [
+        "NPC-Zielinski.png"
+    ],
+    "NPC-Jason": [
+        "NPC-Jason.png",
+        "NPC-Jason_1.png"
+    ],
+    "Nyto": [
+        "Nyto.png",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "special/Nyto_7.png"
+    ],
+    "NPC-Bodyguard1": [
+        "NPC-Bodyguard1.png"
+    ],
+    "NPC-Bodyguard2": [
+        "NPC-Bodyguard2.png"
+    ],
+    "NPC-AngeDamage": [
+        "special/NPC-AngeDamage.png"
+    ],
+    "StG44": [
+        "pic_STG44.png",
+        "pic_STG44_D.png"
+    ],
+    "HunterElite": [
+        "HunterElite.png"
+    ],
+    "Weaver": [
+        "Weaver.png"
+    ],
+    "ExcutionerElite": [
+        "ExcutionerElite.png"
+    ],
+    "WeaverElite": [
+        "WeaverElite.png"
     ],
     "NPC-Seele": [
         "pic_NPC-Seele.png",
         "pic_NPC-Seele_1.png"
+    ],
+    "NPC-Deele": [
+        "pic_NPC-Deele.png"
+    ],
+    "NPC-Lyco": [
+        "pic_NPC-Lyco.png"
+    ],
+    "NPC-YegorDamage": [
+        "NPC-YegorDamage.png"
+    ],
+    "NPC-Nimogen": [
+        "NPC-Nimogen.png"
+    ],
+    "NPC-KalinReporter": [
+        "NPC-KalinReporter.png"
+    ],
+    "NPC-Ambassador": [
+        "NPC-Ambassador.png"
+    ],
+    "NPC-AngeStreet": [
+        "NPC-AngeStreet.png"
+    ],
+    "NPC-Mercurows": [
+        "NPC-Mercurows.png"
+    ],
+    "NPC-PasserbyM": [
+        "NPC-PasserbyM.png"
+    ],
+    "NPC-PasserbyF": [
+        "NPC-PasserbyF.png"
+    ],
+    "m82": [
+        "pic_M82.png",
+        "pic_M82_D.png"
+    ],
+    "NPC-Oldartist": [
+        "pic_NPC-Oldartist.png"
+    ],
+    "NPC-handyman": [
+        "pic_NPC-handyman.png"
+    ],
+    "NPC-Powell": [
+        "pic_NPC-Powell.png"
+    ],
+    "Type88": [
+        "pic_Type88.png"
+    ],
+    "NPC-Arla": [
+        "NPC-Arla.png"
+    ],
+    "M1903Cafe": [
+        "special/M1903Cafe.png"
+    ],
+    "gsh18": [
+        "pic_GSH18.png",
+        "pic_GSH18_D.png",
+        "special/pic_GSH18_2.png"
+    ],
+    "hkcaws": [
+        "pic_HKCAWS.png",
+        "pic_HKCAWS_D.png"
+    ],
+    "em2": [
+        "pic_EM2.png",
+        "pic_EM2_D.png"
+    ],
+    "pa15": [
+        "pic_PA15.png",
+        "pic_PA15_D.png",
+        "pic_PA15_4202.png",
+        "pic_PA15_4202_D.png"
+    ],
+    "pp1901": [
+        "pic_PP1901.png",
+        "pic_PP1901_D.png"
+    ],
+    "mp443": [
+        "pic_MP443.png",
+        "pic_MP443_D.png"
+    ],
+    "m500Mod": [
+        "pic_M500Mod.png",
+        "pic_M500Mod_D.png"
+    ],
+    "TestPilot": [
+        "TestPilot.png"
+    ],
+    "88typePilot": [
+        "pic_88typePilot.png"
+    ],
+    "Mk48": [
+        "pic_MK48.png",
+        "pic_MK48_D.png"
+    ],
+    "m500": [
+        "pic_M500.png",
+        "pic_M500_D.png"
+    ],
+    "pp19": [
+        "pic_PP19.png",
+        "pic_PP19_D.png"
+    ],
+    "NPC-Shelley": [
+        "NPC-Shelley.png"
+    ],
+    "pp19Mod": [
+        "pic_PP19Mod.png",
+        "pic_PP19Mod_D.png"
+    ],
+    "sub2000": [
+        "pic_SUB2000.png",
+        "pic_SUB2000_D.png",
+        "special/pic_SUB2000_2.png",
+        "special/pic_SUB2000_3.png",
+        "special/pic_SUB2000_4.png",
+        "special/pic_SUB2000_5.png"
+    ],
+    "Sei": [
+        "pic_SEI.png",
+        "pic_SEI_D.png",
+        "special/pic_SEI_2.png",
+        "special/pic_SEI_3.png",
+        "special/pic_SEI_4.png"
+    ],
+    "GG_elfeldt_505": [
+        "pic_GG_elfeldt_505.png"
+    ],
+    "GG_elfeldt_504": [
+        "pic_GG_elfeldt_504.png"
+    ],
+    "BB_Noel_503": [
+        "pic_BB_Noel_503.png"
     ],
     "NPC-Dima": [
         "special/NPC-Dima(0).png",
@@ -2217,26 +2423,6 @@
         "special/NPC-Light(4).png",
         "special/NPC-Light(5).png"
     ],
-    "NPC-Ambassador": [
-        "NPC-Ambassador.png"
-    ],
-    "NPC-Jason": [
-        "NPC-Jason.png",
-        "NPC-Jason_1.png"
-    ],
-    "NPC-Havel": [
-        "NPC-Havel.png",
-        "NPC-Havel2.png"
-    ],
-    "NPC-PasserbyM": [
-        "NPC-PasserbyM.png"
-    ],
-    "NPC-PasserbyF": [
-        "NPC-PasserbyF.png"
-    ],
-    "NPC-Carter": [
-        "pic_NPC-Carter.png"
-    ],
     "Jillmagic": [
         "pic_Jill_529.png"
     ],
@@ -2246,24 +2432,11 @@
     "BossDestroyerPlus": [
         "DestroyerPlus.png"
     ],
-    "Nyto": [
-        "Nyto.png",
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        "special/Nyto_7.png"
-    ],
     "AbandonedIsomer": [
         "Abandoned_Isomer.png"
     ],
     "M1903bar": [
         "special/M1903_Bartender.png"
-    ],
-    "M1903Cafe": [
-        "special/M1903Cafe.png"
     ],
     "M16": [
         "pic_M16A1.png",
@@ -2288,48 +2461,6 @@
         "pic_FNFAL_2406.png",
         "pic_FNFAL_2406_D.png"
     ],
-    "PPSh41": [
-        "pic_PPsh41.png",
-        "pic_PPsh41_D.png"
-    ],
-    "m1": [
-        "pic_M1.png",
-        "pic_M1_D.png",
-        "pic_M1_1106.png",
-        "pic_M1_1106_D.png"
-    ],
-    "m500": [
-        "pic_M500.png",
-        "pic_M500_D.png"
-    ],
-    "m500Mod": [
-        "pic_M500Mod.png",
-        "pic_M500Mod_D.png"
-    ],
-    "hk23": [
-        "pic_HK23.png",
-        "pic_HK23_D.png"
-    ],
-    "g43": [
-        "pic_G43.png",
-        "pic_G43_D.png"
-    ],
-    "98k": [
-        "pic_98K.png",
-        "pic_98K_D.png"
-    ],
-    "StG44": [
-        "pic_STG44.png",
-        "pic_STG44_D.png"
-    ],
-    "pp19": [
-        "pic_PP19.png",
-        "pic_PP19_D.png"
-    ],
-    "m82": [
-        "pic_M82.png",
-        "pic_M82_D.png"
-    ],
     "SOPII": [
         "pic_M4 SOPMOD II.png",
         "pic_M4 SOPMOD II_D.png",
@@ -2343,12 +2474,6 @@
     ],
     "M4 SOPMOD IIMod-Noarmor": [
         "pic_M4 SOPMOD IIMod_NoArmor1.png"
-    ],
-    "pa15": [
-        "pic_PA15.png",
-        "pic_PA15_D.png",
-        "pic_PA15_4202.png",
-        "pic_PA15_4202_D.png"
     ],
     "FAMASHalloween": [
         "pic_FAMAS_2604.png"

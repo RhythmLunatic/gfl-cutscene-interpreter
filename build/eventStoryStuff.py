@@ -308,6 +308,97 @@ js['crossover'].append(va11)
 #js['event'].append({'name':"CH. 5.5: Operation Cube (OLD)",'episodes':getAllByPrefix(files,'-1','Operation Cube')})
 
 js['event'].append({
+	"name": "CH. 5.5: Operation Cube+",
+	"episodes": [
+		{
+			"name": "Operation Cube I",
+			"parts": [
+				"-6-1-1.txt",
+				"-6-1-2First.txt"
+			]
+		},
+		{
+			"name": "Operation Cube II",
+			"parts": [
+				"-6-2-1.txt",
+				"-6-2-2First.txt",
+				"-6-2-2End.txt",
+			]
+		},
+		{
+			"name": "Operation Cube III",
+			"parts": [
+				"-6-3-1.txt",
+				"-6-3-2First.txt",
+				"-6-3-2End.txt",
+			]
+		},
+		{
+			"name": "Operation Cube IV",
+			"parts": [
+				"-6-4-1.txt",
+				"-6-4-2First.txt",
+				"-6-4-2End.txt",
+			]
+		},
+		{
+			"name": "Blindfold Theorem I",
+			"parts": [
+				"-7-1-1.txt",
+				#"-7-1-3Round1.txt", #duplicate dialogue
+				#"-7-1-4-Point3498.txt", #duplicate dialogue
+				"-7-1-3Round2.txt",
+				"-7-1-2First.txt",
+				"-7-1-2End.txt",
+			]
+		},
+		{
+			"name": "Blindfold Theorem II",
+			"parts": [
+				"-7-2-1.txt",
+				#"-7-2-3Round1.txt", #duplicate dialogue
+				#"-7-2-3Round2.txt", #duplicate dialogue
+				"-7-2-4-Point3342.txt", #not sure if this is supposed to go before or after first
+				"-7-2-2First.txt",
+				"-7-2-2End.txt",
+			]
+		},
+		{
+			"name": "Blindfold Theorem III",
+			"parts": [
+				"-7-3-1.txt",
+				#"-7-3-3Round1.txt", #duplicate dialogue of the end of -7-3-1.txt
+				#"-7-3-3Round2.txt", #duplicate part
+				"-7-3-2First.txt",
+				"-7-3-4-Point3533.txt",
+				"-7-3-2End.txt",
+			],
+			"part_names":[
+				None,
+				None,
+				"Mid-stage dialogue"
+			]
+		},
+		{
+			"name": "Blindfold Theorem IV",
+			"parts": [
+				"-7-4-1.txt",
+				"-7-4-2First.txt",
+				#"-7-4-3Round1.txt", #duplicate dialogue
+				#"-7-4-3Round2.txt", #duplicate part
+				"-7-4-4-Point3612.txt",
+				"-7-4-2End.txt",
+			],
+			"part_names":[
+				None,
+				None,
+				"Mid-stage dialogue"
+			]
+		}
+	]
+})
+
+js['event'].append({
 	"name": "CH. 7.5: Arctic Warfare",
 	"episodes": [
 		{
@@ -421,7 +512,7 @@ js['event'].append({
 
 for line in evStoryInformation:
 	args = line.split("|")
-	if float(args[2]) == 7.5: #If Arctic Warfare, do a special case since the secret mission is a separate entry... It's like this on the index too
+	if float(args[2]) == 7.5 or float(args[2]) == 5.5: #These are manually sorted so skip them
 		continue
 	#print(args)
 	chapterName = "CH. "+args[2]+": "+args[3]
@@ -442,15 +533,6 @@ for line in evStoryInformation:
 			break;
 	if not foundExistingCh:
 		js['event'].append(chapterData)
-'''
-{
-	"name": "Waste",
-	"parts": [
-		"-24-2-1.txt",
-		"-24-2-2.txt"
-	]
-},
-'''
 #js['crossover'].append({'name':"DJMax Respect",'episodes':getAllByPrefix(files,'-19',"Chapter 1 ")})
 #js['crossover'][-1]['episodes'].extend(getAllByPrefix(files,'-20',"Chapter 2"))
 #-2 to -7 already indexed
@@ -620,9 +702,258 @@ js['crossover'].append({
 })
 #Nothing from 21 to 23, 24-28 alrady indexed
 
-js['event'].append({'name':"CH. 11.5: ISOMER (Unsorted)",'episodes':getAllByPrefix(files,'-31','???')})
+#js['event'].append({'name':"CH. 11.5: ISOMER (Unsorted)",'episodes':getAllByPrefix(files,'-31','???')})
+js['event'].append({
+	"name": "CH. 11.5: ISOMER",
+	"episodes": [
+		{
+			"name": "Prologue: Souvenir",
+			"parts": [
+				"-31-0-1.txt"
+			]
+		},
+		{
+			"name": "EP.1 Path I - Illusory Peace",
+			"parts": [
+				"-31-1A1-1.txt",
+				"-31-1A11-1.txt",
+				"-31-1A2-1.txt",
+				"-31-1A21-1.txt",
+				"-31-1A3-1.txt",
+				"-31-1A4-1.txt",
+				"-31-1A5-1.txt",
+			]
+		},
+		{
+			"name": "EP.1 Path II - Cat And Mouse",
+			"parts":[
+				"-31-1B1-1.txt",
+				"-31-1B2-1.txt",
+				"-31-1B3-1.txt",
+				"-31-1B31-1.txt",
+				"-31-1B4-1.txt",
+			]
+		},
+		{
+			"name": "EP.1 Path III - Beyond the Border",
+			"parts":[
+				"-31-1C1-1.txt",
+				"-31-1C2-1.txt",
+				"-31-1C3-1.txt",
+				"-31-1C4-1.txt"
+			]
+		},
+		{
+			"name": "EP.2 Path I - Faith of Blood",
+			"parts": [
+				"-31-2A1-1.txt",
+				"-31-2A11-1.txt",
+				"-31-2A12-1.txt",
+				"-31-2A2-1.txt",
+				"-31-2A21-1.txt",
+				"-31-2A3-1.txt",
+			]
+		},
+		{
+			"name": "EP.2 Path II - Wolf and Owl",
+			"parts": [
+				"-31-2B1-1.txt",
+				"-31-2B11-1.txt",
+				"-31-2B2-1.txt",
+				"-31-2B3-1.txt",
+				"-31-2B4-1.txt",
+			]
+		},
+		{
+			"name": "EP.2 Path III - Under the Wall",
+			"parts": [
+				"-31-2C1-1.txt",
+				"-31-2C2-1.txt"
+			]
+		},
+		{
+			"name": "EP.3 Path I - Lost Bargaining Chip",
+			"parts": [
+				"-31-3A1-1.txt",
+				"-31-3A2-1.txt",
+				"-31-3A3-1.txt",
+			]
+		},
+		{
+			"name": "EP.3 Path II - Shark and the Sea",
+			"parts": [
+				"-31-3B1-1.txt",
+				"-31-3B2-1.txt",
+				"-31-3B3-1.txt",
+				"-31-3B4-1.txt",
+				"-31-3B5-1.txt",
+				"-31-3B6-1.txt",
+				"-31-3B7-1.txt",
+			]
+		},
+		{
+			"name": "EP.4 - Above the Hubbub",
+			"parts": [
+				"-31-3C1-1.txt",
+				"-31-3C2-1.txt",
+				"-31-3C21-1.txt",
+				"-31-3C3-1.txt",
+				"-31-3C4-1.txt",
+				"-31-3C5-1.txt",
+				"-31-3C6-1.txt",
+				"-31-3C61-1.txt",
+				"-31-3C62-1.txt"
+			]
+		},
+		{
+			"name": "Reign of Chaos",
+			"parts": [
+				"-31-4-1.txt"
+			]
+		}
+	]
+})
 #-32 is valhalla
-js['event'].append({'name':"CH. 11.75: Shattered Connexion (WIP)",'episodes':getAllByPrefix2(files,'-33','???')})
+#js['event'].append({'name':"CH. 11.75: Shattered Connexion (WIP)",'episodes':getAllByPrefix2(files,'-33','???')})
+
+js['event'].append({
+	"name": "CH. 11.75: Shattered Connexion",
+	"episodes": [
+		{
+			"name": "Episode 1: Tallinn",
+			"parts": [
+				"-33-1-1First.txt",
+				"-33-3-1First.txt",
+				"-33-4-1First.txt",
+				"-33-5-1First.txt",
+				"-33-7-1First.txt"
+			],
+			"part_names": [
+				"Quiet Presence",
+				"Two Jobs",
+				"Tracing the Source",
+				"Reunion with Old Friends",
+				"Shackled Spirit I"
+			]
+		},
+		{
+			"name": "Episode 2: Ghosttown",
+			"parts": [
+				"-33-9-1First.txt",
+				"-33-11-1First.txt",
+				"-33-13-1First.txt",
+				"-33-15-1First.txt",
+				"-33-17-1First.txt"
+			],
+			"part_names": [
+				"Bound Spirit II",
+				"Intangible Sigh I",
+				"Nameless Exiles I",
+				"Nameless Exiles II",
+				"Intangible Sigh II"
+			]
+		},
+		{
+			"name": "Episode 3: Immolation",
+			"parts": [
+				"-33-18-1First.txt",
+				"-33-43-1First.txt", #Yeah I don't know why either
+				"-33-20-1First.txt",
+				"-33-22-1First.txt",
+				"-33-23-1First.txt",
+				"-33-25-1First.txt"
+			],
+			"part_names": [
+				"Fractured Cognition I",
+				"Fractured Cognition II",
+				"Subsurface Homecoming I",
+				"The Unwelcome",
+				"Fractured Cognition III",
+				"Fractured Cognition IV"
+			]
+		},
+		
+		{
+			"name": "Episode 4: Connexion",
+			"parts": [
+				"-33-26-1First.txt",
+				"-33-27-1First.txt",
+				"-33-29-1First.txt",
+				"-33-31-1First.txt",
+				"-33-33-1First.txt"
+			],
+			"part_names": [
+				"Infinite Connections",
+				"Subsurface Homecoming II",
+				"Isomer I",
+				"Subsurface Homecoming III",
+				"Isomer II"
+			]
+		},
+		{
+			"name": "Episode 5: Queen of the Night",
+			"parts": [
+				"-33-35-1First.txt",
+				"-33-37-1First.txt",
+				"-33-40-1First.txt",
+				"-33-42-1First.txt",
+				"-33-45-1First.txt", 
+				"-33-46-1First.txt", #Not sure when this is used. Maybe after battle dialogue? Mission data says there's Combat I and Combat II so I guess this is a two part mission or something
+				"-33-48-1First.txt" 
+			],
+			"part_names": [
+				"A Rock and a Hard Place",
+				"Operation Defang I",
+				"Operation Defang II",
+				"All-Devouring Sea of Flowers",
+				"Farewell, Tallinn I - Combat I",
+				"Farewell, Tallinn I - Combat II",
+				"Farewell, Tallinn II"
+			]
+		},
+		{
+			"name": "Episode 5.5: Flowers of the End",
+			"parts":[
+				"-33-49-1First.txt"
+			]
+		},
+		{
+			"name":"Episode 6: Confidential Information",
+			"parts":[
+				"-33-73-1First.txt",
+				"-33-74-1First.txt",
+				"-33-75-1First.txt",
+				"-33-76-1First.txt",
+				"-33-77-1First.txt",
+				"-33-78-1First.txt",
+				"-33-79-1First.txt",
+				"-33-80-1First.txt",
+				"-33-81-1First.txt",
+				"-33-82-1First.txt",
+				"-33-83-1First.txt",
+				"-33-84-1First.txt",
+				"-33-85-1First.txt",
+				"-33-86-1First.txt",
+				"-33-87-1First.txt"
+			
+			]
+		},
+		{
+			"name": "Ranking Map Tips",
+			"parts": [
+				"-33-51-4-Point13117.txt",
+				"-33-52-4-Point13142.txt",
+				"-33-59-4-Point13290.txt",
+				"-33-59-4-Point80174.txt",
+				"-33-62-4-Point13467.txt",
+				"-33-72-4-Point13325.txt",
+				"-33-72-4-Point83325.txt"
+			],
+		}
+	]
+})
+
+
 js['side'].append({'name':"Halloween 2019",'episodes':getAllByPrefix(files,'-34','Episode')})
 js['side'].append({
 	"name": "Christmas 2019",

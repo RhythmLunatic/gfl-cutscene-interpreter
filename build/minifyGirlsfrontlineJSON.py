@@ -30,6 +30,25 @@ def RepresentsInt(s):
 		return True
 	except ValueError:
 		return False
+		
+def getCharsFromLine(cmds):
+	foundPortraits = []
+	for j in range(5):
+		charTagEnd = cmds.find(")");
+		if charTagEnd != -1:
+			#It's +1 to get rid of the ;
+			charTagStart = max(cmds.rfind(";",0,charTagEnd)+1,0)
+			try:
+				charID,charSpr = cmds[charTagStart:charTagEnd].split("(")
+				if charID != "" and charSpr != "" and '<' not in charID:
+					charSpr=int(charSpr)
+					cmds= cmds[:0]+cmds[charTagEnd+1:]
+					foundPortraits.append((charID, charSpr))
+			except Exception as e:
+				break
+		else:
+			break
+	return foundPortraits
 
 class ResizingList(list):
 	
@@ -205,6 +224,39 @@ with open('girlsfrontline-min.json','wb') as file:
 	file.write(j)
 
 
+#First scan for missing portraits that might match, like case insensitive matches
+with open('chapterDatabase.json','r') as f:
+	j = JSON.loads(f.read())
+	chapters = j['story']
+	backgrounds = j['bg']
+for section in chapters:
+	#print(section)
+	for chapter in chapters[section]:
+		#print(chapter)
+		for episode in chapter['episodes']:
+			#print(episode)
+			#sys.exit(0)
+			for part in episode['parts']:
+				fName = '../avgtxt/'+part
+				if os.path.isfile(fName):
+					#print(fName)
+					with open(fName,'r') as partText:
+						for line in partText.readlines():
+							cmds = line.replace("：",':').split(':')[0]
+							foundPortraits = getCharsFromLine(cmds)
+							for p in foundPortraits:
+								if p[0] not in portraitDatabase:
+									for p2 in portraitDatabase:
+										if p[0].lower() == p2.lower():
+											printOK("Found portrait with different capitalization, renaming: "+p2+ " -> "+p[0])
+											portraitDatabase[p[0]]=portraitDatabase[p2]
+											break
+									for fName in [p[0]+'.png','pic_'+p[0]+'.png','special/'+p[0]+'.png']:
+										if os.path.isfile('../pic/'+fName):
+											printOK("Missing portrait '"+p[0]+"' matches "+fName+", adding to DB.")
+											portraitDatabase[p[0]]=ResizingList([fName])
+											break
+
 portraitDatabase["NPC-Kalin"] = [
 	"special/版娘.png",
 	"special/版娘-1.png",
@@ -222,6 +274,11 @@ portraitDatabase["NPC-Kalin"] = [
 	"special/NPC-Kalin_13.png",
 ]
 
+portraitDatabase['NPC-Yegor'] = [
+	'NPC-Yegor.png'
+]
+
+
 portraitDatabase['NPC-Ange'] = ResizingList([
 	'NPC-Ange.png',
 	'NPC-Ange_1.png',
@@ -232,6 +289,11 @@ portraitDatabase['NPC-Ange'] = ResizingList([
 	'special/NPC-Ange(6).png',
 	'special/NPC-Ange(7).png'
 ])
+
+portraitDatabase['NPC-AngeDamage'] = ResizingList([
+	'special/NPC-AngeDamage.png'
+])
+
 
 portraitDatabase['NPC-Persica'] = [
 	"pic_NPC-Persica.png",
@@ -256,13 +318,8 @@ portraitDatabase['NPC-Dima']=quickGenerateNPC('NPC-Dima',3)
 portraitDatabase['NPC-Light']=quickGenerateNPC('NPC-Light',5)
 #print(quickGenerateNPC('NPC-Light',5))
 
-portraitDatabase['NPC-Ambassador']=["NPC-Ambassador.png"]
 portraitDatabase['NPC-Jason']=["NPC-Jason.png","NPC-Jason_1.png"]
-portraitDatabase['NPC-Kyruger']=['pic_NPC-Kyruger.png']
 portraitDatabase['NPC-Havel']=["NPC-Havel.png","NPC-Havel2.png"]
-portraitDatabase['NPC-PasserbyM']=['NPC-PasserbyM.png']
-portraitDatabase['NPC-PasserbyF']=['NPC-PasserbyF.png']
-portraitDatabase['NPC-Carter']=['pic_NPC-Carter.png']
 
 portraitDatabase['Seele'][2]='SeeleVollerei.png'
 
@@ -276,14 +333,12 @@ portraitDatabase['RO635'][5] = 'special/pic_RO635_4.png' #Yeah, apparently the f
 #portraitDatabase['BOSS-12']=['Eliza.png']
 portraitDatabase['BossDestroyerPlus']=['DestroyerPlus.png']
 
-portraitDatabase['Nyto'] = ResizingList(['Nyto.png'])
 portraitDatabase['Nyto'][7]="special/Nyto_7.png"
 
 portraitDatabase['NytoIsomer'][4]="Nyto_Isomer_Shadow.png"
 portraitDatabase['AbandonedIsomer']=['Abandoned_Isomer.png']
 
 portraitDatabase['M1903bar']=["special/M1903_Bartender.png"]
-portraitDatabase['M1903Cafe']=["special/M1903Cafe.png"]
 portraitDatabase['M1903'].quickInsertCostumeAtIdx(8,"1107")
 
 #Not incorrect, slot 1 is occupied by damaged art
@@ -301,20 +356,6 @@ portraitDatabase['FAL']=portraitDatabase['FNFAL']
 portraitDatabase['FAL'][2] = "pic_FNFAL_308.png"
 portraitDatabase['FAL'][3] = "pic_FNFAL_308_D.png"
 
-#Yes really
-#...You know, shouldn't this be automated? Just go through all the files and find all the names and do a case insensitive check.
-portraitDatabase['PPSh41']=portraitDatabase['PPsh41']
-portraitDatabase['m1'] = portraitDatabase['M1']
-portraitDatabase['m500'] = portraitDatabase['M500']
-portraitDatabase['m500Mod']=portraitDatabase['M500Mod']
-portraitDatabase['hk23']=portraitDatabase['HK23']
-portraitDatabase['g43']=portraitDatabase['G43']
-portraitDatabase['98k']=portraitDatabase['98K']
-portraitDatabase['StG44']=portraitDatabase['STG44']
-portraitDatabase['pp19']=portraitDatabase["PP19"]
-portraitDatabase['m82']=portraitDatabase['M82']
-
-
 portraitDatabase['SOPII'] = portraitDatabase['M4 SOPMOD II']
 portraitDatabase['SOPII'][2] = portraitDatabase['SOPII'][0]
 portraitDatabase['SOPII'][3] = portraitDatabase['SOPII'][0] #Weird, I guess they originally planned to draw more?
@@ -323,7 +364,6 @@ portraitDatabase['SOPIIDamage'] = ResizingList(['special/M4 SOPMOD IIDamage.png'
 
 portraitDatabase['M4 SOPMOD IIMod-Noarmor'] = ['pic_M4 SOPMOD IIMod_NoArmor1.png']
 
-portraitDatabase['pa15']=portraitDatabase['PA15']
 portraitDatabase['pa15'].quickInsertCostumeAtIdx(2,"4202")
 
 portraitDatabase["FAMASHalloween"]=["pic_FAMAS_2604.png"]

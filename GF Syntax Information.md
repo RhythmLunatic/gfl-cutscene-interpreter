@@ -242,6 +242,8 @@ M4 SOPMOD II is in the database twice. In earlier files she's indexed as SOPII.
 
 The ID 'G11story' is not indexed in EN for some reason. It should be G11 dressed in green and maid costume.
 
+The game's interpreter has no escape character for the line break character `+`. Despite this, they still use it. Even though it doesn't work properly.
+
 # Unknown usages
 
 ## Portrait type specificed without a portrait

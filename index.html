@@ -210,6 +210,9 @@ th {
 .pagination li.active {
 	background-color: var(--nav-color);
 }
+.pagination li {
+	margin-left: 5px;
+}
 
 /*Something I actually wrote myself*/
 .material-settings-table {
@@ -531,13 +534,6 @@ I have no idea how it works
 	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 	This program is written by Rhythm Lunatic.
-	*/
-	
-	/*
-	Just gonna say it right now, I don't know an ounce of JavaScript or phaser.
-	I interpreted lua and my game engine knowledge until this worked. Also lots of 'pythonic' logic in the JavaScript.
-	
-	So that's the answer as to why the chapter select looks horrible. Make a PR if you want it to be fixed.
 	*/
 
 
@@ -903,6 +899,7 @@ I have no idea how it works
 	}*/
 	
 	//Shamelessly stolen from http://www.permadi.com/tutorial/jsCanvasGrayscale/index.html
+	//Technically this could be reimplemented and run much faster if it was WebGL with a GLSL shader. Dunno if you can export it as an image like a canvas though.
 	function nightFilter(image)
 	{
 		//console.log("processing "+image.src);
@@ -1295,7 +1292,7 @@ I have no idea how it works
 			//const tags = [
 			//var nextPortraitIsMasked = false;
 			//Since portraits are searched before modifiers...
-			if (cmds.includes("<通讯框>"))
+			while (cmds.includes("<通讯框>"))
 			{
 				let idxToCheck = 0;
 				
@@ -1325,11 +1322,8 @@ I have no idea how it works
 						break;
 					}
 				}
-				//nextPortraitIsMasked = true;
-				//structuredLines.push([OPCODES.SETMASKEDPORTRAIT])
 				cmds=cmds.replace("<通讯框>","");
 			}
-			/**/
 			
 			//Now do text... But first check if there is any text (some lines are only commands)
 			if (text)
@@ -1632,6 +1626,8 @@ I have no idea how it works
 					//Spawn new BG with speaker and portrait here.
 					let message = structuredLines[i][1]
 					//TODO: Ignore ALL unknown/illegal codes, not just <script>
+					//let allowedHTMLTags = ['color','size','b','i','u','q','s']
+					
 					message = message.replaceAll("<script>","&lt;script&gt;").replaceAll("<\/script>","&lt;&#x2F;script&gt;")
 					for(var ccc = 0; ccc < 10; ccc++)
 					{
@@ -1649,10 +1645,7 @@ I have no idea how it works
 							let color = message.slice(idx+7,end)
 							//console.log(color)
 							let spanTagStart = "<span class='coloredDialogue' style='color:"+color+"'>"
-							//First sanitize the part outside the <color> tag, then insert the new <span> tag, then sanitize the section inside the span tag, then insert the end tag
-							//Then finally insert the rest of the unsanitized message.
-							//debugger;
-							message = message.slice(0,idx)+spanTagStart+sanitize(message.slice(end+1,message.indexOf("</color>")))+"</span>"+message.slice(message.indexOf("</color>")+8)
+							message = message.slice(0,idx)+spanTagStart+message.slice(end+1,message.indexOf("</color>"))+"</span>"+message.slice(message.indexOf("</color>")+8)
 							//console.log("new msg: "+message);
 						}
 						else
@@ -1675,16 +1668,15 @@ I have no idea how it works
 							let end = message.indexOf('>',idx)
 							let size = message.slice(idx+6,end)/45*100 //Assume default is 45px
 							let spanTagStart = "<span class='sizedDialogue' style='font-size:"+size+"%'>"
-							//First sanitize the part outside the <color> tag, then insert the new <span> tag, then sanitize the section inside the span tag, then insert the end tag
-							//Then finally insert the rest of the unsanitized message.
-							//debugger;
-							message = sanitize(message.slice(0,idx))+spanTagStart+sanitize(message.slice(end+1,message.indexOf("</size>")))+"</span>"+message.slice(message.indexOf("</size>")+7)
+							
+							message = message.slice(0,idx)+spanTagStart+message.slice(end+1,message.indexOf("</size>"))+"</span>"+message.slice(message.indexOf("</size>")+7)
 						}
 						else
 						{
 							break;
 						}
 					}
+					
 					
 					if (fancyDisplayType)
 					{
@@ -2908,7 +2900,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			</div>
 			
 			<div class="col s12" id="eventEpisodesWrapper">
-				<p>Story Events other than Chapter 7.5 are not sorted yet.</p>
+				<p>Deep Dive, Singularity, and Continuum Turbulence are not sorted yet.</p>
 				<div class="flex-container col s12" id="eventEpisodes"></div>
 			</div>
 			<div class="col s12" id="sideEpisodesWrapper">
@@ -3040,6 +3032,14 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 					</div>
 					<div class="card blue-grey darken-1" style="text-align:left">
         				<div class="card-content white-text">
+							<span class="card-title">.txt (MICA format) documentation</span>
+						</div>
+						<div class="card-action">
+							<a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/blob/main/GF%20Syntax%20Information.md">Click Me</a>
+						</div>
+					</div>
+					<div class="card blue-grey darken-1" style="text-align:left">
+        				<div class="card-content white-text">
 							<span class="card-title">.iop.json documentation</span>
 							<p>Work in progress... Please be patient...</p>
 						</div>
@@ -3141,12 +3141,17 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	</audio>
 	<p>Dandelion is my wife, greets to /gfg/, <a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter">harass me on github (bug reports, check the source code, fork it)</a></p>
 	<!--<p>If you would like an improved UI, fix it yourself and submit a pull request. I don't know React/Vue/etc.</p>-->
-	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b> or <a onmousemove="(function(self){self.href='mailto:kirbyrulez'+String.fromCharCode(64)+'att.net'})(this)" href="mailto:'hover mouse over the link twice to pass the bot check'"><b>email me</b></a></p>
+	<p>If you want a feature or something is broken, <b><a href="https://github.com/RhythmLunatic/gfl-cutscene-interpreter/issues">file a bug report</a></b> or <a onmousemove="(function(self){self.href='mailto:kirbyrulez'+String.fromCharCode(64)+'att.net'})(this)" href="mailto:'hover mouse over the link twice to pass the bot check'"><b>email me</b></a>.</p>
 	<p><a href='/LICENSE.html'>The interpreter is free and open source software and licensed under AGPLv3.</a></p>
-	<p>Designed using <a href='https://materializecss.com'>Materialize</a>, the ultimate front-end framework for people like me who can't be bothered to learn the hard shit like react or vue</p>
-	<!--<p><a href='https://github.com/MatheusAvellar/textarea-line-numbers'>Textarea line numbers</a> by MatheusAvellar. Some modifications made for modifying elements directly instead of through ID.</p>-->
-	<!--<br>
-	<a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot. T-Doll info, quotes, costumes, and more!</a>-->
+	<p>Designed using <a href='https://materializecss.com'>Materialize</a>, the ultimate front-end framework for people like me who can't be bothered to learn the hard shit like react or vue. <a href='https://github.com/Dogfalo/materialize/blob/master/LICENSE'>MIT license</a></p>
+	
+	<!--<hr>
+	<p>Advertisements</p>
+	<p><a href="/getraveitout">Try my rhythm game, it's free</a></p>-->
+	<p>Donate if you like the site and its features. Of course, development will continue regardless of donations. Money will go towards paying for the server ($2.50/mo) and the domain name ($20/yr).</p>
+	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'D1D7Y21A');kofiwidget2.draw();</script> 
+	<!--<p><a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot.</a> T-Doll info, quotes, costumes, and more!</p>-->
 	<!--<hr>
 	<p>Message Board: Leave a message here for me or others to see.</p>
 	<form>

@@ -18,6 +18,8 @@ build: girlsfrontline.json fetter.json fetter_story.json NormalActivityCampaign.
 	#if test -d avgtxt; then echo 
 	#echo $(objects)
 	#python3 
+	rsync -arvu imageFixes/ ../pic/
+	rsync -arvu bgFixes/ ../avgtexture/
 	./eventStoryStuff.py
 	./minifyGirlsfrontlineJSON.py
 	./auditPortraits.py
@@ -33,8 +35,6 @@ build: girlsfrontline.json fetter.json fetter_story.json NormalActivityCampaign.
 	#endif
 	#./gtml index.gtml
 	rsync -arvu txtFixes/ ../avgtxt/
-	rsync -arvu imageFixes/ ../pic/
-	rsync -arvu bgFixes/ ../avgtexture/
 	@echo "All done..."
 	#@echo "All done... Run 'make dist' if you want to copy everything in a distributable format"
 	

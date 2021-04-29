@@ -80,10 +80,21 @@ class ResizingList(list):
 		#internalName = self.getInternalName()
 		for i in range(begin,end):
 			self[i]='special/'+name+'('+str(i)+').png'
+			
+	def fillSpecial2(self,name,begin,end,isSpecial):
+		if isSpecial:
+			for i in range(begin,end):
+				self[i]='special/'+name+'_'+str(i)+'.png'
+		else:
+			for i in range(begin,end):
+				self[i]=name+'_'+str(i)+'.png'
 
-def quickGenerateNPC(name,upToIdxInclusive,isSpecial=True):
+def quickGenerateNPC(name,upToIdxInclusive,isSpecial=True,altMode=False):
 	l = ResizingList([])
-	l.fillSpecial(name,0,upToIdxInclusive+1)
+	if altMode:
+		l.fillSpecial2(name,0,upToIdxInclusive+1,isSpecial)
+	else:
+		l.fillSpecial(name,0,upToIdxInclusive+1)
 	return l
 
 newDatabase = []
@@ -277,7 +288,7 @@ portraitDatabase["NPC-Kalin"] = [
 portraitDatabase['NPC-Yegor'] = [
 	'NPC-Yegor.png'
 ]
-
+portraitDatabase['NPC-Soldier'] = ['NPC-YegorArm3.png']
 
 portraitDatabase['NPC-Ange'] = ResizingList([
 	'NPC-Ange.png',
@@ -320,6 +331,8 @@ portraitDatabase['NPC-Light']=quickGenerateNPC('NPC-Light',5)
 
 portraitDatabase['NPC-Jason']=["NPC-Jason.png","NPC-Jason_1.png"]
 portraitDatabase['NPC-Havel']=["NPC-Havel.png","NPC-Havel2.png"]
+portraitDatabase['NPC-Morridow'] = quickGenerateNPC('pic_NPC-Morridow',7,False,True)
+
 
 portraitDatabase['Seele'][2]='SeeleVollerei.png'
 
@@ -327,7 +340,13 @@ portraitDatabase['AK47'].quickInsertSpecial(2)
 
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
 portraitDatabase['RO635-NoArmor']=['special/pic_RO635_NoArmor0.png']
-portraitDatabase['RO635'][5] = 'special/pic_RO635_4.png' #Yeah, apparently the filename doesn't match the index...
+
+
+#Slot 0 and 1 are normal and damage
+portraitDatabase['RO635'][2] = 'special/pic_RO635_1.png'
+portraitDatabase['RO635'][3] = 'special/pic_RO635_2.png'
+portraitDatabase['RO635'][4] = 'special/pic_RO635_3.png'
+portraitDatabase['RO635'][5] = 'special/pic_RO635_4.png'
 portraitDatabase['RO635'][6] = 'special/RO635Dinergate.png'
 
 #portraitDatabase['BOSS-9']=['pic_BossArchitect_LL.png']
@@ -335,6 +354,10 @@ portraitDatabase['RO635'][6] = 'special/RO635Dinergate.png'
 portraitDatabase['BossDestroyerPlus']=['DestroyerPlus.png']
 
 portraitDatabase['Nyto'][7]="special/Nyto_7.png"
+portraitDatabase['NytoWhite']=["Nyto_white.png"]
+portraitDatabase['Nytochild01']=["Nytochild01_1.png","Nytochild01_2.png","Nytochild01_3.png"]
+portraitDatabase['Nytochild02']=["Nytochild02_1.png","Nytochild02_2.png"] #Does not have a third portrait
+portraitDatabase['Nytochild03']=["Nytochild03_1.png","Nytochild03_2.png","Nytochild03_3.png"]
 
 portraitDatabase['NytoIsomer'][4]="Nyto_Isomer_Shadow.png"
 portraitDatabase['AbandonedIsomer']=['Abandoned_Isomer.png']
@@ -351,7 +374,7 @@ portraitDatabase['HK416Mod'][2]='special/pic_HK416Mod_1.png'
 
 #M16 has more than two portraits, but this will have to do for now...
 portraitDatabase['M16']=portraitDatabase["M16A1"]
-portraitDatabase['M16A1BOSS']=['pic_M16A1_Boss.png']
+portraitDatabase['M16A1BOSS']=['pic_M16A1_Boss.png','special/pic_M16A1_1.png']
 portraitDatabase["MK2"]=portraitDatabase['StenMK2']
 portraitDatabase['FAL']=portraitDatabase['FNFAL']
 portraitDatabase['FAL'][2] = "pic_FNFAL_308.png"
@@ -400,6 +423,9 @@ portraitDatabase['G11story']=['special/pic_G11_rugged.png','special/pic_G11_maid
 
 portraitDatabase['UMP9story'] = ResizingList(['special/ump9.png'])
 
+#Slot 1 and 2 is normal and damage
+portraitDatabase['UMP9'][2]='special/pic_UMP9_1.png'
+portraitDatabase['UMP9'][3]='special/pic_UMP9_2.png'
 portraitDatabase['UMP9'][4]='special/pic_UMP9_3.png' #Yes it's correct
 portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'
@@ -424,6 +450,8 @@ portraitDatabase['FairyWarrior']=['equip/fairy/fighting_1.png']
 portraitDatabase['AR15'][2] = "special/AR15_T.png"
 portraitDatabase["M4A1"][2] = "special/M4A1_SAD.png"
 portraitDatabase["M4A1"][3] = "special/M4A1_T.png"
+
+portraitDatabase['M4A1Mod'][4]='special/M4A1Mod_紧张.png'
 
 portraitDatabase['missing'] = ['missing.png']
 

@@ -877,7 +877,10 @@
     ],
     "M4A1Mod": [
         "pic_M4A1Mod.png",
-        "pic_M4A1Mod_D.png"
+        "pic_M4A1Mod_D.png",
+        null,
+        null,
+        "special/M4A1Mod_紧张.png"
     ],
     "M500": [
         "pic_M500.png",
@@ -1356,9 +1359,9 @@
     "RO635": [
         "pic_RO635.png",
         "pic_RO635_D.png",
+        "special/pic_RO635_1.png",
         "special/pic_RO635_2.png",
         "special/pic_RO635_3.png",
-        "special/pic_RO635_4.png",
         "special/pic_RO635_4.png",
         "special/RO635Dinergate.png",
         "pic_RO635_4504.png",
@@ -1849,8 +1852,8 @@
     "UMP9": [
         "pic_UMP9.png",
         "pic_UMP9_D.png",
+        "special/pic_UMP9_1.png",
         "special/pic_UMP9_2.png",
-        "special/pic_UMP9_3.png",
         "special/pic_UMP9_3.png",
         null,
         "pic_UMP9_2106.png",
@@ -2409,6 +2412,9 @@
     "BB_Noel_503": [
         "pic_BB_Noel_503.png"
     ],
+    "NPC-Soldier": [
+        "NPC-YegorArm3.png"
+    ],
     "NPC-Dima": [
         "special/NPC-Dima(0).png",
         "special/NPC-Dima(1).png",
@@ -2423,6 +2429,16 @@
         "special/NPC-Light(4).png",
         "special/NPC-Light(5).png"
     ],
+    "NPC-Morridow": [
+        "pic_NPC-Morridow_0.png",
+        "pic_NPC-Morridow_1.png",
+        "pic_NPC-Morridow_2.png",
+        "pic_NPC-Morridow_3.png",
+        "pic_NPC-Morridow_4.png",
+        "pic_NPC-Morridow_5.png",
+        "pic_NPC-Morridow_6.png",
+        "pic_NPC-Morridow_7.png"
+    ],
     "Jillmagic": [
         "pic_Jill_529.png"
     ],
@@ -2431,6 +2447,23 @@
     ],
     "BossDestroyerPlus": [
         "DestroyerPlus.png"
+    ],
+    "NytoWhite": [
+        "Nyto_white.png"
+    ],
+    "Nytochild01": [
+        "Nytochild01_1.png",
+        "Nytochild01_2.png",
+        "Nytochild01_3.png"
+    ],
+    "Nytochild02": [
+        "Nytochild02_1.png",
+        "Nytochild02_2.png"
+    ],
+    "Nytochild03": [
+        "Nytochild03_1.png",
+        "Nytochild03_2.png",
+        "Nytochild03_3.png"
     ],
     "AbandonedIsomer": [
         "Abandoned_Isomer.png"
@@ -2447,7 +2480,8 @@
         "special/pic_M16A1_5.png"
     ],
     "M16A1BOSS": [
-        "pic_M16A1_Boss.png"
+        "pic_M16A1_Boss.png",
+        "special/pic_M16A1_1.png"
     ],
     "MK2": [
         "pic_StenMK2.png",

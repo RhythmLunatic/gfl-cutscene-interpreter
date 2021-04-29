@@ -991,25 +991,37 @@ js['side'].append({
 #js['side'].append({'name':"Christmas 2019",'episodes':getAllByPrefix(files,'-35','Episode')})
 #js['event'].append({'name':"Polarized Light (Untranslated)",'episodes':getAllByPrefix(files,'-36','???')})
 js['event'].append({
-	"name": "CH 12.5: Polarized Light (Untranslated)",
+	"name": "CH 12.5: Polarized Light",
 	"episodes": [
 		{
-			"name": "Chapter I",
+			"name": "Chapter 1: Unpolarized Light Source",
 			"parts": [
 				"-36-1-1.txt",
 				"-36-1-2.txt",
 				"-36-1-3.txt",
-				"-36-1-4.txt",
+				"-36-1-4.txt", #Side 404
 				"-36-1-5.txt",
-				"-36-1-6.txt",
+				"-36-1-6.txt", #Side 404
 				"-36-1-7.txt",
 				"-36-1-8.txt",
 				"-36-1-9.txt",
 				"-36-1-10.txt",
+			],
+			"part_names":[
+				"Lamp Starter",
+				"Propigation",
+				"Refraction Point",
+				"Critical Angle",
+				"Reflector",
+				"Critical Angle Pt.2",
+				"Total Internal Reflection",
+				"Sine Curve",
+				"Reversibility",
+				"Cosine Signal"
 			]
 		},
 		{
-			"name": "Chapter II",
+			"name": "Chapter 2",
 			"parts": [
 				"-36-2-1.txt",
 				"-36-2-2.txt",
@@ -1021,10 +1033,14 @@ js['event'].append({
 				"-36-2-8.txt",
 				"-36-2-9.txt",
 				"-36-2-10.txt",
+			],
+			"part_names":[
+				"Polarizer",
+				"Diffraction Grating"
 			]
 		},
 		{
-			"name": "Chapter III",
+			"name": "Chapter 3",
 			"parts": [
 				"-36-3-1.txt",
 				"-36-3-2.txt",
@@ -1043,7 +1059,7 @@ js['event'].append({
 			]
 		},
 		{
-			"name": "Chapter IV",
+			"name": "Chapter 4",
 			"parts": [
 				"-36-4-1.txt",
 				"-36-4-2.txt",
@@ -1062,7 +1078,7 @@ js['event'].append({
 			]
 		},
 		{
-			"name": "Chapter V",
+			"name": "Chapter 5",
 			"parts": [
 				"-36-5-1.txt",
 				"-36-5-2.txt",

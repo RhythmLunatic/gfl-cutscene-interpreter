@@ -124,7 +124,7 @@ if len(missingBGs) > 0:
 								cmds = line.replace("：",':').split(':')[0]
 								t = getFromTag(cmds,"BIN")
 								if t and int(t) in missingBGs:
-										print("Missing background {:<30} from {:<35}".format(missingBGs[int(t)],fName)+chapter['name']+" - "+episode['name'])
+										printError("Missing background {:<30} from {:<35}".format(missingBGs[int(t)],fName)+chapter['name']+" - "+episode['name'])
 
 #print(missingPortraits)
 #Now go through all of them and convert them to routing strings since it's what the interpreter takes

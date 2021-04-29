@@ -643,7 +643,9 @@ I have no idea how it works
 		STOPEFFECTS : 9,
 		NIGHTFILTER : 10,
 		FADEOUT : 11,
-		FADEIN : 12
+		FADEIN : 12,
+		CHOICE : 13,
+		DESTINATION : 14
 		//SETMASKEDPORTRAIT : 8
 	}
 	
@@ -662,7 +664,9 @@ I have no idea how it works
 		'stopEffect',
 		'nightFilter',
 		'fadeOut',
-		'fadeIn'
+		'fadeIn',
+		'choice',
+		'destination'
 		//'setMaskedPortrait'
 	]
 	
@@ -674,7 +678,8 @@ I have no idea how it works
 		"火焰销毁":OPCODES.STOPEFFECTS,
 		"Night":OPCODES.NIGHTFILTER,
 		"黑屏1":OPCODES.FADEOUT,
-		"黑屏2":OPCODES.FADEIN
+		"黑屏2":OPCODES.FADEIN,
+		'分支':OPCODES.DESTINATION
 		//"通讯框":OPCODES.SETMASKEDPORTRAIT,
 	}
 	
@@ -1160,6 +1165,7 @@ I have no idea how it works
 			let shouldDimLeft = thisLineHadAtLeastTwoPortraits && cmds.lastIndexOf(";") < cmds.lastIndexOf("</Speaker>")
 			
 			
+			
 			//console.log(thisLineHadAtLeastTwoPortraits);
 			//Limit it to 5 because I don't want a dumb infinite loop that crashes the browser
 			for(j=0;j<5;j++)
@@ -1174,7 +1180,7 @@ I have no idea how it works
 					//console.log(charID)
 					//console.log(charSpr)
 					//Ignore empty sprite IDs, they do nothing.
-					if (charSpr != undefined && charSpr != "")
+					if (charSpr != undefined && charSpr && charID)
 					{
 						
 						let shouldDim = false;
@@ -1247,6 +1253,7 @@ I have no idea how it works
 					structuredLines[structuredLines.length-1]=[OPCODES.SPEAKER,speakerRes]
 				else
 					structuredLines.push([OPCODES.SPEAKER,speakerRes])
+				cmds = removeTag(cmds,"Speaker")
 			}
 			
 			let bgmRes = getFromTag(cmds,"BGM")
@@ -1262,6 +1269,7 @@ I have no idea how it works
 				}
 			}
 			
+			//It's impossble to filter out duplicate background commands ahead of time because the night command is applied after the background command
 			const tags = ["BIN"]
 			tags.forEach(tag => {
 				//console.log(tag);
@@ -1273,6 +1281,25 @@ I have no idea how it works
 					cmds = removeTag(cmds,tag)
 				}
 			})
+			
+			
+			//Destination label
+			let destRes = getFromTag(cmds,'分支')
+			if (destRes != null)
+			{
+				for(var lll=structuredLines.length-1; lll>=0; lll--)
+				{
+					let m = structuredLines[lll];
+					if(m[0]==OPCODES.MSGBOXTRANSITION)
+					{
+						structuredLines.splice(lll+1,0,[OPCODES.DESTINATION,destRes])
+						//console.log("Pushed label tag at idx "+(lll+1))
+						//console.log(structuredLinesToString(structuredLines))
+						break;
+					}
+				}
+				cmds = removeTag(cmds,'分支')
+			}
 			
 			
 			//Search backwards to find the last background command and set isNight flag true
@@ -1341,7 +1368,15 @@ I have no idea how it works
 				
 				
 				text.split("+").forEach(msg => {
-					structuredLines.push([OPCODES.MSG,msg])
+					//Check for choice tag here. <c> is always at the end, so it's fine
+					let choiceStart = msg.indexOf('<c>')
+					if (choiceStart != -1)
+					{
+						structuredLines.push([OPCODES.MSG, msg.slice(0,choiceStart)])
+						structuredLines.push([OPCODES.CHOICE, msg.slice(choiceStart+3).split('<c>')])
+					}
+					else
+						structuredLines.push([OPCODES.MSG,msg])
 				})
 			}
 			//open/close msgbox
@@ -1474,7 +1509,12 @@ I have no idea how it works
 		
 		let lastSpeakerName = "";
 		let lastBGUsed = []; // [9,false];
-		let didBGOrPortraitOrNameChange = false;
+		//let didBGOrPortraitOrNameChange = false;
+		
+		let didBGChange = false;
+		let didPortraitsChange = false;
+		let didNameChange = false;
+		
 		let shownPortraits = []
 		
 		let fancyDisplayType = document.getElementById('fancyOrNot').checked;
@@ -1483,6 +1523,7 @@ I have no idea how it works
 		
 		//let inlineText = document.getElementById('inlineText').checked
 		let advancedCSS = document.getElementById('advancedCSS').checked;
+		let skipGenerationOfDuplicateBoxes = document.getElementById('skipGenerationOfDuplicateBoxes').checked;
 		var snowDiv;
 		if (advancedCSS)
 		{
@@ -1491,6 +1532,7 @@ I have no idea how it works
 			snowDiv.style='position: absolute; width:100%; height:100%;bottom: 0;'
 		}
 		let snowEffect = false
+		//let curDestination = null;
 		
 		for(var i=0;i<structuredLines.length;i++)
 		{
@@ -1503,11 +1545,26 @@ I have no idea how it works
 					newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+"')")
 					thisPartDiv.appendChild(newPlayBGMButton);
 					break;
+				case OPCODES.CHOICE:
+					structuredLines[i][1].forEach(c => {
+						let choiceButton = document.createElement('a');
+						choiceButton.setAttribute("class","waves-effect waves-light btn");
+						choiceButton.setAttribute("style","margin-right: 5px; margin-bottom: 5px; text-transform:unset;")
+						choiceButton.innerText=c;
+						thisPartDiv.appendChild(choiceButton);
+					})
+					break;
+				case OPCODES.DESTINATION:
+					//curDestination = structuredLines[i][1]
+					let h5 = document.createElement('h5');
+					h5.setAttribute('id','choiceDestination_'+(part*100+structuredLines[i][1]));
+					h5.innerText="If choice "+structuredLines[i][1]+" was picked"
+					thisPartDiv.appendChild(h5);
 				case OPCODES.SPEAKER:
 					if (lastSpeakerName != structuredLines[i][1])
 					{
 						lastSpeakerName=structuredLines[i][1];
-						didBGOrPortraitOrNameChange = true
+						didNameChange = true
 						
 						//TODO: Make it so changing the speaker doesn't render a new box..
 						/*if (lastSpeakerName != "")
@@ -1539,7 +1596,7 @@ I have no idea how it works
 						{
 							//console.log("Pushed new portrait with idx "+idx);
 							shownPortraits.push(structuredLines[i]);
-							didBGOrPortraitOrNameChange = true;
+							didPortraitsChange = true;
 						}
 						else
 						{
@@ -1552,7 +1609,7 @@ I have no idea how it works
 							{
 								//console.log("Portrait replaced "+portraitStructToString(oldPortrait) +" -> "+portraitStructToString(newPortrait))
 								shownPortraits[idx]=newPortrait;
-								didBGOrPortraitOrNameChange = true;
+								didPortraitsChange = true;
 							}
 						}
 						//console.log("NumPortraits: "+shownPortraits.length);
@@ -1571,6 +1628,7 @@ I have no idea how it works
 						consoleWarn(portraitStructToString(structuredLines[i]))
 						shownPortraits[idx]=structuredLines[i];
 						shownPortraits[idx][3]=0
+						didPortraitsChange=true; //Assume true for now
 						
 
 						
@@ -1589,13 +1647,14 @@ I have no idea how it works
 						shownPortraits[idx]=structuredLines[i];
 						shownPortraits[idx][2]='missing'
 						shownPortraits[idx][3]=0
+						didPortraitsChange=true; //Assume true for now
 					}
 					break;
 				case OPCODES.NOPORTRAIT:
 					if (shownPortraits.length > 0)
 					{
 						shownPortraits = [];
-						didBGOrPortraitOrNameChange = true;
+						didPortraitsChange = true;
 					}
 					else
 					{
@@ -1611,7 +1670,7 @@ I have no idea how it works
 					if (newBG != lastBGUsed)
 					{
 						lastBGUsed=newBG;
-						didBGOrPortraitOrNameChange=true;
+						didBGChange=true;
 					}
 					break;
 				case OPCODES.FADEIN:
@@ -1681,137 +1740,154 @@ I have no idea how it works
 					
 					if (fancyDisplayType)
 					{
-						if (didBGOrPortraitOrNameChange)
+						if (didBGChange || didNameChange || didPortraitsChange)
 						{
-							let storyBox = document.createElement('div');
-							if (quickScroll)
+							if ((!skipGenerationOfDuplicateBoxes && didNameChange) || (didBGChange || didPortraitsChange))
 							{
-								//It's impossible to not have quickScroll unless it works backwards... So just ignore the errors on the last box I guess
-								//TODO: Make it not error on the last box... I don't think that's actually possible
-								storyBox.style.cursor='pointer';
-								storyBox.setAttribute('id','storyBox'+numStoryBoxRendered)
-								storyBox.setAttribute('onclick',"document.getElementById('storyBox"+(numStoryBoxRendered+1)+"').scrollIntoView({behavior:'auto',block:'center',inline:'center'});")
-								numStoryBoxRendered++;
-							}
-							storyBox.classList.add('storyImg');
-							let bgImage = document.createElement('img');
-							bgImage.style = "width:100%; position:relative; display:block;";
-							
-							//It is entirely possible for there to be text without a BG being set, for some reason
-							//TODO: Remove this and default to black background, and just don't render any more boxes when the same background is used multiple times. This is basically a hack
-							if (lastBGUsed[0] != undefined)
-							{
-								if (BACKGROUNDS[lastBGUsed[0]] == undefined)
+								let storyBox = document.createElement('div');
+								if (quickScroll)
 								{
-									consoleWarn("Background "+lastBGUsed[0]+" is not indexed.")
-									bgImage.src = "avgtexture/missing.png"
-									
-									if (document.getElementById('showDebugOpcodeButton').checked)
-									{
-										let p = document.createElement('p');
-										p.innerHTML = "<span class='coloredDialogue' style='color:red'>PORTRAIT TYPE MISSING BELOW "+lastBGUsed[0]+"</span>";
-										p.classList.add("storyText");
-										thisPartDiv.appendChild(p);
-									}
+									//It's impossible to not have quickScroll unless it works backwards... So just ignore the errors on the last box I guess
+									//TODO: Make it not error on the last box... I don't think that's actually possible
+									storyBox.style.cursor='pointer';
+									storyBox.setAttribute('id','storyBox'+numStoryBoxRendered)
+									storyBox.setAttribute('onclick',"document.getElementById('storyBox"+(numStoryBoxRendered+1)+"').scrollIntoView({behavior:'auto',block:'center',inline:'center'});")
+									numStoryBoxRendered++;
 								}
-								//If 10, a fully transparent image is used and meant to show the stage underneath. So instead pick PlaybackBG1/PlaybackBG2.
-								//Read GF Syntax Information.md for more information.
-								else if (lastBGUsed[0] == 10)
-								{
-									bgImage.src = isNight ? 'avgtexture/PlaybackBG2.png' : 'avgtexture/PlaybackBG1.png'
-								}
-								else
-									bgImage.src = 'avgtexture/'+BACKGROUNDS[lastBGUsed[0]]+'.png'
+								storyBox.classList.add('storyImg');
+								let bgImage = document.createElement('img');
+								bgImage.style = "width:100%; position:relative; display:block;";
 								
-								//I don't think MICA ever accidentally colored the black wallpaper so I probably don't need to check
-								if (lastBGUsed[1] /*&& lastBGUsed[0] != 9*/)
+								//It is entirely possible for there to be text without a BG being set, for some reason
+								//TODO: Remove this and default to black background, and just don't render any more boxes when the same background is used multiple times. This is basically a hack
+								if (lastBGUsed[0] != undefined)
 								{
-									if (!nightBackgrounds[lastBGUsed[0]])
+									if (BACKGROUNDS[lastBGUsed[0]] == undefined)
 									{
-										bgImage.classList.add('nightBG');
-										bgImage.setAttribute('bg',lastBGUsed[0]);
-										if (!nightBGQueue[lastBGUsed[0]])
+										consoleWarn("Background "+lastBGUsed[0]+" is not indexed.")
+										bgImage.src = "avgtexture/missing.png"
+										
+										if (document.getElementById('showDebugOpcodeButton').checked)
 										{
-											nightBGQueue[lastBGUsed[0]]=true;
-											console.log("Queued generation of "+lastBGUsed[0]);
-											bgImage.onload = function(){
-												let bgName = bgImage.getAttribute('bg')
-												nightBackgrounds[bgName]=nightFilter(bgImage)
-												console.log("Generated "+bgName);
-												bgImage.onload = null;
-												
-												//TODO: So it turns out FF can generate night BGs faster than the DOM is ready. I have no idea how to fix this.
-												document.querySelectorAll('.nightBG').forEach(el => {
-													if (nightBackgrounds[el.getAttribute('bg')])
-													{
-														//console.log("set night bg");
-														el.src=nightBackgrounds[el.getAttribute('bg')]
-														el.classList.remove('nightBG');
-													}
-												});
-											}
+											let p = document.createElement('p');
+											p.innerHTML = "<span class='coloredDialogue' style='color:red'>PORTRAIT TYPE MISSING BELOW "+lastBGUsed[0]+"</span>";
+											p.classList.add("storyText");
+											thisPartDiv.appendChild(p);
 										}
 									}
-									else
+									//If 10, a fully transparent image is used and meant to show the stage underneath. So instead pick PlaybackBG1/PlaybackBG2.
+									//Read GF Syntax Information.md for more information.
+									else if (lastBGUsed[0] == 10)
 									{
-										bgImage.src=nightBackgrounds[lastBGUsed[0]];
+										bgImage.src = isNight ? 'avgtexture/PlaybackBG2.png' : 'avgtexture/PlaybackBG1.png'
 									}
+									else
+										bgImage.src = 'avgtexture/'+BACKGROUNDS[lastBGUsed[0]]+'.png'
+									
+									//I don't think MICA ever accidentally colored the black wallpaper so I probably don't need to check
+									if (lastBGUsed[1] /*&& lastBGUsed[0] != 9*/)
+									{
+										if (!nightBackgrounds[lastBGUsed[0]]) //If background not generated yet
+										{
+											bgImage.classList.add('nightBG');
+											bgImage.setAttribute('bg',lastBGUsed[0]);
+											if (!nightBGQueue[lastBGUsed[0]]) //If not queued for generation yet
+											{
+											
+												bgImage.onload = function(){ //Wait for image to finish loading. Then run nightFilter on img. Not that onload != DOM is ready! That's why there's a background task below.
+													let bgName = bgImage.getAttribute('bg')
+													nightBackgrounds[bgName]=nightFilter(bgImage)
+													console.log("NightBG: Generated "+bgName);
+													bgImage.onload = null;
+													
+												}
+												console.log("Queued generation of "+lastBGUsed[0]);
+											
+												//Use this array for storing background task.
+												//This task will check every 100 if night BG is generated and if all the night BG boxes are rendered and ready to be set.
+												nightBGQueue[lastBGUsed[0]]=setInterval(function(bgNum){
+													let nBGs = document.querySelectorAll('[bg="'+bgNum+'"'); //ex. document.querySelectorAll('[bg="2"]')
+													if (nBGs.length == 0 || !nightBackgrounds[bgNum])
+													{
+														console.log("NightBG: waiting for generation of bg "+bgNum+" to finish or DOM to be ready...");
+														return;
+													}
+													nBGs.forEach(el => {
+														el.src=nightBackgrounds[el.getAttribute('bg')]
+														//el.classList.remove('nightBG');
+													});
+													console.log("NightBG: set night BGs for "+bgNum+", killing background task "+nightBGQueue[bgNum]);
+													let t = nightBGQueue[bgNum]
+													clearInterval(t);
+												},100,lastBGUsed[0]);
+												
+												
+												
+
+											}
+										}
+										else
+										{
+											bgImage.src=nightBackgrounds[lastBGUsed[0]];
+										}
+									}
+									storyBox.appendChild(bgImage);
 								}
-								storyBox.appendChild(bgImage);
-							}
-							
-							for(var j=0;j<shownPortraits.length;j++)
-							{
-								console.assert(shownPortraits[j]);
-								let portraitImg = document.createElement('img');
-								portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
-								//console.log(portraitImg.src);
 								
-								if (!shownPortraits[j][5])
+								for(var j=0;j<shownPortraits.length;j++)
 								{
-									portraitImg.classList.add("storydoll");
-									if (shownPortraits[j][4]==true)
-										portraitImg.classList.add('dim')
-									portraitImg.classList.add(int2strPos[j+1]);
-									portraitImg.classList.add(int2str[shownPortraits.length]);
-									storyBox.appendChild(portraitImg);
+									console.assert(shownPortraits[j]);
+									let portraitImg = document.createElement('img');
+									portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
+									//console.log(portraitImg.src);
+									
+									if (!shownPortraits[j][5])
+									{
+										portraitImg.classList.add("storydoll");
+										if (shownPortraits[j][4]==true)
+											portraitImg.classList.add('dim')
+										portraitImg.classList.add(int2strPos[j+1]);
+										portraitImg.classList.add(int2str[shownPortraits.length]);
+										storyBox.appendChild(portraitImg);
+									}
+									else //Behold, pain
+									{
+										let d = document.createElement('div');
+										d.style='position:absolute;width:100%;top:10%'
+										d.classList.add('maskcontainer');
+										d.classList.add(int2strPos[j+1]);
+										d.classList.add(int2str[shownPortraits.length]);
+										if (shownPortraits[j][4]==true)
+											d.classList.add('dim')
+										let h = "<img src='maskBox.png' style='position:absolute;width:30%'>"
+										//width should be width of maskBox * 0.869209809 because width of this image is 86% of maskBox in terms of pixels
+										h+="<div style='overflow:hidden;position:absolute;width:26.076%;left:3%;padding-top:1%;'>"
+											//Don't forget display:block or the div containing this will be slightly too big. Because CSS is amazing.
+											h+="<img src='maskBox2.png' style='position:relative;z-index:1;width:100%;display:block;'>"
+											//How the fuck is it 270%? Or left -85%? How does this shit make ANY sense? WHY DO I NEED PADDING-TOP 4%?????
+											h+="<img src='"+portraitImg.src+"' class='"+(shownPortraits[j][4]?"dim":"")+"' style='position:absolute; min-width:270%; top:0; left:-85%; width:100%; padding-top:4%;'>"
+										h+="</div>"
+										d.innerHTML=h
+										storyBox.appendChild(d);
+									}
+									//If mask (new)
+									//<img src="avgtexture/夜间蒙版.png" class="storydoll first one mask" style="mask-image: url(pic/pic_NPC-Helian.png);">
+									//Mask is a transparent masked blue image, so we overlay on top of the other img
+									/*if (shownPortraits[j][5]==true)
+									{
+										let m = maskThing.cloneNode(true);
+										m.classList.add(int2strPos[j+1])
+										m.classList.add(int2str[shownPortraits.length]);
+										m.style = "mask-image: url('"+portraitImg.src+"');"+"-webkit-mask-image: url('"+portraitImg.src+"');"
+										storyBox.appendChild(m);
+									}*/
 								}
-								else //Behold, pain
-								{
-									let d = document.createElement('div');
-									d.style='position:absolute;width:100%;top:10%'
-									d.classList.add('maskcontainer');
-									d.classList.add(int2strPos[j+1]);
-									d.classList.add(int2str[shownPortraits.length]);
-									if (shownPortraits[j][4]==true)
-										d.classList.add('dim')
-									let h = "<img src='maskBox.png' style='position:absolute;width:30%'>"
-									//width should be width of maskBox * 0.869209809 because width of this image is 86% of maskBox in terms of pixels
-									h+="<div style='overflow:hidden;position:absolute;width:26.076%;left:3%;padding-top:1%;'>"
-										//Don't forget display:block or the div containing this will be slightly too big. Because CSS is amazing.
-										h+="<img src='maskBox2.png' style='position:relative;z-index:1;width:100%;display:block;'>"
-										//How the fuck is it 270%? Or left -85%? How does this shit make ANY sense?
-										h+="<img src='"+portraitImg.src+"' class='"+(shownPortraits[j][4]?"dim":"")+"' style='position:absolute; min-width:270%; top:0; left:-85%; width:100%'>"
-									h+="</div>"
-									d.innerHTML=h
-									storyBox.appendChild(d);
-								}
-								//If mask (new)
-								//<img src="avgtexture/夜间蒙版.png" class="storydoll first one mask" style="mask-image: url(pic/pic_NPC-Helian.png);">
-								//Mask is a transparent masked blue image, so we overlay on top of the other img
-								/*if (shownPortraits[j][5]==true)
-								{
-									let m = maskThing.cloneNode(true);
-									m.classList.add(int2strPos[j+1])
-									m.classList.add(int2str[shownPortraits.length]);
-									m.style = "mask-image: url('"+portraitImg.src+"');"+"-webkit-mask-image: url('"+portraitImg.src+"');"
-									storyBox.appendChild(m);
-								}*/
+								
+								if (snowEffect && advancedCSS)
+									storyBox.appendChild(snowDiv.cloneNode(false));
+								
+								thisPartDiv.appendChild(storyBox);
 							}
-							
-							if (snowEffect && advancedCSS)
-								storyBox.appendChild(snowDiv.cloneNode(false));
-							
 							/*if (inlineText)
 							{
 								let textboxDiv = document.createElement('div');
@@ -1835,7 +1911,6 @@ I have no idea how it works
 							}
 							else
 							{*/
-								thisPartDiv.appendChild(storyBox);
 								
 								if (lastSpeakerName != "")
 								{
@@ -1848,7 +1923,9 @@ I have no idea how it works
 								}
 							//}
 							
-							didBGOrPortraitOrNameChange = false;
+							didBGChange = false;
+							didPortraitsChange = false;
+							didNameChange = false;
 						}
 						
 						//No, it's not well written. No, I don't know how to fix it.
@@ -1988,7 +2065,7 @@ I have no idea how it works
 		let simpleTextDiv = document.getElementById("verySimpleText")
 		simpleTextDiv.parentNode.replaceChild(NewSimpleTextDiv,simpleTextDiv);
 		
-		if (document.getElementById('chapterHistoryRouting').checked && routableKeyString != undefined)
+		if (true && routableKeyString != undefined)
 		{
 			setCookie('lastViewedScene',routableKeyString,180);
 		}
@@ -2580,7 +2657,7 @@ I have no idea how it works
 		setCheckboxFromCookie('showInteractiveInterpreter',false);
 		hideInterpreterButton();
 		setCheckboxFromCookie('showDebugOpcodeButton',false);
-		setCheckboxFromCookie('chapterHistoryRouting',true);
+		setCheckboxFromCookie('skipGenerationOfDuplicateBoxes',false);
 	
 		fetch('chapterDatabase.json')
 		.then(response => response.json())
@@ -2598,7 +2675,7 @@ I have no idea how it works
 			
 			//Can't run until chapters and portraits are loaded...... Which means this can fail because portraitInformation.json isn't awaited
 			//TODO: Fix it, duh
-			if (document.getElementById('chapterHistoryRouting').checked)
+			if (true)
 			{
 				let [type,chapter,episode] = getKeysFromRoutableString(window.location.hash.slice(1))
 				if (type && chapter && episode && listOfChapters[type][chapter]['episodes'][episode])
@@ -2847,13 +2924,13 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			</tr>
 			<tr>
     			<td style="width:100%">
-    				<span class="title">Last chapter history</span>
-    				<p>Upon reloading the page, returns you to the last viewed cutscene by using cookies. Having a routing string in your url bar (ex. #crossover-4-1) will override this. </p>
+    				<span class="title">Skip duplicate story CG boxes</span>
+    				<p>Skips generating a new CG box if only the speaker's name changed.</p>
     			</td>
     			<td>
 					<div class="switch">
 						<label>
-						  <input type="checkbox" id="chapterHistoryRouting" onclick="setCookieFromCheckbox('chapterHistoryRouting')">
+						  <input type="checkbox" id="skipGenerationOfDuplicateBoxes" onclick="setCookieFromCheckbox('skipGenerationOfDuplicateBoxes'); runFromRoutableKeyString()">
 						  <span class="lever"></span>
 						</label>
 					</div>
@@ -2999,6 +3076,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 					</div>-->
 					<!--Generic simple textarea1 that doesn't break like materialize... The div is for padding-->
 					<div style='padding-top:10px'>
+						<div style='text-align:left;'>Part 1</div>
 						<textarea placeholder="Type in your txt (GFL) or iop (Interpreter) styled codes here." id="textarea1"></textarea>
 					</div>
 					<a class="waves-effect waves-light btn disabled" onclick=""><i class="material-icons add">folder_open</i>Add another part</a>
@@ -3149,11 +3227,12 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<p>Designed using <a href='https://materializecss.com'>Materialize</a>, the ultimate front-end framework for people like me who can't be bothered to learn the hard shit like react or vue. <a href='https://github.com/Dogfalo/materialize/blob/master/LICENSE'>MIT license</a></p>
 	
 	<!--<hr>
-	<p>Advertisements</p>
-	<p><a href="/getraveitout">Try my rhythm game, it's free</a></p>-->
-	<p>Donate if you like the site and its features. Of course, development will continue regardless of donations. Money will go towards paying for the server ($2.50/mo) and the domain name ($20/yr).</p>
+	<p>Advertisements</p>-->
+	<p><a href="http://amaryllisworks.pw/getraveitout">Try the rhythm game I programmed, it's free and open source</a></p>
+	<!--<p>Need a programmer for your epic Girls' Frontline fangame? I'll help with platformers, visual novels, or rhythm games. No drawing though.</p>-->
+	<!--<p>Donate if you like the site and its features. Of course, development will continue regardless of donations. Money will go towards paying for the server ($2.50/mo) and the domain name ($20/yr).</p>
 	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'D1D7Y21A');kofiwidget2.draw();</script> 
+<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'D1D7Y21A');kofiwidget2.draw();</script> -->
 	<!--<p><a href="https://github.com/RhythmLunatic/Girls-Frontline-Discord-Search">Try out my Girls' Frontline discord bot.</a> T-Doll info, quotes, costumes, and more!</p>-->
 	<!--<hr>
 	<p>Message Board: Leave a message here for me or others to see.</p>

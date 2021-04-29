@@ -211,14 +211,29 @@ Looks like choice will be up until the next command.
 
 Example: `... <c>I don't have a clue. <c>I'm not telling you. <c>She never would have told me.` creates choices `["I don't have a clue.", "I'm not telling you.", "She never would have told me."]`
 
-The result is stored as an int and the game searches until it finds the corresponding branch (1-indexed) marked with `分支`.
+The result is stored as an int and the game checks if the next line is a branch destination marked with `分支`. If the destination doesn't match, it continues searching until it either finds a matching destination or a non-labelled line.
 
-Full example:
-```
+Example:
+```html
 Nyto(0)<Speaker>Commander</Speaker>||:... <c>I don't have a clue. <c>I'm not telling you. <c>She never would have told me.
 Nyto(0)<Speaker>Nyto</Speaker>||<分支>1</分支>:Indeed, we have no evidence to either support or refute your claim.
 Nyto(0)<Speaker>Nyto</Speaker>||<分支>2</分支>:We know. It is an answer we expected.
 Nyto(0)<Speaker>Nyto</Speaker>||<分支>3</分支>:Then I can assume that she does not trust you all that much.
+```
+
+Another example, this has two '3' destinations
+```html
+()<Speaker>Commander</Speaker>||:<c>You're called Nyto, right? <c>Can you speak? <c>Can I have a glass of water?
+()<Speaker></Speaker>||<分支>1</分支>:The Nytos do not answer, but their gazes grow more focused as they stare at me. +The way they look at me makes me very uncomfortable, more so than the looks in the eyes of the first batch of experimental Dolls. +There is no emotion or curiosity there. They're just...looking at me... +What am I in their eyes? Perhaps I am nothing more than a form that needs to be filled up for work.
+()<Speaker></Speaker>||<分支>2</分支>:The Nytos do not respond in any way, like a group of emotionless machines that lack any personality. +I had seen them on the battlefield before, killing all targets in sight...my T-Dolls, perhaps, or maybe it was me... +They are a more hateful enemy than even the Military, but right now...they are not doing anything.
+()<Speaker>??</Speaker>||<分支>3</分支>:You will have one, but not in this place.
+()<Speaker></Speaker>||<分支>3</分支>:The Nytos speak, and their voices make me doubt my ears. +I've heard these voices before...but I can't remember where exactly, and it makes me feel uncomfortable... +Perhaps it's because I've just woken up and my head isn't too clear, or perhaps it's because I really need a glass of water...
+```
+
+Example where there are no destinations so it will play the next line no matter what:
+```html
+MG3(4)<Speaker>MG3</Speaker>||:Hehe, if I weren't around, you'd have broken something, Commander. +I didn't expect you could be so flustered.<c>Well, I AM a man, after all...<c>Even though I'm a girl as well, I can't...
+MG3(4)<Speaker>MG3</Speaker>||:Really? +I'm glad to hear you say that, Commander!
 ```
 
 ### b

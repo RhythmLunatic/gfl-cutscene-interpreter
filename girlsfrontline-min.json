@@ -2254,6 +2254,12 @@
         "internalName": "TEC9"
     },
     {
+        "name": "TKB-408",
+        "type": "AR",
+        "num": 340,
+        "rating": 5
+    },
+    {
         "name": "TMP",
         "type": "SMG",
         "num": 176,
@@ -2627,7 +2633,7 @@
     {
         "name": "Zas M76",
         "type": "RF",
-        "num": -1,
+        "num": 284,
         "rating": 3,
         "internalName": "ZasM76"
     },

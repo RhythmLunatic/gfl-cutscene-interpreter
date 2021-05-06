@@ -4199,6 +4199,12 @@
 						]
 					},
 					{
+						"name": "Ameli - Ameli's Receive",
+						"parts": [
+							"skin/2409.txt"
+						]
+					},
+					{
 						"name": "AN-94 - Silent Rouge",
 						"parts": [
 							"skin/3303.txt"
@@ -4223,12 +4229,6 @@
 						]
 					},
 					{
-						"name": "Ameli - Ameli's Receive",
-						"parts": [
-							"skin/2409.txt"
-						]
-					},
-					{
 						"name": "Bren - Jack the Trine",
 						"parts": [
 							"skin/2605.txt"
@@ -4244,18 +4244,6 @@
 						"name": "CAWS - 120 Winter Gifts",
 						"parts": [
 							"skin/4003.txt"
-						]
-					},
-					{
-						"name": "CZ52 - Baby Blue Eyes",
-						"parts": [
-							"skin/3007.txt"
-						]
-					},
-					{
-						"name": "CZ75 - Monks Cress",
-						"parts": [
-							"skin/3005.txt"
 						]
 					},
 					{
@@ -4280,6 +4268,18 @@
 						"name": "Contender - Opera Ghost",
 						"parts": [
 							"skin/1502.txt"
+						]
+					},
+					{
+						"name": "CZ52 - Baby Blue Eyes",
+						"parts": [
+							"skin/3007.txt"
+						]
+					},
+					{
+						"name": "CZ75 - Monks Cress",
+						"parts": [
+							"skin/3005.txt"
 						]
 					},
 					{
@@ -4337,18 +4337,6 @@
 						]
 					},
 					{
-						"name": "FNC - Strawberry Cake & Garden Cosmos",
-						"parts": [
-							"skin/4308.txt"
-						]
-					},
-					{
-						"name": "FP-6 - Satellite of Love",
-						"parts": [
-							"skin/2804.txt"
-						]
-					},
-					{
 						"name": "Five-seveN - Blue Christmas",
 						"parts": [
 							"skin/2805.txt"
@@ -4358,6 +4346,18 @@
 						"name": "Five-seveN - Smile of Acceptance",
 						"parts": [
 							"skin/1902.txt"
+						]
+					},
+					{
+						"name": "FNC - Strawberry Cake & Garden Cosmos",
+						"parts": [
+							"skin/4308.txt"
+						]
+					},
+					{
+						"name": "FP-6 - Satellite of Love",
+						"parts": [
+							"skin/2804.txt"
 						]
 					},
 					{
@@ -4505,6 +4505,12 @@
 						]
 					},
 					{
+						"name": "Kar98k - Purity in Vermilion",
+						"parts": [
+							"skin/4301.txt"
+						]
+					},
+					{
 						"name": "KSVK - Darkside Moonwalk",
 						"parts": [
 							"skin/3805.txt"
@@ -4517,9 +4523,15 @@
 						]
 					},
 					{
-						"name": "Kar98k - Purity in Vermilion",
+						"name": "Lewis - Holy Night Promise",
 						"parts": [
-							"skin/4301.txt"
+							"skin/4001.txt"
+						]
+					},
+					{
+						"name": "Lewis - Sunscreen Battle",
+						"parts": [
+							"skin/3502.txt"
 						]
 					},
 					{
@@ -4532,18 +4544,6 @@
 						"name": "LWMMG - My Lie in December",
 						"parts": [
 							"skin/4007.txt"
-						]
-					},
-					{
-						"name": "Lewis - Holy Night Promise",
-						"parts": [
-							"skin/4001.txt"
-						]
-					},
-					{
-						"name": "Lewis - Sunscreen Battle",
-						"parts": [
-							"skin/3502.txt"
 						]
 					},
 					{
@@ -4595,6 +4595,12 @@
 						]
 					},
 					{
+						"name": "m45 - Candy Express",
+						"parts": [
+							"skin/4.txt"
+						]
+					},
+					{
 						"name": "M4A1 - Untranslated1",
 						"parts": [
 							"skin/4505.txt"
@@ -4634,6 +4640,18 @@
 						"name": "M99 - White Rabbit Summer Banquet",
 						"parts": [
 							"skin/3304.txt"
+						]
+					},
+					{
+						"name": "Makarov - A Certain Unscientific Sunflower",
+						"parts": [
+							"skin/4310.txt"
+						]
+					},
+					{
+						"name": "Makarov - Pumpkin Mishka",
+						"parts": [
+							"skin/1.txt"
 						]
 					},
 					{
@@ -4679,42 +4697,6 @@
 						]
 					},
 					{
-						"name": "MP5 - A Small Step",
-						"parts": [
-							"skin/1903.txt"
-						]
-					},
-					{
-						"name": "MP5 - Nocturnal Familiar",
-						"parts": [
-							"skin/3.txt"
-						]
-					},
-					{
-						"name": "MP5 - Vietnamese Balm",
-						"parts": [
-							"skin/3006.txt"
-						]
-					},
-					{
-						"name": "MP7 - Lollipop Ammo",
-						"parts": [
-							"skin/2405.txt"
-						]
-					},
-					{
-						"name": "Makarov - A Certain Unscientific Sunflower",
-						"parts": [
-							"skin/4310.txt"
-						]
-					},
-					{
-						"name": "Makarov - Pumpkin Mishka",
-						"parts": [
-							"skin/1.txt"
-						]
-					},
-					{
 						"name": "Mk23 - Conveyed Feelings",
 						"parts": [
 							"skin/3105.txt"
@@ -4742,6 +4724,30 @@
 						"name": "Mosin-Nagant - Moonlit Ocean",
 						"parts": [
 							"skin/803.txt"
+						]
+					},
+					{
+						"name": "MP5 - A Small Step",
+						"parts": [
+							"skin/1903.txt"
+						]
+					},
+					{
+						"name": "MP5 - Nocturnal Familiar",
+						"parts": [
+							"skin/3.txt"
+						]
+					},
+					{
+						"name": "MP5 - Vietnamese Balm",
+						"parts": [
+							"skin/3006.txt"
+						]
+					},
+					{
+						"name": "MP7 - Lollipop Ammo",
+						"parts": [
+							"skin/2405.txt"
 						]
 					},
 					{
@@ -4865,42 +4871,6 @@
 						]
 					},
 					{
-						"name": "SPAS-12 - Midsummer Fruit",
-						"parts": [
-							"skin/2408.txt"
-						]
-					},
-					{
-						"name": "SPP-1 - Night of Blue Lotus",
-						"parts": [
-							"skin/4207.txt"
-						]
-					},
-					{
-						"name": "SR-3MP - Bunny Macchiato",
-						"parts": [
-							"skin/807.txt"
-						]
-					},
-					{
-						"name": "ST AR-15 - Untranslated1",
-						"parts": [
-							"skin/4508.txt"
-						]
-					},
-					{
-						"name": "SV-98 - Pierce Your Heart!",
-						"parts": [
-							"skin/1906.txt"
-						]
-					},
-					{
-						"name": "SVD - Winter Fairy",
-						"parts": [
-							"skin/305.txt"
-						]
-					},
-					{
 						"name": "Saiga-12 - Untranslated1",
 						"parts": [
 							"skin/4510.txt"
@@ -4916,6 +4886,18 @@
 						"name": "Skorpion - Crimson Starlet",
 						"parts": [
 							"skin/801.txt"
+						]
+					},
+					{
+						"name": "SPAS-12 - Midsummer Fruit",
+						"parts": [
+							"skin/2408.txt"
+						]
+					},
+					{
+						"name": "SPP-1 - Night of Blue Lotus",
+						"parts": [
+							"skin/4207.txt"
 						]
 					},
 					{
@@ -4937,6 +4919,18 @@
 						]
 					},
 					{
+						"name": "SR-3MP - Bunny Macchiato",
+						"parts": [
+							"skin/807.txt"
+						]
+					},
+					{
+						"name": "ST AR-15 - Untranslated1",
+						"parts": [
+							"skin/4508.txt"
+						]
+					},
+					{
 						"name": "Stechkin - Miss Camellia's Special Service",
 						"parts": [
 							"skin/4306.txt"
@@ -4952,6 +4946,18 @@
 						"name": "Suomi - Korvatunturi Pixie",
 						"parts": [
 							"skin/310.txt"
+						]
+					},
+					{
+						"name": "SV-98 - Pierce Your Heart!",
+						"parts": [
+							"skin/1906.txt"
+						]
+					},
+					{
+						"name": "SVD - Winter Fairy",
+						"parts": [
+							"skin/305.txt"
 						]
 					},
 					{
@@ -4973,12 +4979,6 @@
 						]
 					},
 					{
-						"name": "TMP - Red-Eared Cat",
-						"parts": [
-							"skin/2807.txt"
-						]
-					},
-					{
 						"name": "Thompson - Demon Hunter",
 						"parts": [
 							"skin/1501.txt"
@@ -4988,6 +4988,12 @@
 						"name": "Thunder - Black Swan's Dream",
 						"parts": [
 							"skin/3309.txt"
+						]
+					},
+					{
+						"name": "TMP - Red-Eared Cat",
+						"parts": [
+							"skin/2807.txt"
 						]
 					},
 					{
@@ -5102,12 +5108,6 @@
 						"name": "Zas M76 - Untranslated1",
 						"parts": [
 							"skin/4511.txt"
-						]
-					},
-					{
-						"name": "m45 - Candy Express",
-						"parts": [
-							"skin/4.txt"
 						]
 					}
 				]
@@ -5532,6 +5532,1829 @@
 				]
 			},
 			{
+				"name": "3rd Anniversary",
+				"episodes": [
+					{
+						"name": "Kalina",
+						"parts": [
+							"anniversary/-1.txt"
+						]
+					},
+					{
+						"name": "43M",
+						"parts": [
+							"anniversary/291.txt"
+						]
+					},
+					{
+						"name": "6P62",
+						"parts": [
+							"anniversary/138.txt"
+						]
+					},
+					{
+						"name": "9A-91",
+						"parts": [
+							"anniversary/118.txt"
+						]
+					},
+					{
+						"name": "A-91",
+						"parts": [
+							"anniversary/227.txt"
+						]
+					},
+					{
+						"name": "AA-12",
+						"parts": [
+							"anniversary/163.txt"
+						]
+					},
+					{
+						"name": "AAT-52",
+						"parts": [
+							"anniversary/111.txt"
+						]
+					},
+					{
+						"name": "ACR",
+						"parts": [
+							"anniversary/274.txt"
+						]
+					},
+					{
+						"name": "ADS",
+						"parts": [
+							"anniversary/214.txt"
+						]
+					},
+					{
+						"name": "AEK-999",
+						"parts": [
+							"anniversary/149.txt"
+						]
+					},
+					{
+						"name": "Ak 5",
+						"parts": [
+							"anniversary/187.txt"
+						]
+					},
+					{
+						"name": "AK-12",
+						"parts": [
+							"anniversary/206.txt"
+						]
+					},
+					{
+						"name": "AK-15",
+						"parts": [
+							"anniversary/293.txt"
+						]
+					},
+					{
+						"name": "AK-47",
+						"parts": [
+							"anniversary/58.txt"
+						]
+					},
+					{
+						"name": "AK-74U",
+						"parts": [
+							"anniversary/59.txt"
+						]
+					},
+					{
+						"name": "AK-Alfa",
+						"parts": [
+							"anniversary/306.txt"
+						]
+					},
+					{
+						"name": "Ameli",
+						"parts": [
+							"anniversary/185.txt"
+						]
+					},
+					{
+						"name": "AN-94",
+						"parts": [
+							"anniversary/205.txt"
+						]
+					},
+					{
+						"name": "AR70",
+						"parts": [
+							"anniversary/134.txt"
+						]
+					},
+					{
+						"name": "ART556",
+						"parts": [
+							"anniversary/175.txt"
+						]
+					},
+					{
+						"name": "ARX-160",
+						"parts": [
+							"anniversary/120.txt"
+						]
+					},
+					{
+						"name": "AS Val",
+						"parts": [
+							"anniversary/60.txt"
+						]
+					},
+					{
+						"name": "ASh-12.7",
+						"parts": [
+							"anniversary/170.txt"
+						]
+					},
+					{
+						"name": "Astra Revolver",
+						"parts": [
+							"anniversary/14.txt"
+						]
+					},
+					{
+						"name": "AUG",
+						"parts": [
+							"anniversary/73.txt"
+						]
+					},
+					{
+						"name": "Ballista",
+						"parts": [
+							"anniversary/204.txt"
+						]
+					},
+					{
+						"name": "Beretta Model 38",
+						"parts": [
+							"anniversary/31.txt"
+						]
+					},
+					{
+						"name": "BM59",
+						"parts": [
+							"anniversary/52.txt"
+						]
+					},
+					{
+						"name": "Bren",
+						"parts": [
+							"anniversary/89.txt"
+						]
+					},
+					{
+						"name": "Bren Ten",
+						"parts": [
+							"anniversary/139.txt"
+						]
+					},
+					{
+						"name": "C-93",
+						"parts": [
+							"anniversary/285.txt"
+						]
+					},
+					{
+						"name": "C-MS",
+						"parts": [
+							"anniversary/213.txt"
+						]
+					},
+					{
+						"name": "C14",
+						"parts": [
+							"anniversary/308.txt"
+						]
+					},
+					{
+						"name": "C96",
+						"parts": [
+							"anniversary/12.txt"
+						]
+					},
+					{
+						"name": "CAR",
+						"parts": [
+							"anniversary/300.txt"
+						]
+					},
+					{
+						"name": "Carcano M1891",
+						"parts": [
+							"anniversary/197.txt"
+						]
+					},
+					{
+						"name": "Carcano M91∕38",
+						"parts": [
+							"anniversary/198.txt"
+						]
+					},
+					{
+						"name": "CAWS",
+						"parts": [
+							"anniversary/281.txt"
+						]
+					},
+					{
+						"name": "CF05",
+						"parts": [
+							"anniversary/295.txt"
+						]
+					},
+					{
+						"name": "Chauchat",
+						"parts": [
+							"anniversary/264.txt"
+						]
+					},
+					{
+						"name": "Colt Revolver",
+						"parts": [
+							"anniversary/1.txt"
+						]
+					},
+					{
+						"name": "Contender",
+						"parts": [
+							"anniversary/183.txt"
+						]
+					},
+					{
+						"name": "CR-21",
+						"parts": [
+							"anniversary/288.txt"
+						]
+					},
+					{
+						"name": "Cx4 Storm",
+						"parts": [
+							"anniversary/225.txt"
+						]
+					},
+					{
+						"name": "CZ-805",
+						"parts": [
+							"anniversary/108.txt"
+						]
+					},
+					{
+						"name": "CZ2000",
+						"parts": [
+							"anniversary/207.txt"
+						]
+					},
+					{
+						"name": "CZ52",
+						"parts": [
+							"anniversary/210.txt"
+						]
+					},
+					{
+						"name": "CZ75",
+						"parts": [
+							"anniversary/166.txt"
+						]
+					},
+					{
+						"name": "Defender",
+						"parts": [
+							"anniversary/302.txt"
+						]
+					},
+					{
+						"name": "Desert Eagle",
+						"parts": [
+							"anniversary/272.txt"
+						]
+					},
+					{
+						"name": "DP-12",
+						"parts": [
+							"anniversary/282.txt"
+						]
+					},
+					{
+						"name": "DP28",
+						"parts": [
+							"anniversary/82.txt"
+						]
+					},
+					{
+						"name": "DSR-50",
+						"parts": [
+							"anniversary/179.txt"
+						]
+					},
+					{
+						"name": "EM-2",
+						"parts": [
+							"anniversary/262.txt"
+						]
+					},
+					{
+						"name": "EVO 3",
+						"parts": [
+							"anniversary/131.txt"
+						]
+					},
+					{
+						"name": "F1",
+						"parts": [
+							"anniversary/178.txt"
+						]
+					},
+					{
+						"name": "F2000",
+						"parts": [
+							"anniversary/107.txt"
+						]
+					},
+					{
+						"name": "FAL",
+						"parts": [
+							"anniversary/106.txt"
+						]
+					},
+					{
+						"name": "Falcon",
+						"parts": [
+							"anniversary/256.txt"
+						]
+					},
+					{
+						"name": "FAMAS",
+						"parts": [
+							"anniversary/69.txt"
+						]
+					},
+					{
+						"name": "FG42",
+						"parts": [
+							"anniversary/110.txt"
+						]
+					},
+					{
+						"name": "Five-seveN",
+						"parts": [
+							"anniversary/142.txt"
+						]
+					},
+					{
+						"name": "FMG-9",
+						"parts": [
+							"anniversary/19.txt"
+						]
+					},
+					{
+						"name": "FN-49",
+						"parts": [
+							"anniversary/51.txt"
+						]
+					},
+					{
+						"name": "FNC",
+						"parts": [
+							"anniversary/70.txt"
+						]
+					},
+					{
+						"name": "FNP-9",
+						"parts": [
+							"anniversary/90.txt"
+						]
+					},
+					{
+						"name": "FP-6",
+						"parts": [
+							"anniversary/164.txt"
+						]
+					},
+					{
+						"name": "G11",
+						"parts": [
+							"anniversary/122.txt"
+						]
+					},
+					{
+						"name": "G28",
+						"parts": [
+							"anniversary/146.txt"
+						]
+					},
+					{
+						"name": "G3",
+						"parts": [
+							"anniversary/63.txt"
+						]
+					},
+					{
+						"name": "G36",
+						"parts": [
+							"anniversary/64.txt"
+						]
+					},
+					{
+						"name": "G36C",
+						"parts": [
+							"anniversary/104.txt"
+						]
+					},
+					{
+						"name": "G41",
+						"parts": [
+							"anniversary/62.txt"
+						]
+					},
+					{
+						"name": "G43",
+						"parts": [
+							"anniversary/47.txt"
+						]
+					},
+					{
+						"name": "Galil",
+						"parts": [
+							"anniversary/71.txt"
+						]
+					},
+					{
+						"name": "Gepard M1",
+						"parts": [
+							"anniversary/201.txt"
+						]
+					},
+					{
+						"name": "Glock 17",
+						"parts": [
+							"anniversary/15.txt"
+						]
+					},
+					{
+						"name": "GM6 Lynx",
+						"parts": [
+							"anniversary/-1.txt"
+						]
+					},
+					{
+						"name": "Grizzly MkV",
+						"parts": [
+							"anniversary/96.txt"
+						]
+					},
+					{
+						"name": "GSh-18",
+						"parts": [
+							"anniversary/221.txt"
+						]
+					},
+					{
+						"name": "Hanyang Type 88",
+						"parts": [
+							"anniversary/95.txt"
+						]
+					},
+					{
+						"name": "HK21",
+						"parts": [
+							"anniversary/208.txt"
+						]
+					},
+					{
+						"name": "HK23",
+						"parts": [
+							"anniversary/195.txt"
+						]
+					},
+					{
+						"name": "HK33",
+						"parts": [
+							"anniversary/265.txt"
+						]
+					},
+					{
+						"name": "HK416",
+						"parts": [
+							"anniversary/65.txt"
+						]
+					},
+					{
+						"name": "HK45",
+						"parts": [
+							"anniversary/167.txt"
+						]
+					},
+					{
+						"name": "Honey Badger",
+						"parts": [
+							"anniversary/203.txt"
+						]
+					},
+					{
+						"name": "Howa Type 64",
+						"parts": [
+							"anniversary/243.txt"
+						]
+					},
+					{
+						"name": "Howa Type 89",
+						"parts": [
+							"anniversary/290.txt"
+						]
+					},
+					{
+						"name": "HP-35",
+						"parts": [
+							"anniversary/303.txt"
+						]
+					},
+					{
+						"name": "HS2000",
+						"parts": [
+							"anniversary/250.txt"
+						]
+					},
+					{
+						"name": "HSM10",
+						"parts": [
+							"anniversary/299.txt"
+						]
+					},
+					{
+						"name": "IDW",
+						"parts": [
+							"anniversary/93.txt"
+						]
+					},
+					{
+						"name": "INSAS",
+						"parts": [
+							"anniversary/279.txt"
+						]
+					},
+					{
+						"name": "IWS 2000",
+						"parts": [
+							"anniversary/148.txt"
+						]
+					},
+					{
+						"name": "Jericho",
+						"parts": [
+							"anniversary/248.txt"
+						]
+					},
+					{
+						"name": "JS 9",
+						"parts": [
+							"anniversary/234.txt"
+						]
+					},
+					{
+						"name": "JS05",
+						"parts": [
+							"anniversary/192.txt"
+						]
+					},
+					{
+						"name": "K11",
+						"parts": [
+							"anniversary/236.txt"
+						]
+					},
+					{
+						"name": "K2",
+						"parts": [
+							"anniversary/194.txt"
+						]
+					},
+					{
+						"name": "K3",
+						"parts": [
+							"anniversary/271.txt"
+						]
+					},
+					{
+						"name": "K31",
+						"parts": [
+							"anniversary/247.txt"
+						]
+					},
+					{
+						"name": "K5",
+						"parts": [
+							"anniversary/212.txt"
+						]
+					},
+					{
+						"name": "KAC-PDW",
+						"parts": [
+							"anniversary/286.txt"
+						]
+					},
+					{
+						"name": "Kar98k",
+						"parts": [
+							"anniversary/46.txt"
+						]
+					},
+					{
+						"name": "KLIN",
+						"parts": [
+							"anniversary/177.txt"
+						]
+					},
+					{
+						"name": "Kord",
+						"parts": [
+							"anniversary/276.txt"
+						]
+					},
+					{
+						"name": "KS-23",
+						"parts": [
+							"anniversary/158.txt"
+						]
+					},
+					{
+						"name": "KSG",
+						"parts": [
+							"anniversary/157.txt"
+						]
+					},
+					{
+						"name": "KSVK",
+						"parts": [
+							"anniversary/252.txt"
+						]
+					},
+					{
+						"name": "L85A1",
+						"parts": [
+							"anniversary/68.txt"
+						]
+					},
+					{
+						"name": "Lee-Enfield",
+						"parts": [
+							"anniversary/50.txt"
+						]
+					},
+					{
+						"name": "Lewis",
+						"parts": [
+							"anniversary/253.txt"
+						]
+					},
+					{
+						"name": "Liberator",
+						"parts": [
+							"anniversary/283.txt"
+						]
+					},
+					{
+						"name": "LWMMG",
+						"parts": [
+							"anniversary/81.txt"
+						]
+					},
+					{
+						"name": "M1 Garand",
+						"parts": [
+							"anniversary/34.txt"
+						]
+					},
+					{
+						"name": "M1014",
+						"parts": [
+							"anniversary/165.txt"
+						]
+					},
+					{
+						"name": "M12",
+						"parts": [
+							"anniversary/191.txt"
+						]
+					},
+					{
+						"name": "M14",
+						"parts": [
+							"anniversary/37.txt"
+						]
+					},
+					{
+						"name": "M16A1",
+						"parts": [
+							"anniversary/54.txt"
+						]
+					},
+					{
+						"name": "M1887",
+						"parts": [
+							"anniversary/151.txt"
+						]
+					},
+					{
+						"name": "M1895 CB",
+						"parts": [
+							"anniversary/275.txt"
+						]
+					},
+					{
+						"name": "M1897",
+						"parts": [
+							"anniversary/152.txt"
+						]
+					},
+					{
+						"name": "M1911",
+						"parts": [
+							"anniversary/2.txt"
+						]
+					},
+					{
+						"name": "M1918",
+						"parts": [
+							"anniversary/75.txt"
+						]
+					},
+					{
+						"name": "M1919A4",
+						"parts": [
+							"anniversary/80.txt"
+						]
+					},
+					{
+						"name": "M1A1",
+						"parts": [
+							"anniversary/35.txt"
+						]
+					},
+					{
+						"name": "M200",
+						"parts": [
+							"anniversary/257.txt"
+						]
+					},
+					{
+						"name": "M21",
+						"parts": [
+							"anniversary/38.txt"
+						]
+					},
+					{
+						"name": "M249 SAW",
+						"parts": [
+							"anniversary/79.txt"
+						]
+					},
+					{
+						"name": "M2HB",
+						"parts": [
+							"anniversary/77.txt"
+						]
+					},
+					{
+						"name": "M3",
+						"parts": [
+							"anniversary/17.txt"
+						]
+					},
+					{
+						"name": "M37",
+						"parts": [
+							"anniversary/153.txt"
+						]
+					},
+					{
+						"name": "M4 SOPMOD II",
+						"parts": [
+							"anniversary/56.txt"
+						]
+					},
+					{
+						"name": "m45",
+						"parts": [
+							"anniversary/33.txt"
+						]
+					},
+					{
+						"name": "M4A1",
+						"parts": [
+							"anniversary/55.txt"
+						]
+					},
+					{
+						"name": "M500",
+						"parts": [
+							"anniversary/154.txt"
+						]
+					},
+					{
+						"name": "M590",
+						"parts": [
+							"anniversary/155.txt"
+						]
+					},
+					{
+						"name": "M60",
+						"parts": [
+							"anniversary/78.txt"
+						]
+					},
+					{
+						"name": "M82",
+						"parts": [
+							"anniversary/297.txt"
+						]
+					},
+					{
+						"name": "M82A1",
+						"parts": [
+							"anniversary/231.txt"
+						]
+					},
+					{
+						"name": "M870",
+						"parts": [
+							"anniversary/229.txt"
+						]
+					},
+					{
+						"name": "M9",
+						"parts": [
+							"anniversary/3.txt"
+						]
+					},
+					{
+						"name": "M950A",
+						"parts": [
+							"anniversary/97.txt"
+						]
+					},
+					{
+						"name": "M99",
+						"parts": [
+							"anniversary/128.txt"
+						]
+					},
+					{
+						"name": "MAC-10",
+						"parts": [
+							"anniversary/18.txt"
+						]
+					},
+					{
+						"name": "Magal",
+						"parts": [
+							"anniversary/258.txt"
+						]
+					},
+					{
+						"name": "Makarov",
+						"parts": [
+							"anniversary/8.txt"
+						]
+					},
+					{
+						"name": "MAS-38",
+						"parts": [
+							"anniversary/301.txt"
+						]
+					},
+					{
+						"name": "MAT-49",
+						"parts": [
+							"anniversary/280.txt"
+						]
+					},
+					{
+						"name": "MDR",
+						"parts": [
+							"anniversary/215.txt"
+						]
+					},
+					{
+						"name": "MG3",
+						"parts": [
+							"anniversary/88.txt"
+						]
+					},
+					{
+						"name": "MG34",
+						"parts": [
+							"anniversary/87.txt"
+						]
+					},
+					{
+						"name": "MG36",
+						"parts": [
+							"anniversary/263.txt"
+						]
+					},
+					{
+						"name": "MG4",
+						"parts": [
+							"anniversary/125.txt"
+						]
+					},
+					{
+						"name": "MG42",
+						"parts": [
+							"anniversary/86.txt"
+						]
+					},
+					{
+						"name": "MG5",
+						"parts": [
+							"anniversary/109.txt"
+						]
+					},
+					{
+						"name": "Micro Uzi",
+						"parts": [
+							"anniversary/32.txt"
+						]
+					},
+					{
+						"name": "Mk 12",
+						"parts": [
+							"anniversary/226.txt"
+						]
+					},
+					{
+						"name": "Mk23",
+						"parts": [
+							"anniversary/99.txt"
+						]
+					},
+					{
+						"name": "Mk46",
+						"parts": [
+							"anniversary/240.txt"
+						]
+					},
+					{
+						"name": "Mk48",
+						"parts": [
+							"anniversary/121.txt"
+						]
+					},
+					{
+						"name": "Model L",
+						"parts": [
+							"anniversary/223.txt"
+						]
+					},
+					{
+						"name": "Mosin-Nagant",
+						"parts": [
+							"anniversary/39.txt"
+						]
+					},
+					{
+						"name": "MP-443",
+						"parts": [
+							"anniversary/220.txt"
+						]
+					},
+					{
+						"name": "MP-446",
+						"parts": [
+							"anniversary/91.txt"
+						]
+					},
+					{
+						"name": "MP-448",
+						"parts": [
+							"anniversary/232.txt"
+						]
+					},
+					{
+						"name": "MP40",
+						"parts": [
+							"anniversary/25.txt"
+						]
+					},
+					{
+						"name": "MP41",
+						"parts": [
+							"anniversary/267.txt"
+						]
+					},
+					{
+						"name": "MP5",
+						"parts": [
+							"anniversary/26.txt"
+						]
+					},
+					{
+						"name": "MP7",
+						"parts": [
+							"anniversary/28.txt"
+						]
+					},
+					{
+						"name": "MT-9",
+						"parts": [
+							"anniversary/144.txt"
+						]
+					},
+					{
+						"name": "Nagant Revolver",
+						"parts": [
+							"anniversary/5.txt"
+						]
+					},
+					{
+						"name": "Negev",
+						"parts": [
+							"anniversary/112.txt"
+						]
+					},
+					{
+						"name": "NS2000",
+						"parts": [
+							"anniversary/190.txt"
+						]
+					},
+					{
+						"name": "NTW-20",
+						"parts": [
+							"anniversary/53.txt"
+						]
+					},
+					{
+						"name": "NZ75",
+						"parts": [
+							"anniversary/126.txt"
+						]
+					},
+					{
+						"name": "OBR",
+						"parts": [
+							"anniversary/230.txt"
+						]
+					},
+					{
+						"name": "OTs-12",
+						"parts": [
+							"anniversary/105.txt"
+						]
+					},
+					{
+						"name": "OTs-14",
+						"parts": [
+							"anniversary/119.txt"
+						]
+					},
+					{
+						"name": "OTs-39",
+						"parts": [
+							"anniversary/209.txt"
+						]
+					},
+					{
+						"name": "OTs-44",
+						"parts": [
+							"anniversary/145.txt"
+						]
+					},
+					{
+						"name": "P08",
+						"parts": [
+							"anniversary/11.txt"
+						]
+					},
+					{
+						"name": "P22",
+						"parts": [
+							"anniversary/242.txt"
+						]
+					},
+					{
+						"name": "P226",
+						"parts": [
+							"anniversary/186.txt"
+						]
+					},
+					{
+						"name": "P30",
+						"parts": [
+							"anniversary/269.txt"
+						]
+					},
+					{
+						"name": "P38",
+						"parts": [
+							"anniversary/9.txt"
+						]
+					},
+					{
+						"name": "P7",
+						"parts": [
+							"anniversary/100.txt"
+						]
+					},
+					{
+						"name": "P90",
+						"parts": [
+							"anniversary/245.txt"
+						]
+					},
+					{
+						"name": "P99",
+						"parts": [
+							"anniversary/123.txt"
+						]
+					},
+					{
+						"name": "PA-15",
+						"parts": [
+							"anniversary/260.txt"
+						]
+					},
+					{
+						"name": "PK",
+						"parts": [
+							"anniversary/85.txt"
+						]
+					},
+					{
+						"name": "PKP",
+						"parts": [
+							"anniversary/173.txt"
+						]
+					},
+					{
+						"name": "PM-06",
+						"parts": [
+							"anniversary/224.txt"
+						]
+					},
+					{
+						"name": "PM-9",
+						"parts": [
+							"anniversary/259.txt"
+						]
+					},
+					{
+						"name": "PP-19",
+						"parts": [
+							"anniversary/136.txt"
+						]
+					},
+					{
+						"name": "PP-19-01",
+						"parts": [
+							"anniversary/137.txt"
+						]
+					},
+					{
+						"name": "PP-2000",
+						"parts": [
+							"anniversary/24.txt"
+						]
+					},
+					{
+						"name": "PP-90",
+						"parts": [
+							"anniversary/23.txt"
+						]
+					},
+					{
+						"name": "PPK",
+						"parts": [
+							"anniversary/10.txt"
+						]
+					},
+					{
+						"name": "PPS-43",
+						"parts": [
+							"anniversary/22.txt"
+						]
+					},
+					{
+						"name": "PPSh-41",
+						"parts": [
+							"anniversary/21.txt"
+						]
+					},
+					{
+						"name": "PSG-1",
+						"parts": [
+							"anniversary/117.txt"
+						]
+					},
+					{
+						"name": "PSM",
+						"parts": [
+							"anniversary/140.txt"
+						]
+					},
+					{
+						"name": "PTRD",
+						"parts": [
+							"anniversary/42.txt"
+						]
+					},
+					{
+						"name": "Px4 Storm",
+						"parts": [
+							"anniversary/233.txt"
+						]
+					},
+					{
+						"name": "Python",
+						"parts": [
+							"anniversary/4.txt"
+						]
+					},
+					{
+						"name": "PzB 39",
+						"parts": [
+							"anniversary/180.txt"
+						]
+					},
+					{
+						"name": "QBU-88",
+						"parts": [
+							"anniversary/261.txt"
+						]
+					},
+					{
+						"name": "R5",
+						"parts": [
+							"anniversary/289.txt"
+						]
+					},
+					{
+						"name": "R93",
+						"parts": [
+							"anniversary/266.txt"
+						]
+					},
+					{
+						"name": "RFB",
+						"parts": [
+							"anniversary/172.txt"
+						]
+					},
+					{
+						"name": "Ribeyrolles",
+						"parts": [
+							"anniversary/171.txt"
+						]
+					},
+					{
+						"name": "RMB-93",
+						"parts": [
+							"anniversary/159.txt"
+						]
+					},
+					{
+						"name": "RO635",
+						"parts": [
+							"anniversary/143.txt"
+						]
+					},
+					{
+						"name": "RPD",
+						"parts": [
+							"anniversary/84.txt"
+						]
+					},
+					{
+						"name": "RPK-16",
+						"parts": [
+							"anniversary/292.txt"
+						]
+					},
+					{
+						"name": "RT-20",
+						"parts": [
+							"anniversary/241.txt"
+						]
+					},
+					{
+						"name": "S.A.T.8",
+						"parts": [
+							"anniversary/188.txt"
+						]
+					},
+					{
+						"name": "SAF",
+						"parts": [
+							"anniversary/304.txt"
+						]
+					},
+					{
+						"name": "Saiga-12",
+						"parts": [
+							"anniversary/160.txt"
+						]
+					},
+					{
+						"name": "SAR-21",
+						"parts": [
+							"anniversary/237.txt"
+						]
+					},
+					{
+						"name": "SCW",
+						"parts": [
+							"anniversary/169.txt"
+						]
+					},
+					{
+						"name": "Serdyukov",
+						"parts": [
+							"anniversary/113.txt"
+						]
+					},
+					{
+						"name": "Shipka",
+						"parts": [
+							"anniversary/150.txt"
+						]
+					},
+					{
+						"name": "SIG-510",
+						"parts": [
+							"anniversary/74.txt"
+						]
+					},
+					{
+						"name": "SIG-556",
+						"parts": [
+							"anniversary/287.txt"
+						]
+					},
+					{
+						"name": "Simonov",
+						"parts": [
+							"anniversary/41.txt"
+						]
+					},
+					{
+						"name": "Six12",
+						"parts": [
+							"anniversary/278.txt"
+						]
+					},
+					{
+						"name": "Skorpion",
+						"parts": [
+							"anniversary/27.txt"
+						]
+					},
+					{
+						"name": "SL8",
+						"parts": [
+							"anniversary/296.txt"
+						]
+					},
+					{
+						"name": "SM-1",
+						"parts": [
+							"anniversary/217.txt"
+						]
+					},
+					{
+						"name": "SPAS-12",
+						"parts": [
+							"anniversary/162.txt"
+						]
+					},
+					{
+						"name": "Spectre M4",
+						"parts": [
+							"anniversary/92.txt"
+						]
+					},
+					{
+						"name": "Spitfire",
+						"parts": [
+							"anniversary/168.txt"
+						]
+					},
+					{
+						"name": "SPP-1",
+						"parts": [
+							"anniversary/98.txt"
+						]
+					},
+					{
+						"name": "SPR A3G",
+						"parts": [
+							"anniversary/235.txt"
+						]
+					},
+					{
+						"name": "Springfield",
+						"parts": [
+							"anniversary/36.txt"
+						]
+					},
+					{
+						"name": "SR-3MP",
+						"parts": [
+							"anniversary/135.txt"
+						]
+					},
+					{
+						"name": "SRS",
+						"parts": [
+							"anniversary/211.txt"
+						]
+					},
+					{
+						"name": "SSG 3000",
+						"parts": [
+							"anniversary/273.txt"
+						]
+					},
+					{
+						"name": "SSG 69",
+						"parts": [
+							"anniversary/147.txt"
+						]
+					},
+					{
+						"name": "ST AR-15",
+						"parts": [
+							"anniversary/57.txt"
+						]
+					},
+					{
+						"name": "Stechkin",
+						"parts": [
+							"anniversary/7.txt"
+						]
+					},
+					{
+						"name": "Sten MkII",
+						"parts": [
+							"anniversary/29.txt"
+						]
+					},
+					{
+						"name": "Steyr Scout",
+						"parts": [
+							"anniversary/255.txt"
+						]
+					},
+					{
+						"name": "StG44",
+						"parts": [
+							"anniversary/61.txt"
+						]
+					},
+					{
+						"name": "Suomi",
+						"parts": [
+							"anniversary/115.txt"
+						]
+					},
+					{
+						"name": "Super SASS",
+						"parts": [
+							"anniversary/124.txt"
+						]
+					},
+					{
+						"name": "Super-Shorty",
+						"parts": [
+							"anniversary/156.txt"
+						]
+					},
+					{
+						"name": "SV-98",
+						"parts": [
+							"anniversary/44.txt"
+						]
+					},
+					{
+						"name": "SVD",
+						"parts": [
+							"anniversary/43.txt"
+						]
+					},
+					{
+						"name": "SVT-38",
+						"parts": [
+							"anniversary/40.txt"
+						]
+					},
+					{
+						"name": "T-5000",
+						"parts": [
+							"anniversary/184.txt"
+						]
+					},
+					{
+						"name": "T-CMS",
+						"parts": [
+							"anniversary/268.txt"
+						]
+					},
+					{
+						"name": "T65",
+						"parts": [
+							"anniversary/193.txt"
+						]
+					},
+					{
+						"name": "T77",
+						"parts": [
+							"anniversary/218.txt"
+						]
+					},
+					{
+						"name": "T91",
+						"parts": [
+							"anniversary/181.txt"
+						]
+					},
+					{
+						"name": "Tabuk",
+						"parts": [
+							"anniversary/305.txt"
+						]
+					},
+					{
+						"name": "TAC-50",
+						"parts": [
+							"anniversary/222.txt"
+						]
+					},
+					{
+						"name": "TAR-21",
+						"parts": [
+							"anniversary/72.txt"
+						]
+					},
+					{
+						"name": "TEC-9",
+						"parts": [
+							"anniversary/244.txt"
+						]
+					},
+					{
+						"name": "Thompson",
+						"parts": [
+							"anniversary/16.txt"
+						]
+					},
+					{
+						"name": "Thunder",
+						"parts": [
+							"anniversary/202.txt"
+						]
+					},
+					{
+						"name": "TMP",
+						"parts": [
+							"anniversary/176.txt"
+						]
+					},
+					{
+						"name": "Tokarev",
+						"parts": [
+							"anniversary/6.txt"
+						]
+					},
+					{
+						"name": "Type 03",
+						"parts": [
+							"anniversary/239.txt"
+						]
+					},
+					{
+						"name": "Type 100",
+						"parts": [
+							"anniversary/228.txt"
+						]
+					},
+					{
+						"name": "Type 4",
+						"parts": [
+							"anniversary/270.txt"
+						]
+					},
+					{
+						"name": "Type 56",
+						"parts": [
+							"anniversary/49.txt"
+						]
+					},
+					{
+						"name": "Type 56-1",
+						"parts": [
+							"anniversary/66.txt"
+						]
+					},
+					{
+						"name": "Type 59",
+						"parts": [
+							"anniversary/132.txt"
+						]
+					},
+					{
+						"name": "Type 62",
+						"parts": [
+							"anniversary/249.txt"
+						]
+					},
+					{
+						"name": "Type 63",
+						"parts": [
+							"anniversary/133.txt"
+						]
+					},
+					{
+						"name": "Type 64",
+						"parts": [
+							"anniversary/94.txt"
+						]
+					},
+					{
+						"name": "Type 79",
+						"parts": [
+							"anniversary/127.txt"
+						]
+					},
+					{
+						"name": "Type 80",
+						"parts": [
+							"anniversary/199.txt"
+						]
+					},
+					{
+						"name": "Type 81 Carbine",
+						"parts": [
+							"anniversary/174.txt"
+						]
+					},
+					{
+						"name": "Type 88",
+						"parts": [
+							"anniversary/238.txt"
+						]
+					},
+					{
+						"name": "Type 92",
+						"parts": [
+							"anniversary/13.txt"
+						]
+					},
+					{
+						"name": "Type 95",
+						"parts": [
+							"anniversary/129.txt"
+						]
+					},
+					{
+						"name": "Type 97",
+						"parts": [
+							"anniversary/130.txt"
+						]
+					},
+					{
+						"name": "Type 97 Shotgun",
+						"parts": [
+							"anniversary/161.txt"
+						]
+					},
+					{
+						"name": "UKM-2000",
+						"parts": [
+							"anniversary/254.txt"
+						]
+					},
+					{
+						"name": "UMP40",
+						"parts": [
+							"anniversary/102.txt"
+						]
+					},
+					{
+						"name": "UMP45",
+						"parts": [
+							"anniversary/103.txt"
+						]
+					},
+					{
+						"name": "UMP9",
+						"parts": [
+							"anniversary/101.txt"
+						]
+					},
+					{
+						"name": "USAS-12",
+						"parts": [
+							"anniversary/189.txt"
+						]
+					},
+					{
+						"name": "USP Compact",
+						"parts": [
+							"anniversary/141.txt"
+						]
+					},
+					{
+						"name": "Vector",
+						"parts": [
+							"anniversary/20.txt"
+						]
+					},
+					{
+						"name": "Vepr",
+						"parts": [
+							"anniversary/298.txt"
+						]
+					},
+					{
+						"name": "VP70",
+						"parts": [
+							"anniversary/277.txt"
+						]
+					},
+					{
+						"name": "WA2000",
+						"parts": [
+							"anniversary/48.txt"
+						]
+					},
+					{
+						"name": "Webley",
+						"parts": [
+							"anniversary/294.txt"
+						]
+					},
+					{
+						"name": "Welrod MkII",
+						"parts": [
+							"anniversary/114.txt"
+						]
+					},
+					{
+						"name": "wz.29",
+						"parts": [
+							"anniversary/182.txt"
+						]
+					},
+					{
+						"name": "X95",
+						"parts": [
+							"anniversary/251.txt"
+						]
+					},
+					{
+						"name": "XM3",
+						"parts": [
+							"anniversary/200.txt"
+						]
+					},
+					{
+						"name": "XM8",
+						"parts": [
+							"anniversary/216.txt"
+						]
+					},
+					{
+						"name": "Z-62",
+						"parts": [
+							"anniversary/116.txt"
+						]
+					},
+					{
+						"name": "Zas M21",
+						"parts": [
+							"anniversary/196.txt"
+						]
+					},
+					{
+						"name": "Zas M76",
+						"parts": [
+							"anniversary/284.txt"
+						]
+					},
+					{
+						"name": "ZB-26",
+						"parts": [
+							"anniversary/307.txt"
+						]
+					}
+				]
+			},
+			{
 				"name": "Interpreter Test Room",
 				"episodes": [
 					{
@@ -5773,9 +7596,9 @@
 					{
 						"name": "Part II",
 						"parts": [
-							"-8-2-2End.txt",
+							"-8-2-1.txt",
 							"-8-2-2First.txt",
-							"-8-2-1.txt"
+							"-8-2-2End.txt"
 						]
 					},
 					{
@@ -5789,8 +7612,8 @@
 						"name": "Part IV",
 						"parts": [
 							"-8-4-1.txt",
-							"-8-4-2End.txt",
-							"-8-4-2First.txt"
+							"-8-4-2First.txt",
+							"-8-4-2End.txt"
 						]
 					}
 				]

@@ -1864,7 +1864,9 @@
         "pic_UMP9Mod_D.png",
         "special/pic_UMP9Mod_dislike.png",
         "special/pic_UMP9Mod_happy.png",
-        "special/pic_UMP9Mod_angry.png"
+        "special/pic_UMP9Mod_angry.png",
+        "special/pic_UMP9Mod_helpness.png",
+        "special/pic_UMP9Mod_sad.png"
     ],
     "USAS12": [
         "pic_USAS12.png",
@@ -2197,7 +2199,11 @@
         "pic_NPC-Carter.png"
     ],
     "NPC-Yegor": [
-        "NPC-Yegor.png"
+        "NPC-Yegor.png",
+        "NPC-YegorArm.png",
+        "NPC-YegorArm2.png",
+        "NPC-YegorArm3.png",
+        "NPC-YegorArm4.png"
     ],
     "NPC-Havel": [
         "NPC-Havel.png",
@@ -2523,16 +2529,16 @@
         "special/UMP45-Young.png"
     ],
     "DJMAXSUEE": [
-        "equip/fairy/DJMAXSUEE_1.png"
+        "equip/DJMAXSUEE_1.png"
     ],
     "DJMAXPREIYA": [
-        "equip/fairy/DJMAXPREIYA_1.png"
+        "equip/DJMAXPREIYA_1.png"
     ],
     "DJMAXSEHRA": [
-        "equip/fairy/DJMAXSEHRA_1.png"
+        "equip/DJMAXSEHRA_1.png"
     ],
     "FairyWarrior": [
-        "equip/fairy/fighting_1.png"
+        "equip/fighting_1.png"
     ],
     "missing": [
         "missing.png"

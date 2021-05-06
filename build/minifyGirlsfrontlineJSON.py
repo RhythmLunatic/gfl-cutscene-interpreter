@@ -286,7 +286,11 @@ portraitDatabase["NPC-Kalin"] = [
 ]
 
 portraitDatabase['NPC-Yegor'] = [
-	'NPC-Yegor.png'
+	'NPC-Yegor.png',
+	'NPC-YegorArm.png',
+	'NPC-YegorArm2.png',
+	'NPC-YegorArm3.png',
+	'NPC-YegorArm4.png'
 ]
 portraitDatabase['NPC-Soldier'] = ['NPC-YegorArm3.png']
 
@@ -427,9 +431,11 @@ portraitDatabase['UMP9story'] = ResizingList(['special/ump9.png'])
 portraitDatabase['UMP9'][2]='special/pic_UMP9_1.png'
 portraitDatabase['UMP9'][3]='special/pic_UMP9_2.png'
 portraitDatabase['UMP9'][4]='special/pic_UMP9_3.png' #Yes it's correct
-portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'
 portraitDatabase['UMP9Mod'][3] = 'special/pic_UMP9Mod_happy.png'
+portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
+portraitDatabase['UMP9Mod'][5] = 'special/pic_UMP9Mod_helpness.png'
+portraitDatabase['UMP9Mod'][6] = 'special/pic_UMP9Mod_sad.png'
 
 portraitDatabase['UMP45_Young'] = ResizingList(['special/UMP45-Young.png'])
 
@@ -442,10 +448,10 @@ portraitDatabase['Henrietta'].quickInsertSpecial(1)
 
 
 #fairies
-portraitDatabase['DJMAXSUEE']=['equip/fairy/DJMAXSUEE_1.png']
-portraitDatabase['DJMAXPREIYA']=['equip/fairy/DJMAXPREIYA_1.png']
-portraitDatabase['DJMAXSEHRA']=['equip/fairy/DJMAXSEHRA_1.png']
-portraitDatabase['FairyWarrior']=['equip/fairy/fighting_1.png']
+portraitDatabase['DJMAXSUEE']=['equip/DJMAXSUEE_1.png']
+portraitDatabase['DJMAXPREIYA']=['equip/DJMAXPREIYA_1.png']
+portraitDatabase['DJMAXSEHRA']=['equip/DJMAXSEHRA_1.png']
+portraitDatabase['FairyWarrior']=['equip/fighting_1.png']
 
 portraitDatabase['AR15'][2] = "special/AR15_T.png"
 portraitDatabase["M4A1"][2] = "special/M4A1_SAD.png"

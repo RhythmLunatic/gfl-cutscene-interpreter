@@ -539,7 +539,38 @@ for line in evStoryInformation:
 js['crossover'].append({
 	'name':"Guilty Gear x BlazBlue: Operation Rabbit Hunt",
 	'shortName':'Guilty Gear x BlazBlue',
-	'episodes':getAllByPrefix(files,'-8','Part')
+	'episodes':[
+		{
+			"name": "Part I",
+			"parts": [
+				"-8-1-1.txt",
+				"-8-1-2First.txt"
+			]
+		},
+		{
+			"name": "Part II",
+			"parts": [
+				"-8-2-1.txt",
+				"-8-2-2First.txt",
+				"-8-2-2End.txt"
+			]
+		},
+		{
+			"name": "Part III",
+			"parts": [
+				"-8-3-1.txt",
+				"-8-3-2First.txt"
+			]
+		},
+		{
+			"name": "Part IV",
+			"parts": [
+				"-8-4-1.txt",
+				"-8-4-2First.txt",
+				"-8-4-2End.txt"
+			]
+		}
+	]
 })
 #No -9
 js['crossover'].append({
@@ -1348,7 +1379,7 @@ with open('girlsfrontline.json') as gfld:
 						skinStories.append({'name':doll['name']+' - '+c['name'],'parts':["skin/"+f]})
 
 #print(skinStories)
-skinStories = sorted(skinStories,key=lambda k: k['name'])
+skinStories = sorted(skinStories,key=lambda k: k['name'].lower())
 js['side'].append({'name':"Skin Stories",'episodes':skinStories})
 
 modStories = []
@@ -1361,6 +1392,28 @@ for doll in frontlinedex:
 			modStories.append({'name':doll['name'],'parts':parts})
 
 js['side'].append({'name':"MOD 3 Stories",'episodes':modStories})
+
+anniStories = []
+anniStoryFiles = os.listdir('../avgtxt/anniversary')
+for fName in anniStoryFiles:
+	n = int(fName.split('.')[0])
+	found = False
+	for doll in frontlinedex:
+		if doll['num'] == n:
+			anniStories.append({'name':doll['name'],'parts':['anniversary/'+fName]})
+			found=True
+			break
+	if not found:
+		if n == -1:
+			continue
+		else:
+			printError("Doll with ID "+str(n)+ " missing from database.")
+			anniStories.append({'name':"Unknown (ID:"+str(n)+")",'parts':['anniversary/'+fName]})
+
+anniStories = sorted(anniStories,key=lambda k: k['name'].lower())
+#Insert at the beginning
+anniStories.insert(0,{'name':"Kalina",'parts':['anniversary/-1.txt']})
+js['side'].append({'name':"3rd Anniversary",'episodes':anniStories})
 
 #Audit the mod stories... This should be moved somewhere else
 dollsWithModStories = []

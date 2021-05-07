@@ -44,6 +44,7 @@ body
 	--bg-color: white;
 	--text-color: black;
 	--nav-color: #ee6e73;
+	--nav-color-hover: #bf4040;
 	--btn-color: #26a69a;
 	--card-color: #fff;
 	--collection-item-color:#fff;
@@ -60,6 +61,7 @@ body.dark-theme{
 	--bg-color: #333333;
 	--text-color: white;
 	--nav-color:#1a237e;
+	--nav-color-hover:#3465a4;
 	--btn-color: #26a69a;
 	--card-color: #455a64;
 	--collection-item-color:#2b2b2b;
@@ -207,11 +209,23 @@ th {
 	background-color: var(--collection-item-color);
 }
 
+.pagination{
+	max-width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.pagination li a {
+	color: var(--text-color);
+}
 .pagination li.active {
 	background-color: var(--nav-color);
 }
+.pagination li.active:hover{
+	background-color:var(--nav-color-hover);
+}
 .pagination li {
 	margin-left: 5px;
+	margin-top: 5px;
 }
 
 /*Something I actually wrote myself*/
@@ -232,10 +246,10 @@ th {
 	font-weight: bold;
 	font-size:120%
 }
-#settingsModal .modal-footer {
+.modal .modal-footer {
 	background-color: rgba(128,128,128,0.3);
 }
-#settingsModal .modal-footer > a {
+.modal .modal-footer > a {
 	color: var(--text-color);
 }
 
@@ -949,6 +963,58 @@ I have no idea how it works
 		return myCanvas.toDataURL();
 	}
 	
+	//Turns a storybox into a baked image
+	//for (let d of document.getElementsByClassName('storyImg')){bakeStoryBox(d)}
+	function bakeStoryBox(d)
+	{
+		if (d==undefined)
+			d=document.getElementById('storyBox0');
+			
+		let bg = d.getElementsByClassName('bg')[0]
+		let dolls = d.getElementsByClassName('storydoll');
+		
+		//Unique hash should be generated based on bg number, dolls present, and dim/mask on dolls so CPU is not wasted generating it again
+		let uint8toByte = function(n){let str= Number(n).toString(16); return str.length == 1 ? "0" + str : str}
+		let uint16toByte = function(n){
+			let str= Number(n).toString(16);
+			while (str.length < 4)
+				str='0'+str;
+			return str;
+		}
+		let booltoByte = function(b){return b ? 'F' : '0' }
+		
+		let checksum = uint8toByte(bg.getAttribute('bg'))+booltoByte(bg.classList.contains('nightBG'));
+		for (var i = 0;i<2;i++)
+		{
+			let doll = d.getElementsByClassName(int2str[i])[0]
+			console.log(doll);
+			if(doll)
+			{
+				//Concatenate a string for src because I'm comparing strings anyways and it's unique
+				checksum+=doll.getAttribute('src').replace('/','_')+booltoByte(doll.classList.contains('dim'))
+			}
+			else
+				checksum+="0000"
+		}
+		
+		console.log(checksum)
+		
+		let canvas = document.createElement('canvas');
+		canvas.width = 1280; //GFL's cutscenes seem to be scaled to this resolution and not 1024x576.
+		canvas.height = 720;
+		
+		let ctx = canvas.getContext('2d');
+		ctx.drawImage(bg,0,0,canvas.width,canvas.height)
+		if (dolls.length > 0)
+		{
+			let doll = dolls[0]
+			ctx.drawImage(doll,canvas.width/2-doll.naturalWidth/2,50)
+		}
+		
+		d.innerHTML = "<img class='bakedStoryBox' style='width: 100%; position: relative; display: block;' src=\'"+canvas.toDataURL()+"\' checksum='"+checksum+"'>"
+		
+	}
+	
 	function sliceAndRemove(str, begin, end)
 	{
 		return str.slice(0,begin)+str.slice(end)
@@ -1454,7 +1520,7 @@ I have no idea how it works
 	//input: structuredLines (array), part (int starting at 0), partName (string. Optional, if present replaces the "Part X" header
 	//output: a div with the elements rendered
 	//This function does not cause side effects.
-	function renderStructuredLinesToDiv(structuredLines,part,partName,isNight)
+	function renderStructuredLinesToDiv(structuredLines,part,partName,isNight,numParts)
 	{
 		
 		let thisPartDiv = document.createElement('div');
@@ -1465,8 +1531,42 @@ I have no idea how it works
 			h3.innerText="Part "+(part+1)+": "+partName
 		else
 			h3.innerText="Part "+(part+1);
+		
+		
 		//partNum++;
 		thisPartDiv.appendChild(h3);
+		
+		//Add part to top
+		if (part != undefined && numParts != undefined && numParts > 1 && numParts < 25) //Don't bother if it's more than 25, it wastes too much CPU
+		{
+			let ul = document.createElement('ul')
+			ul.classList.add('pagination');
+			//ul.innerHTML = "<li class='disabled'><a style='color:var(--text-color); cursor:text;'>Jump to:</a></li>"
+			if (part==0)
+				ul.innerHTML = '<li class="disabled"><a><i class="material-icons">chevron_left</i></a></li>'
+			else
+				ul.innerHTML = '<li class="waves-effect"><a onclick="document.getElementById(\'part'+(part-1)+'\').scrollIntoView()"><i class="material-icons">chevron_left</i></a></li>'
+			
+			let li = ''
+			for (var p = 0;p<numParts;p++)
+			{
+				li += '<li class="'+ (p==part ? 'active' : 'waves-effect')+ '"><a onclick="document.getElementById(\'part'+p+'\').scrollIntoView()">'+(p+1)+'</a></li>'
+				
+			}
+			if (part==numParts-1)
+				li += '<li class="disabled"><a><i class="material-icons">chevron_right</i></a></li>'
+			else
+				li += '<li class="waves-effect"><a onclick="document.getElementById(\'part'+(part+1)+'\').scrollIntoView()"><i class="material-icons">chevron_right</i></a></li>'
+			
+			ul.innerHTML = ul.innerHTML + li
+			
+			
+			//It looks kind of ugly tbh
+			/*if (episode['part_names'] != undefined)
+				partJump+=': '+episode['part_names'][p]*/
+			//partJump+='</a></li>'
+			thisPartDiv.appendChild(ul);
+		}
 		
 		if (document.getElementById('showDebugOpcodeButton').checked)
 		{
@@ -1548,7 +1648,7 @@ I have no idea how it works
 				case OPCODES.CHOICE:
 					structuredLines[i][1].forEach(c => {
 						let choiceButton = document.createElement('a');
-						choiceButton.setAttribute("class","waves-effect waves-light btn");
+						choiceButton.setAttribute("class","waves-effect waves-light btn choiceButton");
 						choiceButton.setAttribute("style","margin-right: 5px; margin-bottom: 5px; text-transform:unset;")
 						choiceButton.innerText=c;
 						thisPartDiv.appendChild(choiceButton);
@@ -1756,6 +1856,7 @@ I have no idea how it works
 								}
 								storyBox.classList.add('storyImg');
 								let bgImage = document.createElement('img');
+								bgImage.setAttribute('class','bg');
 								bgImage.style = "width:100%; position:relative; display:block;";
 								
 								//It is entirely possible for there to be text without a BG being set, for some reason
@@ -1784,13 +1885,13 @@ I have no idea how it works
 									else
 										bgImage.src = 'avgtexture/'+BACKGROUNDS[lastBGUsed[0]]+'.png'
 									
+									bgImage.setAttribute('bg',lastBGUsed[0]);
 									//I don't think MICA ever accidentally colored the black wallpaper so I probably don't need to check
-									if (lastBGUsed[1] /*&& lastBGUsed[0] != 9*/)
+									if (lastBGUsed[1] /*&& lastBGUsed[0] != 9*/) //If this is a night background
 									{
 										if (!nightBackgrounds[lastBGUsed[0]]) //If background not generated yet
 										{
 											bgImage.classList.add('nightBG');
-											bgImage.setAttribute('bg',lastBGUsed[0]);
 											if (!nightBGQueue[lastBGUsed[0]]) //If not queued for generation yet
 											{
 											
@@ -1806,7 +1907,7 @@ I have no idea how it works
 												//Use this array for storing background task.
 												//This task will check every 100 if night BG is generated and if all the night BG boxes are rendered and ready to be set.
 												nightBGQueue[lastBGUsed[0]]=setInterval(function(bgNum){
-													let nBGs = document.querySelectorAll('[bg="'+bgNum+'"'); //ex. document.querySelectorAll('[bg="2"]')
+													let nBGs = document.querySelectorAll('img.bg.nightBG[bg="'+bgNum+'"]'); //ex. document.querySelectorAll('[bg="2"]')
 													if (nBGs.length == 0 || !nightBackgrounds[bgNum])
 													{
 														console.log("NightBG: waiting for generation of bg "+bgNum+" to finish or DOM to be ready...");
@@ -1838,6 +1939,7 @@ I have no idea how it works
 								{
 									console.assert(shownPortraits[j]);
 									let portraitImg = document.createElement('img');
+									//In case you forgot, it's ID and Type
 									portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
 									//console.log(portraitImg.src);
 									
@@ -1997,16 +2099,24 @@ I have no idea how it works
 		
 		document.getElementById('chapterName').innerText = episode['name'];
 		
+		
+		
 		//Instead of just one part, put all of them in the verySimpleText div.
 		let NewSimpleTextDiv = document.createElement('div');
 		NewSimpleTextDiv.id="verySimpleText";
 		
+		/*let exporterButton = document.createElement('a');
+		exporterButton.setAttribute("class","waves-effect waves-light btn modal-trigger");
+		exporterButton.setAttribute("href","#savePageModal");
+		exporterButton.innerText="Export options..."
+		NewSimpleTextDiv.appendChild(exporterButton);
+		NewSimpleTextDiv.appendChild(document.createElement('br'));*/
+		
 		//Don't keep audio running
 		document.getElementById('audioPlayer').pause();
 		
-		//let partNum = 0;
-		let ul = document.getElementById('partSelect');
-		ul.innerHTML = "<li class='disabled'><a style='color:var(--text-color);'>Jump to:</a></li>"
+		
+		
 		
 		for(var p = 0; p < episode.parts.length;p++)
 		{
@@ -2024,7 +2134,6 @@ I have no idea how it works
 			const out = await response.text();
 			console.log("got "+fileName);
 			
-			ul.innerHTML = ul.innerHTML + '<li class="active waves-effect"><a onclick="document.getElementById(\'part'+p+'\').scrollIntoView()">Part '+(p+1)+'</a></li>'
 			//console.log(fetchTextFile("avgtxt/"+fileName));
 			
 			//fetch("avgtxt/"+fileName)
@@ -2046,7 +2155,7 @@ I have no idea how it works
 				NewSimpleTextDiv.appendChild(document.createElement('br'));
 				
 			}
-			NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,p,partName,isNight));
+			NewSimpleTextDiv.appendChild(renderStructuredLinesToDiv(structuredLines,p,partName,isNight,episode.parts.length));
 			//Now replace the old div...
 			/*let textboxDiv = document.getElementById("Textboxes");
 			textboxDiv.parentNode.replaceChild(newTextboxDiv,textboxDiv);*/
@@ -2142,7 +2251,7 @@ I have no idea how it works
 	function goToNextEpisode()
 	{
 		//To make it jump to the top
-		document.getElementById('theTop').scrollIntoView()
+		document.getElementById('chapterName').scrollIntoView()
 		
 		let value = curEpKey;
 		console.log(value);
@@ -2950,10 +3059,41 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 					</div>
 				</td>
 			</tr>
+			<!--<tr>
+				<td style="width:100%">
+					<span class="title">Show export button</span>
+					<p>Export current cutscene to an html or odt file.</p>
+				</td>
+				<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" id="showDebugOpcodeButton" onclick="setCookieFromCheckbox('showDebugOpcodeButton')">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>-->
 		</table>
 		</div>
 		<div class="modal-footer">
 		  <a class="modal-close waves-effect waves-green btn-flat">Close</a>
+		</div>
+	</div>
+	<div id="savePageModal" class="modal">
+		<div class="modal-content">
+			<h4>Exporter</h4>
+			<p>Pick how you want stuff to be saved.</p>
+			<!--<p>Self contained: all images will be converted to base64 and embedded in the HTML file. This generally makes webpages <b>very</b> large and upwards of 100MB. You should only use this if you're planning on uploading it to Google Docs.</p>-->
+			<!--<p>Self contained js-compressed: Images are stored in a JavaScript var and then applied through JS to save disk space, but JavaScript is required.</p>-->
+			<p>.odt: OpenDocument Text Format. Great for uploading to Google Docs and editable in various word processors. All storyboxes with portraits will be baked into unique images. <b>This process requires a lot of memory, so please do it on a computer or a moderately powerful device.</b></p>
+			<p>Zipped: Images are outside of the webpage.</p>
+		</div>
+		<div class="modal-footer">
+		  <a class="modal-close waves-effect waves-green btn-flat">self contained html</a>
+		  <a class="modal-close waves-effect waves-green btn-flat">self contained js-compressed html</a>
+		  <a class="modal-close waves-effect waves-green btn-flat">.odt</a>
+		  <a class="modal-close waves-effect waves-green btn-flat">zipped</a>
+		  <a>
 		</div>
 	</div>
 	<!-- Needs to be here so the modal for T-Doll search will be fullscreen on mobile devices. Otherwise it will be below the navbar.-->
@@ -3189,13 +3329,13 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	</div>
 	
 	<h2 id="chapterName" style="display:inline">Chapter Name Here</h2>
-	<ul class="pagination" id='partSelect'>
+	<!--<ul class="pagination" id='partSelect'>
 		<li class='disabled'><a style='color:var(--text-color);'>Jump to:</a></li>
 		<li class="active"><a href="#!">Part 1</a></li>
 		<li class="active waves-effect"><a href="#!">Part 2</a></li>
 		<li class="active waves-effect"><a href="#!">Part 3</a></li>
 		<li class="active waves-effect"><a href="#!">Part 4</a></li>
-	</ul>
+	</ul>-->
 	<!--<a onclick="copyLink()" class="waves-effect waves-light btn">Copy chapter link</a>-->
     <a id="startButton" onclick="initPhaser()" class="waves-effect waves-light btn">Start interactive interpreter (It's like playing the game!)</a>
 	<div id="interactiveInterpreterSection" style="display:none;">

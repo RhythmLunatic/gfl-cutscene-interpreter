@@ -1413,6 +1413,7 @@ for fName in anniStoryFiles:
 anniStories = sorted(anniStories,key=lambda k: k['name'].lower())
 #Insert at the beginning
 anniStories.insert(0,{'name':"Kalina",'parts':['anniversary/-1.txt']})
+#anniStories.insert(0,{'name':"All of them at once (AKA crash the server with no survivors)",'parts':[p['parts'][0] for p in anniStories],'part_names':[p['name'] for p in anniStories]})
 js['side'].append({'name':"3rd Anniversary",'episodes':anniStories})
 
 #Audit the mod stories... This should be moved somewhere else

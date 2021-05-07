@@ -625,7 +625,7 @@
     {
         "name": "GM6 Lynx",
         "type": "RF",
-        "num": -1,
+        "num": 320,
         "rating": 3,
         "internalName": "Gm6Lynx"
     },

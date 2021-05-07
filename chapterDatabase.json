@@ -5997,12 +5997,6 @@
 						]
 					},
 					{
-						"name": "GM6 Lynx",
-						"parts": [
-							"anniversary/-1.txt"
-						]
-					},
-					{
 						"name": "Grizzly MkV",
 						"parts": [
 							"anniversary/96.txt"
@@ -6150,6 +6144,12 @@
 						"name": "K5",
 						"parts": [
 							"anniversary/212.txt"
+						]
+					},
+					{
+						"name": "K7",
+						"parts": [
+							"anniversary/-1.txt"
 						]
 					},
 					{

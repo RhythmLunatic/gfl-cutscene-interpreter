@@ -306,7 +306,11 @@ portraitDatabase['NPC-Ange'] = ResizingList([
 ])
 
 portraitDatabase['NPC-AngeDamage'] = ResizingList([
-	'special/NPC-AngeDamage.png'
+	'special/NPC-AngeDamage.png',
+	None,
+	None, #"special/NPC-AngeDamage2.png", #Unconfirmed
+	None, #"special/NPC-AngeDamage3.png", #Unconfirmed
+	"special/NPC-AngeDamage4.png" #This is identical to NPC-Ange_1.png, I have no idea why they used a separate image
 ])
 
 
@@ -340,6 +344,7 @@ portraitDatabase['NPC-Morridow'] = quickGenerateNPC('pic_NPC-Morridow',7,False,T
 
 portraitDatabase['Seele'][2]='SeeleVollerei.png'
 
+portraitDatabase['AK12'][2]='special/AK12_angry.png'
 portraitDatabase['AK47'].quickInsertSpecial(2)
 
 portraitDatabase['Jillmagic']=['pic_Jill_529.png']
@@ -363,7 +368,12 @@ portraitDatabase['Nytochild01']=["Nytochild01_1.png","Nytochild01_2.png","Nytoch
 portraitDatabase['Nytochild02']=["Nytochild02_1.png","Nytochild02_2.png"] #Does not have a third portrait
 portraitDatabase['Nytochild03']=["Nytochild03_1.png","Nytochild03_2.png","Nytochild03_3.png"]
 
+
+#Seems like they intended for there to be more expressions? They're all dupes though
+portraitDatabase['NytoIsomer'][3]="Nyto_Isomer_Shadow.png"
 portraitDatabase['NytoIsomer'][4]="Nyto_Isomer_Shadow.png"
+portraitDatabase['NytoIsomer'][5]="Nyto_Isomer_Shadow_nervous.png"
+
 portraitDatabase['AbandonedIsomer']=['Abandoned_Isomer.png']
 
 portraitDatabase['M1903bar']=["special/M1903_Bartender.png"]
@@ -376,8 +386,17 @@ portraitDatabase['HK416'][3] = 'special/pic_HK416_2.png'
 #Not incorrect either
 portraitDatabase['HK416Mod'][2]='special/pic_HK416Mod_1.png'
 
-#M16 has more than two portraits, but this will have to do for now...
+#Since slot 1 is taken
+portraitDatabase['SL8'][2] = 'special/pic_SL8_1.png'
+portraitDatabase['SL8'][3] = 'special/pic_SL8_3.png' #There is no pic_SL8_2 so I can only assume this is what is supposed to be here...
+
+
 portraitDatabase['M16']=portraitDatabase["M16A1"]
+portraitDatabase['M16'][4]='special/pic_M16A1_2.png'
+portraitDatabase['M16'][5]='special/pic_M16A1_3.png'
+portraitDatabase['M16'][6]='special/pic_M16A1_4.png'
+portraitDatabase['M16'][7]='special/pic_M16A1_5.png'
+
 portraitDatabase['M16A1BOSS']=['pic_M16A1_Boss.png','special/pic_M16A1_1.png']
 portraitDatabase["MK2"]=portraitDatabase['StenMK2']
 portraitDatabase['FAL']=portraitDatabase['FNFAL']
@@ -430,14 +449,15 @@ portraitDatabase['UMP9story'] = ResizingList(['special/ump9.png'])
 #Slot 1 and 2 is normal and damage
 portraitDatabase['UMP9'][2]='special/pic_UMP9_1.png'
 portraitDatabase['UMP9'][3]='special/pic_UMP9_2.png'
-portraitDatabase['UMP9'][4]='special/pic_UMP9_3.png' #Yes it's correct
+portraitDatabase['UMP9'][4]='special/pic_UMP9_3.png'
 portraitDatabase['UMP9Mod'][2] = 'special/pic_UMP9Mod_dislike.png'
 portraitDatabase['UMP9Mod'][3] = 'special/pic_UMP9Mod_happy.png'
 portraitDatabase['UMP9Mod'][4] = 'special/pic_UMP9Mod_angry.png'
 portraitDatabase['UMP9Mod'][5] = 'special/pic_UMP9Mod_helpness.png'
 portraitDatabase['UMP9Mod'][6] = 'special/pic_UMP9Mod_sad.png'
 
-portraitDatabase['UMP45_Young'] = ResizingList(['special/UMP45-Young.png'])
+portraitDatabase['UMP40'][5] = 'special/pic_UMP40_angry.png'
+portraitDatabase['UMP45_Young'] = ResizingList(['special/UMP45-Young.png','special/UMP45-Young_sad.png','special/UMP45-Young_serious.png','special/UMP45-Young_angry.png'])
 
 #Because it normally wouldn't overwrite idx 1
 portraitDatabase['Henrietta'].quickInsertSpecial(1)
@@ -454,9 +474,18 @@ portraitDatabase['DJMAXSEHRA']=['equip/DJMAXSEHRA_1.png']
 portraitDatabase['FairyWarrior']=['equip/fighting_1.png']
 
 portraitDatabase['AR15'][2] = "special/AR15_T.png"
+#AR15 originally had something in the third slot, but since a costume overwrote it we'll never know what it was. There aren't any files for the third slot anyways so it had to have been a dupe.
+
+portraitDatabase['AR15Mod'][2] = 'special/AR15Mod_伤心.png'
+portraitDatabase['AR15Mod'][3] = 'special/AR15Mod_微笑.png' #Unconfirmed, but it's the only free slot so it's probably correct
+portraitDatabase['AR15Mod'][4] = 'special/AR15Mod_无奈.png'
+portraitDatabase['AR15Mod'][5] = 'special/AR15Mod_紧张.png'
+
 portraitDatabase["M4A1"][2] = "special/M4A1_SAD.png"
 portraitDatabase["M4A1"][3] = "special/M4A1_T.png"
 
+portraitDatabase['M4A1Mod'][2]='special/M4A1Mod_微笑.png' #Smile
+portraitDatabase['M4A1Mod'][3]='special/M4A1Mod_悲伤.png'
 portraitDatabase['M4A1Mod'][4]='special/M4A1Mod_紧张.png'
 
 portraitDatabase['missing'] = ['missing.png']

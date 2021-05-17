@@ -42,7 +42,7 @@
     "AK12": [
         "pic_AK12.png",
         "pic_AK12_D.png",
-        "special/pic_AK12_2.png",
+        "special/AK12_angry.png",
         null,
         null,
         null,
@@ -776,6 +776,8 @@
         "pic_M16A1_D.png",
         "special/pic_M16A1_2.png",
         "special/pic_M16A1_3.png",
+        "special/pic_M16A1_2.png",
+        "special/pic_M16A1_3.png",
         "special/pic_M16A1_4.png",
         "special/pic_M16A1_5.png"
     ],
@@ -878,8 +880,8 @@
     "M4A1Mod": [
         "pic_M4A1Mod.png",
         "pic_M4A1Mod_D.png",
-        null,
-        null,
+        "special/M4A1Mod_微笑.png",
+        "special/M4A1Mod_悲伤.png",
         "special/M4A1Mod_紧张.png"
     ],
     "M500": [
@@ -1437,7 +1439,7 @@
     "SL8": [
         "pic_SL8.png",
         "pic_SL8_D.png",
-        null,
+        "special/pic_SL8_1.png",
         "special/pic_SL8_3.png"
     ],
     "HEZISM1": [
@@ -1490,10 +1492,10 @@
     "AR15Mod": [
         "pic_AR15Mod.png",
         "pic_AR15Mod_D.png",
-        null,
-        null,
-        null,
-        null,
+        "special/AR15Mod_伤心.png",
+        "special/AR15Mod_微笑.png",
+        "special/AR15Mod_无奈.png",
+        "special/AR15Mod_紧张.png",
         "special/pic_AR15Mod_6.png",
         "special/pic_AR15Mod_7.png",
         "special/pic_AR15Mod_8.png"
@@ -1835,7 +1837,11 @@
     ],
     "UMP40": [
         "pic_UMP40.png",
-        "pic_UMP40_D.png"
+        "pic_UMP40_D.png",
+        null,
+        null,
+        null,
+        "special/pic_UMP40_angry.png"
     ],
     "UMP45": [
         "pic_UMP45.png",
@@ -2173,8 +2179,9 @@
         "Nyto.png",
         "Nyto_black.png",
         null,
-        null,
-        "Nyto_Isomer_Shadow.png"
+        "Nyto_Isomer_Shadow.png",
+        "Nyto_Isomer_Shadow.png",
+        "Nyto_Isomer_Shadow_nervous.png"
     ],
     "NPC-Kyruger": [
         "pic_NPC-Kyruger.png"
@@ -2264,7 +2271,11 @@
         "NPC-Bodyguard2.png"
     ],
     "NPC-AngeDamage": [
-        "special/NPC-AngeDamage.png"
+        "special/NPC-AngeDamage.png",
+        null,
+        null,
+        null,
+        "special/NPC-AngeDamage4.png"
     ],
     "StG44": [
         "pic_STG44.png",
@@ -2482,6 +2493,8 @@
         "pic_M16A1_D.png",
         "special/pic_M16A1_2.png",
         "special/pic_M16A1_3.png",
+        "special/pic_M16A1_2.png",
+        "special/pic_M16A1_3.png",
         "special/pic_M16A1_4.png",
         "special/pic_M16A1_5.png"
     ],
@@ -2526,7 +2539,10 @@
         "special/ump9.png"
     ],
     "UMP45_Young": [
-        "special/UMP45-Young.png"
+        "special/UMP45-Young.png",
+        "special/UMP45-Young_sad.png",
+        "special/UMP45-Young_serious.png",
+        "special/UMP45-Young_angry.png"
     ],
     "DJMAXSUEE": [
         "equip/DJMAXSUEE_1.png"

@@ -98,6 +98,11 @@ Not sure what the difference is between 1 or 2.
 
 Like BGM, this pulls from a dictionary in /assets/resources/dabao/textdata/AudioTemplate.txt
 
+### 名单
+Start credits sequence (Literally means "list of names"). Used at the end of most events.
+
+it pulls from `text/avglang/Language_AVG_XX.txt` where "XX" is the region the game is in. Then it checks the mission ID to find the correct credits sequence to use.
+
 ## Screen transitions
 
 ### <黑点X>
@@ -147,7 +152,7 @@ Multiple frames exist.
 I don't know where the frames are stored.
 
 ### 下雪
-Add snow animation to cutscene (Used in The Division)
+Add snow animation to cutscene (Used in The Division). Placed inside the text section despite not being related to text.
 
 ### 火花
 Add fire animation to cutscene. Takes a float as an argument, probably related to speed.
@@ -185,8 +190,9 @@ Full width `:` is also valid.
 
 ## Text related
 
-### + 
-End text. Text will continue in a new box (no close/open animation) when clicked.
+## Text modifiers
+
+These aren't really opcodes, just attribute modifiers.
 
 ### color
 
@@ -204,6 +210,23 @@ Known sizes:
 * 25 is small.
 * 55 is slightly larger.
 * 60 is very large.
+
+### b
+
+Take a wild guess.
+
+It makes text bold. Only used one entire time in 'TMP - Red-Eared Cat' skin story (2807.txt)
+
+### (line break)
+
+Meaning `//n`. Creates a line break.
+
+## Text opcodes
+Actual text opcodes.
+
+### + 
+End text. Text will continue in a new box (no close/open animation) when clicked.
+
 
 ### c
 Choice.
@@ -235,12 +258,6 @@ Example where there are no destinations so it will play the next line no matter 
 MG3(4)<Speaker>MG3</Speaker>||:Hehe, if I weren't around, you'd have broken something, Commander. +I didn't expect you could be so flustered.<c>Well, I AM a man, after all...<c>Even though I'm a girl as well, I can't...
 MG3(4)<Speaker>MG3</Speaker>||:Really? +I'm glad to hear you say that, Commander!
 ```
-
-### b
-
-Take a wild guess.
-
-It makes text bold. Only used one entire time in 'TMP - Red-Eared Cat' skin story (2807.txt)
 
 # Fun things I've found
 If a tag is missing the end, the entire tag gets ignored.

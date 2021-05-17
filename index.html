@@ -659,7 +659,8 @@ I have no idea how it works
 		FADEOUT : 11,
 		FADEIN : 12,
 		CHOICE : 13,
-		DESTINATION : 14
+		DESTINATION : 14,
+		CREDITS : 15
 		//SETMASKEDPORTRAIT : 8
 	}
 	
@@ -680,7 +681,8 @@ I have no idea how it works
 		'fadeOut',
 		'fadeIn',
 		'choice',
-		'destination'
+		'destination',
+		'credits'
 		//'setMaskedPortrait'
 	]
 	
@@ -693,15 +695,17 @@ I have no idea how it works
 		"Night":OPCODES.NIGHTFILTER,
 		"黑屏1":OPCODES.FADEOUT,
 		"黑屏2":OPCODES.FADEIN,
-		'分支':OPCODES.DESTINATION
+		'分支':OPCODES.DESTINATION,
+		'名单':OPCODES.CREDITS
 		//"通讯框":OPCODES.SETMASKEDPORTRAIT,
 	}
 	
 
-	//To be loaded later.
+	//To be loaded later or on-demand.
 	let PORTRAITS = undefined;
 	let BACKGROUNDS = undefined;
 	let MUSIC = undefined;
+	let CREDITSDATA = undefined;
 	/*
 	Night backgrounds are generated using html canvas,
 	then to speed up their result is kept in memory in this table and indexed
@@ -856,7 +860,7 @@ I have no idea how it works
 						loadBGM(this.phaserRuntime,curMsg[1]);
 						break;
 					//lua junk from my message system. Just ignore it.
-					/*case OPCODESFMSG:
+					/*case OPCODES.MSG:
 						this.cur_len= 0
 						this.text = this.msgTable[this.curIndex][2]()
 						//this.text_actor:queuecommand("Check")
@@ -1172,9 +1176,9 @@ I have no idea how it works
 	
 	var imageActor;
 	
-	//Input: string of gfl text
+	//Input: string of gfl text, missionID
 	//output: structured lines (array with opcodes)
-	function convertGFLTextToOpcodes(out)
+	function convertGFLTextToOpcodes(out, missionID)
 	{
 		//console.log(out);
 		var lines = out.split(/\r?\n/);
@@ -1246,6 +1250,14 @@ I have no idea how it works
 					//console.log(charID)
 					//console.log(charSpr)
 					//Ignore empty sprite IDs, they do nothing.
+					
+					//I know it's a hackjob fix but I don't think there's going to be () in any other tags
+					if (charTagEnd > cmds.indexOf("<Speaker>") && charTagEnd < cmds.indexOf("</Speaker>"))
+					{
+						//console.log("Parenthesis is inside the speaker tag, ignoring");
+						continue
+					}
+					
 					if (charSpr != undefined && charSpr && charID)
 					{
 						
@@ -1347,6 +1359,19 @@ I have no idea how it works
 					cmds = removeTag(cmds,tag)
 				}
 			})
+			
+			//For commands that don't have an argument and require no special behavior to parse.
+			/*const tagsNoArgs=['名单']
+			tags.forEach(tag => {
+				structuredLines.push([tag2opcode[tag]])
+				cmds=cmds.replace("<"+tag+">","");
+			})*/
+			if (missionID != undefined && cmds.includes('<名单>'))
+			{
+				structuredLines.push([OPCODES.CREDITS,missionID])
+				cmds=cmds.replace("<名单>","");
+			}
+			
 			
 			
 			//Destination label
@@ -1517,6 +1542,64 @@ I have no idea how it works
 		return string.replace(reg, (match)=>(map[match]));
 	}
 	
+	//Converts GFL's text modifiers into HTML elements, as you might have guessed.
+	//TODO: Ignore ALL unknown/illegal codes, not just <script>
+	//let allowedHTMLTags = ['color','size','b','i','u','q','s']
+	function parseGFLTextModifiers(message) {
+		message = message.replaceAll("<script>","&lt;script&gt;").replaceAll("<\/script>","&lt;&#x2F;script&gt;")
+		message = message.replaceAll("\"","&quot;")
+		for(var ccc = 0; ccc < 50; ccc++)
+		{
+			/*if(ccc > 5)
+			{
+				consoleWarn("Encountered more than 5 color codes in a message... This is very unusual, so bailing out");
+				break;
+			}*/
+			//If you haven't already guessed, I don't know regex
+			let idx = message.indexOf("<color=");
+			if (idx != -1)
+			{
+				//print('parsing colors: '+message);
+				let end = message.indexOf('>',idx)
+				let color = message.slice(idx+7,end)
+				//console.log(color)
+				let spanTagStart = "<span class='coloredDialogue' style='color:"+color+"'>"
+				message = message.slice(0,idx)+spanTagStart+message.slice(end+1,message.indexOf("</color>"))+"</span>"+message.slice(message.indexOf("</color>")+8)
+				//console.log("new msg: "+message);
+			}
+			else
+			{
+				break;
+			}
+		}
+		for(var ccc = 0; ccc < 50; ccc++)
+		{
+			/*if(ccc > 5)
+			{
+				consoleWarn("Encountered more than 5 size codes in a message... This is very unusual, so bailing out");
+				break;
+			}*/
+			//If you haven't already guessed, I don't know regex
+			let idx = message.indexOf("<size=");
+			if (idx != -1)
+			{
+				//console.log(message);
+				let end = message.indexOf('>',idx)
+				let size = message.slice(idx+6,end)/45*100 //Assume default is 45px
+				let spanTagStart = "<span class='sizedDialogue' style='font-size:"+size+"%'>"
+				
+				message = message.slice(0,idx)+spanTagStart+message.slice(end+1,message.indexOf("</size>"))+"</span>"+message.slice(message.indexOf("</size>")+7)
+			}
+			else
+			{
+				break;
+			}
+		}
+		message = message.replaceAll("//n","<br>")
+		return message
+	
+	}
+	
 	//input: structuredLines (array), part (int starting at 0), partName (string. Optional, if present replaces the "Part X" header
 	//output: a div with the elements rendered
 	//This function does not cause side effects.
@@ -1645,6 +1728,13 @@ I have no idea how it works
 					newPlayBGMButton.setAttribute("onclick","playNewAudio('audio/"+structuredLines[i][1]+"')")
 					thisPartDiv.appendChild(newPlayBGMButton);
 					break;
+				case OPCODES.STOPBGM:
+					let stopBGMButton = document.createElement('a');
+					stopBGMButton.setAttribute("class","waves-effect waves-light btn");
+					stopBGMButton.innerHTML='<i class="material-icons left">music_note</i>Stop audio'
+					stopBGMButton.setAttribute('onclick',"document.getElementById('audioPlayer').pause()")
+					thisPartDiv.appendChild(stopBGMButton);
+					break;
 				case OPCODES.CHOICE:
 					structuredLines[i][1].forEach(c => {
 						let choiceButton = document.createElement('a');
@@ -1660,27 +1750,62 @@ I have no idea how it works
 					h5.setAttribute('id','choiceDestination_'+(part*100+structuredLines[i][1]));
 					h5.innerText="If choice "+structuredLines[i][1]+" was picked"
 					thisPartDiv.appendChild(h5);
+					break;
 				case OPCODES.SPEAKER:
 					if (lastSpeakerName != structuredLines[i][1])
 					{
 						lastSpeakerName=structuredLines[i][1];
 						didNameChange = true
-						
-						//TODO: Make it so changing the speaker doesn't render a new box..
-						/*if (lastSpeakerName != "")
-						{
-							let p = document.createElement('p');
-							p.innerText = lastSpeakerName;
-							//p.innerHTML = "<b>"+lastSpeakerName+"</b>";
-							p.classList.add("storyText");
-							p.classList.add("speakerName");
-							thisPartDiv.appendChild(p);
-						}*/
 					}
 					else
 					{
 						//console.log("speaker command was called but already matches previous speaker...");
 					}
+					break;
+				case OPCODES.CREDITS:
+					console.assert(structuredLines[i][1]);
+					let creditsDiv = document.createElement('div');
+					creditsDiv.setAttribute('style','text-align:center;font-family:serif;');
+					if (CREDITSDATA)
+					{
+						creditsDiv.innerHTML = parseGFLTextModifiers(CREDITSDATA[structuredLines[i][1]])
+					}
+					else
+					{
+						creditsDiv.setAttribute('missionID',structuredLines[i][1]);
+						console.log("Fetching credits data...")
+						/*console.log("fetching "+fileName);
+						const response = await fetch("avgtxt/"+fileName);
+						const out = await response.text();
+						console.log("got "+fileName);*/
+						fetch('Language_AVG_US.txt')
+						.then(response => response.text())
+						.then(response => {
+							console.log("credits data loaded!");
+							CREDITSDATA = {}
+							response.split(/\r?\n/).forEach(l => {
+								if (l) { //Gotta check if the string is not empty
+									let kv = l.split('|')
+									//debugger;
+									CREDITSDATA[parseInt(kv[0])]=kv[1]
+								}
+							})
+							let interval=setInterval(function(){
+								let nBGs = document.querySelectorAll('div[missionID]');
+								if (nBGs.length == 0)
+								{
+									console.log("CreditsData: waiting for DOM to be ready before setting credits div for "+mID+"...");
+									return;
+								}
+								nBGs.forEach(el => {
+									el.innerHTML = parseGFLTextModifiers(CREDITSDATA[el.getAttribute('missionID')])
+								});
+								console.log("Set creditsDiv, exiting background task.");
+								clearInterval(interval);
+							},100);
+						});
+					}
+					thisPartDiv.appendChild(creditsDiv);
 					break;
 				case OPCODES.PORTRAIT:
 					if (!fancyDisplayType)
@@ -1784,59 +1909,7 @@ I have no idea how it works
 					break;
 				case OPCODES.MSG:
 					//Spawn new BG with speaker and portrait here.
-					let message = structuredLines[i][1]
-					//TODO: Ignore ALL unknown/illegal codes, not just <script>
-					//let allowedHTMLTags = ['color','size','b','i','u','q','s']
-					
-					message = message.replaceAll("<script>","&lt;script&gt;").replaceAll("<\/script>","&lt;&#x2F;script&gt;")
-					for(var ccc = 0; ccc < 10; ccc++)
-					{
-						if(ccc > 5)
-						{
-							consoleWarn("Encountered more than 5 color codes in a message... This is very unusual, so bailing out");
-							break;
-						}
-						//If you haven't already guessed, I don't know regex
-						let idx = message.indexOf("<color=");
-						if (idx != -1)
-						{
-							//print('parsing colors: '+message);
-							let end = message.indexOf('>',idx)
-							let color = message.slice(idx+7,end)
-							//console.log(color)
-							let spanTagStart = "<span class='coloredDialogue' style='color:"+color+"'>"
-							message = message.slice(0,idx)+spanTagStart+message.slice(end+1,message.indexOf("</color>"))+"</span>"+message.slice(message.indexOf("</color>")+8)
-							//console.log("new msg: "+message);
-						}
-						else
-						{
-							break;
-						}
-					}
-					for(var ccc = 0; ccc < 10; ccc++)
-					{
-						if(ccc > 5)
-						{
-							consoleWarn("Encountered more than 5 size codes in a message... This is very unusual, so bailing out");
-							break;
-						}
-						//If you haven't already guessed, I don't know regex
-						let idx = message.indexOf("<size=");
-						if (idx != -1)
-						{
-							//console.log(message);
-							let end = message.indexOf('>',idx)
-							let size = message.slice(idx+6,end)/45*100 //Assume default is 45px
-							let spanTagStart = "<span class='sizedDialogue' style='font-size:"+size+"%'>"
-							
-							message = message.slice(0,idx)+spanTagStart+message.slice(end+1,message.indexOf("</size>"))+"</span>"+message.slice(message.indexOf("</size>")+7)
-						}
-						else
-						{
-							break;
-						}
-					}
-					
+					let message = parseGFLTextModifiers(structuredLines[i][1])
 					
 					if (fancyDisplayType)
 					{
@@ -1941,9 +2014,12 @@ I have no idea how it works
 									let portraitImg = document.createElement('img');
 									//In case you forgot, it's ID and Type
 									portraitImg.src = 'pic/'+PORTRAITS[shownPortraits[j][2]][shownPortraits[j][3]];
-									//console.log(portraitImg.src);
 									
-									if (!shownPortraits[j][5])
+									//console.log(portraitImg.src);
+									if (document.getElementById('showDebugOpcodeButton').checked)
+										portraitImg.setAttribute('title',"ID: "+shownPortraits[j][2]+" | TYPE: "+shownPortraits[j][3]);
+									
+									if (!shownPortraits[j][5]) //If not mask
 									{
 										portraitImg.classList.add("storydoll");
 										if (shownPortraits[j][4]==true)
@@ -1955,6 +2031,8 @@ I have no idea how it works
 									else //Behold, pain
 									{
 										let d = document.createElement('div');
+										if (document.getElementById('showDebugOpcodeButton').checked)
+											d.setAttribute('title',"ID: "+shownPortraits[j][2]+" | TYPE: "+shownPortraits[j][3]);
 										d.style='position:absolute;width:100%;top:10%'
 										d.classList.add('maskcontainer');
 										d.classList.add(int2strPos[j+1]);
@@ -2123,10 +2201,13 @@ I have no idea how it works
 			let fileName = episode.parts[p];
 			let partName = null
 			let isNight = false
+			let missionID = null
 			if (episode['part_names'] != undefined)
 				partName=episode['part_names'][p]
 			if (episode['night'] != undefined)
 				isNight=episode['night'][p]
+			if(episode['mission_id'] != undefined)
+				missionID=episode['mission_id'][p]
 			
 			//We have to await so it doesn't load the parts in the wrong order. Which is an actual thing that has happened.
 			console.log("fetching "+fileName);
@@ -2136,13 +2217,8 @@ I have no idea how it works
 			
 			//console.log(fetchTextFile("avgtxt/"+fileName));
 			
-			//fetch("avgtxt/"+fileName)
-			//.then(response => response.text())
-			//.then((out) => {
-			//fetchTextFile(fileName).then(out => {
-			//console.log('got '+fileName);
 			//TODO: Add check if it's JSON (iop format) and then use a JSON parser if it is
-			let structuredLines = convertGFLTextToOpcodes(out);
+			let structuredLines = convertGFLTextToOpcodes(out,missionID);
 			
 			if (document.getElementById('showDebugOpcodeButton').checked)
 			{
@@ -2945,6 +3021,20 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 		<h4>Settings</h4>
 
 		<table class="material-settings-table">
+			<!--<tr>
+				<td style="width:100%">
+					<span class="title">Use system dark mode</span>
+					<p>Are you one of those cool kids that has Android 10 or iOS 13 or Windows 10? Turn this on to match your device&apos;s preferences.</p>
+				</td>
+				<td>
+					<div class="switch">
+						<label>
+						  <input type="checkbox" onclick="setCookieFromCheckbox('systemDarkMode');" id="fancyOrNot">
+						  <span class="lever"></span>
+						</label>
+					</div>
+				</td>
+			</tr>-->
 			<tr>
 				<td style="width:100%">
 					<span class="title">Display images and portraits in cutscenes</span>
@@ -3120,7 +3210,7 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 			</div>
 			
 			<div class="col s12" id="eventEpisodesWrapper">
-				<p>Deep Dive, Singularity, and Continuum Turbulence are not sorted yet.</p>
+				<p>Deep Dive, Singularity, and Continuum Turbulence are not sorted yet. Polarized Light&apos;s portraits will be finished by 5/18 at the latest, I swear!</p>
 				<div class="flex-container col s12" id="eventEpisodes"></div>
 			</div>
 			<div class="col s12" id="sideEpisodesWrapper">
@@ -3366,10 +3456,11 @@ msg;<color=#1aff1a>Make sure you save your work in a text file, as it will not b
 	<p><a href='/LICENSE.html'>The interpreter is free and open source software and licensed under AGPLv3.</a></p>
 	<p>Designed using <a href='https://materializecss.com'>Materialize</a>, the ultimate front-end framework for people like me who can't be bothered to learn the hard shit like react or vue. <a href='https://github.com/Dogfalo/materialize/blob/master/LICENSE'>MIT license</a></p>
 	
-	<!--<hr>
-	<p>Advertisements</p>-->
+	<hr>
+	<!--<p><b>e-begging</b></p>-->
 	<p><a href="http://amaryllisworks.pw/getraveitout">Try the rhythm game I programmed, it's free and open source</a></p>
-	<!--<p>Need a programmer for your epic Girls' Frontline fangame? I'll help with platformers, visual novels, or rhythm games. No drawing though.</p>-->
+	<!--<a href='https://ko-fi.com/D1D7Y21A'>Help pay for server hosting because it costs $30 a year for the server and $10 a year for the domain name</a>-->
+	<p>I'm currently jobless so if you're reading this and you need a programmer, email me. I have 5 years of experience with lua and some experience with Python, C++, JavaScript, and C#.</p>
 	<!--<p>Donate if you like the site and its features. Of course, development will continue regardless of donations. Money will go towards paying for the server ($2.50/mo) and the domain name ($20/yr).</p>
 	<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'D1D7Y21A');kofiwidget2.draw();</script> -->

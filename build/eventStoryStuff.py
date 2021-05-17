@@ -834,6 +834,17 @@ js['event'].append({
 				"-31-3C6-1.txt",
 				"-31-3C61-1.txt",
 				"-31-3C62-1.txt"
+			],
+			"mission_id":[
+				None,
+				None,
+				None,
+				None,
+				None,
+				None,
+				None,
+				None,
+				10252
 			]
 		},
 		{
@@ -1052,7 +1063,7 @@ js['event'].append({
 			]
 		},
 		{
-			"name": "Chapter 2",
+			"name": "Chapter 2: Bifocal Prism",
 			"parts": [
 				"-36-2-1.txt",
 				"-36-2-2.txt",
@@ -1067,11 +1078,19 @@ js['event'].append({
 			],
 			"part_names":[
 				"Polarizer",
-				"Diffraction Grating"
+				"Diffraction Grating",
+				"Waveguide",
+				"Beam Splitter",
+				"Interferometer",
+				"Aperture",
+				"Vacuum Tube",
+				"Accelerator",
+				"Spectrometer",
+				"Analyzer"
 			]
 		},
 		{
-			"name": "Chapter 3",
+			"name": "Chapter 3: Polarized",
 			"parts": [
 				"-36-3-1.txt",
 				"-36-3-2.txt",
@@ -1081,16 +1100,26 @@ js['event'].append({
 				"-36-3-6.txt",
 				"-36-3-7.txt",
 				"-36-3-8.txt",
-				"-36-3-12-Point90429.txt",
-				"-36-3-14-Point90521.txt",
-				"-36-3-16-Point90564.txt",
-				"-36-3-30-Point90663.txt",
-				"-36-3-30-Point90687.txt",
-				"-36-3-38-Point90883.txt",
+				#"-36-3-12-Point90429.txt", #Ranking map junk
+				#"-36-3-14-Point90521.txt",
+				#"-36-3-16-Point90564.txt",
+				#"-36-3-30-Point90663.txt",
+				#"-36-3-30-Point90687.txt",
+				#"-36-3-38-Point90883.txt",
+			],
+			'part_names':[
+				'Enantiometer Overload I',
+				'Enantiometer Overload II',
+				"Recrystalization Resolution I",
+				"Shattered Plane of Polarization I",
+				"Recrystalization Resolution II",
+				"Shattered Plane of Polarization II",
+				"Asymmetric Induction I",
+				"Optical Isomer"
 			]
 		},
 		{
-			"name": "Chapter 4",
+			"name": "Chapter 4: Crystal Recasting",
 			"parts": [
 				"-36-4-1.txt",
 				"-36-4-2.txt",
@@ -1105,20 +1134,51 @@ js['event'].append({
 				"-36-4-11.txt",
 				"-36-4-12.txt",
 				"-36-4-13.txt",
-				"-36-4-27-Point91119.txt",
+				#"-36-4-27-Point91119.txt",
+			],
+			'part_names':[
+				"Milling",
+				"Mixing",
+				"Pre-Heating",
+				"Sintering",
+				"Foaming",
+				"Foam Stabilization",
+				"Molding",
+				"Annealing",
+				"Tempering",
+				"Cutting",
+				"Polishing",
+				"Silvering",
+				"Virtual Image Reforging"
 			]
 		},
 		{
 			"name": "Chapter 5",
 			"parts": [
-				"-36-5-1.txt",
+				"-36-5-1.txt", #It's out of order for some reason..
+				"-36-5-4.txt",
 				"-36-5-2.txt",
 				"-36-5-3.txt",
-				"-36-5-4.txt",
 				"-36-5-5.txt",
 				"-36-5-6First.txt",
 				"-36-5-6End.txt",
-				"-36-5-EX.txt"
+				#"-36-5-EX.txt" #Ranking stuff
+			],
+			"part_names":[
+				"Unfathomable Singularity",
+				"Casuality Separating Plane",
+				"Observable Limits",
+				None,
+				"Blackbody Radiation"
+			],
+			"mission_id":[
+				None,
+				None,
+				None,
+				None,
+				None,
+				None,
+				10473 #Required for credits sequence to work
 			]
 		}
 	]
